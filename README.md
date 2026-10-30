@@ -6,7 +6,7 @@ Studies how mislabeled (non-bug) issues in bug datasets affect Information Retri
 
 | Folder | Purpose |
 |---|---|
-| [gentag/](gentag/README.md) | Classify issues as bug / non-bug with GPT |
+| [gentag/](gentag/README.md) | Classify issues as bug / non-bug with GenTag |
 | [accuracy/](accuracy/README.md) | Top-k accuracy of IRBL techniques on original vs. cleaned data |
 | [statistical_analysis/](statistical_analysis/README.md) | Statistical tests on reciprocal ranks (MRR) |
 
