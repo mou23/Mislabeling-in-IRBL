@@ -1,0 +1,586 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="ELY">
+	<bug id="256" opendate="2015-08-05 13:30:40" fixdate="2015-08-06 16:08:18" resolution="Done">
+		<buginformation>
+			<summary>ChannelBindingSaslClient and -ServerFactory should not pass on ChannelBindingCallback</summary>
+			<description>Currently this causes a FastUnsupportedCallbackException since these factories are the only thing to handle this callback. It doesn&amp;amp;apos;t really cause any problems, but I noticed this while debugging.
+TLSServerEndPointChannelBindingSaslClientFactory removes the SSLCallback from the array before delegating, and the ChannelBinding ones should take the same approach from what I can tell.</description>
+			<version>1.0.0.Alpha3</version>
+			<fixedVersion>1.1.0.Alpha1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.sasl.util.ChannelBindingSaslServerFactory.java</file>
+			<file type="M">org.wildfly.security.sasl.util.ChannelBindingSaslClientFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="429" opendate="2016-02-26 13:30:43" fixdate="2016-03-15 08:28:29" resolution="Done">
+		<buginformation>
+			<summary>LdapSecurityRealmBuilder.build() should be retunring an interface type and not the implementation type as the implementation is not visible.</summary>
+			<description>Class LdapSecurityRealm cannot be used from elytron subsystem since is has only package access, see [1].
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/1.1.0.Beta4/src/main/java/org/wildfly/security/auth/provider/ldap/LdapSecurityRealm.java#L73</description>
+			<version>1.1.0.Beta4</version>
+			<fixedVersion>1.1.0.Beta5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.provider.ldap.LdapSecurityRealmBuilder.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="385" opendate="2015-12-01 11:04:10" fixdate="2016-03-15 08:30:20" resolution="Done">
+		<buginformation>
+			<summary>ELY01077: Invalid alias "TLS_RSA_WITH_DES_CBC_SHA"</summary>
+			<description>05:48:13 [33m05:48:13,801 WARN  [org.wildfly.security] (MSC service thread 1-2) ELY01077: Invalid alias "TLS_RSA_WITH_DES_CBC_SHA" for missing mechanism database entry "TLS_RSA_FIPS_WITH_DES_CBC_SHA"</description>
+			<version>1.0.2.Final</version>
+			<fixedVersion>1.1.0.Beta5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.MechanismDatabase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">2076</link>
+			<link type="Duplicate" description="is duplicated by">401</link>
+		</links>
+	</bug>
+	<bug id="401" opendate="2016-01-06 15:06:12" fixdate="2016-03-15 08:40:24" resolution="Duplicate Issue">
+		<buginformation>
+			<summary>ELY01077: Invalid alias "TLS_RSA_WITH_DES_CBC_SHA" for missing mechanism database entry "TLS_RSA_FIPS_WITH_DES_CBC_SHA"</summary>
+			<description>Getting the following warning logged when filtering the ciphers available from Oracle Java 8 with unlimited strength policy files in place: -
+
+
+
+
+
+
+ELY01077: Invalid alias "TLS_RSA_WITH_DES_CBC_SHA" for missing mechanism database entry "TLS_RSA_FIPS_WITH_DES_CBC_SHA"
+
+
+
+
+
+
+The JCE policy is probably unrelated, mentioning it just in case.</description>
+			<version>1.0.2.Final</version>
+			<fixedVersion>1.1.0.Beta5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.MechanismDatabase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">385</link>
+		</links>
+	</bug>
+	<bug id="502" opendate="2016-04-19 12:08:34" fixdate="2016-04-20 08:12:45" resolution="Done">
+		<buginformation>
+			<summary>Remove operation doesn&amp;apos;t persist the result in KeystorePasswordStore</summary>
+			<description>Remove operation doesn&amp;amp;apos;t persist the result in KeystorePasswordStore</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.credential.store.impl.KeystorePasswordStore.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="538" opendate="2016-05-18 09:58:32" fixdate="2016-05-27 14:53:25" resolution="Done">
+		<buginformation>
+			<summary>Infinite loop in ElytronPermissionCollection.readResolve() method</summary>
+			<description>There is infinite loop in ElytronPermissionCollection.readResolve() on line 61 [1]. Variable bits is never changed in while cycle.
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/ef67225884aa79b8e949c768a867c303af09fac4/src/main/java/org/wildfly/security/permission/ElytronPermissionCollection.java#L61</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.permission.ElytronPermissionCollection.java</file>
+			<file type="M">org.wildfly.security.ssl.ProtocolSelector.java</file>
+			<file type="M">org.wildfly.security.manager.WildFlySecurityManagerPermissionCollection.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="395" opendate="2015-12-14 09:45:24" fixdate="2016-06-01 13:52:37" resolution="Done">
+		<buginformation>
+			<summary>Undertow HTTPS listener offers no cipher suite for DEFAULT enabled-cipher-suites</summary>
+			<description>No cipher suites are available for handshake with HTTPS Undertow listener.
+According to OpenSSL documentation [1], cipher suites corresponding with ALL:!COMPLEMENTOFDEFAULT:!eNULL cipher string should be available for handshake.
+According to Elytron documentation [2], cipher suites corresponding with ALL:!aNULL:!eNULL cipher string should be available for handshake.
+[1] https://www.openssl.org/docs/manmaster/apps/ciphers.html#CIPHER-STRINGS
+[2] http://wildfly-security.github.io/wildfly-elytron/org/wildfly/security/ssl/CipherSuiteSelector.html#fromString-java.lang.String-</description>
+			<version>1.0.2.Final</version>
+			<fixedVersion>1.1.0.Beta6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.CipherSuiteSelector.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">2198</link>
+		</links>
+	</bug>
+	<bug id="537" opendate="2016-05-18 09:56:17" fixdate="2016-06-18 13:31:38" resolution="Done">
+		<buginformation>
+			<summary>Resource leaks in KeystorePasswordStore</summary>
+			<description>There are two resource leaks in org.wildfly.security.credential.store.impl.KeystorePasswordStore on line 413 [1] and 460 [2]. Both FileOutputStream and FileInputStream should be closed.
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/ef67225884aa79b8e949c768a867c303af09fac4/src/main/java/org/wildfly/security/credential/store/impl/KeystorePasswordStore.java#L413
+[2] https://github.com/wildfly-security/wildfly-elytron/blob/ef67225884aa79b8e949c768a867c303af09fac4/src/main/java/org/wildfly/security/credential/store/impl/KeystorePasswordStore.java#L460</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.credential.store.impl.KeystorePasswordStore.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="542" opendate="2016-05-18 10:06:23" fixdate="2016-06-18 13:32:25" resolution="Done">
+		<buginformation>
+			<summary>Incorrectly implemented applyFilter method of ProtocolSelector.RemovingProtocolSelector</summary>
+			<description>Method applyFilter from org.wildfly.security.ssl.ProtocolSelector.RemovingProtocolSelector is incorrectly implemented. Set&amp;lt;Protocol&amp;gt; enabled cannot contain (and therefore cannot remove) EnumSet&amp;lt;Protocol&amp;gt; protocols.</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.ProtocolSelector.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="543" opendate="2016-05-18 10:07:50" fixdate="2016-06-18 13:32:57" resolution="Done">
+		<buginformation>
+			<summary>Missing null check in constructor of AbstractDigestMechanism</summary>
+			<description>There is missing null check in constructor of org.wildfly.security.sasl.digest.AbstractDigestMechanism. Calling of messageDigestAlgorithm(mechanismName) on line 133 [1] can return null which results to NPE thrown from MessageDigest.getInstance(null).
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/ef67225884aa79b8e949c768a867c303af09fac4/src/main/java/org/wildfly/security/sasl/digest/AbstractDigestMechanism.java#L133</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.sasl.digest.AbstractDigestMechanism.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="545" opendate="2016-05-18 10:10:58" fixdate="2016-06-18 13:33:22" resolution="Done">
+		<buginformation>
+			<summary>Missing null checks in URIUtil.getHostForURI(SocketAddress socketAddress) method</summary>
+			<description>There is public static method org.wildfly.security.util.URIUtil.getHostForURI(SocketAddress socketAddress) with missing null checks for hostString and address. This method can be publicly accessed and result to NPE.</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.util.URIUtil.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="546" opendate="2016-05-18 10:11:53" fixdate="2016-06-18 13:33:48" resolution="Done">
+		<buginformation>
+			<summary>Missing null check in SecurityDomain.mapName() method</summary>
+			<description>There is missing null check in org.wildfly.security.auth.server.SecurityDomain.mapName(String name) method. Parameter name can be changed to null on line 162 [1] which can result to NPE in following command on line 163. Null check should be added.
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/ef67225884aa79b8e949c768a867c303af09fac4/src/main/java/org/wildfly/security/auth/server/SecurityDomain.java#L162</description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.server.SecurityDomain.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="589" opendate="2016-07-20 14:19:28" fixdate="2016-07-25 09:48:50" resolution="Done">
+		<buginformation>
+			<summary>RawClearPassword should implement Destroyable interface</summary>
+			<description>Class RawClearPassword doesn&amp;amp;apos;t implement method destroy() from Destroyable interface thus causing warnings in runtime.
+It should be implemented anyway.  </description>
+			<version>1.1.0.Beta5</version>
+			<fixedVersion>1.1.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.password.interfaces.RawClearPassword.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="611" opendate="2016-07-29 10:51:49" fixdate="2016-07-29 15:23:24" resolution="Done">
+		<buginformation>
+			<summary>Unintentional integer overflow in LongNameSetPermissionCollection</summary>
+			<description>There are potentially overflowing expressions in org.wildfly.security.permission.LongNameSetPermissionCollection in getBitsForName method. Expressions 1 &amp;lt;&amp;lt; nameEnumeration.size() and 1 &amp;lt;&amp;lt; nameEnumeration.indexOf(name) are evaluated as integer but assigned to bits variable which is long. It can be avoided by casting 1 to long.</description>
+			<version>1.1.0.Beta7</version>
+			<fixedVersion>1.1.0.Beta8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.permission.LongNameSetPermissionCollection.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="614" opendate="2016-07-29 10:58:45" fixdate="2016-07-29 15:23:39" resolution="Done">
+		<buginformation>
+			<summary>Missing null check in equals() method of AbstractPermission</summary>
+			<description>There is missing null check in org.wildfly.security.permission.AbstractPermission.equals(Object obj) method. NPE is thrown for null obj parameter.</description>
+			<version>1.1.0.Beta7</version>
+			<fixedVersion>1.1.0.Beta8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.permission.AbstractPermission.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="610" opendate="2016-07-29 10:49:44" fixdate="2016-07-29 15:23:53" resolution="Done">
+		<buginformation>
+			<summary>Missing null check in build() method of X509CertificateBuilder</summary>
+			<description>Calling ASN1.oidFromSignatureAlgorithm(String) in org.wildfly.security.x500.cert.X509CertificateBuilder.build() method on line 375 [1] for unknown algorithms returns null which is assigned to signatureAlgorithmOid and results to NPE thrown from derEncoder.encodeObjectIdentifier(signatureAlgorithmOid) on line 377.
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/e01a09572b02f33db01695eb85638e88b0cd944f/src/main/java/org/wildfly/security/x500/cert/X509CertificateBuilder.java#L375</description>
+			<version>1.1.0.Beta7</version>
+			<fixedVersion>1.1.0.Beta8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.x500.cert.X509CertificateBuilder.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="612" opendate="2016-07-29 10:54:49" fixdate="2016-07-29 15:24:11" resolution="Done">
+		<buginformation>
+			<summary>Missing or unnecessary null check in AbstractDigestMechanism</summary>
+			<description>There is missing or unnecessary null check in getSaltedPasswordFromTwoWay method of org.wildfly.security.sasl.digest.AbstractDigestMechanism. char[] passwordChars is assigned on line 650 [1]. 
+
+In case when null can be assigned to passwordChars then there is missing null check before calling userRealmPasswordDigest(messageDigest, username, realm, passwordChars); on line 658 which can result to NPE.
+In case when null cannot be assigned to passwordChars then there is unnecessary null check on line 659.
+
+[1] https://github.com/wildfly-security/wildfly-elytron/blob/e01a09572b02f33db01695eb85638e88b0cd944f/src/main/java/org/wildfly/security/sasl/digest/AbstractDigestMechanism.java#L650</description>
+			<version>1.1.0.Beta7</version>
+			<fixedVersion>1.1.0.Beta8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.sasl.digest.AbstractDigestMechanism.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="654" opendate="2016-10-07 13:32:43" fixdate="2016-10-11 21:11:27" resolution="Done">
+		<buginformation>
+			<summary>Ensure that negative values are converted to zero when setting sessionCacheSize and sessionTimeout in SSLSessionContext.</summary>
+			<description>Ensure that negative values are converted to zero when setting sessionCacheSize and sessionTimeout on SSLSessionContext.</description>
+			<version>1.1.0.Beta10</version>
+			<fixedVersion>1.1.0.Beta11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.SSLContextBuilder.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned to">6347</link>
+			<link type="Related" description="is related to">7154</link>
+		</links>
+	</bug>
+	<bug id="634" opendate="2016-09-22 09:19:37" fixdate="2016-10-12 10:32:51" resolution="Done">
+		<buginformation>
+			<summary>No log messages comming from Elytron - group assignment</summary>
+			<description>Elytron is missing any log messages related to group assignment. These log messages should be added. See JBEAP-6041 for more details.</description>
+			<version>1.1.0.Beta9</version>
+			<fixedVersion>1.1.0.Beta11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.server.ServerAuthenticationContext.java</file>
+			<file type="M">org.wildfly.security.x500.X500AttributePrincipalDecoder.java</file>
+			<file type="M">org.wildfly.security._private.ElytronMessages.java</file>
+			<file type="M">org.wildfly.security.auth.realm.KeyStoreBackedSecurityRealm.java</file>
+			<file type="M">org.wildfly.security.ssl.SecurityDomainTrustManager.java</file>
+			<file type="M">org.wildfly.security.keystore.AtomicLoadKeyStoreSpi.java</file>
+			<file type="M">org.wildfly.security.auth.server.SecurityDomain.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">6147</link>
+		</links>
+	</bug>
+	<bug id="627" opendate="2016-09-08 16:09:19" fixdate="2016-10-25 14:39:59" resolution="Done">
+		<buginformation>
+			<summary>Elytron introduces SSL/TLS protocol constraints</summary>
+			<description>
+
+
+
+
+
+
+                       "protocols" =&amp;gt; {
+
+
+
+
+                            "type" =&amp;gt; LIST,
+
+
+
+
+                            "description" =&amp;gt; "The enabled protocols.",
+
+
+
+
+                            "expressions-allowed" =&amp;gt; true,
+
+
+
+
+                            "nillable" =&amp;gt; false,
+
+
+
+
+                            "allowed" =&amp;gt; [
+
+
+
+
+                                "SSLv2",
+
+
+
+
+                                "SSLv3",
+
+
+
+
+                                "TLSv1",
+
+
+
+
+                                "TLSv1_1",
+
+
+
+
+                                "TLSv1_2",
+
+
+
+
+                                "TLSv1_3"
+
+
+
+
+                            ],
+
+
+
+
+                            "value-type" =&amp;gt; STRING,
+
+
+
+
+                            "access-type" =&amp;gt; "read-write",
+
+
+
+
+                            "storage" =&amp;gt; "configuration",
+
+
+
+
+                            "restart-required" =&amp;gt; "resource-services"
+
+
+
+
+                        },
+
+
+
+
+
+
+Why elytron on this place is going to validate user input and map standard java values [1] into proprietary values?
+Whereas on other similar places (KeyManager algorithm, TrustManager algorithm, Keystore types) it leaves up to user to set proper value.
+IMO, with such mapping another place, where bugs can raise was introduced. EAP will be here always one step back compared to java. 
+Note, IBM java already today defines little bit different protocols set [2]
+I wonder, where is that mapping "TLSv1_2 -&amp;gt; TLSv1.2" acually performed? I couldn&amp;amp;apos;t find that place.
+[1] https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext
+[2] http://www.ibm.com/support/knowledgecenter/SSYKE2_8.0.0/com.ibm.java.security.component.80.doc/security-component/jsse2Docs/protocols.html</description>
+			<version>1.1.0.Beta8</version>
+			<fixedVersion>1.1.0.Beta12</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.Protocol.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">5931</link>
+			<link type="Cloners" description="cloned to">7301</link>
+		</links>
+	</bug>
+	<bug id="692" opendate="2016-10-26 12:55:34" fixdate="2016-11-02 09:35:48" resolution="Done">
+		<buginformation>
+			<summary>Add tests for special chars in LegacyPropertiesSecurityRealm</summary>
+			<description>Add tests for issue https://issues.jboss.org/browse/ELY-688 and https://issues.jboss.org/browse/ELY-691</description>
+			<version>1.1.0.Beta11</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.realm.LegacyPropertiesSecurityRealmTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">691</link>
+			<link type="Related" description="relates to">688</link>
+		</links>
+	</bug>
+	<bug id="691" opendate="2016-10-26 12:07:10" fixdate="2016-11-02 09:36:13" resolution="Done">
+		<buginformation>
+			<summary>Elytron properties-realm is not compatible with legacy user property files</summary>
+			<description>When users properties file (e.g. mgmt-users.properties) used by legacy properties security realm is taken and used with Elytron properties-realm (backed by org.wildfly.security.auth.realm.LegacyPropertiesSecurityRealm) then there exist username/password combinations which do not works correctly.
+Following scenarios which uses mentioned below username/password work correctly for properties file used by legacy solution and do not work for Elytron:
+
+
+
+
+
+
+elytron:password                            // results to username elytron with password password
+
+
+
+
+elytronumlaut=password                   // results to username elytronumlaut with password password
+
+
+
+
+elytron=password                        // results to username elytron with password password
+
+
+
+
+backslash\\=password                        // results to username backslash\ with password password
+
+
+
+
+backslash\\inthemiddle=password             // results to username backslash\inthemiddle with password password
+
+
+
+
+dn\=elytron,dc\=wildfly,dc\=org=password    // results to username dn=elytron,dc=wildfly,dc=org with password password
+
+
+
+
+elytron1=pass=word                          // results to username elytron1 with password pass=word - covered by JBEAP-6581
+
+
+
+
+elytron2=password\\                         // results to username elytron2 with password password\
+
+
+
+
+elytron3=pass\\word                         // results to username elytron3 with password pass\word
+
+
+
+
+elytron4=passwordWithumlaut              // results to username elytron4 with password passwordWithumlaut
+
+
+
+
+elytron5=                               // results to username elytron5 with password 
+
+
+
+
+
+
+Also &amp;amp;apos;!&amp;amp;apos; can be used for comments. It means that !elytron=password should not be considered as user !elytron but as comment.</description>
+			<version>1.1.0.Beta11</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.realm.LegacyPropertiesSecurityRealm.java</file>
+			<file type="M">org.wildfly.security.auth.realm.LegacyPropertiesSecurityRealmTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">6641</link>
+			<link type="Related" description="is related to">692</link>
+		</links>
+	</bug>
+	<bug id="637" opendate="2016-09-22 09:23:37" fixdate="2016-11-03 15:03:29" resolution="Done">
+		<buginformation>
+			<summary>No log messages comming from Elytron - permission assignment</summary>
+			<description>Elytron is missing any log messages related to permission assignment. These log messages should be added. See JBEAP-6041 for more details.</description>
+			<version>1.1.0.Beta9</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.server.ServerAuthenticationContext.java</file>
+			<file type="M">org.wildfly.security.x500.X500AttributePrincipalDecoder.java</file>
+			<file type="M">org.wildfly.security._private.ElytronMessages.java</file>
+			<file type="M">org.wildfly.security.auth.realm.KeyStoreBackedSecurityRealm.java</file>
+			<file type="M">org.wildfly.security.ssl.SecurityDomainTrustManager.java</file>
+			<file type="M">org.wildfly.security.keystore.AtomicLoadKeyStoreSpi.java</file>
+			<file type="M">org.wildfly.security.auth.server.SecurityDomain.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">6151</link>
+		</links>
+	</bug>
+	<bug id="757" opendate="2016-11-15 09:11:01" fixdate="2016-11-21 09:24:47" resolution="Done">
+		<buginformation>
+			<summary>Don&amp;apos;t use String toUpperCase/toLowerCase in the testsuite without Locale provided</summary>
+			<description>The String.toUpperCase() and String.toLowerCase() methods depend on the system locale. We should avoid using them in the Elytron testsuite and use the overloaded method with Locale parameter instead.</description>
+			<version>1.1.0.Beta13</version>
+			<fixedVersion>1.1.0.Beta15</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.ssl.SSLAuthenticationTest.java</file>
+			<file type="M">org.wildfly.security.sasl.digest._private.DigestUtilTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="808" opendate="2016-12-02 17:06:10" fixdate="2016-12-02 17:08:15" resolution="Duplicate Issue">
+		<buginformation>
+			<summary>XML Parsing Deferred into Function</summary>
+			<description>e.g.
+
+
+
+
+
+
+                    case "clear-password": {
+
+
+
+
+                        function = andThenOp(function, credentialSource -&amp;gt; credentialSource.with(IdentityCredentials.NONE.withCredential(new PasswordCredential(ClearPassword.createRaw(ClearPassword.ALGORITHM_CLEAR, parseClearPassword(reader))))));
+
+
+
+
+                        break;
+
+
+
+
+                    }
+
+
+
+
+
+
+The parsing of clear password is deferred until later.</description>
+			<version>1.1.0.Beta17</version>
+			<fixedVersion>1.1.0.Beta17</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.security.auth.client.ElytronXmlParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">807</link>
+		</links>
+	</bug>
+</bugrepository>

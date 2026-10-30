@@ -1,0 +1,852 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12370964",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964",
+  "key": "LUCENE-908",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312531",
+        "id": "12312531",
+        "description": "",
+        "name": "2.3",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-01-23"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12834",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/5",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/trivial.svg",
+      "name": "Trivial",
+      "id": "5"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12396307",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12396307",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12707759",
+          "key": "LUCENE-5594",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12707759",
+          "fields": {
+            "summary": "don't call 'svnversion' over and over in the build",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311546",
+        "id": "12311546",
+        "name": "general/build",
+        "description": "issues with building Lucene using the ANT build scripts"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27139",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-908/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@55d3ffcb[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2e1353ab[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@46d375d6[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@72e9f8ac[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@61512090[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@4abff708[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@171f564c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@2a8ee09b[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@423300fa[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@7701b803[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1a412d99[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@47168c72[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:38:05 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-08-22T23:18:10.236+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-908/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2007-06-05T20:45:37.658+0000",
+    "updated": "2022-08-28T11:38:05.383+0000",
+    "timeoriginalestimate": null,
+    "description": "there are several problems with the MANIFEST.MF file used in the core jar, and some inconsistencies in th luci jar:\n\nLucli's build.xml has an own \"jar\" target and does not use the jar target from common-build.xml. The result\nis that the MANIFEST.MF file is not consistent and the META-INF dir does not contain LICENSE.TXT and NOTICE.TXT.\n\nIs there a reason why lucli behaves different in this regard? If not I think we should fix this.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12359104",
+        "id": "12359104",
+        "filename": "lucene-908.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-06-06T19:38:50.235+0000",
+        "size": 11012,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12359104/lucene-908.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12359014",
+        "id": "12359014",
+        "filename": "LUCENE-908.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2007-06-06T00:39:53.816+0000",
+        "size": 4645,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12359014/LUCENE-908.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12364108",
+        "id": "12364108",
+        "filename": "lucene-908-new.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-08-19T17:11:38.694+0000",
+        "size": 15508,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12364108/lucene-908-new.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "MANIFEST.MF cleanup (main jar and luci customizations)",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12501702",
+          "id": "12501702",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'm pretty sure it's to get the stuff that's in the MANIFEST.MF in there: the Main-Class header, in particular. With this, you can say java -jar jar w/o having to specify the main class.\n\nProbably simplest just to also add the necessary files/lines manually? It's not DRY with the code common-build.xml, but it's simple for an uncommon case.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-05T21:41:49.713+0000",
+          "updated": "2007-06-05T21:41:49.713+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12501711",
+          "id": "12501711",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "the existing jar logic in common-build.xml could be refacotred into a macro with a a nested tag option so that contribs could add additional items, that would probably be the cleanest way to support MANIFEST.MF add ons.\n\non a related subject, when i was setting up the solr MANIFEST.MF i discovered lots of things are \"wrong\" about the way Lucene's MANIFEST file is built (aparently i never raised them in lucene-java, or if i did we never did anythng about them), here are the comments from Solr's build.xml that we may also want to fix...\n\nhttp://svn.apache.org/viewvc/lucene/solr/trunk/build.xml\n        <!--\n        http://java.sun.com/j2se/1.5.0/docs/guide/jar/jar.html#JAR%20Manifest\n        http://java.sun.com/j2se/1.5.0/docs/guide/versioning/spec/versioning2.html\n        http://java.sun.com/j2se/1.5.0/docs/api/java/lang/Package.html\n        http://java.sun.com/j2se/1.5.0/docs/api/java/util/jar/package-summary.html\n        http://java.sun.com/developer/Books/javaprogramming/JAR/basics/manifest.html\n        -->\n        <!-- Don't set 'Manifest-Version' it identifies the version of the\n             manifest file format, and should allways be 1.0 (the default)\n\n             Don't set 'Created-by' attribute, it's purpose is \n             to identify the version of java used to build the jar,\n             which ant will do by default.\n\n             Ant will happily override these with bogus strings if you\n             tell it to, so don't.\n\n             NOTE: we don't use section info because all of our manifest data\n             applies to the entire jar/war ... no package specific info.\n        -->\n        <!-- spec version must match \"digit+{.digit+}*\" -->\n        <!-- impl version can be any string -->\n\n\n\n\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-06-05T21:56:44.164+0000",
+          "updated": "2007-06-05T21:56:44.164+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12501713",
+          "id": "12501713",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Hoss,\n\nI think this makes sense. It would be great if you could provide a patch here?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-05T22:04:24.613+0000",
+          "updated": "2007-06-05T22:04:24.613+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12501757",
+          "id": "12501757",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "quick pass at adopting some of the stuff i learned doing the Solr MANIFEST.MF ... i haven't tested it extensively (Michael i'm hoping you can take the ball and run with it, i've got about a million other things going on at the moment)\n\nnote: it was a while ago when i looked into all of this MANIFEST stuff and i'm not sure i fully understood it then, let alone now.\n\npatch moves jaring into a new macro (jarify) ... contribs can override the \"jar-core\" target to call jarify and override some options as well as add new <attributes> to appear in the manifest file.\n\nmanifest now includes a lot more information then it did before.\n\nthings this doesn't address...\n  * manifest file in demo war file\n  * manifest file in any of gdata's jars/war (it doesn't use the contrib-build.xml either)\n  * spec version must match \"digit+{.digit+}*\" ... this is true for our official releases, but broken in our nightlies.\n  * need to svn remove the existing luci MANIFEST file\n  * should luci's \"Class-Path\" refer to the full name of the lucene core jar?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-06-06T00:39:53.950+0000",
+          "updated": "2007-06-06T00:39:53.950+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12501798",
+          "id": "12501798",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> Michael i'm hoping you can take the ball and run with it,\n\nThanks for the pass, Hoss, I'm already running...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-06T05:46:37.232+0000",
+          "updated": "2007-06-06T05:46:37.232+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12502040",
+          "id": "12502040",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> * manifest file in any of gdata's jars/war (it doesn't use the contrib-build.xml either) \n> * should luci's \"Class-Path\" refer to the full name of the lucene core jar? \n\nI would like to ask the contrib owners to take care of these issues.\n\n> * spec version must match \"digit+{.digit+}*\" ... this is true for our official releases, \n>   but broken in our nightlies. \n\nI will leave this for now as this patch doesn't change the spec version.\n\n> * need to svn remove the existing luci MANIFEST file \n> * manifest file in demo war file \n\nWill take care...\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-06T18:58:09.985+0000",
+          "updated": "2007-06-06T18:58:09.985+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12502060",
+          "id": "12502060",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "In addition to Hoss' great patch this one:\n\n- changes the MANIFEST file in the demo jar and war in a consistent way\n- adds a patternset via refid to the metainf type of jarify. This can\n  be used by contrib modules to add additional files to the META-INF dir.\n  I use it to add SNOWBALL-LICENSE.txt to META-INF of the snowball jar.\n  \nI'm planning to commit this soon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-06T19:38:50.361+0000",
+          "updated": "2007-06-06T19:38:50.361+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12502104",
+          "id": "12502104",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "A couple of random thoughts...\n\n1) macro's can take multiple optional named <element> tags to embed in their bodies ... so instead of declaring a refid for what to include in the metinf, callers of the macro could put <metainf> call directly in the call to <jarify>\n\n2) one way to reduce some redundancy in the build files (between jar-core, jar-demo, and war-demo) might be to use the <manifest> task instead of the <manifest> sub element of the <jar> task ... there are a few subtle differences but the main key is that the <manifest> taks let's you build up a file which you can then refer to by name from the <jar> task ... we could have a single <buildmanifest> macro with all of the common attributes in it and then it could be called from the various jar/war targets just before building the actual jar using attributes and <element> tags to customize things that need to be different. \n\n\n...neither of these are crucial, they're just things you might want to consider to keep the build files smaller (and arguably simpler)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-06-06T21:11:19.587+0000",
+          "updated": "2007-06-06T21:11:19.587+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12502156",
+          "id": "12502156",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "As always these are very good recommendations Hoss! I think I will commit my patch for 2.2, because it works fine. But I will leave this issue open (just clear the Fix version) to keep in mind that we want to make these improvements.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-07T00:27:32.943+0000",
+          "updated": "2007-06-07T00:27:32.943+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12502159",
+          "id": "12502159",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patch committed. Leaving this issue open for the simplifications suggested by Hoss.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-07T00:50:23.069+0000",
+          "updated": "2007-06-07T00:50:23.069+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12520967",
+          "id": "12520967",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This patch:\n\n- removes the patternset \"metainf.includes\"; adds the optional element <metainf-includes> to the body of jarify\n- adds the macro \"build-manifest\" to common-build.xml to remove redundant code from the demo targets",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-08-19T17:11:38.931+0000",
+          "updated": "2007-08-19T17:11:38.931+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/12521961",
+          "id": "12521961",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed. Revision: 568766",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-08-22T23:18:10.221+0000",
+          "updated": "2007-08-22T23:18:10.221+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370964/comment/17587098",
+          "id": "17587098",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1983|https://github.com/apache/lucene/issues/1983].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:38:05.383+0000",
+          "updated": "2022-08-28T11:38:05.383+0000"
+        }
+      ],
+      "maxResults": 13,
+      "total": 13,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0509b:",
+    "customfield_12314139": null
+  }
+}

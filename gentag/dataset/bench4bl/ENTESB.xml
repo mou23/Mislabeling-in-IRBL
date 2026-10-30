@@ -1,0 +1,1985 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="ENTESB">
+	<bug id="102" opendate="2012-03-26 10:34:24" fixdate="2012-03-27 06:15:15" resolution="Done">
+		<buginformation>
+			<summary>cxf-jaxrs-security publish url need to be changed to securecrm</summary>
+			<description>As cxf-jaxrs is using the url crm, cxf-jaxrs-security need to choice other name for it.</description>
+			<version>7.0.0.fuse-beta-039</version>
+			<fixedVersion>7.0.0.fuse-beta-039</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.examples.cxf.jaxrs.security.client.Client.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="241" opendate="2012-07-11 16:17:21" fixdate="2012-07-19 15:44:32" resolution="Done">
+		<buginformation>
+			<summary>Remove obsolete feature &amp;apos;activemq-broker&amp;apos; </summary>
+			<description>The feature activemq-broker is no longer useful - the Blueprint configuration file referenced in the feature is not available in the assembly:
+
+
+
+
+
+
+FuseESB:karaf@root&amp;gt; features:info activemq-broker 
+
+
+
+
+Description of activemq-broker 4.5.0.fuse-7-0-068 feature
+
+
+
+
+----------------------------------------------------------------
+
+
+
+
+Feature has no configuration
+
+
+
+
+Feature has no configuration files
+
+
+
+
+Feature depends on:
+
+
+
+
+  activemq-blueprint 5.5.1.fuse-7-0-068
+
+
+
+
+Feature contains followed bundles:
+
+
+
+
+ blueprint:file:etc/activemq-broker.xml start-level=50
+
+
+
+
+
+</description>
+			<version>fuse-esb-7.0.0</version>
+			<fixedVersion>fuse-esb-7.0.1, M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.pax.exam.karaf.EsbFeaturesTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="257" opendate="2012-08-07 23:29:38" fixdate="2012-10-22 17:58:16" resolution="Done">
+		<buginformation>
+			<summary>the shell help for the patch:install command is wrong</summary>
+			<description>The help for patch:install reads: 
+ARGUMENTS
+        PATCH
+                name of the patch to rollback
+It should be name of patch to install</description>
+			<version>fuse-esb-7.0.1</version>
+			<fixedVersion>fuse-esb-7.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.patch.commands.Install.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="418" opendate="2012-11-21 18:03:19" fixdate="2012-11-22 02:03:06" resolution="Done">
+		<buginformation>
+			<summary>activemq-camel - This feature is not listed as installed out of the box in the full-esb</summary>
+			<description>Run this command
+
+
+
+
+
+
+features:list -i
+
+
+
+
+
+
+To show installed features. Notice that the activemq-camel feature is not installed. Instead there is a camel-activemq which is from SMX
+installed  ] [4.5.0.fuse-71-036 ] camel-activemq           servicemix-4.5.0.fuse-71-036
+Then I install the correct feature
+
+
+
+
+
+
+features:install activemq-camel 
+
+
+
+
+
+
+And list all the features again
+
+
+
+
+
+
+features:list -i
+
+
+
+
+
+
+And now we have both
+
+
+
+
+
+
+[installed  ] [4.5.0.fuse-71-036 ] camel-activemq           servicemix-4.5.0.fuse-71-036       
+
+
+
+
+[installed  ] [5.7.0.fuse-71-036 ] activemq                 activemq-5.7.0.fuse-71-036         
+
+
+
+
+[installed  ] [5.7.0.fuse-71-036 ] activemq-spring          activemq-5.7.0.fuse-71-036         
+
+
+
+
+[installed  ] [5.7.0.fuse-71-036 ] activemq-blueprint       activemq-5.7.0.fuse-71-036         
+
+
+
+
+[installed  ] [5.7.0.fuse-71-036 ] activemq-camel           activemq-5.7.0.fuse-71-036     
+
+
+
+
+
+
+I am not sure if that camel-activemq feature should be installed?
+At least the activemq-camel should be, as that&amp;amp;apos;s the correct feature for integrating ActiveMQ and Camel.</description>
+			<version>fuse-esb-7.1.0</version>
+			<fixedVersion>fuse-esb-7.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.pax.exam.karaf.EsbExampleFeaturesTest.java</file>
+			<file type="M">org.fusesource.esb.itests.pax.exam.karaf.EsbFeaturesTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="419" opendate="2012-11-21 18:24:23" fixdate="2012-11-26 22:21:41" resolution="Done">
+		<buginformation>
+			<summary>Can not install patches as shell script</summary>
+			<description>When trying to install PATCH-3, we have a problem using:
+./client -u smx -p smx patch:install PATCH-3
+Essentially the patch begins to install but then hangs.  Further discussions seem to indicate a problem with with the ssh client restarting.
+Test Case Steps:
+wildflower:bin sjavurek$ ./client -u smx -p smx patch:list
+[name] [installed] [description]
+PATCH-3                                  false      null
+wildflower:bin sjavurek$ ./client -u smx -p smx patch:install PATCH-3
+The second command just hangs.  ESB never shuts down and I can see in the log that it appears to be shutting down:
+
+
+
+
+
+
+17:26:10,940 | DEBUG | NioProcessor-5   | NamespacePlugins                 | 106 - org.springframework.osgi.extender - 1.2.1 | Removing handler Apache Karaf :: Admin :: Command (org.apache.karaf.admin.command)
+
+
+
+
+17:26:10,940 | DEBUG | lixDispatchQueue | command                          | 30 - org.apache.karaf.admin.command - 2.2.5.fuse-70-097 | BundleEvent STOPPED
+
+
+
+
+17:26:10,941 | DEBUG | NioProcessor-5   | Activator                        | 141 - org.apache.camel.camel-core - 2.9.0.fuse-70-097 | Bundle stopped: org.apache.karaf.shell.ssh
+
+
+
+
+17:26:10,941 | DEBUG | NioProcessor-5   | BlueprintExtender                | 10 - org.apache.aries.blueprint - 0.3.1.fuse-70-097 | Destroying BlueprintContainer for bundle org.apache.karaf.shell.ssh
+
+
+
+
+17:26:10,941 | DEBUG | NioProcessor-5   | BlueprintEventDispatcher         | 10 - org.apache.aries.blueprint - 0.3.1.fuse-70-097 | Sending blueprint container event BlueprintEvent[type=DESTROYING] for bundle org.apache.karaf.shell.ssh
+
+
+
+
+17:26:10,942 | DEBUG | nt Dispatcher: 1 | BlueprintListener                | 39 - org.apache.karaf.shell.osgi - 2.2.5.fuse-70-097 | Blueprint app state changed to Destroying for bundle 23
+
+
+
+
+17:26:10,942 | DEBUG | NioProcessor-5   | ssh                              | 23 - org.apache.karaf.shell.ssh - 2.2.5.fuse-70-097 | ServiceEvent UNREGISTERING
+
+
+
+
+17:26:10,943 | DEBUG | NioProcessor-5   | ServiceRecipe                    | 10 - org.apache.aries.blueprint - 0.3.1.fuse-70-097 | Unregistering service shell-2
+
+
+
+
+17:26:10,943 | DEBUG | NioProcessor-5   | ServiceRecipe                    | 10 - org.apache.aries.blueprint - 0.3.1.fuse-70-097 | Calling listeners for service unregistration
+
+
+
+
+17:26:10,944 | DEBUG | NioProcessor-5   | ssh                              | 23 - org.apache.karaf.shell.ssh - 2.2.5.fuse-70-097 | ServiceEvent UNREGISTERING
+
+
+
+
+17:26:10,945 | DEBUG | NioProcessor-5   | ServiceRecipe                    | 10 - org.apache.aries.blueprint - 0.3.1.fuse-70-097 | Unregistering service shell-4
+
+
+
+
+17:26:10,945 | DEBUG | NioProcessor-5   | ServiceRecipe                    | 10 - org.apache.aries.blueprint - 0.3.1.fuse-70-097 | Calling listeners for service unregistration
+
+
+
+
+17:26:10,945 | DEBUG | NioProcessor-5   | ssh                              | 23 - org.apache.karaf.shell.ssh - 2.2.5.fuse-70-097 | ServiceEvent UNREGISTERING
+
+
+
+
+17:26:10,948 | INFO  | NioProcessor-5   | ServerSession                    | 26 - sshd-core - 0.5.0 | Closing session
+
+
+
+
+17:26:10,948 | DEBUG | NioProcessor-5   | ServerSession                    | 26 - sshd-core - 0.5.0 | Closing channel 0
+
+
+
+
+17:26:10,948 | INFO  | NioProcessor-5   | ChannelSession                   | 26 - sshd-core - 0.5.0 | Send SSH_MSG_CHANNEL_CLOSE on channel 0
+
+
+
+
+
+
+
+
+
+
+
+From here the install process just hangs and servicemix is unreachable: 
+
+
+
+
+
+
+wildflower:bin sjavurek$ ./client -u smx -p smx 
+
+
+
+
+Failed to get the session.
+
+
+
+
+
+
+I&amp;amp;apos;ve also attached the log. 
+Workaround Ideas
+Would be to open the session and install the patch, however, that is manual and in automated fashion not feasible.  Fabric is another alternative but for this issue we need an automated, non fabric solution.
+Susan
+</description>
+			<version>fuse-esb-7.0.2</version>
+			<fixedVersion>fuse-esb-7.0.2, fuse-esb-7.1.0, M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.patch.Patch.java</file>
+			<file type="M">org.fusesource.patch.impl.ServiceImpl.java</file>
+			<file type="M">org.fusesource.patch.commands.Install.java</file>
+			<file type="M">org.fusesource.patch.impl.PatchImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="498" opendate="2012-12-15 00:54:43" fixdate="2012-12-22 01:33:13" resolution="Done">
+		<buginformation>
+			<summary>Feature dependencies not being installed in Fabric</summary>
+			<description>When installing the camel-jpa feature into the root ESB container the serp dependency is installed, however if a fabric is created and the camel-jpa feature is added to the root container the serp dependency is not installed.
+From the apache-camel-2.9.0.fuse-70-097-features.xml file:
+
+
+
+
+
+
+&amp;lt;feature name=&amp;amp;apos;camel-jpa&amp;amp;apos; version=&amp;amp;apos;2.9.0.fuse-70-097&amp;amp;apos; resolver=&amp;amp;apos;(obr)&amp;amp;apos; start-level=&amp;amp;apos;50&amp;amp;apos;&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.geronimo.specs/geronimo-annotation_1.0_spec/1.1.1&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.geronimo.specs/geronimo-jpa_2.0_spec/1.1&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;feature version=&amp;amp;apos;[3,4)&amp;amp;apos;&amp;gt;spring-tx&amp;lt;/feature&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.geronimo.specs/geronimo-el_1.0_spec/1.0.1&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.geronimo.specs/geronimo-jta_1.1_spec/1.1.1&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;feature version=&amp;amp;apos;[3,4)&amp;amp;apos;&amp;gt;spring-jdbc&amp;lt;/feature&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:commons-lang/commons-lang/2.6&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:commons-collections/commons-collections/3.2.1&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:commons-pool/commons-pool/1.5.6&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_2&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.ant/1.7.0_6&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.serp/1.13.1_4&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle dependency=&amp;amp;apos;true&amp;amp;apos;&amp;gt;mvn:org.apache.geronimo.specs/geronimo-jms_1.1_spec/1.1.1&amp;lt;/bundle&amp;gt;
+
+
+
+
+    &amp;lt;bundle&amp;gt;mvn:org.apache.openjpa/openjpa/2.1.1&amp;lt;/bundle&amp;gt;	
+
+
+
+
+    &amp;lt;feature version=&amp;amp;apos;[3,4)&amp;amp;apos;&amp;gt;spring-orm&amp;lt;/feature&amp;gt;
+
+
+
+
+    &amp;lt;feature version=&amp;amp;apos;2.9.0.fuse-70-097&amp;amp;apos;&amp;gt;camel-core&amp;lt;/feature&amp;gt;
+
+
+
+
+    &amp;lt;bundle&amp;gt;mvn:org.apache.camel/camel-jpa/2.9.0.fuse-70-097&amp;lt;/bundle&amp;gt;
+
+
+
+
+  &amp;lt;/feature&amp;gt;
+
+
+
+
+
+</description>
+			<version>fuse-esb-7.0.2</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.agent.Activator.java</file>
+			<file type="M">org.fusesource.fabric.agent.ObrResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="522" opendate="2013-01-08 20:54:08" fixdate="2013-02-01 18:16:59" resolution="Done">
+		<buginformation>
+			<summary>Camel Master Component Ignoring parameters</summary>
+			<description>I have a test case using a simple route inside a fabric:
+
+
+
+
+
+
+  &amp;lt;from uri="master:FD:timer://foo?period=30000"/&amp;gt; or
+
+
+
+
+  &amp;lt;from uri="master:FD:timer:foo?period=30000"/&amp;gt;
+
+
+
+
+
+
+The route kicks off just fine, however, the period option is ignored. This route runs ever second. 
+Dropping the master syntax, I can see the timer work correctly, i.e
+
+
+
+
+
+
+&amp;lt;!--from uri="timer://foo?period=30s"/--&amp;gt;
+
+
+
+
+
+
+Test Case 
+1. Created new fabric - fabric:create --clean
+2. Changed the demo we shipped in 4.4.1 for osgi, attached as it just has one route in it now. 
+3. 2. Used FMC to add camel to root profile and create a new profile.  On the new profile added my bundle:
+mvn:org.apache.servicemix.examples/camel-osgi/4.4.1-fuse-08-15/
+4.  Output of camel-route:display  looks good:
+
+
+
+
+
+
+FuseESB:karaf@root&amp;gt; camel:route-show route1 
+
+
+
+
+&amp;lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&amp;gt;
+
+
+
+
+&amp;lt;route id="route1" xmlns="http://camel.apache.org/schema/spring"&amp;gt;
+
+
+
+
+    &amp;lt;from uri="master:FD:timer://foo?period=30000"/&amp;gt;
+
+
+
+
+    &amp;lt;bean ref="myTransform" method="transform" id="bean3"/&amp;gt;
+
+
+
+
+    &amp;lt;to uri="log:ExampleRouter" id="to3"/&amp;gt;
+
+
+
+
+&amp;lt;/route&amp;gt;
+
+
+
+
+
+</description>
+			<version>fuse-esb-7.1.0</version>
+			<fixedVersion>7.0.3, 7.1.1, M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.camel.FabricComponent.java</file>
+			<file type="M">org.fusesource.fabric.camel.MasterComponent.java</file>
+			<file type="M">org.fusesource.fabric.camel.MasterEndpointTest.java</file>
+			<file type="M">org.fusesource.fabric.camel.FabricPublisherEndpointTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">523</link>
+		</links>
+	</bug>
+	<bug id="523" opendate="2013-01-09 08:10:48" fixdate="2013-02-01 18:17:38" resolution="Done">
+		<buginformation>
+			<summary>Camel Fabric component doesn&amp;apos;t take the parameters into consideration</summary>
+			<description>camel fabric component doesn&amp;amp;apos;t pass the parameters to the client endpoint which is same with the CAMEL-522.</description>
+			<version>fuse-esb-7.0.0</version>
+			<fixedVersion>7.0.3, 7.1.1, M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.camel.FabricComponent.java</file>
+			<file type="M">org.fusesource.fabric.camel.FabricPublisherEndpointTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">522</link>
+		</links>
+	</bug>
+	<bug id="591" opendate="2013-02-22 05:46:27" fixdate="2013-02-22 19:37:33" resolution="Done">
+		<buginformation>
+			<summary>ER1: Error when creating child container with "default" profile (-007 kit)</summary>
+			<description>There is NullPointerException and other Exceptions are thrown when you try to create child container with "default" profile and with some profiles which extend it. 
+Basically it&amp;amp;apos;s not possible to create the child container with almost every profile (jboss-fuse-* profiles are working ok).
+Attaching log file.</description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.api.jmx.HealthCheck.java</file>
+			<file type="M">org.fusesource.fabric.api.jmx.FabricManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="587" opendate="2013-02-21 16:50:53" fixdate="2013-02-23 00:38:19" resolution="Done">
+		<buginformation>
+			<summary>ER1: Warning building demos - redhat-007</summary>
+			<description>C:\Fuse\jboss-fuse-6.0.0.redhat-007\examples\eip&amp;gt;mvn clean install
+[INFO] Scanning for projects...
+[WARNING]
+[WARNING] Some problems were encountered while building the effective model for
+org.fusesource.examples:eip:jar:6.0.0.redhat-007
+[WARNING] &amp;amp;apos;parent.relativePath&amp;amp;apos; points at org.jboss.fuse:project instead of org.
+fusesource.examples:project, please verify your project structure @ line 26, col
+umn 13
+[WARNING]
+[WARNING] It is highly recommended to fix these problems because they threaten t
+he stability of your build.
+[WARNING]
+[WARNING] For this reason, future Maven versions might no longer support buildin
+g such malformed projects.
+[WARNING]
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building JBoss Fuse :: Examples :: Enterprise Integration Patterns 6.0.0.
+redhat-007
+[INFO] ------------------------------------------------------------------------
+[INFO]</description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.security.Customer.java</file>
+			<file type="M">examples.eip.src.test.java.RegionSupportTest.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.security.client.Client.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.security.client.CustomSecurityInterceptor.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.client.Client.java</file>
+			<file type="D">org.fusesource.examples.errors.OrderService.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.HelloWorldImpl.java</file>
+			<file type="M">org.fusesource.examples.errors.OrderServiceTest.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.HelloWorld.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.security.CustomerService.java</file>
+			<file type="D">org.fusesource.examples.eip.RegionSupport.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.security.HelloWorld.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.security.HelloWorldImpl.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.CustomerService.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.security.client.Client.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.security.EnableCORSInterceptor.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.Product.java</file>
+			<file type="D">org.fusesource.examples.errors.OrderValidationException.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.security.client.ClientPasswordCallback.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.security.Product.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.Order.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.Customer.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxrs.security.Order.java</file>
+			<file type="D">org.fusesource.examples.cxf.jaxws.client.Client.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="601" opendate="2013-02-26 16:32:27" fixdate="2013-02-27 00:46:59" resolution="Done">
+		<buginformation>
+			<summary>ER1: rest example (and other examples) - wrong resources package</summary>
+			<description>In "rest" example there is wrong package to resources which are provided with this example. This problem results in NullPointerException in rest Client class:
+This line throws NPE:
+String inputFile = client.getClass().getResource("update_customer.xml").getFile();
+Wrong path:
+rest/src/main/resources/org/fusesource/examples/cxf/jaxrs/client/
+Should be:
+rest/src/main/resources/org/jboss/fuse/examples/cxf/jaxrs/client/</description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.fusesource.examples.errors.OrderServiceTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="648" opendate="2013-03-19 20:35:01" fixdate="2013-03-20 10:32:50" resolution="Done">
+		<buginformation>
+			<summary>Null Pointer if invalid patch command syntax is used</summary>
+			<description>The following error messages occur if invalid syntax is used when applying a patch to a standalone ESB container:
+
+
+
+
+
+
+
+
+
+
+
+FuseESB:karaf@root&amp;gt; patch:list
+
+
+
+
+[name]                                   [installed] [description]
+
+
+
+
+fuse-esb-7.1.0.fuse-047-p3               false      null
+
+
+
+
+FuseESB:karaf@root&amp;gt;
+
+
+
+
+
+
+
+
+
+FuseESB:karaf@root&amp;gt; patch:simulate
+
+
+
+
+Error executing command: Patch &amp;amp;apos;null&amp;amp;apos; not found
+
+
+
+
+FuseESB:karaf@root&amp;gt; 
+
+
+
+
+
+
+
+
+
+FuseESB:karaf@root&amp;gt; patch:install
+
+
+
+
+Error executing command: Patch &amp;amp;apos;null&amp;amp;apos; not found
+
+
+
+
+FuseESB:karaf@root&amp;gt;
+
+
+
+
+
+
+A more informative message should be displayed to indicate a patch name should be supplied to the command.</description>
+			<version>fuse-esb-7.1.0</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.patch.commands.Simulate.java</file>
+			<file type="M">org.fusesource.patch.commands.Rollback.java</file>
+			<file type="M">org.fusesource.patch.commands.Add.java</file>
+			<file type="M">org.fusesource.patch.commands.Install.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="652" opendate="2013-03-20 18:21:44" fixdate="2013-03-21 19:17:05" resolution="Done">
+		<buginformation>
+			<summary>cxf-codefirst archetype has an error</summary>
+			<description>see 	ECLIPSE-885
+The package declaration inside OrderTest.java is hardcoded to "package camelinaction;" and not affected by package definition when creating the archetype.</description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">tooling.examples.camel-cxf-code-first-example.src.test.java.camelinaction.OrderTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">885</link>
+		</links>
+	</bug>
+	<bug id="665" opendate="2013-03-26 14:05:38" fixdate="2013-03-26 17:48:55" resolution="Done">
+		<buginformation>
+			<summary>In Fabric you can assign same profile to container more than once</summary>
+			<description>You can assign one profile to one container more than once.
+Steps to reproduce:
+1. fabric:create
+2. First: fabric:container-add-profile root example-mq
+3. Again: fabric:container-add-profile root example-mq
+4. fabric:container-list
+Output:
+[id] [version] [alive] [profiles] [provision status]
+root*                          1.0       true    example-mq, example-mq, fabric, fabric-ensemble-0000-1, jboss-fuse-full success
+There is example-mq profile twice in list.</description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.commands.ContainerAddProfile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="693" opendate="2013-04-05 15:21:28" fixdate="2013-04-23 04:52:00" resolution="Done">
+		<buginformation>
+			<summary>Message &amp;apos;New user name:&amp;apos; is printed to terminal continuously</summary>
+			<description>Message &amp;amp;apos;New user name:&amp;amp;apos; is printed to terminal continuously if  Ctrl+d is pressed after command fabric:create is executed without any users in etc/users.properties specified.
+Steps to reproduce:
+1. Don&amp;amp;apos;t specify any users in
+in the file jboss-fuse-6.0.0.redhat-023/etc/user.properties
+2. Run jboss-fuse v023
+3. Run the following command:
+fabric:create
+4. After message &amp;amp;apos;New user name:&amp;amp;apos; appears, press Ctrl+d
+Result: Message &amp;amp;apos;New user name:&amp;amp;apos; is printed to terminal continuously.</description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.0.1, M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.boot.commands.support.EnsembleCommandSupport.java</file>
+			<file type="M">org.fusesource.fabric.boot.commands.Create.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="737" opendate="2013-05-27 13:21:25" fixdate="2013-05-31 11:56:42" resolution="Done">
+		<buginformation>
+			<summary>fab ignore the proxy configuration in settings.xml</summary>
+			<description></description>
+			<version>jboss-fuse-6.0</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.fab.MavenRepositorySystemSession.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="605" opendate="2013-02-27 19:11:28" fixdate="2013-08-20 18:42:35" resolution="Done">
+		<buginformation>
+			<summary>pax-url does not handle escaped characters in url. </summary>
+			<description>Consider a maven repo url like 
+http://user%40domain.org:password@localhost:8081/artifactory/libs-release@id=artifactory
+added to etc/org.ops4j.pax.url.cfg.
+The url contains also sets the username (user@domain.org) and password (password) credentials to be used. user@domain.org is correctly escaped using %40.
+Trying to resolve an artifact from that repository however fails. pax-url simply Base 64 encodes the credentials "user%40domain.org:password", rather than "user@domain.org:password". On the server side the user user%40domain.org is unknown (whereas a user user@domain.org is known) and so a 401 Bad credentials HTTP error is returned. 
+Pax-url should un-escape these characters (%40 and others) before trying to use the url.
+I hope the list at http://www.w3schools.com/tags/ref_urlencode.asp is fairly exhaustive.</description>
+			<version>fuse-esb-7.1.0</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.agent.utils.URLUtils.java</file>
+			<file type="M">org.fusesource.fabric.maven.impl.MavenUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="937" opendate="2013-10-10 18:38:04" fixdate="2013-10-10 21:44:37" resolution="Done">
+		<buginformation>
+			<summary>Invalid parent profile of jboss-fuse-full profile</summary>
+			<description>"jboss-fuse-medium" profile which is parent of "jboss-fuse-full" profile has as a parent "amq" profile, which doesn&amp;amp;apos;t exists. It should be "mq-amq"</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.git.internal.CachingGitDataStore.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">932</link>
+		</links>
+	</bug>
+	<bug id="932" opendate="2013-10-10 11:22:29" fixdate="2013-10-11 12:06:37" resolution="Done">
+		<buginformation>
+			<summary>Cannot visualize child container info from hawtio</summary>
+			<description>Using jboss-fuse-6.1.0.redhat-114, when we try to create a container with profile jboss-medium, jboss-full .... then the following error appears on the screen (Hawtio) even if the container is well created :
+JBossFuse:karaf@root&amp;gt; fabric:container-create-child --profile jboss-fuse-full root demo
+Jmx Login for root: admin
+Jmx Password for root: 
+The following containers have been created successfully:
+	Container: demo.
+JBossFuse:karaf@root&amp;gt; fabric:container-list
+[id] [version] [alive] [profiles] [provision status]
+root*                          1.0       true    fabric, fabric-ensemble-0000-1                     success
+  demo                         1.0       true    jboss-fuse-full                                    
+See gist error : https://gist.github.com/cmoulliard/6914237</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.git.internal.CachingGitDataStore.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">903</link>
+			<link type="Duplicate" description="is duplicated by">937</link>
+		</links>
+	</bug>
+	<bug id="936" opendate="2013-10-10 18:36:16" fixdate="2013-10-11 13:08:25" resolution="Done">
+		<buginformation>
+			<summary>Inconsistency of creating fabric from Hawtio and Shell Console</summary>
+			<description>When creating fabric through shell console the profiles assigned to container are:  fabric, fabric-ensemble-0000-1
+In this case ActiveMQ is stopped
+When creating fabric through Hawtio the profiles assigned to root container are: fabric, fabric-ensemble-0000-1, fabric, hawtio, jboss-fuse-full
+In this case ActiveMQ is still running
+Which behavior is correct?</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.fabric.boot.commands.Create.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1035" opendate="2013-12-06 11:25:53" fixdate="2013-12-13 08:13:42" resolution="Done">
+		<buginformation>
+			<summary>Error when installing jpa-hibernate</summary>
+			<description>When I try:
+features:install jpa-hibernate
+I get:
+Error executing command: Jar is not a bundle, no Bundle-SymbolicName mvn:org.springframework/spring-jdbc/3.2.4.RELEASE</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.extra.EsbFeaturesTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1150" opendate="2014-01-24 11:34:51" fixdate="2014-01-27 12:06:15" resolution="Done">
+		<buginformation>
+			<summary>Error importing files into fabric using CLI</summary>
+			<description>Trying to import broker config into a newly created fabric results in the following error...
+Error executing command: Path must not end with / character
+When running in debug I can see that the path causing the stacktrace below is..
+/fabric/configs/versions/1.0/profiles/mq-base/my-broker.xml/
+Looks like a forward slash is being appended to the target path.
+Stacktrace..
+    13:39:06,307 | INFO  | l Console Thread | Console                          | 16 - org.apache.karaf.shell.console - 2.3.0.redhat-610321 | Exception caught while executing command
+    java.lang.IllegalArgumentException: Path must not end with / character
+    at org.apache.zookeeper.common.PathUtils.validatePath(PathUtils.java:58)[56:io.fabric8.fabric-zookeeper:1.0.0.redhat-321]
+    at org.apache.zookeeper.ZooKeeper.exists(ZooKeeper.java:1020)[56:io.fabric8.fabric-zookeeper:1.0.0.redhat-321]
+    at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:172)[56:io.fabric8.fabric-zookeeper:1.0.0.redhat-321]
+    at org.apache.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:161)[56:io.fabric8.fabric-zookeeper:1.0.0.redhat-321]
+    at org.apache.curator.RetryLoop.callWithRetry(RetryLoop.java:107)[56:io.fabric8.fabric-zookeeper:1.0.0.redhat-321]
+    at org.apache.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:157)[56:io.fabric8.fabric-zookeeper:1.0.0.redhat-321]</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">fabric.fabric-zookeeper.src.test.java.io.fabric8.zookeeper.utils.ZookeeperImportUtilsTest.java</file>
+			<file type="M">fabric.fabric-zookeeper.src.main.java.io.fabric8.zookeeper.utils.ZookeeperImportUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1236" opendate="2014-02-21 23:42:18" fixdate="2014-02-22 19:00:18" resolution="Done">
+		<buginformation>
+			<summary>NPE when installing the first patch on a standalone container</summary>
+			<description>When installing the first patch created with the script in ENTESB-1154, I noticed this NPE on the console.
+
+
+
+
+
+
+java.lang.NullPointerException
+
+
+
+
+	at java.util.Hashtable.put(Hashtable.java:542)
+
+
+
+
+	at org.fusesource.patch.impl.ServiceImpl.saveResult(ServiceImpl.java:286)
+
+
+
+
+	at org.fusesource.patch.impl.ServiceImpl$1.run(ServiceImpl.java:435)
+
+
+
+
+
+
+This appears to be caused by the fact that there&amp;amp;apos;s no override.properties before installing the first patch, causing this NPE when the null value for the overrides is written to the properties file.</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.patch.impl.Utils.java</file>
+			<file type="M">org.fusesource.patch.impl.ServiceImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1225" opendate="2014-02-20 12:11:12" fixdate="2014-02-25 10:07:42" resolution="Done">
+		<buginformation>
+			<summary>Fabric Karaf Help command does not display something</summary>
+			<description>fabric:create --help don&amp;amp;apos;t display anymore the description, syntax and options  of the command
+
+
+
+
+
+
+100% [========================================================================]
+
+
+
+
+
+
+
+
+
+      _ ____                  ______
+
+
+
+
+     | |  _ \                |  ____|
+
+
+
+
+     | | |_) | ___  ___ ___  | |__ _   _ ___  ___
+
+
+
+
+ _   | |  _ &amp;lt; / _ \/ __/ __| |  __| | | / __|/ _ \
+
+
+
+
+| |__| | |_) | (_) \__ \__ \ | |  | |_| \__ \  __/
+
+
+
+
+ \____/|____/ \___/|___/___/ |_|   \__,_|___/\___|
+
+
+
+
+
+
+
+
+
+  JBoss Fuse (6.1.0.redhat-346)
+
+
+
+
+  http://www.redhat.com/products/jbossenterprisemiddleware/fuse/
+
+
+
+
+
+
+
+
+
+Hit &amp;amp;apos;&amp;lt;tab&amp;gt;&amp;amp;apos; for a list of available commands
+
+
+
+
+and &amp;amp;apos;[cmd] --help&amp;amp;apos; for help on a specific command.
+
+
+
+
+
+
+
+
+
+Open a browser to http://localhost:8181 to access the management console
+
+
+
+
+
+
+
+
+
+Create a new Fabric via &amp;amp;apos;fabric:create&amp;amp;apos;
+
+
+
+
+or join an existing Fabric via &amp;amp;apos;fabric:join [someUrls]&amp;amp;apos;
+
+
+
+
+
+
+
+
+
+Hit &amp;amp;apos;&amp;lt;ctrl-d&amp;gt;&amp;amp;apos; or &amp;amp;apos;osgi:shutdown&amp;amp;apos; to shutdown JBoss Fuse.
+
+
+
+
+
+
+
+
+
+JBossFuse:karaf@root&amp;gt; fabric:create --help
+
+
+
+
+JBossFuse:karaf@root&amp;gt;
+
+
+
+
+
+</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">fabric.fabric-boot-commands.src.main.java.io.fabric8.boot.commands.CreateAction.java</file>
+			<file type="M">fabric.fabric-boot-commands.src.main.java.io.fabric8.boot.commands.JoinAction.java</file>
+			<file type="M">fabric.fabric-boot-commands.src.main.java.io.fabric8.boot.commands.CreateCommand.java</file>
+			<file type="M">fabric.fabric-boot-commands.src.main.java.io.fabric8.boot.commands.JoinCommand.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1249" opendate="2014-02-25 12:56:34" fixdate="2014-02-26 14:13:29" resolution="Done">
+		<buginformation>
+			<summary>patch:simulate should not update etc/startup.properties</summary>
+			<description>While running patch:simulate to look into a problem with the patching mechanism, I noticed this output:
+
+
+
+
+
+
+JBossFuse:karaf@root&amp;gt; patch:simulate fabric-zookeeper-patch 
+
+
+
+
+DEBUG: Applying patch: fabric-zookeeper-patch / null
+
+
+
+
+DEBUG: Adding artifact: mvn:io.fabric8/fabric-zookeeper/1.0.0.redhat-35X
+
+
+
+
+DEBUG: Overwriting startup.properties with: io.fabric8:fabric-zookeeper:1.0.0.redhat-35X
+
+
+
+
+DEBUG: Adding artifact: mvn:io.fabric8/fabric-zookeeper-commands/1.0.0.redhat-35X
+
+
+
+
+Bundles to update:
+
+
+
+
+    io.fabric8.fabric-zookeeper/1.0.0.redhat-350 with mvn:io.fabric8/fabric-zookeeper/1.0.0.redhat-35X
+
+
+
+
+Installation will begin.  The connection may be lost or the console restarted.
+
+
+
+
+[name]                                   [old]      [new]     
+
+
+
+
+io.fabric8.fabric-zookeeper              1.0.0.redhat-350 1.0.0.redhat-35X
+
+
+
+
+
+
+It looks like the simulate step already updated my etc/startup.properties file.</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.patch.impl.ServiceImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1181" opendate="2014-02-10 21:44:32" fixdate="2014-02-26 18:05:37" resolution="Done">
+		<buginformation>
+			<summary>Libraries in profile cause container deployment to fail</summary>
+			<description>Adding the following library configuration to example-camel-sap profile causes deployment of child &amp;amp;apos;sap&amp;amp;apos; container to fail: 
+lib.sapjco3.jar = file:///Users/wcollins/Dev/sapjco3-darwinintel64-3.0.8/sapjco3.jar
+lib.libsapjco3.jnilib = file:///Users/wcollins/Dev/sapjco3-darwinintel64-3.0.8/libsapjco3.jnilib
+The following exception is observed in child &amp;amp;apos;sap&amp;amp;apos; container log: 
+2014-02-10 16:26:07,844 | ERROR | pool-36-thread-1 | ConfigInjection                  | .api.scr.support.ConfigInjection   51 | 59 - io.fabric8.fabric-api - 1.0.0.redhat-328 | Failed to inject configuration 
+{service.pid=io.fabric8.datastore, type=caching-git, component.name=io.fabric8.datastore, component.id=34, gitPullPeriod=1000}
+ into io.fabric8.git.internal.CachingGitDataStore@185e093f
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at io.fabric8.api.scr.support.ConfigInjection.normalizePropertyName(ConfigInjection.java:171)
+	at io.fabric8.api.scr.support.ConfigInjection.injectMetaTypePropertyValue(ConfigInjection.java:142)
+	at io.fabric8.api.scr.support.ConfigInjection.applyConfiguration(ConfigInjection.java:91)
+	at io.fabric8.api.scr.support.ConfigInjection.applyConfiguration(ConfigInjection.java:47)
+	at io.fabric8.git.internal.CachingGitDataStore.activate(CachingGitDataStore.java:98)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[:1.6.0_65]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)[:1.6.0_65]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)[:1.6.0_65]
+	at java.lang.reflect.Method.invoke(Method.java:597)[:1.6.0_65]
+	at org.apache.felix.scr.impl.helper.BaseMethod.invokeMethod(BaseMethod.java:231)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.helper.BaseMethod.access$500(BaseMethod.java:39)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.helper.BaseMethod$Resolved.invoke(BaseMethod.java:624)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.helper.BaseMethod.invoke(BaseMethod.java:508)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.helper.ActivateMethod.invoke(ActivateMethod.java:149)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createImplementationObject(SingleComponentManager.java:315)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.createComponent(SingleComponentManager.java:127)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getService(SingleComponentManager.java:879)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.SingleComponentManager.getServiceInternal(SingleComponentManager.java:846)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.AbstractComponentManager.activateInternal(AbstractComponentManager.java:874)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:931)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.DependencyManager$SingleStaticCustomizer.addedService(DependencyManager.java:895)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1480)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.customizerAdded(ServiceTracker.java:1401)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.trackAdding(ServiceTracker.java:1210)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.ServiceTracker$AbstractTracked.track(ServiceTracker.java:1148)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.scr.impl.manager.ServiceTracker$Tracked.serviceChanged(ServiceTracker.java:1432)[79:org.apache.felix.scr:1.8.0.redhat-610340]
+	at org.apache.felix.framework.util.EventDispatcher.invokeServiceListenerCallback(EventDispatcher.java:934)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at org.apache.felix.framework.util.EventDispatcher.fireEventImmediately(EventDispatcher.java:795)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at org.apache.felix.framework.util.EventDispatcher.fireServiceEvent(EventDispatcher.java:544)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at org.apache.felix.framework.Felix.fireServiceEvent(Felix.java:4666)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at org.apache.felix.framework.Felix.registerService(Felix.java:3674)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:347)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at org.apache.felix.framework.BundleContextImpl.registerService(BundleContextImpl.java:353)[org.apache.felix.framework-4.0.3.redhat-610328.jar:]
+	at io.fabric8.zookeeper.curator.ManagedCuratorFramework$State.stateChanged(ManagedCuratorFramework.java:134)[52:io.fabric8.fabric-zookeeper:1.0.0.redhat-328]
+	at org.apache.curator.framework.state.ConnectionStateManager$2.apply(ConnectionStateManager.java:189)[52:io.fabric8.fabric-zookeeper:1.0.0.redhat-328]
+	at org.apache.curator.framework.state.ConnectionStateManager$2.apply(ConnectionStateManager.java:185)[52:io.fabric8.fabric-zookeeper:1.0.0.redhat-328]
+	at org.apache.curator.framework.listen.ListenerContainer$1.run(ListenerContainer.java:92)[52:io.fabric8.fabric-zookeeper:1.0.0.redhat-328]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)[:1.6.0_65]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)[:1.6.0_65]
+	at java.lang.Thread.run(Thread.java:695)[:1.6.0_65]</description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">fabric.fabric-agent.src.main.java.io.fabric8.agent.download.SimpleDownloadTask.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1260" opendate="2014-03-03 00:58:02" fixdate="2014-03-07 19:36:44" resolution="Done">
+		<buginformation>
+			<summary>HTTP/FTP Deployment URL&amp;apos;s for Libraries are not supported</summary>
+			<description>HTTP/FTP deployment URL&amp;amp;apos;s for libraries do not resolve when placed in profiles; file deployment URL&amp;amp;apos;s for libraries however do resolve. A network deployment URL will be required in order to support deployment of libraries across the distributed fabric environment. </description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">fabric.fabric-agent.src.main.java.io.fabric8.agent.download.SimpleDownloadTask.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="1154" opendate="2014-01-28 20:13:29" fixdate="2014-04-25 15:13:21" resolution="Done">
+		<buginformation>
+			<summary>Create dummy patch jars to test patch</summary>
+			<description>Hi, 
+WE need to create some sort of test jars to test the patching capabilities of 6.1.  The following areas should be covered:
+1. Fabric container
+2. Non-fabric container
+I don&amp;amp;apos;t think this needs to be fancy. I&amp;amp;apos;m thinking of some  jars that when installed/started  print a message to the log which we can grep. Hopefully we can automate part of the test. Probably best to do some checks in Fabric itself, MQ, Camel. </description>
+			<version>jboss-fuse-6.1</version>
+			<fixedVersion>jboss-fuse-6.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">fabric.fabric-core.src.main.java.io.fabric8.service.PatchServiceImpl.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">1327</link>
+		</links>
+	</bug>
+	<bug id="2202" opendate="2014-11-18 14:50:09" fixdate="2014-11-27 09:42:31" resolution="Done">
+		<buginformation>
+			<summary>connector features does not install</summary>
+			<description>features:install connector give me:
+
+
+
+
+
+
+2014-11-18 15:47:47,680 | ERROR | l Console Thread | Console                          | ?                                   ? | 28 - org.apache.karaf.shell.console - 2.4.0.redhat-620047 | Exception caught while executing command
+
+
+
+
+java.lang.Exception: Can not resolve feature:
+
+
+
+
+Unsatisfied requirement(s):
+
+
+
+
+---------------------------
+
+
+
+
+   package:(&amp;amp;(package=javax.resource.spi)(version&amp;gt;=1.6.0)(!(version&amp;gt;=2.0.0)))
+
+
+
+
+      Geronimo TxManager :: Connector
+
+
+
+
+   package:(&amp;amp;(package=javax.resource)(version&amp;gt;=1.6.0)(!(version&amp;gt;=2.0.0)))
+
+
+
+
+      Geronimo TxManager :: Connector
+
+
+
+
+   package:(&amp;amp;(package=javax.resource.spi.endpoint)(version&amp;gt;=1.6.0)(!(version&amp;gt;=2.0.0)))
+
+
+
+
+      Geronimo TxManager :: Connector
+
+
+
+
+   package:(&amp;amp;(package=javax.resource.spi.work)(version&amp;gt;=1.6.0)(!(version&amp;gt;=2.0.0)))
+
+
+
+
+      Geronimo TxManager :: Connector
+
+
+
+
+
+
+
+
+
+	at org.apache.karaf.features.obr.internal.ObrResolver.resolve(ObrResolver.java:129)[12:org.apache.karaf.features.obr:2.4.0.redhat-620047]
+
+
+
+
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.resolve(FeaturesServiceImpl.java:717)[9:org.apache.karaf.features.core:2.4.0.redhat-620047]
+
+
+
+
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.doInstallFeature(FeaturesServiceImpl.java:672)[9:org.apache.karaf.features.core:2.4.0.redhat-620047]
+
+
+
+
+	at org.apache.karaf.features.internal.FeaturesServiceImpl.doInstallFeatures(FeaturesServiceImpl.java:432)[9:org.apache.karaf.features.core:2.4.0.redhat-620047]
+
+
+
+
+	at org.apache.karaf.features.internal.FeaturesServiceImpl$1.call(FeaturesServiceImpl.java:402)[9:org.apache.karaf.features.core:2.4.0.redhat-620047]
+
+
+
+
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)[:1.8.0_20]
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)[:1.8.0_20]
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)[:1.8.0_20]
+
+
+
+
+	at java.lang.Thread.run(Thread.java:745)[:1.8.0_20]
+
+
+
+
+
+</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.extra.EsbFeaturesTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2305" opendate="2014-12-10 09:36:23" fixdate="2014-12-10 10:57:44" resolution="Done">
+		<buginformation>
+			<summary>[RH-Support] SUPPORT attachement populated only in case of a Fabric environment</summary>
+			<description>SUPPORT archive is empty in case of not fabric environemnt. I have to verify if it depends on OSGi dependencies and eventually if it&amp;amp;apos;s the case to decouple between fabric and no-fabric</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">tooling.rh-support.support-karaf.src.main.java.io.fabric8.support.karaf.CommandCollector.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2592" opendate="2015-02-02 20:27:37" fixdate="2015-02-02 22:55:45" resolution="Done">
+		<buginformation>
+			<summary>Unmarshalling of IDoc Document List does not initialize root segment class</summary>
+			<description>When unmarshaling IDoc Document List the internal filed rootSegmentClass is not initialized resulting in Null Pointer exception when attempting to send list through SAP IDoc Document List endpoint. </description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.idoc.impl.SegmentImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.idoc.impl.DocumentListImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2620" opendate="2015-02-06 14:42:08" fixdate="2015-02-06 16:05:05" resolution="Done">
+		<buginformation>
+			<summary>ABAP &amp;apos;SPACE&amp;apos; keyword assigned as default value in JCo meta-data instead of space character</summary>
+			<description>ABAP defines the keyword SPACE to specify a single space character in ABAP programs. This keyword is used regularly to specify the default value of a single character CHAR parameter in remote function module interfaces. The meta data for this parameter from the JCo runtime will indicate the default value for it using the keyword (i.e. literally the character string &amp;amp;apos;SPACE&amp;amp;apos;) instead of the character string &amp;amp;apos; &amp;amp;apos;. This causes the data layer of the SAP components to use the character string &amp;amp;apos;SPACE&amp;amp;apos; for the value of the parameter instead of &amp;amp;apos; &amp;amp;apos; when the parameter is not specified. </description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.src.org.fusesource.camel.component.sap.util.RfcUtil.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2582" opendate="2015-01-29 22:39:25" fixdate="2015-02-19 02:27:09" resolution="Done">
+		<buginformation>
+			<summary>Valid XML Documents for IDocs and SAP Structures failing to unmarshal</summary>
+			<description>XML Documents containing the serialized contents of SAP IDocs and Structure are failing to unmarshal. This occurs only when a Data Layer Run time object of given type has never been created before.</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedIDocDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcServerComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapIDocDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedRfcDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedIDocListDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedIDocListDestinationComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedIDocDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListDestinationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2910" opendate="2015-03-23 18:12:06" fixdate="2015-03-24 12:06:03" resolution="Done">
+		<buginformation>
+			<summary>SAP Camel Component needs to unregister its Data Providers in OSGi environment</summary>
+			<description>The SAP Camel Component must register a pair of Data Providers with the JCo3 runtime&amp;amp;apos;s &amp;amp;apos;Environment&amp;amp;apos; singleton object in order to provide connection configurations. Only one pair of Data Provider objects can be registered in a JVM at one time. To enable reinstalling the SAP Camel Component bundle, the component bundle must unregister its data provider objects when being uninstalled s.t. component bundle can reinstall new data provider objects when it is reinstalled. </description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.src.org.fusesource.camel.component.sap.Activator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2913" opendate="2015-03-24 18:23:51" fixdate="2015-03-24 19:13:53" resolution="Done">
+		<buginformation>
+			<summary>SAP Camel Component Unit Tests Failing</summary>
+			<description></description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedRfcDestinationComponentConfigurationAndDocumentationTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcServerComponentConfigurationAndDocumentationTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcServerComponentConfigurationAndDocumentationTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcDestinationComponentConfigurationAndDocumentationTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcDestinationComponentConfigurationAndDocumentationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2980" opendate="2015-04-02 14:48:00" fixdate="2015-04-02 16:27:51" resolution="Done">
+		<buginformation>
+			<summary>SAP Camel Server Components needs to stop and release JCo Servers</summary>
+			<description>SAP Camel Server Components needs to stop and release JCo Servers when application bundle is uninstalled. If not subsequent installs of application bundles will not install/reinstall.</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapRfcServerComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapRfcTestSupport.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapIDocTestSupport.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="blocks">3177</link>
+		</links>
+	</bug>
+	<bug id="3008" opendate="2015-04-13 09:04:48" fixdate="2015-04-16 12:57:58" resolution="Done">
+		<buginformation>
+			<summary>Compile errors in camel-sap component</summary>
+			<description>The camel-sap component gets several compile errors because of the addition of title to the UrlEndpoint annotation in CAMEL-8558.  I will add a temporary fix so we can get perfectus to run and then turn this over to Bill.</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcServerEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedRfcDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedIDocListDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedIDocDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcServerEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3072" opendate="2015-04-22 01:52:18" fixdate="2015-04-22 11:43:09" resolution="Done">
+		<buginformation>
+			<summary>SAP Camel Server Components do not return responses</summary>
+			<description>The server components do not return responses to SAP caller.</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.converter.StructureConverter.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapRfcServerEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.converter.DocumentListConverter.java</file>
+			<file type="M">org.fusesource.camel.component.sap.converter.DocumentConverter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="2787" opendate="2015-03-06 14:44:06" fixdate="2015-04-22 13:26:20" resolution="Done">
+		<buginformation>
+			<summary>Camel SAP - Spring container - Could not initialize class org.eclipse.emf.ecore.xml.type.XMLTypePackage</summary>
+			<description>It is not possible to convert SAP request from String object to org.fusesource.camel.component.sap.model.rfc.Structure object.
+
+
+
+
+
+
+Error during type conversion from type: java.lang.String to the required type: org.fusesource.camel.component.sap.model.rfc.Structure
+
+
+
+
+...
+
+
+
+
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class org.eclipse.emf.ecore.xml.type.XMLTypePackage
+
+
+
+
+        at org.eclipse.emf.ecore.xmi.impl.XMLHelperImpl.&amp;lt;init&amp;gt;(XMLHelperImpl.java:85)
+
+
+
+
+
+</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RFCImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapIDocListConsumerTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcConsumerTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RepositoryDataStoreImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.DestinationDataEntryImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.FieldMetaDataImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcProducerTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.TIDStoreEntryImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RepositoryDataStoreEntryImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.DestinationImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.FunctionTemplateImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.DestinationDataImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.idoc.impl.DocumentListImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalRfcConsumerTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ListFieldMetaDataImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ServerImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RepositoryDataImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.DestinationDataStoreEntryImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.idoc.impl.SegmentListImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.TIDStoreImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RepositoryDataEntryImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.AbapExceptionImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ResponseImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RequestImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ServerDataImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapQueuedRfcProducerTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.StructureImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcServerComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ServerDataStoreImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.idoc.impl.DocumentImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.DestinationDataStoreImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ServerDataEntryImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapRfcTestSupport.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapIDocTestSupport.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.idoc.impl.SegmentChildrenImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.RecordMetaDataImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.TableImpl.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapSynchronousRfcProducerTest.java</file>
+			<file type="M">org.fusesource.camel.component.sap.model.src.org.fusesource.camel.component.sap.model.rfc.impl.ServerDataStoreEntryImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3040" opendate="2015-04-17 06:35:49" fixdate="2015-04-22 14:47:29" resolution="Done">
+		<buginformation>
+			<summary>EsbProfileRedeployTest fails with java.lang.SecurityException: Insufficient credentials.</summary>
+			<description>This  test has been failing regularly with the exception below.  I will add an @Ignore so pull request builds can complete.
+java.lang.SecurityException: Insufficient credentials.
+	at org.apache.karaf.service.guard.impl.GuardProxyCatalog$ProxyInvocationListener.preInvoke(GuardProxyCatalog.java:529)
+	at org.apache.aries.proxy.impl.ProxyHandler$1.invoke(ProxyHandler.java:52)
+	at org.apache.aries.proxy.impl.ProxyHandler.invoke(ProxyHandler.java:119)
+	at io.fabric8.commands.$ContainerConnect1559360197.execute(Unknown Source)
+	at org.apache.felix.gogo.runtime.CommandProxy.execute(CommandProxy.java:78)
+	at org.apache.felix.gogo.runtime.Closure.executeCmd(Closure.java:477)
+	at org.apache.felix.gogo.runtime.Closure.executeStatement(Closure.java:403)
+	at org.apache.felix.gogo.runtime.Pipe.run(Pipe.java:108)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:183)
+	at org.apache.felix.gogo.runtime.Closure.execute(Closure.java:120)
+	at org.apache.felix.gogo.runtime.CommandSessionImpl.execute(CommandSessionImpl.java:92)
+	at io.fabric8.tooling.testing.pax.exam.karaf.FabricKarafTestSupport$1$1.run(FabricKarafTestSupport.java:220)
+	at io.fabric8.tooling.testing.pax.exam.karaf.FabricKarafTestSupport$1$1.run(FabricKarafTestSupport.java:206)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:356)
+	at io.fabric8.tooling.testing.pax.exam.karaf.FabricKarafTestSupport$1.call(FabricKarafTestSupport.java:206)
+	at io.fabric8.tooling.testing.pax.exam.karaf.FabricKarafTestSupport$1.call(FabricKarafTestSupport.java:194)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.basic.fabric.EsbProfileLongTest.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.fabric.EsbProfileTest.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.EsbProfileRedeployTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3276" opendate="2015-05-20 15:30:59" fixdate="2015-05-26 17:39:56" resolution="Done">
+		<buginformation>
+			<summary>Bug in meta-data for sap-idoclist-server endpoint affecting Karaf console help</summary>
+			<description>In the following file:
+
+
+
+
+
+
+org.fusesource.camel.component.sap.SapTransactionalIDocListServerEndpoint
+
+
+
+
+
+
+The @UriEndpoint annotation gives the wrong syntax:
+
+
+
+
+
+
+@UriEndpoint(scheme = "sap-idoclist-server", consumerClass =
+
+
+
+
+SapTransactionalIDocListConsumer.class, syntax =
+
+
+
+
+"sap-idoclist-server:server:rfc", consumerOnly = true, title="SAP IDoc
+
+
+
+
+List Server")
+
+
+
+
+
+
+Presumably, the syntax is probably meant to be something like (taking the @UriPath fields into account):
+
+
+
+
+
+
+syntax = "sap-idoclist-server:serverName:idocType:idocTypeExtension:systemRelease:applicationRelease"
+
+
+
+
+
+</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion> jboss-fuse-6.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.SapIDocDestinationEndpoint.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3522" opendate="2015-06-29 14:21:42" fixdate="2015-07-13 13:03:35" resolution="Done">
+		<buginformation>
+			<summary>Move Repository Data Stores to SAP Configuration to support Blueprint</summary>
+			<description>The repository data stores for SAP components do not properly initialize in Blueprint containers and should be moved into the central SAP Configuration object where connection configurations are maintained. </description>
+			<version>jboss-fuse-6.2.1</version>
+			<fixedVersion>jboss-fuse-6.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.DestinationRfcTransactionHandler.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapRfcServerComponent.java</file>
+			<file type="M">org.fusesource.camel.component.sap.SapConnectionConfiguration.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3457" opendate="2015-06-18 16:35:17" fixdate="2015-07-30 18:13:32" resolution="Done">
+		<buginformation>
+			<summary>Fuse camel-sap SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest test fails</summary>
+			<description>The SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest is failing on Jenkins with the error below.  I will add an @Ignore to allow the build to proceed for now.
+Stacktrace
+java.lang.AssertionError: null
+	at org.junit.Assert.fail(Assert.java:86)
+	at org.junit.Assert.assertTrue(Assert.java:41)
+	at org.junit.Assert.assertTrue(Assert.java:52)
+	at org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest.testComponentConfiguration(SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest.java:45)
+Standard Output
+[                          main] figurationAndDocumentationTest INFO  ********************************************************************************
+[                          main] figurationAndDocumentationTest INFO  Testing: testComponentConfiguration(org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest)
+[                          main] figurationAndDocumentationTest INFO  ********************************************************************************
+[                          main] figurationAndDocumentationTest INFO  ********************************************************************************
+[                          main] figurationAndDocumentationTest INFO  Testing done: testComponentConfiguration(org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest)
+[                          main] figurationAndDocumentationTest INFO  Took: 0.127 seconds (127 millis)
+[                          main] figurationAndDocumentationTest INFO  ********************************************************************************
+[                          main] DefaultCamelContext            INFO  Apache Camel 2.15.1.redhat-620124 (CamelContext: camel-1) is shutting down
+[                          main] DefaultCamelContext            INFO  Apache Camel 2.15.1.redhat-620124 (CamelContext: camel-1) uptime not started
+[                          main] DefaultCamelContext            INFO  Apache Camel 2.15.1.redhat-620124 (CamelContext: camel-1) is shutdown in 0.005 seconds</description>
+			<version>jboss-fuse-6.2.1</version>
+			<fixedVersion>jboss-fuse-6.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.camel.component.sap.SapTransactionalIDocListServerComponentConfigurationAndDocumentationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3099" opendate="2015-04-27 11:35:23" fixdate="2015-09-03 15:28:13" resolution="Done">
+		<buginformation>
+			<summary>Quickstarts should build without warnings; most should work without fabric</summary>
+			<description>The first quickstart that beginners are directed to is camel-log.
+Would it be better if 1st quickstart was one without fabric?
+Running camel-log following instructions in README gives lots of warnings then fails wilth following error
+[INFO] No tests to run.
+[INFO]
+[INFO]  maven-bundle-plugin:2.3.7:bundle (default-bundle) @ beginner-camel-lo
+g 
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Instructions in Export-Package that are never used: io\.fabric8\..*|io\
+.fabric8
+Classpath: Jar:.,Jar:camel-blueprint,Jar:camel-core,Jar:slf4j-api,Jar:camel-core
+-xml,Jar:camel-core-osgi,Jar:jaxb-core,Jar:jaxb-impl
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : No translation found for macro: body
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : No translation found for macro: sys.runtime.id
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Superfluous export-package instructions: [io.fabric8.*]
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for io.fabric8.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.apache.camel.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.apache.commons.logging.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.apache.felix.gogo.commands.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.apache.felix.service.command.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.osgi.service.component.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.springframework.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for org.springframework.osgi.*
+[WARNING] Bundle org.jboss.quickstarts.fuse:beginner-camel-log:bundle:6.2.0.redh
+at-109 : Did not find matching referal for scala*
+[INFO]
+[INFO]  maven-source-plugin:2.2.1:jar-no-fork (attach-sources) @ beginner-cam
+el-log 
+[INFO]
+[INFO]  maven-install-plugin:2.4:install (default-install) @ beginner-camel-l
+og 
+[INFO] Installing C:\Fuse\jboss-fuse-6.2.0.redhat-109\quickstarts\beginner\camel
+-log\target\shared.jar to C:\Users\aileenc\.m2\repository\org\jboss\quickstarts\
+fuse\beginner-camel-log\6.2.0.redhat-109\beginner-camel-log-6.2.0.redhat-109.jar
+[INFO] Installing C:\Fuse\jboss-fuse-6.2.0.redhat-109\quickstarts\beginner\camel
+-log\pom.xml to C:\Users\aileenc\.m2\repository\org\jboss\quickstarts\fuse\begin
+ner-camel-log\6.2.0.redhat-109\beginner-camel-log-6.2.0.redhat-109.pom
+[INFO] Installing C:\Fuse\jboss-fuse-6.2.0.redhat-109\quickstarts\beginner\camel
+-log\target\shared-sources.jar to C:\Users\aileenc\.m2\repository\org\jboss\quic
+kstarts\fuse\beginner-camel-log\6.2.0.redhat-109\beginner-camel-log-6.2.0.redhat
+-109-sources.jar
+[INFO]
+[INFO]  maven-bundle-plugin:2.3.7:install (default-install) @ beginner-camel-
+log 
+[INFO] Local OBR update disabled (enable with -DobrRepository)
+[INFO]
+[INFO] &amp;lt;&amp;lt;&amp;lt; fabric8-maven-plugin:1.2.0.redhat-109:deploy (default-cli) @ beginner
+-camel-log &amp;lt;&amp;lt;&amp;lt;
+[INFO]
+[INFO]  fabric8-maven-plugin:1.2.0.redhat-109:deploy (default-cli) @ beginner
+-camel-log 
+[INFO] Uploading file C:\Fuse\jboss-fuse-6.2.0.redhat-109\quickstarts\beginner\c
+amel-log\pom.xml
+Uploading: http://samsung_rv511:8181/maven/upload/org/jboss/quickstarts/fuse/beg
+inner-camel-log/6.2.0.redhat-109/beginner-camel-log-6.2.0.redhat-109.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 6.201s
+[INFO] Finished at: Mon Apr 27 12:37:36 BST 2015
+[INFO] Final Memory: 32M/351M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal io.fabric8:fabric8-maven-plugin:1.2.0.redhat-109:
+deploy (default-cli) on project beginner-camel-log: Failed to deploy artifacts:
+Could not transfer artifact org.jboss.quickstarts.fuse:beginner-camel-log:pom:6.
+2.0.redhat-109 from/to fabric8.upload.repo (http://samsung_rv511:8181/maven/uplo
+ad/): Failed to transfer file: http://samsung_rv511:8181/maven/upload/org/jboss/
+quickstarts/fuse/beginner-camel-log/6.2.0.redhat-109/beginner-camel-log-6.2.0.re
+dhat-109.pom. Return code is: 401, ReasonPhrase: Unauthorized. -&amp;gt; [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e swit
+ch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please rea
+d the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionE
+xception
+C:\Fuse\jboss-fuse-6.2.0.redhat-109\quickstarts\beginner\camel-log&amp;gt;</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion>jboss-fuse-6.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.quickstarts.fuse.processor.BodyInAggregatingStrategy.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="4961" opendate="2016-02-11 15:00:02" fixdate="2016-03-31 08:12:27" resolution="Done">
+		<buginformation>
+			<summary>Fuse and A-MQ both have the amq:(esb:)check-for-user and amq:(esb:)create-admin-user</summary>
+			<description>IMHO Fuse should just contain: esb:create-admin-user esb:check-for-user and A-MQ should just contain: amq:create-admin-user amq:check-for-user
+
+
+
+
+
+
+JBossA-MQ:karaf@root&amp;gt; esb:check-for-user
+
+
+
+
+No user found in etc/users.properties. Please use the &amp;amp;apos;esb:create-admin-user&amp;amp;apos;
+
+
+
+
+command to create one.
+
+
+
+
+
+
+
+
+
+
+
+
+JBossFuse:karaf@root&amp;gt; amq:create-admin-user 
+
+
+
+
+No user specified. Some features may not be accessible.
+
+
+
+
+
+</description>
+			<version>jboss-fuse-6.3</version>
+			<fixedVersion>jboss-fuse-6.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.jboss.fuse.commands.EsbCheckAdminUser.java</file>
+			<file type="D">org.jboss.fuse.commands.EsbCreateAdminUser.java</file>
+			<file type="D">org.jboss.fuse.commands.AmqCheckAdminUser.java</file>
+			<file type="D">org.jboss.fuse.commands.AmqCreateAdminUser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="5213" opendate="2016-03-30 11:43:09" fixdate="2016-04-01 08:08:39" resolution="Done">
+		<buginformation>
+			<summary>Bump licence headers to 2016</summary>
+			<description></description>
+			<version>jboss-fuse-6.3</version>
+			<fixedVersion>jboss-fuse-6.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.smoke.EsbCoreFeaturesTest.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.fabric.EsbProfileTest.java</file>
+			<file type="M">org.fusesource.esb.itests.pax.exam.karaf.EsbTestSupport.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.fabric.EsbFeatureTest.java</file>
+			<file type="M">org.jboss.fuse.commands.amq.AmqCheckAdminUser.java</file>
+			<file type="M">org.fusesource.esb.itests.smoke.EsbExampleFeaturesTest.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.EsbProfileRedeployTest.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.fabric.EsbProfileLongTest.java</file>
+			<file type="M">org.jboss.fuse.commands.CreateAdminUser.java</file>
+			<file type="M">org.jboss.fuse.commands.amq.AmqCreateAdminUser.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.EsbBootTest.java</file>
+			<file type="M">org.jboss.fuse.commands.esb.EsbCreateAdminUser.java</file>
+			<file type="M">org.jboss.fuse.commands.esb.EsbCheckAdminUser.java</file>
+			<file type="M">org.fusesource.esb.itests.extra.JbossFuseFullFeaturesAvailableTest.java</file>
+			<file type="M">org.fusesource.esb.itests.extra.EsbFeaturesTest.java</file>
+			<file type="M">org.jboss.quickstarts.fuse.salesforce.JsonHelper.java</file>
+			<file type="M">org.fusesource.esb.itests.smoke.EsbKarafFullCoreFeaturesTest.java</file>
+			<file type="M">org.jboss.quickstarts.fuse.processor.BodyInAggregatingStrategy.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.EsbKarafFullBootTest.java</file>
+			<file type="M">org.jboss.fuse.commands.CheckAdminUser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="4622" opendate="2015-12-03 19:44:25" fixdate="2016-06-02 19:42:31" resolution="Done">
+		<buginformation>
+			<summary>Please update file name from jboss-fuse-full to jboss-fuse-karaf</summary>
+			<description>This was meant to be done for 6.2.1 but did not happen. Please correct for 6.3</description>
+			<version> jboss-fuse-6.2</version>
+			<fixedVersion>jboss-fuse-6.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.fusesource.esb.itests.smoke.EsbCoreFeaturesTest.java</file>
+			<file type="M">org.fusesource.esb.itests.pax.exam.karaf.EsbTestSupport.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.fabric.EsbFeatureTest.java</file>
+			<file type="M">org.fusesource.esb.itests.smoke.EsbExampleFeaturesTest.java</file>
+			<file type="M">org.fusesource.esb.itests.basic.EsbBootTest.java</file>
+			<file type="M">org.fusesource.esb.itests.extra.JbossFuseFullFeaturesAvailableTest.java</file>
+			<file type="M">org.fusesource.esb.itests.extra.EsbFeaturesTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">1816</link>
+		</links>
+	</bug>
+</bugrepository>

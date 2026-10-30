@@ -1,0 +1,2810 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12424750",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750",
+  "key": "LUCENE-1630",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312682",
+        "id": "12312682",
+        "description": "Last release (barring major bugs) before migrating to 3.0 and JDK 1.5",
+        "name": "2.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-09-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12127",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12326322",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12326322",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12431840",
+          "key": "LUCENE-1771",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12431840",
+          "fields": {
+            "summary": "Using explain may double ram reqs for fieldcaches when using ValueSourceQuery/CustomScoreQuery or for ConstantScoreQuerys that use a caching Filter.",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26416",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+      "name": "shaie",
+      "key": "shaie",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shai Erera",
+      "active": true,
+      "timeZone": "Asia/Jerusalem"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+      "name": "shaie",
+      "key": "shaie",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shai Erera",
+      "active": true,
+      "timeZone": "Asia/Jerusalem"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1630/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@18f2e806[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@51ad223[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1a3cd5e9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@49e49747[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7558aa69[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@6daddc40[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@11c2cf81[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@7cf13c51[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4c4ada44[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@4f865051[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@483f20e7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@3dd98e05[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:00:35 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2009-06-27T11:15:01.523+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1630/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2009-05-06T20:12:03.338+0000",
+    "updated": "2022-08-28T12:00:35.456+0000",
+    "timeoriginalestimate": null,
+    "description": "This is a spin off of LUCENE-1593. This issue proposes to expose appropriate API on Scorer and Collector such that one can create an optimized Collector based on a given Scorer's doc-id orderness and vice versa. Copied from LUCENE-1593, here is the list of changes:\n\n# Deprecate Weight and create QueryWeight (abstract class) with a new scorer(reader, scoreDocsInOrder), replacing the current scorer(reader) method. QueryWeight implements Weight, while score(reader) calls score(reader, false /* out-of-order */) and scorer(reader, scoreDocsInOrder) is defined abstract.\n#* Also add QueryWeightWrapper to wrap a given Weight implementation. This one will also be deprecated, as well as package-private.\n#* Add to Query variants of createWeight and weight which return QueryWeight. For now, I prefer to add a default impl which wraps the Weight variant instead of overriding in all Query extensions, and in 3.0 when we remove the Weight variants - override in all extending classes.\n# Add to Scorer isOutOfOrder with a default to false, and override in BS to true.\n# Modify BooleanWeight to extend QueryWeight and implement the new scorer method to return BS2 or BS based on the number of required scorers and setAllowOutOfOrder.\n# Add to Collector an abstract _acceptsDocsOutOfOrder_ which returns true/false.\n#* Use it in IndexSearcher.search methods, that accept a Collector, in order to create the appropriate Scorer, using the new QueryWeight.\n#* Provide a static create method to TFC and TSDC which accept this as an argument and creates the proper instance.\n#* Wherever we create a Collector (TSDC or TFC), always ask for out-of-order Scorer and check on the resulting Scorer isOutOfOrder(), so that we can create the optimized Collector instance.\n# Modify IndexSearcher to use all of the above logic.\n\nThe only class I'm worried about, and would like to verify with you, is Searchable. If we want to deprecate all the search methods on IndexSearcher, Searcher and Searchable which accept Weight and add new ones which accept QueryWeight, we must do the following:\n* Deprecate Searchable in favor of Searcher.\n* Add to Searcher the new QueryWeight variants. Here we have two choices: (1) break back-compat and add them as abstract (like we've done with the new Collector method) or (2) add them with a default impl to call the Weight versions, documenting these will become abstract in 3.0.\n* Have Searcher extend UnicastRemoteObject and have RemoteSearchable extend Searcher. That's the part I'm a little bit worried about - Searchable implements java.rmi.Remote, which means there could be an implementation out there which implements Searchable and extends something different than UnicastRemoteObject, like Activeable. I think there is very small chance this has actually happened, but would like to confirm with you guys first.\n* Add a deprecated, package-private, SearchableWrapper which extends Searcher and delegates all calls to the Searchable member.\n* Deprecate all uses of Searchable and add Searcher instead, defaulting the old ones to use SearchableWrapper.\n* Make all the necessary changes to IndexSearcher, MultiSearcher etc. regarding overriding these new methods.\n\nOne other optimization that was discussed in LUCENE-1593 is to expose a topScorer() API (on Weight) which returns a Scorer that its score(Collector) will be called, and additionally add a start() method to DISI. That will allow Scorers to initialize either on start() or score(Collector). This was proposed mainly because of BS and BS2 which check if they are initialized in every call to next(), skipTo() and score(). Personally I prefer to see that in a separate issue, following that one (as it might add methods to QueryWeight).",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411984",
+        "id": "12411984",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-27T10:13:46.319+0000",
+        "size": 870,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411984/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411928",
+        "id": "12411928",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-06-26T15:00:19.651+0000",
+        "size": 4398,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411928/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411306",
+        "id": "12411306",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-06-20T10:02:38.408+0000",
+        "size": 148215,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411306/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411080",
+        "id": "12411080",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-18T15:00:38.900+0000",
+        "size": 147806,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411080/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12410932",
+        "id": "12410932",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-17T13:36:14.955+0000",
+        "size": 147788,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12410932/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12410907",
+        "id": "12410907",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-17T08:11:28.961+0000",
+        "size": 122251,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12410907/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12410769",
+        "id": "12410769",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-16T09:00:33.248+0000",
+        "size": 120829,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12410769/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12410681",
+        "id": "12410681",
+        "filename": "LUCENE-1630.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-15T16:53:35.261+0000",
+        "size": 120688,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12410681/LUCENE-1630.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411805",
+        "id": "12411805",
+        "filename": "LUCENE-1630-2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-25T11:15:27.046+0000",
+        "size": 1315,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411805/LUCENE-1630-2.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Mating Collector and Scorer on doc Id orderness",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12715484",
+          "id": "12715484",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "I want to start working on that once LUCENE-1614 is resolved. In the meantime, I'd like to discuss whether we should define a topScorer() method on Weight, or have Weight introduce a score(Collector) method.\nI think I prefer the latter since even if I call topScorer and get back a Scorer, nothing prevents me from iterating on the Scorer, rather than calling its score(Collector) method. Also, we can deprecate Scorer.score(Collector), and come up w/ another one which is package-private.\n\nAnother thing that was brought up by Mavin:\n\n{quote}\nIf you make QueryWeight a subclass of Query, do you need any new methods?\n\nBefore Weight existed, only Query and Scorer existed. Compiling a Scorer\ninvolved \"weighting the query\", by factoring IDF etc, then calling\nquery.Scorer().  To make Query objects reusable, Weight was introduced as an\nintermediate stage.  Making QueryWeight a subclass of Query would be entirely\nwithin the spirit of the original design, since the role played by Weight was\noriginally performed by a Query.\n\nMarvin Humphrey\n{quote}\n\nToday Weight exposes only few methods, and I don't want to have to implement some of Query methods, just because QueryWeight (the replacement of Weight) will subclass Query. But I don't know enough about what led to that decision.\n\nTo me, it'd be ok to get rid of Weight entirely and just have Query and Scorer, while Query.scorer() do whatever Weight does today. But Marvin mentions reusing Query objects (which I don't fully understand what that means - is it reusing the instance or the code), so I'd like to hear your thoughts.\n\nIf we do get rid of Weight, or make QueryWeight a subclass of Query, it will simplify the Searcher API.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-02T11:29:22.885+0000",
+          "updated": "2009-06-02T11:29:22.885+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12715497",
+          "id": "12715497",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. To me, it'd be ok to get rid of Weight entirely and just have Query and Scorer, while Query.scorer() do whatever Weight does today. But Marvin mentions reusing Query objects (which I don't fully understand what that means - is it reusing the instance or the code), so I'd like to hear your thoughts.\n\nAs far as my understanding goes:\nQuery is reusable instance-wise. Weight is a Query primed with index-dependent stuff, like freqs that are used to calculate the score. Scorer is something that actually iterates on the docs and does the scoring.\nWith per-segment collection you usually get a Query, produce a Weight from it using toplevel IR (most likely MSR), so you have freqs for the whole index, and then get a Scorer for each of the segments and iterate on them.\nI don't see how you can get freqs from toplevel reader and iterate on lower-level reader if you merge Weight and Score.\nMerging Weight and Query back is something I don't like too - I use a huge bunch of pre-parsed Queries that are run against ever-different indexes.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-02T11:53:49.693+0000",
+          "updated": "2009-06-02T11:53:49.693+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12715503",
+          "id": "12715503",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Thanks for the explanation.\n\nCouldn't we can merge Weight with Query in a way that you could still reuse the Query instance? Weight has 6 methods:\n* getQuery will not be required anymore.\n* getValue/sumOfSquareWeigths/normalize - I think these can be part of Query.\n* scorer/explain - can be part of Query and we keep on passing an IndexReader.\nThough I admit I haven't checked all Weight implementations, I think this can work?\n\nIf not, then I believe Marvin's idea to have QueryWeight subclass Query, was to simplify the Searcher API. We can still do that w/o having QW subclass Q, by for example expose only a Weight API on Searcher? Eventually, all the Query search() variants call a Weight variant.\n\nI just think that sub-classing Q by QW is not the right way, just for them to have the same super type ... So if we can't get rid of Weight and stuff all in Query, I think we should stay with the Query, QueryWeight, Scorer separation.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-02T12:12:22.828+0000",
+          "updated": "2009-06-02T12:12:22.828+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12715509",
+          "id": "12715509",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "You can't, because Weights produced from same Query are different for different indexes.\nYou can probably modify Query inplace for a given index, produce some scorers, do scoring, then modify Query for another index, produce scorers, etc..\nBut now your Query is no longer thread-safe, and I can't reuse it from different threads.\n\nSo with all its strange looks the trio of Q, W, S is still the best approach if you ask me.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-02T12:41:23.058+0000",
+          "updated": "2009-06-02T12:41:23.058+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12715516",
+          "id": "12715516",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. So with all its strange looks the trio of Q, W, S is still the best approach if you ask me.\n\nOk, I think I'm convinced. Weight looks like it makes reusing a Query instance easier.\n\nSo how about my other proposal, to get rid of Query-based search methods in Searcher, and stick w/ QueryWeight only? Maybe even add on Searcher a method createWeight(Query) if that's needed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-02T13:03:39.179+0000",
+          "updated": "2009-06-02T13:03:39.179+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12715973",
+          "id": "12715973",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Searcher is supposed to be a little cherry of userfriendliness atop a glass of Lucene murky internals, ain't it?\nI mean, even you had to be explained the ways of Query, Weight and Scorer, what would a Lucene neophyte do if we remove his beloved convenience methods?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-03T16:24:50.991+0000",
+          "updated": "2009-06-03T16:24:50.991+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12718436",
+          "id": "12718436",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Over in LUCENE-1407 I made some comments about deprecating Searchable and moving RMI out from core. It looks like we have a problem - Today RemoteSearchable implements Searchalbe (and by inheritance java.rmi.Remote) as well as extend UnicastRemoteObject. That's because a class has to extend a concrete Remote class, or implement a concrete Remote sub-interface.\n\nAfter refactoring, it will need to extend both Searcher and UnicastRemoteObject. Unless we make Searcher extend UnicastRemoteObject, but that will bring the RMI stuff back into core.\n\nSo either I leave Searchable around, and add a new QueryWeight variant method to it, or we make Searcher extend UnicastRemoteObject and at a later point have RemoteSearchable include some concrete implementation of RemoteServer (i.e., implement on our own, when it's in contrib) and then remove the extension of UnicastRemoteObject by Searcher.\n\nRegarding back-compat, due to the Collector work we already made changes to the interface as well as Searcher, so I don't think that should worry us.\n\nWhat do you think?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-11T12:54:12.207+0000",
+          "updated": "2009-06-11T12:54:12.207+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12718632",
+          "id": "12718632",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Given the changes in LUCENE-1407, I don't think we can deprecate Searchable, but instead change it to include the new QueryWeight methods. Either that or breaking Weight to include the new needed methods.\n\nI lean towards breaking Searchable, since I think there's a much larger chance that there are Weight implementations out there, but only few Searchable/Searcher. And the migration is really simple - just add another method which accepts QueryWeight, and have the Weight variant call the other method with QueryWeightWrapper.\n\nWhat do you think?\n\nMultiSearcher also expects Searchable ... Maybe we should just make Searchable package-private (in 3.0)? That way it will only be extended by RemoteSearchable. MultiSearcher can then move to work w/ Searcher, and have a package-private ctor which accepts Searchable, just in case someone wants to use RemoteSearchable.\n\nI'd like to post a patch soon, so any comments are welcome.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-11T20:44:29.497+0000",
+          "updated": "2009-06-11T20:44:29.497+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12718959",
+          "id": "12718959",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "We could simply declare, going forward, that we may add methods to Searchable?\n\nOr... instead of moving RemoteSearchable out to contrib/remote, we could simply remove it, and state that apps should move to their own means of remoting searching (or, use Solr)?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-12T20:02:43.871+0000",
+          "updated": "2009-06-12T20:02:43.871+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12718963",
+          "id": "12718963",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Keep in mind that it is easier to include a contrib jar than moving an existing infrastructure to Solr. \nWe can still add methods to Searchable and define another interface in contrib/remote. still easier than moving to solr for some people. I'm not an RMI friend but based on all the back conpat discussions we should try to misplease everybody equally.\n\nsimon",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-12T20:13:38.978+0000",
+          "updated": "2009-06-12T20:13:38.978+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12718968",
+          "id": "12718968",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "My plan was to deprecate Searchable and make it package-private in 3.0. That way, we can enjoy both worlds - change Searchable as we want, and use it internally for RemoteSearchable as well as MultiSearcher. We can even not add the new QueryWeight variants to it at this point, since the class will be marked deprecated. We only need them in Searcher.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-12T20:37:11.985+0000",
+          "updated": "2009-06-12T20:37:11.985+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12719188",
+          "id": "12719188",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. We could simply declare, going forward, that we may add methods to Searchable? \n\nI like this approach - there are super-expert classes like this that most don't override or implement, but some do.  It seems better for all involved if it's allowed to stay public with suitable disclaimers and less stringent back compat.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-13T22:21:05.120+0000",
+          "updated": "2009-06-13T22:21:05.120+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12719243",
+          "id": "12719243",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "If that's agreed, then I'll do it and put a NOTE in its javadocs. I'll also remove some deprecated methods (Collector vs. HitCollector). I don't know if I should keep the Weight methods around and change them to QueryWeight in 3.0, or do the change now. Just want to minimize the noise.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-14T10:23:23.709+0000",
+          "updated": "2009-06-14T10:23:23.709+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12719535",
+          "id": "12719535",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Ok I was just about to post the patch, when the Spatial tests failed. After some investigation, I found out the following, and would appreciate your suggestions. IndexSearcher.search(QueryWeight weight, Filter filter, final int nDocs, Sort sort, boolean fillFields) I wrote the following code:\n\n{code}\n    // try to create a Scorer in out-of-order mode, just to know which TFC\n    // version to instantiate.\n    boolean docsScoredInOrder = false;\n    if (subReaders.length > 0) {\n      docsScoredInOrder = !weight.scorer(subReaders[0], false, false).scoresOutOfOrder();\n    }\n    TopFieldCollector collector = TopFieldCollector.create(sort, nDocs,\n        fillFields, fieldSortDoTrackScores, fieldSortDoMaxScore, docsScoredInOrder);\n    search(weight, filter, collector);\n{code}\n\nFor clarification - I need to know which TFC instance to create (in-order / out-of-order). For that, I need to first create a Scorer, asking for out-of-order one, and then check whether the Scorer is indeed an out-of-order or not. That's a dummy Scorer, as I never use it afterwards, but since we didn't want to add scoresOutOfOrder to Weight, but Scorer, I don't have any other choice.\n\nFor Spatial, this creates a problem. One of the tests uses ConstantScoreQuery and passes in a Filter. CSQ.scorer() creates a new Scorer and uses the given Filter as reference. In Spatial, every time Filter.getDocIdSet() is called, the internal filter populates a WeakHashMap of distances (with the doc id as key), and doesn't clear it between invocations. It also updates the \"base\" of the key to handle multiple readers. Therefore the docs of the first reader are added twice - once for the dummy invocation and the second time since the \"base\" is updated (LatLongDistanceFilter.java, line 222) to reader.maxDoc().\n\nI tried to create a new \"distances\" map on every invocation, but then another test fails. I don't know this code very well, and I don't know which is the best solution:\n\n* Complicate the code in IndexSearcher to create a Scorer, then collect it and then proceed w/ iterating on the readers, from the 2nd forward. This is a real ugly change, I tried it and quickly reverted. It also breaks the current beauty of having all the search methods call search(Weight, Filter, Collector).\n\n* Fix LatLongDistanceFilter code to check if reader.maxDoc() == nextOffset, then do nextOffset -= reader.maxDoc(). This is not pretty either, since it assumes a certain implementation and use of it, which I don't like either.\n\n* Add scoresOutOfOrder to Weight, but I don't know if we want to add this \"knowledge\" to Weight, and it fits nicely in Scorer.\n\nAny suggestions? perhaps a different fix to Spatial?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-15T12:14:22.846+0000",
+          "updated": "2009-06-15T12:14:22.846+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12719539",
+          "id": "12719539",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I like the last option (move scoresOutOfOrder to Weight) most. Creating dummy scorer looks ugly to me, and looks like it will cause more problems of the same kind in the future.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-15T12:34:10.080+0000",
+          "updated": "2009-06-15T12:36:04.664+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12719640",
+          "id": "12719640",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "ok - let's start iterating on the patch. Anyone volunteer to accept it (and then I'll update CHANGES \"via ?\")?\n\nPatch include:\n* QueryWeight with the new scorer(IndexReader, soreDocsInOrder, topScorer) and scoresOutOfOrder().\n* Added methods to Searcher (this breaks back-compat, but it's already broken here because of 1575).\n* BooleanWeight now creates BS or BS2 up front, and therefore BS2's code is simplified.\n\nAll tests pass.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-15T16:53:35.301+0000",
+          "updated": "2009-06-15T16:53:35.301+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12719992",
+          "id": "12719992",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Changed Query.createQueryWeight to public, as was suggested by Yonik. All tests pass.\n\nStill no volunteers? :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-16T09:00:33.253+0000",
+          "updated": "2009-06-16T09:00:33.253+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720280",
+          "id": "12720280",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch looks good!\n\n  * There are some new javadoc warnings (wrong links)\n\n  * Maybe, in changes, add that BooleanQuery will now score docs out\n    of order when used with a Collector that can accept docs out of\n    order?  Ie this is a good ootb perf gain for or queries, sorting\n    by field or score.\n.\n    Oh, ugh, it seems we don't actually do that today (because we\n    respect the static setting).  Hmm.  Can't we change that static\n    default (BooleanQuery.allowDocsOutOfOrder) to true?  Because, our\n    core collectors can handle it, and any custom collector will by\n    default say it cannot handle it so there wouldn't be a break in\n    back compat?\n\n  * That's a nice cleanup, seeing BooleanQuery decide which scorer\n    impl to return :)\n\n  * We don't need the \" = null\" initializer on\n    BooleanScorer2.countingSumScorer's decl\n\n  * Can we make Collector.supportsDocsOutOfOrder abstract?  Defaulting\n    to false isn't great (I'd rather subclass think about the\n    question).\n\n  * Can we rename Collector.supportsDocsOutOfOrder ->\n    acceptsDocsOutOfOrder?\n\n  * Can we also make QueryWeight.scoresOutOfOrder abstract?\n\n  * CustomScoreQuery.scoresOutOfOrder should only look at its\n    subQueryWeight?\n\n  * If a given Scorer.scoresOutOfOrder returns true, does that mean\n    nextDoc is allowed to return docs out of order?  How is advance\n    defined for such scorers?  (BooleanScore does this, and its\n    advance throws UOE).  Maybe we allow this but advance may not\n    work for such scorers?\n\n  * Should scoresOutOfOrder() move from QueryWeight --> Scorer?  I may\n    call QueryWeight.scorer with scoreDocsInOrder=false, but many will\n    in fact return a scorer that does score docs in order (eg BQ does\n    this depending on what kind fo clauses, and how many, it has), and\n    we could then pick a faster collector in such cases?\n\n  * Shouldn't DisjunctionMaxQuery pass true for scoreDocsInOrder when\n    asking its sub-queries for their scorers?  Ie even if its callee\n    allow out-of-order scoring, it requires in-order of its children?\n\n  * I think DisjunctionMaxQuery.scoresOutOfOrder should simply return\n    false? \n\n  * Actually I think the way to factor the static setting in is\n    backwards?  Shouldn't it be {{scoreDocsInOrder |= !allowDocsOutOfOrder}}?\n\n  * Can you sharpen the javadocs for boolean topScorer param?  Ie, \"if\n    true, score(Collector) will be called; if false, nextDoc/advance\n    will be called\".  (I found myself momentarily wondering if\n    DocumentWriter's usage of Scorer API was a topScorer).\n\n  * Shouldn't Searchable cutover to QueryWeight too?  (We are keeping\n    Searchable, but allowing changes to it)\n\n  * Nice catch, removing Searchable's now-wrong NOTE about scoring\n    when sorting by field!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-16T18:35:44.795+0000",
+          "updated": "2009-06-16T18:35:44.795+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720477",
+          "id": "12720477",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Thanks for the review Mike. Answers below. The comments which I did not answer will be fixed.\n\nbq. Can we make Collector.supportsDocsOutOfOrder abstract? Defaulting to false isn't great (I'd rather subclass think about the question).\n\nIn general, I tried to avoid it since that would require changing all core Collectors. There aren't many, but still ...\n\nThis goes for QueryWeight.scoresOutOfOrder - wanted to avoid changing all core Weights to impl the method w/ \"return false\". I actually think that many Weights/Scorers do score documents in-order, hence the default impl.\n\nbq. If a given Scorer.scoresOutOfOrder returns true, does that mean nextDoc is allowed to return docs out of order?\n\nWhen you deal with a Scorer which returns out-of-order, you can only call scorer.score(Collector). If you're going to iterate, you're going to have to create a Scorer in-order, and that's what IndexSearcher does. I'll spell it out clearly in the javadocs.\n\nbq. Should scoresOutOfOrder() move from QueryWeight --> Scorer?\n\nWe've discussed it few posts up. When this information in in Scorer, I should first ask for a Scorer, and only then I can create a Collector. If I'll use the Scorer immediately, then that'll be ok. However, that's not the case in IndexSearcher, and results in a bug in Spatial, and unless we want to uglify IndexSearcher code, it seemed that this can sit in QueryWeight.\n\nBut I do think it's a problematic method in QW too, since if it returns false by default, I'll create a Collector which expects docs in-order, but then I'd lose the optimization in BooleanWeight which may return an out-of-order superior Scorer. If I return true, I'll create a Collector which expects out-of-order, and the Scorer (again, an example from BW) may be actually in-order, and I've wasted unnecessary 'if doc > topDoc' cycles.\n\nSo I don't know what's better: make IndexSearcher code more complicated or sacrifice a potential loss of this optimization?\n\nbq. Actually I think the way to factor the static setting in is backwards? Shouldn't it be scoreDocsInOrder |= !allowDocsOutOfOrder?\n\nYes, nice catch :)\n\nbq. Shouldn't Searchable cutover to QueryWeight too? (We are keeping Searchable, but allowing changes to it)\n\nI wrote that above too - I don't think we can declare and execute right in 2.9 that Searchable can be changed unexpectedly. So I added a NOTE to its javadocs and thought to do the change post 2.9, when we remove Weight. We'd be forced to change these methods to QueryWeight, and fix RemoteSearchable too. And it will be consistent w/ our back-compat policy (at least the part where we declare on an upcoming change before it happens).\n\nBut if you think otherwise, I don't mind deprecating and adding new methods (I've got used to it already, I almost do it blindly :) ).\n\nI'll fix the other comments, and post a patch back after we resolve the remaining open issues.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T02:50:10.288+0000",
+          "updated": "2009-06-17T02:50:10.288+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720548",
+          "id": "12720548",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Fixed most of your comments Mike. I also noticed I did not document Collector.acceptsDocsOutOfOrder, so fixed that too.\n\nThe remaining things we should agree on are:\n* deprecated Weight and add QueryWeight variants to Searchable. I prefer to do it post 2.9.\n* move scoresDocsOutOfOrder to Scorer instead of Weight. I fixed BooleanWeight to return true if there is a chance it will return BS (i.e. there are no required clauses and <32 prohibited clauses). I guess we'll need to discuss that one more.\n* Make Collector.acceptsDocsOutOfOrder and QueryWeight.scoresDocsOutOfOrder abstract - I think the default impl makes sense for most of the imps out there and the ones in core, but I don't have a strong feeling against making it abstract.\n\nAll tests pass, and javadocs are good as well.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T08:11:28.990+0000",
+          "updated": "2009-06-17T08:11:28.990+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720607",
+          "id": "12720607",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nbq. Can we make Collector.supportsDocsOutOfOrder abstract? Defaulting to false isn't great (I'd rather subclass think about the question).\n\nIn general, I tried to avoid it since that would require changing all core Collectors. There aren't many, but still ...\n\nThis goes for QueryWeight.scoresOutOfOrder - wanted to avoid changing all core Weights to impl the method w/ \"return false\". I actually think that many Weights/Scorers do score documents in-order, hence the default impl.\n{quote}\n\nOK... thinking more about it, I think having\nQueryWeight.scoresDocsOutOfOrder default to \"false\" is reasonable (I\nthink most do in-order scoring).  Also, I think the perf gains are\nrelatively small if a QueryWeight returns \"true\", so, by defaulting to\nfalse we're not leaving much performance on the table.\n\nBut for Collector it's a different story: the gains by allowing\nBooleanQuery to use its out-of-order scorer are sizable.  And, I'd\nexpect many custom Collectors would be fine with out-of-order\ncollection.\n\nSince these are brand new classes, we have the chance to do it well.\nIt's very much an expert thing already to make your own Collector...\n\n{quote}\nbq. If a given Scorer.scoresOutOfOrder returns true, does that mean nextDoc is allowed to return docs out of order?\n\nWhen you deal with a Scorer which returns out-of-order, you can only call scorer.score(Collector). If you're going to iterate, you're going to have to create a Scorer in-order, and that's what IndexSearcher does. I'll spell it out clearly in the javadocs.\n{quote}\n\nThat may be a bit too strong -- eg BooleanScorer lets you nextDoc()\nyour way through its out-of-order docs (just not advance()).  Maybe\nstate just that you can't use advance in the javadocs?\n\n{quote}\nbq. Should scoresOutOfOrder() move from QueryWeight --> Scorer?\n\nWe've discussed it few posts up. When this information in in Scorer, I should first ask for a Scorer, and only then I can create a Collector. If I'll use the Scorer immediately, then that'll be ok. However, that's not the case in IndexSearcher, and results in a bug in Spatial, and unless we want to uglify IndexSearcher code, it seemed that this can sit in QueryWeight.\n\nBut I do think it's a problematic method in QW too, since if it returns false by default, I'll create a Collector which expects docs in-order, but then I'd lose the optimization in BooleanWeight which may return an out-of-order superior Scorer. If I return true, I'll create a Collector which expects out-of-order, and the Scorer (again, an example from BW) may be actually in-order, and I've wasted unnecessary 'if doc > topDoc' cycles.\n\nSo I don't know what's better: make IndexSearcher code more complicated or sacrifice a potential loss of this optimization?\n{quote}\n\nCould we \"invert\" the logic in IndexSearcher that makes a collector,\neg by creating a utility class that will on-demand provide a collector\nonce told whether the docs will be in order?  Basically, \"curry\" all\nthe other details about the collector (sorting by score vs field, if\nby field whether to track scores & max score).  Then inside doSearch\nwhen we finally know if the Scorer will be in-order, we ask that\nhelper class for the collector?  The first time the helper class is\ncalled, it makes the collector; subsequent times it returns the same\none.\n\nThere is a risk, though, if the Scorer returned for a given segment\n\"changes its mind\"... eg the first segment's scorer says the docs will\nbe in order, and then some later segment's scorer says they will not\nbe in order.  So... that's risky.\n\nMaybe we leave it on QueryWeight, but fix BooleanWeight to return\nexactly the right thing?  (It can be exact, right?  Because we know\nthe conditions under which BooleanWeight, if allowed to do so, would\nchoose to return an out-of-order scorer).\n\n{quote}\nbq. Shouldn't Searchable cutover to QueryWeight too? (We are keeping Searchable, but allowing changes to it)\n\nI wrote that above too - I don't think we can declare and execute right in 2.9 that Searchable can be changed unexpectedly. So I added a NOTE to its javadocs and thought to do the change post 2.9, when we remove Weight. We'd be forced to change these methods to QueryWeight, and fix RemoteSearchable too. And it will be consistent w/ our back-compat policy (at least the part where we declare on an upcoming change before it happens).\n\nBut if you think otherwise, I don't mind deprecating and adding new methods (I've got used to it already, I almost do it blindly  ).\n{quote}\n\n[Sorry, I'm losing track of all the comments]\n\nOK let's defer the changes to Searchable until 3.1.  Make sure you\nopen a follow-on issue so we remember ;)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-17T10:28:07.661+0000",
+          "updated": "2009-06-17T10:28:07.661+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720612",
+          "id": "12720612",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Ok I will change acceptsDocsOutOfOrder on Collector to abstract, and implement it in all core collectors.\n\nI've already changed BooleanWeight's impl, as I wrote above \"I fixed BooleanWeight to return true if there is a chance it will return BS (i.e. there are no required clauses and <32 prohibited clauses)\".\n\nI still don't think scoresOutOfOrder can live on Scorer. IndexSearcher's search methods all call eventually to search(QueryWeight, Filter, Collector), which means that by that time you should already have a Collector ready (note that the user may pass its own Collector). Therefore such a utility will not work for user provided collectors, and specifically this method creates a Scorer for a given reader, but never a Collector (and a Collector is created just once).\n\nSo if we were to take your approach, it'd deviate the \"fast search methods\" from the other search methods. The others would call search(Weight, Filter, Collector) and the \"fast ones\" would not (since they don't have a Collector yet). This will complicate IndexSearcher's code, IMO unnecessarily. If we want to differentiate the two, I can do that w/o a helper class.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T10:49:01.128+0000",
+          "updated": "2009-06-17T10:49:01.128+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720619",
+          "id": "12720619",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I wasn't following the issue closely, so this question might by silly - how does out-of-order scoring/collection marry with filters?\nIf I remember right, filter/scorer intersection relies on proper orderness.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-17T11:01:20.209+0000",
+          "updated": "2009-06-17T11:01:20.209+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720622",
+          "id": "12720622",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "It isn't and that's what I expressed in the javadocs. If you plan to iterate on a Scorer, you should always ask for in-order one, and that's what IndexSearcher does. Mike suggested above to refine that documentation to say that if you plan to call nextDoc() only, you can still ask for an out-of-order scorer.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T11:04:47.053+0000",
+          "updated": "2009-06-17T11:04:47.053+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720623",
+          "id": "12720623",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Still working through the patch... here's what I found so far:\n\n\n  * You forgot to fill in the \"?\" in CHANGES :)\n\n  * Can you change the default for BooleanQuery.allowDocsOutOfOrder to\n    true?\n\n  * How come {{Document doc(int n, FieldSelector fieldSelector) throws\n    CorruptIndexException, IOException}} is added to Searcher.java in\n    your patch?\n\n  * Rethinking fixing Searchable now vs later: first off, we've\n    already changed the interface in 2.9 (added Collector); second\n    off, in our changes with Fieldable we both changed our policy and\n    the interface, in one release.  Maybe we should in fact switch to\n    QueryWeight?  (I'm not sure).  This patch already breaks back\n    compat of Searcher (there are new abstract methods), anyway.\n\n  * Instead of saying \"there is a chance\" in the javadoc in BQ, can\n    you change it to say \"BQ will return an out-of-order scorer if\n    requested\"?  (There's no chance in the matter...).\n\n  * In fact, DocumentsWriter very much needs for the docs to be scored\n    in order (it breaks out of the loop on the first out-of-bounds\n    doc).  Can you put that back?\n\n  * As much as I love all the little code cleanups, can you resist the\n    temptation, especially in such large patches as this?  I think a\n    separate issue that does pure code cleanups would be a great way\n    to fix these, going forward...\n\n  * \"not need anymore\" --> \"not needed anymore\"\n\n  * We can now make things final in BS2, like countingSumScorer,\n    *Scorers, etc?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-17T11:05:45.790+0000",
+          "updated": "2009-06-17T11:05:45.790+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720629",
+          "id": "12720629",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. You forgot to fill in the \"?\" in CHANGES\n\nI guess you're looking at the previous patch. It already has your name in the latest :)\n\nbq. How come {{Document doc(int n, FieldSelector fieldSelector) throws CorruptIndexException, IOException}} is added to Searcher.java in your patch?\n\nIt's leftover from when I first deprecated Searchable - I wanted to move all the methods from Searchable to Searcher so that we don't forget that later. Will remove it.\n\nbq. Rethinking fixing Searchable now vs later\n\nOk I will do that. Deprecate the current ones and add new ones. We need to keep the Weight-variant methods in, since someone might call it. If he doesn't extend Searcher or implement Searchable, there's no real break in back-compat for him.\n\nbq. As much as I love all the little code cleanups\n\nApologies ... I'll try to restrain myself. That's why I didn't want to make Collector.accepts..() abstract - it would force me to touch more files, which means more code cleanups ;). I'll do my best to stop.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T11:32:36.617+0000",
+          "updated": "2009-06-17T11:32:36.617+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720632",
+          "id": "12720632",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "{quote}\n    You forgot to fill in the \"?\" in CHANGES\n\nI guess you're looking at the previous patch. It already has your name in the latest \n{quote}\n\nSorry, you're right - there are two sections in CHANGES which I've added text to, and I put your name in the second one only.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T11:44:28.392+0000",
+          "updated": "2009-06-17T11:44:28.392+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12720666",
+          "id": "12720666",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "* Collector's acceptDocsOutOfOrder is abstract - this was a really good change since I completely forgot to override it in all home brewed Collectors to return true where applicable. I also surprised to see that <5 collectors actually should return false (most of them in tests).\n* I added QueryWeight variants to Searchable and implemented in RemoteSearchable.\n* Mike - I'm afraid I did some more code cleanup (not much though) - that was before I saw your last comment. sorry\n* Handled the rest of the latest comments.\n\nAll tests pass",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-17T13:36:15.114+0000",
+          "updated": "2009-06-17T13:36:15.114+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12721196",
+          "id": "12721196",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\n  * I wonder if we should have a separate TopScorer class, that\n    doesn't expose nextDoc/advance methods?  And then a separate\n    QueryWeight.topScorer method instead of a boolean arg to\n    QueryWeight.scorer.  (I'm torn...).  EG, if you get a topScorer,\n    you are not supposed to call nextDoc/advance on it, so it really\n    feels like it wants to be a different class than Scorer...\n\n  * Update CHANGES entry based on iterations on the patch\n    (eg supportsDocsOutOfOrder --> acceptsDocsOutOfOrder)\n\n  * Can we rename QW.scoresOutOfOrder -> QW.scoresDocsOutOfOrder?\n\n  * In IndexSearcher ~line 221 shouldn't was pass \"true\" for\n    scoresDocsInOrder in {{Scorer scorer = weight.scorer(reader, false, true)}}?\n\n  * QyertWeight -> QueryWeight\n\n  * I think CustomScoreQuery.scorer should actually always score docs\n    in order?  So CustomWeight.scoresOutOfOrder should return false?\n    And CustomWeight.scorer should pass \"true\" for scoreDocsInOrder to\n    all sub-weights?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-18T11:13:12.865+0000",
+          "updated": "2009-06-18T11:13:12.865+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12721204",
+          "id": "12721204",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. QyertWeight -> QueryWeight\n\nI'll fix. Can you please next time give me a hint on where did you find it? :)\n\nbq. I wonder if we should have a separate TopScorer class\n\nI remember that at some point I suggested to have a score(Searcher, Collector) on QueryWeight, and make Scorer.score(Collector) package-private (of course we'd need to deprecate first and invent a new name). But then I realized that custom weights would still need access to Scorer.score(Collector) if they want to use an existing Scorer or something.\n\nTaking Scorer.score(Collector) out of Scorer and into TopScorer is a large re-factoring. Are you sure about this? I just think of all the Scorers we have, and out there, that need to impl a new class, and possible duplicate a lot of code that is today shared between the top-level-scorer and iterator-type-scorer.\n\nI understand what you say \"so it really feels like it wants to be a different class than Scorer\" - I feel that too. But I don't see a great ROI here.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-18T11:34:07.545+0000",
+          "updated": "2009-06-18T11:34:07.545+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12721208",
+          "id": "12721208",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. I think CustomScoreQuery.scorer should actually always score docs in order? \n\nWhy? I don't see that it relies on doc id orderness anywhere. What if its subWeight is a BooleanWeight and I use a Collector which accepts docs out-of-order? Will I have a problem if I ask for an out-of-order Scorer?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-18T11:43:22.607+0000",
+          "updated": "2009-06-18T11:43:22.607+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12721276",
+          "id": "12721276",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq.  Can you please next time give me a hint on where did you find it? \n\nOK :)  It's a quick search through the patch file though ;)\n\nbq. Taking Scorer.score(Collector) out of Scorer and into TopScorer is a large re-factoring. Are you sure about this? I just think of all the Scorers we have, and out there, that need to impl a new class, and possible duplicate a lot of code that is today shared between the top-level-scorer and iterator-type-scorer.\n\nI'm definitely not sure about it...\n\nFor Scorers that don't have anything special to do when they are \"top\", we'd have a default impl (get a non-top Scorer and iterate over it, like Scorer.score now does.  So I think the only weight that'd do something interesting is BooleanQuery's.\n\nBut I agree this is a big change, so let's hold off for now?  With search specialization (LUCENE-1594) the difference between \"being top\" and \"being sub\" seems to be more important....\n\n{quote}\nbq. I think CustomScoreQuery.scorer should actually always score docs in order?\n\nWhy? I don't see that it relies on doc id orderness anywhere\n{quote}\n\nCustomScorer's nextDoc uses advance on its subScorers.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-18T14:26:16.185+0000",
+          "updated": "2009-06-18T14:26:16.185+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12721285",
+          "id": "12721285",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. CustomScorer's nextDoc uses advance on its subScorers.\n\nYeah I noticed that, but thought that out-of-order means a top-scorer usually, and then score(Collector) is called. But now I see CustomScorer does not implement score(Collector) which means it uses Scorer's, which calls nextDoc() and advance().\n\nRegarding TopScorer, it'd need to get a Scorer as input, otherwise what would be its default impl for score(Collector)? I thought it should be the current one of Scorer's.\n\nWill post a patch soon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-18T14:49:17.970+0000",
+          "updated": "2009-06-18T14:49:17.970+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12721291",
+          "id": "12721291",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Implemented the latest comments, except for TopScorer",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-18T15:00:38.943+0000",
+          "updated": "2009-06-18T15:00:38.943+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12722159",
+          "id": "12722159",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nbq. CustomScorer's nextDoc uses advance on its subScorers.\n\nYeah I noticed that, but thought that out-of-order means a top-scorer usually, and then score(Collector) is called. But now I see CustomScorer does not implement score(Collector) which means it uses Scorer's, which calls nextDoc() and advance().\n{quote}\n\nActually, Scorer's default impl of \"score(Collector)\" doesn't use\nadvance() right? \n\nAnd so it's OK to use nextDoc() on a Scorer that returns out-of-order\ndocs.  But if you pass topScorer=true, you should not attempt to\niterate through its docs (I think?).\n\nIe, I think \"scores docs in order\" is somewhat orthogonal to \"is top\nscorer\".  I can iterate through nextDocs() that come back out of\norder...\n\nBut, right, CustomScorer's nextDoc() won't do the right thing if it's\nsubQueryScorer return docs out of order.\n\nbq. Regarding TopScorer, it'd need to get a Scorer as input, otherwise what would be its default impl for score(Collector)? I thought it should be the current one of Scorer's.\n\nRight I think it'd look roughly something like this:\n\n{code}\nclass Scorer() {\n  ...\n  TopScorer topScorer(boolean scoreDocsInOrder) {\n    return new TopScorer(this.scorer(scoreDocInOrder));\n  }\n}\n\nclass TopScorer extends Scorer {\n  TopScorer() {}\n  TopScorer(Scorer sub) {\n    collector.setScorer(this);\n    int doc;\n    while ((doc = nextDoc()) != NO_MORE_DOCS) {\n      collector.collect(doc);\n    }\n  }\n  void score(Collector) {\n  }\n}\n{code}\n\nBut, I don't like having TopScorer extend Scorer; I think we'd have to\nfactor out a base class that has the \"float score()\" method.  Anyway,\nlet's do this later.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-20T10:01:13.473+0000",
+          "updated": "2009-06-20T10:01:13.473+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12722160",
+          "id": "12722160",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch looks good!  I attached a new version w/ some small changes:\n\n  * Tweaked javadocs, fixed javadocs warnings, CHANGES\n\n  * It's nice that this change requires no changes to back-compat branch!\n\n  * Pass \"false\" for topScorer arg in CustomScorer.scorer (instead of\n    threading down the incoming topScorer).\n\nI think it's ready to commit.  I'll wait a day or two...\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-20T10:02:38.419+0000",
+          "updated": "2009-06-20T10:02:38.419+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723212",
+          "id": "12723212",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Mike, after you commit this we should take a look at LUCENE-1652 - I'm not sure if there was anything left to improve from what we had initially thought to do.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-23T17:51:21.590+0000",
+          "updated": "2009-06-23T17:51:21.590+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723229",
+          "id": "12723229",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Shai!\n\nYes, let's go look @ LUCENE-1652 now!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-23T18:13:13.623+0000",
+          "updated": "2009-06-23T18:13:13.623+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723976",
+          "id": "12723976",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "SOLR-940 is hitting an exception due to the addition of QueryWeight:\nbecause we've added default impl for Query.createQueryWeight, that\nthrows UOE, users who pass their own Query impls, that haven't yet\ncutover to createQueryWeight, to BooleanQuery (within BooleanClause)\nwill hit this exception:\n\n{code}\nSEVERE: java.lang.UnsupportedOperationException\n\tat org.apache.lucene.search.Query.createQueryWeight(Query.java:102)\n\tat org.apache.lucene.search.BooleanQuery$BooleanWeight.<init>(BooleanQuery.java:185)\n\tat org.apache.lucene.search.BooleanQuery.createQueryWeight(BooleanQuery.java:401)\n\tat org.apache.lucene.search.Query.queryWeight(Query.java:120)\n\tat org.apache.lucene.search.Searcher.createQueryWeight(Searcher.java:237)\n\tat org.apache.lucene.search.Searcher.search(Searcher.java:173)\n\tat org.apache.solr.search.SolrIndexSearcher.getDocListAndSetNC(SolrIndexSearcher.java:1103)\n\tat org.apache.solr.search.SolrIndexSearcher.getDocListC(SolrIndexSearcher.java:880)\n\tat org.apache.solr.search.SolrIndexSearcher.search(SolrIndexSearcher.java:341)\n\tat org.apache.solr.handler.component.QueryComponent.process(QueryComponent.java:176)\n\tat org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:195)\n\tat org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:131)\n\tat org.apache.solr.core.SolrCore.execute(SolrCore.java:1290)\n{code}\n\nBecause BooleanQuery is always calling createQueryWeight of its\nsub-queries.  (Other queries, eg CustomScoreQuery, do so as well).\n\nI think this is a back-compat break.  Shai, any ideas how to fix this\nso we somehow auto-wrap with QueryWeightWrapper?\n\nEG, we could have the default impl for createQueryWeight to call\nweight() and wrap it.  The danger is if you subclass Query and fail to\noverride either of these methods, we've created an infinite recursion.\n(Though, we have precedent here: TokenStream does the same thing).\nToo bad Java doesn't let you declare that of these 2 methods at least\none must be overridden.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T09:43:41.389+0000",
+          "updated": "2009-06-25T09:43:41.389+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723989",
+          "id": "12723989",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "{quote}\nEG, we could have the default impl for createQueryWeight to call\nweight() and wrap it.  The danger is if you subclass Query and fail to\noverride either of these methods, we've created an infinite recursion.\n(Though, we have precedent here: TokenStream does the same thing).\nToo bad Java doesn't let you declare that of these 2 methods at least\none must be overridden.\n{quote}\n\n+1\n\nbq. (Though, we have precedent here: TokenStream does the same thing).\n\nWith my newest TokenStream improvements (LUCENE-1693) this is no loger the case, it checks in the ctor, that one of the methods was overridden and throws UOE early (this reflection-based feature was added, because a \"what method was overriden\" was needed for correct delegation in now 3 different methods doing the same)    :)\n\nBut on the other hand the infinite loop is very fast failing (StackOverflow occurs mostly after <300 iterations).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-06-25T09:57:17.388+0000",
+          "updated": "2009-06-25T09:57:17.388+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723995",
+          "id": "12723995",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. With my newest TokenStream improvements (LUCENE-1693) this is no loger the case, it checks in the ctor, that one of the methods was overridden and throws UOE early (this reflection-based feature was added, because a \"what method was overriden\" was needed for correct delegation in now 3 different methods doing the same)\n\nWhoa, powerful!  But this sounds like a possible perf hit for analyzers that don't reuse their Tokenizers?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T10:04:03.092+0000",
+          "updated": "2009-06-25T10:04:03.092+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723996",
+          "id": "12723996",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Previously creaetWeight() threw UOE, and I've changed it to call createQueryWeight and the latter to throw UOE. This was obviously the wrong way :).\n\nI think we should:\n# Revert createWeight to throw UOE\n# Change createQueryWeight to call createWeight() and wrap w/ QueryWeightWrapper\n\nThis should not cause infinite recursion, I think, since:\n* The Lucene code calls createQueryWeight.\n* All of the Lucene Query impls implement createQueryWeight.\n* Any external Query which did not impl createQueryWeight yet, will be fine too, since Query.createQueryWeight will call the given query's createWeight, which ought to be implemented. Otheriwse UOE was encountered long before.\n\nMakes sense? I can post a patch soon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-25T10:04:21.232+0000",
+          "updated": "2009-06-25T10:04:21.232+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12723998",
+          "id": "12723998",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "That sounds like the right approach Shai!  And such legacy Query classes will receive deprecation warnings (that they are overriding a deprecated method), so I think that fixes the back-compat breakage.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T10:08:39.266+0000",
+          "updated": "2009-06-25T10:08:39.266+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724003",
+          "id": "12724003",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "bq. Whoa, powerful! But this sounds like a possible perf hit for analyzers that don't reuse their Tokenizers?\n\nFor these Tokenizers the cost to create the new TokenStreams is very high without this patch, too (because the new TokenStream API). The TokenStreams and Filters have to add all their attributes  to a LinkedHashMap in their ctors. This is why I wanted to make NumericTokenStream reuseable when I invented it :-)\n\nAnd the reflection check is not too slow, as no classes are loaded with forName, its just a check to (getMethod().getDeclaringClass() != TokenStream.class)\n\nIf there is more to discuss or some performance tests, see LUCENE-1693; at the moment it's a two-man-show between Michael and me with always showing up possible backwards-compatibility problems and so on!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-06-25T10:14:46.927+0000",
+          "updated": "2009-06-25T10:14:46.927+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724006",
+          "id": "12724006",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. For these Tokenizers the cost to create the new TokenStreams is very high without this patch, too (because the new TokenStream API). The TokenStreams and Filters have to add all their attributes to a LinkedHashMap in their ctors. This is why I wanted to make NumericTokenStream reuseable when I invented it \n\nOK.\n\nbq. at the moment it's a two-man-show between Michael and me with always showing up possible backwards-compatibility problems and so on!\n\nYah nobody can keep up with you guys!!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T10:18:36.159+0000",
+          "updated": "2009-06-25T10:18:36.159+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724038",
+          "id": "12724038",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Very small patch, just one class ... I can't believe it's me :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-25T11:15:27.103+0000",
+          "updated": "2009-06-25T11:15:27.103+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724042",
+          "id": "12724042",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Looks good, this is the correct way to do this.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-06-25T11:27:46.040+0000",
+          "updated": "2009-06-25T11:27:46.040+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724079",
+          "id": "12724079",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'll commit shortly!  Thanks Shai.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T13:12:32.534+0000",
+          "updated": "2009-06-25T13:12:32.534+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724257",
+          "id": "12724257",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Something is still amiss... from SOLR-940:\n{code}\njava.lang.StackOverflowError\nat org.apache.solr.search.function.FunctionQuery.rewrite(FunctionQuery.java:50)\nat org.apache.lucene.search.IndexSearcher.rewrite(IndexSearcher.java:291)\nat org.apache.lucene.search.Query.queryWeight(Query.java:125)\nat org.apache.lucene.search.Query.weight(Query.java:117)\nat org.apache.lucene.search.Query.createQueryWeight(Query.java:108)\nat org.apache.lucene.search.Query.queryWeight(Query.java:126)\nat org.apache.lucene.search.Query.weight(Query.java:117)\nat org.apache.lucene.search.Query.createQueryWeight(Query.java:108)\nat org.apache.lucene.search.Query.queryWeight(Query.java:126)\nat org.apache.lucene.search.Query.weight(Query.java:117)\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T20:28:53.834+0000",
+          "updated": "2009-06-25T20:28:53.834+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724268",
+          "id": "12724268",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I think the patch is wrong, it must be\n{code}\n   public QueryWeight createQueryWeight(Searcher searcher) throws IOException {\n    return new QueryWeightWrapper(createWeight(searcher)); // and not weigth(searcher)\n   }\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-06-25T20:40:19.066+0000",
+          "updated": "2009-06-25T20:40:19.066+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724284",
+          "id": "12724284",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Agreed -- I'll commit shortly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-25T20:52:10.921+0000",
+          "updated": "2009-06-25T20:52:10.921+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724289",
+          "id": "12724289",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "oops .. :). I've said it before - these two just confuse me. I ran into similar issues when I prepared the patch. Maybe we need a QueryTestImpl which impls *just* the deprecated methods, and we should run some searches with it. That way, our tests would catch those problems.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-25T21:03:01.661+0000",
+          "updated": "2009-06-25T21:03:01.661+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724460",
+          "id": "12724460",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shalin",
+            "name": "shalin",
+            "key": "shalinmangar",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=shalinmangar&avatarId=19501",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=shalinmangar&avatarId=19501",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=shalinmangar&avatarId=19501",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=shalinmangar&avatarId=19501"
+            },
+            "displayName": "Shalin Shekhar Mangar",
+            "active": true,
+            "timeZone": "America/Denver"
+          },
+          "body": "Something is still wrong, I'm seeing:\n\nSEVERE: java.lang.NullPointerException\n\tat org.apache.lucene.search.IndexSearcher.search(IndexSearcher.java:242)\n\tat org.apache.lucene.search.Searcher.search(Searcher.java:173)\n\tat org.apache.solr.search.SolrIndexSearcher.getDocListAndSetNC(SolrIndexSearcher.java:1103)\n\tat org.apache.solr.search.SolrIndexSearcher.getDocListC(SolrIndexSearcher.java:880)\n\tat org.apache.solr.search.SolrIndexSearcher.search(SolrIndexSearcher.java:341)\n\tat org.apache.solr.handler.component.QueryComponent.process(QueryComponent.java:176)\n\nI did some digging around. It seems that before r787772 (LUCENE-1630), the BooleanQuery#scorer used to return a null scorer only if the subScorer was null *and* the clause was required. With trunk, the new BooleanQuery#scorer method returns null if the sub scorer is null without checking if the clause was required. But I'm not sure if that is the only problem. When I changed BooleanQuery to the old behavior, I still see the same NPE but this time it is coming from DisjunctionMaxQuery#scorer due to subScorer.nextDoc() != DocIdSetIterator.NO_MORE_DOCS always being false. The subScorer in this case was ExactPhraseScorer.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shalin",
+            "name": "shalin",
+            "key": "shalinmangar",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=shalinmangar&avatarId=19501",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=shalinmangar&avatarId=19501",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=shalinmangar&avatarId=19501",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=shalinmangar&avatarId=19501"
+            },
+            "displayName": "Shalin Shekhar Mangar",
+            "active": true,
+            "timeZone": "America/Denver"
+          },
+          "created": "2009-06-26T10:23:17.543+0000",
+          "updated": "2009-06-26T10:23:17.543+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724556",
+          "id": "12724556",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "I'll check it, and add some unit tests, which are obviously missing :). Shalin - do you have a simple test case that reproduces the problem? (just for easier start)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-26T14:18:26.532+0000",
+          "updated": "2009-06-26T14:18:26.532+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724564",
+          "id": "12724564",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Sorry Shalin, and thanks for digging into this.\n\nbq.  With trunk, the new BooleanQuery#scorer method returns null if the sub scorer is null without checking if the clause was required.\n\nThis is clearly wrong.  I've added a test case & fixed it.\n\nDisjunctionMaxWeight's scorer also returns null if any of its\nsub-scorers are null (on trunk & 2.4.1), which I think is not right?\nI think it should simply skip that sub scorer; I've included that in\nthe patch too.\n\nFinally, I think I fixed your 2nd NPE, where IndexSearcher was failing\nto handle a null scorer returned by the top QueryWeight, though I'm\nnot certain it was the same issue you hit.\n\nCan you try out the attached patch?  Sorry!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-26T14:59:38.456+0000",
+          "updated": "2009-06-26T14:59:38.456+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724587",
+          "id": "12724587",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Mike, thanks for taking care of that. I'm completely embarassed by these failures. Obviously when I moved scorer.score() in IndexSearcher out of doSearch() (now searchWithFilter), I forgot to check for the null Scorer. With that added test case, I won't be able to \"forget\" again.\n\nAbout the test case, I'm not sure it catches the queryWeight.scorer() returning null. It does check that optional null scorers are just ignored by BQ. Maybe if you add to BQ the same PhraseQuery as MUST, BQ will return null, which will test IndexSearcher handling of a null Scorer?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-26T15:53:10.829+0000",
+          "updated": "2009-06-26T15:53:10.829+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724591",
+          "id": "12724591",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. I'm completely embarassed by these failures.\n\nWell this is tricky stuff!\n\nAnd one of the failures (DisjunctionMaxQuery) is pre-existing.\n\nbq. About the test case, I'm not sure it catches the queryWeight.scorer() returning null\n\nThe 2nd part of the test case (the DisjunctionMaxQuery) does give a null top-level scorer back to IndexSearcher, and results in this exception (before fixing IndexSearcher & DisjunctionMaxQuery):\n\n{code}\n    [junit] java.lang.NullPointerException\n    [junit] \tat org.apache.lucene.search.IndexSearcher.search(IndexSearcher.java:244)\n    [junit] \tat org.apache.lucene.search.IndexSearcher.search(IndexSearcher.java:171)\n    [junit] \tat org.apache.lucene.search.Searcher.search(Searcher.java:183)\n    [junit] \tat org.apache.lucene.search.Searcher.search(Searcher.java:193)\n    [junit] \tat org.apache.lucene.search.TestBooleanQuery.testNullOrSubScorer(TestBooleanQuery.java:80)\n    [junit] \tat org.apache.lucene.util.LuceneTestCase.runTest(LuceneTestCase.java:88)\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-26T16:04:37.487+0000",
+          "updated": "2009-06-26T16:04:37.487+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724619",
+          "id": "12724619",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Is there a test for BQ returning null scorer when one if its required clauses is required and returns a null scorer itself? If not, I suggest we cover that angle also, can't hurt. What do you think?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-26T17:22:27.976+0000",
+          "updated": "2009-06-26T17:22:27.976+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724625",
+          "id": "12724625",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Is there a test for BQ returning null scorer when one if its required clauses is required and returns a null scorer itself? If not, I suggest we cover that angle also, can't hurt. What do you think?\n\nGood idea - not sure if there is an existing test - can you add that (to the last patch)?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-26T17:28:45.440+0000",
+          "updated": "2009-06-26T17:28:45.440+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724628",
+          "id": "12724628",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. can you add that (to the last patch)?\n\nSure. I'll try to do it today or tomorrow.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-26T17:38:04.993+0000",
+          "updated": "2009-06-26T17:38:04.993+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724636",
+          "id": "12724636",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shalin",
+            "name": "shalin",
+            "key": "shalinmangar",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=shalinmangar&avatarId=19501",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=shalinmangar&avatarId=19501",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=shalinmangar&avatarId=19501",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=shalinmangar&avatarId=19501"
+            },
+            "displayName": "Shalin Shekhar Mangar",
+            "active": true,
+            "timeZone": "America/Denver"
+          },
+          "body": "bq. Can you try out the attached patch? Sorry!\n\nThat fixes the NPEs I was seeing. Thanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shalin",
+            "name": "shalin",
+            "key": "shalinmangar",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=shalinmangar&avatarId=19501",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=shalinmangar&avatarId=19501",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=shalinmangar&avatarId=19501",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=shalinmangar&avatarId=19501"
+            },
+            "displayName": "Shalin Shekhar Mangar",
+            "active": true,
+            "timeZone": "America/Denver"
+          },
+          "created": "2009-06-26T17:47:03.444+0000",
+          "updated": "2009-06-26T17:47:03.444+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724643",
+          "id": "12724643",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Super, I'll commit the current patch.  Shai I'll commit the additional test case once you post that...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-26T18:13:55.486+0000",
+          "updated": "2009-06-26T18:13:55.486+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724831",
+          "id": "12724831",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Added testcase to TestBooleanQuery",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-27T10:13:46.366+0000",
+          "updated": "2009-06-27T10:13:46.366+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/12724842",
+          "id": "12724842",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Super -- I just committed this; thanks Shai.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-27T11:15:01.503+0000",
+          "updated": "2009-06-27T11:15:01.503+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12424750/comment/17587825",
+          "id": "17587825",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2704|https://github.com/apache/lucene/issues/2704].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:00:35.456+0000",
+          "updated": "2022-08-28T12:00:35.456+0000"
+        }
+      ],
+      "maxResults": 65,
+      "total": 65,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04vsn:",
+    "customfield_12314139": null
+  }
+}

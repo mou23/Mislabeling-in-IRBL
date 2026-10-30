@@ -1,0 +1,207 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="ANDROID">
+	<bug id="20" opendate="2011-01-20 07:45:46" fixdate="2011-01-20 07:47:15" resolution="Complete">
+		<buginformation>
+			<summary>Using the SyndFeed, RSS, or ATOM message converters requires workaround on older Android</summary>
+			<description>The Android port of ROME requires a workaround on Android versions before Level 8 (2.2).
+You have to set the Java context class loader or else you get a NullPointerException in older Android versions.  The new Android releases do this automatically
+Thread.currentThread().setContextClassLoader(getClass().getClassLoader());</description>
+			<version>1.0.0.M1</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.converter.feed.SyndFeedHttpMessageConverter.java</file>
+			<file type="M">org.springframework.http.converter.feed.AbstractWireFeedHttpMessageConverter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="22" opendate="2011-01-31 12:48:16" fixdate="2011-01-31 13:19:23" resolution="Complete">
+		<buginformation>
+			<summary>No checks in SimpleXmlHttpMessageConverter for canRead or canWrite</summary>
+			<description>SimpleXmlHttpMessageConverter is not verifying that it can read or write an object.</description>
+			<version>1.0.0.M1</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.converter.xml.SimpleXmlHttpMessageConverterTests.java</file>
+			<file type="M">org.springframework.http.converter.xml.SimpleXmlHttpMessageConverter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="55" opendate="2011-10-07 08:19:37" fixdate="2011-11-15 14:49:54" resolution="Complete">
+		<buginformation>
+			<summary>REST Crash on HTC Mytouch 4g</summary>
+			<description>See issue: http://code.google.com/p/google-gson/issues/detail?id=255
+Essentially, HTC has bundled an (old, broken) copy of gson with some builds of HTC Sense and exposed it on the classpath.  As a result, the REST client sees it on the classpath and attempts to load it.  Unfortunately, this crashes.
+</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.web.client.RestTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="59" opendate="2011-11-09 12:55:12" fixdate="2012-03-04 10:57:47" resolution="Fixed">
+		<buginformation>
+			<summary>Issues sending gzip&amp;apos;d requests</summary>
+			<description>The outputMessage body is not properly being closed. See the forum reference for more information.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.client.HttpComponentsClientHttpResponse.java</file>
+			<file type="M">org.springframework.http.client.AbstractClientHttpRequest.java</file>
+			<file type="M">org.springframework.http.client.SimpleClientHttpResponse.java</file>
+			<file type="M">org.springframework.http.client.AbstractHttpRequestFactoryTestCase.java</file>
+			<file type="M">org.springframework.http.client.AbstractClientHttpResponse.java</file>
+			<file type="M">org.springframework.http.client.CommonsClientHttpResponse.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="85" opendate="2012-04-29 14:25:54" fixdate="2012-04-30 08:38:26" resolution="Complete">
+		<buginformation>
+			<summary>HttpBasicAuthentication utilizes an unsupported Base64 library</summary>
+			<description>HttpBasicAuthentication is using the org.apache.commons.codec.binary.Base64 library for Base64 encoding. This library is included in Android, but is not supported, and is not listed in the Android API reference. It will most likely be available to an application, however it is not guaranteed to be present on a given Android device. Android Froyo (2.2) and newer include a supported Base64 library, android.util.Base64. However, earlier versions do not. To support Eclair (2.1) devices we&amp;amp;apos;ll need to include a third party library.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.HttpHeadersTests.java</file>
+			<file type="M">org.springframework.http.HttpBasicAuthentication.java</file>
+			<file type="M">org.springframework.http.HttpAuthentication.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="76" opendate="2012-03-11 07:10:01" fixdate="2012-05-16 10:04:03" resolution="Fixed">
+		<buginformation>
+			<summary>400 Bad Request</summary>
+			<description>
+Used RestTemplate to access this URL:
+http://query.yahooapis.com/v1/public/yql?q=select Date, Close, Volume from yahoo.finance.historicaldata where symbol = "AAPL" and startDate = "2012-01-01" and endDate = "2012-01-10"&amp;amp;format=json&amp;amp;env=store://datatables.org/alltableswithkeys
+Getting this on Android:
+400 Bad Request
+org.springframework.web.client.HttpClientErrorException: 400 Bad Request
+ 	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:76)
+ 	at org.springframework.web.client.RestTemplate.handleResponseError(RestTemplate.java:504)
+Tried UriUtils.encodeHttpUrl, and noticed &amp;amp;apos;=&amp;amp;apos; got encoded as &amp;amp;apos;&amp;amp;&amp;amp;apos; at symbol = "AAPL", and not sure if that&amp;amp;apos;s the cause of the above issue:
+http://query.yahooapis.com/v1/public/yql?q=select%20Date,%20Close,%20Volume%20from%20yahoo.finance.historicaldata%20where%20symbol%20&amp;amp;%20%22AAPL%22%20and%20startDate%20=%20%222012-01-01%22%20and%20endDate%20&amp;amp;%20%222012-01-10%22&amp;amp;format=json&amp;amp;env=store://datatables.org/alltableswithkeys
+For comparison, correctly encoded URL should be:
+http://query.yahooapis.com/v1/public/yql?q=select%20Date,%20Close,%20Volume%20from%20yahoo.finance.historicaldata%20where%20symbol%20=%20%22AAPL%22%20and%20startDate%20=%20%222012-01-01%22%20and%20endDate%20=%20%222012-01-10%22&amp;amp;format=json&amp;amp;env=store://datatables.org/alltableswithkeys
+When tried same code on desktop, and it worked fine there.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.web.util.UriTemplateTests.java</file>
+			<file type="M">org.springframework.web.util.UriUtilsTests.java</file>
+			<file type="M">org.springframework.web.util.UriComponentsBuilder.java</file>
+			<file type="M">org.springframework.web.util.UriUtils.java</file>
+			<file type="M">org.springframework.web.util.UriComponentsTests.java</file>
+			<file type="M">org.springframework.web.util.UriComponents.java</file>
+			<file type="M">org.springframework.web.util.UriComponentsBuilderTests.java</file>
+			<file type="M">org.springframework.web.util.UriTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="109" opendate="2012-11-15 14:30:33" fixdate="2012-11-15 14:38:33" resolution="Complete">
+		<buginformation>
+			<summary>Failing Rest Template tests on Jelly Bean related to date formatting</summary>
+			<description>Date formatting appears to have changed (broken?) on Jelly Bean. Consider the following format:
+"EEE, dd MMM yyyy HH:mm:ss zzz"
+On Android versions prior to Jelly Bean it would format like this:
+"Thu, 18 Dec 2008 10:20:00 GMT+00:00"
+On Jelly Bean it now looks like this:
+"Thu, 18 Dec 2008 10:20:00 GMT"
+The tests are currently verifying a date format, but that isn&amp;amp;apos;t what we are actually testing. The tests should be modified to add more date equality comparisons, and work around this change.</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.0.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.HttpHeadersTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="102" opendate="2012-08-31 14:35:54" fixdate="2012-11-15 14:48:05" resolution="Complete">
+		<buginformation>
+			<summary>SimpleClientHttpResponse throws null pointer exception</summary>
+			<description>During processing a response from the server the SimpleClientHttpResponse throws NullPointerException:
+08-31 19:25:12.906: E/AndroidRuntime(2437): Caused by: java.lang.NullPointerException
+08-31 19:25:12.906: E/AndroidRuntime(2437): 	at org.springframework.http.client.SimpleClientHttpResponse.getStatusCode(SimpleClientHttpResponse.java:62)
+08-31 19:25:12.906: E/AndroidRuntime(2437): 	at org.springframework.web.client.DefaultResponseErrorHandler.hasError(DefaultResponseErrorHandler.java:46)
+08-31 19:25:12.906: E/AndroidRuntime(2437): 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:476)
+08-31 19:25:12.906: E/AndroidRuntime(2437): 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:438)
+08-31 19:25:12.906: E/AndroidRuntime(2437): 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:414)
+A reason seems to be that IOException thrown returns null from call to getLocalizedMessage():
+			if (ex.getLocalizedMessage().equals(AUTHENTICATION_ERROR)) 
+{
+				return HttpStatus.UNAUTHORIZED;
+			}
+ else 
+{
+				throw ex;
+			}
+
+BTW, what will getLocalizedMessage() return if locale is not English?</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.0.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.web.client.AbstractRestTemplateIntegrationTests.java</file>
+			<file type="M">org.springframework.http.client.SimpleClientHttpResponse.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="101" opendate="2012-08-20 10:13:43" fixdate="2012-11-20 12:35:08" resolution="Complete">
+		<buginformation>
+			<summary>Backport SPR-9238 to Spring Android</summary>
+			<description>Please backport issue
+https://jira.springsource.org/browse/SPR-9238
+resolved in Spring Rest Template version 3.1.2 to Spring Android version 1.0.1.</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.0.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.converter.json.MappingJacksonHttpMessageConverter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="129" opendate="2013-05-03 11:18:39" fixdate="2013-05-22 21:04:48" resolution="Complete">
+		<buginformation>
+			<summary>Merge in changes from SPR-9273 - HttpStatusCodeException cannot be serialized</summary>
+			<description></description>
+			<version>1.0.1.RELEASE</version>
+			<fixedVersion>2.0.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.web.client.HttpStatusCodeException.java</file>
+			<file type="M">org.springframework.web.client.HttpServerErrorException.java</file>
+			<file type="M">org.springframework.web.client.HttpClientErrorException.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="110" opendate="2012-11-16 09:08:15" fixdate="2014-05-06 15:23:26" resolution="Complete">
+		<buginformation>
+			<summary>Failing HttpURLConnection tests on Jelly Bean 4.2</summary>
+			<description>The following tests are failing on Jelly Bean 4.2. It&amp;amp;apos;s the same test run under different circumstances, all on the HttpURLConnection.
+
+org.springframework.http.client.SimpleStreamingHttpRequestFactoryTests#testGetAcceptEncodingNone
+org.springframework.http.client.SimpleBufferingHttpRequestFactoryTests#testGetAcceptEncodingNone
+org.springframework.http.client.BufferingSimpleClientHttpRequestFactoryTests#testGetAcceptEncodingNone
+
+</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>2.0.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.http.client.BufferingCommonsClientHttpRequestFactoryTests.java</file>
+			<file type="M">org.springframework.http.client.BufferingSimpleClientHttpRequestFactoryTests.java</file>
+			<file type="M">org.springframework.http.client.HttpComponentsClientHttpRequestFactoryTests.java</file>
+			<file type="M">org.springframework.http.client.CommonsHttpRequestFactoryTests.java</file>
+			<file type="M">org.springframework.http.client.SimpleAbstractHttpRequestFactoryTests.java</file>
+			<file type="M">org.springframework.http.client.AbstractHttpRequestFactoryTestCase.java</file>
+			<file type="M">org.springframework.http.client.BufferingHttpComponentsClientHttpRequestFactoryTests.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

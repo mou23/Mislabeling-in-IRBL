@@ -1,0 +1,735 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12499969",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969",
+  "key": "LUCENE-2943",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314822",
+        "id": "12314822",
+        "description": "Major release after 3.x",
+        "name": "3.1",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2011-03-31"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "10930",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": null,
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25067",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+      "name": "rcmuir",
+      "key": "rcmuir",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+      },
+      "displayName": "Robert Muir",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+      "name": "rcmuir",
+      "key": "rcmuir",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+      },
+      "displayName": "Robert Muir",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2943/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@2461ad52[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4e748602[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@41e80cbe[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@2b46c617[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4ad4d3aa[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@7399495f[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7295266e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@6ffe2055[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@35be783[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@3ab19506[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@61cc7268[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@7fae0a8c[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:41:52 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-03-01T20:49:39.772+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2943/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2011-02-28T20:43:18.199+0000",
+    "updated": "2022-08-28T12:41:52.481+0000",
+    "timeoriginalestimate": null,
+    "description": "The ICU Collators (unlike the JDK ones) aren't thread safe: http://userguide.icu-project.org/collation/architecture , a little non-obvious since its not mentioned\nin the javadocs, and its not clear if the docs apply to only the C code, but i looked\nat the source and there is all kinds of internal state.\n\nSo in my opinion, we should clone the icu collators (which are passed in from the outside) \nwhen creating a new TokenStream/AttributeImpl to prevent problems. This shouldn't be a big\ndeal since everything uses reusableTokenStream anyway.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12472271",
+        "id": "12472271",
+        "filename": "LUCENE-2943.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-03-01T03:32:37.126+0000",
+        "size": 9004,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12472271/LUCENE-2943.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12472244",
+        "id": "12472244",
+        "filename": "LUCENE-2943.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-02-28T22:32:58.273+0000",
+        "size": 3120,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12472244/LUCENE-2943.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12472224",
+        "id": "12472224",
+        "filename": "LUCENE-2943.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-02-28T20:45:05.187+0000",
+        "size": 1660,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12472224/LUCENE-2943.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "ICU collator thread-safety issues",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000506",
+          "id": "13000506",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's a patch for trunk (including fix to the deprecated 3.x filter).\n\nWe should fix this bug in 3.x too.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-02-28T20:45:05.228+0000",
+          "updated": "2011-02-28T20:45:05.228+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000508",
+          "id": "13000508",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch looks fine!\n\nJust one question: is the clone() method itsself thread-safe? if not, it must be synchronized somehow.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-02-28T20:57:54.761+0000",
+          "updated": "2011-02-28T20:57:54.761+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000511",
+          "id": "13000511",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I changed my mind a little bit:\n\nThe cloning of the Collator should be done in the Analyzer not in the Filter. The same applies to the AttributeImpl, the cloning should not be done in the ctor. The problem is not that the TokenStream or the Attribute instance may reuse the attribute in different threads, the problem is that the factory class (the Analyzer) does reuse the Collator in different threads when it produces multiple tokenstreams or the AF multiple attributes.\n\nThis is a slight difference, because the following code is always safe:\nnew CollationFilter(Collator.newInstance(lang)), cloning would be wrong.\n\nThe reason for the whole thing: TokenStream and Attribute instances itsself are single-threaded only, but not the factory or the analyzer.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-02-28T21:05:08.166+0000",
+          "updated": "2011-02-28T21:07:47.298+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000514",
+          "id": "13000514",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Uwe, that is one alternative.\n\nThe only reason i did it this way, is because I felt it was a bit of a trap (to any users using the Filter directly). This is because JDK collators are in fact thread safe.\n\n{quote}\nThis is a slight difference, because the following code is always safe:\nnew CollationFilter(Collator.newInstance(lang)), cloning would be wrong.\n{quote}\n\nI don't think this is really a reasonable example, usually in the search engine you would never use code like this: the sort keys will be way too large for no reason. For example usually its the case you will set something more reasonable like primary strength (case-insensitive).\n\nBecause the clone is cheap, and this is a trap to users, I'm still going to fight for my original patch. This way the ICU and JDK functionality behave consistently from a user perspective.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-02-28T21:10:45.276+0000",
+          "updated": "2011-02-28T21:10:45.276+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000534",
+          "id": "13000534",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I would be fine with both solutions, for me it just looks wrong that way, but for safety reasons its fine.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-02-28T21:38:04.885+0000",
+          "updated": "2011-02-28T21:38:04.885+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000539",
+          "id": "13000539",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Uwe, i can agree it looks a little wrong, but it makes the 'reusable' case easier.\n\nthe example you gave is the slow non-reusable case... honestly i'm not very worried about making this slower... its already slow.\n\nif we are to put responsibility on the user to pass Collator clones to each TokenFilter, it will make reusing more difficult (e.g. custom analyzers). \n\nAgain, the big trap is that usually you see \"WARNING THIS CLASS IS NOT THREAD SAFE\" but the icu javadoc doesn't really say that, you have to instead read this general architecture document... so I think by pushing the responsibility to the user, there would be lots of bugs (if anyone makes a custom analyzer/factory/etc).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-02-28T21:44:28.258+0000",
+          "updated": "2011-02-28T21:44:28.258+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000578",
+          "id": "13000578",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Updated patch: I clone the JDK ones too.\n\nIts not really the case that these are \"thread-safe\", instead really what happens is their methods are synced (if they are correct). So its good to clone to reduce contention.\n\nAlso i took a look at harmony, which simply wraps the ICU impl and doesn't sync, which means its not thread safe (but should be).\n\nFor these reasons I think we should just clone the JDK one for safety too.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-02-28T22:32:58.310+0000",
+          "updated": "2011-02-28T22:32:58.310+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13000684",
+          "id": "13000684",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "i added a testThreadSafe for this issue (which fails without the fix)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-03-01T03:32:37.148+0000",
+          "updated": "2011-03-01T03:32:37.148+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13001108",
+          "id": "13001108",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed revisions 1075850, 1076017 (branch_3x)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-03-01T20:49:39.781+0000",
+          "updated": "2011-03-01T20:49:39.781+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/13013400",
+          "id": "13013400",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Bulk close for 3.1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-03-30T15:50:12.881+0000",
+          "updated": "2011-03-30T15:50:12.881+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12499969/comment/17589147",
+          "id": "17589147",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4017|https://github.com/apache/lucene/issues/4017].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:41:52.481+0000",
+          "updated": "2022-08-28T12:41:52.481+0000"
+        }
+      ],
+      "maxResults": 11,
+      "total": 11,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04ngv:",
+    "customfield_12314139": null
+  }
+}

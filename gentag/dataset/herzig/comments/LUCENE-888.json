@@ -1,0 +1,1504 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12370045",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045",
+  "key": "LUCENE-888",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312328",
+        "id": "12312328",
+        "description": "",
+        "name": "2.2",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-06-19"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12854",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310854",
+        "id": "12310854",
+        "description": "",
+        "name": "2.1",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-02-17"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12316156",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12316156",
+        "type": {
+          "id": "10001",
+          "name": "dependent",
+          "inward": "is depended upon by",
+          "outward": "depends upon",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10001"
+        },
+        "inwardIssue": {
+          "id": "12367718",
+          "key": "LUCENE-866",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12367718",
+          "fields": {
+            "summary": "Multi-level skipping on posting lists",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27159",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-888/votes",
+      "votes": 2,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@19492db6[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5bb959ca[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@405442be[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@51b22477[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@648fb659[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@7374b738[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@11575a5a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@5106459b[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@48220c9c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@1eb9bfd7[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3517b3d0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@565e0274[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:37:28 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-05-29T15:15:41.762+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-888/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2007-05-23T13:23:00.695+0000",
+    "updated": "2022-08-28T11:37:28.257+0000",
+    "timeoriginalestimate": null,
+    "description": "In working on LUCENE-843, I noticed that two buffer sizes have a\nsubstantial impact on overall indexing performance.\n\nFirst is BufferedIndexOutput.BUFFER_SIZE (also used by\nBufferedIndexInput).  Second is CompoundFileWriter's buffer used to\nactually build the compound file.  Both are now 1 KB (1024 bytes).\n\nI ran the same indexing test I'm using for LUCENE-843.  I'm indexing\n~5,500 byte plain text docs derived from the Europarl corpus\n(English).  I index 200,000 docs with compound file enabled and term\nvector positions & offsets stored plus stored fields.  I flush\ndocuments at 16 MB RAM usage, and I set maxBufferedDocs carefully to\nnot hit LUCENE-845.  The resulting index is 1.7 GB.  The index is not\noptimized in the end and I left mergeFactor @ 10.\n\nI ran the tests on a quad-core OS X 10 machine with 4-drive RAID 0 IO\nsystem.\n\nAt 1 KB (current Lucene trunk) it takes 622 sec to build the index; if\nI increase both buffers to 8 KB it takes 554 sec to build the index,\nwhich is an 11% overall gain!\n\nI will run more tests to see if there is a natural knee in the curve\n(buffer size above which we don't really gain much more performance).\n\nI'm guessing we should leave BufferedIndexInput's default BUFFER_SIZE\nat 1024, at least for now.  During searching there can be quite a few\nof this class instantiated, and likely a larger buffer size for the\nfreq/prox streams could actually hurt search performance for those\nsearches that use skipping.\n\nThe CompoundFileWriter buffer is created only briefly, so I think we\ncan use a fairly large (32 KB?) buffer there.  And there should not be\ntoo many BufferedIndexOutputs alive at once so I think a large-ish\nbuffer (16 KB?) should be OK.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12358226",
+        "id": "12358226",
+        "filename": "LUCENE-888.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-05-25T12:07:19.224+0000",
+        "size": 26695,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12358226/LUCENE-888.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12358279",
+        "id": "12358279",
+        "filename": "LUCENE-888.take2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-05-25T21:09:40.906+0000",
+        "size": 27032,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12358279/LUCENE-888.take2.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Improve indexing performance by increasing internal buffer sizes",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498652",
+          "id": "12498652",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> At 1 KB (current Lucene trunk) it takes 622 sec to build the index; if\n> I increase both buffers to 8 KB it takes 554 sec to build the index,\n> which is an 11% overall gain!\n\nCool!\n\n> I'm guessing we should leave BufferedIndexInput's default BUFFER_SIZE\n> at 1024, at least for now.  During searching there can be quite a few\n> of this class instantiated, and likely a larger buffer size for the\n> freq/prox streams could actually hurt search performance for those\n> searches that use skipping.\n\nI submitted a patch for LUCENE-430 which avoids copying the buffer when\na BufferedIndexInput is cloned. With this patch we could also add a \nmethod setBufferSize(int) to BufferedIndexInput. This method has to\nbe called then right after the input has been created or cloned and\nbefore the first read is performed (the first read operation allocates\nthe buffer). If called later it wouldn't have any effect. This would\nallow us to adjust the buffer size dynamically, e. g. use large buffers\nfor segment merges and stored fields, but smaller ones for freq/prox \nstreams, maybe dependent on the document frequency. \nWhat do you think?\n\n> The CompoundFileWriter buffer is created only briefly, so I think we\n> can use a fairly large (32 KB?) buffer there.  And there should not be\n> too many BufferedIndexOutputs alive at once so I think a large-ish\n> buffer (16 KB?) should be OK.\n\nI'm wondering how much performance benefits if you increase the buffer \nsize beyond the file system's page size? Does it make a big difference\nif you use 8 KB, 16 KB or 32 KB? If the answer is yes, then I think\nthe numbers you propose are good.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-24T14:20:48.648+0000",
+          "updated": "2007-05-24T14:20:48.648+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498696",
+          "id": "12498696",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> > I'm guessing we should leave BufferedIndexInput's default BUFFER_SIZE\n> > at 1024, at least for now.  During searching there can be quite a few\n> > of this class instantiated, and likely a larger buffer size for the\n> > freq/prox streams could actually hurt search performance for those\n> > searches that use skipping.\n> \n> I submitted a patch for LUCENE-430 which avoids copying the buffer when\n> a BufferedIndexInput is cloned. With this patch we could also add a \n> method setBufferSize(int) to BufferedIndexInput. This method has to\n> be called then right after the input has been created or cloned and\n> before the first read is performed (the first read operation allocates\n> the buffer). If called later it wouldn't have any effect. This would\n> allow us to adjust the buffer size dynamically, e. g. use large buffers\n> for segment merges and stored fields, but smaller ones for freq/prox \n> streams, maybe dependent on the document frequency. \n> What do you think?\n\nI like that idea!\n\nI am actually seeing that increased buffer sizes for\nBufferedIndexInput help performance of indexing as well (up to ~5%\njust changing this buffer), so I think we do want to increase this but\nonly for merging.\n\nI wonder if we should just add a ctor to BufferedIndexInput that takes\nthe bufferSize?  This would avoid the surprising API caveat you\ndescribe above.  The problem is, then all classes (SegmentTermDocs,\nSegmentTermPositions, FieldsReader, etc.) that open an IndexInput\nwould also have to have ctors to change buffer sizes.  Even if we do\nsetBufferSize instead of new ctor we have some cases (eg at least\nSegmentTermEnum) where bytes are read during construction so it's too\nlate for caller to then change buffer size.  Hmmm.  Not clear how to\ndo this cleanly...\n\nMaybe we do the setBufferSize approach, but, if the buffer already\nexists, rather than throwing an exception we check if the new size is\ngreater than the old size and if so we grow the buffer?  I can code this\nup.\n\n> > The CompoundFileWriter buffer is created only briefly, so I think we\n> > can use a fairly large (32 KB?) buffer there.  And there should not be\n> > too many BufferedIndexOutputs alive at once so I think a large-ish\n> > buffer (16 KB?) should be OK.\n> \n> I'm wondering how much performance benefits if you increase the buffer \n> size beyond the file system's page size? Does it make a big difference\n> if you use 8 KB, 16 KB or 32 KB? If the answer is yes, then I think\n> the numbers you propose are good.\n\nI'm testing now different sizes of each of these three buffers\n... will post the results.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-24T16:08:24.838+0000",
+          "updated": "2007-05-24T16:08:24.838+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498714",
+          "id": "12498714",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I wonder if we should just add a ctor to BufferedIndexInput that takes\n> the bufferSize? This would avoid the surprising API caveat you\n> describe above. The problem is, then all classes (SegmentTermDocs,\n> SegmentTermPositions, FieldsReader, etc.) that open an IndexInput\n> would also have to have ctors to change buffer sizes. Even if we do\n> setBufferSize instead of new ctor we have some cases (eg at least\n> SegmentTermEnum) where bytes are read during construction so it's too\n> late for caller to then change buffer size. Hmmm. Not clear how to\n> do this cleanly...\n\nYeah I was thinking about the ctor approach as well. Actually \nBufferedIndexInput does not have a public ctor so far, it's created by \nusing Directory.openInput(String fileName). And to add a new ctor would \nmean an API change, so subclasses wouldn't compile anymore without \nchanges. \nWhat me might want to do instead is to add a new new method\nopenInput(String fileName, int bufferSize) to Directory which calls\nthe existing openInput(String fileName) by default, so subclasses of\nDirectory would ignore the bufferSize parameter by default. Then we\ncan change FSDirectory to overwrite openInput(String, int):\n\n  public IndexInput openInput(String name, int bufferSize) \n\t\tthrows IOException {\n    FSIndexInput input = new FSIndexInput(new File(directory, name));\n\tinput.setBufferSize(bufferSize);\n\treturn input;\n  }\n\nThis should solve the problems you mentioned like in SegmentTermEnum \nand we don't have to support setBufferSize() after a read has been\nperformed. It has also the advantage that we safe an instanceof and\ncast from IndexInput to BufferedIndexInput before setBufferSize()\ncan be called.\n\nAfter a clone however, we would still have to cast to \nBufferedIndexInput before setBufferSize() can be called.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-24T16:56:24.053+0000",
+          "updated": "2007-05-24T16:56:24.053+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498739",
+          "id": "12498739",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> > I wonder if we should just add a ctor to BufferedIndexInput that takes\n> > the bufferSize? This would avoid the surprising API caveat you\n> > describe above. The problem is, then all classes (SegmentTermDocs,\n> > SegmentTermPositions, FieldsReader, etc.) that open an IndexInput\n> > would also have to have ctors to change buffer sizes. Even if we do\n> > setBufferSize instead of new ctor we have some cases (eg at least\n> > SegmentTermEnum) where bytes are read during construction so it's too\n> > late for caller to then change buffer size. Hmmm. Not clear how to\n> > do this cleanly...\n> \n> Yeah I was thinking about the ctor approach as well. Actually \n> BufferedIndexInput does not have a public ctor so far, it's created by \n> using Directory.openInput(String fileName). And to add a new ctor would \n> mean an API change, so subclasses wouldn't compile anymore without \n> changes. \n\nActually, it does have a default public constructor right?  Ie if we add\n\n  public BufferedIndexInput()\n  public BufferedIndexInput(int bufferSize)\n\nthen I think we don't break API backwards compatibility?\n\n> After a clone however, we would still have to cast to\n> BufferedIndexInput before setBufferSize() can be called.\n\nI plan to add \"private int bufferSize\" to BufferedIndexInput,\ndefaulting to BUFFER_SIZE.  I think then it would just work w/ your\nLUCENE-430 patch because your patch sets the clone's buffer to null\nand then when the clone allocates its buffer it will be length\nbufferSize.  I think?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-24T17:55:13.175+0000",
+          "updated": "2007-05-24T17:55:13.175+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498757",
+          "id": "12498757",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> Actually, it does have a default public constructor right? Ie if we add\n\n>  public BufferedIndexInput()\n>  public BufferedIndexInput(int bufferSize)\n\n> then I think we don't break API backwards compatibility?\n\nOups! Of course, you are right. What was I thinking...\n\n> I plan to add \"private int bufferSize\" to BufferedIndexInput,\n> defaulting to BUFFER_SIZE. I think then it would just work w/ your\n> LUCENE-430 patch because your patch sets the clone's buffer to null\n> and then when the clone allocates its buffer it will be length\n> bufferSize. I think?\n\nTrue. But it would be nice if it was possible to change the buffer size\nafter a clone. For example in SegmentTermDocs we could then adjust the\nbuffer size of the cloned freqStream according to the document frequency.\nAnd in my multi-level skipping patch (LUCENE-866) I could also benefit\nfrom this functionality.\n\nHmm, in SegmentTermDocs the freq stream is cloned in the ctor. If the\nsame instance of SegmentTermDocs is used for different terms, then \nthe same clone is used. So actually it would be nice it was possible to \nchange the buffer size after read has performed.\n\n> Maybe we do the setBufferSize approach, but, if the buffer already\n> exists, rather than throwing an exception we check if the new size is\n> greater than the old size and if so we grow the buffer? I can code this\n> up. \n\nSo yes, I think we should implement it this way.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-24T18:19:32.374+0000",
+          "updated": "2007-05-24T18:19:32.374+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498776",
+          "id": "12498776",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> > I plan to add \"private int bufferSize\" to BufferedIndexInput,\n> > defaulting to BUFFER_SIZE. I think then it would just work w/ your\n> > LUCENE-430 patch because your patch sets the clone's buffer to null\n> > and then when the clone allocates its buffer it will be length\n> > bufferSize. I think?\n> \n> True. But it would be nice if it was possible to change the buffer size\n> after a clone. For example in SegmentTermDocs we could then adjust the\n> buffer size of the cloned freqStream according to the document frequency.\n> And in my multi-level skipping patch (LUCENE-866) I could also benefit\n> from this functionality.\n\nOK, I agree: let's add a BufferedIndexInput.setBufferSize() and also\nopenInput(path, bufferSize) to Directory base class & to FSDirectory.\n\n> Hmm, in SegmentTermDocs the freq stream is cloned in the ctor. If the\n> same instance of SegmentTermDocs is used for different terms, then \n> the same clone is used. So actually it would be nice it was possible to \n> change the buffer size after read has performed.\n> \n> > Maybe we do the setBufferSize approach, but, if the buffer already\n> > exists, rather than throwing an exception we check if the new size is\n> > greater than the old size and if so we grow the buffer? I can code this\n> > up. \n> \n> So yes, I think we should implement it this way.\n\nOK I will do this.  Actually, I think we should also allow making the\nbuffer smaller this way.  Meaning, I will preserve buffer contents\n(starting from bufferPosition) as much as is allowed by the smaller\nbuffer.  This way there is no restriction on using this method\nvs. having read bytes already (\"principle of least surprise\").\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-24T18:55:26.632+0000",
+          "updated": "2007-05-24T18:55:26.632+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498780",
+          "id": "12498780",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> OK I will do this. Actually, I think we should also allow making the\n> buffer smaller this way. Meaning, I will preserve buffer contents\n> (starting from bufferPosition) as much as is allowed by the smaller\n> buffer. This way there is no restriction on using this method\n> vs. having read bytes already (\"principle of least surprise\"). \n\nYep sounds good. I can code this and commit it with LUCENE-430.\nIf you want to do it, then I should commit the existing 430 patch\nsoon, so that there are no conflicts in our patches?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-24T19:06:56.007+0000",
+          "updated": "2007-05-24T19:06:56.007+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498784",
+          "id": "12498784",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> > OK I will do this. Actually, I think we should also allow making the\n> > buffer smaller this way. Meaning, I will preserve buffer contents\n> > (starting from bufferPosition) as much as is allowed by the smaller\n> > buffer. This way there is no restriction on using this method\n> > vs. having read bytes already (\"principle of least surprise\").\n> \n> Yep sounds good. I can code this and commit it with LUCENE-430.\n> If you want to do it, then I should commit the existing 430 patch\n> soon, so that there are no conflicts in our patches?\n\nI'm actually coding it up now.  Why don't you commit LUCENE-430\nsoonish and then I'll update & merge?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-24T19:21:46.342+0000",
+          "updated": "2007-05-24T19:21:46.342+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498787",
+          "id": "12498787",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "I would like to know why these gains are appearing, and how specific they are to a particular system.  How can the optimum buffer size be deduced?  Is it a factor of hard disk sector size?  Memory page size?  Lucene write behavior pattern? Level X Cache size?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-05-24T19:31:29.957+0000",
+          "updated": "2007-05-24T19:31:29.957+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12498793",
+          "id": "12498793",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I'm actually coding it up now. Why don't you commit LUCENE-430\n> soonish and then I'll update & merge?\n\nDone.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-24T19:44:48.917+0000",
+          "updated": "2007-05-24T19:44:48.917+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499018",
+          "id": "12499018",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK I ran two sets of tests.  First is only on Mac OS X to see how\nperformance changes with buffer sizes.  Second was also on Debian\nLinux & Windows XP Pro.\n\nThe performance gains are 10-18% faster overall.\n\n\nFIRST TEST\n\nI increased buffer sizes, separately, for each of BufferedIndexInput,\nBufferedIndexOutput and CompoundFileWriter.  Each test is run once on\nMac OS X:\n\n  BufferedIndexInput\n\n      1 K   622 sec (current trunk)\n      4 K   607 sec\n      8 K   606 sec\n     16 K   598 sec\n     32 K   606 sec\n     64 K   589 sec\n    128 K   601 sec\n\n  CompoundFileWriter\n\n      1 K   622 sec (current trunk)\n      4 K   599 sec\n      8 K   591 sec\n     16 K   578 sec\n     32 K   583 sec\n     64 K   580 sec\n\n  BufferedIndexOutput\n\n      1 K   622 sec (current trunk)\n      4 K   588 sec\n      8 K   576 sec\n     16 K   551 sec\n     32 K   566 sec\n     64 K   555 sec\n    128 K   543 sec\n    256 K   534 sec\n    512 K   564 sec\n\nComments:\n\n  * The results are fairly noisy, but, performance does generally get\n    better w/ larger buffers.\n\n  * BufferedIndexOutput seems specifically to like very large output\n    buffers; the other two seem to have less but still significant\n    effect.\n\nGiven this I picked 16 K buffer for BufferedIndexOutput, 16 K buffer\nfor CompoundFileWriter and 4 K buffer for BufferedIndexInput. I think\nwe would get faster performance for a larger buffer for\nBufferedIndexInput, but, even when merging there are quite a few of\nthese created (mergeFactor * N where N = number of separate index\nfiles).\n\nThen, I re-tested the baseline (trunk) & these buffer sizes across\nplatforms (below):\n\n\n\nSECOND TEST\n\nBaseline (trunk) = 1 K buffers for all 3.  New = 16 K for\nBufferedIndexOutput, 16 K for CompoundFileWriter and 4 K for\nBufferedIndexInput.\n\nI ran each test 4 times & took the best time:\n\nQuad core Mac OS X on 4-drive RAID 0\n  baseline  622 sec\n  new       527 sec\n  -> 15% faster\n\nDual core Debian Linux (2.6.18 kernel) on 6 drive RAID 5\n  baseline  708 sec\n  new       635 sec\n  -> 10% faster\n  \nWindows XP Pro laptop, single drive\n  baseline  1604 sec\n  new       1308 sec\n  -> 18% faster\n\nNet/net it's between 10-18% performance gain overall.  It is\ninteresting that the system with the \"weakest\" IO system (one drive on\nWindows XP vs RAID 0/5 on the others) has the best gains.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T10:09:42.011+0000",
+          "updated": "2007-05-25T10:09:42.011+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499020",
+          "id": "12499020",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\n> I would like to know why these gains are appearing, and how specific\n> they are to a particular system. How can the optimum buffer size be\n> deduced? Is it a factor of hard disk sector size? Memory page size?\n> Lucene write behavior pattern? Level X Cache size?\n\nIt looks like the gains are cross platform (at least between OS X,\nLinux, Windows XP) and cross-IO architecture.\n\nI'm not sure how this depends/correlates to the various cache/page\nsizes through the layers of OS -> disk heads.\n\nIt must be that doing an IO request has a fairly high overhead and so\nthe more bytes you can read/write at once the faster it is, since you\namortize that overhead.\n\nFor merging in particular, with mergeFactor=10, I can see that a\nlarger buffer size on the input streams should help reduce insane\nseeks back & forth between the 10 files (and the 1 output file).\nMaybe larger reads on the input streams also cause OS's IO scheduler\nto do larger read-ahead in anticipation?\n\nAnd some good news: these gains seem to be additive to the gains in\nLUCENE-843, at least with my initial testing.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T10:14:13.037+0000",
+          "updated": "2007-05-25T10:14:13.037+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499044",
+          "id": "12499044",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jch",
+            "name": "jch",
+            "key": "jch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "John Haxby",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> Net/net it's between 10-18% performance gain overall. It is\n> interesting that the system with the \"weakest\" IO system (one drive on\n> Windows XP vs RAID 0/5 on the others) has the best gains.\n\nActually, it's not that surprising.  Linux and BSD (MacOS) kernels work hard to do good I/O without the user having to do that much to take it into account.   The improvement you're seeing in those systems is as much to do with the fact that you're dealing with complete file system block sizes (4x4k) and complete VM page sizes (4x4k).   You'd probably see similar gains just going from 1k to 4k though: even \"cp\" benefits from using a 4k block size rather than 1k.  I'd guess that a 4k or 8k buffer would be best on Linux/MacOS and that you wouldn't see much difference going to 16k.  In fact, in the MacOS tests the big jump seems to be from 1k to 4k with smaller improvements thereafer.\n\nI'm not that surprised by the WinXP changes: the I/O subsystem on a laptop is usually dire and anything that will cut down on the I/O is going to be a big help.  I would expect that the difference would be more dramatic with a FAT32 file system than it would be with NTFS though.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jch",
+            "name": "jch",
+            "key": "jch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "John Haxby",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T11:24:51.779+0000",
+          "updated": "2007-05-25T11:24:51.779+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499065",
+          "id": "12499065",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Attached the patch based on above discussion.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T12:07:19.305+0000",
+          "updated": "2007-05-25T12:07:19.305+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499182",
+          "id": "12499182",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Mike,\n\nI tested and reviewed your patch. It looks good and all tests pass! Two comments:\n\n- Should we increase the buffer size for CompoundFileReader to 4KB not only for the merge mode but also for the normal read mode? \n- In BufferedIndexInput.setBufferSize() a new buffer should only be allocated if the new size is different from the previous buffer size.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T17:41:49.732+0000",
+          "updated": "2007-05-25T17:41:49.732+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499199",
+          "id": "12499199",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> I tested and reviewed your patch. It looks good and all tests pass!\n\nThanks!\n\n> - Should we increase the buffer size for CompoundFileReader to 4KB\n> not only for the merge mode but also for the normal read mode?\n\nI'm a little nervous about that: I don't know the impact it will have\non searching, especially queries that heavily use skipping?\n\nHmmm, actually, a CSIndexInput potentially goes through 2 buffers when\nit does a read -- its own (since each CSIndexInput subclasses from\nBufferedIndexInput) and then the main stream of the\nCompoundFileReader.  It seems like we shouldn't do this?  We should\nnot do a double copy.\n\nIt almost seems like the double copy would not occur becaase\nreadBytes() has logic to read directly from the underlying stream if\nthe sizes is >= bufferSize.  However, I see at least one case during\nmerging where this logic doesn't kick in (and we do a double buffer\ncopy) because the buffers become \"skewed\".  I will open a separate\nissue for this; I think we should fix it and gain some more\nperformance.\n\n> In BufferedIndexInput.setBufferSize() a new buffer should only be\n> allocated if the new size is different from the previous buffer\n> size.\n\nAhh, good.  Will do.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T18:40:38.598+0000",
+          "updated": "2007-05-25T18:40:38.598+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499206",
+          "id": "12499206",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I'm a little nervous about that: I don't know the impact it will have\n> on searching, especially queries that heavily use skipping?\n\nDoesn't the OS always read at least a whole block from the disk (usually\n4 KB)? If the answer is yes, then we don't safe IO by limiting the buffer\nsize to 1 KB, right? Of course it makes sense to limit the size for\nstreams that we clone often (like the freq stream) to safe memory and\narray copies. But we never clone the base stream in the cfs reader.\n\n> Hmmm, actually, a CSIndexInput potentially goes through 2 buffers when\n> it does a read -- its own (since each CSIndexInput subclasses from\n> BufferedIndexInput) and then the main stream of the\n> CompoundFileReader. It seems like we shouldn't do this? We should\n> not do a double copy.\n>\n> It almost seems like the double copy would not occur becaase\n> readBytes() has logic to read directly from the underlying stream if\n> the sizes is >= bufferSize. However, I see at least one case during\n> merging where this logic doesn't kick in (and we do a double buffer\n> copy) because the buffers become \"skewed\". I will open a separate\n> issue for this; I think we should fix it and gain some more\n> performance.\n\nGood catch! Reminds me a bit of LUCENE-431 where we also did double\nbuffering for the RAMInputStream and RAMOutputStream. Yes, I think\nwe should fix this.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T19:15:58.111+0000",
+          "updated": "2007-05-25T19:15:58.111+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499209",
+          "id": "12499209",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> > I'm a little nervous about that: I don't know the impact it will have\n> > on searching, especially queries that heavily use skipping?\n> \n> Doesn't the OS always read at least a whole block from the disk\n> (usually 4 KB)? If the answer is yes, then we don't safe IO by\n> limiting the buffer size to 1 KB, right? Of course it makes sense to\n> limit the size for streams that we clone often (like the freq\n> stream) to safe memory and array copies. But we never clone the base\n> stream in the cfs reader.\n\nYes, I think you're right.  But we should test search\nperformance on a large index & \"typical\" queries to be sure?  I will\nopen a new issue to track this...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T19:35:22.405+0000",
+          "updated": "2007-05-25T19:35:22.405+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499212",
+          "id": "12499212",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "> then we don't save IO by limiting the buffer size to 1 KB\n\nI'm confused by this.  My assumption is that, when you make a request to read 1k from a disk file, that the OS reads substantially more than 1k from the disk and places it in the buffer cache.  (The cost of randomly reading 1k is nearly the same as randomly reading 100k--both are dominated by seek.) So, if you make another request to read 1k shortly thereafter you'll get it from the buffer cache and the incremental cost will be that of making a system call.\n\nIn general, one should thus rely on the buffer cache and read-ahead, and make input buffers only big enough so that system call overhead is insignificant.  An alternate strategy is to not trust the buffer cache and read-ahead, but rather to make your buffers large enough so that transfer time dominates seeks.  This can require 1MB or larger buffers, so isn't always practical.\n\nSo, back to your statement, a 1k buffer doesn't save physical i/o, but nor should it incur extra physical i/o.  It does incur extra system calls, but uses less memory, which is a tradeoff.  Is that what you meant?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-05-25T19:54:30.785+0000",
+          "updated": "2007-05-25T19:54:30.785+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499214",
+          "id": "12499214",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rengels%40ix.netcom.com",
+            "name": "rengels@ix.netcom.com",
+            "key": "rengels@ix.netcom.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "robert engels",
+            "active": true,
+            "timeZone": "America/Chicago"
+          },
+          "body": "I think the important consideration is how expensive is the system call. Since the system call requires JNI, it MIGHT be expensive.\n\nAnother important consideration is buffer utilization. It is my understanding that the OS will perform read-ahead normally only in sequential access only, outside of the additional bytes read to optimize the physical read. If Lucene performs indexed reads but the data is actually being accessed sequential, Lucene managing its own buffers can far more effective.\n\nAlong these lines, if the server is heavily used for a variety of applications Lucene can manage its own buffers more efficiently - similar to how a database almost always (every commercial one I know) has its own buffer cache and does not rely on the OS. In a GC environment though it may be even more imporant if the buffers were managed/reused from a pool as you avoid the GC overhead.\n\nJust my thoughts.\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rengels%40ix.netcom.com",
+            "name": "rengels@ix.netcom.com",
+            "key": "rengels@ix.netcom.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "robert engels",
+            "active": true,
+            "timeZone": "America/Chicago"
+          },
+          "created": "2007-05-25T20:09:53.548+0000",
+          "updated": "2007-05-25T20:09:53.548+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499221",
+          "id": "12499221",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> So, back to your statement, a 1k buffer doesn't save \n> physical i/o, but nor should it incur extra physical i/o.  \n\nYes, I agree.\n\n> It does incur extra system calls, but uses less memory, \n> which is a tradeoff.\n\nA coworker told me that he ran some experiments with buffer \nsizes in a different application, and he found out that \nincreasing the buffer size beyond the disks block size\nfurther speed up things. In these tests he read a whole\nfile sequentially, which means that the speedup came from\nsaving system calls, right? \n\nSo yes, it is a tradeoff between memory usage and amount \nof system calls. That's the reason for my suggestion to\nonly increase the buffer size for input streams that we\ndon't clone, like the base stream in the compound reader.\n\nBut I'm just sort of guessing here, I think we should run\nsome performance experiments. Mike already opened \nLUCENE-893 for that.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T20:35:43.667+0000",
+          "updated": "2007-05-25T20:35:43.667+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499223",
+          "id": "12499223",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Mike,\n\nanother thing I just noticed is your new testcase doesn't remove \nthe directory \"testSetBufferSize\" at the end.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T20:43:14.986+0000",
+          "updated": "2007-05-25T20:43:14.986+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499224",
+          "id": "12499224",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=eksdev",
+            "name": "eksdev",
+            "key": "eksdev",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Eks Dev",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "we did some time ago a few tests and simply concluded, it boils down to what Doug said, \"It does incur extra system calls, but uses less memory, which is a tradeoff.\"\n\nin *our* setup 4k was kind of magic number , ca 5-8% faster. I guess it is actually a compromise between time spent in extra os calls  vs probability of reading more than you will really use (waste time on it). Why 4k number happens often to be good compromise is probably the difference in speed of buffer copy for 4k vs 1k being negligible  compared to time spent on system calls. \n \nThe only conclusion we came up to is that you have to measure it and find good compromise. Our case is a bit atypical, short documents (1G index, 60Mio docs) and queries with a lot of terms (80-200), Win 2003 Server, single disk. \n\nAnd I do not remember was it before or after we started using MMAP, so no idea really if this affects MMAP setup, guess not.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=eksdev",
+            "name": "eksdev",
+            "key": "eksdev",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Eks Dev",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T20:47:38.050+0000",
+          "updated": "2007-05-25T20:47:38.050+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499225",
+          "id": "12499225",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> another thing I just noticed is your new testcase doesn't remove the\n> directory \"testSetBufferSize\" at the end.\n\nWoops, I will fix.  I will also fix it to appear under the tempDir.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T20:54:02.177+0000",
+          "updated": "2007-05-25T20:54:02.177+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499226",
+          "id": "12499226",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\n> we did some time ago a few tests and simply concluded, it boils down to what Doug said, \"It does incur extra system calls, but uses less memory, which is a tradeoff.\"\n>\n> in *our* setup 4k was kind of magic number , ca 5-8% faster. I guess it is actually a compromise between time spent in extra os calls vs probability of reading more than you will really use (waste time on it). Why 4k number happens often to be good compromise is probably the difference in speed of buffer copy for 4k vs 1k being negligible compared to time spent on system calls.\n> \n> The only conclusion we came up to is that you have to measure it and find good compromise. Our case is a bit atypical, short documents (1G index, 60Mio docs) and queries with a lot of terms (80-200), Win 2003 Server, single disk.\n>\n> And I do not remember was it before or after we started using MMAP, so no idea really if this affects MMAP setup, guess not. \n\nInteresting!  Do you remember if your 5-8% gain was for searching or\nindexing?  This issue is focusing on buffer size impact on indexing\nperformance and LUCENE-893 is focusing on search performance.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T21:00:11.421+0000",
+          "updated": "2007-05-25T21:00:11.421+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499231",
+          "id": "12499231",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "New patch with these changes:\n\n  * The unit test now creates its test index under \"tempDir\" & removes it when done\n\n  * Don't allocate a new buffer in setBufferSize if the newSize == the current size",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-25T21:09:40.975+0000",
+          "updated": "2007-05-25T21:09:40.975+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499238",
+          "id": "12499238",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Take2 looks good. +1 for committing.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T21:59:25.109+0000",
+          "updated": "2007-05-25T21:59:25.109+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499280",
+          "id": "12499280",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "I have some auxiliary data points to report after experimenting with buffer\nsize in KS today on three different systems: OS X 10.4.9, FreeBSD 5.3, and an\nold RedHat 9 box.  \n\nThe FS i/o classes in KinoSearch use a FILE* and\nfopen/fwrite/fread/fseek/ftell, rather than file descriptors and the POSIX\nfamily of functions.  Theoretically, this is wasteful because FILE* stream i/o\nis buffered, so there's double buffering happening.  I've meant to change that\nfor some time.  However, when I've used setvbuf(self->fhandle, NULL, _IONBF)\nto eliminate the buffer for the underlying FILE* object, performance tanks --\nindexing time doubles.  I still don't understand exactly why, but I know a\nlittle more now.\n\n  * Swapping out the FILE* for a descriptor and switching all the I/O calls to\n    POSIX variants has no measurable impact on any of these systems.\n\n  * Changing the KS buffer size from 1024 to 4096 has no measurable impact on\n    any of these systems.\n\n  * Using setvbuf to eliminate the buffering at output turns out to have no\n    impact on indexing performance.  It's only killing off the read mode FILE*\n    buffer that causes the problem.\n\nSo, it seems that the only change I can make moves the numbers in the wrong\ndirection.  \n\nThe results are somewhat puzzling because I would ordinarily have blamed\nsub-optimal flush/refill scheduling in my app for the degraded performance\nwith setvbuf() on read mode.  However, the POSIX i/o calls are unbuffered, so\nthat's not it.  My best guess is that disabling buffering for read mode\ndisables an fseek/ftell optimization.  ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-05-26T03:11:57.167+0000",
+          "updated": "2007-05-26T03:11:57.167+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499299",
+          "id": "12499299",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Marvin, it's odd that you see no gains when coming straight from C.\nHmmm.\n\nI wonder if IO calls from Java somehow have a sizable overhead that\nthe corresponding C calls do not.  I didn't think JNI was that\nexpensive?  Though, it looks like reading into byte[] does entail\nextra byte copying.  We could explore using ByteBuffers from\njava.nio.* ... ahh, this has been somewhat explored already, at least\nin LUCENE-414 and LUCENE-893.\n\nAlso, how much \"merging\" is actually done in your test / KS?  How many\nsegments are merged at once?  The fact that KS doesn't re-merge the\nstored fields & term vectors (within one session) is probably also a\nbig difference here.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-26T10:25:34.446+0000",
+          "updated": "2007-05-26T10:25:34.446+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499307",
+          "id": "12499307",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "> Also, how much \"merging\" is actually done in your test / KS?  How many\n> segments are merged at once?  The fact that KS doesn't re-merge the stored\n> fields & term vectors (within one session) is probably also a big difference\n> here.\n\nIn the previous test, I was indexing 1000 Reuters articles all in one session.\nThe postings were never flushed to disk prior to the final write, as the\nexternal sorter never exceeded its memory threshold.\n\nI reran the test on the FreeBSD box, changing it so that the index was built\nup in 10-doc increments.  There was still no measurable change for changing\neither the KS buffer size or POSIX/stream style IO.  However, using setvbuf on\nthe read mode FILE* stream i/o was utterly disastrous.  After several minutes\n(compare with 3.8 seconds) I cut it off.  Subsequent testing with a 500-doc\nincrement verified that the test actually was working (10.3 secs).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-05-26T11:26:10.308+0000",
+          "updated": "2007-05-26T11:26:10.308+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/12499548",
+          "id": "12499548",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\nI re-ran the \"second test\" above, but this time with compound file\nturned off.\n\nBaseline (trunk) = 1 K buffers for all 3. New = 16 K for\nBufferedIndexOutput, 16 K for CompoundFileWriter and 4 K for\nBufferedIndexInput.  I ran each test 4 times & took the best time.\n\nQuad core Mac OS X on 4-drive RAID 0\n  baseline 553 sec\n  new 499 sec\n  -> 10% faster\n\nDual core Debian Linux (2.6.18 kernel) on 6 drive RAID 5\n  baseline 590 sec\n  new 548 sec\n  -> 7% faster\n  \nWindows XP Pro laptop, single drive\n  baseline 1078 sec\n  new 918 sec\n  -> 15% faster \n\nQuick observations:\n\n  * Still a healthy 7-15% overall gain even without compound file by\n    increasing the buffer sizes.\n\n  * The overall performance gain on the trunk just by turning off\n    compound file ranges from 7-33% (33% gain = the Windows XP\n    Laptop).\n\nOK I plan to commit this soon.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-05-28T12:03:18.827+0000",
+          "updated": "2007-05-28T12:03:18.827+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12370045/comment/17587078",
+          "id": "17587078",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1963|https://github.com/apache/lucene/issues/1963].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:37:28.257+0000",
+          "updated": "2022-08-28T11:37:28.257+0000"
+        }
+      ],
+      "maxResults": 32,
+      "total": 32,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i050dr:",
+    "customfield_12314139": null
+  }
+}

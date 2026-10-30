@@ -1,0 +1,983 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12314502",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502",
+  "key": "LUCENE-352",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310853",
+        "id": "12310853",
+        "description": "mostly 1.9 with deprecated items removed",
+        "name": "2.0.0",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2006-05-26"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13397",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "4.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310286",
+        "id": "12310286",
+        "description": "",
+        "name": "1.4",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2004-07-01"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12312517",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12312517",
+        "type": {
+          "id": "12310000",
+          "name": "Duplicate",
+          "inward": "is duplicated by",
+          "outward": "duplicates",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/12310000"
+        },
+        "inwardIssue": {
+          "id": "12332956",
+          "key": "LUCENE-560",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332956",
+          "fields": {
+            "summary": "NPE in SpanNear when used as exclusion for SpanNot",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27697",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+      "name": "miles@runtime-collective.com",
+      "key": "miles@runtime-collective.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Miles Barr",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+      "name": "miles@runtime-collective.com",
+      "key": "miles@runtime-collective.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Miles Barr",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-352/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@20909969[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@54c86933[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1bfc0efb[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@c6a7d46[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@349a310a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@17a722b1[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6cd76d68[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@3308adf9[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@56ffd8f3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@78e3da37[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2f88446e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@59995303[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:20:48 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-05-18T14:40:55.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-352/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2005-02-24T18:52:11.000+0000",
+    "updated": "2022-08-28T11:20:48.371+0000",
+    "timeoriginalestimate": null,
+    "description": "Overview description: \nI'm using the span query classes in Lucene to generate higher scores for \nsearch results where the search terms are closer together. In certain \nsituations I want to exclude terms from the span. When I attempt to exclude \nmore than one term I get an error. \n \nThe example query I'm using is:  \n \n'brighton AND tourism' -pier -contents \n \nI construct the query objects and the toString() version is: \n \nspanNot(spanNear([contents:brighton contents:tourism], 10, false), \nspanOr([contents:pier, contents:road])) \n  \n \nSteps to reproduce: \n1. Construct a SpanNearQuery (must have at least one term, but at least two \nmakes more sense) \n2. Construct a SpanOrQuery containing two or more terms \n3. Construct a SpanNotQuery to include the first query object and exclude the \nsecond (SpanOrQuery) \n4. Execute the search \n \n \nActual Results: \nA null pointer exception is thrown while generating the scores within the \nsearch. \n \nStack trace:  \njava.lang.NullPointerException   \n        at   \norg.apache.lucene.search.spans.SpanOrQuery$1.doc(SpanOrQuery.java:174)   \n        at   \norg.apache.lucene.search.spans.SpanNotQuery$1.next(SpanNotQuery.java:75)   \n        at org.apache.lucene.search.spans.SpanScorer.next(SpanScorer.java:50)   \n        at org.apache.lucene.search.Scorer.score(Scorer.java:37)   \n        at   \norg.apache.lucene.search.IndexSearcher.search(IndexSearcher.java:92)   \n        at org.apache.lucene.search.Hits.getMoreDocs(Hits.java:64)   \n        at org.apache.lucene.search.Hits.<init>(Hits.java:43)   \n        at org.apache.lucene.search.Searcher.search(Searcher.java:33)   \n        at org.apache.lucene.search.Searcher.search(Searcher.java:27)   \n        at   \ncom.runtimecollective.search.LuceneSearch.search(LuceneSearch.java:362)   \n \n \nExpected Resuts: \nIt executes the search and results where the first search terms (near query) \nare close together but without the second terms (or query) appearing.",
+    "customfield_10010": 33725.0,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312530",
+        "id": "12312530",
+        "filename": "ASF.LICENSE.NOT.GRANTED--patch.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+          "name": "miles@runtime-collective.com",
+          "key": "miles@runtime-collective.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Miles Barr",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-02-25T01:35:31.000+0000",
+        "size": 484,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312530/ASF.LICENSE.NOT.GRANTED--patch.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312531",
+        "id": "12312531",
+        "filename": "ASF.LICENSE.NOT.GRANTED--TestBasics.java.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+          "name": "miles@runtime-collective.com",
+          "key": "miles@runtime-collective.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Miles Barr",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-02-25T02:49:36.000+0000",
+        "size": 2765,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312531/ASF.LICENSE.NOT.GRANTED--TestBasics.java.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312532",
+        "id": "12312532",
+        "filename": "ASF.LICENSE.NOT.GRANTED--TestBasicsPatch2.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2005-03-25T03:34:45.000+0000",
+        "size": 2111,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312532/ASF.LICENSE.NOT.GRANTED--TestBasicsPatch2.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12331945",
+        "id": "12331945",
+        "filename": "LUCENE-352-consolidated-SpanNot-NPE.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2006-05-16T08:09:33.000+0000",
+        "size": 4564,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12331945/LUCENE-352-consolidated-SpanNot-NPE.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "[PATCH] NullPointerException when using nested SpanOrQuery in SpanNotQuery",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Operating System: Linux\nPlatform: Other",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322207",
+          "id": "12322207",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The bug could be in SpanNotQuery.java, line 67, \nwhich sets moreExclude to true. \n \nCould you try with: \n \n        private boolean moreExclude = excludeSpans.next(); \n \ninstead? \n \nRegards, \nPaul Elschot \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-02-25T01:23:29.000+0000",
+          "updated": "2005-02-25T01:23:29.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322208",
+          "id": "12322208",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14356)\nChange suggested by Paul Elschot\n\nChanging moreExlude from 'true' to 'excludeSpans.next()' did the trick.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-25T01:35:31.000+0000",
+          "updated": "2005-02-25T01:35:31.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322209",
+          "id": "12322209",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "That should be 'moreExclude'. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-25T01:36:05.000+0000",
+          "updated": "2005-02-25T01:36:05.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322210",
+          "id": "12322210",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "(In reply to comment #2) \n> Created an attachment (id=14356) [edit] \n> Change suggested by Paul Elschot \n>  \n> Changing moreExlude from 'true' to 'excludeSpans.next()' did the trick. \n \nThat's good news. Thanks for the patch. \n \nWould it be possible for you to add a few test cases \nfor this? \n \norg.apache.lucune.search.spans.TestSpans in the src/test \ndirectory has some test examples. \n \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-02-25T02:17:35.000+0000",
+          "updated": "2005-02-25T02:17:35.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322211",
+          "id": "12322211",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14357)\nAdditional test cases for when using a SpanOrQuery as the exclude option\n\nHere's a patch file for\n\ntest/src/org/apache/lucene/search/spans/TestBasics.java\n\nI added two test cases:\n\n1. When there's only one SpanQuery in the SpanOrQuery\n2. When there's more than one SpanQuery in the SpanOrQuery\n\nThere's also a commented out test for when you have an empty SpanOrQuery but\nthat currently throws an exception (complains that fields don't have the same\nname) when you try to run it. \n\nI only used regular SpanTermQuery objects within the SpanOrQuery. I assume the\nregular SpanOrQuery tests verify the SpanOrQuery works correctly with the\ndifferent span classes.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-25T02:49:36.000+0000",
+          "updated": "2005-02-25T02:49:36.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322212",
+          "id": "12322212",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Miles, \n \nThe commented test case in the patch to TestBasics passes an empty \nSpanOrQuery to a SpanNotQuery. That is probably not intended. \n \nRegards, \nPaul Elschot \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-02-25T03:15:16.000+0000",
+          "updated": "2005-02-25T03:15:16.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322213",
+          "id": "12322213",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "(In reply to comment #6) \n> Miles,  \n>   \n> The commented test case in the patch to TestBasics passes an empty  \n> SpanOrQuery to a SpanNotQuery. That is probably not intended. \n \nI just reread the previous post, and it is intended. \nHowever, I don't get the point of passing an empty SpanOrQuery. \n \n>   \n> Regards,  \n> Paul Elschot  \n>   \n \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-02-25T03:19:20.000+0000",
+          "updated": "2005-02-25T03:19:20.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322214",
+          "id": "12322214",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "My reasoning was that a poorly written parser might construct it with an empty \nSpanOrQuery and it should probably produce the same results as just the \ninclude query. But it would be incorrect to do so, so you'd expect an error.  \n \nIf you don't want to change the behaviour then just throw out the commented \ntest case. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=miles%40runtime-collective.com",
+            "name": "miles@runtime-collective.com",
+            "key": "miles@runtime-collective.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Miles Barr",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-25T18:30:13.000+0000",
+          "updated": "2005-02-25T18:30:13.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322215",
+          "id": "12322215",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Created an attachment (id=14558)\nPatch to TestBasics.java with the additional test cases except the discussed\none.\n\nI think this settles the discussion,\nRegards,\nPaul Elschot",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-03-25T03:34:45.000+0000",
+          "updated": "2005-03-25T03:34:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12322216",
+          "id": "12322216",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The patch of 24 Feb 2005 has not yet been applied. \nThis bug might be reopened because of that, but that would be overdoing it. \n \nThe extra test code in the patch of 24 March 2005 seems ok to me. \n \nRegards, \nPaul Elschot \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-07-20T04:17:46.000+0000",
+          "updated": "2005-07-20T04:17:46.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12378033",
+          "id": "12378033",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The fix in patch.txt is not in the trunk, and there was some recent discussion on\nwhat might be the same bug, so I'm reopening this.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-05T20:41:02.000+0000",
+          "updated": "2006-05-05T20:41:02.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12402469",
+          "id": "12402469",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "consolidated patch containing...\n\n* additional test methods in TestBasicsPatch2.txt\n* additional test methods from LUCENE-560\n* one line change to from patch.txt that makes these tests pass\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-05-16T08:09:33.000+0000",
+          "updated": "2006-05-16T08:09:33.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12402470",
+          "id": "12402470",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "I think this bug is actualy simple enough that I can honestly say I understand it ... so unless anyone obejcts i'll commit \"LUCENE-352-consolidated-SpanNot-NPE.patch\" in a few days.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-05-16T08:11:08.000+0000",
+          "updated": "2006-05-16T08:11:08.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12402474",
+          "id": "12402474",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "+1\nlooks fine.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-05-16T08:39:43.000+0000",
+          "updated": "2006-05-16T08:39:43.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/12412303",
+          "id": "12412303",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "commited patch",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-05-18T14:40:55.000+0000",
+          "updated": "2006-05-18T14:40:55.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314502/comment/17586544",
+          "id": "17586544",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1430|https://github.com/apache/lucene/issues/1430].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:20:48.371+0000",
+          "updated": "2022-08-28T11:20:48.371+0000"
+        }
+      ],
+      "maxResults": 16,
+      "total": 16,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i053pb:",
+    "customfield_12314139": null
+  }
+}

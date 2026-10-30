@@ -1,0 +1,3374 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="SECOAUTH">
+	<bug id="13" opendate="2010-10-08 17:02:29" fixdate="2010-10-15 14:01:12" resolution="Complete">
+		<buginformation>
+			<summary>Fix OAuth timing vulnerability</summary>
+			<description>See:
+http://groups.google.com/group/oauth/browse_thread/thread/f3e9ec6c3aa0fe1a/12c4140f2cf4fc13?lnk=gst&amp;amp;q=vulnerability#12c4140f2cf4fc13</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="24" opendate="2010-11-24 03:49:12" fixdate="2010-11-24 13:21:09" resolution="Complete">
+		<buginformation>
+			<summary>Incorrect error reporting during user authorization</summary>
+			<description>When client_id is not found, Auth server first allows user to log in (which is IMHO not necessary), then reports an error to the client as a JSON object.
+Instead, it must redirect back to the client through redirection URI (if provided) with error code and description in query parameters (see http://tools.ietf.org/html/draft-ietf-oauth-v2-10#section-3.2).
+If the redirecition URI is not provided in the request, since the client is unknown, the Auth server can display an error page, though it&amp;amp;apos;s not described in draft 10. Anyway, sending JSON to an end-user under web-server profile is not good.</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestWebServerProfile.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.verification.VerificationCodeFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="25" opendate="2010-11-24 06:43:25" fixdate="2010-11-24 13:25:21" resolution="Complete">
+		<buginformation>
+			<summary>Bug in OAuth2ClientContextFilter error handling</summary>
+			<description>In the doFilter method request.getParameterMap() is used as Map&amp;lt;String, String&amp;gt; while it is a MultiMap:
+    if (request.getParameter("error") != null) 
+{
+      oauth2Context.setErrorParameters(request.getParameterMap());
+    }
+
+Later it causes ClassCastException in DefaultOAuth2SerializationService.deserializeError()
+Steps to reproduce:
+
+Run sample servers
+Authenticate on auth server
+Deny access for the client
+or just add "?error=access_denied&amp;amp;error_description=User denied authentication." to the client resource URL
+
+</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.OAuth2ClientContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="29" opendate="2010-11-29 05:55:40" fixdate="2011-01-12 12:56:04" resolution="Complete">
+		<buginformation>
+			<summary>Incomplete parsing of oauth:verification-code element</summary>
+			<description>xsd scheme for oauth:verification-code contains the parameter "redirect-strategy-ref", but it is not parsed in OAuth2ProviderBeanDefinitionParser.parse</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ProviderBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="27" opendate="2010-11-26 05:02:29" fixdate="2011-01-12 13:42:46" resolution="Complete">
+		<buginformation>
+			<summary>Invalid error handling in OAuth2ErrorHandler</summary>
+			<description>The line 28 of OAuth2ErrorHandler.java parser authenticationHeader ignoring that it starts with "OAuth ", so resulting map contains key "OAuth error" instead of just "error"</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.OAuth2ErrorHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="39" opendate="2011-01-30 19:01:39" fixdate="2011-03-04 11:58:29" resolution="Complete">
+		<buginformation>
+			<summary>setExipiration() bug in deserializeAccessToken() in class DefaultOAuth2SerializationService</summary>
+			<description>In the method deserializeAccessToken() in the class DefaultOAuth2SerializationService line 86 is as follows:
+token.setExpiration(new Date(expiration * 1000L));
+The expiration variable being deserialized is the number of seconds from the current time until expiration and thus the line should be:
+token.setExpiration(new Date(System.currentTimeMillis() + expiration * 1000L));
+Either that or just serialize the time it expires directly and not time until expiration?
+With this bug, all access tokens acquired from the provider have an incorrect expiration date.</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.common.DefaultOAuth2SerializationService.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="45" opendate="2011-02-16 20:51:25" fixdate="2011-03-04 12:23:07" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2ClientBeanDefinitionParser passes in incorrect string when calling element.getAttribute() to get requireAuthenticated attribute</summary>
+			<description>OAuth2ClientBeanDefinitionParser passes in an incorrect string when trying to parse the requireAuthenticated attribute. Currently it looks for the string "requireAuthenticated", which is incorrect as the schema (spring-security-oauth2-1.0.xsd) defines the string as "require-authenticated".
+With this bug, specifying &amp;lt;oauth:client require-authenticated="false" /&amp;gt; does nothing.
+This requires a simple fix, just change the string it&amp;amp;apos;s looking for in element.getAttribute() in OAuth2ClientBeanDefinitionParser.</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ClientBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="47" opendate="2011-03-01 21:31:39" fixdate="2011-03-04 12:25:15" resolution="Complete">
+		<buginformation>
+			<summary>approval-handler-ref not being parsed correctly in OAuth2ProviderBeanDefinitionParser</summary>
+			<description>The attribute "approval-handler-ref" in the &amp;lt;oauth:verification-code&amp;gt; tag is not being parsed correctly in OAuth2ProviderBeanDefinitionParser due to a bug in the following lines:
+String approvalHandlerRef = verificationCodeElement == null ? null : verificationCodeElement.getAttribute("approval-handler-ref");
+String verificationCodeRedirectStrategyRef = verificationCodeElement == null ? null : verificationCodeElement.getAttribute("approval-handler-ref");
+The second line should be looking for the attribute "redirect-strategy-ref", this is most likely just a copy and paste error.</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ProviderBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="38" opendate="2011-01-20 17:20:14" fixdate="2011-03-11 14:17:02" resolution="Complete">
+		<buginformation>
+			<summary>Incorrect validation when setting the filterProcessesUrl field in VerificationCodeFilter</summary>
+			<description>In OAuth2ProviderBeanDefinitionParser.java, line 163, the check 
+      if (StringUtils.hasText(authUrl)) 
+{
+        verificationCodeFilterBean.addPropertyValue("filterProcessesUrl", userAuthUrl);
+      }
+
+probably should be
+
+      if (StringUtils.hasText(userAuthUrl)) {        verificationCodeFilterBean.addPropertyValue("filterProcessesUrl", userAuthUrl);      }
+
+You&amp;amp;apos;re checking for the value of "authorization-url" instead of "user-authorization-url".</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ProviderBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="42" opendate="2011-02-05 22:40:20" fixdate="2011-06-23 20:52:47" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2ProtectedResourceFilter incorrectly thinks an OAuth 1.0a user authorization callback is an OAuth 2 protected resource access request</summary>
+			<description>I have implemented an OAuth 1.0a consumer using the Scribe library and I have also implemented an OAuth 2 provider using Spring Security OAuth. The class OAuth2ProtectedResourceFilter in Spring Security OAuth 2 filters all requests to my web server. If I am connecting to Twitter (or any other OAuth 1.0a provider it seems), after the user authorizes my application and Twitter redirects said user back to my application, the filter OAuth2ProtectedResourceFilter incorrectly processes it as an OAuth 2 request to a protected resource since "oauth_signature_method" is not present when an OAuth 1.0a provider callsback after the user has authorized an application.
+The check takes place currently in parseHeaderToken(), but it seems that we cannot rely on just the presence of "oauth_signature_method" in the header in this case. Or am I missing something?</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.OAuth2ProtectedResourceFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="57" opendate="2011-04-07 11:25:51" fixdate="2011-06-23 21:08:53" resolution="Complete">
+		<buginformation>
+			<summary>UserAuthorizationProcessingFilter not defaulting to URL /oauth_authenticate_token</summary>
+			<description>UserAuthorizationProcessingFilter has an incorrect constructor.  Currently, it requires a parameter "s", but the constructor should be empty and should be passing super("/oauth_authenticate_token"), instead of super(s).  As a result, the default URL is not being set for this filter.  You can see the method getDefaultFilterProcessesUrl which does have the proper URL is never being called also. 
+The workaround is to make sure to add authenticate-token-url="/oauth_authenticate_token" to the provider xml element.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.provider.UserAuthorizationProcessingFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="58" opendate="2011-04-07 11:59:11" fixdate="2011-06-23 21:13:37" resolution="Complete">
+		<buginformation>
+			<summary>AccessTokenProcessingFilter validates additional parameters in wrong method</summary>
+			<description>AccessTokenProcessingFilter validates if the token is null and the 1.0a parameters in the validateOAuthParams.  While they are oAuth params, it makes things easier in subclasses if these validations were put in validateAdditionalParameters and the validateOAuthParams were reserved for common oauth params amongst all filters, perhaps even changing the validateOAuthParams method to private to prevent overriding it.  Any additional validation can then occur in the validateAdditionalParameters method.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.provider.AccessTokenProcessingFilter.java</file>
+			<file type="M">org.springframework.security.oauth.provider.UnauthenticatedRequestTokenProcessingFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="76" opendate="2011-07-06 02:01:07" fixdate="2011-07-29 08:02:23" resolution="Complete">
+		<buginformation>
+			<summary>NPE in OAuth2ErrorHandler</summary>
+			<description>The error handler throws a NPE on line 26 if the response does not contain any WWW-Authenticate header:
+
+
+
+
+
+
+    List&amp;lt;String&amp;gt; authenticateHeaders = response.getHeaders().get("WWW-Authenticate");
+
+
+
+
+    for (String authenticateHeader : authenticateHeaders) {  // *** NPE here! ***
+
+
+
+
+
+</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.TestOAuth2ErrorHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.OAuth2ErrorHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="90" opendate="2011-07-27 19:25:12" fixdate="2011-07-30 03:05:18" resolution="Complete">
+		<buginformation>
+			<summary>Double URL encoding of oauth_token passed in query string of OAuth2 protected resources</summary>
+			<description>Hi,
+It seems that the oauth_token value passed (when "query" bearerTokenMethod is used) is being URL encoded twice - resulting in the provider not recognizing the token value and rejecting the request as unauthorized.
+Here is how it happens:
+OAuth2ClientHttpRequestFactory#appendQueryParameter() first does:
+
+
+
+
+
+
+String queryFragment = ((resource.getBearerTokenName() == null) ? "oauth_token" : resource.getBearerTokenName()) + "=" + URLEncoder.encode(accessToken.getValue(), "UTF-8");
+
+
+
+
+
+
+and here if the access token is "1/qIxxx", it changes to &amp;amp;apos;1%2FqIxxx&amp;amp;apos;. 
+It then forms the protected resource URI as: 
+
+
+
+
+
+
+URI uri = new URI(&amp;lt;scheme&amp;gt;, &amp;lt;user info&amp;gt;, &amp;lt;host&amp;gt;, &amp;lt;port&amp;gt;, &amp;lt;path&amp;gt;, &amp;amp;apos;oauth_token=1%2FqIxxx&amp;amp;apos;, &amp;lt;fragment&amp;gt;)
+
+
+
+
+
+
+The URI constructor does the URL encoding again for the query string passed to it, and oauth_tokens gets double encoded and it becomes "1%252FqIxxx", and hence the issue that the token gets rejected and the request is deemed unauthorized.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.OAuth2ClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.TestOAuth2ClientHttpRequestFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="94" opendate="2011-07-31 04:40:25" fixdate="2011-08-01 09:12:44" resolution="Complete">
+		<buginformation>
+			<summary>If client details are scoped then all authorization requests should contain a valid scope</summary>
+			<description>If client details are scoped then all authorization requests should contain a valid scope.  Currently AccessGrantAuthenticationProvider only checks for a match if the request contains a scope, so clients can get an access for no scope at all, but not an invalid scope.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.code.UnconfirmedAuthorizationCodeAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.AccessGrantAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestAccessGrantAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ClientAuthenticationToken.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="100" opendate="2011-08-05 03:23:29" fixdate="2011-08-05 04:36:12" resolution="Complete">
+		<buginformation>
+			<summary>Refresh token authentication should extract scope information from original token</summary>
+			<description>Refresh token authentication should extract scope information from original token.  Using a refresh token to obtain a new access token with explicit scopes currently fails because the refresh token authentication has no knowledge of the scopes.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestRandomValueOAuth2ProviderTokenServicesBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.AccessGrantAuthenticationProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="101" opendate="2011-08-11 03:34:12" fixdate="2011-08-11 04:20:40" resolution="Complete">
+		<buginformation>
+			<summary>Change parameter name for incoming access token to "bearer_token" in OAuth2ProtectedResourceFilter</summary>
+			<description>Change parameter name for incoming access token to "bearer_token" in OAuth2ProtectedResourceFilter per the latest spec.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.OAuth2ProtectedResourceDetails.java</file>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ResourceBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.TestOAuth2ClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.OAuth2ClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.BaseOAuth2ProtectedResourceDetails.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestAccessGrantAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.OAuth2ProtectedResourceFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2AccessToken.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="109" opendate="2011-08-23 09:23:56" fixdate="2011-08-24 02:32:58" resolution="Complete">
+		<buginformation>
+			<summary>Need to add token_type to JSON for access token response</summary>
+			<description>Need to add token_type to JSON for access token response.  Version 20 of the spec (possibly earlier) mandates the token_type key and we don&amp;amp;apos;t send it by default.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2AccessToken.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="112" opendate="2011-08-25 07:46:39" fixdate="2011-08-25 08:43:55" resolution="Complete">
+		<buginformation>
+			<summary>Token endpoint is not authenticated properly</summary>
+			<description>Token endpoint is not authenticated properly.  The spec is quite clear that an token granting request MUST be authenticated with the client&amp;amp;apos;s credentials if they have been issued, and that HTTP Basic authentication must be used.  The DefaultOAuth2GrantManager tries to locate the client_id and secret, but assumes that the client id is always in a request parameter (which is not in the spec at all).
+The client side can act correctly (sending Basic auth via OAuth2ClientHttpRequestFactory), but only when the resource is set up with a client secret.  Actually sparklr2 declares the /oauth/** resources as access="ROLE_USER", but it&amp;amp;apos;s in a form-login section so the wrong authentication handler is going to be applied, if at all.  What happens in practice is  that the OAuth2 filter chain picks up the request before the main Spring Security filter has been fully applied because of where it is in the chain
+There are 3 potential problems here: 
+1) the OAuth2 filters are in the wrong place in the chain to benefit from the normal access controls (that might be OK)
+2) the DefaultOAuth2GrantManager assumes that a client_id is present as a request parameter
+3) the OAuth2AuthenticationTokenSupport always puts the clent id in the request parameters, whereas it should go in the headers</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.profile.AbstractOAuth2ProfileManager.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ServerRunning.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.webserver.WebServerProfile.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestNativeApplicationProfile.java</file>
+			<file type="M">org.springframework.security.oauth2.consumer.auth.DefaultClientAuthenticationHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.UnconfirmedAuthorizationCodeAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.DefaultOAuth2GrantManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="70" opendate="2011-06-20 12:29:44" fixdate="2011-09-07 11:57:28" resolution="Complete">
+		<buginformation>
+			<summary>ClientPasswordAuthenticationProvider does not report bad credentials correctly</summary>
+			<description>If username/password authentication fails, authenticate() throws a BadCredentialsException, which is not a subclass of OAuth2Exception. Therefore it does not render an OAuth-compliant JSON error response.
+This is trivial to fix by wrapping the exception thrown by wrapping the BadCredentialsException. (I can supply a patch if needed.)</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidTokenException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.password.ClientPasswordAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidClientException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidGrantException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationCodeProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.ClientAuthenticationException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.DefaultOAuth2SerializationService.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="102" opendate="2011-08-11 03:58:35" fixdate="2011-09-07 13:36:06" resolution="Complete">
+		<buginformation>
+			<summary>2-Legged authentication fails when token="" is present in the signature</summary>
+			<description>Recently while impplementing the 2-legged authentication using consumerkey and consumer secret, came across the issue where
+if we specify an empty token in the Oauth header , the authentication fails.
+However if we remove the token="" altogether, everything works fine as expected.
+I put a fix in the following location to get around this issue as some oauth clients still produce token="" in the oauth header.
+spring-security-oauth/src/main/java/org/springframework/security/oauth/provider/ProtectedResourceProcessingFilter.java
+In the method
+protected void onValidSignature(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException 
+Changed 
+if (token != null) {
+to
+if (token != null &amp;amp;&amp;amp; !"".equals(token)) {
+Thanks</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.provider.filter.ProtectedResourceProcessingFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="74" opendate="2011-07-02 14:42:45" fixdate="2011-09-07 13:58:36" resolution="Complete">
+		<buginformation>
+			<summary>invalid verifier check if the client isn&amp;apos;t configured for 1.0a</summary>
+			<description>I&amp;amp;apos;m just starting to use the Spring OAuth module and I&amp;amp;apos;m a bit confused about its processing of an authorized request token in OAuth spec 1.0 (not 1.0a). I&amp;amp;apos;m writing a client which is attempting to gain an access token through the standard OAuth 1.0 workflow, and I believe that I&amp;amp;apos;m seeing some incorrect behavior regarding processing of an authorized request token handed back by the service provider.
+In my webapp&amp;amp;apos;s workflow, the OAuth module is able to successfully gain an unauthorized request token from the service provider, redirect the client to the service provider&amp;amp;apos;s authorization page, and the service provider then redirects the client back to my webapp with the authorized request token once the user has authorized it. Since the service provider in this case is an OAuth 1.0 service provider, the authorized request token does NOT come back from the service provider with a verifier.
+The strange thing that I see in the M3 code is that when the OAuth module processes the inbound authorized request token, it looks for a verifier without checking first to see if it&amp;amp;apos;s configured for 1.0 or 1.0a. When it doesn&amp;amp;apos;t find a verifier attached to the request (again, because I&amp;amp;apos;m talking to a OAuth 1.0 service provider), it just tosses away the valid, authorized request token and starts the OAuth workflow all over again.
+I&amp;amp;apos;m wondering if there should be a check, upon receiving a request token which has been authorized, if the client is configured for OAuth 1.0 vs 1.0a, and only check for the presence of a verifier if 1.0a is selected.
+See http://forum.springsource.org/showthread.php?111484-Oauth-verifier-required-for-authenticated-request-token-processing-in-1.0.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.consumer.filter.OAuthConsumerContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="114" opendate="2011-08-30 01:29:54" fixdate="2011-09-08 13:32:42" resolution="Complete">
+		<buginformation>
+			<summary>Weblogic does not allow repeat execution of filter chain</summary>
+			<description>Weblogic does not allow repeat execution of filter chain, so OAuth2ClientContextFilter doesn&amp;amp;apos;t work (http://forum.springsource.org/showthread.php?113899-Broken-Filter-Chain-in-WebLogic-in-OAuth2ClientContextFilter).  There doesn&amp;amp;apos;t seem to be any way round this other than a re-design, if possible, of the client interceptor features.  The filter chain is only repeated when a new access token is acquired, so my guess is we could move that recovery down the stack into the OAuth2RestTemplate itself somehow.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ClientBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="122" opendate="2011-09-08 09:33:17" fixdate="2011-09-09 08:37:03" resolution="Complete">
+		<buginformation>
+			<summary>Client secret is not stored in unconfirmed authorization code</summary>
+			<description>Client secret is not stored in unconfirmed authorization code.  The net effect is that tonr/sparklr doesn&amp;amp;apos;t work if there is a client secret.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.code.AuthorizationCodeAccessTokenProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestUnconfirmedAuthorizationCodeAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestRandomValueOAuth2ProviderTokenServicesBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.UnconfirmedAuthorizationCodeAuthenticationToken.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.UnconfirmedAuthorizationCodeAuthenticationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestAuthorizationCodeServicesBase.java</file>
+			<file type="M">org.springframework.security.oauth2.client.auth.DefaultClientAuthenticationHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="123" opendate="2011-09-13 05:45:52" fixdate="2011-09-16 14:11:51" resolution="Complete">
+		<buginformation>
+			<summary>redirectUri is "null" (string) instead of null in AuthorizationCodeAccessTokenProvider</summary>
+			<description>In AuthorizationCodeAccessTokenProvider.getParametersForTokenRequest(AuthorizationCodeResourceDetails resource, OAuth2SecurityContext context)
+
+
+
+
+
+
+			redirectUri = String.valueOf(context==null ? null : context.getPreservedState());
+
+
+
+
+
+
+should be replaced with
+
+
+
+
+
+
+			if (context != null &amp;amp;&amp;amp; context.getPreservedState() != null) {
+
+
+
+
+				redirectUri = String.valueOf(context.getPreservedState());
+
+
+
+
+			}
+
+
+
+
+
+
+Otherwise redirectUri contains the string "null" instead of null and the following
+
+
+
+
+
+
+			if (redirectUri == null)
+
+
+
+
+
+
+fails, so
+
+
+
+
+
+
+			redirectUri = context == null ? null : context.getUserAuthorizationRedirectUri();
+
+
+
+
+
+
+never gets executed and we end up with redirectUri "null" and the redirect fails.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.code.AuthorizationCodeAccessTokenProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="81" opendate="2011-07-27 06:11:27" fixdate="2011-10-17 04:54:24" resolution="Complete">
+		<buginformation>
+			<summary>Tonr photo service implementation contains its own security check</summary>
+			<description>Tonr photo service implementation contains its own security check which breaks the encapsulation of Spring Security in general (to make security a cross cutting concern).</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.filter.OAuth2ProtectedResourceFilter.java</file>
+			<file type="M">org.springframework.security.oauth.examples.sparklr.impl.PhotoServiceImpl.java</file>
+			<file type="M">org.springframework.security.oauth.examples.sparklr.PhotoService.java</file>
+			<file type="M">org.springframework.security.oauth.examples.sparklr.mvc.PhotoController.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="143" opendate="2011-10-24 09:32:09" fixdate="2011-10-24 09:33:31" resolution="Complete">
+		<buginformation>
+			<summary>Client secret is not stored in unconfirmed authorization token</summary>
+			<description>Client secret is not stored in unconfirmed authorization token, so using a secret with auth token or implicit grants doesn&amp;amp;apos;t work.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestRandomValueOAuth2ProviderTokenServicesBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestAuthorizationCodeServicesBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.UnconfirmedAuthorizationCodeClientToken.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="145" opendate="2011-10-25 12:01:03" fixdate="2011-10-29 15:15:18" resolution="Complete">
+		<buginformation>
+			<summary>Allow endpoints and filters to be split across two application contexts</summary>
+			<description>I&amp;amp;apos;ve compiled the latest spring-security-oauth2 code as of 10/25/2011 and am currently using that jar.
+The problem is that in the sparklr2 sample you have, all the beans have initializing in spring-servlet.xml. In most spring applications, we have applicationContext.xml and dispatcher-servlet.xml. If you separate the two, thereby forcing you to put the code in applicationContext.xml, otherwise web.xml can&amp;amp;apos;t find Spring Security&amp;amp;apos;s springSecurityFilterChain which is created by &amp;lt;security:http. And &amp;lt;security:http relies on &amp;lt;custom-filter ref="oauth2ProviderFilter" after="EXCEPTION_TRANSLATION_FILTER" /&amp;gt; to be available, but if you separate the oauth2 stuff to go with the dispatcher-servlet.xml configuration in order to load up the 2 controllers, you&amp;amp;apos;re caught in a chicken-egg situation.
+Also, I cannot manually load up those 2 controllers, either through component scanning or in xml, because they have already been created as beans, due to them both implementing InitializingBean interface.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.AuthorizationServerBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.EndpointValidationFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.OAuth2ProtectedResourceFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+			<file type="D">org.springframework.security.oauth2.provider.password.ClientPasswordTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.config.ResourceServerBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2SecurityNamespaceHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.client.ClientCredentialsTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestRandomValueOAuth2ProviderTokenServicesBase.java</file>
+			<file type="D">org.springframework.security.oauth2.provider.token.OAuth2ProviderTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.refresh.RefreshTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ServerRunning.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.implicit.ImplicitTokenGranter.java</file>
+			<file type="D">org.springframework.security.oauth2.provider.token.RandomValueOAuth2ProviderTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.config.ProviderBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.OAuth2ExceptionHandlerFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="159" opendate="2011-11-11 00:36:51" fixdate="2011-11-15 03:27:17" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2ClientTokenServices do not store tokens for the null authentication</summary>
+			<description>InMemoryOAuth2ClientTokenServices does not store tokens for the null authentication. It just does nothing, and get() returns null for it. As a result, a token that is not associated with a Spring Security user is never remembered, and needs to be fetched from the provider each time (cf SECOAUTH-151).</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.token.service.InMemoryOAuth2ClientTokenServices.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="125" opendate="2011-09-19 11:24:42" fixdate="2011-11-15 03:37:49" resolution="Complete">
+		<buginformation>
+			<summary>Should remove state parameter from AuthorizationCodeAuthenticationToken.</summary>
+			<description>For token endpoint, where a client presents an authorization code grant type in order to obtain an access token:
+A map of parameters is used to represent this request. It is expecting a state parameter from request. But there is no state parameter in this request from spec. We should remove it from the AuthorizationCodeTokenGranter.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationCodeProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="157" opendate="2011-11-10 04:49:31" fixdate="2011-11-15 04:00:38" resolution="Complete">
+		<buginformation>
+			<summary>Newer versions of spec use "access_token" as parameter name for authentication (not "bearer_token")</summary>
+			<description></description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2AccessToken.java</file>
+			<file type="M">org.springframework.security.oauth2.client.http.TestOAuth2ClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="162" opendate="2011-11-15 10:19:15" fixdate="2011-11-17 05:53:34" resolution="Complete">
+		<buginformation>
+			<summary>AccessTokenProviderChain allows anonymous user to create an access token</summary>
+			<description>AccessTokenProviderChain allows anonoymous user to create an access token</description>
+			<version>1.0.0.M5</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.token.TestAccessTokenProviderChain.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.AccessTokenProviderChain.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.RandomValueTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestRandomValueOAuth2ProviderTokenServicesBase.java</file>
+			<file type="D">org.springframework.security.oauth2.client.http.OAuth2AccessDeniedException.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.service.TestInMemoryOAuth2ClientTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2RefreshToken.java</file>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2AccessToken.java</file>
+			<file type="M">org.springframework.security.oauth2.client.http.TestOAuth2ClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestTokenEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.client.filter.OAuth2ClientProcessingFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.client.http.OAuth2ClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport.java</file>
+			<file type="D">org.springframework.security.oauth2.client.http.OAuth2AccessTokenRequiredException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.DefaultOAuth2SerializationService.java</file>
+			<file type="M">org.springframework.security.oauth2.common.TestDefaultOAuth2SerializationService.java</file>
+			<file type="M">org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.common.ExpiringOAuth2RefreshToken.java</file>
+			<file type="M">org.springframework.security.oauth2.config.OAuth2ClientBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsAccessTokenProvider.java</file>
+			<file type="D">org.springframework.security.oauth2.client.token.OAuth2AccessTokenProviderChain.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.implicit.ImplicitAccessTokenProvider.java</file>
+			<file type="D">org.springframework.security.oauth2.client.token.OAuth2AccessTokenProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="104" opendate="2011-08-17 05:41:38" fixdate="2011-11-30 03:41:38" resolution="Complete">
+		<buginformation>
+			<summary>HttpSessionAccessTokenCache does not create a session</summary>
+			<description>HttpSessionOAuth2RememberMeServices.preserveState() and rememberTokens() fail to save anything if there is no HTTP session. This is contrary to the interface contract. I think the session should be created in this case (possibly as configurable behaviour, but with this default).
+This is similar to how HttpSessionSecurityContextRepository works.
+(BTW, a "token repository" or something would be a better name for this class than "RememberMeServices", which remind of the unrelated remember-me functionality for web logins.) </description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.consumer.rememberme.HttpSessionOAuth2RememberMeServices.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="167" opendate="2011-11-29 22:22:31" fixdate="2011-12-15 07:09:27" resolution="Complete">
+		<buginformation>
+			<summary>Token Service default in &lt;authorization-server/&gt; incorrect</summary>
+			<description>If a token-services-ref is not provided in the authorization-server definition, the value appears to be defaulted to an instance of a token store instead being defaulted with an instance of a token service. This results in the bean definition failing to initialize.
+Workaround is to initialize the auth-server with a token services bean.</description>
+			<version>1.0.0.M5</version>
+			<fixedVersion>1.0.0.M6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.ProviderBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="191" opendate="2012-01-27 13:38:46" fixdate="2012-02-02 00:46:31" resolution="Complete">
+		<buginformation>
+			<summary>AuthorizationEndpoint allows bypassing user approval page for authorization code grant_type</summary>
+			<description>A client integrating with oauth2 can easily acquire an authorization code without user&amp;amp;apos;s approval.
+To reproduce try the following url: 
+http://yourserver/oauth/authorize?client_id=your_id&amp;amp;response_type=code&amp;amp;scope=requested_scope&amp;amp;redirect_uri=http://somehost&amp;amp;user_oauth_approval=true
+Pay attention to the last get parameter, if it is passed and the user is already authenticated with the authorization server, an auth token will be generated immediately without his confirmation and the user will be redirected to http://somehost?code=some_code
+I&amp;amp;apos;m not sure if this is the intended behaviour, but I think it is a security issue.
+It can be solved by removing this code from the authorize handler:
+
+
+
+
+
+
+org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java
+
+
+
+
+
+
+if (responseTypes.contains("code")) {
+
+
+
+
+    authorizationRequest = resolveRedirectUri(authorizationRequest);
+
+
+
+
+    if (approved != null) {
+
+
+
+
+        return new ModelAndView(getAuthorizationCodeResponse(authorizationRequest.denied(!approved),
+
+
+
+
+			(Authentication) principal));
+
+
+
+
+    }
+
+
+
+
+    return getUserApprovalPageResponse(model, authorizationRequest);
+
+
+
+
+}
+
+
+
+
+
+
+But it will only partially solve the issue, to solve it completely I think there also needs to be some kind of CSRF protection mechanism on AuthorizationEndpoint.approveOrDeny</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.M6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationCodeProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="195" opendate="2012-02-06 07:37:02" fixdate="2012-02-09 02:15:56" resolution="Complete">
+		<buginformation>
+			<summary>InMemoryTokenStore can be internally inconsistent if user account is deleted and re-created</summary>
+			<description>InMemoryTokenStore can be internally inconsistent if user account is deleted and re-created.  The access tokens are stored in a has keyed on a key generated from the authentication, but the key could stay the same when a user account changes (e.g. deleted and re-created and a primary key changes).  And the authentications are stored in a has keyed on the access token value.  The two stores can become inconsistent resulting in strange looking 403 errors.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.M6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.JdbcTokenStore.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestTokenStoreBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestInMemoryTokenStore.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.InMemoryTokenStore.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="198" opendate="2012-02-07 17:14:54" fixdate="2012-02-09 02:58:05" resolution="Complete">
+		<buginformation>
+			<summary>Wrong HTTP status error for when client provides wrong media type</summary>
+			<description>when client issues a request to the resource server providing an invalid access_token and unsupported media_type, for example application/xml instead of application/json the server (Oauth2 framework) returns HTTP 500 error. (We expected unsupported media type 406).
+The spring Oauth2 code produces HttpMediaTypeNotAcceptableException exception, but because it is handled at the servlet filter level it gets mapped to 500 error. (Before reaching the controller ). (My guess).
+Here is the exception stack trace:
+
+
+
+
+
+
+org.springframework.web.HttpMediaTypeNotAcceptableException: Could not find acceptable representation
+
+
+
+
+	at org.springframework.security.oauth2.provider.web.OAuth2ExceptionRenderer.writeWithMessageConverters(OAuth2ExceptionRenderer.java:106)
+
+
+
+
+	at org.springframework.security.oauth2.provider.web.OAuth2ExceptionRenderer.handleHttpEntityResponse(OAuth2ExceptionRenderer.java:69)
+
+
+
+
+	at org.springframework.security.oauth2.provider.filter.OAuth2ExceptionHandlerFilter.doFilter(OAuth2ExceptionHandlerFilter.java:73)
+
+
+
+
+...
+
+
+
+
+
+
+Steps to repro:  issue a request to the resource server using bad access token and invalid media type, for example application/xml since Oauth2 is producing application/json error.
+
+
+
+
+
+
+GET http://host/api?access_token=BAD_OR_EXPIRED_TOKEN
+
+
+
+
+HEADER:
+
+
+
+
+   Accept: application/xml
+
+
+
+
+
+
+Result: 500, but it should be 406.
+</description>
+			<version>1.0.0.M5</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.springframework.security.oauth2.provider.TestNativeApplicationProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.OAuth2ExceptionHandlerFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.OAuth2AuthenticationFailureHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.web.OAuth2ExceptionRenderer.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.filter.TestOAuth2AuthenticationFailureHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="194" opendate="2012-02-02 10:58:35" fixdate="2012-02-21 09:36:28" resolution="Complete">
+		<buginformation>
+			<summary>Invalid Redirect URI is detected but still redirected anyway</summary>
+			<description>If you have a client with a registered redirect URI and you specify an invalid redirect when requesting an authorization code, the invalid redirect URI will be detected but the client is redirected to the invalid URI anyway, with an error appended.
+Here&amp;amp;apos;s an example using sparklr: 
+my-client-with-registered-redirect has a registered redirect URI of http://anywhere
+1. Go to http://localhost:8080/sparklr/oauth/authorize?response_type=code&amp;amp;client_id=my-client-with-registered-redirect&amp;amp;scope=trust&amp;amp;redirect_uri=http://www.google.com
+2. Sign in and authorize
+3. Client is redirected to http://www.google.com/?error=redirect_uri_mismatch&amp;amp;error_description=Invalid%20redirect
+The spec says,
+If the request fails due to a missing, invalid, or mismatching redirection URI, or if the client identifier is missing or invalid, the authorization server SHOULD inform the resource owner of the error, and MUST NOT automatically redirect the user-agent to the invalid redirection URI.
+</description>
+			<version>1.0.0.M5</version>
+			<fixedVersion>1.0.0.M6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationCodeProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="219" opendate="2012-03-08 23:20:04" fixdate="2012-03-09 03:48:43" resolution="Complete">
+		<buginformation>
+			<summary>Tonr2 sample doesn&amp;apos;t work with Chrome (and some other browsers)</summary>
+			<description>Tonr2 sample doesn&amp;amp;apos;t work with Chrome (and some other browsers).  A browser that sends "Accept: /" for an &amp;lt;img/&amp;gt; tag will get an error from tonr2 because of SPR-7763.  The fix is easy - upgrade to Spring 3.1 properly and use the new namespace features.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.TestAuthorizationCodeAccessTokenProviderWithConversion.java</file>
+			<file type="M">org.springframework.security.oauth.examples.tonr.TestAuthorizationCodeGrant.java</file>
+			<file type="M">org.springframework.security.oauth2.client.http.TestOAuth2ErrorHandler.java</file>
+			<file type="M">org.springframework.security.oauth.examples.tonr.ServerRunning.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="224" opendate="2012-03-12 18:10:50" fixdate="2012-03-13 05:14:51" resolution="Complete">
+		<buginformation>
+			<summary>Implicit Access Grant response should preserve state if passed in authorization request</summary>
+			<description>org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.appendAccessToken() should preserve state if passed
+eg.
+	String state = authorizationRequest.getState();
+	if (state != null) 
+{
+		url.append("&amp;amp;state=").append(state);
+	}</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="225" opendate="2012-03-14 06:50:16" fixdate="2012-03-15 03:25:38" resolution="Complete">
+		<buginformation>
+			<summary>AuthorizationServerBeanDefinitionParser does not inject authorization code services ref correctly</summary>
+			<description>Line 115 of AuthorizationServerBeanDefinitionParser.java (https://github.com/SpringSource/spring-security-oauth/blob/master/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/config/AuthorizationServerBeanDefinitionParser.java) looks for an XML attribute on the authorization-code element named "services-ref" for the AuthorizationCodeServices bean reference. The Oauth2 xsd file (http://www.springframework.org/schema/security/spring-security-oauth2.xsd) defines an attribute named "authorization-code-services-ref" instead. The two attribute names should match. I suggest using "authorization-code-services-ref", as defined in the .xsd, since it is more complete, and changing the line in AuthorizationServerBeanDefinitionParser.java to look for that name instead of "services-ref".</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.AuthorizationServerBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="216" opendate="2012-03-01 10:20:05" fixdate="2012-03-25 06:50:40" resolution="Complete">
+		<buginformation>
+			<summary>Refresh token is removed before refreshing access token</summary>
+			<description>If an exception (AccessTokenRequiredException) is caught in the OAuth2ClientContextFilter:90 because the access token has expired, line 93 goes on doing the following:
+    oauth2Context.removeAccessToken(resourceThatNeedsAuthorization);
+further down at line 112 we are trying to fetch the same accesstoken from the oauth context using the same key, of course it returns null and thus we don&amp;amp;apos;t get any existingToken.
+As I understand it, it is the existingToken that shall hold the refreshToken to use for refreshing the access token in AccessTokenProviderChain:73
+The existingToken will be null when we want to refresh the access token so we never reach 
+    accessToken = refreshAccessToken(resource, refreshToken, request);
+at AccessTokenProviderChain:78
+See the code here:
+https://github.com/SpringSource/spring-security-oauth/blob/master/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/client/filter/OAuth2ClientContextFilter.java
+https://github.com/SpringSource/spring-security-oauth/blob/master/spring-security-oauth2/src/main/java/org/springframework/security/oauth2/client/token/AccessTokenProviderChain.java</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordAccessTokenProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="234" opendate="2012-04-04 06:38:22" fixdate="2012-04-05 05:11:44" resolution="Complete">
+		<buginformation>
+			<summary>oauth1 provider ignores authentication-failed-url attribute</summary>
+			<description>When configuring a &amp;lt;oauth:provider authentication-failed-url="" /&amp;gt;, the authorization filter will not use the given URL, but the default (e.g.: send a 401 response).
+This is caused by the configuration parser not injecting the failurehandler properly into the filter. See referenced forum thread.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.config.OAuthProviderBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="212" opendate="2012-02-28 02:13:17" fixdate="2012-04-05 06:49:58" resolution="Complete">
+		<buginformation>
+			<summary>Duplicate WWW-Authenticate header</summary>
+			<description></description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestResourceOwnerPasswordProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.TestOAuth2AuthenticationEntryPoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.DefaultWebResponseExceptionTranslator.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.AbstractOAuth2SecurityExceptionHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="236" opendate="2012-04-10 11:38:40" fixdate="2012-04-11 00:55:51" resolution="Complete">
+		<buginformation>
+			<summary>Wrong error being reported by DefaultWebResponseExceptionTranslator</summary>
+			<description>
+Bug in DefailWebResponseExceptionTranslator:
+More precisely, it should not do this: (around line 55)
+Code:
+		if (ase instanceof AuthenticationException) 
+{
+			return handleOAuth2Exception(new InvalidTokenException(e.getMessage(), e));
+		}
+
+
+Wrongly create an InvalidTokenException when the original exception thrown by ClienDetailsServiceImpl is a InvalidClientException.
+This will result in incorrect error code in the HTTP Response.
+</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.ResourceServerBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.DefaultWebResponseExceptionTranslator.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestResourceOwnerPasswordProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationCodeProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.TestOAuth2AuthenticationEntryPoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="238" opendate="2012-04-12 03:50:09" fixdate="2012-04-18 05:41:59" resolution="Complete">
+		<buginformation>
+			<summary>Duplicate Key when creating new access_token</summary>
+			<description>the bug could be easily reproduce by these steps:
+1.user grant client with an access token Aa and refresh_token Ra
+2.waiting for Aa to be expired(at the time Ra is not expired)
+3.user grant client with another access token Ab and refresh_token Rb(the RandomValueTokenServices automatic delete the expire access token Aa,but leave Ra in TokenStore)
+at here,we got 1 access token Ab and two refresh_token Ra Rb
+4.client refresh access token with Ra(a client could be running on several device such as app on iTouch and iPhone,they hold different refresh token)
+if there is a uniq index on authentication_id ,we got exception,or go on with 5
+5.and now TokenStore will get 2 access token with same authentication_id
+6.when calling JdbcTokenStore&amp;amp;apos;s getAccessToken(OAuth2Authentication authentication) will get exception.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.RandomValueTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestTokenStoreBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.InMemoryTokenStore.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestRandomValueTokenServices.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="244" opendate="2012-04-20 06:46:06" fixdate="2012-04-24 02:58:51" resolution="Complete">
+		<buginformation>
+			<summary>Spelling error in JSON for client details</summary>
+			<description>client_sceret -&amp;gt; client_secret</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestBaseClientDetails.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.BaseClientDetails.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="237" opendate="2012-04-11 14:03:50" fixdate="2012-05-09 06:15:33" resolution="Complete">
+		<buginformation>
+			<summary>Use of custom custom authorization-endpoint-url can cause infinite redirect</summary>
+			<description>In certain circumstances, an infinite loop can occur when forwarding the user from the initial Authorization Endpoint authorize method to the user approval page, when using the default user approval page url of "forward:/oauth/approve_access". This url, "/oauth/approve_access", is bound to our own custom controller. We are supplying custom authorization-endpoint-url and token-endpoint-url properties and have configured the required web.xml oauth2EndpointUrlFilter as mentioned in the documentation. This is using the authorization code flow, with the built in authorization and token endpoint classes. 
+To replicate the error, one visits the custom AuthorizationEndpoint url. The first time here in a browser session, the user is prompted to log in, and is redirected to the appropriate user approval page. This is handled as expected by the custom controller. The user clicks the approve button and is redirected to the registered redirect url, as expected. 
+If the user then revisits the authorization url, generally by pasting it into the address bar on the web browser (in our case, Firefox 11), then the server goes into an infinite internal forwarding loop through the authorize method of the AuthorizationEndpoint. This method does return the appropriate ModelAndView object, with the view name set to "forward:/oauth/approve_access". However, something in the processing of this forward request fails and it ends up being mapped back to the authorize method. 
+In some repeatable cases, if the user instead uses the back button, then they are prompted again with the user approval page. Clicking approve on this page does allow it to continue and issue a new authorization code. 
+If we change user-approval-page url property to "redirect:/oauth/approve_access", leaving everything else the same, the user can then revisit the authorization url and successfully complete the flow. However, pressing the back button now causes a session binding error. 
+If we remove the custom authorization-endpoint-url and token-endpoint-url properties, and remove the oauth2EndpointUrlFilter from web.xml, everything works as expected. The user can both revisit the url directly and go back through the session using the back button.
+Therefore, we believe the error to be somewhere in the EndpointValidationFilter class implementation of doFilter. </description>
+			<version>1.0.0.M6</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.EndpointValidationFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="256" opendate="2012-05-15 06:14:52" fixdate="2012-05-15 09:49:41" resolution="Complete">
+		<buginformation>
+			<summary>Scope order lost in AuthorizationRequest constructor</summary>
+			<description>The sorted TreeSet with scopes gets re-stored as an unmodifiable HashSet which ruins the sorted order.
+The org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint#authorize(...) method (at AuthorizationEndpoint:101) uses the public AuthorizationRequest(Map&amp;lt;String, String&amp;gt; parameters) constructor of org.springframework.security.oauth2.provider.AuthorizationRequest.
+The constructor, in turn, uses OAuth2Utils.parseParameterList(parameters.get("scope")) to parse the scope and build a sorted scope set which will is sent to AuthorizationRequest&amp;amp;apos;s inner (private) constructor.
+OAuth2Utils.parseParameterList stores the parsed scope in a TreeSet guaranteeing a sorted order but then the inner private constructor (AuthorizationRequest:75) modifies the order with this row (AuthorizationRequest:78) Collections.unmodifiableSet(new HashSet&amp;lt;String&amp;gt;(scope));
+The result is that the scope set is not ordered. An implication of this is that two "equal" scopes (i.e. with the same authority strings but with different order) could be generating different AuthenticationKeys when using the DefaultAuthenticationKeyGenerator.
+I think it is a good idea to keep the order intact internally. It would maybe also be an idea to have a security solution for this in DefaultAuthenticationKeyGenerator (but it might cost more than just keeping the Set sorted all the time)
+I also think the SCOPE parameter of the parameters map should be sorted the same way.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.AuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.common.util.OAuth2Utils.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="240" opendate="2012-04-17 08:37:11" fixdate="2012-05-24 05:27:07" resolution="Complete">
+		<buginformation>
+			<summary>Wrong error for access token request when using a bad client_secret</summary>
+			<description>Request an access token using client_credentials grant_type, using an invalid client secret;
+Expected result should be HTTP 401, and error code should be "invalid_client", instead I get
+HTTP 401 (which is correct) but error code is "unauthorized". This behavior seam to be introduced when the DefaultWebResponseExceptionTranslator refactor was made.
+Here is what happens "internally" in case it helps:
+AbstractUserDetailsAuthenticationProvider-&amp;gt;authenticate-&amp;gt;additionalAuthenticationChecks -&amp;gt; throws BadCredentialsException which is not a OAuth2Exception, but it is an AuthenticationException which gets mapped by the WebResponseExceptionTranslator to "unauthorized".</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestClientCredentialsProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="264" opendate="2012-05-23 14:40:00" fixdate="2012-05-24 05:32:17" resolution="Complete">
+		<buginformation>
+			<summary>Password encoder not used in JdbcClientDetailsService when secret is changed</summary>
+			<description></description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestJdbcClientDetailsService.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.JdbcClientDetailsService.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="269" opendate="2012-05-31 02:35:01" fixdate="2012-05-31 07:30:28" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2Exception is not really an AuthenticationException</summary>
+			<description>OAuth2Exception is not really an AuthenticationException and this causes problems with webapp clients because they tend to redirect to a login page on an AuthenticationException, whereas the user is probably already authenticated, so this leads to confusion (and lack of clarity about what the problem actually is).</description>
+			<version>1.0.0.M2</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.vote.TestScopeVoter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationManager.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2Exception.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.DefaultWebResponseExceptionTranslator.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.TestOAuth2AuthenticationEntryPoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.vote.ScopeVoter.java</file>
+			<file type="M">org.springframework.security.oauth2.client.http.OAuth2ErrorHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="266" opendate="2012-05-30 02:15:27" fixdate="2012-06-06 00:33:50" resolution="Complete">
+		<buginformation>
+			<summary>Fragment not URL encoded in some parts of error response from implicit grant</summary>
+			<description>Fragment not URL encoded in some parts of error response from implicit grant.  In particular it looks like the scope values are space separated.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="284" opendate="2012-06-11 11:38:46" fixdate="2012-06-11 11:44:06" resolution="Complete">
+		<buginformation>
+			<summary>Redirect URI not preserved across auth code flow if using pre-registered value</summary>
+			<description>Redirect URI not preserved across auth code flow if using pre-registered value.  The AuthorizationCodeAccessTokenProvider has to be very careful to send the same redirect URI in both legs of the flow.  It is using preserved state, which is fine, but it need sto be set to the value that is required in the token endpoint.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.TestAuthorizationCodeAccessTokenProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="288" opendate="2012-06-15 00:12:08" fixdate="2012-06-15 02:50:30" resolution="Complete">
+		<buginformation>
+			<summary>AuthorizationRequest can lose its approved flag as it goes through auth code flow</summary>
+			<description>Because of the slightly bizarre implementation of the constructors in AuthorizationRequest it is possible for a request to become unapproved by accident if the client details it is associated with do not contain authorities.  Needs to be straightened out and might lead to a change in some interfaces.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestOAuth2Authentication.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.expression.TestOAuth2SecurityExpressionRoot.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.vote.TestScopeVoter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestDefaultTokenServicesWithInMemory.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.DefaultAuthorizationRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestAuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.expression.TestOAuth2WebSecurityExpressionHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.BaseClientDetails.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestInMemoryTokenStore.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.AuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTestDefaultTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.expression.TestOAuth2MethodSecurityExpressionHandler.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestTokenStoreBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestAuthorizationCodeServicesBase.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.refresh.RefreshTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.password.TestResourceOwnerPasswordTokenGranter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="295" opendate="2012-06-20 10:51:24" fixdate="2012-06-22 06:02:32" resolution="Complete">
+		<buginformation>
+			<summary>Oauth2 AuthorizationEndpoint ignores user approval flag for implicit grant</summary>
+			<description>The current implementation of the AuthorizationEndpoint contains a method "approveOrDeny" that is used to redirect a client based on the UsersApproval.  It currently does not test the result of such approval leading to all possible requests being issued a token/code regardless of the users approval decision, as per code below:
+
+
+
+
+
+
+			authorizationRequest = authorizationRequest.addApprovalParameters(approvalParameters);
+
+
+
+
+			authorizationRequest = resolveRedirectUriAndCheckApproval(authorizationRequest, (Authentication) principal);
+
+
+
+
+			if (responseTypes.contains("token")) {
+
+
+
+
+				return getImplicitGrantResponse(authorizationRequest).getView();
+
+
+
+
+			}
+
+
+
+
+			return getAuthorizationCodeResponse(authorizationRequest, (Authentication) principal);
+
+
+
+
+
+
+It is suggested that the above snippet is replaced with (tested locally and conforms to latest draft spec):
+
+
+
+
+
+
+			authorizationRequest = authorizationRequest.addApprovalParameters(approvalParameters);
+
+
+
+
+			authorizationRequest = resolveRedirectUriAndCheckApproval(authorizationRequest, (Authentication) principal);
+
+
+
+
+			if (authorizationRequest.isApproved()) {
+
+
+
+
+				if (responseTypes.contains("token")) {
+
+
+
+
+					return getImplicitGrantResponse(authorizationRequest).getView();
+
+
+
+
+				}
+
+
+
+
+				return getAuthorizationCodeResponse(authorizationRequest, (Authentication) principal);
+
+
+
+
+			}
+
+
+
+
+			return new RedirectView(getUnsuccessfulRedirect(authorizationRequest, OAuth2Exception.create(OAuth2Exception.ACCESS_DENIED, "User denied access"),
+
+
+
+
+					true), false);
+
+
+
+
+
+
+Thanks - G.
+</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="300" opendate="2012-07-05 14:10:32" fixdate="2012-07-06 07:24:16" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2AuthenticationDetails is not Serializable</summary>
+			<description>Since Authentication is Serializable, all sub-components of it must also be Serializable. An OAuth2Authentication object may now be augmented with an OAuth2AuthenticationDetails object, but as this class is not Serializable any attempts to read or write the object with the Serialization API will fail. </description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationDetails.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="310" opendate="2012-07-27 03:28:02" fixdate="2012-07-27 05:14:09" resolution="Complete">
+		<buginformation>
+			<summary>URL encoding issue in doing a FQL query</summary>
+			<description>Hi,
+Using v1.0.0.M5 of oauth2 library, I am trying to do a FQL (Facebook Query Language) based request, which looks like this:
+
+
+
+
+
+
+String fql = "SELECT uid2 FROM friend WHERE uid1=me()"
+
+
+
+
+
+
+
+
+
+oauth2RestTemplate.getForObject("https://graph.facebook.com/fql?q={q}", ObjectNode, [q: fql])
+
+
+
+
+
+
+Doing it throws the following exception:
+
+
+
+
+
+
+java.lang.IllegalArgumentException: Could not parse URI
+
+
+
+
+    org.springframework.security.oauth2.client.http.OAuth2ClientHttpRequestFactory.appendQueryParameter(OAuth2ClientHttpRequestFactory.java:111)
+
+
+
+
+    org.springframework.security.oauth2.client.http.OAuth2ClientHttpRequestFactory.createRequest(OAuth2ClientHttpRequestFactory.java:66)
+
+
+
+
+    org.springframework.http.client.support.HttpAccessor.createRequest(HttpAccessor.java:76)
+
+
+
+
+    org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:434)
+
+
+
+
+    org.springframework.web.client.RestTemplate.execute(RestTemplate.java:401)
+
+
+
+
+    org.springframework.web.client.RestTemplate.getForObject(RestTemplate.java:199)
+
+
+
+
+    ....
+
+
+
+
+
+
+I tried to debug a little, and it&amp;amp;apos;s related to this piece of code
+
+
+
+
+
+
+protected URI appendQueryParameter(URI uri, OAuth2AccessToken accessToken) {
+
+
+
+
+    ....
+
+
+
+
+    String query = uri.getQuery();
+
+
+
+
+    ....
+
+
+
+
+    URI update = new URI(uri.getScheme(), uri.getUserInfo(), uri.getHost(), uri.getPort(), uri.getPath(), null, null);
+
+
+
+
+    // now add the encoded query string and the then fragment
+
+
+
+
+    StringBuffer sb = new StringBuffer(update.toString());
+
+
+
+
+    sb.append("?");
+
+
+
+
+    sb.append(query);
+
+
+
+
+    ....
+
+
+
+
+    return new URI(sb.toString());
+
+
+
+
+    ....
+
+
+
+
+}
+
+
+
+
+
+
+The uri.getQuery() returns the decoded query part. In the FQL query I do above, the URI that comes into this method has it properly encoded, but this method decodes it by doing uri.getQuery() and then append the access token to it. So finally it tries to make a URI that has FQL string that is not URL encoded, and hence the exception.
+I guess it should have used URI.getRawQuery(), which returns the query portion, as is (non-decoded).
+I see that the latest codebase has this portion completely revamped, as I couldn&amp;amp;apos;t find this buggy class in the latest codebase. Even if it is not possible to provide a fix for 1.0.0.M5, request you to check if such scenarios are currently handled appropriately.</description>
+			<version>1.0.0.M5</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.OAuth2RestTemplate.java</file>
+			<file type="M">org.springframework.security.oauth2.client.TestOAuth2RestTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="313" opendate="2012-08-09 05:54:14" fixdate="2012-08-09 09:28:14" resolution="Fixed">
+		<buginformation>
+			<summary>AccessToken didn&amp;apos;t get enhanced after refreshed</summary>
+			<description>RefreshTokenGranter will create new AccessToken via DefaultTokenService.refreshAccessToken(). After create AccessToken by DefaultTokenService.createAccessToken(OAuth2Authentication authentication, OAuth2RefreshToken refreshToken) i found out that the accessToken didn&amp;amp;apos;t get Enhanced. and i can&amp;amp;apos;t get token enhanced before access token expired because of token reused.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.DefaultTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTestDefaultTokenServices.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="315" opendate="2012-08-14 03:59:32" fixdate="2012-08-14 04:01:45" resolution="Complete">
+		<buginformation>
+			<summary>Auth code grant does not copy all properties from pending request to final authentication</summary>
+			<description></description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestAuthorizationCodeTokenGranter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="316" opendate="2012-08-14 04:41:26" fixdate="2012-08-14 05:49:14" resolution="Complete">
+		<buginformation>
+			<summary>Auth code grant overwrites requested scopes in token endpoint</summary>
+			<description>The token endpoint does not accept a scope= parameter in general from the client during an auth code grant, but it still uses it if there, and (worse) the default auth request factory overwrites the existing value if the input has no explicit scope.  This means that the client actually must supply scope parameter to the token endpoint where actually it should be ignored (I suspect).</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestTokenEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="311" opendate="2012-08-02 04:41:12" fixdate="2012-08-14 09:08:10" resolution="Fixed">
+		<buginformation>
+			<summary>Class AbstractJaxbMessageConverter is not thread safe</summary>
+			<description>JAXB marshallers and unmarshallers are not thread safe (http://jaxb.java.net/guide/Performance_and_thread_safety.html) and should be created separately in each thread. The class AbstractJaxbMessageConverter incorrectly caches the marshaller and unmarshaller which may cause ArrayIndexOutofBoundsExceptions amongst others.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.AbstractJaxbMessageConverter.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.TestJaxbOAuth2AccessTokenMessageConverter.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.TestJaxbOAuth2ExceptionMessageConverter.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.BaseJaxbMessageConverterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="320" opendate="2012-08-15 02:34:26" fixdate="2012-08-16 01:23:21" resolution="Complete">
+		<buginformation>
+			<summary>Wrong http code (500 instead of 403) returned on InsufficientScopeException when using SpEL expressions for security contstraints</summary>
+			<description>
+I have the following configuration:
+
+
+
+
+
+
+&amp;lt;http pattern="/service/**" entry-point-ref="oauthAuthenticationEntryPoint" use-expressions="true" xmlns="http://www.springframework.org/schema/security"&amp;gt;		
+
+
+
+
+    &amp;lt;intercept-url pattern="/service/**" 
+
+
+
+
+        method="GET" 
+
+
+
+
+        access="#oauth2.clientHasRole(&amp;amp;apos;ROLE_CLIENT&amp;amp;apos;) and hasRole(&amp;amp;apos;ROLE_USER&amp;amp;apos;) and #oauth2.hasScope(&amp;amp;apos;SCOPE&amp;amp;apos;)"  /&amp;gt;
+
+
+
+
+    &amp;lt;custom-filter ref="resourceServerFilter" after="PRE_AUTH_FILTER" /&amp;gt;
+
+
+
+
+    &amp;lt;access-denied-handler ref="oauthAccessDeniedHandler"/&amp;gt;
+
+
+
+
+    &amp;lt;expression-handler ref="oauthWebExpressionHandler" /&amp;gt;
+
+
+
+
+&amp;lt;/http&amp;gt;
+
+
+
+
+
+
+When I try to do a request with the wrong scope a InsufficientScopeException is thrown. But it is exception is just handled by Tomcat from what I can see, not before. This results in a "500 Internal Server Error", not a "403 Forbidden" which I expected. </description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.expression.OAuth2SecurityExpressionMethods.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.expression.TestOAuth2SecurityExpressionMethods.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="308" opendate="2012-07-26 02:40:46" fixdate="2012-08-16 02:11:34" resolution="Complete">
+		<buginformation>
+			<summary>Validation of authorization request is bypassed if auto-approved</summary>
+			<description></description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.DefaultScopeValidator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="325" opendate="2012-08-24 05:40:14" fixdate="2012-08-24 05:43:47" resolution="Complete">
+		<buginformation>
+			<summary>Removing token from in memory token store doesn&amp;apos;t keep track of client id to tokens map</summary>
+			<description>Removing token from in memory token store doesn&amp;amp;apos;t keep track of client id to tokens map for user tokens - it should use the client id as a has key not the principal name (which is a user name for user tokens).</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.InMemoryTokenStore.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTestDefaultTokenServices.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="314" opendate="2012-08-10 00:37:50" fixdate="2012-08-29 01:22:09" resolution="Complete">
+		<buginformation>
+			<summary>Authorization Code error response slightly off spec</summary>
+			<description>When attempting to access $
+{APP_ROOT}
+/$
+{AUTH_ENDPOINT_URL}
+ without providing any parameters, e.g., http://localhost:8080/sparklr2/oauth/authorize, one receives a 405 error response stating "Request method &amp;amp;apos;GET&amp;amp;apos; not supported" with an Allow header of POST only.
+However, the spec seems to indicate otherwise: http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1.2.1
+"If the resource owner denies the access request or if the request fails for reasons other than a missing or invalid redirection URI, the authorization server informs the client by adding the following parameters to the query component of the redirection URI using the "application/x-www-form-urlencoded" format, per Appendix B:
+   error
+         REQUIRED.  A single ASCII [USASCII] error code from the
+         following:
+         invalid_request
+               The request is missing a required parameter, includes an
+               invalid parameter value, includes a parameter more than
+               once, or is otherwise malformed.
+"
+Compare the response of:
+http://localhost:8080/sparklr2/oauth/authorize
+to:
+http://localhost:8080/sparklr2/oauth/authorize?response_type=foo
+http://localhost:8080/sparklr2/oauth/authorize?response_type=code
+http://localhost:8080/sparklr2/oauth/authorize?response_type=code&amp;amp;client_id=foo
+http://localhost:8080/sparklr2/oauth/authorize?response_type=code&amp;amp;client_id=tonr
+for further illustration.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestJdbcClientDetailsService.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="306" opendate="2012-07-25 08:50:09" fixdate="2012-08-29 09:00:56" resolution="Complete">
+		<buginformation>
+			<summary>Public setter for OAuth2AccessTokenSupport is problematic</summary>
+			<description>Public setter for OAuth2AccessTokenSupport is problematic (introduced with SECOAUTH-304).  It can lead to inconsistent state for the message converters and error handler.  But it is really useful for overriding the HttpRequestFactory).</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.TestAuthorizationCodeAccessTokenProviderWithConversion.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.TestOAuth2AccessTokenSupport.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="329" opendate="2012-08-31 05:22:58" fixdate="2012-08-31 09:42:49" resolution="Complete">
+		<buginformation>
+			<summary>Implicit Flow serializer drops String values from OAuth2AccessToken </summary>
+			<description>Inside the AuthorizationEndpoint&amp;amp;apos;s appendAccessToken function, which is called during the implicit flow, there was a check to see whether the value of the map was either a primitive or a wrapped primitive, using Spring&amp;amp;apos;s ClassUtils. This check ruled out the String class being used in additionalInformation. Removal of the check allows Strings, and indeed all other objects with an appropriate .toString() call, to be serialized as expected. 
+I should point out that without this change, we can&amp;amp;apos;t issue id_tokens from the implicit flow since they come through as Strings.
+Pull request removes this check and adds documentation to the token interface&amp;amp;apos;s "getAdditionalInformation" method.
+This almost mirrors what happens in the Jackson serializer, which uses a JSON object writer instead of a simple toString. Therefore, a possible longer-term solution would be to use a pluggable serialization system for data to be tacked to the return URI. But barring that, this solution works for the basic case.</description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2AccessToken.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="333" opendate="2012-09-05 23:56:49" fixdate="2012-09-27 00:57:28" resolution="Complete">
+		<buginformation>
+			<summary>redirect_uri should not be mandatory field when obtaining an OAuth2 access token</summary>
+			<description>When an oauth client redirects to the authorization endpoint (oauth2/authorize?response_type=code&amp;amp;client_id=client&amp;amp;scope=read) and does not specify the redirect_uri then the redirect_uri is taken from the pre-configured value in the clientDetails. This is ok as the redirect_uri is not required in this call. However the fetched redirect_uri is then stored on the authorizationRequest (AuthorizationEndpoint#resolveRedirectUriAndCheckApproval). If the client subsequently tries to obtain an access-token by presenting his authorizationCode and again does not specify a redirect_uri (which is only required if he did so during the authorize request) then a RedirectMismatchException is thrown as it (wrongfully) seems as the authorize request was done with the redirect_uri parameter. There is no way of telling if the redirect_uri in the authorizationRequest that was stored (either in memory or jdbc) was the &amp;amp;apos;enhanced&amp;amp;apos; one from the clientDetails or the parameter redirect_uri in the original oauth2/authorize request. So the current implementation implicitly requires a redirect_uri parameter in the token request. This is not conform spec (http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1.3). I don&amp;amp;apos;t mind making a pull request, but before I do, I would like confirmation if this is indeed a bug or intentional design. </description>
+			<version>1.0.0.RC2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.DefaultAuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.code.TestAuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.RedirectResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="337" opendate="2012-10-01 04:11:25" fixdate="2012-10-01 07:06:31" resolution="Complete">
+		<buginformation>
+			<summary>Refresh token is always issued irrespective of client configuration</summary>
+			<description>Refresh token is always issued irrespective of client configuration.  A refresh token should only be issued on an auth code grant  and only if the client is allowed it.</description>
+			<version>1.0.0.RC2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestDefaultTokenServicesWithInMemory.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.DefaultTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTestDefaultTokenServices.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="214" opendate="2012-02-29 07:28:05" fixdate="2012-10-02 00:53:51" resolution="Complete">
+		<buginformation>
+			<summary>token-id-param not passed to UserAuthorizationSuccessfulAuthenticationHandler by OAuthProviderBeanDefinitionParser</summary>
+			<description>setting token-id-param is ignored by the authorizationsuccessful handler. </description>
+			<version>1.0.0.M6</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.config.OAuthProviderBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="312" opendate="2012-08-08 08:17:48" fixdate="2012-10-05 05:27:12" resolution="Complete">
+		<buginformation>
+			<summary>2-legged OAuth should provide access to protected resource without pre-existing security context</summary>
+			<description>I&amp;amp;apos;m using 2-legged OAuth to connect to a RESTful web service. I do not use or need authentication tokens. I have a simple public/private key shared secret and authenticate using that. Here is my simple code example:
+
+
+
+
+
+
+RSAKeySecret signatureSecret = new RSAKeySecret(privateKey, publicKey);
+
+
+
+
+
+
+
+
+
+final BaseProtectedResourceDetails protectedResourceDetails = new BaseProtectedResourceDetails();
+
+
+
+
+protectedResourceDetails.setConsumerKey("myConsumerKey");
+
+
+
+
+protectedResourceDetails.setSharedSecret(signatureSecret);
+
+
+
+
+protectedResourceDetails.setSignatureMethod(RSA_SHA1SignatureMethod.SIGNATURE_NAME);
+
+
+
+
+protectedResourceDetails.setUse10a(true);
+
+
+
+
+protectedResourceDetails.setId("/check");
+
+
+
+
+
+
+
+
+
+CoreOAuthConsumerSupport consumerSupport = new CoreOAuthConsumerSupport();
+
+
+
+
+consumerSupport.setStreamHandlerFactory(new DefaultOAuthURLStreamHandlerFactory());
+
+
+
+
+consumerSupport.setProtectedResourceDetailsService(new ProtectedResourceDetailsService() {
+
+
+
+
+    @Override
+
+
+
+
+    public ProtectedResourceDetails loadProtectedResourceDetailsById(String s)
+
+
+
+
+    {
+
+
+
+
+        return protectedResourceDetails;
+
+
+
+
+    }
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+OAuthRestTemplate restTemplate = new OAuthRestTemplate(protectedResourceDetails);
+
+
+
+
+restTemplate.setSupport(consumerSupport);
+
+
+
+
+
+
+
+
+
+Set&amp;lt;HttpMethod&amp;gt; methods = restTemplate.optionsForAllow("http://nwilliams:8080/app/services/Rest/check");
+
+
+
+
+
+
+However, I was getting this exception:
+Exception in thread "main" java.lang.IllegalStateException: No OAuth security context has been established. Unable to access resource &amp;amp;apos;goodAuthenticationId&amp;amp;apos;.
+    at org.springframework.security.oauth.consumer.client.OAuthClientHttpRequestFactory.createRequest(OAuthClientHttpRequestFactory.java:45)
+    at org.springframework.http.client.InterceptingClientHttpRequest$RequestExecution.execute(InterceptingClientHttpRequest.java:84)
+    at com.puresafety.oauth.test.ContentTypeHeaderInterceptor.intercept(ContentTypeHeaderInterceptor.java:40)
+    at org.springframework.http.client.InterceptingClientHttpRequest$RequestExecution.execute(InterceptingClientHttpRequest.java:81)
+    at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:67)
+    at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:46)
+    at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:49)
+    at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:446)
+    at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:409)
+    at org.springframework.web.client.RestTemplate.optionsForAllow(RestTemplate.java:365)
+The solution turned out to be to change the last line of my code to:
+
+
+
+
+
+
+Map&amp;lt;String, OAuthConsumerToken&amp;gt; tokens = new Hashtable&amp;lt;&amp;gt;();
+
+
+
+
+tokens.put("/check", new OAuthConsumerToken());
+
+
+
+
+
+
+
+
+
+OAuthSecurityContextImpl securityContext = new OAuthSecurityContextImpl();
+
+
+
+
+securityContext.setAccessTokens(tokens);
+
+
+
+
+
+
+
+
+
+OAuthSecurityContextHolder.setContext(securityContext);
+
+
+
+
+Set&amp;lt;HttpMethod&amp;gt; methods = restTemplate.optionsForAllow("http://nwilliams:8080/app/services/Rest/check");
+
+
+
+
+OAuthSecurityContextHolder.setContext(null);
+
+
+
+
+
+
+But I was curious why this was necessary, so I took a look at the code (OAuthClientHttpRequestFactory#createRequest(...)):
+
+
+
+
+
+
+    OAuthSecurityContext context = OAuthSecurityContextHolder.getContext();
+
+
+
+
+    if (context == null) {
+
+
+
+
+      throw new IllegalStateException("No OAuth security context has been established. Unable to access resource &amp;amp;apos;" + this.resource.getId() + "&amp;amp;apos;.");
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    Map&amp;lt;String, OAuthConsumerToken&amp;gt; accessTokens = context.getAccessTokens();
+
+
+
+
+    OAuthConsumerToken accessToken = accessTokens == null ? null : accessTokens.get(this.resource.getId());
+
+
+
+
+    if (accessToken == null) {
+
+
+
+
+      throw new AccessTokenRequiredException("No OAuth security context has been established. Unable to access resource &amp;amp;apos;" + this.resource.getId() + "&amp;amp;apos;.", resource);
+
+
+
+
+    }
+
+
+
+
+
+
+And then I followed the access token to where it was being used (CoreOAuthConsumerSupport#loadOAuthParameters()):
+
+
+
+
+
+
+    String tokenSecret = requestToken == null ? null : requestToken.getSecret();
+
+
+
+
+    String nonce = getNonceFactory().generateNonce();
+
+
+
+
+    oauthParams.put(OAuthConsumerParameter.oauth_consumer_key.toString(), Collections.singleton((CharSequence) details.getConsumerKey()));
+
+
+
+
+    if ((requestToken != null) &amp;amp;&amp;amp; (requestToken.getValue() != null)) {
+
+
+
+
+      oauthParams.put(OAuthConsumerParameter.oauth_token.toString(), Collections.singleton((CharSequence) requestToken.getValue()));
+
+
+
+
+    }
+
+
+
+
+
+
+The code allows the token to be null (and even anticipates that scenario). And my code, since it contains a null token value, is no different logically than if I had no token or OAuth security context at all. In a 2-legged OAuth scenario, it&amp;amp;apos;s completely valid for there to be no token (because you don&amp;amp;apos;t need one).
+It seems to me that the setting of an OAuth security context serves no actual purpose other than to bypass an error message that doesn&amp;amp;apos;t actually apply to my scenario. This code should be able to work without an OAuth security context and without an OAuthConsumerToken with a null, unused value.</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.consumer.client.OAuthClientHttpRequestFactory.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.client.CoreOAuthConsumerSupport.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.OAuthConsumerToken.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="340" opendate="2012-10-10 04:53:55" fixdate="2012-10-10 07:04:13" resolution="Complete">
+		<buginformation>
+			<summary>RandomValueTokenServices get a access token with a refresh token from a different client</summary>
+			<description>Hi,
+it seems that RandomValueTokenServices does not validate the client identity by providing a new access token for a given refresh token.
+So you can use a refresh token from a other client identity to get a new access token.
+Best regards,
+Andreas </description>
+			<version>1.0.0.M6</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.DefaultTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestDefaultTokenServicesWithInMemory.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.refresh.RefreshTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTestDefaultTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.AbstractTokenGranter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="56" opendate="2011-04-07 00:24:19" fixdate="2012-10-18 08:34:18" resolution="Complete">
+		<buginformation>
+			<summary>Certain characters in signature are not validating properly</summary>
+			<description>There seems to be an issue where certain characters in the signature are creating validation to fail.  Here is an example (using HMAC-SHA1 for signature method):
+Signature as generated on the consumer side (using CoreOAuthConsumerSupport to make the call): KoCR1Z1PeM/+sCoptySENMEh2xw=
+Signature as generated on the provider side: KoCR1Z1PeM/ sCoptySENMEh2xw=
+Notice how the + is missing on the provider side.  My guess is this has something to do with URLEncoding/Decoding.  This is difficult to replicate since the signature needs a + sign in it after generation.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.consumer.client.CoreOAuthConsumerSupport.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.client.TestCoreOAuthConsumerSupport.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="346" opendate="2012-10-25 09:07:26" fixdate="2012-10-26 01:26:18" resolution="Complete">
+		<buginformation>
+			<summary>scope attribute not working correctly on &lt;oauth:resource/&gt; in 1.0.0RC3</summary>
+			<description>I am working on updating from 1.0.0M6d to 1.0.0RC3. In my client I have the following oauth:resource defined:
+
+
+
+
+
+
+ 
+
+
+
+
+&amp;lt;oauth:resource id="service" type="authorization_code" client-id="client" client-secret="secret"
+
+
+
+
+		access-token-uri="${accessTokenUri}" user-authorization-uri="${userAuthorizationUri}"  scope="read,write"/&amp;gt;
+
+
+
+
+
+
+On the resource I have the following:
+
+
+
+
+
+
+ 
+
+
+
+
+&amp;lt;http pattern="/service/**" create-session="never" entry-point-ref="oauthAuthenticationEntryPoint"
+
+
+
+
+		access-decision-manager-ref="accessDecisionManager" xmlns="http://www.springframework.org/schema/security"&amp;gt;
+
+
+
+
+		&amp;lt;anonymous enabled="false" /&amp;gt;
+
+
+
+
+		&amp;lt;intercept-url pattern="/service" access="ROLE_USER,SCOPE_READ" /&amp;gt;
+
+
+
+
+		&amp;lt;intercept-url pattern="/service/**" access="ROLE_USER,SCOPE_READ" method="GET"/&amp;gt;
+
+
+
+
+		&amp;lt;custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER" /&amp;gt;
+
+
+
+
+		&amp;lt;access-denied-handler ref="oauthAccessDeniedHandler" /&amp;gt;
+
+
+
+
+	&amp;lt;/http&amp;gt;
+
+
+
+
+
+
+and for the AccessDecisionManager:
+
+
+
+
+
+
+&amp;lt;bean id="accessDecisionManager" class="org.springframework.security.access.vote.UnanimousBased" xmlns="http://www.springframework.org/schema/beans"&amp;gt;
+
+
+
+
+		&amp;lt;constructor-arg&amp;gt;
+
+
+
+
+			&amp;lt;list&amp;gt;
+
+
+
+
+				&amp;lt;bean class="org.springframework.security.oauth2.provider.vote.ScopeVoter" /&amp;gt;
+
+
+
+
+				&amp;lt;bean class="org.springframework.security.access.vote.RoleVoter" /&amp;gt;
+
+
+
+
+				&amp;lt;bean class="org.springframework.security.access.vote.AuthenticatedVoter" /&amp;gt;
+
+
+
+
+			&amp;lt;/list&amp;gt;
+
+
+
+
+		&amp;lt;/constructor-arg&amp;gt;
+
+
+
+
+	&amp;lt;/bean&amp;gt;
+
+
+
+
+
+
+When I replace ScopeVoter with my own implementation, I can see that the AuthorizationRequest associated with the Authentication passed to the vote() method on ScopeVoter has only a single scope associated with it: &amp;amp;apos;read write&amp;amp;apos;. It looks like somewhere the scopes are getting parsed incorrectly in the request. If I remove the scope attribute from oauth:resource, it seems to fall back to the scopes registered with the client and the request succeeds.
+I did some further investigation to narrow down the issue. I am using the JdbcTokenStore. If I load the access token, the scope field is ['read write'], instead of ['read', 'write']. If load the AuthorizationRequest (readAuthentication) for the access token, the scope is ['read', 'write'] which is correct. Based on this the scope seems to be getting mangled  either when the access token is initially created or when it is read on the resource server.</description>
+			<version>1.0.0</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationCodeProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.DefaultAuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestDefaultAuthorizationRequest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="339" opendate="2012-10-09 02:45:52" fixdate="2012-10-26 01:38:26" resolution="Complete">
+		<buginformation>
+			<summary>When supplying multiple wrong oauth2 parameters, a 500 is returned with stacktrace is returned</summary>
+			<description>When there are multiple problems with an authorization request, the ExceptionHandler in AuthorizationEndpoint itself fails with a RuntimeException that is not handled.
+This results in a 500 Internal Server Error with a stacktrace.
+To reproduce, start Sparklr2, and performs one of the following requests.
+1. (valid client_id, invalid response type, no redirect_uri)
+http://localhost:8080/sparklr2/oauth/authorize?client_id=tonr&amp;amp;response_type=asdf
+2. (invalid client_id, invalid response_type)
+http://localhost:8080/sparklr2/oauth/authorize?client_id=foobar&amp;amp;response_type=asdf
+In the current implementation of AuthorizationEndpoint.handleException(), a try-catch block is already used:
+
+
+
+
+
+
+		try {
+
+
+
+
+			errorRequest = getAuthorizationRequestForError(webRequest);
+
+
+
+
+		}
+
+
+
+
+		catch (OAuth2Exception ex) {
+
+
+
+
+			// If an AuthorizationRequest cannot be created from the incoming parameters it must be
+
+
+
+
+			// an error. OAuth2Exception can be handled this way. Other exceptions will generate a standard 500
+
+
+
+
+			// response.
+
+
+
+
+			return new ModelAndView(errorPage, Collections.singletonMap("error", translate.getBody()));
+
+
+
+
+		}
+
+
+
+
+
+
+Perhaps this block should be extended to include the rest of the method as well?</description>
+			<version>1.0.0.RC2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="349" opendate="2012-10-30 10:38:40" fixdate="2012-10-30 10:39:26" resolution="Complete">
+		<buginformation>
+			<summary>JdbcTokeStore could be more robust against serialization errors</summary>
+			<description>JdbcTokeStore could be more robust against serialization errors, since it is really just a cache a serialization problem (e.g. caused by a change in the Authentication) should just be a cache miss.</description>
+			<version>1.0.0.RC2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.token.JdbcTokenStore.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="353" opendate="2012-11-16 04:58:10" fixdate="2012-11-19 01:41:58" resolution="Complete">
+		<buginformation>
+			<summary>DefaultAccessTokenRequest is not Serializable</summary>
+			<description>As I explained in the issue https://jira.springsource.org/browse/SECOAUTH-345, the class DefaultOAuth2ClientContext must be serializable. Or it contains a field of type AccessTokenRequest implemented by DefaultAccessTokenRequest, which is not serializable (it doesn&amp;amp;apos;t implements the interface nor extends a class implementing it). Sorry I should have checked this before creating the previous issue.</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.DefaultOAuth2ClientContext.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.DefaultAccessTokenRequest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="357" opendate="2012-11-20 18:06:52" fixdate="2012-11-21 01:14:12" resolution="Complete">
+		<buginformation>
+			<summary>Access TokenEndpoint hard coded to not return Content-Type parameter in specification</summary>
+			<description>I am on Spring OAuth 1.0.0.RC3. The TokenEndpoint#getResponse method returns "Content-Type: application/json". Specification is for it to return "Content-Type: application/json;charset=UTF-8".</description>
+			<version>1.0.0.RC2</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestResourceOwnerPasswordProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="354" opendate="2012-11-20 09:10:52" fixdate="2012-11-21 08:05:07" resolution="Complete">
+		<buginformation>
+			<summary>Sparklr sample should not use OAuth2AuthenticationEntryPoint for /oauth/token</summary>
+			<description>Sparklr sample should not use OAuth2AuthenticationEntryPoint for /oauth/token (clients should get WWW-Authenticate with Basic not Bearer).</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestResourceOwnerPasswordProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="359" opendate="2012-11-22 01:12:39" fixdate="2012-11-22 01:13:36" resolution="Complete">
+		<buginformation>
+			<summary>Missing grant type in TokenEnpoint results in default container (no HTML) error</summary>
+			<description>The response status is correct (400) but the rendering is done by the container because Spring can&amp;amp;apos;t find a handler method for a token request with no grant type.  The fix is easy.</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestResourceOwnerPasswordProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="365" opendate="2012-12-03 02:48:43" fixdate="2012-12-10 07:21:24" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2ClientContextFilter does not store REAL current uri</summary>
+			<description>the current uri that is created and stored by the filter is not the exact uri used in the request.
+1.) if the code parameter is not the first parameter in the request it will result in a "&amp;amp;&amp;amp;" entry in the created uri
+2.) the ordering of parameters that is returned by request.getParameterNames() is not the same ordering as it is in the request uri. this results in a "wrong" ordering in the created current-uri.
+I&amp;amp;apos;m not sure if this is a jetty issue but this way the created current-uri can not be used to exchange auth codes with certain oauth2 providers (for example Facebook).</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.client.filter.TestOAuth2ClientContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="351" opendate="2012-11-03 01:21:43" fixdate="2012-12-12 00:51:48" resolution="Fixed">
+		<buginformation>
+			<summary>hashCode() for BaseClientDetails has an NPE </summary>
+			<description></description>
+			<version>1.0.0</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.BaseClientDetails.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="363" opendate="2012-11-30 19:06:57" fixdate="2012-12-14 08:34:11" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2 responses due to an Exception do not contain the "Pragma: no-cache" header as per specification</summary>
+			<description>The "Pragma: no-cache" header and value is not returned when an exception is thrown within the context of a TokenEndpoint instance. I suggest the DefaultWebResponseExceptionTranslator#handleOAuth2Exception should be modified to set this value.
+I have worked around this by creating a bean that gets loaded after the "oauth2TokenEndpoint" bean, has a property that references the "oauth2TokenEndpoint" bean, and also has an "afterPropertiesSet" method implementation that sets the "oauth2TokenEndpoint" bean with a custom class that extends DefaultWebResponseExceptionTranslator. The custom class overrides the "translate" method to add this header and value into the super&amp;amp;apos;s returned result.</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.error.DefaultWebResponseExceptionTranslator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="318" opendate="2012-08-14 07:48:11" fixdate="2012-12-24 00:40:07" resolution="Complete">
+		<buginformation>
+			<summary>sparklr2 admin endpoints restricted to POST</summary>
+			<description>After doing the OAuth dance in tonr/sparklr with "marissa", a GET request to the admin endpoints passing the correct access token fails.
+&amp;gt;
+GET http://localhost:8080/sparklr2/oauth/users/marissa/tokens
+Authorization: Bearer (token)
+&amp;lt;
+403 Forbidden
+{"error":"access_denied","error_description":"Access is denied"}
+
+However, a POST request works.
+&amp;lt;
+200 OK
+[
+{"access_token":"(access-token)","token_type":"bearer","refresh_token":"(refresh-token)","expires_in":26603,"scope":"read","client_id":"client1"}
+]
+This appears to conflict with sparklr2&amp;amp;apos;s configuration:
+&amp;lt;intercept-url pattern="/oauth/users/.*"
+access="#oauth2.clientHasRole(&amp;amp;apos;ROLE_CLIENT&amp;amp;apos;) and (hasRole(&amp;amp;apos;ROLE_USER&amp;amp;apos;) or #oauth2.isClient()) and #oauth2.hasScope(&amp;amp;apos;read&amp;amp;apos;)"
+method="GET" /&amp;gt;</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestResourceOwnerPasswordProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="383" opendate="2013-01-02 13:14:29" fixdate="2013-01-10 08:30:23" resolution="Complete">
+		<buginformation>
+			<summary>OAuthRestTemplate creates invalid signatures when given multi-values params that start with the letter o or later</summary>
+			<description>We have noticed that when making oAuth rest requests with spring, if the request contains multiple values for a param and the params name starts with o or later we get a signature error. We are fairly confident this is a client problem because it does not happen when formatting requests using the Netflix javascript client. 
+So for example:
+
+
+
+
+
+
+http://foo.com/bar?pin=1&amp;amp;pin=2 
+
+
+
+
+
+
+will not work but this will:
+
+
+
+
+
+
+http://foo.com/bar?ain=1&amp;amp;ain=2
+
+
+
+
+
+
+as will this:
+
+
+
+
+
+
+http://foo.com/bar?pin=1
+
+
+
+
+
+
+here are some debugging examples:
+Good 1 param From Netflix:
+
+
+
+
+
+
+GET http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals?orgId=2101
+
+
+
+
+
+
+
+
+
+Accept: application/vnd.foobar.axiom.v2+xml
+
+
+
+
+Authorization: OAuth realm="",oauth_timestamp="1357157738",oauth_nonce="GGuiB8",oauth_consumer_key="com.foobar.portal",oauth_token="527e90bb-f4d5-4fe1-8528-5062344216be",oauth_version="1.0",oauth_signature_method="HMAC-SHA1",oauth_signature="L9wMfF5Y%2B3NM1OTNfoXpQ1pK%2FbI%3D"
+
+
+
+
+ 
+
+
+
+
+200 OK
+
+
+
+
+
+
+
+
+
+Content-Length: 10143
+
+
+
+
+Pragma: no-cache
+
+
+
+
+Server: Jetty(8.0.3.v20111011)
+
+
+
+
+Content-Language: en-US
+
+
+
+
+Cache-Control: no-cache, no-store, max-age=0
+
+
+
+
+Content-Type: application/vnd.foobar.axiom.v2+xml;charset=UTF-8
+
+
+
+
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+
+
+
+
+
+
+Good 2 param from netflix
+
+
+
+
+
+
+GET http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals?orgId=2101&amp;amp;orgId=1301
+
+
+
+
+
+
+
+
+
+Accept: application/vnd.foobar.axiom.v2+xml
+
+
+
+
+Authorization: OAuth realm="",oauth_timestamp="1357158292",oauth_nonce="exyJfh",oauth_consumer_key="com.foobar.portal",oauth_token="527e90bb-f4d5-4fe1-8528-5062344216be",oauth_version="1.0",oauth_signature_method="HMAC-SHA1",oauth_signature="SRwAonztUFTVdkG7hqxva67VXK8%3D"
+
+
+
+
+ 
+
+
+
+
+200 OK
+
+
+
+
+
+
+
+
+
+Content-Length: 10173
+
+
+
+
+Pragma: no-cache
+
+
+
+
+Server: Jetty(8.0.3.v20111011)
+
+
+
+
+Content-Language: en-US
+
+
+
+
+Cache-Control: no-cache, no-store, max-age=0
+
+
+
+
+Content-Type: application/vnd.foobar.axiom.v2+xml;charset=UTF-8
+
+
+
+
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+
+
+
+
+
+
+Good Spring 1 Param
+
+
+
+
+
+
+2013-01-02 14:39:53,151 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.servlet.DispatcherServlet - Testing handler adapter [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter@304d2243]
+
+
+
+
+2013-01-02 14:39:53,151 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.beans.TypeConverterDelegate - Converting String to [class java.lang.String] using property editor [org.springframework.beans.propertyeditors.StringTrimmerEditor@31b625d7]
+
+
+
+
+2013-01-02 14:39:53,153 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.method.HandlerMethod - Invoking [updateDisplays] method with arguments [, [2101], null, null]
+
+
+
+
+2013-01-02 14:39:53,171 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature base: GET&amp;amp;http%3A%2F%2FMYCOMPUTER.foobar.com%3A8081%2Fplatform%2Fterminal-admin%2Fterminals%3Bcount%3D100&amp;amp;oauth_consumer_key%3Dcom.foobar.portal%26oauth_nonce%3D7db47e74-0bd0-4328-86c0-7d0f4e22d4cd%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1357159193%26oauth_token%3De9870dec-096b-44a3-912f-c8504aff7339%26oauth_version%3D1.0%26orgId%3D2101
+
+
+
+
+2013-01-02 14:39:53,172 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature: u+wHbkchI3zrinTi/N49Mt/BHOA=
+
+
+
+
+2013-01-02 14:39:53,172 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Created GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?orgId=2101"
+
+
+
+
+2013-01-02 14:39:53,172 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Setting request Accept header to [application/vnd.foobar.axiom.v2+xml]
+
+
+
+
+2013-01-02 14:39:57,637 [qtp1156350159-124] DEBUG portal-local-tomcat WDXCND12Multi56D4P0 user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?orgId=2101" resulted in 200 (OK)
+
+
+
+
+2013-01-02 14:39:57,637 [qtp1156350159-124] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Reading [com.foobar.api.axiom.generated.Response] as "application/vnd.foobar.axiom.v2+xml;charset=UTF-8" using [org.springframework.http.converter.xml.MarshallingHttpMessageConverter@287f4aba]
+
+
+
+
+
+
+Bad Spring Multi-Params if name starts with o or later
+
+
+
+
+
+
+2013-01-02 14:40:12,009 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.servlet.DispatcherServlet - Testing handler adapter [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter@304d2243]
+
+
+
+
+2013-01-02 14:40:12,009 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.beans.TypeConverterDelegate - Converting String to [class java.lang.String] using property editor [org.springframework.beans.propertyeditors.StringTrimmerEditor@31b625d7]
+
+
+
+
+2013-01-02 14:40:12,010 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.method.HandlerMethod - Invoking [updateDisplays] method with arguments [, [2101, 1301], null, null]
+
+
+
+
+2013-01-02 14:40:12,011 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature base: GET&amp;amp;http%3A%2F%2FMYCOMPUTER.foobar.com%3A8081%2Fplatform%2Fterminal-admin%2Fterminals%3Bcount%3D100&amp;amp;oauth_consumer_key%3Dcom.foobar.portal%26oauth_nonce%3Da1841564-9388-4794-b1b2-d14cdd806d7d%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1357159212%26oauth_token%3De9870dec-096b-44a3-912f-c8504aff7339%26oauth_version%3D1.0%26orgId%3D1301orgId%3D2101
+
+
+
+
+2013-01-02 14:40:12,011 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature: IqHJHN8XPn4NXuFE4cTUfBNa4K0=
+
+
+
+
+2013-01-02 14:40:12,011 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Created GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?orgId=1301&amp;amp;orgId=2101"
+
+
+
+
+2013-01-02 14:40:12,011 [qtp1156350159-128] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Setting request Accept header to [application/vnd.foobar.axiom.v2+xml]
+
+
+
+
+2013-01-02 14:40:12,035 [qtp1156350159-128] WARN portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?orgId=1301&amp;amp;orgId=2101" resulted in 401 (Invalid signature for signature method HMAC-SHA1); invoking error handler
+
+
+
+
+
+
+Good Spring Multi-Params if name starts with a letter before o
+
+
+
+
+
+
+2013-01-02 14:56:00,150 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.servlet.DispatcherServlet - Testing handler adapter [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter@5f635d27]
+
+
+
+
+2013-01-02 14:56:00,150 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.beans.TypeConverterDelegate - Converting String to [class java.lang.String] using property editor [org.springframework.beans.propertyeditors.StringTrimmerEditor@63925b7e]
+
+
+
+
+2013-01-02 14:56:00,151 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.method.HandlerMethod - Invoking [updateDisplays] method with arguments [, [2101, 1301], null, null]
+
+
+
+
+2013-01-02 14:56:00,153 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature base: GET&amp;amp;http%3A%2F%2FMYCOMPUTER.foobar.com%3A8081%2Fplatform%2Fterminal-admin%2Fterminals%3Bcount%3D100&amp;amp;abcd%3D1301%26abcd%3D2101%26oauth_consumer_key%3Dcom.foobar.portal%26oauth_nonce%3D654c7d25-811d-41df-bb06-825aaed25406%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1357160160%26oauth_token%3Db18ed2ba-7c4f-4d34-a878-47960d3b5bcf%26oauth_version%3D1.0
+
+
+
+
+2013-01-02 14:56:00,153 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature: fwTQMckP7xgmDgQLJsI2rUVCZoM=
+
+
+
+
+2013-01-02 14:56:00,153 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Created GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?abcd=1301&amp;amp;abcd=2101"
+
+
+
+
+2013-01-02 14:56:00,153 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Setting request Accept header to [application/vnd.foobar.axiom.v2+xml]
+
+
+
+
+2013-01-02 14:56:04,972 [qtp1326972927-125] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?abcd=1301&amp;amp;abcd=2101" resulted in 200 (OK)
+
+
+
+
+
+
+Good Spring 1 Param (with the param name starting with a)
+
+
+
+
+
+
+2013-01-02 14:55:44,830 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.servlet.DispatcherServlet - Testing handler adapter [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter@5f635d27]
+
+
+
+
+2013-01-02 14:55:44,831 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.beans.TypeConverterDelegate - Converting String to [class java.lang.String] using property editor [org.springframework.beans.propertyeditors.StringTrimmerEditor@63925b7e]
+
+
+
+
+2013-01-02 14:55:44,831 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.web.method.HandlerMethod - Invoking [updateDisplays] method with arguments [, [2101], null, null]
+
+
+
+
+2013-01-02 14:55:44,848 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature base: GET&amp;amp;http%3A%2F%2FMYCOMPUTER.foobar.com%3A8081%2Fplatform%2Fterminal-admin%2Fterminals%3Bcount%3D100&amp;amp;abcd%3D2101%26oauth_consumer_key%3Dcom.foobar.portal%26oauth_nonce%3D2be41917-f8f2-4d06-89e3-8567dd22b338%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1357160144%26oauth_token%3Db18ed2ba-7c4f-4d34-a878-47960d3b5bcf%26oauth_version%3D1.0
+
+
+
+
+2013-01-02 14:55:44,849 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.common.signature.HMAC_SHA1SignatureMethod - signature: DDXqhAHvgnBEybKL/R1LbZAAcIU=
+
+
+
+
+2013-01-02 14:55:44,849 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Created GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?abcd=2101"
+
+
+
+
+2013-01-02 14:55:44,849 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Setting request Accept header to [application/vnd.foobar.axiom.v2+xml]
+
+
+
+
+2013-01-02 14:55:53,231 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - GET request for "http://MYCOMPUTER.foobar.com:8081/platform/terminal-admin/terminals;count=100?abcd=2101" resulted in 200 (OK)
+
+
+
+
+2013-01-02 14:55:53,231 [qtp1326972927-126] DEBUG portal-local-tomcat MYCOMPUTER user=XXXXXXXX org.springframework.security.oauth.consumer.client.OAuthRestTemplate - Reading [com.foobar.api.axiom.generated.Response] as "application/vnd.foobar.axiom.v2+xml;charset=UTF-8" using [org.springframework.http.converter.xml.MarshallingHttpMessageConverter@10d1211d]
+
+
+
+
+
+
+</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.consumer.client.CoreOAuthConsumerSupport.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.client.TestCoreOAuthConsumerSupport.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="385" opendate="2013-01-11 04:20:30" fixdate="2013-01-14 01:32:19" resolution="Complete">
+		<buginformation>
+			<summary>Plus sign in query string error_description param (in redirect) throws IllegalArgumentException</summary>
+			<description>This commit https://jira.springsource.org/browse/SECOAUTH-365 produces bug.
+I clicked "Deny" button on oauth2 confirm page.
+My browser redirected to http://***.com/login?error=access_denied&amp;amp;error_description=User+denied+access&amp;amp;state=wuhu2t
+And I got this exception:
+java.lang.IllegalArgumentException: Invalid character &amp;amp;apos;+&amp;amp;apos; for QUERY_PARAM in "User+denied+access"
+	at org.springframework.web.util.HierarchicalUriComponents.verifyUriComponent(HierarchicalUriComponents.java:298)
+	at org.springframework.web.util.HierarchicalUriComponents.verify(HierarchicalUriComponents.java:267)
+	at org.springframework.web.util.HierarchicalUriComponents.(HierarchicalUriComponents.java:85)
+	at org.springframework.web.util.UriComponentsBuilder.build(UriComponentsBuilder.java:280)
+	at org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.calculateCurrentUri(OAuth2ClientContextFilter.java:126)
+	at org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.doFilter(OAuth2ClientContextFilter.java:57)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:87)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:342)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:192)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:160)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:259)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at com...
+ServletUriComponentsBuilder cannot properly parse "+" plus sign in query string.</description>
+			<version>1.0.1</version>
+			<fixedVersion>1.0.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.client.filter.TestOAuth2ClientContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="388" opendate="2013-01-24 07:29:09" fixdate="2013-01-31 04:18:28" resolution="Complete">
+		<buginformation>
+			<summary>Client Auth fails when scheme is set to AuthenticationScheme.header</summary>
+			<description>The client_id should not be in the request body when we set the auth scheme to header.  Spring Security OAuth ignores the header based client credentials and assumes it&amp;amp;apos;s form-based and fails with a 401.
+https://github.com/nfet/spring-security-oauth/commit/83bf1a49944f4f6e73f99513c8ba5628f59ba9aa
+
+Example Steps:
+
+
+
+
+
+
+Repro Steps
+
+
+
+
+
+
+ResourceOwnerPasswordResourceDetails resourceOwner = new ResourceOwnerPasswordResourceDetails();
+
+
+
+
+resourceOwner.setAccessTokenUri(ACCESS_TOKEN_URI);
+
+
+
+
+resourceOwner.setClientAuthenticationScheme(AuthenticationScheme.header);
+
+
+
+
+resourceOwner.setAuthenticationScheme(AuthenticationScheme.form);
+
+
+
+
+resourceOwner.setUsername(username);
+
+
+
+
+resourceOwner.setPassword(password);
+
+
+
+
+resourceOwner.setClientId(clientId);
+
+
+
+
+resourceOwner.setClientSecret(clientSecret);
+
+
+
+
+
+
+
+
+
+OAuth2RestTemplate oauth2RestTemplate = new OAuth2RestTemplate(resourceDetails)
+
+
+
+
+HttpEntity&amp;lt;String&amp;gt; requestEntity = createRequestEntity(); ....
+
+
+
+
+
+
+
+
+
+ResponseEntity&amp;lt;T&amp;gt; response = restTemplate.postForEntity(anyUri, requestEntity, String.class);
+
+
+
+
+			
+
+
+
+
+2013-01-16 13:01:42,073 DEBUG [org.springframework.web.client.RestTemplate] - &amp;lt;Created POST request for "http://localhost:8094/api/oauth/token"&amp;gt;
+
+
+
+
+2013-01-16 13:01:42,090 WARN [org.springframework.web.client.RestTemplate] - &amp;lt;POST request for "http://localhost:8094/api/oauth/token" resulted in 401(Unauthorized); invoking error handler&amp;gt;
+
+
+
+
+
+
+
+
+
+error="access_denied", error_description="Error requesting access token."
+
+
+
+
+	at org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport.retrieveToken(OAuth2AccessTokenSupport.java:110)
+
+
+
+
+	at org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsAccessTokenProvider.obtainAccessToken(ClientCredentialsAccessTokenProvider.java:44)
+
+
+
+
+	at org.springframework.security.oauth2.client.token.AccessTokenProviderChain.obtainNewAccessTokenInternal(AccessTokenProviderChain.java:142)
+
+
+
+
+	at org.springframework.security.oauth2.client.token.AccessTokenProviderChain.obtainAccessToken(AccessTokenProviderChain.java:118)
+
+
+
+
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.acquireAccessToken(OAuth2RestTemplate.java:216)
+
+
+
+
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.getAccessToken(OAuth2RestTemplate.java:168)
+
+
+
+
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.createRequest(OAuth2RestTemplate.java:89)
+
+
+
+
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:442)
+
+
+
+
+	at org.springframework.security.oauth2.client.OAuth2RestTemplate.doExecute(OAuth2RestTemplate.java:123)
+
+
+
+
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:423)
+
+
+
+
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:399)
+
+
+
+
+	at 
+
+
+
+
+Caused by: org.springframework.web.client.HttpClientErrorException: 401 Unauthorized
+
+
+
+
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:90)
+
+
+
+
+	at org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport$AccessTokenErrorHandler.handleError(OAuth2AccessTokenSupport.java:209)
+
+
+
+
+	at org.springframework.web.client.RestTemplate.handleResponseError(RestTemplate.java:494)
+
+
+
+
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:451)
+
+
+
+
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:417)
+
+
+
+
+	at org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport.retrieveToken(OAuth2AccessTokenSupport.java:102)
+
+
+
+
+	... 39 more
+
+
+
+
+
+
+
+</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="386" opendate="2013-01-21 03:34:11" fixdate="2013-04-12 01:12:01" resolution="Complete">
+		<buginformation>
+			<summary>OAuthProviderProcessingFilter should delegate its error handling to an AuthenticationEntryPoint</summary>
+			<description>OAuthProviderProcessingFilter.fail uses response.sendError to send the exception to the client. That leads to inability to process exceptions using ExceptionTranslationFilter and therefore exception handling have to be done in several places by overriding provider filter classes. ExceptionTranslationFilter should be supported properly.</description>
+			<version>1.0.1</version>
+			<fixedVersion>1.0.3</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.provider.filter.OAuthProviderProcessingFilter.java</file>
+			<file type="M">org.springframework.security.oauth.provider.OAuthProcessingFilterEntryPoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="394" opendate="2013-03-25 08:59:00" fixdate="2013-04-12 01:47:22" resolution="Complete">
+		<buginformation>
+			<summary>No response parameter for scope when using implicit grant (and scopes are different than requested)</summary>
+			<description>According to RFC 6749 Section 4.2.2, the scope response parameter is a required parameter if the granted scopes are different than those requested. However, looking at the AuthorizationEndpoint.appendAccessToken in the 1.0.2.RELEASE, the scope parameter is never appended to the redirect URL.</description>
+			<version>1.0.2</version>
+			<fixedVersion>1.0.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="400" opendate="2013-04-23 03:58:23" fixdate="2013-04-23 05:21:58" resolution="Complete">
+		<buginformation>
+			<summary>Default scopes appended to redirect in implicit grant are not properly encoded</summary>
+			<description>SECOAUTH-394 exposed this bug (which actually relates to all implicit grants, but hardly ever was seen before)</description>
+			<version>1.0.3</version>
+			<fixedVersion>1.0.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestImplicitProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ServerRunning.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.OAuth2AccessTokenSupport.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestAuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="401" opendate="2013-04-24 19:24:48" fixdate="2013-05-17 08:27:08" resolution="Complete">
+		<buginformation>
+			<summary>ResourceBeanDefinitionParser does not handle "password" grant type</summary>
+			<description>Part of the problem is described here:
+http://forum.springsource.org/showthread.php?129962-bug-in-resource-owner-password-credentials-flow&amp;amp;highlight=Unable+obtain+access+token+resource
+Additional problems when type="password":
+
+The userAuthorizationUri property is erroneously required
+The username and password properties are not applied
+
+While it may be true that XML-configured resources of type "password" have limited practical utility, the XSD (spring-security-oauth2-1.0.xsd) does state support for the "password" grant type.</description>
+			<version>1.0.4</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.config.ResourceBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.config.TestInvalidResourceBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.config.TestResourceBeanDefinitionParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="409" opendate="2013-06-09 09:21:37" fixdate="2013-07-11 23:53:12" resolution="Complete">
+		<buginformation>
+			<summary>OAuth2ClientContextFilter throws IllegalArgumentException for invalid query parameters</summary>
+			<description>If the OAuth2ClientContextFilter is installed in a spring security filter chain, it throws IllegalArgumentException when any query string is invalid (can&amp;amp;apos;t be parsed by org.springframework.web.util.UriComponents.)  Even requests which will not be involved in oauth2 cannot pass through the filter.
+It may depend on the servlet container but tomcat (7.x) does allow requests to be handled by a servlet even if portions of the url (query string) are invalid. If the OAuth2ClientContextFilter is installed, the requests cannot be handled because of the IllegalArgumentException.
+Example Stack Trace:
+java.lang.IllegalArgumentException: Invalid character &amp;amp;apos;"&amp;amp;apos; for QUERY_PARAM in "nirv"%20onmouseover" 
+    org.springframework.web.util.UriComponents.verifyUriComponent(UriComponents.java:373) 
+    org.springframework.web.util.UriComponents.verify(UriComponents.java:341) 
+    org.springframework.web.util.UriComponents.&amp;lt;init&amp;gt;(UriComponents.java:105) 
+    org.springframework.web.util.UriComponentsBuilder.build(UriComponentsBuilder.java:222) 
+    org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.calculateCurrentUri(OAuth2ClientContextFilter.java:130) 
+    org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.doFilter(OAuth2ClientContextFilter.java:54)
+    org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:323) 
+A proposed fix would be to catch the IllegalArgumentException in OAuth2ClientContextFilter.calculateCurrentUri and return null.</description>
+			<version>1.0.2</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter.java</file>
+			<file type="M">org.springframework.security.oauth2.client.filter.TestOAuth2ClientContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="381" opendate="2012-12-20 10:26:14" fixdate="2013-10-02 14:26:15" resolution="Complete">
+		<buginformation>
+			<summary>User&amp;apos;s password gets serialized in authentication column if password grant type is used</summary>
+			<description>If a user requests an access token using the password grant authorization flow, their password is stored in the clear in the database by JdbcTokenStore. This should also affect any other token store.
+When the OAuth2Authentication object is being serialized, it&amp;amp;apos;s authorizationRequest contains a map of authorization parameters. This will contain the scope, the grant_type, the username, and the password. The password should be removed before serializing to any store. Otherwise the user&amp;amp;apos;s password is leaked. This is worse than exposing tokens in the database since passwords may be used across sites.</description>
+			<version>1.0.0</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.password.ResourceOwnerPasswordTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.DefaultAuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestDefaultAuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.AuthorizationRequest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="427" opendate="2013-10-07 11:22:04" fixdate="2013-10-07 12:20:37" resolution="Complete">
+		<buginformation>
+			<summary>Clients with registered redirect-uri shouldn&amp;apos;t need to specify a one explicitly</summary>
+			<description>SECOAUTH-253 was supposed to fix this, but it looks like it didn&amp;amp;apos;t or else there was a reversion.</description>
+			<version>1.0.5</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.consumer.InvalidOAuthRealmException.java</file>
+			<file type="M">org.springframework.security.oauth.common.OAuthException.java</file>
+			<file type="M">org.springframework.security.oauth.provider.token.ExpiredOAuthTokenException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidRequestException.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.JaxbOAuth2Exception.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2ExceptionJackson2Deserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.config.TestResourceServerBeanDefinitionParser.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidTokenException.java</file>
+			<file type="M">org.springframework.security.oauth.provider.OAuthAuthenticationDetails.java</file>
+			<file type="M">org.springframework.security.oauth.provider.nonce.NonceAlreadyUsedException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TestJdbcClientDetailsService.java</file>
+			<file type="M">org.springframework.security.oauth.provider.ConsumerCredentials.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.BaseJaxbMessageConverterTest.java</file>
+			<file type="M">org.springframework.security.oauth.provider.ConsumerAuthentication.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.JaxbOAuth2AccessToken.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InsufficientScopeException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.OAuth2AccessTokenJackson2Deserializer.java</file>
+			<file type="M">org.springframework.security.oauth.provider.BaseConsumerDetails.java</file>
+			<file type="M">org.springframework.security.oauth.common.signature.RSAKeySecret.java</file>
+			<file type="M">org.springframework.security.oauth2.client.OAuth2RestTemplate.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestDefaultTokenServicesWithJdbc.java</file>
+			<file type="M">org.springframework.security.oauth.provider.attributes.ConsumerSecurityConfig.java</file>
+			<file type="M">org.springframework.security.oauth2.client.resource.OAuth2AccessDeniedException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.UnauthorizedClientException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.UserDeniedAuthorizationException.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeAccessTokenProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidGrantException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.BaseClientDetails.java</file>
+			<file type="M">org.springframework.security.oauth.provider.InvalidOAuthParametersException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.UnsupportedResponseTypeException.java</file>
+			<file type="M">org.springframework.security.oauth.examples.tonr.SparklrException.java</file>
+			<file type="M">org.springframework.security.oauth2.client.token.grant.code.TestAuthorizationCodeAccessTokenProvider.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.ClientAuthenticationException.java</file>
+			<file type="M">org.springframework.security.oauth.examples.tonr.mvc.SparklrController.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.TokenRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.TestJaxbOAuth2ExceptionMessageConverter.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidScopeException.java</file>
+			<file type="M">org.springframework.security.oauth.examples.sparklr.oauth.SparklrConsumerDetails.java</file>
+			<file type="M">org.springframework.security.oauth2.client.http.AccessTokenRequiredException.java</file>
+			<file type="M">org.springframework.security.oauth.provider.verifier.VerificationFailedException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ClientAlreadyExistsException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.error.DefaultWebResponseExceptionTranslator.java</file>
+			<file type="M">org.springframework.security.oauth.provider.token.InvalidOAuthTokenException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2Exception.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.UnsupportedGrantTypeException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.approval.TestJdbcApprovalStore.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.TestJaxbOAuth2AccessTokenMessageConverter.java</file>
+			<file type="M">org.springframework.security.oauth.common.signature.InvalidSignatureException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.NoSuchClientException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ClientRegistrationException.java</file>
+			<file type="M">org.springframework.security.oauth2.http.converter.jaxb.AbstractJaxbMessageConverter.java</file>
+			<file type="M">org.springframework.security.oauth.common.signature.UnsupportedSignatureMethodException.java</file>
+			<file type="M">org.springframework.security.oauth.examples.tonr.ServerRunning.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.token.TestJwtTokenServices.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.UnapprovedClientAuthenticationException.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.OAuthRequestFailedException.java</file>
+			<file type="M">org.springframework.security.oauth.provider.OAuthVersionUnsupportedException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.InvalidClientException.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.AccessTokenRequiredException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.SerializationException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.ServerRunning.java</file>
+			<file type="M">org.springframework.security.oauth2.client.resource.UserApprovalRequiredException.java</file>
+			<file type="M">org.springframework.security.oauth2.client.resource.UserRedirectRequiredException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.BadClientCredentialsException.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.RedirectMismatchException.java</file>
+			<file type="M">org.springframework.security.oauth.consumer.UnverifiedRequestTokenException.java</file>
+			<file type="M">org.springframework.security.oauth.common.signature.SharedConsumerSecretImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="404" opendate="2013-05-22 03:02:47" fixdate="2013-10-07 12:23:03" resolution="Complete">
+		<buginformation>
+			<summary>OAuthConsumerContextFilter contains an autowired field portResolver</summary>
+			<description>In my spring security context, there is multi instance of "http" element, for example:
+&amp;lt;http pattern="/api/**"&amp;gt;
+    ......
+&amp;lt;/http&amp;gt; 
+&amp;lt;http pattern="/web/**" name="web-filter-chain"&amp;gt;
+    ......
+&amp;lt;/http&amp;gt; 
+then I try to add spring security oauth1 support
+&amp;lt;oauth:consumer resource-details-service-ref="resourceDetails"
+		oauth-failure-page="/oauth_error.jsp" filter-chain-ref="web-filter-chain"&amp;gt;
+		&amp;lt;oauth:url pattern="/web/oauth/spring/twitter" resources="twitter"  /&amp;gt;
+&amp;lt;/oauth:consumer&amp;gt;
+an error is reported:
+org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type [org.springframework.security.web.PortResolver] is defined: expected single matching bean but found 2
+It seems not a good idea to have an autowired field in a library.
+</description>
+			<version>1.0.4</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth.consumer.filter.OAuthConsumerContextFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="423" opendate="2013-10-04 11:28:59" fixdate="2013-10-09 14:15:18" resolution="Complete">
+		<buginformation>
+			<summary>AuthorizationRequest is no longer Serializable, cannot be used in distributable applications</summary>
+			<description>As of commit 9704cf66181cb1179bd02dad8cf63c0e77cf8ebc, AuthorizationRequest is no longer Serializable. Because of this, any Spring Security OAuth 2 applications cannot be marked with &amp;lt;distributable /&amp;gt; in the deployment descriptor. Doing so results in this error whenever a user attempts to authorize:
+java.lang.IllegalArgumentException: Non-serializable attribute authorizationRequest
+I am unable to even test out Spring Security OAuth 2 1.1.0.M1 and Java Config. I am completely blocked by this problem, for which there is no workaround. My application must be distributable; taking that off is not an option.
+Can we get this fixed and have M2 released ASAP, please!?</description>
+			<version>2.0.0</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.TestAuthorizationRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.BaseRequest.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.AuthorizationRequest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="408" opendate="2013-06-03 23:02:55" fixdate="2013-11-18 01:06:43" resolution="Complete">
+		<buginformation>
+			<summary>Tokens available from /token endpoint with grant_type=implicit</summary>
+			<description>It&amp;amp;apos;s not particularly harmful (since the tokens will have no user-related scopes), but the /token endpoint should not be granting implicit tokens.</description>
+			<version>1.0.4</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TokenEndpoint.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.TestTokenEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="415" opendate="2013-08-02 07:16:50" fixdate="2013-11-18 01:30:40" resolution="Complete">
+		<buginformation>
+			<summary>TokenEndpoint returns error messages that are not according to oauth 2 spec</summary>
+			<description>The OAuth standard (http://tools.ietf.org/html/rfc6749) defines the following 
+Invalid_Request ==&amp;gt; missing fields
+Invalid_Grant ==&amp;gt; Missing Grant or Invalid Grant
+But Spring reversed the error categories
+It returns an
+Invalid_Grant ==&amp;gt; missing fields
+Invalid_Request ==&amp;gt; Missing Grant or Invalid Grant.</description>
+			<version>1.0.4</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2ExceptionJackson2Deserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2ExceptionJackson1Deserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exception.TestOAuth2ExceptionDeserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.DefaultRedirectResolver.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.RedirectMismatchException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="403" opendate="2013-05-21 13:07:42" fixdate="2013-11-18 01:31:28" resolution="Complete">
+		<buginformation>
+			<summary>DefaultRedirectResolver throws wrong exceptions</summary>
+			<description>The OAuth 2.0 spec (http://tools.ietf.org/html/rfc6749) indicates an "unauthorized_client" error should be returned when "the authenticated client is not authorized to use this authorization grant type." For redirection URI mismatch, "invalid_request" should be the error code. There is no error code called "redirect_uri_mismatch."</description>
+			<version>1.0.3</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.code.AuthorizationCodeTokenGranter.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2ExceptionJackson2Deserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.OAuth2ExceptionJackson1Deserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exception.TestOAuth2ExceptionDeserializer.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.DefaultRedirectResolver.java</file>
+			<file type="M">org.springframework.security.oauth2.common.exceptions.RedirectMismatchException.java</file>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="431" opendate="2013-12-09 04:05:01" fixdate="2013-12-30 01:28:06" resolution="Complete">
+		<buginformation>
+			<summary>[Patch] Endpoints in WhitelabelApprovalEndpoint do not set the content type header</summary>
+			<description>The default implementation of the /oauth/confirm_access and /oauth/error as defined in the WhitelabelApprovalEndpoint class do not set the content-type header. This means that these pages are not rendered as HTML, my browser is treating them as plain text.
+The pull request contains a trivial change to fix this.</description>
+			<version>2.0.0</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.security.oauth2.provider.endpoint.WhitelabelApprovalEndpoint.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

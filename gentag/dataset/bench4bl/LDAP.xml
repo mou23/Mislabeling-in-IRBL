@@ -1,0 +1,2538 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="LDAP">
+	<bug id="26" opendate="2006-12-07 19:37:10" fixdate="2007-01-10 04:17:20" resolution="Fixed">
+		<buginformation>
+			<summary>PagedResultsRequestControl failing when used with AD</summary>
+			<description>Bug raised in response to following post on the spring ldap forum http://forum.springframework.org/showthread.php?t=32330
+In an AD environment when using the Paged Results functionality after successfully retrieving and iterating over the returned results upto the set paged results size, the last call to results.hasMore() throws a PartialResultsException with a message of "Unprocessesed continuation reference"
+This then causes the processor.postProcess(ctx) call to be missed meaning a cookie is never set to anything apart from null, meaning no more results can be returned. (this is all within the ldaptemplate::search(SearchExecutor se, NameClassPairCallbackHandler handler,DirContextProcessor processor) function)
+Reply to original post on the forums indicates this is an issue with the way the exception handling works for that exception.
+Same result is seen in both 1.1.1 and 1.1.2
+</description>
+			<version>1.1.1</version>
+			<fixedVersion>1.2-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.LdapTemplateTest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="15" opendate="2006-11-07 09:54:44" fixdate="2007-01-10 04:37:26" resolution="Fixed">
+		<buginformation>
+			<summary>DirContextAdapter.setAttribute() </summary>
+			<description>DirContextAdapter.setAttributeValue(String, Object) and setAttributeValues(String, Object[]) add the attribute to DirContextAdapter.attrs or DirContextAdapter.updateAttrs (depending on updateMode) while setAttribute() does not.
+Hence, calling setAttribute does not result in a ModificationItem.
+</description>
+			<version>1.1.2</version>
+			<fixedVersion>1.2-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.support.DirContextAdapterTest.java</file>
+			<file type="M">org.springframework.ldap.support.DirContextAdapter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="37" opendate="2007-01-17 09:25:25" fixdate="2007-02-06 04:51:17" resolution="Fixed">
+		<buginformation>
+			<summary>Controls[]  java.lang.NullPointerException when performing PagedResultsRequestControl search</summary>
+			<description>http://forum.springframework.org/showthread.php?p=96427#post96427
+
+
+
+
+
+
+        Control[] requestControls = ldapContext.getRequestControls();
+
+
+
+
+        Control newControl = createRequestControl();
+
+
+
+
+
+
+
+
+
+        Control[] newControls = new Control[requestControls.length + 1];
+
+
+
+
+        for (int i = 0; i &amp;lt; requestControls.length; i++) {
+
+
+
+
+            newControls[i] = requestControls[i];
+
+
+
+
+        }
+
+
+
+
+
+
+new Control(int) needs to perform a null pointer check. 
+</description>
+			<version>1.1.1</version>
+			<fixedVersion>1.2-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.control.AbstractRequestControlDirContextProcessorTest.java</file>
+			<file type="M">org.springframework.ldap.control.AbstractRequestControlDirContextProcessor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="46" opendate="2007-03-16 04:07:32" fixdate="2007-04-20 04:52:07" resolution="Fixed">
+		<buginformation>
+			<summary>DirContextAdapter.getModificatioItems() doesnt ignore case when collecting values to be removed and added.</summary>
+			<description>DirContextAdapter.getModicationItems() calls collectModifications() to collect the modification items.  The section handling multi-valued attributes uses CollectionUtils to return a new list that will contain a substraction of the old values from the new values, but the substraction doesnt handle case insensitivity thus resulting in a list of items that require to be added which already exist in the Directory Server with a different case and resulting in an ATTRIBUTE_ALREADY_EXISIT error.  See below:
+else {
+            // Collect all modifications to attribute individually (this also
+            // covers additions to a previously non-existant attribute).
+            Collection oldValues = new LinkedList();
+            Collection newValues = new LinkedList();
+            collectAttributeValues(oldValues, currentAttribute);
+            collectAttributeValues(newValues, changedAttr);
+            Collection myModifications = new LinkedList();
+            Collection addedValues = CollectionUtils.subtract(newValues,
+                    oldValues);  // WILL ALSO RETURN VALUES TO BE ADDED THAT ARE ALREADY IN LDAP IF CASE IS DIFFERENT.
+            Collection removedValues = CollectionUtils.subtract(oldValues,
+                    newValues);  // WILL ALSO RETURN VALUES TO BE ADDED THAT ARE ALREADY IN LDAP IF CASE IS DIFFERENT.
+            collectModifications(DirContext.ADD_ATTRIBUTE, changedAttr,
+                    addedValues, myModifications);
+            collectModifications(DirContext.REMOVE_ATTRIBUTE, changedAttr,
+                    removedValues, myModifications);
+            if (myModifications.isEmpty()) 
+{
+                // This means that the attributes are not equal, but the
+                // actual values are the same - thus the order must have
+                // changed. This should result in a REPLACE_ATTRIBUTE operation.
+                myModifications.add(new ModificationItem(
+                        DirContext.REPLACE_ATTRIBUTE, changedAttr));
+            }</description>
+			<version>1.1</version>
+			<fixedVersion>1.2-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="13" opendate="2006-11-07 09:37:21" fixdate="2007-04-20 04:55:53" resolution="Fixed">
+		<buginformation>
+			<summary>DirContextAdapter.getModificationItems() returns password when password unchanged</summary>
+			<description>Hello,
+
+We have a Person.java pojo containing a password property of type byte[]. The password property is set to and from the Sun Directory Server using a ContextMapper/ContextAssembler implementation.
+Problem: DirContextAdapter.getModificationsItems() always returns the password attribute as an updated attribute. This is due to byte arrays having a different hashcode despite identical content. Therefore b1[].equals(b2[]) returns false.
+
+This could be a problem say if:
+
+Service subscriber 1 gets a handle to a Person pojo
+Service subscriber 2 gets a handle to a Person pojo, updates password attribute and saves.
+Service subscriber 1 updates "golden rating" attribute and saves. The new password is blown away.
+
+Suggested Solution: Perhaps DirContextAdapter.isChanged() should use Arrays.equals(byte[], byte[]) for attributes of type byte[]. 
+Best Regards,
+Jasper</description>
+			<version>1.1</version>
+			<fixedVersion>1.2-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="66" opendate="2007-04-30 19:19:09" fixdate="2007-05-01 05:43:29" resolution="Fixed">
+		<buginformation>
+			<summary>NullPointerException when getting PagedResultsRequestControl response</summary>
+			<description>The problem is similar to LDAP-37, but for the response controls.
+http://forum.springframework.org/showthread.php?t=38123
+
+
+
+
+
+
+        Control[] responseControls = ldapContext.getResponseControls();
+
+
+
+
+
+
+
+
+
+        // Go through response controls and get info, regardless of class
+
+
+
+
+        for (int i = 0; i &amp;lt; responseControls.length; i++) {
+
+
+
+
+
+
+We need to perform a null check on responseControls. </description>
+			<version>1.1.1</version>
+			<fixedVersion>1.2-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.control.PagedResultsRequestControl.java</file>
+			<file type="M">org.springframework.ldap.control.PagedResultsRequestControlTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="83" opendate="2007-09-19 04:37:10" fixdate="2007-10-18 06:58:23" resolution="Fixed">
+		<buginformation>
+			<summary>AbstractConnectionSource should ignore SUN_LDAP_POOLING_FLAG in base environment</summary>
+			<description>If I pass in a base environment to AbstractConnectionSource with the SUN_LDAP_POOLING_FLAG set to true then the AbstractConnectionSource incorrectly inherits this property from the base environment, even if I had called setPooled(false):
+        if (pooled) 
+{
+            baseEnv.put(SUN_LDAP_POOLING_FLAG, "true");
+            log.debug("Using LDAP pooling.");
+        }
+ else 
+{
+            log.debug("Not using LDAP pooling");
+        }
+
+        Hashtable env = new Hashtable(baseEnv);
+This should be something more like:
+        Hashtable env = new Hashtable(baseEnv);
+        if (pooled) 
+{
+            env.put(SUN_LDAP_POOLING_FLAG, "true");
+            log.debug("Using LDAP pooling.");
+        }
+ else 
+{
+            env.remove(SUN_LDAP_POOLING_FLAG);
+            log.debug("Not using LDAP pooling");
+        }
+
+This bug has security implications hence the high priority.</description>
+			<version>1.2-RC1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.support.AbstractContextSource.java</file>
+			<file type="M">org.springframework.ldap.core.support.LdapContextSourceTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="93" opendate="2007-12-03 05:07:46" fixdate="2007-12-07 04:29:54" resolution="Fixed">
+		<buginformation>
+			<summary>SimpleLdapTemplate search method delegates to incorrect LdapOperations method.</summary>
+			<description>The following method on SimpleLdapTemplate delegates to the wrong LdapOperations method...
+	public &amp;lt;T&amp;gt; List&amp;lt;T&amp;gt; search(String base, String filter, SearchControls controls, ParameterizedContextMapper&amp;lt;T&amp;gt; mapper,
+			DirContextProcessor processor) 
+{
+		return ldapOperations.search(base, filter, controls, mapper);
+	}
+
+should be:
+	public &amp;lt;T&amp;gt; List&amp;lt;T&amp;gt; search(String base, String filter, SearchControls controls, ParameterizedContextMapper&amp;lt;T&amp;gt; mapper,
+			DirContextProcessor processor) 
+{
+		return ldapOperations.search(base, filter, controls, mapper, processor);
+	}</description>
+			<version>1.2</version>
+			<fixedVersion>1.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.simple.SimpleLdapTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="100" opendate="2008-02-13 04:07:04" fixdate="2008-04-20 00:39:47" resolution="Fixed">
+		<buginformation>
+			<summary>LdapUtils#convertLdapException fails to convert some NamingExceptions to the narrowest possible type</summary>
+			<description>LdapUtils#convertLdapException checks whether the parameter exception is instanceof each subtype of javax.naming.NamingException in alphabetical order. In particular, a Size- or TimeLimitExceededException will never be handled directly, since LimitExceededException, their common supertype, is handled first.
+Trivial fix is to change the order of the checks, traversing up the hierarchy, rather than strictly alphabetical.
+Better solution is some form of lookup. The current code is linear in the number of complexity. Storing the type token in a map with a factory would speed this up.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.LdapReferralException.java</file>
+			<file type="M">org.springframework.ldap.support.LdapUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="102" opendate="2008-03-10 05:02:06" fixdate="2008-06-17 19:27:29" resolution="Fixed">
+		<buginformation>
+			<summary>Error in javadoc LdapTemplate search(SearchExecutor, NameClassPairCallbackHandler, DirContextProcessor)</summary>
+			<description>Javadoc of org.springframework.ldap.core.LdapTemplate.search(SearchExecutor, NameClassPairCallbackHandler, DirContextProcessor) says it supports a null DirContextProcessor. 
+It doesn&amp;amp;apos;t. Please fix documentation or code.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="96" opendate="2008-01-04 04:36:40" fixdate="2008-06-18 00:32:10" resolution="Fixed">
+		<buginformation>
+			<summary>The order of a multi-valued attribute is not preserved by modifyAttributes(DirContextOperations)</summary>
+			<description>As an example, consider two values of attribute "title": ["Juergen", "George"].
+In my mapToContext method I do something like: 
+context.setAttributeValues("title", values, true), // order matters
+where values now contains ["George", "Juergen"], i.e., the values have been permuted.
+Then the DAO update method does something like this:
+        final DistinguishedName dn = buildDn(principal.getUserId());
+        DirContextOperations context = getLdapOperations().lookupContext(
+            dn.encode());
+        mapToContext(context, principal, password);
+        getLdapOperations().modifyAttributes(context);
+After the update, fetching the new values using adapter.getStringAttributes() shows that the values are in the wrong, original order.
+Stepping through modifyAttributes(), it appears that DirContextAdapter.collectModifications(Attribute, Attribute, List) 
+does not implement anything special to consider preserving the order of values of a multi-valued attribute.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="109" opendate="2008-05-19 11:00:23" fixdate="2008-07-01 06:46:10" resolution="Fixed">
+		<buginformation>
+			<summary>DistinguishedName.parse() does not correctly handle DNs that contain \</summary>
+			<description></description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.support.LdapUtils.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+			<file type="M">org.springframework.ldap.core.support.DefaultDirObjectFactory.java</file>
+			<file type="M">org.springframework.ldap.core.LdapEntryIdentificationContextMapper.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedName.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">50</link>
+		</links>
+	</bug>
+	<bug id="50" opendate="2007-04-12 15:28:02" fixdate="2008-07-01 06:47:25" resolution="Fixed">
+		<buginformation>
+			<summary>BadLdapGrammarException when a group or principal contains a &amp;apos;\&amp;apos; in its name</summary>
+			<description>Hi Guys,
+Here is the relevant issue that we have created in Crowd: http://jira.atlassian.com/browse/CWD-183
+A quick summary:
+If a group contains a &amp;amp;apos;\&amp;amp;apos; we get the following exception:
+javax.naming.NamingException: problem generating object using object factory [Root exception is org.springframework.ldap.BadLdapGrammarException: Failed to parse DN; nested exception is org.springframework.ldap.support.TokenMgrError: Lexical error at line 1, column 22.  Encountered: "\\" (92), after : ""]; remaining name &amp;amp;apos;dc=ad,dc=atlassian,dc=com&amp;amp;apos;
+	at com.sun.jndi.ldap.LdapSearchEnumeration.createItem(LdapSearchEnumeration.java:111)
+	at com.sun.jndi.ldap.LdapNamingEnumeration.nextAux(LdapNamingEnumeration.java:256)
+	at com.sun.jndi.ldap.LdapNamingEnumeration.nextImpl(LdapNamingEnumeration.java:236)
+	at com.sun.jndi.ldap.LdapNamingEnumeration.next(LdapNamingEnumeration.java:184)
+	at org.springframework.ldap.LdapTemplate.search(LdapTemplate.java:271)
+If a group contains a &amp;amp;apos;/&amp;amp;apos; we get this exception:
+org.springframework.ldap.UncategorizedLdapException: Operation failed; nested exception is javax.naming.NamingException: [LDAP: error code 1 - 000020D6: SvcErr: DSID-031006CC, problem 5012 (DIR_ERROR), data 0]; remaining name &amp;amp;apos;cn=Website Feedback/Support, ou=Groups, dc=ad, dc=atlassian, dc=com&amp;amp;apos;
+javax.naming.NamingException: [LDAP: error code 1 - 000020D6: SvcErr: DSID-031006CC, problem 5012 (DIR_ERROR), data 0
+remaining name &amp;amp;apos;cn=Website Feedback/Support, ou=Groups, dc=ad, dc=atlassian, dc=com&amp;amp;apos;
+	at com.sun.jndi.ldap.LdapCtx.mapErrorCode(LdapCtx.java:3025)
+	at com.sun.jndi.ldap.LdapCtx.processReturnCode(LdapCtx.java:2931)
+	at com.sun.jndi.ldap.LdapCtx.processReturnCode(LdapCtx.java:2737)
+	at com.sun.jndi.ldap.LdapCtx.c_lookup(LdapCtx.java:993)
+	at com.sun.jndi.toolkit.ctx.ComponentContext.c_resolveIntermediate_nns(ComponentContext.java:152)
+	at com.sun.jndi.toolkit.ctx.AtomicContext.c_resolveIntermediate_nns(AtomicContext.java:342)
+	at com.sun.jndi.toolkit.ctx.ComponentContext.p_resolveIntermediate(ComponentContext.java:381)
+	at com.sun.jndi.toolkit.ctx.ComponentDirContext.p_search(ComponentDirContext.java:360)
+	at com.sun.jndi.toolkit.ctx.PartialCompositeDirContext.search(PartialCompositeDirContext.java:338)
+	at com.sun.jndi.toolkit.ctx.PartialCompositeDirContext.search(PartialCompositeDirContext.java:321)
+	at javax.naming.directory.InitialDirContext.search(InitialDirContext.java:248)
+	at org.springframework.ldap.LdapTemplate$4.executeSearch(LdapTemplate.java:227)
+If you could shed any light onto this or point us in the right direction we will continue to investigate.
+Cheers,
+Justin</description>
+			<version>1.1.2</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.support.LdapUtils.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+			<file type="M">org.springframework.ldap.core.support.DefaultDirObjectFactory.java</file>
+			<file type="M">org.springframework.ldap.core.LdapEntryIdentificationContextMapper.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedName.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">109</link>
+		</links>
+	</bug>
+	<bug id="134" opendate="2008-10-11 02:51:00" fixdate="2008-10-11 02:54:26" resolution="Fixed">
+		<buginformation>
+			<summary>NameNotFound is silently ignored in search</summary>
+			<description>If a search results in a NameNotFoundException, it is silently ignored. This makes it really hard to detect that a search is being performed using an invalid search base.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.support.DefaultDirObjectFactoryTest.java</file>
+			<file type="M">org.springframework.ldap.core.support.DefaultDirObjectFactory.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextOperations.java</file>
+			<file type="M">org.springframework.ldap.LdapTemplateSearchResultITest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapTemplateTest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="121" opendate="2008-07-30 08:09:39" fixdate="2008-10-20 21:39:29" resolution="Fixed">
+		<buginformation>
+			<summary>DefaultDirContextValidator uses ONELEVEL_SCOPE, validateDirContext() fails</summary>
+			<description>I found a small issue with org.springframework.ldap.pool.validation.DefaultDirContextValidator that will result in validateDirContext() failing for many/most LDAP implementations. The cause is that the root context search is being attempted with a search scope of SearchControls.ONELEVEL_SCOPE, the default scope when the scope isn&amp;amp;apos;t specified. This may succeed for some LDAP implementations (I think it should for Domino), but will fail for e.g., Active Directory and SunONE.
+The fix is to add
+    this.searchControls.setSearchScope(SearchControls.OBJECT_SCOPE);
+to the constructor.
+A workaround is to subclass DefaultDirContextValidator and make the same fix.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.pool.validation.DefaultDirContextValidator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="114" opendate="2008-06-15 21:26:53" fixdate="2008-10-20 21:48:22" resolution="Fixed">
+		<buginformation>
+			<summary>Paged results doesn&amp;apos;t work when using a single pooled connection</summary>
+			<description>Paged results requires holding on to a single connection, otherwise the server cannot keep track of the current state. This can be solved somewhat "hackishly" by using a connection pool with size 1. However, the standard JNDI pool uses a weak hashmap, so the connection might be reclaimed by the garbage collector when memory is low. It&amp;amp;apos;s possible to use the built-in Spring LDAP connection pool instead, but that requires a few modifications to Spring LDAP according to this post.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.control.RequestControlDirContextProcessorTest.java</file>
+			<file type="M">org.springframework.ldap.pool.factory.PoolingContextSource.java</file>
+			<file type="M">org.springframework.ldap.control.AbstractRequestControlDirContextProcessor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="122" opendate="2008-07-30 14:34:07" fixdate="2008-10-21 20:24:57" resolution="Fixed">
+		<buginformation>
+			<summary>IllegalStateException: Cannot deactivate transaction synchronization - not active" thrown when when &amp;apos;inner&amp;apos; transaction for LDAP context source fails to get a connection</summary>
+			<description>Our project is using Spring-2.0.7 and Spring-ldap-1.2.1.
+We have a HibernateTransactionManager on an outer service, calling an inner service, which has wrapped an LDAP ContextSourceTransactionManager.
+If a transaction is attempted when LDAP isn&amp;amp;apos;t running, an exception occurs in Spring
+java.lang.IllegalStateException: Cannot deactivate transaction synchronization - not active
+ at org.springframework.transaction.support.TransactionSynchronizationManager.clearSynchronization(TransactionSynchronizationManager.java:274)
+ at org.springframework.transaction.support.TransactionSynchronizationManager.clear(TransactionSynchronizationManager.java:412)
+ at org.springframework.transaction.support.AbstractPlatformTransactionManager.cleanupAfterCompletion(AbstractPlatformTransactionManager.java:916)
+ at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:785)
+ at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:730)
+This then stops any future Hibernate transactions.
+I found an issue against Spring core, http://jira.springframework.org/browse/SPR-3438 , which I think is the same problem.  This issue has been fixed in the extensions of AbstractPlatformTransactionManager in Spring core (eg HibernateTransactionManager, DataSourceTransactionManager).
+The issue is resolved by catching Exception in the various implementations of doBegin(), and rethrowing a CannotCreateTransactionException, which is caught by AbstractPlatformTransactionManager.getTransaction(), which in turn resumes the outer transaction.
+Should AbstractCompensatingTransactionManagerDelegate.doBegin() be doing the same? 
+In other words, should the fix applied to Spring core for this issue also be applied to spring-ldap?
+To reproduce, the same test code in http://jira.springframework.org/browse/SPR-3438 can be used, but with the txMgrInner being a ContextSourceTransactionManager.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.transaction.compensating.support.AbstractCompensatingTransactionManagerDelegate.java</file>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManagerTest.java</file>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManagerDelegate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="97" opendate="2008-01-11 01:46:49" fixdate="2008-10-21 23:59:46" resolution="Fixed">
+		<buginformation>
+			<summary>Escaping of weird characters in DistinguishedNames is inconsistent</summary>
+			<description>I can create a DistinguishedName that contains a \r, I can bind and unbind with the given DN, but I cannot do a LdapTemplate.search() with a ParametrizedContextMapper where the search matches the entry with the weird dn even if the contextmapper doesn&amp;amp;apos;t even touch the DirContextAdapter. Not that I really want to put carriage returns in my DNs, but I guess this might be considered as a bug anyway.
+Sample code that generates a org.springframework.ldap.BadLdapGrammarException:
+		DirContextAdapter ctx=new DirContextAdapter();
+		ctx.addAttributeValue("objectclass", "person");
+		ctx.addAttributeValue("sn", "lisadotter");
+		DistinguishedName dn=new DistinguishedName();
+		dn.add("cn","lisa \r lisadotter");
+		try{
+			ldapTemplate.bind(dn, ctx, null);
+			EqualsFilter filter = new EqualsFilter("sn", "lisadotter");
+			List foo = ldapTemplate.search("", filter.encode(), 
+					new ParameterizedContextMapper&amp;lt;String&amp;gt;(){
+				public String mapFromContext(Object arg0)
+				{
+					return "foo";
+				}
+			});
+		} finally 
+{
+			ldapTemplate.unbind(dn);
+		}
+
+
+Exception in thread "main" org.springframework.ldap.UncategorizedLdapException: Uncategorized exception occured during LDAP processing; nested exception is javax.naming.NamingException: problem generating object using object factory [Root exception is org.springframework.ldap.BadLdapGrammarException: Failed to parse DN; nested exception is org.springframework.ldap.core.TokenMgrError: Lexical error at line 1, column 9.  Encountered: "\r" (13), after : ""]; remaining name &amp;amp;apos;&amp;amp;apos;
+Caused by: javax.naming.NamingException: problem generating object using object factory [Root exception is org.springframework.ldap.BadLdapGrammarException: Failed to parse DN; nested exception is org.springframework.ldap.core.TokenMgrError: Lexical error at line 1, column 9.  Encountered: "\r" (13), after : ""]; remaining name &amp;amp;apos;&amp;amp;apos;
+	at com.sun.jndi.ldap.LdapSearchEnumeration.createItem(LdapSearchEnumeration.java:111)
+	at com.sun.jndi.ldap.LdapNamingEnumeration.nextAux(LdapNamingEnumeration.java:256)
+	at com.sun.jndi.ldap.LdapNamingEnumeration.nextImpl(LdapNamingEnumeration.java:236)
+	at com.sun.jndi.ldap.LdapNamingEnumeration.next(LdapNamingEnumeration.java:184)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:275)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:234)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:583)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:497)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:447)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:468)
+	at org.springframework.ldap.core.LdapTemplate.search(LdapTemplate.java:486)
+	at se.kth.infosys.ldapperformance.TestBug.main(TestBug.java:39)
+Caused by: org.springframework.ldap.BadLdapGrammarException: Failed to parse DN; nested exception is org.springframework.ldap.core.TokenMgrError: Lexical error at line 1, column 9.  Encountered: "\r" (13), after : ""
+	at org.springframework.ldap.core.DistinguishedName.parse(DistinguishedName.java:145)
+	at org.springframework.ldap.core.DistinguishedName.&amp;lt;init&amp;gt;(DistinguishedName.java:100)
+	at org.springframework.ldap.core.DirContextAdapter.&amp;lt;init&amp;gt;(DirContextAdapter.java:139)
+	at org.springframework.ldap.core.support.DefaultDirObjectFactory.getObjectInstance(DefaultDirObjectFactory.java:61)
+	at javax.naming.spi.DirectoryManager.createObjectFromFactories(DirectoryManager.java:218)
+	at javax.naming.spi.DirectoryManager.getObjectInstance(DirectoryManager.java:197)
+	at com.sun.jndi.ldap.LdapSearchEnumeration.createItem(LdapSearchEnumeration.java:105)
+	... 11 more
+Caused by: org.springframework.ldap.core.TokenMgrError: Lexical error at line 1, column 9.  Encountered: "\r" (13), after : ""
+	at org.springframework.ldap.core.DnParserImplTokenManager.getNextToken(DnParserImplTokenManager.java:690)
+	at org.springframework.ldap.core.DnParserImpl.jj_ntk(DnParserImpl.java:249)
+	at org.springframework.ldap.core.DnParserImpl.attributeTypeAndValue(DnParserImpl.java:98)
+	at org.springframework.ldap.core.DnParserImpl.rdn(DnParserImpl.java:58)
+	at org.springframework.ldap.core.DnParserImpl.dn(DnParserImpl.java:23)
+	at org.springframework.ldap.core.DistinguishedName.parse(DistinguishedName.java:139)
+	... 17 more
+(I guess it is related to that a "new DistinguishedName("cn=foo \r bar")" will throw the same exception, but in that case I think it is pretty fair even if I would prefer a different behavior, since the constructor documentation says that the string should be a correct rdn.)</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0-RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="151" opendate="2008-11-12 00:29:37" fixdate="2008-11-13 00:39:09" resolution="Fixed">
+		<buginformation>
+			<summary>DistinguishedName violates the equals()/hashCode() contract</summary>
+			<description>The javadoc for Object#hashCode states that If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.
+o.s.l.c.DistinguishedName violates this contract as shown by this sample code:
+
+DistinguishedName dn1 = new DistinguishedName("c=ch");
+DistinguishedName dn2 = new DistinguishedName("C=CH");
+System.out.println(dn1.equals(dn2));
+System.out.println(dn1.hashCode() == dn2.hashCode());
+which prints
+
+true
+false</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapRdnComponent.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="123" opendate="2008-07-31 09:55:52" fixdate="2009-01-02 20:32:23" resolution="Fixed">
+		<buginformation>
+			<summary>java.lang.ClassCastException: org.springframework.ldap.transaction.compensating.manager.ContextSourceAndDataSourceTransactionManager$ContextSourceAndDataSourceTransactionObject thrown on inner transaction rollback</summary>
+			<description>Our project is using Spring-2.0.7 and spring-ldap-1.2.1.
+When the ContextSourceAndDataSourceTransactionManager is used within another transaction manager, and they use the same data source, an exception occurs when the inner transaction is rolled back.
+The stack trace is:
+java.lang.ClassCastException: org.springframework.ldap.transaction.compensating.manager.ContextSourceAndDataSourceTransactionManager$ContextSourceAndDataSourceTransactionObject
+       at org.springframework.jdbc.datasource.DataSourceTransactionManager.doSetRollbackOnly(DataSourceTransactionManager.java:284)
+       at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:761)
+       at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:730)
+This seems to be because ContextSourceAndDataSourceTransactionManager does not override doSetRollbackOnly().  So when this is called, it uses the DataSourceTransactionManager&amp;amp;apos;s implementation, which doesn&amp;amp;apos;t know how to handle the ContextSourceAndDataSourceTransactionObject provided in status.getTransaction().
+The following test case, using EasyMock, demonstrates the exception:
+   public void testNestedTransaction() throws Exception 
+{
+
+       DataSource mockDataSource = createMock(DataSource.class);
+       expect(mockDataSource.getConnection()).andReturn(createMock(Connection.class));
+       replay(mockDataSource);
+
+       PlatformTransactionManager outerTxnManager = new DataSourceTransactionManager(mockDataSource);
+
+       outerTxnManager.getTransaction(new DefaultTransactionDefinition());
+
+       ContextSourceAndDataSourceTransactionManager innerTxnManager =
+                   new ContextSourceAndDataSourceTransactionManager();
+       innerTxnManager.setContextSource(createMock(ContextSource.class));
+       innerTxnManager.setDataSource(mockDataSource);
+
+       TransactionStatus innerTxnStatus = innerTxnManager.getTransaction(new DefaultTransactionDefinition());
+
+       innerTxnManager.rollback(innerTxnStatus);
+
+   }</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManagerTest.java</file>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceAndDataSourceTransactionManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="184" opendate="2009-07-02 21:36:26" fixdate="2009-07-06 17:19:18" resolution="Fixed">
+		<buginformation>
+			<summary>DefaultCompensatingTransactionOperationManager has incorrect debug output in commit method</summary>
+			<description>When using the spring-ldap 1.3 release source with log4j set to debug an incorrect log message is created. The following code section from the org.springframework.transaction.compensating.support.DefaultCompensatingTransactionOperationManager logs a rollback message when a transaction is commited.
+
+
+
+
+
+
+public void commit() {
+
+
+
+
+        log.debug("Performing rollback");
+
+
+
+
+        for (Iterator iter = operationExecutors.iterator(); iter.hasNext();) {
+
+
+
+
+            CompensatingTransactionOperationExecutor operationExecutor = (CompensatingTransactionOperationExecutor) iter
+
+
+
+
+                    .next();
+
+
+
+
+            try {
+
+
+
+
+                operationExecutor.commit();
+
+
+
+
+            } catch (Exception e) {
+
+
+
+
+                throw new TransactionSystemException(
+
+
+
+
+                        "Error occurred during commit", e);
+
+
+
+
+            }
+
+
+
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.transaction.compensating.support.DefaultCompensatingTransactionOperationManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="192" opendate="2009-12-14 06:37:26" fixdate="2009-12-17 23:41:36" resolution="Fixed">
+		<buginformation>
+			<summary>Add authentication methods that provide authentication exception</summary>
+			<description>I realize that the AuthenticationException is logged, but I need to return this information to the caller so that they can seek remedy.
+For example, if error is:
+52e then user will know to re-enter password
+530 then user will know to try later
+532 then user will know password has expired
+533 then user will know that account is disabled
+etc....
+If I have to use "plain old" JNDI for authentication purposes just to capture the AuthenticationException, then SPRING LDAP is useless to me.
+Please make the ldaptemplate.authenticate throwable or somehow able to return the exception message instead of just FALSE.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.LdapTemplateAuthenticationITest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+			<file type="M">org.springframework.ldap.core.LdapOperations.java</file>
+			<file type="M">org.springframework.ldap.support.LdapUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">186</link>
+		</links>
+	</bug>
+	<bug id="196" opendate="2009-12-19 22:40:00" fixdate="2009-12-19 22:44:46" resolution="Fixed">
+		<buginformation>
+			<summary>DefaultDirContextFactory uses Java5 IllegalArgumentException constructor</summary>
+			<description>DefaultDirObjectFactory calls the IllegalArgumentException constructor that takes a message and an exception, but that was added in Java5.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.support.DefaultDirObjectFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="186" opendate="2009-07-18 11:51:31" fixdate="2009-12-21 08:23:18" resolution="Duplicate">
+		<buginformation>
+			<summary>Enhance or create LdapTemplate.authenticate methods to throw exception rather than simply returning "false".</summary>
+			<description>The ldaptemplate.authenticate method swallows the AuthenticationException.
+I realize that the AuthenticationException is logged, but I need to return this information to the caller so that they can seek remedy.
+For example, if error is:
+52e then user will know to re-enter password
+530 then user will know to try later
+532 then user will know password has expired
+533 then user will know that account is disabled
+etc....
+Please make the ldaptemplate.authenticate throwable or somehow able to return the exception message along with FALSE.
+Or create a new set of "authenticate" methods that throw the Exception.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.LdapTemplateAuthenticationITest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+			<file type="M">org.springframework.ldap.core.LdapOperations.java</file>
+			<file type="M">org.springframework.ldap.support.LdapUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">192</link>
+		</links>
+	</bug>
+	<bug id="198" opendate="2010-01-24 07:46:41" fixdate="2010-01-24 17:19:51" resolution="Fixed">
+		<buginformation>
+			<summary>NotPresentFilter does not define equals()</summary>
+			<description>The class NotPresentFilter does not define equals() method, although its interface Filter explicitly declares equals() with a javadoc &amp;amp;apos;All filters must implement equals.&amp;amp;apos;.
+Affects also the trunk.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.filter.PresentFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.GreaterThanOrEqualsFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.NotPresentFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.HardcodedFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.CompareFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.NotFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.NotFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.NotPresentFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.LessThanOrEqualsFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.OrFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.PresentFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.WhitespaceWildcardsFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.LikeFilterTest.java</file>
+			<file type="M">org.springframework.ldap.filter.AndFilterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="215" opendate="2010-09-23 08:49:17" fixdate="2010-09-25 14:26:36" resolution="Fixed">
+		<buginformation>
+			<summary>DirContextAdapter.getObjectAttribute throws java.util.NoSuchElementException</summary>
+			<description>org.springframework.ldap.core.DirContextAdapter.getObjectAttribute method misses a check for empty list of values for returned attribute. Normally LDAP server doesn&amp;amp;apos;t return in the search results attributes that have no values assigned, however, with our current LDAP servers (Fedora Directory Server 1.0.4) we sometimes, very rarely, see that LDAP does return such search results. This results in unexpected NoSuchElementExceptions if application calls DirContextAdapter.getObjectAttribute or DirContextAdapter.getStringAttribute.
+Fix is trivial. Current code:
+public Object getObjectAttribute(String name) {
+	Attribute oneAttr = originalAttrs.get(name);
+	if (oneAttr == null) 
+{
+		return null;
+	}
+	try {
+		return oneAttr.get();
+	}
+	catch (NamingException e) {
+		throw LdapUtils.convertLdapException(e);
+	}
+}
+
+Check should be extended:
+
+	if ((oneAttr == null) || (oneAttrs.size() == 0)) {		return null;	}</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextOperations.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="217" opendate="2010-10-13 23:32:40" fixdate="2010-10-16 01:37:26" resolution="Fixed">
+		<buginformation>
+			<summary>Class-level JavaDoc for OrFilter uses AndFilter in sample code</summary>
+			<description>The class-level JavaDoc for o.s.l.filter.OrFilter provides this sample code:
+
+
+
+
+
+
+AndFilter filter = new AndFilter();
+
+
+
+
+filter.or(new EqualsFilter(&amp;amp;quot;objectclass&amp;amp;quot;, &amp;amp;quot;person&amp;amp;quot;);
+
+
+
+
+filter.or(new EqualsFilter(&amp;amp;quot;objectclass&amp;amp;quot;, &amp;amp;quot;organizationalUnit&amp;amp;quot;);
+
+
+
+
+System.out.println(filter.encode());
+
+
+
+
+
+
+However this doesn&amp;amp;apos;t compile because AndFilter doesn&amp;amp;apos;t have an "or" method.
+This seems to be a copy-and-paste error from the JavaDoc of the AndFilter class.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.filter.OrFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="213" opendate="2010-07-02 04:14:28" fixdate="2010-10-17 15:17:08" resolution="Fixed">
+		<buginformation>
+			<summary>Javadoc for PresentFilter and NotPresentFilter is incorrect</summary>
+			<description>The example in the Javadoc for NotPresentFilter takes "foo*" as parameter 
+(http://static.springsource.org/spring-ldap/docs/1.3.x/apidocs/org/springframework/ldap/filter/NotPresentFilter.html).
+It should be corrected to take just "foo" instead. "foo*" parameter would produce (!(foo*=*))
+It is the same case with PresentFilter (http://static.springsource.org/spring-ldap/docs/1.3.x/apidocs/org/springframework/ldap/filter/PresentFilter.html)</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.filter.NotPresentFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.PresentFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.HardcodedFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.NotFilter.java</file>
+			<file type="M">org.springframework.ldap.filter.OrFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="189" opendate="2009-09-17 06:19:51" fixdate="2010-10-17 15:46:33" resolution="Fixed">
+		<buginformation>
+			<summary>The constructor DefaultDirContextValidator(int searchScope) does not actually set scope in SearchControls</summary>
+			<description>Call to SearchControls.setSearchScope(int) missing in constructor body. As a consequence one gets the default scope in SearchControls (ONELEVEL) when creating DefaultDirContextValidator with its default constructor (which would like to use OBJECT scope). 
+</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.pool.validation.DefaultDirContextValidatorTest.java</file>
+			<file type="M">org.springframework.ldap.pool.validation.DefaultDirContextValidator.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">167</link>
+		</links>
+	</bug>
+	<bug id="188" opendate="2009-08-27 01:59:31" fixdate="2010-11-15 14:55:12" resolution="Fixed">
+		<buginformation>
+			<summary>Active Directory -- DirContextAdapter.addAttribute, removeAttribute does not work correctly</summary>
+			<description>I&amp;amp;apos;m using spring-ldap against an Active Directory based LDAP server.  I&amp;amp;apos;d like to manage user-group memberships by adding and removing users to groups. 
+When deleting a membership I use the following code on the looked up group context instance:
+context.removeAttributeValue("member", member);
+this.ldapTemplate.modifyAttributes(context);
+Where member is a String that comes from DistinguishedName.toString(), the problem is when instantiating DistinguishedNames with the constructor that takes one String as argument, the attribute names of LdapRdns become lowercase (e.g.: "OU=Sample,OU=Foo" becomes "ou=sample,ou=foo") while parsing. AD has the habit of converting all lowercase key values to uppercase, and thus when trying to call removeAttributeValue with the dn provided, the actual value is not found and therefore no deletion occurs. The same issue occurs when using addAttributeValue.
+I don&amp;amp;apos;t know if it is strictly a spring-ldap issue, but it would be good to have some kind of solution. Maybe somehow to be able to preserve the case of the DistinguishedName components would be sufficient.
+Thanks is advance,
+M.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DistinguishedName.java</file>
+			<file type="M">org.springframework.ldap.LdapTemplateModifyITest.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+			<file type="M">org.springframework.ldap.core.LdapRdnComponent.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="234" opendate="2011-12-05 07:29:03" fixdate="2013-08-01 02:13:44" resolution="Complete">
+		<buginformation>
+			<summary>Rollback intermittently causes data loss</summary>
+			<description>While creating a new user and adding that user to some groups, an exception occurred during a group assignment that triggered a rollback. The rollback had a side effect of removing everyone from one of the groups that the user had been added to. This group had several thousand users.  The code used for group assignment is rather trivial...
+
+
+
+
+
+
+    public void assignUserToGroups(String userDN, List&amp;lt;String&amp;gt; groupDNs) throws NamingException {
+
+
+
+
+        for (String groupDN : groupDNs) {
+
+
+
+
+            DirContextOperations context = this.ldapTemplate.lookupContext(groupDN);
+
+
+
+
+            context.addAttributeValue(LdapConstants.LDAP_ATTR_MEMBER, userDN);
+
+
+
+
+
+
+
+
+
+            this.ldapTemplate.modifyAttributes(context);
+
+
+
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+Using Dynatrace we verified that a failure occurred during the modifyAttributes call. The failure was policy based and not related to Spring LDAP. After the exception is thrown the exception bubbles up to the top layer but at edge of service layer there is a 21 second time period where Spring LDAP is doing something. We then did a check of the AD audit logs and found that the user id for this application was busily removing thousands of users from a group during that time.
+The unfortunate part is that we can&amp;amp;apos;t be reproduced in our test environment. I have stepped through the code and found that Spring-LDAP does a replace as a rollback correction for an add. This is disconcerting since, for a time, the state of a critical group is solely dependent on the state of an application.
+I realize that I am giving a sub optimal bug report due to the hard-to-reproduce aspect however I am out of idea. All evidence on our side points to a Spring-LDAP transaction oddity. I am open to suggestions though.
+NOTE: JIRA lists 1.3.1 as an "unreleased" version while this is currently the production release version.</description>
+			<version>1.3.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.springframework.ldap.support.ad.ListAttributeValueProcessor.java</file>
+			<file type="D">org.springframework.ldap.support.ad.IncrementalAttributeMapper.java</file>
+			<file type="D">org.springframework.ldap.support.ad.IncrementalAttributeMapperTest.java</file>
+			<file type="D">org.springframework.ldap.support.ad.RangeOption.java</file>
+			<file type="D">org.springframework.ldap.support.ad.RangeOptionTest.java</file>
+			<file type="M">org.springframework.ldap.transaction.compensating.ModifyAttributesOperationRecorderTest.java</file>
+			<file type="M">org.springframework.ldap.transaction.compensating.ModifyAttributesOperationRecorder.java</file>
+			<file type="D">org.springframework.ldap.support.ad.AttributeValueProcessor.java</file>
+			<file type="D">org.springframework.ldap.util.AttributeValueProcessor.java</file>
+			<file type="D">org.springframework.ldap.util.IncrementalAttributeMapper.java</file>
+			<file type="D">org.springframework.ldap.util.RangeOption.java</file>
+			<file type="D">org.springframework.ldap.util.RangeOptionTest.java</file>
+			<file type="D">org.springframework.ldap.util.IncrementalAttributeMapperTest.java</file>
+			<file type="D">org.springframework.ldap.util.ListAttributeValueProcessor.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">176</link>
+		</links>
+	</bug>
+	<bug id="237" opendate="2012-02-16 10:43:41" fixdate="2013-08-12 02:03:57" resolution="Complete">
+		<buginformation>
+			<summary>Spring LDAP does not correctly parse DN names that has double-quote in the middle</summary>
+			<description>DistinguishedName.parse() is confused upon receiving mangled double-quotes character in the middle of the passed parameter.
+Example: DN=Roger "Bunny" Rabbit,DC=somecompany,DC=com
+The double-quote character is mangled (not clear by what, JNDI maybe?) so it looks like this " instead of \".
+Before parse(): DN=Roger \\"Bunny" Rabbit,DC=somecompany,DC=com
+After parse(): DN=Roger 
+Solution: I have attached a patch that strips the extra backslash.  Then the parser works and it can handle properly escaped double-quotes just fine.</description>
+			<version>1.3.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DistinguishedName.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="233" opendate="2011-10-11 23:30:11" fixdate="2013-08-12 02:49:08" resolution="Complete">
+		<buginformation>
+			<summary>LdifParser goes into infinite loop when passed a non-LDIF file</summary>
+			<description>org.springframework.ldap.ldif.parser.LdifParser has a corner case in getRecord(), where an input file with no valid LDIF records will cause an infinite loop.  This is because the main switch statement will always hit the default (do nothing) case, and the while loop does not have a condition to terminate at EOF.
+This can be fixed by having the record variable initialized to null, and delaying creation of a new LdapAttributes object to inside of the switch&amp;amp;apos;s NewRecord case, and then adding a check at the end of the while loop for a null read result.
+This allows us to differentiate between files where an LDIF entry is malformed vs cases where no entry was found at all.  See attached for proposed fix.
+An easy way to test this code is to feed an empty file into the parser.</description>
+			<version>1.3.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.ldif.DefaultAttributeValidationPolicyTest.java</file>
+			<file type="M">org.springframework.ldap.ldif.LdifParserTest.java</file>
+			<file type="M">org.springframework.ldap.ldif.parser.LdifParser.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="229" opendate="2011-05-18 11:36:43" fixdate="2013-08-12 03:50:53" resolution="Complete">
+		<buginformation>
+			<summary>Default DN parser does not handle hash/sharp symbol correctly</summary>
+			<description>DnParserImpl incorrectly terminates DN parsing, when it encounters # symbol.
+
+
+
+
+
+
+System.out.println(new DistinguishedName("cn=Foo#Bar,cn=Test")); // cn=Foo
+
+
+
+
+
+
+According to http://tools.ietf.org/html/rfc4514#section-4 hash/sharp symbol which does not appear at the beginning of the attribute value should be handled as a regular string character.</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.control.VirtualListViewControlDirContextProcessor.java</file>
+			<file type="M">org.springframework.ldap.core.DistinguishedNameTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="119" opendate="2008-06-24 07:25:46" fixdate="2013-08-14 02:26:55" resolution="Complete">
+		<buginformation>
+			<summary>modifyAttributes produces invalid SchemaViolationException in a particular use case</summary>
+			<description>This is most likely not related to any environment, but I have found the following issue with modifyAttributes:
+Use case is a basic user/role relationship where we want to update the list of users that have been assigned to a role. A role has the following structure in our system, where values in &amp;lt;angle brackets&amp;gt; are variable:
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: &amp;lt;ROLE_NAME&amp;gt;
+uniqueMember: &amp;lt;DN of a user&amp;gt;
+uniqueMember: &amp;lt;optional DN of another user&amp;gt;
+...
+description: &amp;lt;optional description&amp;gt;
+Since a groupOfUniqueNames must have at least one uniqueMember, the following use case pseudo code fails for us:
+1) retrieve an existing role using the role DN
+2) convert to a role domain object using a context mapper
+3) update the list of uniqueMember (users) to a completely different set of users from the original using DirContextOperations.setAttributeValues("uniqueMember", newMembers)
+4) call ldapTemplate.modifyAttributes
+5) watch a completely (now explainable) bogus SchemaViolationException get thrown
+The problem is that (I believe) the spring-ldap code deletes all the uniqueMember entries before adding the new ones, so the SchemaViolationException is thrown because you can&amp;amp;apos;t have zero uniqueMembers.
+Note: the SchemaViolationException is not thrown when at least one of the new users is the same as one that already exists for the role.
+What (I believe) needs to happen is that more logic needs to be applied under the covers when the multi-attribute being modified is a required attribute, such that the zero value condition is not reached. A suggested approach might be to do set compares (old values vs new values) and add new (non-existing) ones first, then delete obsolete (existing, but not in new set) attribute values.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.LdapTemplateModifyITest.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="179" opendate="2009-04-22 21:12:19" fixdate="2013-08-14 03:22:11" resolution="Complete">
+		<buginformation>
+			<summary>DataSource connections not being released when LDAP connection fails in JDBC integrated transaction.</summary>
+			<description>When using JDBC transaction integration in Spring LDAP, we have discovered that when our LDAP server is unavailable the doBegin() method of the ContextSourceAndDataSourceTransactionManager first calls super.doBegin() of the DataSourceTransactionManager which is successful, then it calls doBegin() of the ldapManagerDelegate which fails throwing a TransactionException , however no cleanup of the DataSource connection is being performed in this case.
+This leaves a binding in the TransactionSynchronizationManager resources for the DataSource and also an open connection to the database, even though it was never used. 
+Later if the same thread attempts to create a transaction the following IllegalStateException is being thrown because the DataSource is still bound to the thread in the TransactionSynchronizationManager:
+java.lang.IllegalStateException: Already value [org.springframework.jdbc.datasource.ConnectionHold er@79b1d1] for key [org.apache.commons.dbcp.BasicDataSource@335297] bound to thread [DefaultQuartzScheduler_Worker-7]
+</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceAndHibernateTransactionManager.java</file>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceAndDataSourceTransactionManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="240" opendate="2012-03-27 00:55:20" fixdate="2013-08-15 06:08:52" resolution="Complete">
+		<buginformation>
+			<summary>SchemaToJava fails to generate Java classes</summary>
+			<description>I have a LDAP schema with a structure like: country -&amp;gt; locality -&amp;gt; organization -&amp;gt; etc.(other children).
+When running SchemaToJava with parameters: -c Locality -k com.ldap.client.domain -l ldap://&amp;lt;my-ip&amp;gt;:389 -o top,locality -u cn=root,c=ro -p &amp;lt;password&amp;gt;, I get the following exception:
+--------------------------------------------------------------------------------------------------------
+Exception in thread "main" java.lang.NullPointerException
+	at org.springframework.ldap.odm.tools.SchemaReader.createAttributeSchema(SchemaReader.java:65)
+	at org.springframework.ldap.odm.tools.SchemaReader.createObjectClass(SchemaReader.java:141)
+	at org.springframework.ldap.odm.tools.SchemaReader.getObjectSchema(SchemaReader.java:33)
+	at org.springframework.ldap.odm.tools.SchemaToJava.readSchema(SchemaToJava.java:231)
+	at org.springframework.ldap.odm.tools.SchemaToJava.main(SchemaToJava.java:414)
+---------------------------------------------------------------------------------------------------------
+After some researches, I came to this conclusion: according to org.springframework.ldap.odm.tools.SchemaReader.createAttributeSchema(SchemaReader.java:65), any attribute of type MAY or MUST is mandatory to have SYNTAX, but an attribute like seeAlso - according to RFC4519 - has no SYNTAX (it is the SUP that can deliver his SYNTAX):
+DESC	RFC4519: DN of related object
+NAME	seeAlso
+objectClass	synthetic_JXplorer_schema_object
+objectClass	top
+OID	2.5.4.34
+SUP	distinguishedName
+The fix for missing SYNTAX might be to recursively go for the parent&amp;amp;apos;s SYNTAX (here distinguishedName).</description>
+			<version>1.3.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.odm.tools.SchemaReader.java</file>
+			<file type="M">org.springframework.ldap.odm.test.TestSchemaToJava.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="246" opendate="2012-07-16 07:05:35" fixdate="2013-08-16 02:45:16" resolution="Complete">
+		<buginformation>
+			<summary>SchemaToJava doesn&amp;apos;t handle dashes in attribute names or attributes that are both may and must</summary>
+			<description>There are many attribute names in Active Directory that include dashes (i.e. msDS-Approx-Immed-Subordinates, see http://msdn.microsoft.com/en-us/library/cc220237(v=prot.10).aspx for list).
+A dash is not allowed in Java variables or method names so the classes generated by SchemaToJava don&amp;amp;apos;t compile. 
+Another issue is that some attributes are listed as both may and must, presumably because they are listed one way in a super-type and another way in a sub-type.
+The attached patch should address both issues. It adds a "getJavaName()" method to AttributeSchema that currently just removes all dashes but could be changed to do additional cleanup if necessary. 
+If an attribute is in both the may and must list it should be put in the must list only.  </description>
+			<version>1.3.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.itest.ad.SchemaToJavaAdITest.java</file>
+			<file type="M">org.springframework.ldap.odm.tools.ObjectSchema.java</file>
+			<file type="M">org.springframework.ldap.odm.test.TestSchemaToJava.java</file>
+			<file type="M">org.springframework.ldap.odm.tools.AttributeSchema.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="238" opendate="2012-02-21 16:52:16" fixdate="2013-08-28 08:13:38" resolution="Complete">
+		<buginformation>
+			<summary>ContextMapper mapFromContext does not throw javax.naming.NamingException</summary>
+			<description>Per the 1.3.1 source in the trunk:
+
+
+
+
+
+
+ContextMapper.java
+
+
+
+
+
+
+public interface ContextMapper {
+
+
+
+
+    /**
+
+
+
+
+     * Map a single LDAP Context to an object. The supplied Object
+
+
+
+
+     * &amp;lt;code&amp;gt;ctx&amp;lt;/code&amp;gt; is the object from a single {@link SearchResult},
+
+
+
+
+     * {@link Binding}, or a lookup operation.
+
+
+
+
+     * 
+
+
+
+
+     * @param ctx
+
+
+
+
+     *            the context to map to an object. Typically this will be a
+
+
+
+
+     *            {@link DirContextAdapter} instance, unless a project specific
+
+
+
+
+     *            &amp;lt;code&amp;gt;DirObjectFactory&amp;lt;/code&amp;gt; has been specified on the
+
+
+
+
+     *            &amp;lt;code&amp;gt;ContextSource&amp;lt;/code&amp;gt;.
+
+
+
+
+     * @return an object built from the data in the context.
+
+
+
+
+     */
+
+
+
+
+    Object mapFromContext(Object ctx);
+
+
+
+
+}
+
+
+
+
+
+
+The 
+
+
+
+
+
+
+mapFromContext(Object ctx);
+
+
+
+
+
+
+Does not throw the 
+
+
+
+
+
+
+javax.naming.NamingException
+
+
+
+
+
+
+This is done in the analogous AttributesMapper class, and both are handled by the 
+
+
+
+
+
+
+	/**
+
+
+
+
+	 * Perform a search operation, such as a search(), list() or listBindings().
+
+
+
+
+	 * This method handles all the plumbing; getting a readonly context; looping
+
+
+
+
+	 * through the NamingEnumeration and closing the context and enumeration. It
+
+
+
+
+	 * also calls the supplied DirContextProcessor before and after the search,
+
+
+
+
+	 * respectively. This enables custom pre-processing and post-processing,
+
+
+
+
+	 * like for example when handling paged results or other search controls.
+
+
+
+
+	 * &amp;lt;p&amp;gt;
+
+
+
+
+	 * The actual list is delegated to the {@link SearchExecutor} and each
+
+
+
+
+	 * {@link NameClassPair} (this might be a NameClassPair or a subclass
+
+
+
+
+	 * thereof) is passed to the CallbackHandler. Any encountered
+
+
+
+
+	 * NamingException will be translated using the NamingExceptionTranslator.
+
+
+
+
+	 * 
+
+
+
+
+	 * @param se the SearchExecutor to use for performing the actual list.
+
+
+
+
+	 * @param handler the NameClassPairCallbackHandler to which each found entry
+
+
+
+
+	 * will be passed.
+
+
+
+
+	 * @param processor DirContextProcessor for custom pre- and post-processing.
+
+
+
+
+	 * Must not be &amp;lt;code&amp;gt;null&amp;lt;/code&amp;gt;. If no custom processing should take place,
+
+
+
+
+	 * please use e.g.
+
+
+
+
+	 * {@link #search(SearchExecutor, NameClassPairCallbackHandler)}.
+
+
+
+
+	 * @throws NamingException if any error occurs. Note that a
+
+
+
+
+	 * NameNotFoundException will be ignored. Instead this is interpreted that
+
+
+
+
+	 * no entries were found.
+
+
+
+
+	 */
+
+
+
+
+	public void search(SearchExecutor se, NameClassPairCallbackHandler handler, DirContextProcessor processor) {
+
+
+
+
+		DirContext ctx = contextSource.getReadOnlyContext();
+
+
+
+
+
+
+
+
+
+		NamingEnumeration results = null;
+
+
+
+
+		RuntimeException ex = null;
+
+
+
+
+		try {
+
+
+
+
+			processor.preProcess(ctx);
+
+
+
+
+			results = se.executeSearch(ctx);
+
+
+
+
+
+
+
+
+
+			while (results.hasMore()) {
+
+
+
+
+				NameClassPair result = (NameClassPair) results.next();
+
+
+
+
+				handler.handleNameClassPair(result);
+
+
+
+
+			}
+
+
+
+
+		}
+
+
+
+
+		catch (NameNotFoundException e) {
+
+
+
+
+			// It is possible to ignore errors caused by base not found
+
+
+
+
+			if (ignoreNameNotFoundException) {
+
+
+
+
+				log.warn("Base context not found, ignoring: " + e.getMessage());
+
+
+
+
+			}
+
+
+
+
+			else {
+
+
+
+
+				ex = LdapUtils.convertLdapException(e);
+
+
+
+
+			}
+
+
+
+
+		}
+
+
+
+
+		catch (PartialResultException e) {
+
+
+
+
+			// Workaround for AD servers not handling referrals correctly.
+
+
+
+
+			if (ignorePartialResultException) {
+
+
+
+
+				log.debug("PartialResultException encountered and ignored", e);
+
+
+
+
+			}
+
+
+
+
+			else {
+
+
+
+
+				ex = LdapUtils.convertLdapException(e);
+
+
+
+
+			}
+
+
+
+
+		}
+
+
+
+
+		catch (javax.naming.NamingException e) {
+
+
+
+
+			ex = LdapUtils.convertLdapException(e);
+
+
+
+
+		}
+
+
+
+
+		finally {
+
+
+
+
+			try {
+
+
+
+
+				processor.postProcess(ctx);
+
+
+
+
+			}
+
+
+
+
+			catch (javax.naming.NamingException e) {
+
+
+
+
+				if (ex == null) {
+
+
+
+
+					ex = LdapUtils.convertLdapException(e);
+
+
+
+
+				}
+
+
+
+
+				else {
+
+
+
+
+					// We already had an exception from above and should ignore
+
+
+
+
+					// this one.
+
+
+
+
+					log.debug("Ignoring Exception from postProcess, " + "main exception thrown instead", e);
+
+
+
+
+				}
+
+
+
+
+			}
+
+
+
+
+			closeContextAndNamingEnumeration(ctx, results);
+
+
+
+
+			// If we got an exception it should be thrown.
+
+
+
+
+			if (ex != null) {
+
+
+
+
+				throw ex;
+
+
+
+
+			}
+
+
+
+
+		}
+
+
+
+
+	}
+
+
+
+
+
+
+Method of LdapTemplate which states in its javadoc comment that 
+
+Any encountered NamingException will be translated using the NamingExceptionTranslator.</description>
+			<version>1.3.1</version>
+			<fixedVersion>2.0.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.CollectingNameClassPairCallbackHandler.java</file>
+			<file type="M">org.springframework.ldap.core.ContextMapper.java</file>
+			<file type="M">org.springframework.ldap.core.ContextMapperCallbackHandlerTest.java</file>
+			<file type="M">org.springframework.ldap.core.ContextMapperCallbackHandler.java</file>
+			<file type="M">org.springframework.ldap.core.CollectingNameClassPairCallbackHandlerTest.java</file>
+			<file type="M">org.springframework.ldap.core.NameClassPairCallbackHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="128" opendate="2008-08-28 09:35:16" fixdate="2013-09-10 06:06:35" resolution="Complete">
+		<buginformation>
+			<summary>cookie wrapper class could be null even if paging supported</summary>
+			<description>The PagedResultsRequestControl class gas a getCookie method that returns a cookie wrapper class, a PagedResultsCookie.
+In some case, seen this happen with Active Directory 2000, PagedResultsRequestControl.getCookie will return null, even though it does support paging. With the same server in other instances you will get a cookie. I guess in some instances Active Directory decides not to return a response control with the search result, even though a request was sent.
+The simple solution is simple documentation improvement. The javadoc for PagedResultsRequestControl.getCookie should state that this method could return null. Also, the reference documentation, section 6.3 and example 6.2, should make this clear. Right now section 6.3 implies that PagedResultsRequestControl.getCookie never returns null.
+Another solution would be to actually fix the implementation of PagedResultsRequestControl.getCookie and never return null. Not sure if this is the right thing though. This null cookie wrapper is the only signal that the server did not send a control, and this could be valuable. If the code gets refactored and response controls are exposed, then this workaround is not needed anymore.</description>
+			<version>1.2.1</version>
+			<fixedVersion>2.0.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.control.PagedResultsDirContextProcessor.java</file>
+			<file type="M">org.springframework.ldap.control.PagedResultsCookie.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="101" opendate="2008-02-14 20:25:25" fixdate="2013-09-11 02:03:53" resolution="Complete">
+		<buginformation>
+			<summary>allow eager invalidation of dirty (pooled) connections</summary>
+			<description>If a search fails due to a connection fault, the connection should be assumed invalid. In the pooling context source implementation (single context models are similarly affected) if a connection fails it should be removed from the pool. Under current behaviour, this is only possible through validation on borrow and return, which are a certain performance hit. Worse, if the pool is heavily loaded, even with test-on-idle semantics a dirty connection may never be removed from the pool, just reused by many pool clients.
+Suggested solution: mark on the context that it has failed, as early as possible. For example, in the LdapTemplate#search NamingException catch block (line 295 in v1.2.1). Could be implemented using a mixin interface, for example FailureAwareDirContext. If the exception was a non-transient one (e.g. CommunicationException rather than SizeLimitExceededException) then mark on the context that it has failed. When it is returned to the pool (e.g. in DelegatingContext#close or PoolingContextSource#returnObject) check if the DirContext implements this interface, check its status and invalidate it if necessary.
+This solution will not provide retry for clients of the pool, but will at least prevent dirty contexts staying too long in the pool.</description>
+			<version>1.2.1</version>
+			<fixedVersion>2.0.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.pool.factory.PoolingContextSource.java</file>
+			<file type="M">org.springframework.ldap.pool.factory.DirContextPoolableObjectFactory.java</file>
+			<file type="M">org.springframework.ldap.pool.factory.DirContextPoolableObjectFactoryTest.java</file>
+			<file type="M">org.springframework.ldap.test.LdapTestUtils.java</file>
+			<file type="M">org.springframework.ldap.pool.DelegatingContext.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="271" opendate="2013-10-08 03:11:21" fixdate="2013-10-21 23:56:33" resolution="Complete">
+		<buginformation>
+			<summary>ODM: nullable attributes are not removed from LDAP if OdmManagerImpl#update(Object) is used</summary>
+			<description>Hi. I&amp;amp;apos;ve faced with a problem using ODM.
+Preconditions:
+ a. There is an attributetype in ldap schema - e.g. &amp;amp;apos;someAttribute&amp;amp;apos;.
+ b. The type is mentioned in the MAY list of an objectClass  - e.g. &amp;amp;apos;someClass&amp;amp;apos;.
+ c. There is an ODM entry class mapped to the objectClass. 
+Steps to reproduce:
+ 1. Create an entry and fill it in including a value for &amp;amp;apos;someAttribute&amp;amp;apos;.
+ 2. Save it - odmManager.create(entry);
+    Result: the entry is in DIT, &amp;amp;apos;someAttribute&amp;amp;apos; exists and filled.
+ 3. Update the entry: set null as a new value for &amp;amp;apos;someAttribute&amp;amp;apos; property.
+ 4. Save it - odmManager.update(entry);
+Actual Result: the entry is in DIT, &amp;amp;apos;someAttribute&amp;amp;apos; exists and its value the same as in p.2.
+Expected Result: the entry is in DIT but without &amp;amp;apos;someAttribute&amp;amp;apos;.
+Note:
+ I&amp;amp;apos;ve looked through OdmManagerImpl source code and found out that before actual update is executed the method OdmManagerImpl#mapToContext(Object,DirContextOperations) is invoked. The method converts Java representation of an Ldap Entry. During the conversion only non-nullable properties of an entry are considered, null field values are ignored at all:
+                    if (!attributeInfo.isList()) {
+                        // Single valued - get the value of the field
+                        Object fieldValue = field.get(entry);
+                        // Ignore null field values
+                        if (fieldValue != null) 
+{
+                            // Convert the field value to the required type and write it into the JNDI context
+                            context.setAttributeValue(attributeInfo.getName().toString(), converterManager.convert(fieldValue,
+                                    attributeInfo.getSyntax(), targetClass));
+                        }
+                    } 
+Many Thanks,
+Vadzim</description>
+			<version>1.3.2</version>
+			<fixedVersion>2.0.0.M1</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.odm.core.impl.DefaultObjectDirectoryMapper.java</file>
+			<file type="M">org.springframework.ldap.itest.odm.LdapTemplateOdmWithNoDnAnnotationsITest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="277" opendate="2013-11-04 03:57:07" fixdate="2013-11-06 03:42:57" resolution="Complete">
+		<buginformation>
+			<summary>ODM needs to use DN Attribute index when populating DnAttribute values</summary>
+			<description>If the same attribute is part of the DN twice (e.g. ou=department,ou=company) the automatic DN calculation in ODM doesn&amp;amp;apos;t seem to work.</description>
+			<version>2.0.0.M1</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.odm.core.impl.DefaultObjectDirectoryMapper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="278" opendate="2013-11-06 03:43:41" fixdate="2013-11-07 06:05:25" resolution="Complete">
+		<buginformation>
+			<summary>Static fields should be disregarded by ODM</summary>
+			<description></description>
+			<version>2.0.0.M1</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.odm.core.impl.DefaultObjectDirectoryMapper.java</file>
+			<file type="M">org.springframework.ldap.odm.core.impl.ObjectMetaData.java</file>
+			<file type="M">org.springframework.ldap.odm.core.impl.AttributeMetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="177" opendate="2009-03-31 00:08:25" fixdate="2013-11-18 03:42:47" resolution="Complete">
+		<buginformation>
+			<summary>LdapUtils convertLdapException fails to convert exceptions when they are extended</summary>
+			<description>Changes to LdapUtils were made to facilitate LDAP-100. However, by changing the checks to be based on the class, versus doing an instanceof comparison, sub-classes of the exceptions do not meet the condition and are all being classified as UncategorizedLdapException.
+For example, the javax.naming.NameNotFoundException is defined by Apache DS as LdapNameNotFoundException extends javax.naming.NameNotFoundException</description>
+			<version>1.3.0</version>
+			<fixedVersion>2.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.support.LdapUtils.java</file>
+			<file type="M">org.springframework.ldap.NamingSecurityException.java</file>
+			<file type="M">org.springframework.ldap.support.LdapUtilsTest.java</file>
+			<file type="M">org.springframework.ldap.ReferralException.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="291" opendate="2014-02-01 20:16:38" fixdate="2014-02-11 13:16:37" resolution="Complete">
+		<buginformation>
+			<summary>ldapTemplate#authenticate does not throw EmptyResultDataAccessException</summary>
+			<description>ldapTemplate#authenticate does not throw EmptyResultDataAccessException when zero entry was found.  In that case, it returns authentication exception which is unable to distinguish with password mismatch error.</description>
+			<version>2.0.0</version>
+			<fixedVersion>2.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+			<file type="M">org.springframework.ldap.core.LdapTemplateTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="290" opendate="2014-01-09 08:30:50" fixdate="2014-02-11 13:17:38" resolution="Complete">
+		<buginformation>
+			<summary>LdapTemplate logs message at INFO level instead of DEBUG when authentication exception is captured</summary>
+			<description>When there is an authentication exception in the method below, a full stack trace is logged at info level; this is polluting the logs whenever a user cannot authenticate. Since the exception is added to the callback object it seems logical that the caller should decide what to do with this exception. Even a DEBUG message seems useless here. 
+public boolean authenticate(Name base, String filter, String password,
+			final AuthenticatedLdapEntryContextCallback callback, final AuthenticationErrorCallback errorCallback)</description>
+			<version>1.3.2</version>
+			<fixedVersion>2.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.LdapTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="295" opendate="2014-02-13 19:11:39" fixdate="2014-02-14 12:16:37" resolution="Complete">
+		<buginformation>
+			<summary>DefaultObjectDirectoryMapper#isAtLeast30() produces NullPointerException when bundled into an uberjar</summary>
+			<description>I was trying to leverage Spring LDAP 2.0 within a self contained JAR project (basically, a WAR which is packaged in a JAR file using the maven shade plugin).  When doing so, I get the following exception:
+Caused by: java.lang.NullPointerException: null
+	at org.springframework.ldap.odm.core.impl.DefaultObjectDirectoryMapper.isAtLeast30(DefaultObjectDirectoryMapper.java:80)
+Tracing this back, I determined the following call was failing: 
+
+
+
+
+
+
+    private boolean isAtLeast30() {
+
+
+
+
+        return SpringVersion.getVersion().compareTo("3.0") &amp;gt; 0;
+
+
+
+
+    }
+
+
+
+
+
+
+According to the Spring API documentation, it&amp;amp;apos;s perfectly valid for getVersion to return null, but this code doesn&amp;amp;apos;t check for that scenario.
+There needs to be some fallback scenario for this code to handle that issue.</description>
+			<version>2.0.0</version>
+			<fixedVersion>2.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.odm.core.impl.DefaultObjectDirectoryMapper.java</file>
+			<file type="M">org.springframework.ldap.odm.core.impl.DefaultObjectDirectoryMapperTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">11726</link>
+		</links>
+	</bug>
+	<bug id="317" opendate="2014-10-10 12:17:37" fixdate="2015-04-24 11:49:22" resolution="Complete">
+		<buginformation>
+			<summary>ldap:context-source/url not parsing properties #{}</summary>
+			<description>I have tried to create ldap-context in xml, and set attributes from a properties file.
+
+
+
+
+
+
+&amp;lt;util:properties id="ldapProperties" location="ldap.properties"/&amp;gt;
+
+
+
+
+
+
+
+
+
+&amp;lt;ldap:context-source
+
+
+
+
+        url="#{ldapProperties.url}"
+
+
+
+
+        base="#{ldapProperties.base}"
+
+
+
+
+        username="#{ldapProperties.username}"
+
+
+
+
+        password="#{ldapProperties.password}" /&amp;gt;
+
+
+
+
+&amp;lt;ldap:ldap-template id="ldapTemplate"/&amp;gt;
+
+
+
+
+
+
+
+
+
+
+
+
+ldap.properties
+
+
+
+
+
+
+url=ldap://localhost:10389
+
+
+
+
+base=ou=system
+
+
+
+
+username=uid=admin,ou=system
+
+
+
+
+password=secret
+
+
+
+
+
+
+When I try to use ldapTemplate instance, exception is thrown:
+
+java.net.MalformedURLException: Invalid URI: #ldapProperties.url}/ou=system
+curly bracket removed after # jira had a problem with that.
+I am attaching maven project with a test case.
+There is a few ways to workaround this issue I went with java bean configuration,  @Configuration, @Bean.
+It might be related to a fact that we can set many urls for failover - coma separated.</description>
+			<version>2.0.2</version>
+			<fixedVersion>2.0.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.config.ContextSourceParser.java</file>
+			<file type="M">org.springframework.ldap.config.LdapTemplateNamespaceHandlerTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="314" opendate="2014-09-03 00:21:53" fixdate="2015-04-24 13:15:56" resolution="Complete">
+		<buginformation>
+			<summary>repository methods ignoring @Entity(base=)</summary>
+			<description>LdapRepository query methods ignore @Entry(base = 
+
+
+
+
+
+
+interface LdapAccountRepository extends LdapRepository&amp;lt;Account&amp;gt;
+
+
+
+
+Account findByAccount(String account);
+
+
+
+
+
+
+
+
+
+@Entry(base = "DC=wims,DC=tijd,DC=intra", objectClasses="user")
+
+
+
+
+public final class Account {
+
+
+
+
+
+
+fix in org.springframework.ldap.repository.query.LdapQueryCreator : 
+
+
+
+
+
+
+protected ContainerCriteria create(Part part, Iterator&amp;lt;Object&amp;gt; iterator) {
+
+
+
+
+        ConditionCriteria criteria = query().base(clazz.getAnnotation(Entry.class).base()).where(getAttribute(part));
+
+
+
+
+
+
+
+
+
+        return appendCondition(part, iterator, criteria);
+
+
+
+
+    }
+
+
+
+
+
+</description>
+			<version>2.0.2</version>
+			<fixedVersion>2.0.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.repository.query.PartTreeLdapRepositoryQueryTest.java</file>
+			<file type="M">org.springframework.ldap.repository.query.LdapQueryCreator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="304" opendate="2014-05-23 08:07:00" fixdate="2015-04-27 09:26:55" resolution="Complete">
+		<buginformation>
+			<summary>NullPointerException DirContextAdapter.collectModifications</summary>
+			<description>My domain class has following javax.naming.Name attribute:
+
+
+
+
+
+
+	@Attribute(name = "memberDN")
+
+
+
+
+	private final Set&amp;lt;Name&amp;gt; memberDNs = new HashSet&amp;lt;Name&amp;gt;();
+
+
+
+
+
+
+
+
+
+	public Set&amp;lt;Name&amp;gt; getMemberDNs() {
+
+
+
+
+		return this.memberDNs ;
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+	public void addMemberDN(final Name memberDN) {
+
+
+
+
+		this.memberDNs.add(memberDN);
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+	public void removeMemberDN(final Name memberDN) {
+
+
+
+
+		this.memberDNs.remove(memberDN);
+
+
+
+
+	}
+
+
+
+
+
+
+1) First I created a new instance (without setting this attribut !!!) and save the instance by calling LDAPRepository.save() method.
+2) After that I modified this attribut by calling addMemberDN(),
+and saving the instance again throws a NullPointerException
+
+
+
+
+
+
+[ERROR] java.lang.NullPointerException
+
+
+
+
+[ERROR] 	at org.springframework.ldap.core.DirContextAdapter.collectModifications(DirContextAdapter.java:338)
+
+
+
+
+
+
+look at the sourcecode:
+
+
+
+
+
+
+NameAwareAttribute currentAttribute = originalAttrs.get(changedAttr.getID());
+
+
+
+
+
+
+
+
+
+        if(changedAttr.hasValuesAsNames()) {
+
+
+
+
+            try {
+
+
+
+
+338:                currentAttribute.initValuesAsNames();
+
+
+
+
+            }
+
+
+
+
+
+
+problem: currentAttribute is null, because this attribute has not been seet,</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.0.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.core.DirContextAdapter.java</file>
+			<file type="M">org.springframework.ldap.core.DirContextAdapterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="321" opendate="2015-03-19 23:50:02" fixdate="2015-04-28 11:28:18" resolution="Fixed">
+		<buginformation>
+			<summary>IllegalStateException: No value for key PoolingContextSource</summary>
+			<description>I created a Test with spring test context:
+
+
+
+
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+
+
+
+
+@ContextConfiguration(
+
+
+
+
+		locations={"classpath:applicationContext.xml"}
+
+
+
+
+)
+
+
+
+
+@TransactionConfiguration(transactionManager = "txManager",defaultRollback = true)
+
+
+
+
+@Transactional
+
+
+
+
+public class RoleRepoImplTest{
+
+
+
+
+	@Autowired
+
+
+
+
+	private RoleRepo roleRepo;
+
+
+
+
+	private Logger log= LoggerFactory.getLogger(RoleRepoImplTest.class);
+
+
+
+
+
+
+
+
+
+	@Test
+
+
+
+
+	public void testQueryRoleMap() throws Exception {
+
+
+
+
+		Map&amp;lt;String,String&amp;gt; roleMap=roleRepo.queryRoleMap();
+
+
+
+
+		assertNotNull(roleMap);
+
+
+
+
+
+
+
+
+
+		for(String roleName:roleMap.keySet()){
+
+
+
+
+			log.debug("{}:{}",roleName,roleMap.get(roleName));
+
+
+
+
+		}
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+But I ran this test,exception will throw:
+
+
+
+
+
+
+14:40:21,073 DEBUG AbstractCompensatingTransactionManagerDelegate:120 - Cleaning stored transaction synchronization
+
+
+
+
+14:40:21,077  WARN TestContextManager:409 - Caught exception while allowing TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener@480d3575] to process &amp;amp;apos;after&amp;amp;apos; execution for test: method [public void com.bjinfotech.tri.cas.manager.repository.impl.RoleRepoImplTest.testQueryRoleMap() throws java.lang.Exception], instance [com.bjinfotech.tri.cas.manager.repository.impl.RoleRepoImplTest@17f6480], exception [null]
+
+
+
+
+java.lang.IllegalStateException: No value for key [org.springframework.ldap.pool.factory.PoolingContextSource@2b30a42c] bound to thread [main]
+
+
+
+
+	at org.springframework.transaction.support.TransactionSynchronizationManager.unbindResource(TransactionSynchronizationManager.java:209)
+
+
+
+
+	at org.springframework.transaction.compensating.support.AbstractCompensatingTransactionManagerDelegate.doCleanupAfterCompletion(AbstractCompensatingTransactionManagerDelegate.java:121)
+
+
+
+
+	at org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManager.doCleanupAfterCompletion(ContextSourceTransactionManager.java:133)
+
+
+
+
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.cleanupAfterCompletion(AbstractPlatformTransactionManager.java:1008)
+
+
+
+
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processRollback(AbstractPlatformTransactionManager.java:875)
+
+
+
+
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.rollback(AbstractPlatformTransactionManager.java:822)
+
+
+
+
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener$TransactionContext.endTransaction(TransactionalTestExecutionListener.java:518)
+
+
+
+
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.endTransaction(TransactionalTestExecutionListener.java:292)
+
+
+
+
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:185)
+
+
+
+
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:406)
+
+
+
+
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:91)
+
+
+
+
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+
+
+
+
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231)
+
+
+
+
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+
+
+
+
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+
+
+
+
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+
+
+
+
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+
+
+
+
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+
+
+
+
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+
+
+
+
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+
+
+
+
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:71)
+
+
+
+
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+
+
+
+
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174)
+
+
+
+
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+
+
+
+
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)
+
+
+
+
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)
+
+
+
+
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+
+
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+	at java.lang.reflect.Method.invoke(Method.java:497)
+
+
+
+
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)
+
+
+
+
+14:40:21,188 DEBUG DirtiesContextTestExecutionListener:86 - After test method: context [[TestContext@6fadae5d testClass = RoleRepoImplTest, testInstance = com.bjinfotech.tri.cas.manager.repository.impl.RoleRepoImplTest@17f6480, testMethod = testQueryRoleMap@RoleRepoImplTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@2d6e8792 testClass = RoleRepoImplTest, locations = &amp;amp;apos;{classpath:applicationContext-for-test.xml}&amp;amp;apos;, classes = &amp;amp;apos;{}&amp;amp;apos;, activeProfiles = &amp;amp;apos;{}&amp;amp;apos;, contextLoader = &amp;amp;apos;org.springframework.test.context.support.DelegatingSmartContextLoader&amp;amp;apos;]]], class dirties context [false], class mode [null], method dirties context [false].
+
+
+
+
+
+
+I debuged code,and found when the transaction begin rollback,ContextSourceTransactionManager call doCleanupAfterCompletion method twice:one was called by  itself,and another was called by TransactionalTestExecutionListener.</description>
+			<version>2.0.2</version>
+			<fixedVersion>2.0.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.transaction.compensating.manager.ContextSourceTransactionManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="335" opendate="2015-07-14 16:44:49" fixdate="2015-09-02 14:01:08" resolution="Complete">
+		<buginformation>
+			<summary>NoClassDefFoundError: RepositoryConfigurationExtension</summary>
+			<description>This seems to have been caused by changes for issue LDAP-311.
+When starting up an application that uses Spring LDAP with XML config, the exception is thrown on init:
+org.springframework.beans.FatalBeanException: Invalid NamespaceHandler class [org.springframework.ldap.config.LdapNamespaceHandler] for namespace http://www.springframework.org/schema/ldap: problem with handler class file or dependent class; nested exception is java.lang.NoClassDefFoundError: org/springframework/data/repository/config/RepositoryConfigurationExtension
+Adding spring-data-commons dependency resolves this issue.</description>
+			<version>2.0.3</version>
+			<fixedVersion>2.0.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.ldap.config.LdapNamespaceHandler.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

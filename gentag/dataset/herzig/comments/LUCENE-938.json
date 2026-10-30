@@ -1,0 +1,902 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12372167",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167",
+  "key": "LUCENE-938",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312531",
+        "id": "12312531",
+        "description": "",
+        "name": "2.3",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-01-23"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12804",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "4.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+      "name": "steven_parkes",
+      "key": "steven_parkes",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Parkes",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27109",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+      "name": "steven_parkes",
+      "key": "steven_parkes",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Parkes",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+      "name": "steven_parkes",
+      "key": "steven_parkes",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Parkes",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-938/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@49763072[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@13a8ca92[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@42de95b8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@17772b2b[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@16fd1ca1[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@32333389[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4760322[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@2a764ef4[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5410570f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@7f94997f[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4bcffabc[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@53d60cdf[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:39:01 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-07-13T14:24:07.876+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-938/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2007-06-21T21:45:15.708+0000",
+    "updated": "2022-08-28T11:39:01.738+0000",
+    "timeoriginalestimate": null,
+    "description": "Some I/O exceptions that result in segmentInfos rollback operations can cause buffered deletes that existed before the rollback creation point to be incorrectly lost when the IOException triggers a rollback.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12361722",
+        "id": "12361722",
+        "filename": "LUCENE-938.patch.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-07-12T22:55:14.684+0000",
+        "size": 10667,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12361722/LUCENE-938.patch.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12361151",
+        "id": "12361151",
+        "filename": "LUCENE-938.take2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-07-04T19:19:59.310+0000",
+        "size": 17638,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12361151/LUCENE-938.take2.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12360328",
+        "id": "12360328",
+        "filename": "LUCENE-938.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-06-21T22:51:31.834+0000",
+        "size": 18155,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12360328/LUCENE-938.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12360326",
+        "id": "12360326",
+        "filename": "LUCENE-938.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-06-21T21:51:01.960+0000",
+        "size": 18084,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12360326/LUCENE-938.txt"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "I/O exceptions can cause loss of buffered deletes",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12507043",
+          "id": "12507043",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patch that fixes the two relevant rollback mechanisms in IndexWriter: the rollback support in mergeSegments around maybeApplyDeletes and the rollback support in  the *Transaction methods. For the later, I had to promote the transaction routines from private to package protected so that I could write the tests, which are also in the patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-21T21:51:02.127+0000",
+          "updated": "2007-06-21T21:51:02.127+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12507050",
+          "id": "12507050",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Wow, good catch and nice unit test!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-21T22:11:46.917+0000",
+          "updated": "2007-06-21T22:11:46.917+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12507052",
+          "id": "12507052",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Only it's broke. Mixing a couple of things, I missed a couple of tests that I broke. That's what I get for coding with a cold. Another fix soon.\n\nAnd I was going to mention that I added support in the mock directory stuff for injecting deterministic I/O errors. Should help us capture tricky corner cases where we need to.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-21T22:16:03.706+0000",
+          "updated": "2007-06-21T22:16:03.706+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12507063",
+          "id": "12507063",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This version has the missing fixes that got tossed when I tried to clean up that patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-21T22:51:31.935+0000",
+          "updated": "2007-06-21T22:51:31.935+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12510234",
+          "id": "12510234",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Steve, I re-worked this patch now that LUCENE-843 is committed (it\nconflicted) and am attaching it (LUCENE-938.take2.patch).  It's the\nsame logic as before.  If it looks good to you I can commit it!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-04T19:19:59.444+0000",
+          "updated": "2007-07-04T19:19:59.444+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12510235",
+          "id": "12510235",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks. I figured there'd be conflicts.\n\nI won't be able to look at this until next week ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-04T19:26:57.256+0000",
+          "updated": "2007-07-04T19:26:57.256+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12510422",
+          "id": "12510422",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ningli",
+            "name": "ningli",
+            "key": "ningli",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Good catch, Steven!\n\nOne thing though: I thought we had assumed that there wouldn't be any buffered docs or delete terms when startTransaction(), so no local copies are necessary. That means no change to startTransaction() and rollbackTransaction(). If there could be buffered docs and delete terms when startTransaction(), then local copies should be made for buffered docs and localNumBufferedDeleteTerms should clone numBufferedDeleteTerms instead of just copying the reference.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ningli",
+            "name": "ningli",
+            "key": "ningli",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-05T17:47:23.228+0000",
+          "updated": "2007-07-05T17:47:23.228+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512249",
+          "id": "12512249",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Easy first: there's a comment in the code about cloning the buf delete term hash with a clear vs. copying the reference and creating a new hash. I've gone back and forth. I don't have a strong opinion.\n\nI did notice that every call to startTransaction had flushed the deletes ahead but I didn't see that it was required to be so. I can go either way on this, too. I'd vote for making startTransaction safer.  I think, in theory, it could be opened to users at some point, if it were to help people trying to use Lucene in certain transactional contexts.\n\nOf course, that violates YAGNI.\n\nBut I hadn't looked at the ram segments. Does look like if there are any at the start of a trans. and they get flushed, they would/might get lost? Since that touches on the index file deleter, it strikes me as more complex.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-12T20:33:55.414+0000",
+          "updated": "2007-07-12T20:33:55.414+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512271",
+          "id": "12512271",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ningli",
+            "name": "ningli",
+            "key": "ningli",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I didn't make myself clear. Let me try again. The patch includes two parts of changes to IndexWriter: one adds localNumBufferedDeleteTerms and localBufferedDeleteTerms and uses them in startTransaction() and rollbackTransaction(); the other fixes loss of buffered deletes in flush() (and applyDeletes() which is used by flush()).\n\nThe second part is good and that's where you had the comment on cloning.\n\nI was referring to the first part. In startTransaction(), \"localBufferedDeleteTerms = bufferedDeleteTerms\" reference-copies bufferedDeleteTerms. Then more delete terms are buffered into bufferedDeleteTerms... so localBufferedDeleteTerms would have the delete terms buffered between startTransaction() and the first flush()... ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ningli",
+            "name": "ningli",
+            "key": "ningli",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-12T21:45:37.090+0000",
+          "updated": "2007-07-12T21:45:37.090+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512274",
+          "id": "12512274",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Okay. Got it.\n\nBut your earlier note got me thinking. Mike, as far as I can tell, the 843 buffered docs stuff isn't getting restored around a transaction? Or am I missing something? Are you assuming flush is called before startTransaction?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-12T21:59:20.507+0000",
+          "updated": "2007-07-12T21:59:20.507+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512287",
+          "id": "12512287",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Ahh, right, we are not protecting buffered doc state inside the local\ntransaction.  And actually doing so would not be very easy.\n\nI would say we require that there are no buffered docs nor deletes\nwhen startTransaction() is called.  The code guarantees that now but\nhow about we doc this limitation and put an assert in there to make\nsure?\n\nThese methods were added only for protecting the index during the\naddIndexes* calls; if in the future we somehow want to make them more\npowerful I think we can fix it then...\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-12T22:21:50.596+0000",
+          "updated": "2007-07-12T22:21:50.596+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512289",
+          "id": "12512289",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Works for me. I'll submit a new patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-12T22:25:29.076+0000",
+          "updated": "2007-07-12T22:25:29.076+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512298",
+          "id": "12512298",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "New patch. Removes support for buf deletes around transactions but documents and asserts this.\n\nFixes a few typos in the comments.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-07-12T22:55:14.913+0000",
+          "updated": "2007-07-12T22:55:14.913+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/12512494",
+          "id": "12512494",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "This patch looks great!  Thanks Steve.  I'll commit it shortly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-13T14:20:32.817+0000",
+          "updated": "2007-07-13T14:20:32.817+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372167/comment/17587129",
+          "id": "17587129",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2013|https://github.com/apache/lucene/issues/2013].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:39:01.738+0000",
+          "updated": "2022-08-28T11:39:01.738+0000"
+        }
+      ],
+      "maxResults": 15,
+      "total": 15,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0502n:",
+    "customfield_12314139": null
+  }
+}

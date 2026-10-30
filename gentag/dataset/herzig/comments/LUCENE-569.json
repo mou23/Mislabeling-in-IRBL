@@ -1,0 +1,1202 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12334196",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196",
+  "key": "LUCENE-569",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13181",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "8.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12312448",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12312448",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12332762",
+          "key": "LUCENE-557",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332762",
+          "fields": {
+            "summary": "search vs explain - score discrepancies",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+              "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+              "name": "Resolved",
+              "id": "5",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27476",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-569/votes",
+      "votes": 1,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@7473b899[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@63a841b6[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@62e8b928[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@43ecf132[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5de4fbba[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@65176c76[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4291b805[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@66d0a404[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1c13aa4f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@42b90167[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@da7d8a5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@6e34bd91[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:27:34 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-10-27T22:04:15.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-569/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2006-05-13T08:31:11.000+0000",
+    "updated": "2022-08-28T11:27:34.966+0000",
+    "timeoriginalestimate": null,
+    "description": "NearSpans appears to have a bug in skipTo that causes it to skip over some matching documents completely.  I discovered this bug while investigating problems with SpanWeight.explain, but as far as I can tell the Bug is not specific to Explanations ... it seems like it could potentially result in incorrect matching in some situations where a SpanNearQuery is nested in another query such thatskipTo will be used ... I tried to create a high level test case to exploit the bug when searching, but i could not.  TestCase exploiting the class using NearSpan and SpanScorer will follow...",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335740",
+        "id": "12335740",
+        "filename": "common-build.assertions.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-06-22T05:19:18.000+0000",
+        "size": 654,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335740/common-build.assertions.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12343743",
+        "id": "12343743",
+        "filename": "LUCENE-569.ubber.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2006-10-26T23:31:19.000+0000",
+        "size": 35924,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12343743/LUCENE-569.ubber.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12340105",
+        "id": "12340105",
+        "filename": "NearSpans20060903.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-09-03T09:25:27.000+0000",
+        "size": 35706,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12340105/NearSpans20060903.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335741",
+        "id": "12335741",
+        "filename": "NearSpansOrdered.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-06-22T05:19:18.000+0000",
+        "size": 9246,
+        "mimeType": "text/x-java",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335741/NearSpansOrdered.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335683",
+        "id": "12335683",
+        "filename": "NearSpansUnordered.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-06-21T04:38:07.000+0000",
+        "size": 7076,
+        "mimeType": "text/x-java",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335683/NearSpansUnordered.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335758",
+        "id": "12335758",
+        "filename": "SpanNearQuery20060622.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-06-22T14:26:23.000+0000",
+        "size": 632,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335758/SpanNearQuery20060622.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335636",
+        "id": "12335636",
+        "filename": "SpanScorer.explain.testcase.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2006-06-20T08:35:48.000+0000",
+        "size": 589,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335636/SpanScorer.explain.testcase.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12327465",
+        "id": "12327465",
+        "filename": "TestNearSpans.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2006-05-13T08:34:35.000+0000",
+        "size": 5957,
+        "mimeType": "text/x-java",
+        "content": "https://issues.apache.org/jira/secure/attachment/12327465/TestNearSpans.java"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "NearSpans skipTo bug",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12383340",
+          "id": "12383340",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "test case using NearSpans directly that demonstrates bug.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-05-13T08:34:35.000+0000",
+          "updated": "2006-05-13T08:34:35.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12383343",
+          "id": "12383343",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "fixed title",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-05-13T08:41:22.000+0000",
+          "updated": "2006-05-13T08:41:22.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12383367",
+          "id": "12383367",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Hoss,\n\nThere is an alternative NearSpans here:\nhttp://issues.apache.org/jira/browse/LUCENE-413\nin the files:\nNearSpansOrdered.java\nNearSpansUnordered.java\nSpanNearQueryPatch1.txt\n\nIt would be good to see whether these have the same skipTo bug.\nI'll have a look into this in a few days, please feel free to beat me to it.\n\nAnyway, thanks for the courage to review all of Lucene's use of Explanation.\nExplaining a score value is just as involved as the normal search mechanisms,\nas it is necessary to redo the whole search, but only for a single document,\nand then literally explain all the details in program code.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-13T15:52:11.000+0000",
+          "updated": "2006-05-13T15:52:11.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12383381",
+          "id": "12383381",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Fwiw, TestNearSpans passes on my working copy that has the alternative NearSpans.\nIt's still worthwhile to try locate the bug in the current NearSpans.\n\nThe last skipTo bug in DisjunctionSumScorer was caused by me not understanding\nthat skipTo() always advances at least one document, even when the given target\nis at or before the current document of the Scorer on which skipTo is called.\nI would not be surprised if this turns out to be a similar problem.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-13T18:01:23.000+0000",
+          "updated": "2006-05-13T18:01:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12383404",
+          "id": "12383404",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Hoss,\n\nI'm afraid you've uncovered a bug in NearSpans.java for the ordered case.\nThe test case testNearSpansSkipToLikeNext() uses this test data:\ndoc 0: w1 w2 w3 .. ..\ndoc 1: w1 w3 w2 w3 ..\nand an ordered SpanNearQuery with slop 1 for \"w1 w2 w3\" should match doc 0 and doc 1\nThe test first does a skipTo(0) on the NearSpans which succeeds to match doc 0.\nThen it tries skipTo(1) on the NearSpans, which should succeed, but fails, because\nNearSpans first does skipTo(1) on the Spans for the query terms,\nwhich puts these term spans at\ndoc 1: w1 w3 w2\n(as expected) but this does not match because it's not ordered.\nThe NearSpans then tries a next() on itself, which starts by doing next() on the term spans\nfor w1 in NearSpans.java near line 146:\n      more = min().next();                        // trigger further scanning\nHowever, in the ordered case, it should have advanced the first non ordered term,\nhere w3, and so it misses the match:\ndoc 1: w1 .. w2 w3 ..\n\nI would recommend to use the alternative NearSpans from LUCENE 413 mentioned above\nto fix this. The NearSpansOrdered there differs from the current version in that it does not\nmatch overlapping subspans, but it passes all current test cases including TestNearSpans here.\nOverlaps between Spans can occur when SpanNearQueries are nested and/or when multiple\nterms are indexed on the same position.\nIn case this ordered non overlapping matching becomes an issue, it can always be fixed later.\nThe NearSpansUnordered there is just like the current NearSpans, only simplified, and this\nmatches overlapping subspans.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-14T03:51:10.000+0000",
+          "updated": "2006-05-14T03:51:10.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12402471",
+          "id": "12402471",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "\nI tried to make sense of the existing NearSpans implimentation over the weekend ... i did not succeed.  I still haven't had a cahnce to look at the new one in LUCENE-413 but i wnat to clarify something you said..\n\n>>> The NearSpansOrdered there differs from the current version in that it does not\n>>> match overlapping subspans, but it passes all current test cases including TestNearSpans here. \n\n...should I understand you to mean then that the current implimentaion of NearSpans does work correctly with overlapping sub-spans ... there just isnt' a test for it?\n\nthat seems like important enough behavior that we wouldn't want to break it to fix this bug.\n\nEven if matching on overlapping subspans wasn't an intentional feature of NearSpans -- the fact that it currently works and the documentation is silent on the issue suggests to me that it should remain supported.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-05-16T08:17:23.000+0000",
+          "updated": "2006-05-16T08:17:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12411904",
+          "id": "12411904",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "> I tried to make sense of the existing NearSpans implimentation over the weekend ... i did not succeed.\n> I still haven't had a cahnce to look at the new one in LUCENE-413 but i wnat to clarify something you said.. \n\nFor the unordered case the priority queue implementation over the subspans in the current NearSpans is fine.\nFor the ordered case I could not figure out how to deal with the priority queue and the restriction on\nordering at the same time. This is precisely what the bug above shows.\n \n> >>> The NearSpansOrdered there differs from the current version in that it does not \n> >>> match overlapping subspans, but it passes all current test cases including TestNearSpans here. \n>\n> ...should I understand you to mean then that the current implimentaion of NearSpans does work\n> correctly with overlapping sub-spans ... there just isnt' a test for it? \n\nFor ordered queries, it might work with overlapping sub-spans on some cases.\nHowever, I'd expect any test to run into the bug above for some other ordered cases.\n \n> that seems like important enough behavior that we wouldn't want to break it to fix this bug. \n\nGiven the bug, I hope nothing depends on it.\n\n> Even if matching on overlapping subspans wasn't an intentional feature of NearSpans -- the fact that it\n> currently works and the documentation is silent on the issue suggests to me that it should remain supported. \n\nThat can probably be done by modifying the NearSpansOrdered of LUCENE-413 at lines 133-138 and at\nline 167 where the end of the previous (possibly matching) subspans is compared to the start of the next one.\nThis could compare the start with the start instead.\nI don't know what precisely is the intended behaviour, so I can't say whether these changed comparisons\nshould allow equality or not. Perhaps the ends should be compared when the starts are equal,\njust like it is done in the priority queue for the unordered case.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-16T14:37:59.000+0000",
+          "updated": "2006-05-16T14:37:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12416830",
+          "id": "12416830",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "Attitional test case patch that should work if this bug is fixed.  (orriginally from LUCENE-557 but uncommited)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-06-20T08:35:48.000+0000",
+          "updated": "2006-06-20T08:35:48.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12416949",
+          "id": "12416949",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "TestSpanExplanations (latest) with the SpanScorer.explain.testcase.patch passes here,\nbut my intermediate version of NearSpansOrdered.java does not pass TestSpans yet.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-21T00:57:32.000+0000",
+          "updated": "2006-06-21T00:57:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12416991",
+          "id": "12416991",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "These two attachments (NearSpansOrdered and NearSpansUnordered), together with the near spans patch at the issue indicated above, pass all tests here, including the patched spans explanation test.\n\nThe attachments share the code that defines the ordering of spans.\n\nSome minor refactoring will probably be needed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-21T04:38:07.000+0000",
+          "updated": "2006-06-21T04:38:07.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12417206",
+          "id": "12417206",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "common-build.assertions.patch enables assertions in org.apache.lucene during the junit tests.\n\nNearSpansOrdered.java is refactored from the previous version of 2 days ago.\nIt contains some assert statements.\n\nAll tests pass here as before with these two attachments.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-22T05:19:18.000+0000",
+          "updated": "2006-06-22T05:19:18.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12417261",
+          "id": "12417261",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The patch to SpanNearQuery at the other issue still uses NearSpans.\nUsing the patch attached here, NearSpans is not used anymore.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-22T14:26:23.000+0000",
+          "updated": "2006-06-22T14:26:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12432327",
+          "id": "12432327",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "NearSpans20060903.patch combines the changes for the bug fix on the\nfollowing files against revision 439747 (today):\n\nsrc/java/org/apache/lucene/search/spans/NearSpansOrdered.java, added\nsrc/java/org/apache/lucene/search/spans/NearSpansUnordered.java, added\nsrc/java/org/apache/lucene/search/spans/SpanNearQuery.java, changed\nsrc/test/org/apache/lucene/search/spans/TestNearSpans.java, added\nsrc/java/org/apache/lucene/search/spans/NearSpans.java, deleted.\n\nThis obsoletes the patch to SpanNearQuery.java.\n(It leaves out one line of commented code that is  in the separate patch for SpanNearQuery.java .)\n\nThe added NearSpansUnordered is a simple specialisation of the deleted\nNearSpans for the unordered case.\n\nRegards,\nPaul Elschot\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-09-03T09:25:27.000+0000",
+          "updated": "2006-09-03T09:25:27.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12445044",
+          "id": "12445044",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "Okay, I've attached a cosolidation of SpanScorer.explain.testcase.patch and NearSpans20060903.patch, with a few small modifications...\n\n  1) renamed TestNearSpans.java to TestNearSpansOrdered.java\n  2) renamed some tst* methods test* (I think Paul had disabled them for faster testing \n      since they weren't broken, but they provide good coverage)\n  3) removed some javadocs from NearSpansOrdered so they are inherited from Spans\n      (they were the same)\n\nI can't say I completely understand everything going on in all of this code ... but it passes all of the existing unit tests (as well as the new ones) and I trust Paul; so in the spirit of \"be bold\" I'll commit these tomorow unless anyone objects.\n\nTo recap the major issues for people who may not be familiar with this issue...\n\n   * The existing NearSpans, which used in an \"inOrder\" SpanNear query, has a bug \n     where it fails to recognize ordered spans if they overlap with unordered spans.\n   * Paul has proposed a fix by eliminating the NearSpans class and replacing it with \n     both NearSpansOrdered and NearSpansUnordered - SpanNearQuery will pick the\n     appropriate class when getSpans is called.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-10-26T23:31:19.000+0000",
+          "updated": "2006-10-26T23:31:19.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12445215",
+          "id": "12445215",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Hoss, thanks for the modifications. The tst* methods were indeed renamed from test*.\n\nIs there a way to invoke an ant test indicating the testcase _and_ the testmethod to be called?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-10-27T16:03:41.000+0000",
+          "updated": "2006-10-27T16:03:41.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12445276",
+          "id": "12445276",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "Thanks again for figuring all of this out Paul.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2006-10-27T22:04:15.000+0000",
+          "updated": "2006-10-27T22:04:15.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12445284",
+          "id": "12445284",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "It seems that having  \"assert()\"   in NearSpanOrdered.java now required Java 1.5 in order to compile Lucene. This would require 1.5 for running Lucene. Do we want to include this now?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-10-27T22:44:46.000+0000",
+          "updated": "2006-10-27T22:44:46.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12445286",
+          "id": "12445286",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I don't think so. And I'm glad someone is checking. Got a patch, Doron?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-10-27T22:52:29.000+0000",
+          "updated": "2006-10-27T22:52:29.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/12445294",
+          "id": "12445294",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Chris Hostetter wrote:\n\n> Really? ... the build.xml currently sets the javac -source and -target to\n> 1.4 so if that were true i would except it to have failed, and the\n> documentation for J2SE 1.4.2 indicates that assertion support exists in\n> 1.4.\n> \n> while writting this i attempted an \"ant clean test\" using Java 1.4 and\n> everything seemed to work fine.\n\nYou are right Chris, my mistake, compilation passed for me with 1.5 but failed with 1.4 so I assumed this was the case, but apparently for 1.4 I had 1.3 for the source compatibility (in Eclipse). I changed to 1.4 and it passed with no problems.\n\nSorry for this noise,\nDoron",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-10-27T23:20:18.000+0000",
+          "updated": "2006-10-27T23:20:18.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334196/comment/17586761",
+          "id": "17586761",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1647|https://github.com/apache/lucene/issues/1647].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:27:34.966+0000",
+          "updated": "2022-08-28T11:27:34.966+0000"
+        }
+      ],
+      "maxResults": 20,
+      "total": 20,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i052c7:",
+    "customfield_12314139": null
+  }
+}

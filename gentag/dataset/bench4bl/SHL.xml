@@ -1,0 +1,285 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="SHL">
+	<bug id="15" opendate="2012-04-10 23:51:51" fixdate="2012-04-15 23:57:42" resolution="Complete">
+		<buginformation>
+			<summary>change plugin model by using Spring Bean XML</summary>
+			<description>curent pugin use new XML to define commands. It&amp;amp;apos;s better to use standard Spring XML.</description>
+			<version>1.0 M1</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.springframework.shell.plugin.PluginConfigurationReader.java</file>
+			<file type="D">org.springframework.shell.plugin.PluginInfo.java</file>
+			<file type="M">org.springframework.shell.Bootstrap.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="8" opendate="2012-04-07 03:41:25" fixdate="2012-04-16 00:03:14" resolution="Complete">
+		<buginformation>
+			<summary>separate HelloWorldPlugin from core code into samples project</summary>
+			<description></description>
+			<version>1.0 M1</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.springframework.shell.plugin.HelloWorldPlugin.java</file>
+			<file type="D">org.springframework.shell.commands.HelloWorldCommands.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="6" opendate="2012-04-05 21:09:26" fixdate="2012-04-16 00:03:24" resolution="Complete">
+		<buginformation>
+			<summary>Spring Shell does not support "help"</summary>
+			<description>Currently, when user type "help" in Spring shell,  no help message is displayed (as following):
+spring&amp;gt;help
+Command &amp;amp;apos;help&amp;amp;apos; not found (for assistance press TAB or type "hint" then hit ENTER)
+The expected resut is that all available commands should be listed.</description>
+			<version>1.0 M1</version>
+			<fixedVersion>1.0 M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.commands.HelpCommands.java</file>
+			<file type="M">org.springframework.shell.Bootstrap.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="56" opendate="2012-07-24 08:52:16" fixdate="2012-07-24 10:22:50" resolution="Duplicate">
+		<buginformation>
+			<summary>SHL contains a lot of duplicated classes from Spring</summary>
+			<description>Based on the Spring Roo import, SHL ended up with a lot of utility classes coopied from Spring Framework (because Spring wasn&amp;amp;apos;t a dependency of Spring Roo).
+This not only adds a lot of untested baggage but it also creates confusion between what class to use.
+Since the utility classes in Spring are maintained and provide the same functionality, a lot of the util classes can be safely removed.</description>
+			<version>1.0 M1</version>
+			<fixedVersion>1.0 RC1</fixedVersion>
+			<type>New Feature</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.samples.helloworld.commands.MyBannerProvider.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">48</link>
+		</links>
+	</bug>
+	<bug id="48" opendate="2012-07-16 13:20:54" fixdate="2012-09-19 07:34:03" resolution="Complete">
+		<buginformation>
+			<summary>Remove duplicated classes from Spring Framework and old Roo code base in util package</summary>
+			<description>There are many classes that were copied and pasted from Spring Framework placed into the &amp;amp;apos;util&amp;amp;apos; package, e.g. ObjectUtils, CollectionUtils, etc.  (Look for Juergen, Arjen, Rob, etc for author tags).
+As we now depend on Spring there is no need for this duplication. </description>
+			<version>1.0 M1</version>
+			<fixedVersion>1.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.samples.helloworld.commands.MyBannerProvider.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">56</link>
+		</links>
+	</bug>
+	<bug id="113" opendate="2013-11-13 01:59:49" fixdate="2014-04-18 07:02:47" resolution="Complete">
+		<buginformation>
+			<summary>"Ambigious command" if one command name starts with another command name</summary>
+			<description>A command like
+
+
+
+
+
+
+public class FoobarCommand
+
+
+
+
+		implements CommandMarker
+
+
+
+
+{
+
+
+
+
+	@CliCommand(value = "foo")
+
+
+
+
+	public String foo() {}
+
+
+
+
+
+
+
+
+
+	@CliCommand(value = "fooBar")
+
+
+
+
+	public String fooBar() {}
+
+
+
+
+}
+
+
+
+
+
+
+prints
+Ambigious command &amp;amp;apos;foo&amp;amp;apos; (for assistance press TAB or type "hint" then hit ENTER)
+when entering foo and pressing enter.
+A similar issue ROO-726 - Ambigious command in Shell has previously been closed as "Won&amp;amp;apos;t Fix" but I&amp;amp;apos;d suggest to reconsider this. The current behavior is very surprising and unexpected...</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.1 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.core.Tokenizer.java</file>
+			<file type="M">org.springframework.shell.core.TokenizerTests.java</file>
+			<file type="M">org.springframework.shell.commands.OsCommands.java</file>
+			<file type="M">org.springframework.shell.core.SimpleParser.java</file>
+			<file type="D">org.springframework.shell.core.annotation.PassThroughOptions.java</file>
+			<file type="M">org.springframework.shell.core.SimpleParserTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="153" opendate="2014-06-19 18:58:03" fixdate="2014-06-20 13:52:24" resolution="Complete">
+		<buginformation>
+			<summary>Date command should assume user localization.</summary>
+			<description></description>
+			<version>1.1.0</version>
+			<fixedVersion>1.1 RC4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.commands.DateCommands.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="98" opendate="2013-07-02 22:27:18" fixdate="2014-12-01 03:55:03" resolution="Complete">
+		<buginformation>
+			<summary>Command line options are case sensitive and no error is shown to user when a similar, but incorrect, case is passed into a command.</summary>
+			<description>When we use spring shell in serengeti, we noticed that if users input a option name without big letters, spring shell will ignore this option rather throw some error messages. One example is here:
+cluster create --name test --specfile /jun/1.json
+The correct usage is cluster create --name test --specFile /jun/1.json
+But spring shell just ignore --specfile without throwing any error messages. This will make users confused as it seems --specfile does not work, and they ususally do not aware the reason is --specFile.</description>
+			<version>1.0.0</version>
+			<fixedVersion>2.0 M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.core.SimpleParser.java</file>
+			<file type="M">org.springframework.shell.core.SimpleParserTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="158" opendate="2014-07-16 00:27:45" fixdate="2016-06-17 13:15:16" resolution="Complete">
+		<buginformation>
+			<summary>Spring shell replaces multiple white spaces as a white space for parsing parameter of command in quotation marks.</summary>
+			<description>Spring shell replaces multiple white spaces as a white space for parsing parameter of command  without quotation marks. I think it is OK. But,  in quotation marks, I think multiple white spaces is my real intention.
+</description>
+			<version>1.1 RC2</version>
+			<fixedVersion>1.2 M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.core.SimpleParser.java</file>
+			<file type="D">org.springframework.shell.core.SimpleParserTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="187" opendate="2016-02-16 06:10:13" fixdate="2016-06-29 18:08:55" resolution="Complete">
+		<buginformation>
+			<summary>Build and Test fail on Windows</summary>
+			<description>Attempt to compile results in numerous errors of the following form:
+
+
+
+
+
+
+X:\git\spring-shell\src\main\java\org\springframework\shell\table\BorderStyle.java:43: error: unmappable character for encoding Cp1252
+
+
+
+
+        fancy_heavy(&amp;amp;apos;&amp;amp;apos;, &amp;amp;apos;?&amp;amp;apos;),
+
+
+
+
+                              ^
+
+
+
+
+...
+
+
+
+
+
+
+After fixing this, ran into test failures:
+
+
+
+
+
+
+:test
+
+
+
+
+
+
+
+
+
+org.springframework.shell.table.BorderFactoryTest &amp;gt; testFullBorder FAILED
+
+
+
+
+    java.lang.AssertionError at BorderFactoryTest.java:47
+
+
+
+
+...
+
+
+
+
+
+
+Both of these are result of presence of Unicode characters that are not supported by Windows&amp;amp;apos; default encoding (CP1252).</description>
+			<version>2.0 M1</version>
+			<fixedVersion>1.2 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.table.AbstractTestWithSample.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="146" opendate="2014-05-07 08:56:51" fixdate="2016-11-03 14:41:28" resolution="Fixed">
+		<buginformation>
+			<summary>Cursor on Line "2" of the shell instead of the old position after using flash messages</summary>
+			<description>I am using the flash methods to print some progress informations from the commands.
+If i am on line 8 of my shell and i am using the flash call, the cursor is back on line 2 after the command finished.
+This is really "ugly" because their may be already some output on the shell and its confusing compared to bash or other shells behavior - don&amp;amp;apos;t know a workarounds yet or what may causing this.
+I would expect to be on the next line (9) with a "fresh" prompt after the command finished - like all other commands which does not print something with "flash".</description>
+			<version>1.1 RC2</version>
+			<fixedVersion>1.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.shell.core.JLineShell.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

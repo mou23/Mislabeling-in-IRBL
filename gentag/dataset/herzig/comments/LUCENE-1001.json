@@ -1,0 +1,1830 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12378356",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356",
+  "key": "LUCENE-1001",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312681",
+        "id": "12312681",
+        "description": "",
+        "name": "2.4",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-10-08"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12744",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12322422",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12322422",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12409029",
+          "key": "LUCENE-1465",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12409029",
+          "fields": {
+            "summary": "NearSpansOrdered.getPayload does not return the payload from the minimum match span",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27046",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1001/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@6ef05f3e[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@d14a46[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6b9b3866[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@6192cc29[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@686c2822[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@1b91f5f9[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@297bb6e5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@5effc467[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@57dbdaa2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@43f1d39d[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@37c98998[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@17b5bffa[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:41:00 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2008-08-20T16:07:15.539+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1001/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2007-09-16T02:48:05.145+0000",
+    "updated": "2022-08-28T11:41:00.649+0000",
+    "timeoriginalestimate": null,
+    "description": "It will be nice to have access to payloads when doing SpanQuerys.\n\nSee http://www.gossamer-threads.com/lists/lucene/java-dev/52270 and http://www.gossamer-threads.com/lists/lucene/java-dev/51134\n\nCurrent API, added to Spans.java is below.  I will try to post a patch as soon as I can figure out how to make it work for unordered spans (I believe I have all the other cases working).\n\n{noformat}\n /**\n   * Returns the payload data for the current span.\n   * This is invalid until {@link #next()} is called for\n   * the first time.\n   * This method must not be called more than once after each call\n   * of {@link #next()}. However, payloads are loaded lazily,\n   * so if the payload data for the current position is not needed,\n   * this method may not be called at all for performance reasons.<br>\n   * <br>\n   * <p><font color=\"#FF0000\">\n   * WARNING: The status of the <b>Payloads</b> feature is experimental.\n   * The APIs introduced here might change in the future and will not be\n   * supported anymore in such a case.</font>\n   *\n   * @return a List of byte arrays containing the data of this payload\n   * @throws IOException\n   */\n  // TODO: Remove warning after API has been finalized\n  List/*<byte[]>*/ getPayload() throws IOException;\n\n  /**\n   * Checks if a payload can be loaded at this position.\n   * <p/>\n   * Payloads can only be loaded once per call to\n   * {@link #next()}.\n   * <p/>\n   * <p><font color=\"#FF0000\">\n   * WARNING: The status of the <b>Payloads</b> feature is experimental.\n   * The APIs introduced here might change in the future and will not be\n   * supported anymore in such a case.</font>\n   *\n   * @return true if there is a payload available at this position that can be loaded\n   */\n  // TODO: Remove warning after API has been finalized\n  public boolean isPayloadAvailable();\n{noformat}",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12388564",
+        "id": "12388564",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-08-19T21:43:58.471+0000",
+        "size": 57704,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12388564/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12388532",
+        "id": "12388532",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-08-19T14:39:30.474+0000",
+        "size": 58917,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12388532/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12387993",
+        "id": "12387993",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-08-11T20:56:03.109+0000",
+        "size": 56610,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12387993/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12387916",
+        "id": "12387916",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-08-11T01:22:27.302+0000",
+        "size": 56323,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12387916/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12387894",
+        "id": "12387894",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-08-10T03:47:11.949+0000",
+        "size": 46797,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12387894/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12387881",
+        "id": "12387881",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-08-09T17:02:27.700+0000",
+        "size": 44441,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12387881/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370204",
+        "id": "12370204",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-26T14:26:18.197+0000",
+        "size": 45423,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370204/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370162",
+        "id": "12370162",
+        "filename": "LUCENE-1001.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-25T17:52:40.601+0000",
+        "size": 43541,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370162/LUCENE-1001.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12394394",
+        "id": "12394394",
+        "filename": "LUCENE-1001-fix.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-11-21T02:37:51.657+0000",
+        "size": 6794,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12394394/LUCENE-1001-fix.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Add Payload retrieval to Spans",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12527837",
+          "id": "12527837",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Could you put this in a subclass of Spans?\n\nA little while ago I suggested to add a score() method to Spans to summarize the influence of subspans on the span score, and that would be another direction for a subclass.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-09-16T08:49:45.200+0000",
+          "updated": "2007-09-16T08:49:45.200+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12527855",
+          "id": "12527855",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Do you mean in a separate interface?  I suppose I should for backward compatibility so that people with existing Span implementations outside of Lucene aren't broken.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-09-16T12:07:03.982+0000",
+          "updated": "2007-09-16T12:07:03.982+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12527856",
+          "id": "12527856",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "This also blurs the line more between payloads and Spans, I suggest we drop the payloads package and move the BoostingTermQuery into the Spans package.  I originally thought there would be more distinction between the two packages, but that seems less likely now.\n\nSince payloads are still marked as experimental, does anyone see a problem with moving it?  I suppose it could be deprecated and copied since it has been released.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-09-16T12:11:15.726+0000",
+          "updated": "2007-09-16T12:11:15.726+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12527863",
+          "id": "12527863",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "My mistake, I thought Spans was an abstract class, but it is an interface.\nThat also means that Spans should not be changed at all, interfaces are forever.\n\nSomething like this could do nicely:\n\npublic interface PayloadSpans extends Spans {\n// as above\n}\n\nI'd prefer the payload \"core\" classes to stay in their own package search/payload\nbecause they may well turn out to be useful in other circumstances, for example\nas a way to avoid disjunctions with many terms.\nAt the moment I have no preference for a package for the PayloadSpans above,\nit could be search.spans or search.payloads.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-09-16T14:03:56.144+0000",
+          "updated": "2007-09-16T14:03:56.144+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12536872",
+          "id": "12536872",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\npublic interface PayloadSpans extends Spans { // as above }\n{quote}\n\nI think this is problematic too, unfortunately, since many spans actually contain other spans, so there is no way to safely cast even in the internal implementations.\n\nAlternative might be to add SpanQuery.getPayloadSpans() but that is ugly, too.\n\nI wish there was an equivalent way to deprecated that allowed one to tell people new methods are coming, but that won't break the existing interface.  Semantics of it would need to be figured out, but it would be useful here to just be able to let people know that we want to add to the Spans interface, but they just get a warning when compiling until we make it official.\n\nI suppose the right thing to do if we really want this to work is to deprecate Spans and SpanQuery.getSpans() and introduce a new form of Spans (maybe as an abstract class this time?)\n\nOr am I missing something that provides a clearer way of doing this?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-10-23T00:29:29.335+0000",
+          "updated": "2007-10-23T00:29:29.335+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12537082",
+          "id": "12537082",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I think I would just go ahead and create a parallel class hierarchy starting from class PayloadSpanQuery with a getPayloadSpans() method, and try and use delegation to the various SpanQueries and their Spans as much as possible.\nThat means you would end up with this a few times:\n\nreturn new PayLoadSpans () {\n   Spans delegatedTo = aFinalSpans;\n   .... some Spans methods directly delegated...\n};\n\nWhen this delegation happens too often, it  could even be factored out into its own superclass.\nIf the delegation turns out to be a performance problem it might be inlined, but that would mean code duplication.\n\nFor the rest, in case you need some existing SpanQuery private methods you could change them to package private, and move your classes to the search.spans package for that reason.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-10-23T17:17:56.600+0000",
+          "updated": "2007-10-23T17:17:56.600+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12543640",
+          "id": "12543640",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Paul,\n\nI think I have this implemented for the most part, but am having trouble with the NearSpansUnordered.  Can you enlighten me to the use of the PriorityQueue in the file?  Not saying its wrong, just saying I don't understand what's going on.  Also wondering about how it relates to the ordered member and the first and last SpansCell.\n\nThanks,\nGrant",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-19T19:10:25.624+0000",
+          "updated": "2007-11-19T19:10:25.624+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12543692",
+          "id": "12543692",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I only wrote NearSpansOrdered. NearSpansOrdered is what is left of the original NearSpans after the ordered case was taken out, and after I specialized NearSpans the unordered case. That means I only simplified the original NearSpans.\n\nOff the top of my head: the priority queue is used to make sure that the Spans are processed by increasing doc numbers and increasing token positions; the first and the last Spans determine whether there is a match, and all other Spans (in the queue) are \"in between\".\n\nI think you'll only need to implement the Spans interface to use the same priority queue,\nand you'll have to come up with a way to collect all the payloads from your payload spans on a match.\nProbably fairly straightforward, but with Spans there is always unexpected fun waiting around the next corner :)\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-11-19T21:08:15.088+0000",
+          "updated": "2007-11-19T21:08:15.088+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12543696",
+          "id": "12543696",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I have it implemented for the Ordered case (and all other Spans) but will need to dig in deeper for the unordered case.  Worst case, I can pop the queue from min() to max, but I then have to reconstruct the queue and that doesn't seem good.  Hopefully, I can dig in soon, as I would like to get this in 2.3 along with the other Payload stuff we are discussing since it sounds like that API is firming up.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-19T21:16:19.842+0000",
+          "updated": "2007-11-19T21:16:19.842+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12543722",
+          "id": "12543722",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "So far, it's easier than that: when they match, they all match, so you only need to keep the input Spans around in List or whatever. Then use them all as a source for your payloads.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-11-19T22:54:24.324+0000",
+          "updated": "2007-11-19T22:54:24.324+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12543915",
+          "id": "12543915",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nOff the top of my head: the priority queue is used to make sure that the Spans are processed by increasing doc numbers and increasing token positions; the first and the last Spans determine whether there is a match, and all other Spans (in the queue) are \"in between\".\n{quote}\nWould it be simpler to just use a SortedSet?  Then we could iterate w/o losing the sort, right?  Would this be faster since we wouldn't have to do the heap operations?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-20T15:03:55.436+0000",
+          "updated": "2007-11-20T15:03:55.436+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12544029",
+          "id": "12544029",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "> Would it be simpler to just use a SortedSet?\n\nTreeMap is slower than a PriorityQueue for this.  With PriorityQueue, insertions and deletions do not allocate new objects.  And, if some items are much more frequent than others, using adjustTop() instead of inserting and deleting makes merges run much faster, since most updates are then considerably faster than log(n).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-11-20T19:50:54.705+0000",
+          "updated": "2007-11-20T19:50:54.705+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12544105",
+          "id": "12544105",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Sure, but how do I get access to the position payloads in the order that they occur in the PQ?  I have to go and pop them all of the PQ or I need to maintain a separate PQ for the Payloads so that when I go to get a payload for a span, I can iterate over all the items by calling PQ.pop() but then I have to rebuild it again if getPayload is called again, right?\n\nI think I need to take a break and come back to this after some Turkey...  :-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-20T22:46:57.923+0000",
+          "updated": "2007-11-20T22:46:57.923+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12544532",
+          "id": "12544532",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "> how do I get access to the position payloads in the order that they occur in the PQ?\n\nWhy do you need them in that order?  In the API you propose in the description of this issue, there's no clear association between the payloads returned  and the query terms.  So I don't yet see how the order of the payloads is useful.\n\nYou could pretty easily return the list of payloads along with their positions by iterating through the list of sub-queries.  The problem is that providing that sorted by position is expensive.  Perhaps you could leave any such sorting, if required, to the application?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-11-21T17:37:59.542+0000",
+          "updated": "2007-11-21T17:37:59.542+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12545268",
+          "id": "12545268",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Yeah, I was thinking this as a possibility, but thought people may want to rely on the ordering, even if they mark it as unordered.  I guess I will just have to properly document it, b/c I agree it is expensive to sort.\n\nI will submit a patch shortly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-25T14:20:29.325+0000",
+          "updated": "2007-11-25T14:20:29.325+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12545285",
+          "id": "12545285",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "First draft of a patch for this issue.  Need to expand/double check the tests and cleanup a few things before committing, but wanted to get opinion on the API.\n\nAlso, would like to see if NearSpansOrdered can be optimized a bit to not load the payloads in the case where the user doesn't ask for PayloadSpans.  The other implementations shouldn't have this issue.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-25T17:52:40.725+0000",
+          "updated": "2007-11-25T17:52:40.725+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12545419",
+          "id": "12545419",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "There is an issue w/ this patch related to unordered, overlapping spans that still needs to be fixed.  Will try to get an updated patch out soon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-26T12:06:59.639+0000",
+          "updated": "2007-11-26T12:06:59.639+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12545461",
+          "id": "12545461",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Fixes the unordered problem.  Still needs more testing, but I believe it is working",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-26T14:26:22.068+0000",
+          "updated": "2007-11-26T14:26:22.068+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12593370",
+          "id": "12593370",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I don't think that patch is compatible w/ anything :-)   It was a  \nrough sketch that never properly worked.  I put it up there in the  \nhopes that maybe someone would have some more insight to offer.\n\n\n\n\n--------------------------\nGrant Ingersoll\n\nLucene Helpful Hints:\nhttp://wiki.apache.org/lucene-java/BasicsOfPerformance\nhttp://wiki.apache.org/lucene-java/LuceneFAQ\n\n\n\n\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-04-30T16:32:57.090+0000",
+          "updated": "2008-04-30T16:32:57.090+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621156",
+          "id": "12621156",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Anyone still have a use case for this issue?\n\nHere is a patch that I think fixes the orderedspans problem - need to test further, but that may be the last piece on those parts.\n\nBeyond that, I think that a span uses only one clause to determine if a payload is available for the whole span - it seems to me we have to ask every clause.\n\nAs far as the ordering of returned payloads, I don't see how they can be ordered by the user without having some info in the payload itself - I mean its just going to be a collection of byte arrays right? How could you order them? Seems at most you can say those payloads came from the given span and use them all.\n\nThe more I look at spans the less I understand them I think <g> Its like repeating certain words over and over.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-09T16:57:40.554+0000",
+          "updated": "2008-08-09T16:57:40.554+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621157",
+          "id": "12621157",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Without the absolute paths in the patch this time (get it together eclipse)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-09T17:02:27.728+0000",
+          "updated": "2008-08-09T17:02:27.728+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621209",
+          "id": "12621209",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Fixes the unorderedspan ispostionavailable issue for good measure.\n\nI think we have to give the payloads back unsorted - there are probably cases where you could just use all the payloads for a span rather than per term, so we might as well not incur a penalty there. If you need per term, you can put the position into the payload (pretty simple) and then just sort yourself.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-10T03:47:11.986+0000",
+          "updated": "2008-08-10T03:47:11.986+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621321",
+          "id": "12621321",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'll correct it if I have anything to add later, but the new isPayloadAvailable on the unordered spans should start at min(), not first.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-10T23:46:24.917+0000",
+          "updated": "2008-08-10T23:46:24.917+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621332",
+          "id": "12621332",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Might as well keep striking while the iron's hot. This fixes the first to min() issue, I think it adds an isSpansAvailable call that had been commented out, adds a couple tests, tightens a test, and adds a new class that takes a single document and returns all of payloads from the terms that match a given Query object (so you could do a mix of span/query) - may or may not be useful someday.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-11T01:22:27.345+0000",
+          "updated": "2008-08-11T01:22:27.345+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621578",
+          "id": "12621578",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "TestBoostingTermQuery.testNoPayload now fails for me.\n\nAlso noticed some extraneous System.out.println.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-11T20:22:26.210+0000",
+          "updated": "2008-08-11T20:22:26.210+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12621595",
+          "id": "12621595",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I see what happened with the boosting test - the old patch didn't apply cleanly for me to the trunk for that test class - I looked for the issue but it looked clean so I left it to deal with later - turns out one or two lines were mangled. New patch that fixes that.\n\nAlso turned off DEBUG for the payloads test class so that will drop the System.outs.\n\nPretty clean now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-11T20:56:03.166+0000",
+          "updated": "2008-08-11T20:56:03.166+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12623686",
+          "id": "12623686",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Added to CHANGES.txt\n\nMade the SpanQuery.getPayloadSpans() method an empty implementation that returns null instead of being abstract, so as not to break anyone that extends SpanQuery.   All Lucene span implementations override it.\n\nAlso added in license headers.\n\nPlan to commit in a day or two",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-19T14:39:30.501+0000",
+          "updated": "2008-08-19T14:39:30.501+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12623818",
+          "id": "12623818",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Took one last look through for final cleanup - removed an unused import and some unneeded commented code.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-19T21:43:58.510+0000",
+          "updated": "2008-08-19T21:43:58.510+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12624034",
+          "id": "12624034",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed revision 687379.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-08-20T16:07:15.496+0000",
+          "updated": "2008-08-20T16:07:15.496+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12647965",
+          "id": "12647965",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=joma",
+            "name": "joma",
+            "key": "joma",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jonathan Mamou",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi,\n\nI use getPayloadSpans to get the spans (PayloadSpans spans = sq.getPayloadSpans(this.getIndexReader());) and for each span I extract the relevant payload using spans.getPayload() (after calling spans.next()).\n \nI have tested it for a SpanNearQuery, I have stored the offset in the payload (for testing). \n\nIt seems to me that the payloads returned for the span (spans.getPayload()) does not match the current span (given by span.next()). In fact, the offset returned by the payload are different from the offset returned by span.start().\nIt occurs when they are multiple occurrences of the terms. \n\nAre you aware of this bug?\n\nThanks,\n\nJonathan ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=joma",
+            "name": "joma",
+            "key": "joma",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jonathan Mamou",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-11-16T13:15:25.182+0000",
+          "updated": "2008-11-16T13:15:25.182+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12647970",
+          "id": "12647970",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "So are you finding the payloads not at the right term if the terms match ie\n\nterm1 term2 term1\n\nYou might get the second term1's offsets for the first term1 and vice versa?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-11-16T13:29:13.152+0000",
+          "updated": "2008-11-16T13:29:13.152+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12647978",
+          "id": "12647978",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=joma",
+            "name": "joma",
+            "key": "joma",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jonathan Mamou",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "In my document, I have \".... term1 ... term1 term2 ...\"\noffset of term1: 10, 20\noffset of term2: 21\n\nWhen running the query SpanNearQuery(term1 term2), \naccording to span.start, I get 20  \nwhile I get 10 and 21 when reading the payloads of the span.\nI would expect to get 20 and 21when reading the payloads of the span.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=joma",
+            "name": "joma",
+            "key": "joma",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jonathan Mamou",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-11-16T14:12:26.434+0000",
+          "updated": "2008-11-16T14:12:26.434+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12648259",
+          "id": "12648259",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=joma",
+            "name": "joma",
+            "key": "joma",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jonathan Mamou",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi,\n\nHere is the relevant code. \n\nI would expect to obtain\n10\npos: 10\npos: 11\n\nwhile I obtain\n10\npos: 0\npos: 11\n\n\n\n\nimport java.io.StringReader;\nimport java.util.Collection;\nimport java.util.Iterator;\n\nimport org.apache.lucene.document.Document;\nimport org.apache.lucene.document.Field;\nimport org.apache.lucene.index.IndexWriter;\nimport org.apache.lucene.index.Term;\nimport org.apache.lucene.search.IndexSearcher;\nimport org.apache.lucene.search.TopDocs;\nimport org.apache.lucene.search.spans.PayloadSpans;\nimport org.apache.lucene.search.spans.SpanNearQuery;\nimport org.apache.lucene.search.spans.SpanQuery;\nimport org.apache.lucene.search.spans.SpanTermQuery;\n\n\npublic class Test {\n\npublic static void main (String args[]) throws Exception{\nIndexWriter writer = new IndexWriter(args[0], new\nTestPayloadAnalyzer(), IndexWriter.MaxFieldLength.LIMITED);\nDocument doc = new Document();\ndoc.add();new Field(\"content\", new StringReader(\"a b c d e f g\nh i j a k\")));\nwriter.addDocument(doc);\nwriter.close();\n\nIndexSearcher is = new IndexSearcher(args[0]););\nSpanTermQuery stq1 = new SpanTermQuery(new Term(\"content\", \"a\"\n));\nSpanTermQuery stq2 = new SpanTermQuery(new Term(\"content\", \"k\"\n));\nSpanQuery[] sqs = {stq1,stq2};\nSpanNearQuery snq = new SpanNearQuery(sqs,1,true);\nPayloadSpans spans = snq.getPayloadSpans(is.getIndexReader());\n\nTopDocs topDocs = is.search(snq,1);\n\nfor (int i = 0; i < topDocs.scoreDocs.length; i++) {\nwhile) (spans.next()) {\nSystem.out.println(spans.start());\nCollection<byte[]> payloads = spans.getPayload();\nfor (Iterator<byte[]> it = payloads.iterator();\nit.hasNext();) {\nSystem.out.println(new String(it.next()));\n}\n}}\n}\n}\n}}\n\n-------------------------------------------------------------------------------------------------------------------------------------\nimport java.io.IOException;\nimport java.io.Reader;\n\nimport org.apache.lucene.analysis.Analyzer;\nimport org.apache.lucene.analysis.LowerCaseTokenizer;\nimport org.apache.lucene.analysis.Token;\nimport org.apache.lucene.analysis.TokenFilter;\nimport org.apache.lucene.analysis.TokenStream;\nimport org.apache.lucene.index.Payload;\n\n\npublic class TestPayloadAnalyzer extends Analyzer {\n\npublic TokenStream tokenStream(String fieldName, Reader reader) {\nTokenStream result = new LowerCaseTokenizer(reader);\nresult = new PayloadFilter(result, fieldName);\nreturn result;\n}\n}\n\nclass PayloadFilter extends TokenFilter {\nString fieldName;\nint pos;\n\npublic PayloadFilter(TokenStream input, String fieldName) {\nsuper(input);\nthis.fieldName = fieldName;\npos = 0;\n\n}\n\npublic Token next() throws IOException {\nToken result = input.next();\nif (result != null) {\nString token = new String(result.termBuffer(), 0, result.termLength\n());\nresult.setPayload(),new Payload((\"pos: \" + pos).getBytes()));\npos += result.getPositionIncrement();\n}\nreturn} result;\n}\n}\n\n\nJonathan ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=joma",
+            "name": "joma",
+            "key": "joma",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jonathan Mamou",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-11-17T19:11:55.103+0000",
+          "updated": "2008-11-17T19:11:55.103+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12649581",
+          "id": "12649581",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Okay, I still understand like 2% of spans, but I think I have fixed the bug.\n\nAfter finding a match, but before finding a min match, we were pulling the payload - works fine when the match is the min match, but otherwise we actually have to wait to get the payload until we have crunched in on the min match. I had an idea of this before, and the code before I touched it tried to grab the payloads at this point - the problem is, in finding the min match, you've often advanced passed the term position of interest to find out there was no such min match. So you have to save the possible payload ahead of time, and either find a new one or use the possible saved one. Sucks to have to add extra loading, but at the moment I don't see how to do it differently (I admittedly can't see much in spans). Thats all partly a guess, partly probably true.\n\nNon the less, this patch handles the previous test cases, plus the bug case reported above. I have also added a modified version of the given test for the bug to the span battery of tests.\n\nThanks Jonathan!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-11-21T02:37:51.677+0000",
+          "updated": "2008-11-21T02:37:51.677+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12649647",
+          "id": "12649647",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Whats the best procedure JIRA wise on this? Reopen this issue or start a new issue? If we reopen this issue, how is the bug fix tracked in changes?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-11-21T11:48:50.981+0000",
+          "updated": "2008-11-21T11:48:50.981+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/12649674",
+          "id": "12649674",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Open a new one.\n\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-11-21T14:04:45.447+0000",
+          "updated": "2008-11-21T14:04:45.447+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378356/comment/17587192",
+          "id": "17587192",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2077|https://github.com/apache/lucene/issues/2077].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:41:00.649+0000",
+          "updated": "2022-08-28T11:41:00.649+0000"
+        }
+      ],
+      "maxResults": 37,
+      "total": 37,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04zon:",
+    "customfield_12314139": null
+  }
+}

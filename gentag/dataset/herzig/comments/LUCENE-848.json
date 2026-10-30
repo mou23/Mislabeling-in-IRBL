@@ -1,0 +1,2624 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12365750",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750",
+  "key": "LUCENE-848",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12893",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "12.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12316596",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12316596",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12372263",
+          "key": "LUCENE-940",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12372263",
+          "fields": {
+            "summary": "SimpleDateFormat used in a non thread safe manner",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311676",
+        "id": "12311676",
+        "name": "modules/benchmark",
+        "description": "issues related to the benchmarking module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27199",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+      "name": "steven_parkes",
+      "key": "steven_parkes",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Parkes",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+      "name": "steven_parkes",
+      "key": "steven_parkes",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Parkes",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-848/votes",
+      "votes": 1,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@47d30859[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1ebbccc7[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3ec6d128[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7e5bffc3[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@739ac034[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@56d3bedb[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5e947ab8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@7f90234e[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5a2ed7e8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@11409f10[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6c7c663a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1208b2a8[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:36:12 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-07-08T17:55:32.924+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-848/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2007-03-25T18:02:05.139+0000",
+    "updated": "2022-08-28T11:36:12.244+0000",
+    "timeoriginalestimate": null,
+    "description": "Add support for using Wikipedia for benchmarking.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356535",
+        "id": "12356535",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-30T19:16:54.657+0000",
+        "size": 23841,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356535/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356432",
+        "id": "12356432",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-27T19:13:52.820+0000",
+        "size": 24068,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356432/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356173",
+        "id": "12356173",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-24T19:02:05.290+0000",
+        "size": 24244,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356173/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355791",
+        "id": "12355791",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-18T21:33:53.566+0000",
+        "size": 22619,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355791/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355708",
+        "id": "12355708",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-17T18:27:47.661+0000",
+        "size": 22856,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355708/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355646",
+        "id": "12355646",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-16T21:23:29.305+0000",
+        "size": 21209,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355646/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355182",
+        "id": "12355182",
+        "filename": "LUCENE-848.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-09T18:28:42.351+0000",
+        "size": 19108,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355182/LUCENE-848.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12360866",
+        "id": "12360866",
+        "filename": "LUCENE-848-build.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-06-30T13:46:29.901+0000",
+        "size": 4534,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12360866/LUCENE-848-build.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12354172",
+        "id": "12354172",
+        "filename": "WikipediaHarvester.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+          "name": "karl.wettin",
+          "key": "karl.wettin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Karl Wettin",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2007-03-25T19:06:48.949+0000",
+        "size": 6692,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12354172/WikipediaHarvester.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355793",
+        "id": "12355793",
+        "filename": "xerces.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-18T21:36:43.700+0000",
+        "size": 1812019,
+        "mimeType": "application/java-archive",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355793/xerces.jar"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355709",
+        "id": "12355709",
+        "filename": "xerces.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-17T18:30:47.287+0000",
+        "size": 691157,
+        "mimeType": "application/java-archive",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355709/xerces.jar"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12355794",
+        "id": "12355794",
+        "filename": "xml-apis.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+          "name": "steven_parkes",
+          "key": "steven_parkes",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Parkes",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-18T21:38:31.933+0000",
+        "size": 194354,
+        "mimeType": "application/java-archive",
+        "content": "https://issues.apache.org/jira/secure/attachment/12355794/xml-apis.jar"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Add supported for Wikipedia English as a corpus in the benchmarker stuff",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12483961",
+          "id": "12483961",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Sorry; it's not a major thing.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-25T18:02:56.621+0000",
+          "updated": "2007-03-25T18:02:56.621+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12483971",
+          "id": "12483971",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "There is some code in LUCENE-826. Here is a newer version.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-03-25T19:06:48.976+0000",
+          "updated": "2007-03-25T19:06:48.976+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12484930",
+          "id": "12484930",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Can't leave the typo in the title. It's bugging me.\n\nKarl, it looks like your stuff grabs individual articles, right? I'm gong to have it download the bzip2 snapshots they provide (and that they prefer you use, if you're getting much).\n\nQuestion (for Doron and anyone else): the file is xml and it's big, so DOM isn't going to work. I could still use something SAX based but since the format is so tightly controlled, I'm thinking regular expressions would be sufficient and have less dependences. Anyone have opinions on this? ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-28T17:08:37.022+0000",
+          "updated": "2007-03-28T17:08:37.022+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12486837",
+          "id": "12486837",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "> Karl, it looks like your stuff grabs individual articles, right? I'm gong to have it download the bzip2 snapshots they provide (and that they prefer you use, if you're getting much). \n\nThey also supply the rendered HTML every now and then. It should be enough to change the URL pattern to file:///tmp/wikipedia/. I was considering porting the MediaWiki BNF as a tokenizer, but found it much simpler to just parse the HTML.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-05T02:24:30.483+0000",
+          "updated": "2007-04-05T02:24:30.483+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12487592",
+          "id": "12487592",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This patch is a first cut a wikipedia benchmark support. It downloads the current english pages from the Wikipedia download site ... which, of course, is actually not there right now. I'm not quite sure what's up, but you can find the files at http://download.wikimedia.org/enwiki/20070402/ right now if you want to play.\n\nIt adds ExtractWikipedia.java, which uses Xerces-J to grab the individual articles. It writes the articles in the same format as the Reuters stuff, so a generecised ReutersDocMaker, DirDocMaker, works.\n\nThe current size of the download file is 2.1G bzip2'd. It's supposed to contain about 1.2M documents but I came out with 2 or 3, I think, so there maybe \"extra\" files in there. (Some entries are links and I tried to get rid of those, but I may have missed a particular coding or case).\n\nFor the first pass, I copied the Reuters steps of decompressing and parsing. This creates big temporary files. Moreover, it creates a big directory tree in the end. (The extractor uses a fixed number of documents per directory and grows the depth of the tree logarithmically, a lot like Lucene segments).\n\nIt's not clear how this preprocessing-to-a-directory-tree compares to on the fly decompression, which would require less disk seeks on the input during indexing. May try that at some point ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-09T18:28:42.488+0000",
+          "updated": "2007-04-09T18:28:42.488+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12487600",
+          "id": "12487600",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "By the way, that's a rough patch. I'm cleaning it up as I use it to test 847.\n\nAlso, I was going to add support to the algorithm format for setting max field length ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-09T18:51:35.671+0000",
+          "updated": "2007-04-09T18:51:35.671+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12487608",
+          "id": "12487608",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "> Also, I was going to add support to the algorithm format for setting max field length ... \n\nIf this means extending the algorithm language, it would be simpler to just base on a property here - in the alg file set that property - \"max.field.length=20000\" - and then in OpenIndexTask read that new property (see how merge.factor property is read) and set it on the index. \n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-09T19:10:11.565+0000",
+          "updated": "2007-04-09T19:10:11.565+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12487609",
+          "id": "12487609",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "That's what I meant (and did).\n\nIf it's okay, I'll bundle it into 848. \n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-09T19:17:33.464+0000",
+          "updated": "2007-04-09T19:17:33.464+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12487617",
+          "id": "12487617",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Seems okay to me (since it's all in the benchmark).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-09T19:36:46.998+0000",
+          "updated": "2007-04-09T19:36:46.998+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12489238",
+          "id": "12489238",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Update of the previous patch. Used Doron's suggestion for variable name. Cleaned up a little (reverted the eol style on build.txt so the diff makes sense; see LUCENE-864 to for fixing the eol-styles in contrib/benchmark.\n\nRight now the test algorithm is wikipedia.alg but I think the idea is to create specific benchmarks, so maybe this should be something like ingest-enwiki meaning a test of ingest rate against wikipedia.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-16T21:23:29.463+0000",
+          "updated": "2007-04-16T21:23:29.463+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12489283",
+          "id": "12489283",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Blah. This patch doesn't work quite right with 1.4. My intention was/is to use xerces to do the xml parsing but the setup doesn't work quite right under 1.4 which has some crimson stuff in rt.jar that I don't (yet) understand.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-17T02:10:41.842+0000",
+          "updated": "2007-04-17T02:10:41.842+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12489498",
+          "id": "12489498",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Okay, I've tested this patch against 1.4, 1.5, and 1.6. I've added the xerces lib since we're including other required support jars in lib.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-17T18:27:47.952+0000",
+          "updated": "2007-04-17T18:27:47.952+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12489499",
+          "id": "12489499",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here's the version of xerces that I used, to go in contrib/benchmark/lib (svn diff seems to eat binary files).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-17T18:30:47.375+0000",
+          "updated": "2007-04-17T18:30:47.375+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12489888",
+          "id": "12489888",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Upgrade to Xerces 2. Xerces 1 passes the sanity check, but fails for wikipedia, evidently because of >2G files.\n\nIn addition to patch, requires xerces.jar and xml-apis.jar.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-18T21:33:53.761+0000",
+          "updated": "2007-04-18T21:33:53.761+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12489891",
+          "id": "12489891",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Now I see the button for attach multiple files. Oh, well.\n\nAnyway, both jars go in contrib/benchmark/lib.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-18T21:38:31.994+0000",
+          "updated": "2007-04-18T21:38:31.994+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12490757",
+          "id": "12490757",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Steven, is this ready to go in your opinion?  If so, I will take a look at it and try to add it this week.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-22T23:13:44.410+0000",
+          "updated": "2007-04-22T23:13:44.410+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491080",
+          "id": "12491080",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "yeah; think so; it worked for my benchmarking stuff on a couple of systems; might have some things others discover, but that's always true",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-23T22:00:36.066+0000",
+          "updated": "2007-04-23T22:00:36.066+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491387",
+          "id": "12491387",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hi Steven,\n\nDo you know what version of Xerces and xml-apis these are?  I can add the version onto them when I check them in.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-24T18:17:11.707+0000",
+          "updated": "2007-04-24T18:17:11.707+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491389",
+          "id": "12491389",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'm getting:\n Getting: http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2\n      [get] To: /Users/grantingersoll/projects/lucene/Lucene-Trunk/contrib/benchmark/temp/enwiki-latest-pages-articles.xml.bz2\n      [get] Error opening connection java.io.FileNotFoundException: http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2\n      [get] Error opening connection java.io.FileNotFoundException: http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2\n      [get] Error opening connection java.io.FileNotFoundException: http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2\n      [get] Can't get http://download.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2 to <mydir>/contrib/benchmark/temp/enwiki-latest-pages-articles.xml.bz2\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-24T18:24:42.495+0000",
+          "updated": "2007-04-24T18:24:42.495+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491393",
+          "id": "12491393",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Both jars are from xerces-2.9.0.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-24T18:28:28.327+0000",
+          "updated": "2007-04-24T18:28:28.327+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491394",
+          "id": "12491394",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "I haven't tried this patch yet - hesitated/thinking it must take very long to download the huge start-up data (is this correct?)...   anyhow I was wondering abut the new jars - whether we should try to make xcerses and xml-apis jars \"ext-jars\", i.e. downloaded from somewhere (where?) only when attempting to use this package.  Otherwise this is adding ~2.5MB to the checkout/dev-pack - do others consider this an issue at all?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-24T18:32:40.541+0000",
+          "updated": "2007-04-24T18:32:40.541+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491396",
+          "id": "12491396",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Yeah, it takes a while to download.\n\nI added the jars since that's what we've been doing elsewhere. In fact, xerces is in gdata-server too. Personally, the size isn't an issue for me; don't know about others.  What might be difficult, though, is trying to share the two since that would mean coordinating contrib projects, and I don't know anything about the gdata server. I can tell you that if you want to support both 1.4 and 1.5 on something as big wikipedia, there is sensitivity to the xerces revision. \n\nSorry about the download problem, Grant. I actually documented that in a readme ... hat I can no longer find. I would swear I put it in the patch but obviously I didn't becuase it's not there. Now I have to go find it.\n\nThe short answer is you want to download  http://download.wikimedia.org/enwiki/20070402/enwiki-20070402-pages-articles.xml.bz2. The wikipedia download site isn't always clean, doesn't have files where they \"should\" be. It was when I first started this, but isn't now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-24T18:43:32.924+0000",
+          "updated": "2007-04-24T18:43:32.924+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491397",
+          "id": "12491397",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "+1  Not a big deal to go get the files via an ANT task.  Of course,  \nthis could stir the whole maven/ivy debate once again :-)\n\nThe other question is whether there are common libraries sprinkled  \nthroughout contrib that it might make sense to create a contrib/lib   \nOf course, then you would have to figure out what versions to  \nsupport, etc.  Aaah, Maven, just put it in the POM...  :-)\n\n\n\n\n--------------------------\nGrant Ingersoll\nCenter for Natural Language Processing\nhttp://www.cnlp.org\n\nRead the Lucene Java FAQ at http://wiki.apache.org/jakarta-lucene/ \nLuceneFAQ\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-24T18:45:16.668+0000",
+          "updated": "2007-04-24T18:45:16.668+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491404",
+          "id": "12491404",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here's the patch with the README.\n\nBy the way, there's also a .rsync-filter in the patch. I never described that. If you use rsync, there's an option where it will look for these filter files and not rsync files/directories as spec'd in the file.\n\nSince I sometime rsync working copies around to test on different machines, and since I don't want to try to copy around wikipedia  (or the other datasets), I \"spec\" those out.\n\nWithout the appropriate rsync option, the files are ignored, so I would think this would be a good thing to have ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-24T19:02:05.433+0000",
+          "updated": "2007-04-24T19:02:05.433+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12491616",
+          "id": "12491616",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Friendly reminder: the latest patch looks like it still has some cancerous whitespace in it!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-25T11:59:01.175+0000",
+          "updated": "2007-04-25T11:59:01.175+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12492374",
+          "id": "12492374",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Well, here's a version with less whitespace.\n\nBut, I have to admit, removing it turned out to be more difficult than I thought it would be. I may have gone too far. It's hard for me to judge \"benign\"  (\"as long as it doesn't hurt readability\") for obvious reasons.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-27T19:13:52.969+0000",
+          "updated": "2007-04-27T19:13:52.969+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12492460",
+          "id": "12492460",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Alas I fear you did not go quite far enough; there's still lots of\nextra whitespace around ()'s and []'s.\n\nFor example I think source like this:\n\n  if ( qualified.equals( \"title\" ) ) {\n\nshould look like this instead:\n\n  if (qualified.equals(\"title\")) {\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-28T09:43:38.235+0000",
+          "updated": "2007-04-28T09:43:38.235+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12492756",
+          "id": "12492756",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Ath. That would be because I was thinking vertically, not horizontally.\n\nWould this be reasonably normative?\nhttp://java.sun.com/docs/codeconv/html/CodeConventions.doc7.html#475",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-30T19:04:54.135+0000",
+          "updated": "2007-04-30T19:04:54.135+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12492761",
+          "id": "12492761",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Close to http://java.sun.com/docs/codeconv/html/CodeConventions.doc7.html#475. Within normal Lucene differences, I believe.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-30T19:16:54.915+0000",
+          "updated": "2007-04-30T19:16:54.915+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12492763",
+          "id": "12492763",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Ahhh, that looks great Steve.  Thanks.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-30T19:21:47.014+0000",
+          "updated": "2007-04-30T19:21:47.014+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12492764",
+          "id": "12492764",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "Yes, the standard for Lucene Java (as specified in http://wiki.apache.org/jakarta-lucene/HowToContribute) is Sun's except 2-space indentation.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-04-30T19:23:36.279+0000",
+          "updated": "2007-04-30T19:23:36.279+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500893",
+          "id": "12500893",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'm not familiar with this patch but looking at the recent comments it looks ready to commit?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-02T00:39:49.810+0000",
+          "updated": "2007-06-02T00:39:49.810+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500896",
+          "id": "12500896",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Grant was looking at hosting a copy of the dataset on zones so that we'd have a fixed dataset which would enable more repeatable experiments. If that happened, we could update code/readme to point there rather than fetching things from wikipedia, where things are always changing (and not always there).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-02T01:04:16.198+0000",
+          "updated": "2007-06-02T01:04:16.198+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500901",
+          "id": "12500901",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "OK I see, that makes sense. I think we can clear the fix version here?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-02T01:40:40.184+0000",
+          "updated": "2007-06-02T01:40:40.184+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500902",
+          "id": "12500902",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "is there any reason not to host these on lucene.apache.org instead of the zone?\n\nI ask this assuming the barrier is setting up a webserver on the zone to host the file and not any remainining legal issues since those seem to have been ok'd...\n\nhttp://www.nabble.com/Fwd%3A-Wikipedia-content%2C-GNU-Free-Documentation-License-and-Apache-p10182964.html\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-06-02T01:50:35.058+0000",
+          "updated": "2007-06-02T01:50:35.058+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500903",
+          "id": "12500903",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'll leave the hosting site to others; I don't know enough about apache infra.\n\nIf the hosting got decided before 2.2 got cut, that'd be great, but I certainly don't think it's worth holding up the release for.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-02T02:12:14.607+0000",
+          "updated": "2007-06-02T02:12:14.607+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500922",
+          "id": "12500922",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Alright. Clearing the fix version to not block 2.2. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-02T06:24:37.614+0000",
+          "updated": "2007-06-02T06:24:37.614+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12500939",
+          "id": "12500939",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think the zone is the preferred place, since that is for developer  \nresources.  Since this isn't in the main line of testing, it probably  \nwon't be downloaded all that much.\n\nSteven, do we have a final version that you can point me at that you  \nwant hosted?\n\n\n\n--------------------------\nGrant Ingersoll\nCenter for Natural Language Processing\nhttp://www.cnlp.org/tech/lucene.asp\n\nRead the Lucene Java FAQ at http://wiki.apache.org/jakarta-lucene/ \nLuceneFAQ\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-02T10:57:16.865+0000",
+          "updated": "2007-06-02T10:57:16.865+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12501344",
+          "id": "12501344",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "It looks like the latest successful dump is\nhttp://download.wikimedia.org/enwiki/20070527/enwiki-20070527-pages-articles.xml.bz2\n\nIf you copy it whereever, I'll fetch it from there and test it.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-04T20:18:11.454+0000",
+          "updated": "2007-06-04T20:18:11.454+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12501760",
+          "id": "12501760",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I applied the patch and am testing this.  I updated the build file to point to http://people.apache.org/~gsingers/wikipedia/enwiki-20070527-pages-articles.xml.bz2",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-06T01:21:29.795+0000",
+          "updated": "2007-06-06T01:21:29.795+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508318",
+          "id": "12508318",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I am getting the following when I apply this patch:\nException in thread \"main\" java.lang.RuntimeException: org.xml.sax.SAXParseException: Element type \"Pat\" must be followed by either attribute specifications, \">\" or \"/>\".\n     [java]     at org.apache.lucene.benchmark.utils.ExtractWikipedia.extract(ExtractWikipedia.java:184)\n     [java]     at org.apache.lucene.benchmark.utils.ExtractWikipedia.main(ExtractWikipedia.java:199)\n     [java] Caused by: org.xml.sax.SAXParseException: Element type \"Pat\" must be followed by either attribute specifications, \">\" or \"/>\".\n     [java]     at org.apache.xerces.framework.XMLParser.reportError(XMLParser.java:1213)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.reportFatalXMLError(XMLDocumentScanner.java:579)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.abortMarkup(XMLDocumentScanner.java:628)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.scanElement(XMLDocumentScanner.java:1800)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner$ContentDispatcher.dispatch(XMLDocumentScanner.java:1182)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.parseSome(XMLDocumentScanner.java:381)\n     [java]     at org.apache.xerces.framework.XMLParser.parse(XMLParser.java:1098)\n     [java]     at org.apache.lucene.benchmark.utils.ExtractWikipedia.extract(ExtractWikipedia.java:181)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-26T20:46:27.273+0000",
+          "updated": "2007-06-26T20:46:27.273+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508327",
+          "id": "12508327",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Let me see if I can replicate.\n\nCan you do a sha1sum on your enwiki-20070527-pages-articles.xml.bz2 so I can be sure my copy is valid?\n\nMine's 263f94e857882e4a379ac60372201467e343db50",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-26T21:05:34.691+0000",
+          "updated": "2007-06-26T21:05:34.691+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508652",
+          "id": "12508652",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I downloaded a fresh copy.  sha1sum on the bz2 file yields: 76402fed3b6f6583aa283db5dbbba83abbf65d74\nwhen downloaded from http://people.apache.org/~gsingers/wikipedia/enwiki-20070527-pages-articles.xml.bz2\n\nls -l yields:\n...  1778897799 ... enwiki-20070527-pages-articles.xml\n...   477278208 ... enwiki-20070527-pages-articles.xml.bz2\n\n\nNow my error is\n[java] Exception in thread \"main\" java.lang.RuntimeException: org.xml.sax.SAXParseException: Attribute name \"Td\" must be followed by the '=' character.\n     [java]     at org.apache.lucene.benchmark.utils.ExtractWikipedia.extract(ExtractWikipedia.java:184)\n     [java]     at org.apache.lucene.benchmark.utils.ExtractWikipedia.main(ExtractWikipedia.java:199)\n     [java] Caused by: org.xml.sax.SAXParseException: Attribute name \"Td\" must be followed by the '=' character.\n     [java]     at org.apache.xerces.framework.XMLParser.reportError(XMLParser.java:1213)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.reportFatalXMLError(XMLDocumentScanner.java:598)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.abortMarkup(XMLDocumentScanner.java:636)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.scanElement(XMLDocumentScanner.java:1761)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner$ContentDispatcher.dispatch(XMLDocumentScanner.java:1182)\n     [java]     at org.apache.xerces.framework.XMLDocumentScanner.parseSome(XMLDocumentScanner.java:381)\n     [java]     at org.apache.xerces.framework.XMLParser.parse(XMLParser.java:1098)\n     [java]     at org.apache.lucene.benchmark.utils.ExtractWikipedia.extract(ExtractWikipedia.java:181)\n     [java]     ... 1 more\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-27T21:11:10.520+0000",
+          "updated": "2007-06-27T21:11:10.520+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508661",
+          "id": "12508661",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Actually, I just noticed wikimedia provides the md5 hashes. I was able to validate my copy.\n\nI don't actually remember if I got my copy from wikimedia or from p.a.o.\n\nThe copy in your ls -l looks bad, both from the sha1sum and from the size. Looks like your file is truncated: the file length is 455M (if 477278208  is the size in bytes) and the real file is 2686431976 (2.6G) bytes.\n\nCan you check the file on p.a.o, both the size and the md5 hash? The latter should be\nfc24229da9af033cbb55b9867a950431\n(http://download.wikimedia.org/enwiki/20070527/enwiki-20070527-md5sums.txt)\n\nI should be able to launch a test of the unzip/extract tonight. It takes a while.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-27T21:24:54.149+0000",
+          "updated": "2007-06-27T21:24:54.149+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508675",
+          "id": "12508675",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Weird, this is the info on p.a.o:\n... 2686431976 May 30 02:17 enwiki-20070527-pages-articles.xml.bz2\n\nSo, I don't know what is up w/ my download.  I am surprised it  \nuncompressed.  p.a.o. doesn't have sha1sum\n\nAnyway, I am trying to download using wget and it lists the file size  \nat 2.5G, so hopefully this will download.\n\n\n\n--------------------------\nGrant Ingersoll\nCenter for Natural Language Processing\nhttp://www.cnlp.org/tech/lucene.asp\n\nRead the Lucene Java FAQ at http://wiki.apache.org/lucene-java/LuceneFAQ\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-27T22:37:26.472+0000",
+          "updated": "2007-06-27T22:37:26.472+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508805",
+          "id": "12508805",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, looks like that one went through, using wget.  I think I will commit as there must have been something screwed up on my network side.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-28T11:52:06.830+0000",
+          "updated": "2007-06-28T11:52:06.830+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508830",
+          "id": "12508830",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I take back my promise to commit, I am getting (after processing 189500 docs):\n [java] Error: cannot execute the algorithm! term out of order (\"docid:disrs\".compareTo(\"docname:disregardle\n                                                                                                                &*Ar\") <= 0)\n     [java] org.apache.lucene.index.CorruptIndexException: term out of order (\"docid:disrs\".compareTo(\"docname:disregardle\n                                                                                                                          &*Ar\") <= 0)\n     [java]     at org.apache.lucene.index.TermInfosWriter.add(TermInfosWriter.java:102)\n     [java]     at org.apache.lucene.index.SegmentMerger.mergeTermInfo(SegmentMerger.java:332)\n     [java]     at org.apache.lucene.index.SegmentMerger.mergeTermInfos(SegmentMerger.java:297)\n     [java]     at org.apache.lucene.index.SegmentMerger.mergeTerms(SegmentMerger.java:261)\n     [java]     at org.apache.lucene.index.SegmentMerger.merge(SegmentMerger.java:98)\n     [java]     at org.apache.lucene.index.IndexWriter.mergeSegments(IndexWriter.java:1883)\n     [java]     at org.apache.lucene.index.IndexWriter.maybeMergeSegments(IndexWriter.java:1811)\n     [java]     at org.apache.lucene.index.IndexWriter.flushRamSegments(IndexWriter.java:1742)\n     [java]     at org.apache.lucene.index.IndexWriter.flushRamSegments(IndexWriter.java:1733)\n     [java]     at org.apache.lucene.index.IndexWriter.maybeFlushRamSegments(IndexWriter.java:1727)\n     [java]     at org.apache.lucene.index.IndexWriter.addDocument(IndexWriter.java:1004)\n     [java]     at org.apache.lucene.index.IndexWriter.addDocument(IndexWriter.java:983)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.AddDocTask.doLogic(AddDocTask.java:74)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.PerfTask.runAndMaybeStats(PerfTask.java:83)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doSerialTasks(TaskSequence.java:107)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doLogic(TaskSequence.java:93)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.PerfTask.runAndMaybeStats(PerfTask.java:90)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doSerialTasks(TaskSequence.java:107)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doLogic(TaskSequence.java:93)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.PerfTask.runAndMaybeStats(PerfTask.java:90)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doSerialTasks(TaskSequence.java:107)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doLogic(TaskSequence.java:93)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.PerfTask.runAndMaybeStats(PerfTask.java:90)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doSerialTasks(TaskSequence.java:107)\n     [java]     at org.apache.lucene.benchmark.byTask.tasks.TaskSequence.doLogic(TaskSequence.java:93)\n     [java]     at org.apache.lucene.benchmark.byTask.utils.Algorithm.execute(Algorithm.java:228)\n     [java]     at org.apache.lucene.benchmark.byTask.Benchmark.execute(Benchmark.java:72)\n     [java]     at org.apache.lucene.benchmark.byTask.Benchmark.main(Benchmark.java:108)\n     [java] ####################\n     [java] ###  D O N E !!! ###\n     [java] ####################\n\n\nCan you reproduce this?  It seems like an actual issue with core.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-28T13:32:33.236+0000",
+          "updated": "2007-06-28T13:32:33.236+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508833",
+          "id": "12508833",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Trying to reproduce now.\n\nSomething that came up while restarting the fetch/decompress/etc. was the number of files this procedure creates. It's a lot: one for each article. I used the existing benchmark code for doing this stuff but perhaps it's not a good idea on this scale? For one thing, it kinda kills ant since ant wants to do a walk of subtrees for some of its tasks. Either we need to exclude the work and temp directories from ant's walks and/or we should come up with something better than one file per article.\n\nI think Mike mentioned not doing the one file per article. I'll try to look at that ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=steven_parkes",
+            "name": "steven_parkes",
+            "key": "steven_parkes",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Steven Parkes",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-28T14:05:08.478+0000",
+          "updated": "2007-06-28T14:05:08.478+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12508922",
+          "id": "12508922",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Steven wrote:\n> I think Mike mentioned not doing the one file per article. I'll try to look at that ...\n\nPerhaps also (re) consider the \"compress and add on-the-fly\" approach, similar to what TrecDocmaker is doing?\n\nGrant wrote:\n> I take back my promise to commit, I am getting (after processing 189500 docs): \n>    [java] Error: cannot execute the algorithm! term out of order (\"docid:disrs\".compareTo(\"docname:disregardle \n>                                                                                                                &*Ar\") <= 0) \n>   [java] org.apache.lucene.index.CorruptIndexException: term out of order (\"docid:disrs\".compareTo(\"docname:disregardle \n>                                                                                                                         &*Ar\") <= 0) \n\nJust to verify that it is not a benchmark issue, could you also post here the executed algorithm (as printed, or, if not printed, the actual file)...?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-06-28T19:46:52.187+0000",
+          "updated": "2007-06-28T19:46:52.187+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509288",
+          "id": "12509288",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> I think Mike mentioned not doing the one file per article. I'll try to look at that ... \n\nI'm actually [slowly] working through a patch to contrib/benchmark\nthat adds a LineDocMaker that will open a single file and make one\ndocument per line.  (This is the follow-through on LUCENE-843 to merge\nin the benchmarking tool that I used there, into contib/benchmark).\nThis is in order to do tests that aren't affected by the time to\ndecompress files/walk trees/open new files/etc. to build their\ndocuments.\n\nI will also include in the patch some way to run an existing DocMaker,\npull its documents, and store them into a single line file.  It's\nprobably still worthwhile to have a DocMaker that can read the single\nwikipedia XML file and produce documents directly from that to save\ncreating file-per-document in a large dir tree.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-30T12:50:00.200+0000",
+          "updated": "2007-06-30T12:50:00.200+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509289",
+          "id": "12509289",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Just to add another datapoint: I've been using the wikipedia snapshot just before 05/27 (I think it was 04/22 or so but I can't access the download site right now to confirm) without any issues.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-30T12:51:43.857+0000",
+          "updated": "2007-06-30T12:51:43.857+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509292",
+          "id": "12509292",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's a patch to just the build.xml that downloads from people.a.o\n\nYou still need all the other stuff (libs, patches) to make this work.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-06-30T13:46:30.021+0000",
+          "updated": "2007-06-30T13:46:30.021+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509347",
+          "id": "12509347",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I reran it and it went fine.  Not sure what happened, but maybe just a hiccup on my machine.\n\nI am going to commit.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-01T01:58:54.547+0000",
+          "updated": "2007-07-01T01:58:54.547+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509349",
+          "id": "12509349",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-01T02:21:28.004+0000",
+          "updated": "2007-07-01T02:21:28.004+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509473",
+          "id": "12509473",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think somehow the wrong version (1.4.4) of Xerces was committed and\nnamed as lib/xerces-2.9.0.jar.\n\nI'm hitting what I think is the same issue Steven is referring to\nabove (https://issues.apache.org/jira/browse/LUCENE-848#action_1248988),\nthis exception after ~350K docs:\n\nException in thread \"main\" java.lang.RuntimeException: java.lang.RuntimeException: Internal Error: fPreviousChunk == NULL\n\tat org.apache.lucene.benchmark.utils.ExtractWikipedia.extract(ExtractWikipedia.java:184)\n\tat org.apache.lucene.benchmark.utils.ExtractWikipedia.main(ExtractWikipedia.java:199)\nCaused by: java.lang.RuntimeException: Internal Error: fPreviousChunk == NULL\n\tat org.apache.xerces.framework.XMLParser.parse(XMLParser.java:1111)\n\tat org.apache.lucene.benchmark.utils.ExtractWikipedia.extract(ExtractWikipedia.java:181)\n\t... 1 more\n\nI downloaded 1.4.4 of xerces.jar and \"cmp\" says it's the same file\nthat's now checked in as lib/xerces-2.9.0.jar.  When I download xerces\n2.9.0 myself and overwrite this one in lib, the extraction finishes\nwithout errors.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-02T00:39:41.437+0000",
+          "updated": "2007-07-02T00:39:41.437+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12509474",
+          "id": "12509474",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, go ahead and commit it.\n\n\n\n--------------------------\nGrant Ingersoll\nCenter for Natural Language Processing\nhttp://www.cnlp.org/tech/lucene.asp\n\nRead the Lucene Java FAQ at http://wiki.apache.org/lucene-java/LuceneFAQ\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-02T00:58:06.197+0000",
+          "updated": "2007-07-02T00:58:06.197+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/12510988",
+          "id": "12510988",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "This has been committed",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-07-08T17:55:32.893+0000",
+          "updated": "2007-07-08T17:55:32.893+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365750/comment/17587037",
+          "id": "17587037",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1923|https://github.com/apache/lucene/issues/1923].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:36:12.244+0000",
+          "updated": "2022-08-28T11:36:12.244+0000"
+        }
+      ],
+      "maxResults": 58,
+      "total": 58,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i050mn:",
+    "customfield_12314139": null
+  }
+}

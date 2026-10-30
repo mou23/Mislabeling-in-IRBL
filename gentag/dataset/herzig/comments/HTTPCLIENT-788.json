@@ -1,0 +1,733 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12400666",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666",
+  "key": "HTTPCLIENT-788",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312451",
+        "id": "12312451",
+        "description": "API freeze",
+        "name": "4.0 Beta 1",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2008-08-29"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "133820",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "0.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312951",
+        "id": "12312951",
+        "description": "",
+        "name": "4.0 Alpha 4",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2008-05-09"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+      "name": "oglueck",
+      "key": "oglueck",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Ortwin Glueck",
+      "active": true,
+      "timeZone": "Europe/Zurich"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311010",
+        "id": "12311010",
+        "name": "HttpClient (classic)",
+        "description": "HttpClient classic (blocking) code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "47747",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+      "name": "oglueck",
+      "key": "oglueck",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Ortwin Glueck",
+      "active": true,
+      "timeZone": "Europe/Zurich"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+      "name": "oglueck",
+      "key": "oglueck",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Ortwin Glueck",
+      "active": true,
+      "timeZone": "Europe/Zurich"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-788/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4607573f[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2274c9b9[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@ea406d0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@a992fbc[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6513c06[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@443deb29[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6a01f7f8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@29a6c1cb[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@269869f5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@d57aaac[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@680c32c9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@773b0e9a[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310360",
+      "id": "12310360",
+      "key": "HTTPCLIENT",
+      "name": "HttpComponents HttpClient",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310360&avatarId=10011",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310360&avatarId=10011",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310360&avatarId=10011",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310360&avatarId=10011"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10280",
+        "id": "10280",
+        "description": "Apache HttpComponents Project",
+        "name": "HttpComponents"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Thu Jul 24 09:28:30 UTC 2008",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2008-07-24T09:28:30.670+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-788/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2008-07-21T15:44:54.353+0000",
+    "updated": "2016-09-20T19:29:45.455+0000",
+    "timeoriginalestimate": null,
+    "description": "Hi,\n\nI just found this useful list: http://publicsuffix.org/\nand thought it would be nice to validate cookie domains against it, basically serving as a black list of domain for which never to set any cookies. What do you think about the attached patch? The download/parsing of the list is of course not part of the implementation.\n\nOrtwin",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Public Suffix List",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12615373",
+          "id": "12615373",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Looks good to me.\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-07-21T19:15:16.792+0000",
+          "updated": "2008-07-21T19:15:16.792+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12615586",
+          "id": "12615586",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Still needs a little more work to be useful with the list:\n- support for rules like \"*.tr\" which means: deny cookies for ANY second level domain of tr\n- support for exceptions to the above like \"!parliament.uk\" which means to accept cookies for this exact domain\n\nI'll also try to come up with a parser for the list that directly configures the PublicSuffixFilter.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-22T11:41:50.184+0000",
+          "updated": "2008-07-22T11:41:50.184+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12615600",
+          "id": "12615600",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "body": "Seems to me that it might be a good idea to consider collaborating with Mozilla on writing a parser - so long as a suitable license is used ;-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "created": "2008-07-22T12:16:00.318+0000",
+          "updated": "2008-07-22T12:16:00.318+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12615605",
+          "id": "12615605",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Yes, only that their language of choice is C++.\nAnd we might also need a Punycode / Unicode converter.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-22T12:26:13.026+0000",
+          "updated": "2008-07-22T12:26:13.026+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12615990",
+          "id": "12615990",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Added file parser and basic pattern matching. Added Punycode support. \nActually the Punycode domain name matching should IMHO be done for all cookie handlers, but that should go into a new ticket.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-23T12:19:55.180+0000",
+          "updated": "2008-07-23T12:19:55.180+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616021",
+          "id": "12616021",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Odi\n\nThe patch looks good to me. There is one issue, though. In its current form the patch introduces dependency on HttpCore SNAPSHOT, which means we would have to release HttpCore 4.0 beta3 before we could release the next version of HttpClient. Can this patch be committed after the HttpClient release? Alternatively would it be acceptable for you to move the IDN conversion code to HttpClient?\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-07-23T13:53:48.891+0000",
+          "updated": "2008-07-23T13:53:48.891+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616132",
+          "id": "12616132",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Good point, Oleg. It may turn out to be important to have the IDN support for Cookies rather sooner than later. If it's a road block to release HttpCore before HttpClient, I would rather move the IDN code to HttpClient level. Because cookies are its only user at the moment. It may be useful for connection management as well (think of connection managers that keep a pool per hostname/port): when the initial request uses a Unicode-URL and a subsequent redirect uses a Punycode-URL an existing connection may not be reused because of a mismatch of the hostname. Which package should the IDN code go into?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-23T15:57:29.968+0000",
+          "updated": "2008-07-23T15:57:29.968+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616134",
+          "id": "12616134",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "body": "I'm not entirely sure that it is OK to include the entire Suffix list as test data.\nMight be better to create our own test data from the documentation of the format; this would allow one to add invalid data as well.\n\nAlso, one of the method names implies that it only works on Java6 - is that the case, or is there a fall-back for Java5?\n\nThe private boolean readLine(Reader r, StringBuilder sb) method seems a bit unsafe.\nAs far as I can tell, it does not flush characters to the end of the line, so any characters after the first white-space will be left for the next call to readLine().\n\nSo as far as I can tell,\n\n*.jp comment\n\nwould be treated as two lines:\n\n*.jp\ncomment\n\nThe Unicode examples in the testUnicode() method might be better encoded using Unicode escapes, as is done for the Idn test cases.\n\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "created": "2008-07-23T15:58:42.657+0000",
+          "updated": "2008-07-23T15:58:42.657+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616138",
+          "id": "12616138",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Sebb, very true: we can't \"distribute\" the list in the test cases because of licensing issues. (pulled the patch file)\nThe java.net.IDN class was introduced in 1.6, hence the naming. But I can change it to something else like JdkIdn.\nYou're right about the whitespace / EOL bug. Will fix.\nI'll also use Unicode escapes in the test case. I know, a lot of people have issues saving non-ASCII files (especially Emacs users *g*).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-23T16:07:45.688+0000",
+          "updated": "2008-07-23T16:07:45.688+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616281",
+          "id": "12616281",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Odi,\n\nThere is no harm releasing another HttpCore version early with just a few bug fixes, but releases take bloody sweet time. So, we could put that code into o.a.http.url package of HttpClient if you want this code to be included in the next release.\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-07-23T22:11:48.457+0000",
+          "updated": "2008-07-23T22:11:48.457+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616369",
+          "id": "12616369",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "what about the o.a.http.client.utils package? It already contains URIUtils and URLEncodedUtils. Seems like a good home.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-24T08:30:35.680+0000",
+          "updated": "2008-07-24T08:30:35.680+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616378",
+          "id": "12616378",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "We avoided having dependencies on o.a.http.client stuff in o.a.http.cookie, o.a.http.auth and o.a.http.conn packages so far. It is no longer relevant as we are not going to split HttpClient into HttpCookie/HttpAuth/HttpConn. If you like o.a.http.client.utils better it is perfectly ok with me.\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-07-24T08:55:38.084+0000",
+          "updated": "2008-07-24T08:55:38.084+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400666/comment/12616415",
+          "id": "12616415",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Patch committed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2008-07-24T09:28:30.634+0000",
+          "updated": "2008-07-24T09:28:30.634+0000"
+        }
+      ],
+      "maxResults": 13,
+      "total": 13,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i08jfj:",
+    "customfield_12314139": null
+  }
+}

@@ -1,0 +1,254 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="CSV">
+	<bug id="96" opendate="2013-03-20 20:17:38" fixdate="2013-06-24 06:27:09" resolution="Fixed">
+		<buginformation>
+			<summary>CSVRecord does not verify that the length of the header mapping matches the number of values</summary>
+			<description>CSVRecord does not verify that the size of the header mapping matches the number of values. The following test will produce a ArrayOutOfBoundsException:
+
+
+@Test
+public void testInvalidHeaderTooLong() throws Exception {
+   final CSVParser parser = new CSVParser("a,b", CSVFormat.newBuilder().withHeader("A", "B", "C").build());
+   final CSVRecord record = parser.iterator().next();
+   record.get("C");
+}
+
+</description>
+			<version>1.0</version>
+			<fixedVersion>1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVRecord.java</file>
+			<file type="M">org.apache.commons.csv.CSVParserTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="106" opendate="2014-03-12 07:15:34" fixdate="2014-03-13 00:18:20" resolution="Fixed">
+		<buginformation>
+			<summary>CSVFormat.format allways append null</summary>
+			<description>When I now call
+CSVFormat.newFormat(&amp;amp;apos;;&amp;amp;apos;).withSkipHeaderRecord(true).withHeader("H1","H2").format("A","B")
+I get the output A;Bnull
+The expected output would be 
+A;B</description>
+			<version>1.x</version>
+			<fixedVersion>1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVPrinter.java</file>
+			<file type="M">org.apache.commons.csv.CSVFormatTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="112" opendate="2014-04-30 10:14:56" fixdate="2014-05-04 16:23:28" resolution="Fixed">
+		<buginformation>
+			<summary>HeaderMap is inconsistent when it is parsed from an input with duplicate columns names</summary>
+			<description>Given a parser format for csv files with a header line:
+
+
+CSVFormat myFormat = CSVFormat.RFC4180.withDelimiter(",").withQuoteChar(&amp;amp;apos;"&amp;amp;apos;).withQuotePolicy(Quote.MINIMAL)
+				.withIgnoreSurroundingSpaces(true).withHeader().withSkipHeaderRecord(true);
+
+
+And given a file with duplicate header names:
+Col1,Col2,Col2,Col3,Col4
+1,2,3,4,5
+4,5,6,7,8 
+The HeaderMap returned by the parser misses an entry because of the Column name being used as a key, leading to wrong behavior when we rely on it.
+If this is not supposed to happen in the file regarding the CSV format, at least this should raise an error. If not we should come up with a more clever way to store and access the headers.</description>
+			<version>1.0</version>
+			<fixedVersion>1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVParserTest.java</file>
+			<file type="M">org.apache.commons.csv.CSVParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">114</link>
+		</links>
+	</bug>
+	<bug id="118" opendate="2014-05-15 02:59:53" fixdate="2014-05-15 16:27:03" resolution="Fixed">
+		<buginformation>
+			<summary>CSVRecord.toMap() throws NPE on formats with no headers.</summary>
+			<description>The method toMap() on CSVRecord throws a NullPointerExcpetion when called on records derived using a format with no headers.
+The method documentation states a null map should be returned instead.</description>
+			<version>1.0</version>
+			<fixedVersion>1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVRecordTest.java</file>
+			<file type="M">org.apache.commons.csv.CSVRecord.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="128" opendate="2014-08-27 02:28:33" fixdate="2014-08-27 14:14:13" resolution="Fixed">
+		<buginformation>
+			<summary>CSVFormat.EXCEL should ignore empty header names</summary>
+			<description>I have an Excel file with a first row with N column names
+If there are additional columns that are not labeled, Excel exports empty columns. For example:
+A,B,C,,
+a,b,c,d,e
+This causes an IAE like:
+
+java.lang.IllegalArgumentException: The header contains a duplicate name: "" in [A, B, C, , ]
+	at org.apache.commons.csv.CSVParser.initializeHeader(CSVParser.java:368)
+	at org.apache.commons.csv.CSVParser.&amp;lt;init&amp;gt;(CSVParser.java:248)
+	at org.apache.commons.csv.CSVParser.parse(CSVParser.java:206)
+
+
+It seems like the simplest solution is to ignore empty column names, such that they cannot be addressable and not attempt to index them.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVFormat.java</file>
+			<file type="M">org.apache.commons.csv.CSVParserTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="132" opendate="2014-09-10 09:54:16" fixdate="2014-09-10 11:52:11" resolution="Fixed">
+		<buginformation>
+			<summary>Incorrect Javadoc referencing org.apache.commons.csv.CSVFormat withQuote()</summary>
+			<description>Hi folks,
+the Javadoc for org.apache.commons.csv.CSVFormat seems to be inconsistent since there are some references to a non-existing method withQuoteChar. The method name should be replaced by withQuote.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVFormat.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="140" opendate="2014-11-01 06:06:29" fixdate="2014-11-10 03:08:10" resolution="Fixed">
+		<buginformation>
+			<summary>QuoteMode.NON_NUMERIC doesn&amp;apos;t work with CSVPrinter.printRecords(ResultSet)</summary>
+			<description> CSVPrinter.printRecords(final ResultSet resultSet) retrieves all fields from the ResultSet using ResultSet.getString(), which makes QuoteMode.NON_NUMERIC unnecessarily quote numbers.
+ResultSet.getObject() could be used instead. Any reason why it wasn&amp;amp;apos;t?</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVPrinter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="145" opendate="2014-11-26 14:59:57" fixdate="2014-11-26 16:30:12" resolution="Fixed">
+		<buginformation>
+			<summary>CSVFormat.with* methods clear the header comments</summary>
+			<description>Some of the CSVFormat.with* methods clear the header comments by just passing null to the constructor. Using header comments works only with set at last.</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVFormat.java</file>
+			<file type="M">org.apache.commons.csv.CSVPrinterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="156" opendate="2015-08-10 04:05:06" fixdate="2015-08-10 07:06:24" resolution="Fixed">
+		<buginformation>
+			<summary>Incorrect Javadoc on QuoteMode.NONE</summary>
+			<description>The JavaDoc for QuoteMode.NONE says:
+
+Never quotes fields. When the delimiter occurs in data, it is preceded by the current escape character. If the escape character is not set, printing will throw an exception if any characters that require escaping are encountered.
+However, the CSVFormat.validate() method will throw an IllegalArgumentException if there is no escape character.
+I was expecting the documented behaviour. I guess I will need to use QuoteMode.MINIMAL instead.</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.QuoteMode.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="169" opendate="2016-01-18 21:59:39" fixdate="2016-01-18 22:02:22" resolution="Fixed">
+		<buginformation>
+			<summary>The null string should be case-sensitive when reading records</summary>
+			<description>The null string should be case-sensitive when reading records. In 1.2 the null string is checked with String.equalsIgnoreCase(), it should use plain equals()</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">170</link>
+			<link type="Reference" description="is related to">168</link>
+		</links>
+	</bug>
+	<bug id="170" opendate="2016-01-19 02:32:44" fixdate="2016-01-19 02:38:28" resolution="Fixed">
+		<buginformation>
+			<summary>CSVFormat.MYSQL nullString should be "\N"</summary>
+			<description>CSVFormat.MYSQL&amp;amp;apos;s nullString should be:
+
+"\N"
+
+</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVFormat.java</file>
+			<file type="M">org.apache.commons.csv.CSVPrinter.java</file>
+			<file type="M">org.apache.commons.csv.CSVPrinterTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">169</link>
+			<link type="Reference" description="relates to">168</link>
+		</links>
+	</bug>
+	<bug id="168" opendate="2016-01-17 13:57:16" fixdate="2016-01-19 02:38:42" resolution="Fixed">
+		<buginformation>
+			<summary>CsvFormat.nullString should not be escaped</summary>
+			<description>Hello,
+Use case: I&amp;amp;apos;m generating MySQL dump files (text format) - for more details check this - http://dev.mysql.com/doc/refman/5.7/en/select-into.html. 
+Issue: The value null is represented as "\N". Also by default the escape char is &amp;amp;apos;\N&amp;amp;apos;. The CsvPrinter.printAndEscape method will convert this value into 
+
+"\\N"
+
+I suggest to modify the CsvPrinter in order to not escape the nullString value  - it should be written as it is. I can create a pull request if you want.
+I consider it a minor issue because it can be mitigated by making sure that the escape character is not a part of the nullString - however in my case it means that the LOAD commands should be modified accordingly.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVFormat.java</file>
+			<file type="M">org.apache.commons.csv.CSVPrinter.java</file>
+			<file type="M">org.apache.commons.csv.CSVPrinterTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">169</link>
+			<link type="Reference" description="is related to">170</link>
+		</links>
+	</bug>
+	<bug id="161" opendate="2015-11-09 17:43:55" fixdate="2016-01-19 03:01:50" resolution="Fixed">
+		<buginformation>
+			<summary>Fix Javadoc to say CSVFormat with() methods return a new CSVFormat</summary>
+			<description>The quoting mode depends on the order of format declaration.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVFormat.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="167" opendate="2015-12-26 11:41:00" fixdate="2016-01-31 13:10:43" resolution="Fixed">
+		<buginformation>
+			<summary>Comment line hides next record</summary>
+			<description>1. First CSV record after the comment line is not processed at all (record #2 and #7)
+2. Second/Third line after the first comment line are not recognized as comment lines (record #5 and #6)
+See attached example!</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.csv.CSVRecord.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

@@ -1,0 +1,528 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12540523",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12540523",
+  "key": "LUCENE-3734",
+  "fields": {
+    "parent": {
+      "id": "12540522",
+      "key": "LUCENE-3733",
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/12540522",
+      "fields": {
+        "summary": "Remaining TODOs of LUCENE-2858: Finalize AtomicReader/CompositeReader API",
+        "status": {
+          "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+          "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+          "name": "Closed",
+          "id": "6",
+          "statusCategory": {
+            "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        },
+        "priority": {
+          "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+          "name": "Major",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://issues.apache.org/jira/rest/api/2/issuetype/3",
+          "id": "3",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21148&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 21148
+        }
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "225936",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "1.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12347573",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12347573",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12539341",
+          "key": "LUCENE-3716",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12539341",
+          "fields": {
+            "summary": "Discussion topic: Move all Commit/Version&Reopen stuff from abstract IR to DirectoryReader",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+              "id": "7",
+              "description": "The sub-task of the issue",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+              "name": "Sub-task",
+              "subtask": true,
+              "avatarId": 21146
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+      "name": "uschindler",
+      "key": "thetaphi",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+      },
+      "displayName": "Uwe Schindler",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24282",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+      "name": "uschindler",
+      "key": "thetaphi",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+      },
+      "displayName": "Uwe Schindler",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+      "name": "uschindler",
+      "key": "thetaphi",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+      },
+      "displayName": "Uwe Schindler",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3734/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+      "id": "7",
+      "description": "The sub-task of the issue",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+      "name": "Sub-task",
+      "subtask": true,
+      "avatarId": 21146
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@f7e90f3[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4f4e08fd[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@60343f5a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@5f02da41[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@51814fe3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@7c7468f1[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3d7b56ca[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@74e253f6[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2fc7f4de[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@70ab3237[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1781e7ee[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@719a7b0b[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 13:06:40 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2012-02-01T10:42:08.288+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3734/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2012-01-31T10:13:25.879+0000",
+    "updated": "2022-08-28T13:06:40.086+0000",
+    "timeoriginalestimate": null,
+    "description": "DirectoryReader is final and has only static factory methods. It is not possible to subclass it in any way.\n\nThe problem is mainly Solr, as Solr accesses directory(), IndexCommits,... and therefore cannot work on abstract IndexReader anymore. This should be changed, by e.g. handling reopening in the IRFactory, also versions, commits,... Currently its not possible to implement any other IRFactory that returns something else.\n\nOn the other hand, it should be possible to \"wrap\" a DirectoryReader / CompositeReader to handle filtering of collection based information (subreaders, reopening hooks,...). This can be done by making DirectoryReader abstract and let DirectoryReader.open return a internal hidden class \"StandardDirectoryReader\". This is similar to the relatinship between IndexReader and hidden DirectoryReader in the past.\n\nDirectoryReader will have final implementations of most methods like getting document stored fields, global docFreq and other statistics, but allows hooking into doOpenIfChanged. Also it should not be limited to SegmentReaders as childs - any AtomicReader is fine. This allows users to create e.g. a Directory-based ParallelReader (see LUCENE-3736) that supports reopen and (partially commits).",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12512601",
+        "id": "12512601",
+        "filename": "LUCENE-3734.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+          "name": "uschindler",
+          "key": "thetaphi",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+          },
+          "displayName": "Uwe Schindler",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2012-01-31T18:07:01.324+0000",
+        "size": 45547,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12512601/LUCENE-3734.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Allow customizing/subclassing of DirectoryReader",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12540523/comment/13197059",
+          "id": "13197059",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch that allows to write own DirectoryReader implementations (e.g. as a filter). It basically does the same like before. DirectoryReader is abstract (but this time all methods are *really* abstract and a subclass (the default is StandardDirectoryReader) *must* implement them. So if you write a DirectoryReader, it *must* support openIfChanged and so on.\n\nDirectoryReader also have the static open() methods that return StandardDirectoryReader behind the scenes.\n\nA custom DirectoryReader must provide only a minimum of directory-related methods on top of a fixed set of AtomicReaders (unchangeable, of course). All methods are delegated to the corresponding subreader as MultiReader does, but things like reopening the reader and returning information about versioning is left to the subclass. By this, a custom class can simply hook into reopen logic or maybe emulate a ParallelDirectoryReader by using ParallelReader (with a fake, e.g. toplevel directory). It can even filter subreaders using FilterIndexReader.\n\nThis patch also improves type safety. getSequentialSubReaders of DirectoryReader returns AtomicReader[], it also removes as much as possible from the termInfosIndexDivisor (only the static open() take care anymore). It also makes the rest of method implementations final, so subclasses can *only* implement abstract methods and not intercept other stuff. If you want to filter lowlevel, wrap a FilterIndexReader using MultiReader.\n\nI think thats ready to commit!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-31T18:07:01.423+0000",
+          "updated": "2012-01-31T18:07:01.423+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12540523/comment/13197074",
+          "id": "13197074",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jasonrutherglen",
+            "name": "jasonrutherglen",
+            "key": "jasonrutherglen",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jason Rutherglen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The issues mentioned were brought up in LUCENE-3498 and LUCENE-3497 thus yielding a +1 from me.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jasonrutherglen",
+            "name": "jasonrutherglen",
+            "key": "jasonrutherglen",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jason Rutherglen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-01-31T18:21:57.625+0000",
+          "updated": "2012-01-31T18:21:57.625+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12540523/comment/13197737",
+          "id": "13197737",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Committed trunk revision: 1239043",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-02-01T10:42:08.328+0000",
+          "updated": "2012-02-01T10:42:08.328+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12540523/comment/17589940",
+          "id": "17589940",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4808|https://github.com/apache/lucene/issues/4808].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T13:06:40.086+0000",
+          "updated": "2022-08-28T13:06:40.086+0000"
+        }
+      ],
+      "maxResults": 4,
+      "total": 4,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04imf:",
+    "customfield_12314139": null
+  }
+}

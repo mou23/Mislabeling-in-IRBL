@@ -1,0 +1,2592 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12458723",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723",
+  "key": "LUCENE-2309",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "3948",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [
+      "gsoc2011",
+      "lucene-gsoc-11",
+      "mentor"
+    ],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25734",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2309/votes",
+      "votes": 1,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@7125f1dc[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@495b1c02[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@67a86b38[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7602c0c3[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@30cd4b9e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@677190ef[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4324c692[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@23c002ed[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@798b2cb0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@12962d86[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@77636910[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@5497ca7b[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:21:52 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-09-23T16:23:29.819+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2309/watchers",
+      "watchCount": 3,
+      "isWatching": false
+    },
+    "created": "2010-03-10T20:34:35.611+0000",
+    "updated": "2022-08-28T12:21:52.092+0000",
+    "timeoriginalestimate": null,
+    "description": "IndexWriter only needs an AttributeSource to do indexing.\n\nYet, today, it interacts with Field instances, holds a private\nanalyzers, invokes analyzer.reusableTokenStream, has to deal with a\nwide variety (it's not analyzed; it is analyzed but it's a Reader,\nString; it's pre-analyzed).\n\nI'd like to have IW only interact with attr sources that already\narrived with the fields.  This would be a powerful decoupling -- it\nmeans others are free to make their own attr sources.\n\nThey need not even use any of Lucene's analysis impls; eg they can\nintegrate to other things like [OpenPipeline|http://www.openpipeline.org].\nOr make something completely custom.\n\nLUCENE-2302 is already a big step towards this: it makes IW agnostic\nabout which attr is \"the term\", and only requires that it provide a\nBytesRef (for flex).\n\nThen I think LUCENE-2308 would get us most of the remaining way -- ie, if the\nFieldType knows the analyzer to use, then we could simply create a\ngetAttrSource() method (say) on it and move all the logic IW has today\nonto there.  (We'd still need existing IW code for back-compat).\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12486766",
+        "id": "12486766",
+        "filename": "LUCENE-2309.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-07-17T13:50:11.799+0000",
+        "size": 14174,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12486766/LUCENE-2309.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12486808",
+        "id": "12486808",
+        "filename": "LUCENE-2309-analyzer-based.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-07-18T10:14:20.829+0000",
+        "size": 13589,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12486808/LUCENE-2309-analyzer-based.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12496081",
+        "id": "12496081",
+        "filename": "LUCENE-2309-getTSFromField.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-09-22T08:47:06.177+0000",
+        "size": 19096,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12496081/LUCENE-2309-getTSFromField.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Fully decouple IndexWriter from analyzers",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12843772",
+          "id": "12843772",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "We can't use attr source directly -- we'd need to factor out\nthe minimal API from TokenStream (.incrToken & .end?) and\nuse that (thanks Robert!).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-10T21:10:51.865+0000",
+          "updated": "2010-03-10T21:10:51.865+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844155",
+          "id": "12844155",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Would this mean that after that we can move all of core Analyzers to contrib/analyzers, making one step towards getting them completely out of Lucene and into their own Apache project?\n\nThat way, we can keep in core only the AttributeSource and accompanying classes, and really allow people to pass AttributeSource which is not even an Analyzer (like you said). We can move the specific Analyzer tests to contrib/analyzers as well. The other tests in core, who don't care about analysis, can use a src/test specific AttributeSource, like TestAttributeSourceImpl ...\n\nI'm thinking - it's ok for contrib to depend on core but not the other way around. It will however take out of core a useful feature for new users which allows fast bootstrap. That won't be the case when analyzers move out of Lucene entirely, but while they are in Lucene, we'll force everyone to download contrib/analyzers as well. So maybe we keep in core only Standard, or maybe even something simpler, again, for easy bootstrapping (like Whitespace + lowercase).\n\nThis is just a thought.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2010-03-11T18:12:34.662+0000",
+          "updated": "2010-03-11T18:12:34.662+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844177",
+          "id": "12844177",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Would this mean that after that we can move all of core Analyzers to contrib/analyzers\n\nYes, though, I think that's orthogonal (can and should be separately\ndone, anyway).\n\nbq. making one step towards getting them completely out of Lucene and into their own Apache project?\n\nWe may simply \"standardize\" on contrib/analyzers as the one place,\ninstead of a new [sub-]project.  To be discussed... but we really do\nneed one place.\n\nbq. That way, we can keep in core only the AttributeSource and accompanying classes, and really allow people to pass AttributeSource which is not even an Analyzer (like you said).  We can move the specific Analyzer tests to contrib/analyzers as well. The other tests in core, who don't care about analysis, can use a src/test specific AttributeSource, like TestAttributeSourceImpl ...\n\nRight.\n\nbq. I'm thinking - it's ok for contrib to depend on core but not the other way around.\n\nI agree.\n\nbq. It will however take out of core a useful feature for new users which allows fast bootstrap.\n\nWell.. I suspect with this change users would not typically use\nlucene-core alone.  Ie, they'd get analyzers and queryparser (if we\nalso move it out as its own module).\n\nbq. That won't be the case when analyzers move out of Lucene entirely, but while they are in Lucene, we'll force everyone to download contrib/analyzers as well.\n\nI think a single source for all analyzers will be a great step\nforwards for users.\n\nbq. So maybe we keep in core only Standard, or maybe even something simpler, again, for easy bootstrapping (like Whitespace + lowercase).\n\nOr remove them entirely (but, then, core tests will need to use\ncontrib analyzers for their testing)...\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-11T19:20:21.517+0000",
+          "updated": "2010-03-11T19:20:21.517+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844180",
+          "id": "12844180",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nOr remove them entirely (but, then, core tests will need to use\ncontrib analyzers for their testing)...\n{quote}\n\nI agree, lets not get caught up on how our tests run from build.xml!\nWe should decouple analysis from IW as much as possible, at least to support \nmore flexible analysis: e.g. someone doesnt want to use the TokenStream \nconcept at all, for example.\n\nI don't really have any opinion practically where all the analyzers go, but I do agree\nit would be nice if they were in one place. For example, in contrib/analyzers now\nwe have analyzers by language, and in most cases, users should really be looking\nat EnglishAnalyzer as their \"default\" instead of StandardAnalyzer for English language,\nas it does Porter stemming, too.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-11T19:24:21.569+0000",
+          "updated": "2010-03-11T19:24:21.569+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844182",
+          "id": "12844182",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. Or remove them entirely (but, then, core tests will need to use contrib analyzers for their testing)...\n\nFor that I proposed to have a default TestAttributeSourceImpl, which does whitespace tokenization or something. If other 'core' tests need something else, we can write specific AttributeSources for them. I hope we can avoid introducing any dependency of core on contrib.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2010-03-11T19:25:22.830+0000",
+          "updated": "2010-03-11T19:25:22.830+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844189",
+          "id": "12844189",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. For that I proposed to have a default TestAttributeSourceImpl\n\nWe need a bit more than AttributeSource, at least if the text has \nmore than one token, it must at least support incrementToken()\n\nWe could try factoring out incrementToken() and end() from\nTokenStream to create a \"more-generic\" interface, but really,\nthere isn't much more to Tokenstream (except close and reset)\n\nAt the same time, while I really like the decorator API of \nTokenStream, it should be easier for someone to use a completely\ndifferent API, perhaps one that feels less like you are writing\na finite-state machine by hand (capture/restoreState, etc)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-11T19:31:57.511+0000",
+          "updated": "2010-03-11T19:31:57.511+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844207",
+          "id": "12844207",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\n\nbq. Or remove them entirely (but, then, core tests will need to use contrib analyzers for their testing)...\n\nFor that I proposed to have a default TestAttributeSourceImpl, which does whitespace tokenization or something. If other 'core' tests need something else, we can write specific AttributeSources for them. I hope we can avoid introducing any dependency of core on contrib.\n{quote}\n\nOnly tests would rely on the analyzers module.  I think that's OK?  core itself would have no dependence.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-11T19:55:37.423+0000",
+          "updated": "2010-03-11T19:55:37.423+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844214",
+          "id": "12844214",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Today when I \"ant test-core\" contrib is not built, and I like it. Also \"ant test-backwards\" will be affected I think ... I think if core does not depend on contrib, its tests shouldn't also. It's weird if it will.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2010-03-11T20:06:53.518+0000",
+          "updated": "2010-03-11T20:06:53.518+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844420",
+          "id": "12844420",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The IndexWriter or rather DocInverterPerField are simply an attribute consumer. None of them needs to know about Analyzer or TokenStream at all. Neither needs the analyzer to iterate over tokens. The IndexWriter should instead implement an interface or use a class that is called for each successful \"incrementToken()\" no matter how this increment is implemented.\n\nI could imagine a really simple interface like\n{code}\n\ninterface AttributeConsumer {\n  \n  void setAttributeSource(AttributeSource src);\n\n  void next();\n\n  void end();\n\n}\n{code}\n\nIW would then pass itself or an istance it uses (DocInverterPerField) to an API expecting such a consumer like:\n\n{code}\nfield.consume(this);\n{code}\n\nor something similar. That way we have not dependency on whatever Attribute producer is used. The default implementation is for sure based on an analyzer / tokenstream and alternatives can be exposed via expert API. Even Backwards compatibility could be solved that way easily.\n\nbq. Only tests would rely on the analyzers module. I think that's OK? core itself would have no dependence.\n+1 test dependencies should not block modularization, its just about configuring the classpath though!\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2010-03-12T08:29:20.152+0000",
+          "updated": "2010-03-12T08:29:20.152+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844450",
+          "id": "12844450",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. The IndexWriter or rather DocInverterPerField are simply an attribute consumer. None of them needs to know about Analyzer or TokenStream at all. Neither needs the analyzer to iterate over tokens.\n\n[Carrying over discussions on IRC with Chris Male & Uwe...]\n\nActually, TokenStream is already AttrSource + incrementing, so it\nseems like the right start...\n\nHowever, the .reset() method is redundant from indexer's standpoint --\nie when indexer calls Field.getTokenStream (say) whatever init'ing /\nreset'ing should already have be done by that method by the time it\nreturns the TokenStream.\n\nAlso, .close and .end are redundant -- seems like we should only have\n.end (few token streams do anything in .close...).  But coalescing\nthose two would be a good chunk of work at this point :) Or maybe we\nmake a .finish that simply both by default ;)\n\nFinally, indexer doesn't really need a Document; it just needs\nsomething abstract that's provides an iterator over all fields that\nneed indexing (and separately, storing).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-12T10:36:30.078+0000",
+          "updated": "2010-03-12T10:36:30.078+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844464",
+          "id": "12844464",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. [Carrying over discussions on IRC with Chris Male & Uwe...]\n\nThat make it very hard to participate. I can not afford to read through all IRC stuff and I don't get the chance to participate directly unless I watch IRC constantly. We should really move back to JIRA / devlist for such discussions. There is too much going on in IRC.\n\n{quote}\nActually, TokenStream is already AttrSource + incrementing, so it\nseems like the right start...\n{quote}\n\nBut that binds the Indexer to a tokenstream which is unnecessary IMO. What if I want to implement something aside the TokenStream delegator API?\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2010-03-12T11:42:21.836+0000",
+          "updated": "2010-03-12T11:42:21.836+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844467",
+          "id": "12844467",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hello, i commented yesterday but did not receive much feedback, so\nI want to elaborate some more:\n\nI suppose what I was trying to mention in my earlier comment here:\nhttps://issues.apache.org/jira/browse/LUCENE-2309?focusedCommentId=12844189&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#action_12844189\n\nis that while I really like the new TokenStream API, i would prefer\nit if we thought about making this flexible enough to support\n\"different paradigms\", including perhaps something that looks a lot\nlike the old TokenStream API. \n\nThe reason is, I notice a lot of existing code still under this old API,\nand I think that in some cases, perhaps its easier to work with, even\nif you aren't a new user. I definitely think for newer users the old API\nmight have some advantages.\n\nI think its useful to consider supporting such an API, perhaps as an extension\nin contrib/analyzers, even if its not as fast or flexible as the new API,\nperhaps the tradeoff of speed and flexibility would be worth the ease\nfor newer users.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-12T11:53:27.388+0000",
+          "updated": "2010-03-12T11:53:27.388+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844489",
+          "id": "12844489",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "bq. I could imagine a really simple interface like\n\nDuring lunch an idea evolved:\n\nIf you look at current DocInverter code, it does not use a consumer-like API. The code just has an add/accept-method that accepts tokens. The idea is to, as Simon proposed, let the docinverter implement something like AttributeAcceptor. But still we must have the attribute api and the acceptor (DocInverter) must always \"see\" the same attribute instances (else much time would be spent to each time call getAttribute(...) for each token, if the accept method would take an AttributeSource).\n\nThe current TokenStream api could get a method taking AttributeAcceptor and simply do a while incrementToken() loop, calling accept() on DocInverter (the AttributeAcceptor). Another approach for users would be to not use the TokenStream API at all and simply call the accept() method for each token on the Acceptor.\n\nBut both approaches still have te problem with the shared attributes. If you want to \"record\" tokens you have to implement something like my Proxy attributes. Else (as mentioned) above, most time would be spent in getAttribute() calls.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2010-03-12T13:15:04.986+0000",
+          "updated": "2010-03-12T13:25:54.937+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844498",
+          "id": "12844498",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. The idea is to, as Simon proposed, let the docinverter implement something like AttributeAcceptor.\n\nThis is interesting!  It inverts the stack/control flow, but, would continue to use shared attrs.\n\nSo then somehow the indexer would pass its AttrAcceptor to the field?  And the field would have whatever control logic it wants to feed the tokens...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-12T13:49:35.157+0000",
+          "updated": "2010-03-12T13:49:35.157+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844500",
+          "id": "12844500",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nbq. Actually, TokenStream is already AttrSource + incrementing, so it seems like the right start...\n\nBut that binds the Indexer to a tokenstream which is unnecessary IMO. What if I want to implement something aside the TokenStream delegator API?\n{quote}\n\nTrue, but we need at least some way to increment?  AttrSource doesn't have that.\n\nBut I don't think we need reset nor close from TokenStream.\n\nMaybe we could factor out an abstract class / interface that TokenStream impls, minus the reset & close methods?\n\nThen people could freely use Lucene to index off a foreign analysis chain...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-12T13:52:14.231+0000",
+          "updated": "2010-03-12T13:52:14.231+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844509",
+          "id": "12844509",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. We should really move back to JIRA / devlist for such discussions\n\n+1 !! I also find it very hard to track so many sources of discussions (JIRA, java-dev, java-user, general, and now IRC). Also IRC is not logged/archived and searchable (I think?) which makes it impossible to trace back a discussion, and/or randomly stumble upon it in Google.\n\nI'd like to donate my two cents here - we've just recently changed the TokenStream API, but we still kept its concept - i.e. IW consumes tokens, only now the API has changed slightly. The proposals here, w/ the AttConsumer/Acceptor, that IW will delegate itself to a Field, so the Field will call back to IW seems too much complicated to me. Users that write Analyzers/TokenStreams/AttributeSources, should not care how they are indexed/stored etc. Forcing them to implement this push logic to IW seems to me like a real unnecessary overhead and complexity.\n\nAnd having the Field control the flow of indexing seems also dangerous ... might expose Lucene to lots of bugs by users. Today when IW controls it, it's one place to look for, but tomorrow when Field will control it, where do we look? In the app's custom Field code? In IW's atts consuming methods?\n\nWill the Field also control how stored fields are added? Or only AttributeSourced ones?\n\nMaybe I need to get used to this change, but currently it looks wrong to reverse the control flow. Maybe in principle the DocInverter now accepts tokens from IW, and so it looks as if we can pass it to the Field (as IW's AttAcceptor), but still the concept is different. We (IW) control the indexing flow, and not the user.\n\nI also may not understand what will that give to users. Shouldn't users get enough flexibility w/ the current API and the Flex (once out) stuff? Do they really need to be bothered w/ pushing tokens to IW?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2010-03-12T14:20:11.369+0000",
+          "updated": "2010-03-12T14:20:11.369+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844515",
+          "id": "12844515",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "bq. I'd like to donate my two cents here - we've just recently changed the TokenStream API, but we still kept its concept - i.e. IW consumes tokens, only now the API has changed slightly. The proposals here, w/ the AttConsumer/Acceptor, that IW will delegate itself to a Field, so the Field will call back to IW seems too much complicated to me. Users that write Analyzers/TokenStreams/AttributeSources, should not care how they are indexed/stored etc. Forcing them to implement this push logic to IW seems to me like a real unnecessary overhead and complexity.\n\nThe idea was not to change this behaviour, but also give the user the posibility to reverse that. For some tokenstreams it would simplify things much. The current IndexWriter code works exactly like that:\n# DocInverter gets TokenStream\n# DocInverter calls reset() -- to be left out and moved to field/analyzer\n# DocInverter does while-loop on incrementToken - it iterates. On each Token it calls add() on the field consumer\n# DocInverter calls end() and updates end offset\n# DocInverter calls close() -- to be left out and moved to field/analyzer\n\nThe change is simply that step (3) is removed from DocInverter which only provides the add() method for accepting Tokens. The current while loop simply is done in the current TokenStream/Field code, so nobody needs to change his code. But somebody that actively wants to push tokens can now do this. If he wants to do this currently he has no chance without heavy buffering.\n\nSo the push API will be very expert and the current TokenStreams is just a user of this API.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2010-03-12T14:31:06.834+0000",
+          "updated": "2010-03-12T14:31:06.834+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844516",
+          "id": "12844516",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq.  Also IRC is not logged/archived and searchable (I think?) which makes it impossible to trace back a discussion, and/or randomly stumble upon it in Google.\n\nApaches rule is, if it didn't happen on this lists, it didn't happen. #IRC is a great way for people to communicate and hash stuff out, but its not necessary you follow it. If you have questions or want further elaboration, just ask. No one can expect you to follow IRC, nor is it a valid reference for where something was decided. IRC is great - I think its really benefited having devs discuss there - but the official position is, if it didn't happen on the list, it didnt actually happen.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-12T14:32:27.550+0000",
+          "updated": "2010-03-12T14:32:27.550+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844523",
+          "id": "12844523",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Then people could freely use Lucene to index off a foreign analysis chain...\nThat is what I was talking about!\n\n{quote}\nI'd like to donate my two cents here - we've just recently changed the TokenStream API, but we still kept its concept - i.e. IW consumes tokens, only now the API has changed slightly. The proposals here, w/ the AttConsumer/Acceptor, that IW will delegate itself to a Field, so the Field will call back to IW seems too much complicated to me. Users that write Analyzers/TokenStreams/AttributeSources, should not care how they are indexed/stored etc. Forcing them to implement this push logic to IW seems to me like a real unnecessary overhead and complexity.\n{quote}\n\nWe can surely hide this implementation completely from field. I consider this being similar to Collector where you pass it explicitly to the search method if you want to have a different behavior. Maybe something like a AttributeProducer. I don't think adding this to field makes a lot of sense at all and it is not worth the complexity.\n\nbq. Will the Field also control how stored fields are added? Or only AttributeSourced ones?\nIMO this is only about inverted fields.\n\nbq. We (IW) control the indexing flow, and not the user.\nThe user only gets the possibility to exchange the analysis chain but not the control flow. The user already can mess around with stuff in incrementToken(), the only thing we change / invert is that the indexer does not know about TokenStreams anymore. it does not change the controlflow though.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2010-03-12T14:43:48.923+0000",
+          "updated": "2010-03-12T14:43:48.923+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844528",
+          "id": "12844528",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "There is one problem that cannot be easy solved (for all proposals here), if we want to provide an old-style API that does not require reuse of tokens:\nThe problem with AttributeProvider is that if we want to support something (like rmuir proposed before) that looks like the old \"Token next()\", we need an AttributeProvider that passes the AttributeSource to the indexer on each Token! And that would lead to lots of getAttribute() calls, that would slowdown indexing! So with the current APIs we cannot get around the requirement to reuse the same Attribute instances during the whole indexing without a major speed impact. This can only be solved with my nice BCEL proxy Attributes, so you can exchange the inner attribute impl. Or do it like TokenWrapper in 2.9 (yes, we can reactivate that API somehow as an easy use-addendum).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2010-03-12T14:58:22.708+0000",
+          "updated": "2010-03-12T14:58:22.708+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/12844533",
+          "id": "12844533",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nSo with the current APIs we cannot get around the requirement to reuse the same Attribute instances during the whole indexing without a major speed impact.\n{quote}\n\nI agree. I guess I'll try to simplifiy my concern: maybe we don't necessarily \nneed something that looks like the old TokenStream API, but I feel it would\nbe worth our time to think about supporting 'some alternative API' that makes\nit easier to work with lots of context across different Tokens.\n\nI personally do not mind how this is done with the capture/restore state API,\nbut I feel that its pretty unnatural for many developers, and in the future folks\nmight want to do more complex analysis (maybe even light pos-tagging, etc)\nthat requires said context, and we should plan for this.\n\nI feel this wasn't such an issue with the old TokenStream API, but maybe there\nis another way to address this potential problem.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-12T15:07:00.129+0000",
+          "updated": "2010-03-12T15:07:00.129+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13058146",
+          "id": "13058146",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "I'd like to pick this issue up and run with it.  Anyone have any new thoughts?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-01T00:07:57.289+0000",
+          "updated": "2011-07-01T00:07:57.289+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13058548",
+          "id": "13058548",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Great!\n\nThis will overlap w/ the field type work (we have branch for this now), where we already have decoupled indexer from concrete Field/Document impls, by adding a minimal IndexableField.\n\nI think this issue should further that, ie pare back IndexableField so that there's only a getTokenStream for indexing (ie indexer will no longer try for String then Reader then tokenStream), and Analyzer must move to the FieldType and not be passed to IndexWriterConfig.  Multi-valued fields will be tricky, since IW now asks analyzer for the gaps...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-01T13:25:25.628+0000",
+          "updated": "2011-07-01T13:25:25.628+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13064485",
+          "id": "13064485",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Once Analyzer moves onto FieldTypes, I think we can deprecate/remove PerFieldAnalyzerWrapper.\n\nI'm not sure what to do about multi-valued fields; we may have to move the getPosIncr/OffsetGap onto IndexableField, since it's not easy to ask a TokenStream to do this shifting for us?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-13T11:06:19.227+0000",
+          "updated": "2011-07-13T11:06:19.227+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13064517",
+          "id": "13064517",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hmm, with this cutover comes a new spooky degree of freedom: the ability to specify a different analyzer for each value of a multi-value'd field.\n\nMaybe we need an explicit FieldType that is \"multi-valued\", and so the document would have only one instance of Field for that field name, and within that Field are multiple values?  Problem is, this would lose a degree of freedom we have today, ie the ability for different values of the same field name to have wildly different types...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-13T12:31:27.248+0000",
+          "updated": "2011-07-13T12:31:27.248+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13064533",
+          "id": "13064533",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=erickerickson",
+            "name": "erickerickson",
+            "key": "erickerickson",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=erickerickson&avatarId=43406",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=erickerickson&avatarId=43406",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=erickerickson&avatarId=43406",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=erickerickson&avatarId=43406"
+            },
+            "displayName": "Erick Erickson",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "<<<Hmm, with this cutover comes a new spooky degree of freedom: the ability to specify a different analyzer for each value of a multi-value'd field.>>>\n\nCall me a coward, but this scares me! Answering the question \"why didn't I get the results I was expecting\" would become...er...somewhat more difficult (I'm studying the understatement thing). Although I guess this wouldn't be accessible from Solr, so maybe it would be another one of those \"expert\" features?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=erickerickson",
+            "name": "erickerickson",
+            "key": "erickerickson",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=erickerickson&avatarId=43406",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=erickerickson&avatarId=43406",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=erickerickson&avatarId=43406",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=erickerickson&avatarId=43406"
+            },
+            "displayName": "Erick Erickson",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-13T13:07:31.030+0000",
+          "updated": "2011-07-13T13:07:31.030+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13064537",
+          "id": "13064537",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sokolov",
+            "name": "sokolov",
+            "key": "sokolov",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=sokolov&avatarId=39028",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=sokolov&avatarId=39028",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=sokolov&avatarId=39028",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=sokolov&avatarId=39028"
+            },
+            "displayName": "Michael Sokolov",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Would there be any valid use for that \"feature\" that couldn't be accomplished in some more straightforward manner?  It would be like a union, maybe: a field that is sometimes fish and other times fowl, or just a menagerie?  But I can always create a group of fields of various types (in an application) that work together?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sokolov",
+            "name": "sokolov",
+            "key": "sokolov",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=sokolov&avatarId=39028",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=sokolov&avatarId=39028",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=sokolov&avatarId=39028",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=sokolov&avatarId=39028"
+            },
+            "displayName": "Michael Sokolov",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-13T13:20:56.215+0000",
+          "updated": "2011-07-13T13:20:56.215+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066641",
+          "id": "13066641",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Note, this patch is against the FieldType branch and is very, very, VERY POC patch.\n\n- Adds the ability to set Analyzer on FieldType (I haven't removed it from IWC and haven't addressed the OffSetGap issue)\n- Adds AttributeConsumer abstraction which has callbacks like Simon described above.  \n- Added consume(AttributeConsumer) to Field, AttributeSource and TokenStream.  TokenStream.consume() handles calling reset, incrementToken, end and close.  AttributeSource provides a simple implementation.  Field.consume() instantiates a TokenStream from the Analyzer in the FieldType (or uses an an existing one) and then passes on the consume call.\n- DocInverterPerField now uses AttributeConsumer when the Field is tokenized.\n- ReusableStringReader has been quickly made public so it can be used in Field\n- I changed one test (TestDemo) to have the Analyzer set on the FieldType.\n\nVery POC!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T13:50:11.821+0000",
+          "updated": "2011-07-17T13:50:11.821+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066650",
+          "id": "13066650",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. haven't addressed the OffSetGap issue\n\nI actually think these gaps are what we should address first. here's a rough idea:\n* remove offset/position increment gap from Analyzer.\n* instead for multivalued fields, the field handles this internally. so it returns a MultiValuedTokenstream? that does the 'concatenation'/offset/position increasing between fields itself. IndexWriter just sees one tokenstream for the field and doesn't know about this, e.g. it just consumes positions and offsets.\n\nTo do this, I think there could be problems if the analyzer does not reuse, as it should be one set of attributes to the indexer across the multivalued field.\n\nso first to solve this problem: I think first we should remove Analyzer.tokenStream so all analyzers are reusable, and push ReusableAnalyzerBase's API down into Analyzer. We want to do this improvement anyway to solve that trap.\n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T14:22:44.116+0000",
+          "updated": "2011-07-17T14:22:44.116+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066656",
+          "id": "13066656",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "While I digest your suggestion on handling the gap values,\n\n{quote}\nso first to solve this problem: I think first we should remove Analyzer.tokenStream so all analyzers are reusable, and push ReusableAnalyzerBase's API down into Analyzer. We want to do this improvement anyway to solve that trap.\n{quote}\n\nBeyond the heavy lifting of doing this (which I'm fine with doing), do you know off hand whether this is going to be a problem for any of the Analyzers/Tokenizer/TokenFilter impls we have? I seem to recall an issue where you looked into this.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T14:33:54.464+0000",
+          "updated": "2011-07-17T14:33:54.464+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066657",
+          "id": "13066657",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Yes, so my idea is basically that Analyzer gets ReusableAnalyzerBase's API completely, so its reusableTokenStream() is final.\n\nIn order for this to work, we need to first fix the limitation of ReusableAnalyzerBase:\n{noformat}\n * ReusableAnalyzerBase is a simplification of Analyzer that supports easy reuse\n * for the most common use-cases. Analyzers such as\n * {@link PerFieldAnalyzerWrapper} that behave differently depending upon the\n * field name need to subclass Analyzer directly instead.\n{noformat}\n\nthis looks easy to do, the current implementation always puts a TokenStreamComponents into the 'previousTokenStream'. Instead, reusableAnalyzerBase can have an optional ctor with something like ReuseStrategy, of which there are two:\n\n* GLOBAL: this is what it does now, reuse across all fields, and should be the default\n* PERFIELD: this one instead puts a Map<String,TokenStreamComponents> into the previous tokenstream and reuses on a per-field basis.\n\nthen the problem is solved, and we could name this thing Analyzer, make all analyzers extend it directly, remove the non-reusable TokenStream(), it would only have a final reusableTokenStream() for the consumers.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T14:42:18.366+0000",
+          "updated": "2011-07-17T14:42:18.366+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066658",
+          "id": "13066658",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Fortunately, the patch I put up means PerFieldAnalyzerWrapper can be removed (since Analyzer becomes per FieldType).  But I take your point and it will be necessary to implement what you describe to support SolrAnalyzer.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T14:47:46.055+0000",
+          "updated": "2011-07-17T14:47:46.055+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066662",
+          "id": "13066662",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nFortunately, the patch I put up means PerFieldAnalyzerWrapper can be removed (since Analyzer becomes per FieldType).\n{quote}\n\nHow does this work with QueryParser and other consumers of Analyzer though?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T14:51:37.943+0000",
+          "updated": "2011-07-17T14:51:37.943+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066665",
+          "id": "13066665",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Good point.  I guess it will continue to have a place in those instances yes.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T14:58:16.260+0000",
+          "updated": "2011-07-17T14:58:16.260+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066667",
+          "id": "13066667",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'm just asking the question because, maybe i have a different idea of \"fully decouple IndexWriter from Analyzer\".\n\nIf we setup an API where its different at indextime versus query-time, I'm not going to be happy because this is setting up users to fail: in general i should be able to pass my 'analysis configuration' to all the various consumers and if its the same at index/time versus query/time, things should work.\n\nI dont think we should expose a different per-field configuration at index-time versus query-time versus this or that, I think thats a step backwards.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T15:04:18.020+0000",
+          "updated": "2011-07-17T15:04:18.020+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066669",
+          "id": "13066669",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "You make good points and I don't have answers for you at this stage.\n\nWhat I'm exploring with this direction currently is how best to consume the terms of a Field while minimizing the exposure of Analyzer / TokenStream in the indexing process.  What has felt nature to me is having Analyzer at the Field level.  This is already kind of implemented anyway - if a Field returns a tokenStreamValue() then thats used for indexing, no matter what the 'analysis configuration' is.\n\nDo you have any suggestions for other directions to follow?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T15:17:13.588+0000",
+          "updated": "2011-07-17T15:17:13.588+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066672",
+          "id": "13066672",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nWhat I'm exploring with this direction currently is how best to consume the terms of a Field while minimizing the exposure of Analyzer / TokenStream in the indexing process.\n{quote}\n\nI thought about this a lot, I'm not sure we need to minimize TokenStream, I think it might be fine! There is really nothing much more minimal than this, its just attributesource + incrementToken() + reset() + end() + close()...\n\nThis issue is a little out of date, I actually think we have been decoupling indexwriter from analysis even more... for example the indexwriter just pulls bytes from the tokenstream, etc.\n\nI think we have been going in the right direction and should just be factoring out the things that don't belong in the indexer or in analyzer (like this gap manipulation)\n\n{quote}\nWhat has felt nature to me is having Analyzer at the Field level. This is already kind of implemented anyway - if a Field returns a tokenStreamValue() then thats used for indexing, no matter what the 'analysis configuration' is.\n{quote}\n\nYeah but thats currently an expert option, not the normal case. In general if we are saying IndexWriter doesn't take Analyzer but has some schema that is a list of Fields, then QueryParser etc need to take this list of fields also, so that queryparsing is consistent with analysis. But i'm not sure I like this either: I think it only couples QueryParser with IndexWriter.\n\n{quote}\nDo you have any suggestions for other directions to follow?\n{quote}\n\nI don't think we should try to do a huge mega-change right now given that there are various \"problems\" we should fix... some of this I know is my pet peeves but:\n* fixing the Analyzers to only be reusable is important, its a performance trap. we should do this regardless... and we can even backport this one easily to 3.x (backporting improvements to reusableAnalyzerBase, deprecating tokenStream(), etc)\n* removing the positionIncrement/offsetGaps from Analyzer makes total sense to me, this is \"decoupling indexwriter from analyzer\" because these gaps make no sense to other analyzer consumers. So I think these gaps are in the wrong place, and should instead be in Field or whatever, which creates ConcatenatedTokenStream behind the scenes to provide to IndexWriter. This is also good too, maybe you need to do other things than munge offsets/positions across these gaps and this concatenation would no longer be hardcoded in indexwriter.\n\nI've looked at doing e.g. the first of these and I know its a huge mondo pain in the ass, these \"smaller\" changes are really hard and a ton of work.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T15:34:37.905+0000",
+          "updated": "2011-07-17T15:34:37.905+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066673",
+          "id": "13066673",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I like the idea here, that is \"hey analyzer, give me your tokens!\". For lots of use-cases this is much easier to implement than TokenStreams. Its just a change from pull to more push tokens. The impl in TokenStream is just consuming insself and pushing the tokens. From the abstraction point of view thats much easier to understand.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-07-17T15:37:07.470+0000",
+          "updated": "2011-07-17T15:37:07.470+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066675",
+          "id": "13066675",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "And that might be a good way, my point is if this is how we want to go, then Analyzer should instead provide AttributeConsumer, and the queryparsers etc should consume it with the same API (and tokenstream is an implementation detail behind the scenes).\n\nBut i don't think queryparser should take PerFieldAnalyzerWrapper while IndexWriter takes per-Field analyzers, I think thats confusing.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T15:44:03.336+0000",
+          "updated": "2011-07-17T15:44:03.336+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066676",
+          "id": "13066676",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I think Chris only started with the indexer as an example to show that it works. Of cource we can rewrite all other consumers to use this new api. Also BaseTSTestCase :-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-07-17T15:48:26.174+0000",
+          "updated": "2011-07-17T15:48:26.174+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066677",
+          "id": "13066677",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "well if thats the direction here, then we should describe the jira issue differently: something like \"abstract away TokenStream API\".\n\nbecause it just looks to me as if IndexWriter works off a different analysis API than other analysis consumers and I don't like that.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T15:52:46.010+0000",
+          "updated": "2011-07-17T15:52:46.010+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066682",
+          "id": "13066682",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "I just want to re-iterate the point that I'm just exploring options here.  I'm really glad to be getting feedback but no direction has been set in stone.\n\n{quote}\nI thought about this a lot, I'm not sure we need to minimize TokenStream, I think it might be fine! There is really nothing much more minimal than this, its just attributesource + incrementToken() + reset() + end() + close()...\n{quote}\n\nOkay interesting.  I admit I don't really have any concrete thoughts on an 'alternative' to TokenStream, but wouldn't you agree that exposing a more limited API to the Indexer is beneficial here?  I agree we're only talking about a handful of methods currently.\n\n{quote}\nYeah but thats currently an expert option, not the normal case. In general if we are saying IndexWriter doesn't take Analyzer but has some schema that is a list of Fields, then QueryParser etc need to take this list of fields also, so that queryparsing is consistent with analysis. But i'm not sure I like this either: I think it only couples QueryParser with IndexWriter.\n{quote}\n\nTwo things that jump out at me here. Firstly, IndexWriter does take a list of Fields, the Fields it indexes in each Document. We've also identified that people might want to apply different analysis per field, thats why we have PerFieldAnalyzerWrapper isn't it? \n\nSecondly, we now have multiple QueryParsing implementations consolidated together.  I hope over time we'll add more / different implementations which do things differently.  So while I totally agree with the sentiment that we shouldn't make this confusing for users and that searching and indexing should work together, I'm certainly open to exploring other ways to do that.\n\n{quote}\nI've looked at doing e.g. the first of these and I know its a huge mondo pain in the ass, these \"smaller\" changes are really hard and a ton of work.\n{quote}\n\nIndependent of what's decided here, I'm definitely happy to do the heavy lifting on the improvements you've suggested.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T16:08:51.441+0000",
+          "updated": "2011-07-17T16:08:51.441+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066683",
+          "id": "13066683",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "{quote}\nBut i don't think queryparser should take PerFieldAnalyzerWrapper while IndexWriter takes per-Field analyzers, I think thats confusing.\n{quote}\n\nYes it is.  \n\n{quote}\nI think Chris only started with the indexer as an example to show that it works. Of cource we can rewrite all other consumers to use this new api. Also BaseTSTestCase.\n{quote}\n\nAbsolutely.  \n\n{quote}\nwell if thats the direction here, then we should describe the jira issue differently: something like \"abstract away TokenStream API\".\n{quote}\n\nI don't think what I've implemented in the patch is so different to what has been discussed in this issue earlier.  I did consider opening another issue, but I thought this JIRA issue captured the conceptual issue quite well.\n\n{quote}\nbecause it just looks to me as if IndexWriter works off a different analysis API than other analysis consumers and I don't like that.\n{quote}\n\nI'm happy to explore those other consumers and strive to provide a user friend API to limit bugs.  But I'm not getting the impression you like the concept at all. \n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T16:17:40.657+0000",
+          "updated": "2011-07-17T16:17:40.657+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066684",
+          "id": "13066684",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nI'm happy to explore those other consumers and strive to provide a user friend API to limit bugs. But I'm not getting the impression you like the concept at all.\n{quote}\n\nThat's totally not it, but I do like the fact of having an \"Analyzer\" that is the central API for analysis that anything uses: IndexWriter, QueryParser, MoreLikeThis, Synonyms parsing, SpellChecking, or wherever we need it...\n\nI think if we want this to take AttributesConsumer or whatever, then thats cool, Analyzer returns this instead of TokenStream and we fix all these consumers to consume the more general API.\n\nI just want to make sure, that all consumers, not just IndexWriter, use the consistent API. This way, like today, someone declares FooAnalyzer, uses it everywhere, and stuff is consistent everywhere.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T16:23:32.657+0000",
+          "updated": "2011-07-17T16:23:32.657+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066688",
+          "id": "13066688",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "{quote}\nI think if we want this to take AttributesConsumer or whatever, then thats cool, Analyzer returns this instead of TokenStream and we fix all these consumers to consume the more general API.\n{quote}\n\nI just don't see how this would work.  As it is in the patch, AttributeConsumer is a callback mechanism where the consumer provides their logic.  Its nothing to do with Analyzers really and will be implemented differently depending on what the consumer wants to do in that instance.\n\n{quote}\nI just want to make sure, that all consumers, not just IndexWriter, use the consistent API. This way, like today, someone declares FooAnalyzer, uses it everywhere, and stuff is consistent everywhere.\n{quote}\n\nAbsolutely desirable.  AttributeConsumer isn't changing the Analyzer concept, its just changing how we consume from Analyzer.  With that in mind, I very much agree with your assertion that this shouldn't change the Analyzer used in search and indexing.  Whats prompted that concern here is the shift to per Field Analyzer.  I'll reassess that change while waiting for other feedback. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-17T16:35:39.050+0000",
+          "updated": "2011-07-17T16:35:53.175+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066689",
+          "id": "13066689",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nI just don't see how this would work.\n{quote}\n\nAs long as it implements an interface that provides: \nvoid consume(AttributeConsumer attributeConsumer)\n\n?\n\nthen, this coudl be what Analyzer returns, Consumable or whatever you want to call this :)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-17T16:41:36.767+0000",
+          "updated": "2011-07-17T16:41:36.767+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066697",
+          "id": "13066697",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "To come back to decoupling:\nWith the new API, we no longer need NumericTokenStream, as NumericField can simply push the tokens to DocInverter. So TokenStream can move out of core, but NumericField & NumericRangeQuery can stay - nice!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-07-17T17:51:35.534+0000",
+          "updated": "2011-07-17T17:51:35.534+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13066875",
+          "id": "13066875",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Okay, I thought about this overnight and have tried to come up with a middle ground.  Again, very proof-of-concept.\n\n- Analyzer now moves away from exposing TokenStream (although I've left the methods there) and now returns an AttributeSource.\n- Field.consume() now becomes Field.consume(AttributeConsumer, Analyzer).  Here, the Analyzer is that passed into IW.  This means that the Field can decide how it wants to expose its terms.  The default implementation uses the Analyzer, but others can do what they like.\n- I've removed adding Analyzer to FieldType, but it could still be exposed as an expert option.  \n\nThe overall idea is that the Fields now control how terms are given to DocInverter.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-18T10:14:20.871+0000",
+          "updated": "2011-07-18T10:14:20.871+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13067009",
+          "id": "13067009",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\nI think there are two rather separate ideas here?\n\nFirst, IW should not have to \"know\" how to get a TokenStream from a\nIndexableField; it should only ask the Field for the token stream and get that\nback and iterate its tokens.\n\nUnder the hood (in the IndexableField impl) is where the logic for\ntokenized or not, Reader vs String vs pre-created token stream,\netc. should live, instead of hardwired inside indexer.  Maybe an app\nhas a fully custom way to make a token stream for the field...\n\nLikewise, for multi-valued fields, IW shouldn't \"see\" the separate\nvalues; it should just receive a single token stream, and under the\nhood (in Document/Field impl) it's concatenating separate token\nstreams, adding posIncr/offset gaps, etc.  This too is now hardwired\nin indexer but shouldn't be.  Maybe an app wants to insert custom\n\"separator\" tokens between the values...\n\n(And I agree: as a pre-req we need to fix Analyzer to not allow\nnon-reused token streams; else we can't concatenate w/o attr\nproxying/copying).\n\nIf IW still receives analyzer and simply passes it through when asking\nfor the tokenStream I think that's fine for now.  In the future, I\nthink IW should not receive analyzer (ie, it should be agnostic to how\nthe app creates token streams); rather, each FieldType would hold the\nanalyzer for that field.  However, that sounds contentious, so let's\nleave it for another day.\n\nSecond, this new idea to \"invert\" TokenStream into an AttrConsumer,\nwhich I think is separate?  I'm actually not sure I like such an\napproach... it seems more confusing for simple usage?  Ie, if I want\nto analyze some text and iterate over the tokens... suddenly, instead\nof a few lines of local code, I have to make a class instance with a\nmethod that receives each token?  It seems more convoluted?  I\nmean, for Lucene's limited internal usage of token stream, this is\nfine, but for others who consume token streams... it seems more\ncumbersome.\n\nAnyway, I think we should open a separate issue for \"invert\nTokenStream into AttrConsumer\"?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-18T13:06:37.307+0000",
+          "updated": "2011-07-18T13:06:37.307+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13069502",
+          "id": "13069502",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "I've thought about this issue some more and I feel there's a middle ground to be had.\n\n{quote}\nFirst, IW should not have to \"know\" how to get a TokenStream from a\nIndexableField; it should only ask the Field for the token stream and get that\nback and iterate its tokens.\n{quote}\n\nYou're absolutely right and this should be our first step.  It should be up to the Field to produce its terms, IW should just iterate through them.\n\n{quote}\nLikewise, for multi-valued fields, IW shouldn't \"see\" the separate\nvalues; it should just receive a single token stream, and under the\nhood (in Document/Field impl) it's concatenating separate token\nstreams, adding posIncr/offset gaps, etc. This too is now hardwired\nin indexer but shouldn't be. Maybe an app wants to insert custom\n\"separator\" tokens between the values...\n{quote}\n\nI also totally agree.  We should strive to reduce as much hardwiring at make it as flexible as possible.  But again I see this as a step in the process.\n\n{quote}\nSecond, this new idea to \"invert\" TokenStream into an AttrConsumer,\nwhich I think is separate? I'm actually not sure I like such an\napproach... it seems more confusing for simple usage? Ie, if I want\nto analyze some text and iterate over the tokens... suddenly, instead\nof a few lines of local code, I have to make a class instance with a\nmethod that receives each token? It seems more convoluted? I\nmean, for Lucene's limited internal usage of token stream, this is\nfine, but for others who consume token streams... it seems more\ncumbersome.\n{quote}\n\nI don't agree that this is separate.  For me the purpose of this issue is to fully decouple IndexWriter from analyzers :) As such the how IW consumes the terms it indexes is at the heart of the issue.  The inversion approach is a suggestion for how we might tackle this in a flexible and extensible way.  So I don't see any reason to push it to another issue.  Its a way of fulfilling this issue.\n\nI think there is also some confusion here.  I'm not suggesting we change all usage of analysis.  If someone wants to consume TokenStream as is, so be it.  What I'm looking at changing here is how IW gets the terms it indexes, thats all.  We've introduced abstractions like IndexableField to be flexible and extensible.  I don't think there's anything wrong with examining the same thing with TokenStream here.\n\nI think Robert has stated here that he's comfortable continuing to use TokenStream as the API for IW to get the terms it indexes, is that what others feel too? I agree the inverted API I proposed is a little convoluted and I'm sure we can come up with a simple Consumable like abstraction (which Robert did also suggest above).  But if people are content with TokenStream then theres no need.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-22T11:02:53.584+0000",
+          "updated": "2011-07-22T11:02:53.584+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13069504",
+          "id": "13069504",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "bq. I think Robert has stated here that he's comfortable continuing to use TokenStream as the API for IW to get the terms it indexes, is that what others feel too? I agree the inverted API I proposed is a little convoluted and I'm sure we can come up with a simple Consumable like abstraction (which Robert did also suggest above). But if people are content with TokenStream then theres no need.\n\nI feel the same. The API of TokenStream is so stupid-simple, why replace it by another push-like API that is not simplier nor more complicated, just different? I see no reason in this. IW should simply request a TokenStream from the field and consume it.\n\n{quote}\nLikewise, for multi-valued fields, IW shouldn't \"see\" the separate\nvalues; it should just receive a single token stream, and under the\nhood (in Document/Field impl) it's concatenating separate token\nstreams, adding posIncr/offset gaps, etc. This too is now hardwired\nin indexer but shouldn't be. Maybe an app wants to insert custom\n\"separator\" tokens between the values...\n{quote}\n\nI agree with that, too. There is one problem with this: Concenatting TokenStreams is not easy to do, as they have different attribute instances, so IW getting all attributes at the start would then somehow in the middle of the TS have to change the attributes.\n\nTo implement this fast (without wrapping and copying), we need some notification that the consumer of a TokenStream needs to \"request\" the attribute instances again, but this is a \"bad\" idea. For me the only simple solutions to this problem is to make the Field return an iterator of TokenStreams and IW consumes them one after each other, and doing the addAttribute before each separate instance.\n\nAbout the PosIncr Gap: The field can change the final offsets/posIncr in end() before handling over to a new TokenStream. IW would only consume TokenStreams one by one.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-07-22T11:20:23.189+0000",
+          "updated": "2011-07-22T11:20:23.189+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13069506",
+          "id": "13069506",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "{quote}\nI feel the same. The API of TokenStream is so stupid-simple, why replace it by another push-like API that is not simplier nor more complicated, just different? I see no reason in this. IW should simply request a TokenStream from the field and consume it.\n{quote}\n\nBut you do favour a pull-like API as an alternative?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-22T11:29:24.123+0000",
+          "updated": "2011-07-22T11:29:24.123+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13069510",
+          "id": "13069510",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "bq. But you do favour a pull-like API as an alternative?\n\nTokenStream is pull and I do favour this one.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-07-22T11:36:09.801+0000",
+          "updated": "2011-07-22T11:36:09.801+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13069512",
+          "id": "13069512",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Err yes sorry you're right.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-22T11:41:00.508+0000",
+          "updated": "2011-07-22T11:41:00.508+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13069517",
+          "id": "13069517",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nI agree with that, too. There is one problem with this: Concenatting TokenStreams is not easy to do, as they have different attribute instances, so IW getting all attributes at the start would then somehow in the middle of the TS have to change the attributes.\n{quote}\n\nI don't think the attributes should be allowed to change here. This is why above i already said, we should enforce reusability. Then there is no problem.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-22T12:00:40.476+0000",
+          "updated": "2011-07-22T12:00:40.476+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13112416",
+          "id": "13112416",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Getting back on this after the Analyzer work.\n\nNew patch is far more traditional and adds tokenStream(Analyzer) to IndexableField.  This replaces tokenStreamValue().  Consumers wishing to index a field now call tokenStream(Analyzer) which is responsible to create the appropriate TokenStream for the field.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-09-22T08:47:06.234+0000",
+          "updated": "2011-09-22T08:47:06.234+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13112423",
+          "id": "13112423",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Looks much more straigtforward now. I like this implementation.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-09-22T09:02:25.341+0000",
+          "updated": "2011-09-22T09:02:25.341+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13112469",
+          "id": "13112469",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Looks much more straigtforward now. I like this implementation.\n+1 looks good though. much simpler too!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-22T10:55:19.571+0000",
+          "updated": "2011-09-22T10:55:19.571+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13112902",
+          "id": "13112902",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "This looks great!  I love all the -'d code from DocInverterPerField ;)\n\nIn Field.java do we already check that if the field is not tokenized then it has a non-null stringValue()?\n\nI would like to for IW to not have to pass through the Analyzer here (ie FieldType should know the Analyzer for that field), but let's save that for another issue/time.\n\nLikewise, multi-valued field should ideally be \"under the hood\" from IW's standpoint, ie we should have a MultiValuedField and you append to a List inside it, and then IW gets a single TokenStream from that, which does its own concatenating of the separate TokenStreams, but we should tackle that under a separate issue.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-09-22T20:57:49.784+0000",
+          "updated": "2011-09-22T20:57:49.784+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13113117",
+          "id": "13113117",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "bq. In Field.java do we already check that if the field is not tokenized then it has a non-null stringValue()?\n\nI don't think we do.  Its always been implied (which could cause a bug).  I'll add the appropriate checks but we really need to revisit the constructors of Field at some stage.\n\nbq. I would like to for IW to not have to pass through the Analyzer here (ie FieldType should know the Analyzer for that field), but let's save that for another issue/time.\n\nI totally agree.  Theoretically FieldType could have Analyzer added to it now and it could make use of it.  But removing the Analyzer from IW seems controversial, alas :)\n\nbq. Likewise, multi-valued field should ideally be \"under the hood\" from IW's standpoint, ie we should have a MultiValuedField and you append to a List inside it, and then IW gets a single TokenStream from that, which does its own concatenating of the separate TokenStreams, but we should tackle that under a separate issue.\n\nIts nearly possible.  We've almost there on the reusable Analyzers.  This can already begin actually for non-tokenized fields and for NumericFields.\n\nI'll make the non-null StringValue checks and then commit.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-09-23T02:44:46.214+0000",
+          "updated": "2011-09-23T02:44:46.214+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13113127",
+          "id": "13113127",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Committed revision 1174506.\n\nI think this issue is wrapped and we can spin the other improvements off?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-09-23T03:17:37.670+0000",
+          "updated": "2011-09-23T03:17:37.670+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13113381",
+          "id": "13113381",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Yeah I think we are done here!  Nice work.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-09-23T12:48:00.208+0000",
+          "updated": "2011-09-23T12:48:00.208+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/13113533",
+          "id": "13113533",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Change has been committed.  We'll spin the multiValued fields work off as a separate issue.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-09-23T16:23:29.841+0000",
+          "updated": "2011-09-23T16:23:29.841+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458723/comment/17588510",
+          "id": "17588510",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#3385|https://github.com/apache/lucene/issues/3385].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:21:52.092+0000",
+          "updated": "2022-08-28T12:21:52.092+0000"
+        }
+      ],
+      "maxResults": 64,
+      "total": 64,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04rl3:",
+    "customfield_12314139": null
+  }
+}

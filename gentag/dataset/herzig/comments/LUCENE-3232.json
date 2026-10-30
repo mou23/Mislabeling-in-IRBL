@@ -1,0 +1,910 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12511297",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297",
+  "key": "LUCENE-3232",
+  "fields": {
+    "parent": {
+      "id": "12496516",
+      "key": "LUCENE-2883",
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/12496516",
+      "fields": {
+        "summary": "Consolidate Solr  & Lucene FunctionQuery into modules",
+        "status": {
+          "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+          "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+          "name": "Closed",
+          "id": "6",
+          "statusCategory": {
+            "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        },
+        "priority": {
+          "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+          "name": "Major",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://issues.apache.org/jira/rest/api/2/issuetype/3",
+          "id": "3",
+          "description": "A task that needs to be done.",
+          "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21148&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 21148
+        }
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "10767",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24783",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3232/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+      "id": "7",
+      "description": "The sub-task of the issue",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+      "name": "Sub-task",
+      "subtask": true,
+      "avatarId": 21146
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4e824181[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@487cee74[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6fc1f04f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@40e1bc8d[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2cd3ab88[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@6e52bee[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@66c6f0f5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@2b8e3d74[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1ab04c66[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@35a5ae85[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6435a19c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@3e8a55f3[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:50:55 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-06-25T00:05:09.025+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3232/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2011-06-23T00:38:39.681+0000",
+    "updated": "2022-08-28T12:50:55.914+0000",
+    "timeoriginalestimate": null,
+    "description": "Solr makes use of the MutableValue* series of classes to improve performance of grouping by FunctionQuery (I think).  As such they are used in ValueSource implementations.  Consequently we need to move these classes in order to move the ValueSources.\n\nAs Yonik pointed out, these classes have use beyond just FunctionQuerys and might be used by both Solr and other modules.  However I don't think they belong in Lucene core, since they aren't really related to search functionality.  Therefore I think we should put them into a Common module, which can serve as a dependency to Solr and any module.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12483794",
+        "id": "12483794",
+        "filename": "LUCENE-3232.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-06-25T00:04:52.389+0000",
+        "size": 56051,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12483794/LUCENE-3232.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12483544",
+        "id": "12483544",
+        "filename": "LUCENE-3232.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-06-23T04:23:10.999+0000",
+        "size": 37755,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12483544/LUCENE-3232.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12483539",
+        "id": "12483539",
+        "filename": "LUCENE-3232.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-06-23T01:40:57.654+0000",
+        "size": 51033,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12483539/LUCENE-3232.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Move MutableValues to Common Module",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053593",
+          "id": "13053593",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Code to execute before patch:\n\n{code}\nsvn mkdir --parents modules/queries/src/java/org/apache/lucene/queries/function\nsvn move solr/src/java/org/apache/solr/search/MutableValue.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValue.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueFloat.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueFloat.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueBool.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueBool.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueDate.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueDate.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueDouble.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueDouble.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueInt.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueInt.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueLong.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueLong.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueStr.java modules/queries/src/java/org/apache/lucene/queries/function/MutableValueStr.java\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T01:39:08.965+0000",
+          "updated": "2011-06-23T01:39:08.965+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053596",
+          "id": "13053596",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Patch that establishes the Queries module and moves the MutableValue classes.  Includes intellij, eclipse and maven work.\n\nEverything compiles and tests pass.\n\nIt'd be great if someone could review.  I'll commit in a few days.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T01:40:57.693+0000",
+          "updated": "2011-06-23T01:40:57.693+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053599",
+          "id": "13053599",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "These are useful beyond function queries... perhaps they should not be in the \"function\" module?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-23T01:45:05.632+0000",
+          "updated": "2011-06-23T01:45:05.632+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053600",
+          "id": "13053600",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "I've debated this backwards and forwards.  Do they have a use case out of function queries at the moment?  If so then yeah I'll happily put them somewhere else.  Otherwise I'll cross that bridge at the time.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T01:49:04.798+0000",
+          "updated": "2011-06-23T01:49:04.798+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053601",
+          "id": "13053601",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Actually scrap that question, I'll put them somewhere else immediately.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T01:50:40.416+0000",
+          "updated": "2011-06-23T01:50:40.416+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053642",
+          "id": "13053642",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "New code to execute with patch:\n\n{code}svn mkdir --parents modules/common/src/java/org/apache/lucene/common/mutable\nsvn move solr/src/java/org/apache/solr/search/MutableValue.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValue.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueFloat.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueFloat.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueBool.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueBool.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueDate.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueDate.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueDouble.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueDouble.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueInt.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueInt.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueLong.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueLong.java\nsvn move solr/src/java/org/apache/solr/search/MutableValueStr.java modules/common/src/java/org/apache/lucene/common/mutable/MutableValueStr.java\nsvn move dev-tools/idea/modules/analysis/common/common.iml dev-tools/idea/modules/analysis/common/analysis-common.iml\n{code}\n\nThis code includes a change to the common.iml file used by IntelliJ for the Analysis Common module, since this name clashed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T04:22:13.737+0000",
+          "updated": "2011-06-23T04:22:13.737+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053643",
+          "id": "13053643",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "New patch which moves the MutableValue code to a Common module.\n\nAlso makes a change to the configuration for the analysis common module in dev-tools, since calling this 'common' clashed.\n\nCompiles and test pass.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T04:23:11.027+0000",
+          "updated": "2011-06-23T04:23:11.027+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053826",
+          "id": "13053826",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch looks great!\n\nI wonder if we should name this module something more specific, eg docvalues?  values?\n\nShould we also move over ValueSource, *DocValues, FieldCacheSource?  I think, then, Solr 3.x grouping could cutover and then group by other field types.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-23T12:51:23.379+0000",
+          "updated": "2011-06-23T12:51:23.379+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13053876",
+          "id": "13053876",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. I wonder if we should name this module something more specific, eg docvalues? values?\ndude! no! :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-23T14:21:25.787+0000",
+          "updated": "2011-06-23T14:21:25.787+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13054110",
+          "id": "13054110",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "{quote}\nI wonder if we should name this module something more specific, eg docvalues? values?\n\nShould we also move over ValueSource, *DocValues, FieldCacheSource? I think, then, Solr 3.x grouping could cutover and then group by other field types.\n{quote}\n\nTo be honest, that wasn't my plan :D\n\nMy plan is to first move these to a Common module which will serve basically as a utility module for other modules.  The MutableValue classes are useful in a number of places (or will be in the future).  I envisage other useful utility like classes going into this module in the future too.  Solr for example has a number of very useful utilities that might be of benefit.\n\nAs such, it doesn't really relate to FunctionQuerys or ValueSources.\n\nThe next step once this is complete is to do what I originally intended and make a Queries module and push FunctionQuery and all the ValueSources / DocValues into that.\n\nIn the end you get the following structure:\n\n{code}\nmodules/\n    common/\n      (MutableValue*)\n    queries/\n      (FunctionQuery, *DocValues, *ValueSource, Queries from contrib/queries)\n{code}\n\nSeem reasonable?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-23T21:28:09.149+0000",
+          "updated": "2011-06-23T21:28:40.168+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13054350",
+          "id": "13054350",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK this sounds like a good plan... if we can get FQs factored out soonish then we can simply fix grouping module to use that (ie, we don't need common module to hold the ValueSource, etc.).\n\nI guess we keep the name \"common\" for now.  Maybe as we slurp in more stuff from Solr I'll like the name better :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-24T10:40:56.565+0000",
+          "updated": "2011-06-24T10:40:56.565+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13054395",
+          "id": "13054395",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "bq. if we can get FQs factored out soonish\n\nThis is the last issue preventing me from doing just that :)\n\nbq. I guess we keep the name \"common\" for now.\n\nAwesome.  I find it fairly common (ha) in projects to have a common module.  If it doesn't pan out, then we can either rename it or slurp it into another module.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-24T12:13:40.631+0000",
+          "updated": "2011-06-24T12:13:40.631+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13054768",
+          "id": "13054768",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Patch which includes files I missed in the past.  I've already committed but this is for archival.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-25T00:04:52.437+0000",
+          "updated": "2011-06-25T00:04:52.437+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/13054770",
+          "id": "13054770",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Committed revision 1139467.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-06-25T00:05:09.036+0000",
+          "updated": "2011-06-25T00:05:09.036+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12511297/comment/17589436",
+          "id": "17589436",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4305|https://github.com/apache/lucene/issues/4305].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:50:55.914+0000",
+          "updated": "2022-08-28T12:50:55.914+0000"
+        }
+      ],
+      "maxResults": 15,
+      "total": 15,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04lpr:",
+    "customfield_12314139": null
+  }
+}

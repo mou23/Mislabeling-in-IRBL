@@ -1,0 +1,613 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12510415",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415",
+  "key": "JCR-2989",
+  "fields": {
+    "parent": {
+      "id": "12504265",
+      "key": "JCR-2947",
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/12504265",
+      "fields": {
+        "summary": "Index aggregate rule improvements",
+        "status": {
+          "self": "https://issues.apache.org/jira/rest/api/2/status/1",
+          "description": "The issue is open and ready for the assignee to start work on it.",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/open.png",
+          "name": "Open",
+          "id": "1",
+          "statusCategory": {
+            "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        },
+        "priority": {
+          "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+          "name": "Minor",
+          "id": "4"
+        },
+        "issuetype": {
+          "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+          "id": "4",
+          "description": "An improvement or enhancement to an existing feature or task.",
+          "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+          "name": "Improvement",
+          "subtask": false,
+          "avatarId": 21140
+        }
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12318547",
+        "id": "12318547",
+        "description": "Apache Jackrabbit 2.3.2",
+        "name": "2.3.2",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2011-11-02"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "36266",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+      "name": "stillalex",
+      "key": "alex.parvulescu",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+      },
+      "displayName": "Alex Deparvu",
+      "active": true,
+      "timeZone": "America/Los_Angeles"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "280684",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+      "name": "stillalex",
+      "key": "alex.parvulescu",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+      },
+      "displayName": "Alex Deparvu",
+      "active": true,
+      "timeZone": "America/Los_Angeles"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+      "name": "stillalex",
+      "key": "alex.parvulescu",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+      },
+      "displayName": "Alex Deparvu",
+      "active": true,
+      "timeZone": "America/Los_Angeles"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-2989/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+      "id": "7",
+      "description": "The sub-task of the issue",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+      "name": "Sub-task",
+      "subtask": true,
+      "avatarId": 21146
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@476de415[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@17e3fe32[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1c0a8e20[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@1410f1fd[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4e9c7702[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@6f4670c[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4ec7827c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@5dcb1d40[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@70c2559c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@552b908f[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@270d2c34[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@22290488[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/10591",
+      "id": "10591",
+      "key": "JCR",
+      "name": "Jackrabbit Content Repository",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=10591&avatarId=10052",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=10591&avatarId=10052",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=10591&avatarId=10052",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=10591&avatarId=10052"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10170",
+        "id": "10170",
+        "description": "Jackrabbit related projects",
+        "name": "Jackrabbit"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Wed Oct 12 14:00:43 UTC 2011",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-10-12T14:00:43.816+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-2989/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2011-06-15T08:52:53.553+0000",
+    "updated": "2011-11-08T15:40:19.662+0000",
+    "timeoriginalestimate": null,
+    "description": "Index aggregates could contain other index aggregates. JR should be able to handle a complete hierarchy of aggregates. \n\nI'm working on a patch.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482930",
+        "id": "12482930",
+        "filename": "JCR-2989_v2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+          "name": "stillalex",
+          "key": "alex.parvulescu",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+          },
+          "displayName": "Alex Deparvu",
+          "active": true,
+          "timeZone": "America/Los_Angeles"
+        },
+        "created": "2011-06-17T13:00:11.640+0000",
+        "size": 10569,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482930/JCR-2989_v2.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12485573",
+        "id": "12485573",
+        "filename": "JCR-2989_v3.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+          "name": "stillalex",
+          "key": "alex.parvulescu",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+          },
+          "displayName": "Alex Deparvu",
+          "active": true,
+          "timeZone": "America/Los_Angeles"
+        },
+        "created": "2011-07-07T11:27:45.532+0000",
+        "size": 40452,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12485573/JCR-2989_v3.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482650",
+        "id": "12482650",
+        "filename": "JCR-2989.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+          "name": "stillalex",
+          "key": "alex.parvulescu",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+          },
+          "displayName": "Alex Deparvu",
+          "active": true,
+          "timeZone": "America/Los_Angeles"
+        },
+        "created": "2011-06-15T11:07:04.152+0000",
+        "size": 7345,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482650/JCR-2989.patch"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Support for embedded index aggregates",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13049720",
+          "id": "13049720",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "attached support for embedded index aggregates (fix + test)\n\nany comments?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2011-06-15T11:07:04.176+0000",
+          "updated": "2011-06-15T11:07:04.176+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13050305",
+          "id": "13050305",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jukkaz",
+            "name": "jukkaz",
+            "key": "jukkaz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=jukkaz&avatarId=15130",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=jukkaz&avatarId=15130",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=jukkaz&avatarId=15130",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=jukkaz&avatarId=15130"
+            },
+            "displayName": "Jukka Zitting",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'm a bit worried about the possibility of accidentally creating huge aggregates with this. For example, will the following create index aggregates of an entire folder structure, traversed recursively whenever any of the folders gets modified?\n \n    <aggregate primaryType=\"nt:folder\">\n        <include primaryType=\"nt:folder\">*</include>\n    </aggregate>\n\nIt might be good to either prevent recursive aggregates (only allow different aggregate definitions to be embedded) or to require some explicit recursive=\"true\" annotation on such aggregate definitions to make sure the user knows what they're doing. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jukkaz",
+            "name": "jukkaz",
+            "key": "jukkaz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=jukkaz&avatarId=15130",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=jukkaz&avatarId=15130",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=jukkaz&avatarId=15130",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=jukkaz&avatarId=15130"
+            },
+            "displayName": "Jukka Zitting",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-16T09:07:55.178+0000",
+          "updated": "2011-06-16T09:07:55.178+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13050327",
+          "id": "13050327",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "Yes, on update the structure will be traversed up, so the parents will be updated. For each change, you'll have as many updates as there are levels of inclusion.\n\nBut I'm not sure how big this problem is. I'd say it depends on the number of levels you hierarchy has, and the number of fields a node has indexed. But you can easily abuse both :)\n\nI'll tweak the code a bit so that it tries to optimize the upward update. Basically when checking a node's root aggregate, if this is already on the update list, stop there, as all its parents are already included in this update.\n\nI agree on having a soft rule in place for recursive aggregates (lets say max 5 levels deep), but I think having a recursive=true rule doesn't help the average copy-paste-from-the-wiki user :)  \n(and by the way that includes me too, as the docs are not excellent ;)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2011-06-16T10:04:06.658+0000",
+          "updated": "2011-06-16T10:04:06.658+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13051057",
+          "id": "13051057",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "Attached a reworked patch.\n\nIt includes a soft limit for recursive aggregates. \nAfter talking with others about this, I've decided to put the limit at 100, this should give us plenty of room to breathe.\nSo for the same type nodes, it only goes 100 (same type) parents up, then it stops updating.\n\nThe trick is that the limit is upward, because the way aggregation works. You start with a child node that has been updated, and go up it's hierarchy.\n\nThe patch also includes the tiny optimisation I mentioned earlier, if it runs into a known parent, it will stop, as the entire hierarchy is already on the update list.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2011-06-17T13:00:11.681+0000",
+          "updated": "2011-06-17T13:00:11.681+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13051101",
+          "id": "13051101",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jukkaz",
+            "name": "jukkaz",
+            "key": "jukkaz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=jukkaz&avatarId=15130",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=jukkaz&avatarId=15130",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=jukkaz&avatarId=15130",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=jukkaz&avatarId=15130"
+            },
+            "displayName": "Jukka Zitting",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "The recursive behaviour I'm worried about is due to the way aggregates are built by the indexer. For example say that you have a subtree of 1m nt:folders organized in three levels (100 child nodes for each non-leaf folder). Now, given the above example aggregate definition, whenever any one of these folders gets updated, the search index will also trigger an update of the index entry of the top-level folder. The SearchIndex.createDocument() call would then have to recursively traverse the entire subtree of 1m folders just to build the correct new index entry. That's a performance nightmare just waiting to happen.\n\nRecursive aggregates can be a pretty useful tool and I'd certainly like to see them fully supported, but I'd like to avoid a situation where it's too easy to shoot yourself in the foot with careless configuration.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jukkaz",
+            "name": "jukkaz",
+            "key": "jukkaz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=jukkaz&avatarId=15130",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=jukkaz&avatarId=15130",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=jukkaz&avatarId=15130",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=jukkaz&avatarId=15130"
+            },
+            "displayName": "Jukka Zitting",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-17T14:44:17.725+0000",
+          "updated": "2011-06-17T14:44:17.725+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13061218",
+          "id": "13061218",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "take 3, action!\n\nUpdated the patch.\nNow the same type node aggregates are not included by default.\nFollowed Jukka's advice and included a 'recursive' flag on the aggregate definition (default is false).\nI also added 'recursiveLimit' to control the number of levels up the indexing should go (default 100 / 0 for infinite recusion).\n\nThis is how the config looks like now:\n  <aggregate primaryType=\"nt:folder\" recursive=\"true\" recursiveLimit=\"10\">\n\nSo basically, now we are sure that the aggregates will not just sneak up on you :)\n\nFor more info, you can also look at the tests.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2011-07-07T11:27:45.550+0000",
+          "updated": "2011-07-07T11:27:45.550+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12510415/comment/13125863",
+          "id": "13125863",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "Fixed in revision 1182367 and 1182368.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=stillalex",
+            "name": "stillalex",
+            "key": "alex.parvulescu",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=alex.parvulescu&avatarId=41133",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=alex.parvulescu&avatarId=41133",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=alex.parvulescu&avatarId=41133",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=alex.parvulescu&avatarId=41133"
+            },
+            "displayName": "Alex Deparvu",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2011-10-12T14:00:43.880+0000",
+          "updated": "2011-10-12T14:00:43.880+0000"
+        }
+      ],
+      "maxResults": 7,
+      "total": 7,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i1cfrb:",
+    "customfield_12314139": null
+  }
+}

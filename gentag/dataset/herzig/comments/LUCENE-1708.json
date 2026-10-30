@@ -1,0 +1,751 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12428502",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502",
+  "key": "LUCENE-1708",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312682",
+        "id": "12312682",
+        "description": "Last release (barring major bugs) before migrating to 3.0 and JDK 1.5",
+        "name": "2.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-09-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12050",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26336",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+      "name": "shaie",
+      "key": "shaie",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shai Erera",
+      "active": true,
+      "timeZone": "Asia/Jerusalem"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+      "name": "shaie",
+      "key": "shaie",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shai Erera",
+      "active": true,
+      "timeZone": "Asia/Jerusalem"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1708/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@2cc5d7b[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5e1ff749[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@615a4c6a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@40de5ab7[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1f6a0c4d[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@71ec2141[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@42660a0a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@70dffb13[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3f189921[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2fee41aa[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5d2a3807[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@52a257d2[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:03:01 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2009-06-23T20:32:39.699+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1708/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2009-06-21T07:43:53.768+0000",
+    "updated": "2022-08-28T12:03:01.253+0000",
+    "timeoriginalestimate": null,
+    "description": "A spin off from here: http://www.nabble.com/Some-thoughts-around-the-use-of-reader.isDeleted-and-hasDeletions-td23931216.html.\nTwo changes:\n# Optimize SegmentMerger work when a reader has no deletions.\n# IndexReader.document() will no longer check if the document is deleted.\n\nWill post a patch shortly",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411423",
+        "id": "12411423",
+        "filename": "LUCENE-1708.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-06-22T16:29:52.297+0000",
+        "size": 30175,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411423/LUCENE-1708.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12411337",
+        "id": "12411337",
+        "filename": "LUCENE-1708.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+          "name": "shaie",
+          "key": "shaie",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shai Erera",
+          "active": true,
+          "timeZone": "Asia/Jerusalem"
+        },
+        "created": "2009-06-21T08:42:03.845+0000",
+        "size": 29729,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12411337/LUCENE-1708.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Improve the use of isDeleted in the indexing code",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12722316",
+          "id": "12722316",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Patch includes changes to SegmentMerger, IndexReader, SegmentReader, CHANGES, and TestSegmentReader (on tags as well).\n\nI think this is ready to commit (all tests pass). Before commit, we should complete the \"Shai Erera via\" in CHANGES.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-21T08:42:03.872+0000",
+          "updated": "2009-06-21T08:42:03.872+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12722644",
+          "id": "12722644",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I see lots of cleanups snuck in here ;)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-22T15:35:47.489+0000",
+          "updated": "2009-06-22T15:35:47.489+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12722665",
+          "id": "12722665",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Attached another iteration on the patch, basically cosmetic changes (removing un-needed args, naming things more verbosely, etc.).  I think it's ready to be committed.  I'll wait a day or two.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-22T16:29:52.330+0000",
+          "updated": "2009-06-22T16:29:52.330+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12722783",
+          "id": "12722783",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. I see lots of cleanups snuck in here\n\nNot all cleanups are bad, i.e. changing to iteration-based loops, rather than calling list.size() in each loop and list.get(i), is better, and cleaner :). I admit though that some of the cleanups just helped me understand the code better.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-22T19:57:31.527+0000",
+          "updated": "2009-06-22T19:57:31.527+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12722789",
+          "id": "12722789",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Not all cleanups are bad,\n\nOh, they are all good cleanups!  I just wish they were in a dedicated \"cleanup\" issue, somehow, instead... because then it's harder for me to focus on the \"real\" changes (though I realize \"clean as you go\" is mighty convenient).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-22T20:12:27.558+0000",
+          "updated": "2009-06-22T20:12:27.558+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12723293",
+          "id": "12723293",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Shai!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-23T20:32:39.696+0000",
+          "updated": "2009-06-23T20:32:39.696+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12726543",
+          "id": "12726543",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I cant find the back compat discussion on this. Did I miss?\n\nI do see where mike mentions the isDeleted change should happen with deprecation, but this patch appears to just make the change. Our current back compat policy doesn't allow that. It doesn't even really allow the really special exceptions that we have had to make (and I think it should spell that out, as well as our 'experiemental trick'). We have not officially allowed a relaxed back compat policy right?\n\nI'm not trying to police back compat, but I think we need to do our best to live up to it until its officially changed. Having had to make a couple exceptions doesn't mean we can just toss it for this release.\n\nSorry if I missed the relevant discussion on this - didn't see anything in the attached email thread.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-07-02T16:36:00.047+0000",
+          "updated": "2009-07-02T16:36:00.047+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12726563",
+          "id": "12726563",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I suppose, to be fair, we do mention that we might change runtime behaviour and document it - its just that we don't usually say, code around it.\n\nI guess its simple enough here thats its not really a big deal. I was just surprised I saw no mention of back compat in the discussion other than Mike mentioning that the change should be made through deprecation early on in the attached email thread.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-07-02T17:13:34.197+0000",
+          "updated": "2009-07-02T17:13:34.197+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12726580",
+          "id": "12726580",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "There is a paragraph in CHANGES under \"Changes to Runtime Behavior\" that explains this. I think it was on the email thread and not on this issue, that people preferred the runtime change vs. the deprecation and a new method name for document(), under the assumption that it's very unlikely that someone relies on IndexReader.document() checking for isDeleted (i.e., it passes a document which may or may not be deleted).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-07-02T17:54:57.903+0000",
+          "updated": "2009-07-02T17:54:57.903+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12726593",
+          "id": "12726593",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. There is a paragraph in CHANGES under \"Changes to Runtime Behavior\" that explains this. \n\nRight, I saw that - I just wondered about the discussion to do it.\n\nbq. I think it was on the email thread and not on this issue, that people preferred the runtime change vs. the deprecation and a new method name for document(), under the assumption that it's very unlikely that someone relies on IndexReader.document() checking for isDeleted (i.e., it passes a document which may or may not be deleted).\n\nThanks - thats the discussion I wasn't able to spot.\n\nI see - it was a quick back and forth at the end. Got lazy towards the end :) Thanks for pointing out.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-07-02T18:03:52.987+0000",
+          "updated": "2009-07-02T18:05:57.775+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/12726614",
+          "id": "12726614",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "bq. it was a quick back and forth at the end. Got lazy towards the end\n\nSometimes it's a valid way to pass a decision ;).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-07-02T18:37:42.620+0000",
+          "updated": "2009-07-02T18:37:42.620+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12428502/comment/17587903",
+          "id": "17587903",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2782|https://github.com/apache/lucene/issues/2782].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:03:01.253+0000",
+          "updated": "2022-08-28T12:03:01.253+0000"
+        }
+      ],
+      "maxResults": 12,
+      "total": 12,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04vav:",
+    "customfield_12314139": null
+  }
+}

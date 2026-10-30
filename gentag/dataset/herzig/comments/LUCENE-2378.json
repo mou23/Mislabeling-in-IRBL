@@ -1,0 +1,1410 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12461379",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379",
+  "key": "LUCENE-2378",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "11423",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12332436",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12332436",
+        "type": {
+          "id": "10032",
+          "name": "Blocker",
+          "inward": "is blocked by",
+          "outward": "blocks",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10032"
+        },
+        "outwardIssue": {
+          "id": "12463515",
+          "key": "LUCENE-2426",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12463515",
+          "fields": {
+            "summary": "change sort order to binary order",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25631",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2378/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4df41521[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@37121ea5[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@105fd322[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@371f10ba[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3edc3c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@135421c[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6f9d57db[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@20c81052[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5661f74b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@7d6f7a39[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7849d9c0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@18631c1b[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:24:00 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2010-08-11T13:16:39.566+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2378/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2010-04-07T10:12:24.685+0000",
+    "updated": "2022-08-28T12:24:00.844+0000",
+    "timeoriginalestimate": null,
+    "description": "A number of places still use the pre-flex APIs.\n\nThis is actually healthy, since it gives us ongoing testing of the back compat emulation layer.\n\nBut we should at some point cut them all over to flex.  Latest we can do this is 4.0, but I'm not sure we should do them all for 3.1... still marking this as 3.1 to \"remind us\" :)",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447194",
+        "id": "12447194",
+        "filename": "LUCENE-2378_FileFloatSource.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-16T01:18:34.569+0000",
+        "size": 5586,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447194/LUCENE-2378_FileFloatSource.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447386",
+        "id": "12447386",
+        "filename": "LUCENE-2378_PagedBytes.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-17T21:55:16.135+0000",
+        "size": 4520,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447386/LUCENE-2378_PagedBytes.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447233",
+        "id": "12447233",
+        "filename": "LUCENE-2378_UnInvertedField.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-16T14:30:02.416+0000",
+        "size": 18910,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447233/LUCENE-2378_UnInvertedField.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447399",
+        "id": "12447399",
+        "filename": "LUCENE-2378.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-17T22:33:17.121+0000",
+        "size": 3002,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447399/LUCENE-2378.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447390",
+        "id": "12447390",
+        "filename": "LUCENE-2378.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-17T22:11:51.902+0000",
+        "size": 1309,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447390/LUCENE-2378.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447148",
+        "id": "12447148",
+        "filename": "LUCENE-2378.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-15T17:01:27.115+0000",
+        "size": 372961,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447148/LUCENE-2378.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12446756",
+        "id": "12446756",
+        "filename": "LUCENE-2378.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-10T10:58:13.751+0000",
+        "size": 369833,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12446756/LUCENE-2378.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447369",
+        "id": "12447369",
+        "filename": "TestEnumPerf.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-17T18:01:49.019+0000",
+        "size": 4726,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447369/TestEnumPerf.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12447276",
+        "id": "12447276",
+        "filename": "TestEnumPerf.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-06-16T21:47:33.843+0000",
+        "size": 2946,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12447276/TestEnumPerf.java"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Cutover remaining usage of pre-flex APIs",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12877394",
+          "id": "12877394",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Attached rather big patch, cutting over all pre-flex API usage to flex, and removing the back compat layer that emulates pre-flex API on a flex index.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-10T10:58:13.934+0000",
+          "updated": "2010-06-10T10:58:13.934+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12878737",
+          "id": "12878737",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I plan to commit this one soon!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-14T20:47:09.775+0000",
+          "updated": "2010-06-14T20:47:09.775+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879025",
+          "id": "12879025",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'm getting an error compiling after this patch (missing svn add?)\n    [javac] C:\\code\\lusolr\\lucene\\contrib\\queries\\src\\java\\org\\apache\\lucene\\search\\regex\\RegexQuery.java:64: cannot find symbol\n    [javac] symbol  : class RegexTermsEnum\n    [javac] location: class org.apache.lucene.search.regex.RegexQuery\n    [javac]     return new RegexTermsEnum(reader, term, regexImpl);\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-15T16:58:53.107+0000",
+          "updated": "2010-06-15T16:58:53.107+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879027",
+          "id": "12879027",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Woops sorry -- new patch attached.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-15T17:01:27.336+0000",
+          "updated": "2010-06-15T17:01:27.336+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879221",
+          "id": "12879221",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Looking good - an amazing amount of work!\n\nHere's some changes to FileFloatSource to make it a bit more byte oriented rather than string oriented.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T01:18:34.644+0000",
+          "updated": "2010-06-16T01:18:34.644+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879291",
+          "id": "12879291",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Yonik -- your changes to FileFloatSource look good!  I'll merge w/ my patch, and commit soon...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T09:41:36.320+0000",
+          "updated": "2010-06-16T09:41:36.320+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879349",
+          "id": "12879349",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's the same sort of patch to UnInvertedField - it avoids the String based conversion and thus will work better if any terms are true binary.\n\nI think we're good to commit!\nI will still do some performance tests - but that shouldn't hold this up IMO.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T14:30:02.471+0000",
+          "updated": "2010-06-16T14:30:02.471+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879354",
+          "id": "12879354",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Great!  I'll commit now...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T14:58:10.109+0000",
+          "updated": "2010-06-16T14:58:10.109+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879361",
+          "id": "12879361",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Woops -- see LUCENE-2380 for the commit (I typed the wrong issue).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T15:22:01.705+0000",
+          "updated": "2010-06-16T15:22:01.705+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879459",
+          "id": "12879459",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I tested UnInvertedField faceting on branch_3x vs trunk:\n\nphase1 building the UnInvertedField (involves iterating all terms and docs for a field): trunk is 31% slower\ncomplete facet request, including returning top 1000 facets (exercises NumberedTermsEnum - seeking + iterating over terms): trunk is 10% slower.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T19:01:49.537+0000",
+          "updated": "2010-06-16T19:02:49.260+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879471",
+          "id": "12879471",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Reopening to make sure we get to the bottom of the perf loss...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T19:31:51.629+0000",
+          "updated": "2010-06-16T19:31:51.629+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879521",
+          "id": "12879521",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Attaching TestEnumPerf.java which tests the performance of iterating over all of the terms in an index.\n\nindexing in trunk is ~19% faster\nenumerating in trunk is ~9% slower\n\nJava6 -server\nParams: 1000000 999 100000 100\nWhich is 1M docs, maxBufferedDocs=999, unique terms=100,000\n(this results in 21 segments)\n\nI haven't tried enumerating docs yet... that's up next.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T21:47:33.919+0000",
+          "updated": "2010-06-16T21:52:08.027+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879546",
+          "id": "12879546",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, here's an updated TestEnumPerf.java that tests iteration over docs.  It's obviously the culprit.\nArgs: 1000000 999 100000 10  (same as before, just fewer iterations).\n\ntrunk=11146ms, branch_3x=4271ms.  trunk is 160% slower!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-16T22:22:53.534+0000",
+          "updated": "2010-06-16T22:22:53.534+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879713",
+          "id": "12879713",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Yonik, I'll track this down...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T09:10:01.230+0000",
+          "updated": "2010-06-17T09:10:01.230+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879867",
+          "id": "12879867",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "A little more info on this.  I originally thought that it was going to be a MultiFields issue only... but I stuck in an optimize and the performance on 3x is still much better.\n\nSingle segment performance:\ntrunk bulk read: 1823ms\ntrunk nextDoc: 1473ms\nbranch_3x bulk read:647ms",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T17:50:33.624+0000",
+          "updated": "2010-06-17T17:50:33.624+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879872",
+          "id": "12879872",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's an updated test that iterates over the docs (the biggest slowdown) with the optimize stuck in (to test single-segment performance).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T18:01:49.103+0000",
+          "updated": "2010-06-17T18:01:49.103+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879956",
+          "id": "12879956",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's a small improvement that lets one get BytesRef objects from PagedBytes as they are written.  UnInvertedField now uses this to avoid the allocation of a new byte[] per BytesRef.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T21:55:16.197+0000",
+          "updated": "2010-06-17T21:55:16.197+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879964",
+          "id": "12879964",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "That looks good Yonik!  Can you commit?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T22:07:33.316+0000",
+          "updated": "2010-06-17T22:07:33.316+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879965",
+          "id": "12879965",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I found the source of the massive slowdown when enum'ing docs -- attached patch fixes it.  I messed up the logic on whether the incoming DocsEnum can be reused, thus causing a new DocsEnum to be created for each sub-segment on each .docs() call!\n\nWith this I'm seeing trunk (6432 msec) slightly faster than 3x (6659 msec), for term + docs enum.\n\nBut terms enum alone is still slightly slower (trunk is 5312; 3x is 5019 msec).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T22:11:52.014+0000",
+          "updated": "2010-06-17T22:11:52.014+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12879984",
+          "id": "12879984",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Same patch as before, but also fixed reuse of DocsAndPositionsEnum.  I'll commit shortly.\n\nAlso: I tested temporarily cutting over BytesRef to unicode sort order, and with that change, the MultiTermsEnum on trunk is faster (5120 msec) than 3x (5337 msec).\n\nSo... I think we are done here (at least on these perf issues), and once we do the cutover to unicode term sort order (LUCENE-2426) we'll be faster than 3x.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-17T22:33:17.183+0000",
+          "updated": "2010-06-17T22:33:17.183+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12880013",
+          "id": "12880013",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Yay, I've confirmed that this fixes both the test program, and the faceting first-time-uninvert!\n\nNow I'm seeing something else though... the actual facet requests themselves are slower now than they were w/o the fix.\n~35% slower than branch_3x now.  This probably involves the NumberedTermsEnum class (looking up a term by number over a mult-segment index).  I'll see if I can reproduce with a lower level test.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-18T00:14:10.944+0000",
+          "updated": "2010-06-18T00:14:10.944+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12880026",
+          "id": "12880026",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Good news (partially) is that I can't reproduce the slowdown with low level tests... throwing in seeks or seeks + nexts all result in trunk being slightly faster.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-18T00:58:23.358+0000",
+          "updated": "2010-06-18T00:58:23.358+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12880139",
+          "id": "12880139",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Yay, I've confirmed that this fixes both the test program, and the faceting first-time-uninvert!\n\nGreat!\n\n{quote}\nNow I'm seeing something else though... the actual facet requests themselves are slower now than they were w/o the fix.\n~35% slower than branch_3x now. This probably involves the NumberedTermsEnum class (looking up a term by number over a mult-segment index). I'll see if I can reproduce with a lower level test.\n{quote}\n\nUgh.\n\nbq. Good news (partially) is that I can't reproduce the slowdown with low level tests... throwing in seeks or seeks + nexts all result in trunk being slightly faster.\n\nHmm, that's partially good... but then where is the 35% slowdown?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-18T09:36:30.330+0000",
+          "updated": "2010-06-18T09:36:30.330+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/12880215",
+          "id": "12880215",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Got it... It was a pre-flex index! Rebuilding the index yields speedups across the board!\n\nfirst time uninvert (phase1): trunk is 23% faster than branch_3x\nfull facet requests: trunk is 15% faster ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-06-18T14:50:14.660+0000",
+          "updated": "2010-06-18T14:50:14.660+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461379/comment/17588578",
+          "id": "17588578",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#3453|https://github.com/apache/lucene/issues/3453].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:24:00.844+0000",
+          "updated": "2022-08-28T12:24:00.844+0000"
+        }
+      ],
+      "maxResults": 25,
+      "total": 25,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04qy7:",
+    "customfield_12314139": null
+  }
+}

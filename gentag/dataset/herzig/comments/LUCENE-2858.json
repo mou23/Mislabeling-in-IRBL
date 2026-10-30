@@ -1,0 +1,1886 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12495275",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275",
+  "key": "LUCENE-2858",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "2900",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/1",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/blocker.svg",
+      "name": "Blocker",
+      "id": "1"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "4.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12347569",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12347569",
+        "type": {
+          "id": "12310051",
+          "name": "Supercedes",
+          "inward": "is superceded by",
+          "outward": "supercedes",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/12310051"
+        },
+        "inwardIssue": {
+          "id": "12540522",
+          "key": "LUCENE-3733",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12540522",
+          "fields": {
+            "summary": "Remaining TODOs of LUCENE-2858: Finalize AtomicReader/CompositeReader API",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/3",
+              "id": "3",
+              "description": "A task that needs to be done.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21148&avatarType=issuetype",
+              "name": "Task",
+              "subtask": false,
+              "avatarId": 21148
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+      "name": "uschindler",
+      "key": "thetaphi",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+      },
+      "displayName": "Uwe Schindler",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25152",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+      "name": "uschindler",
+      "key": "thetaphi",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+      },
+      "displayName": "Uwe Schindler",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [
+      {
+        "id": "12539341",
+        "key": "LUCENE-3716",
+        "self": "https://issues.apache.org/jira/rest/api/2/issue/12539341",
+        "fields": {
+          "summary": "Discussion topic: Move all Commit/Version&Reopen stuff from abstract IR to DirectoryReader",
+          "status": {
+            "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+            "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+            "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+            "name": "Closed",
+            "id": "6",
+            "statusCategory": {
+              "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+              "id": 3,
+              "key": "done",
+              "colorName": "green",
+              "name": "Done"
+            }
+          },
+          "priority": {
+            "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+            "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+            "name": "Major",
+            "id": "3"
+          },
+          "issuetype": {
+            "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+            "id": "7",
+            "description": "The sub-task of the issue",
+            "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+            "name": "Sub-task",
+            "subtask": true,
+            "avatarId": 21146
+          }
+        }
+      }
+    ],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+      "name": "uschindler",
+      "key": "thetaphi",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+      },
+      "displayName": "Uwe Schindler",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2858/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/3",
+      "id": "3",
+      "description": "A task that needs to be done.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21148&avatarType=issuetype",
+      "name": "Task",
+      "subtask": false,
+      "avatarId": 21148
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@5f24657c[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4864fb6f[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2c0fe4e8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@43dfdd85[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@cb5ff5c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@3fdab6c0[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6ca12d77[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@512ff693[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7243acf5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@184578cb[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7d6a2421[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@53dfce71[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:39:11 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2012-01-30T23:38:42.035+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2858/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "created": "2011-01-11T17:56:42.693+0000",
+    "updated": "2022-08-28T12:39:11.360+0000",
+    "timeoriginalestimate": null,
+    "description": "With current trunk, whenever you open an IndexReader on a directory you get back a DirectoryReader which is a composite reader. The interface of IndexReader has now lots of methods that simply throw UOE (in fact more than 50% of all methods that are commonly used ones are unuseable now). This confuses users and makes the API hard to understand.\n\nThis issue should split \"atomic readers\" from \"reader collections\" with a separate API. After that, you are no longer able, to get TermsEnum without wrapping from those composite readers. We currently have helper classes for wrapping (SlowMultiReaderWrapper - please rename, the name is really ugly; or Multi*), those should be retrofitted to implement the correct classes (SlowMultiReaderWrapper would be an atomic reader but takes a composite reader as ctor param, maybe it could also simply take a List<AtomicReader>). In my opinion, maybe composite readers could implement some collection APIs and also have the ReaderUtil method directly built in (possibly as a \"view\" in the util.Collection sense). In general composite readers do not really need to look like the previous IndexReaders, they could simply be a \"collection\" of SegmentReaders with some functionality like reopen.\n\nOn the other side, atomic readers do not need reopen logic anymore? When a segment changes, you need a new atomic reader? - maybe because of deletions thats not the best idea, but we should investigate. Maybe make the whole reopen logic simplier to use (ast least on the collection reader level).\n\nWe should decide about good names, i have no preference at the moment.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12512486",
+        "id": "12512486",
+        "filename": "LUCENE-2858.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+          "name": "uschindler",
+          "key": "thetaphi",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+          },
+          "displayName": "Uwe Schindler",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2012-01-30T22:37:01.899+0000",
+        "size": 740970,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12512486/LUCENE-2858.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12512480",
+        "id": "12512480",
+        "filename": "LUCENE-2858.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+          "name": "uschindler",
+          "key": "thetaphi",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+          },
+          "displayName": "Uwe Schindler",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2012-01-30T22:21:04.107+0000",
+        "size": 741224,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12512480/LUCENE-2858.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12512508",
+        "id": "12512508",
+        "filename": "LUCENE-2858-FCinsanity.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+          "name": "uschindler",
+          "key": "thetaphi",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+          },
+          "displayName": "Uwe Schindler",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2012-01-31T00:32:54.601+0000",
+        "size": 10713,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12512508/LUCENE-2858-FCinsanity.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12512621",
+        "id": "12512621",
+        "filename": "LUCENE-2858-FixSlowEnsureOpen.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+          "name": "uschindler",
+          "key": "thetaphi",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+          },
+          "displayName": "Uwe Schindler",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2012-01-31T20:21:04.865+0000",
+        "size": 1390,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12512621/LUCENE-2858-FixSlowEnsureOpen.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Separate SegmentReaders (and other atomic readers) from composite IndexReaders",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12980215",
+          "id": "12980215",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "+1\n\nWe very much need this now -- it should be strongly (statically) typed, whether you are using an AtomicIndexReader vs CompositeIndexReader.\n\nAnd I agree CompositeIndexReader should feel more like a Collection than what IR is today.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-11T18:00:34.094+0000",
+          "updated": "2011-01-11T18:00:34.094+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12980216",
+          "id": "12980216",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. (SlowMultiReaderWrapper - please rename, the name is really ugly; or Multi*)\n\nMy problem with Multi* is that this makes things sound cool and powerful.\nIf they are really slow transition mechanisms, I prefer Slow* as it will actually discourage their use.\n\nBut I agree with this issue in general and it would be great for it to be cleaned up.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-11T18:02:01.341+0000",
+          "updated": "2011-01-11T18:02:01.341+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12980388",
+          "id": "12980388",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. On the other side, atomic readers do not need reopen logic anymore? When a segment changes, you need a new atomic reader?\nThere is a freakload of places that \"upgrade\" SegmentReader in various ways, with deletions guilty only for the part of the cases. I'll try getting back to LUCENE-2355 at the end of the week.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-11T22:30:47.223+0000",
+          "updated": "2011-01-11T22:30:47.223+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982057",
+          "id": "12982057",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Any comments about removing write access from IndexReaders? I think setNorms() will be removed soon, but how about the others like deleteDocument()? I would propose to also make all IndexReaders simply *readers* not writers?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-01-15T10:26:14.857+0000",
+          "updated": "2011-01-15T10:26:39.634+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982102",
+          "id": "12982102",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. I think setNorms() will be removed soon\n\nWhy do you think this?\n\nOn the norms cleanup issue, i only removed setNorm(float), because its completely useless.\nAll it did was call Similarity.getDefault().encode(float) + setNorm(byte).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-15T14:30:37.591+0000",
+          "updated": "2011-01-15T14:30:37.591+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982107",
+          "id": "12982107",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I was talking about replacing norms by CSF, maybe It's just not soon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-01-15T14:50:22.849+0000",
+          "updated": "2011-01-15T14:50:22.849+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982115",
+          "id": "12982115",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Ah, ok. sorry i was confused. Still, i think we would need this method (somewhere) even \nwith CSF, so that people can change the norms and they instantly take effect for searches.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-15T15:18:05.619+0000",
+          "updated": "2011-01-15T15:18:05.619+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982126",
+          "id": "12982126",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Any comments about removing write access from IndexReaders? I think setNorms() will be removed soon, but how about the others like deleteDocument()? I would propose to also make all IndexReaders simply readers not writers? \n\nVoting with all my extremities - yes!!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-15T16:34:58.769+0000",
+          "updated": "2011-01-15T16:34:58.769+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982132",
+          "id": "12982132",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Still, i think we would need this method (somewhere) even with CSF, so that people can change the norms and they instantly take effect for searches.\nThis still puzzles me. I can strain my imagination, and get people who just need to change norms without reindexing.\nBut doing this and *requiring* instant turnaround? Kid me not :)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-15T16:49:39.218+0000",
+          "updated": "2011-01-15T16:49:39.218+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982134",
+          "id": "12982134",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I don't think we should remove setNorm/deleteDocuments, even from the composite reader class.\n\nDeleting docs from IR has advantages over deleting from IW: the change is \"live\" to any searches running on that IR; you get an immediate count of how many docs were deleted; you can delete by docID.\n\nsetNorm is also useful in that it can be use to boost docs (globally), live, if that reader is being used for searching.  When/if we cutover norms -> doc values we'll have to decide what to do about setNorm...\n\nAt a higher level, for this \"strong typing of atomic vs composite IRs\", we shouldn't try to change functionality -- let's just do a rote refactoring, such that methods that now throw UOE on IR are moved to the atomic reader only.\n\nSeparately we can think about whether existing functions should be dropped...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-15T16:57:44.705+0000",
+          "updated": "2011-01-15T16:57:44.705+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982152",
+          "id": "12982152",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "> Deleting docs from IR has advantages over deleting from IW: the change is\n> \"live\" to any searches running on that IR; you get an immediate count of how\n> many docs were deleted; you can delete by docID.\n\nAlternate plan:\n\n  * Move responsibility for deletions to a pluggable DeletionsReader\n    subcomponent of SegmentReader.\n  * Have the default DeletionsReader be read-only.\n  * People who need the esoteric functionality described above can use a\n    subclass of DeletionsReader.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=marvin",
+            "name": "marvin",
+            "key": "creamyg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Marvin Humphrey",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2011-01-15T19:07:30.357+0000",
+          "updated": "2011-01-15T19:07:30.357+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/12982166",
+          "id": "12982166",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "APIs have to be there still. All that commity, segment-deletery, mutabley stuff (that spans both atomic and composite readers).\nSo, while your plan is viable, it won't remove that much cruft.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-15T20:52:04.772+0000",
+          "updated": "2011-01-15T20:52:04.772+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13169760",
+          "id": "13169760",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I try to do this now, Robert will help.\n\nMost crap is removed form IndexReader, so this should be easy now. We should use AtomicIndexReader and CompositeIndexReader.\n\n- IndexReader base class only contains the methods that can actually be implemented in *every* reader.\n- The current BaseMultiReader (pkg-private) would be the later CompositeIndexReader\n- AtomicIndexReader is also abstract, SegmentReader and SlowMultiReaderWrapper would implement it.\n- The static open methods should maybe in a separate class or the abstract IndexReader base with the limited API, but they would return CompositeIndexReader\n- FilterIndexReader could be split in two classes, but a FilterMultiReader makes no sense :-) FilterIndexReader will be FilterAtomicIndexReader (also the superclass of SlowMultiReaderWrapper)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-12-14T22:35:13.412+0000",
+          "updated": "2011-12-14T22:42:25.194+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13188005",
+          "id": "13188005",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "uwe are you gonna work on this?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-01-17T21:19:26.583+0000",
+          "updated": "2012-01-17T21:19:26.583+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13188076",
+          "id": "13188076",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I will hopefully start this weekend. I just have a schedule currently that has no slots left for that.\n\nRobert and I wanted to start a branch soon, maybe I simply do that as first step soon!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-17T22:30:02.355+0000",
+          "updated": "2012-01-17T22:30:02.355+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13190456",
+          "id": "13190456",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Simon: Just to inform you, I am working on this. Currently I have a heavy broken checkout that does no longer compile at all :( Working, working, working... It's a mess!\n\nOnce I have something intially compiling for core (not tests), I will create a branch!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-21T16:19:07.607+0000",
+          "updated": "2012-01-21T16:19:07.607+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13190559",
+          "id": "13190559",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I created the branch at [https://svn.apache.org/repos/asf/lucene/dev/branches/lucene2858] and committed my first steps:\n\n- Add CompositeIndexReader and AtomicIndexReader\n- Moved methods around, still not yet finished (see below)\n- DirectoryReader is public now and is returned by IR.open() and IW.getReader()\n\nTODO:\n\n- IR.openIfChanged makes no sense for any reader other than DirectoryReader, let's move it also there\n- isCurrent and getVersion() is also useless for atomic readers and composite readers except DR\n- The strange generics in ReaderContext caused by the final field will go away, when changing reader field to aaccessor method returning the correct type (by return type overloading).\n\nComments welcome and also heavy committing.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-21T23:50:54.460+0000",
+          "updated": "2012-01-21T23:51:17.437+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13190662",
+          "id": "13190662",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Some TODOs fixed:\n\n- -The strange generics in ReaderContext caused by the final field will go away, when changing reader field to aaccessor method returning the correct type (by return type overloading).-\n- Some refactoring done on docFreq()\n- Moved the ReaderContext impls to the corresponding abstract reader class: CompositeReaderContext -> CompositeIndexReader, AtomicReaderContext -> AtomicIndexReader\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-22T12:56:20.280+0000",
+          "updated": "2012-01-22T12:56:20.280+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13190663",
+          "id": "13190663",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "More TODOs:\n\n- Rename SlowMultiReaderWrapper -> SlowCompositeReaderWrapper (as its not only for MultiReaders, also other CompositeIndexReaders like DirectoryReader. Name is not in line with our current naming\n- All version/commit/reopen stuff should go into DirectoryReader, its useless for the abstract IR interfaces",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-22T12:59:40.602+0000",
+          "updated": "2012-01-22T12:59:40.602+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13195757",
+          "id": "13195757",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I now fixed the branch's test-framework and all remaining TODOs about the API.\n\nNow the horrible stupid slave-work to port all test starts. I assume the API is now fixed, as nobody complained after one week.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-29T14:17:28.623+0000",
+          "updated": "2012-01-29T14:17:28.623+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13195768",
+          "id": "13195768",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq.  SlowMultiReaderWrapper - please rename, the name is really ugly; or Multi*\n\n+1, the Slow* is misleading as it makes it seem like there's a faster way you should be doing it.\nCompositeReaderWrapper should be fine.  And no, it doesn't sound too \"cool\" for the hypothetical developers who use that as a criteria when coding ;-)\n\nOther possibilities include AtomicReaderEmulator, AtomicEmulatorReader, CompositeAsAtomicReader, etc",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-01-29T15:38:34.075+0000",
+          "updated": "2012-01-29T15:38:34.075+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13195868",
+          "id": "13195868",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Can we please do some eclipse-renames like:\n\nAtomicIndexReader -> AtomicReader\nAtomicIndexReader.AtomicReaderContext -> AtomicReader.Context\n\nThe verbosity of the api is killing me :)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-01-29T22:58:17.094+0000",
+          "updated": "2012-01-29T22:58:17.094+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13195873",
+          "id": "13195873",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "+1 for those names.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-01-29T23:06:58.617+0000",
+          "updated": "2012-01-29T23:06:58.617+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13195876",
+          "id": "13195876",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Jaja, will fix this...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-29T23:25:45.127+0000",
+          "updated": "2012-01-29T23:25:45.127+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13195904",
+          "id": "13195904",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I renamed the enclosing classes and also removed the public ctors from ReaderContexts (to prevent stupid things already reported on mailing lists).\n\nThe renameing of ReaderContexts all to the same name Context, but with different enclosing class is a refactoring, Eclipse cannot do (it creates invalid code). It seems only NetBeans can do this, I will try to find a solution. The problem is that Eclipse always tries to import the inner class, what causes conflicts.\n\nFinally, e.g. the method getDocIdSet should look like getDocIdSet(AtomicReader.Context,...) [only importing AtomicReader], but Eclipse always tries to use Context [and import oal.AtomicReader.Context]. At the end we should have abstract IndexReader.Context, AtomicReader.Context, CompositeReader.Context.\n\nWill go to bed now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-30T01:27:50.346+0000",
+          "updated": "2012-01-30T01:27:50.346+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196024",
+          "id": "13196024",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "After sleeping one more night about it, the easiest and most simple way to remove the stupid verbosity in imports:\n\nI will move the ReaderContexts out of their enclosing class and make a top-level class without ctor out of it. Then import statements look nice. The RCs are now so important for search, so they should be on its own.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-30T10:08:52.805+0000",
+          "updated": "2012-01-30T10:08:52.805+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196479",
+          "id": "13196479",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Here the final patch. Thanks for the good work and lots of help from Robert and Mike.\n\nAs this patch contains heavy changes, we will commit it as soon as possible so work can go on. It would be nice, if you would not commit anything until this is done.\n\nThere are some minor issues open:\n- DirectoryReader is final and has only static factory methods. It is not possible to subclass it in any way. The problem is mainly Solr, as Solr accesses directory(), IndexCommits,... and therefore cannot work on abstract IndexReader anymore. This should be changed, by e.g. handling reopening in the IRFactory, also versions, commits,... Currently its not possible to implement any other IRFactory that returns something else.\n- The PayloadProcessorProvider has a broken API, this should be fixed. The current patch mimics the old behaviour, but not 100%.\n- ParallelReader is now atomic. We should add a sugar wrapper method to allow synchronized composite readers (with same segment sizes) to be aligned with MultiReaders or wrapped by Slow.\n\nThe remaining issues will be fixed in later issues!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-30T22:21:04.161+0000",
+          "updated": "2012-01-30T22:56:58.610+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196496",
+          "id": "13196496",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch with nocommits removed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-30T22:37:01.967+0000",
+          "updated": "2012-01-30T22:37:01.967+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196518",
+          "id": "13196518",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks for all the work here Uwe! I think its a great step forward. \nThe previous situation where half the methods were UOE is really unreleasable.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-01-30T23:02:43.976+0000",
+          "updated": "2012-01-30T23:02:43.976+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196542",
+          "id": "13196542",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Committed trunk revision: 1238085",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-30T23:38:42.094+0000",
+          "updated": "2012-01-30T23:38:42.094+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196561",
+          "id": "13196561",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Nice work guys!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-01-31T00:01:54.778+0000",
+          "updated": "2012-01-31T00:01:54.778+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196580",
+          "id": "13196580",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch that adds FC insanity checking for slow wrappers back. Will commit now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-31T00:32:54.658+0000",
+          "updated": "2012-01-31T00:32:54.658+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13196583",
+          "id": "13196583",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Committed trunk revision: 1238112",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-31T00:37:11.336+0000",
+          "updated": "2012-01-31T00:37:11.336+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13197134",
+          "id": "13197134",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think somehow ensureOpen is broken here in some situations (possibly slowmultireaderwrapper):\n\n{noformat}\nant test -Dtestcase=TestReaderClosed -Dtestmethod=test -Dtests.seed=42907a63342da06b:-1490dd5f0d0f26d9:-7e3c360ea2d32539 -Dargs=\"-Dfile.encoding=UTF-8\"\n{noformat}\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-01-31T19:16:57.609+0000",
+          "updated": "2012-01-31T19:16:57.609+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13197184",
+          "id": "13197184",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Hi Robert, this patch fixes the problem:\n\nSlowMultiReaderWrapper creates the fields and liveDocs on its ctor (as its expensive) and reuses. This is no problem, but the test did something very bad: It closed not the slow reader but the wrapped DirectoryReader. As fields() was not delegated to the DR or MultiFields with DR, Slow returned its own cached instance. Slow's ensureOpen was not throwing Ex, as it was still open.\n\nTheoretically, Slow* should incRef the underlying indexreader and decRef on close(). But that would require, that you close the SlowReader after wrapping.\n\nThe current solution is not optimal but makes it easy to wrap without explicitely closing the slow wrapper.\n\nThe fix was to call in.ensureOpen() in slow before the cached instance was returned.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-31T20:21:04.929+0000",
+          "updated": "2012-01-31T20:21:04.929+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13197187",
+          "id": "13197187",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Committed fix in revision: 1238788\nI removed the extra in.ensureOpen() for hasDeletions(), as this was only a null-check.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-01-31T20:24:09.661+0000",
+          "updated": "2012-01-31T20:24:09.661+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13287563",
+          "id": "13287563",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Not entirely sure why but it looks like the commits here slowed down our NRT reopen latency.  If you look at the nightly bench graph: http://people.apache.org/~mikemccand/lucenebench/nrt.html and click + drag from Jan 2012 to today, annotation R shows we increased from ~46 msec NRT reopen latency to ~50 msec ... could just be hotspot being upset...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-06-01T17:48:43.453+0000",
+          "updated": "2012-06-01T17:48:43.453+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13288129",
+          "id": "13288129",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Not entirely sure why but it looks like the commits here slowed down our NRT reopen latency.\n\nOK, sorry, I was wrong about this!\n\nI went back and re-ran the NRTPerfTest and isolated the slowdown to LUCENE-3728 (also committed on the same day)... it was because we lost the SegmentInfo.sizeInBytes caching... but then in LUCENE-4055 we got it back and we got the performance back ... so all's well that ends well :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-06-03T09:59:31.328+0000",
+          "updated": "2012-06-03T09:59:31.328+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13288133",
+          "id": "13288133",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Thanks Mike for taking care. For me this looked crazy, because refactoring like this should not change perf.\n\nThis explains the change back  after 4055, I thought un-compressed oops responsible for the speedup.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2012-06-03T10:16:03.036+0000",
+          "updated": "2012-06-03T10:16:03.036+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/13288135",
+          "id": "13288135",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. This explains the change back after 4055, I thought un-compressed oops responsible for the speedup.\n\nThat's what I thought too (and I was very confused that uncompressed oops would improve things)!  But LUCENE-4055 landed on the same day I turned off uncompressed oops... so I think all mysteries are now explained.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-06-03T10:19:42.111+0000",
+          "updated": "2012-06-03T10:19:42.111+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12495275/comment/17589060",
+          "id": "17589060",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#3932|https://github.com/apache/lucene/issues/3932].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:39:11.360+0000",
+          "updated": "2022-08-28T12:39:11.360+0000"
+        }
+      ],
+      "maxResults": 41,
+      "total": 41,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04nzr:",
+    "customfield_12314139": null
+  }
+}

@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<bugrepository name="PDE4.4">
+<bug id="322352" opendate="1281533760000" fixdate="1379524387000">
+<buginformation>
+<summary>Feature selection dialog should list features containing plugins matched by the filter</summary>
+<description>I frequently have to find for a plugin the feature to which it belongs. I would be great if the "Plug-ins" tab could have a button feature which would find the features to which this plugin belongs.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.dialogs.FeatureSelectionDialog.java</file>
+</fixedFiles>
+</bug>
+<bug id="413986" opendate="1375185720000" fixdate="1376408905000">
+<buginformation>
+<summary>OSGi wrongly reports that 'org.eclipse.osgi.compatibility.state' is missing</summary>
+<description></description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchConfigurationHelper.java</file>
+</fixedFiles>
+</bug>
+<bug id="414291" opendate="1375442280000" fixdate="1375865338000">
+<buginformation>
+<summary>PDE UI should only start UI job if really needed</summary>
+<description>4.4.The fix for bug 276981 now always starts a UI job which is not needed for most people. This should only be done when the new preference is enabled.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.PDEPlugin.java</file>
+<file>org.eclipse.pde.internal.ui.shared.target.Messages.java</file>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetStatus.java</file>
+</fixedFiles>
+</bug>
+<bug id="415346" opendate="1376922360000" fixdate="1376925483000">
+<buginformation>
+<summary>NPE when launching a .product not in the workspace</summary>
+<description>When using the product editor to launch a product, whose .procuct is not in the current workspace, i.e., which has simply been opened using "File/Open", nothing happens - except for the following exception in the Error Log:org.eclipse.core.runtime.AssertionFailedException: null argument: at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:85) at org.eclipse.core.runtime.Assert.isNotNull(Assert.java:73) at org.eclipse.jface.viewers.StructuredSelection. init (StructuredSelection.java:74) at org.eclipse.pde.internal.ui.editor.PDELauncherFormEditor.launch(PDELauncherFormEditor.java:123) at org.eclipse.pde.internal.ui.editor.PDELauncherFormEditor$1.run(PDELauncherFormEditor.java:91) at org.eclipse.pde.internal.ui.editor.actions.ActionMenu.run(ActionMenu.java:42) at org.eclipse.jface.action.Action.runWithEvent(Action.java:499)Version of my org.eclipse.pde feature is "3.9.0.v20130605-2000" (which AFAIK came with Kepler).</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.PDELauncherFormEditor.java</file>
+</fixedFiles>
+</bug>
+<bug id="415488" opendate="1377009120000" fixdate="1377889220000">
+<buginformation>
+<summary>Unable to launch runtime workbench with # in the workspace -data location</summary>
+<description>1) Set workspace to clear before launch2) Turn on ask before clearing3) Launch --   Prompted to clear workspace4) Add special character # to workspace path5) Launch --   No prompt, straight to workspace</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.launcher.WorkspaceDataBlock.java</file>
+</fixedFiles>
+</bug>
+<bug id="416272" opendate="1377892920000" fixdate="1378242656000">
+<buginformation>
+<summary>Move test and launching bundles to 1.5 EE, reduce warnings in PDE bundles</summary>
+<description>Move test bundle to 1.5 to allow annotations and generified types (other PDE bundles it tests already are 1.5).Reduce warnings via x-friends/suppression/warning settings</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.BundleValidationOperation.java</file>
+<file>org.eclipse.pde.internal.launching.PDELaunchingPlugin.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.BundleLauncherHelper.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.EclipsePluginValidationOperation.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.EquinoxInitializer.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchArgumentsHelper.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchConfigurationHelper.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchListener.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchPluginValidator.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchValidationOperation.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LauncherUtils.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.OSGiFrameworkManager.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.PDEMigrationDelegate.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.ProductValidationOperation.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.RequirementHelper.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.VMHelper.java</file>
+<file>org.eclipse.pde.internal.launching.sourcelookup.PDESourceLookupDirector.java</file>
+<file>org.eclipse.pde.launching.AbstractPDELaunchConfiguration.java</file>
+<file>org.eclipse.pde.launching.EclipseApplicationLaunchConfiguration.java</file>
+<file>org.eclipse.pde.launching.EquinoxLaunchConfiguration.java</file>
+<file>org.eclipse.pde.launching.JUnitLaunchConfigurationDelegate.java</file>
+<file>org.eclipse.pde.launching.PDESourcePathProvider.java</file>
+<file>org.eclipse.pde.ui.launcher.EclipseApplicationLaunchConfiguration.java</file>
+<file>org.eclipse.pde.internal.core.BinaryRepositoryProvider.java</file>
+<file>org.eclipse.pde.internal.core.P2Utils.java</file>
+<file>org.eclipse.pde.internal.core.PluginPathFinder.java</file>
+<file>org.eclipse.pde.internal.core.UpdateManagerHelper.java</file>
+<file>org.eclipse.pde.internal.core.bundle.BundlePluginModelBase.java</file>
+<file>org.eclipse.pde.internal.core.content.DefaultDocumentFactory.java</file>
+<file>org.eclipse.pde.internal.core.plugin.ExternalPluginModelBase.java</file>
+<file>org.eclipse.pde.internal.core.plugin.WorkspacePluginModelBase.java</file>
+<file>org.eclipse.pde.internal.core.project.BundleProjectDescription.java</file>
+<file>org.eclipse.pde.internal.core.text.plugin.PluginModelBase.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.BundleLauncherHelper.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchConfigurationHelper.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchPluginValidator.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.LauncherUtils.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.PDEMigrationDelegate.java</file>
+<file>org.eclipse.pde.internal.launching.launcher.VMHelper.java</file>
+<file>org.eclipse.pde.launching.EclipseApplicationLaunchConfiguration.java</file>
+<file>org.eclipse.pde.internal.ui.launcher.JREBlock.java</file>
+<file>org.eclipse.pde.internal.ui.wizards.imports.PluginImportOperation.java</file>
+<file>org.eclipse.pde.internal.ui.wizards.imports.PluginImportWizard.java</file>
+<file>org.eclipse.pde.internal.ui.wizards.imports.RepositoryImportWizard.java</file>
+</fixedFiles>
+</bug>
+<bug id="416723" opendate="1378469940000" fixdate="1379057861000">
+<buginformation>
+<summary>Plug-in import wizard no longer shows bundles that are disabled in the target</summary>
+<description>I20130905-2000.The plug-in import wizard no longer shows bundles that are disabled in the target.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.wizards.imports.PluginImportWizardFirstPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="417544" opendate="1379535720000" fixdate="1379965071000">
+<buginformation>
+<summary>Workspace plug-in model stores stale bundle description</summary>
+<description>Follow up to Bug 417096. When there is a problem with the bundle description we don't add it to the model. However, we also do not clear any existing bundle description, so the previous stale description will be used.In MinimalState.addBundle() line 76, when we catch a exception from creating the bundle description, we should clear the existing bundle description.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.MinimalState.java</file>
+</fixedFiles>
+</bug>
+<bug id="418226" opendate="1380311880000" fixdate="1394039273000">
+<buginformation>
+<summary>[patch] Add ability to allow Eclipse debug trace to stdout and stderr</summary>
+<description>In the existing eclipse debug trace framework org.eclipse.osgi.service.debug.DebugTrace, the trace output can only have the option to generate to a particular file. In case there are components that are still using stdout and stderr for their trace and have not moved to the new debug trace framework yet, it is difficult to keep the correlation on traces on different components since the trace output will be on different location.This proposed feature is to provide an extra preference settings on the Trace settings GUI to allow the user to have an option to output the trace to the stdout and stderr.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.trace.internal.Messages.java</file>
+<file>org.eclipse.ui.trace.internal.TracingPreferencePage.java</file>
+<file>org.eclipse.ui.trace.internal.utils.PreferenceHandler.java</file>
+<file>org.eclipse.ui.trace.internal.utils.TracingConstants.java</file>
+</fixedFiles>
+</bug>
+<bug id="419431" opendate="1381828440000" fixdate="1383995730000">
+<buginformation>
+<summary>ManifestUtils should print Manifest-Version key in the first line of the MANIFEST.MF file</summary>
+<description>The ManifestUtils class (from org.eclipse.pde.core 3.10.0 - Eclipse Luna) prints out the contents of the MANIFEST.MF file in a bad format. The Manifest-Version key-value pair should be printed in the first line of the file (instead it is handled only after the distinguished keys have been processed, see writeManifest method lines 249-260). This will cause problems when the manifest merging functionality is invoked from the org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter class, because it is looking for the Manifest-Version to be the first entry in the file. In the previos version of the org.eclipse.pde.core plugin (version 3.9.0 - Eclipse Kepler) the ManifestUtils class did not exist, instead the PluginConverter class had a writeManifest method which handled the Manifest-Version key properly. Why did the implementation change? According to this site http://www.cis.upenn.edu/~bcpierce/courses/629/jdkdocs/guide/jar/manifest.html this entry should be the first in the file. At the moment this is a blocker issue for https://bugs.eclipse.org/bugs/show_bug.cgi?id=419128.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.bundle.WorkspaceBundleModel.java</file>
+<file>org.eclipse.pde.internal.core.util.ManifestUtils.java</file>
+</fixedFiles>
+</bug>
+<bug id="420609" opendate="1383046920000" fixdate="1383210707000">
+<buginformation>
+<summary>Widget disposed exception from EditDirectoryContainerPage.validateInput</summary>
+<description>I20131028-2000.1. open 'Target Platform' preference page2. select the active target3. click 'Edit...'4. select the location5. click 'Edit...'6. quickly press 's' and 'Enter'== !ENTRY org.eclipse.ui 4 4 2013-10-29 10:19:29.368!MESSAGE An internal error has occurred.!STACK 0org.eclipse.swt.SWTException: Widget is disposed at org.eclipse.swt.SWT.error(SWT.java:4419) at org.eclipse.swt.SWT.error(SWT.java:4334) at org.eclipse.swt.SWT.error(SWT.java:4305) at org.eclipse.swt.widgets.Widget.error(Widget.java:471) at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:343) at org.eclipse.swt.widgets.Combo.getText(Combo.java:1005) at org.eclipse.pde.internal.ui.shared.target.EditDirectoryContainerPage.validateInput(EditDirectoryContainerPage.java:309) at org.eclipse.pde.internal.ui.shared.target.EditDirectoryContainerPage$CreateContainerJob.runInUIThread(EditDirectoryContainerPage.java:373) at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:95) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4144) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3761) at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:174) at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:389) at org.eclipse.jface.wizard.WizardDialog.run(WizardDialog.java:1055) at org.eclipse.pde.internal.ui.wizards.target.TargetDefinitionContentPage$2.contentsChanged(TargetDefinitionContentPage.java:205) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.contentsChanged(TargetLocationsGroup.java:548) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.handleEdit(TargetLocationsGroup.java:336) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.access$3(TargetLocationsGroup.java:305) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup$7.widgetSelected(TargetLocationsGroup.java:244) at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84) at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4350) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758) at org.eclipse.jface.window.Window.runEventLoop(Window.java:827) at org.eclipse.jface.window.Window.open(Window.java:803) at org.eclipse.pde.internal.ui.preferences.TargetPlatformPreferencePage.handleEdit(TargetPlatformPreferencePage.java:493) at org.eclipse.pde.internal.ui.preferences.TargetPlatformPreferencePage.access$5(TargetPlatformPreferencePage.java:487) at org.eclipse.pde.internal.ui.preferences.TargetPlatformPreferencePage$3.doubleClick(TargetPlatformPreferencePage.java:273) at org.eclipse.jface.viewers.StructuredViewer$1.run(StructuredViewer.java:849) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49) at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:176) at org.eclipse.jface.viewers.StructuredViewer.fireDoubleClick(StructuredViewer.java:847) at org.eclipse.jface.viewers.StructuredViewer.handleDoubleSelect(StructuredViewer.java:1140) at org.eclipse.jface.viewers.StructuredViewer$4.widgetDefaultSelected(StructuredViewer.java:1254) at org.eclipse.jface.util.OpenStrategy.fireDefaultSelectionEvent(OpenStrategy.java:252) at org.eclipse.jface.util.OpenStrategy.access$0(OpenStrategy.java:249) at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:310) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84) at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4350) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758) at org.eclipse.jface.window.Window.runEventLoop(Window.java:827) at org.eclipse.jface.window.Window.open(Window.java:803) at org.eclipse.ui.internal.dialogs.WorkbenchPreferenceDialog.open(WorkbenchPreferenceDialog.java:215) at org.eclipse.ui.internal.handlers.ShowPreferencePageHandler.execute(ShowPreferencePageHandler.java:54) at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:290) at org.eclipse.core.commands.Command.executeWithChecks(Command.java:499) at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:508) at org.eclipse.ui.internal.handlers.HandlerService.executeCommand(HandlerService.java:169) at org.eclipse.ui.internal.handlers.SlaveHandlerService.executeCommand(SlaveHandlerService.java:241) at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:157) at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:588) at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:505) at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:415) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84) at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4350) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1057) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4169) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3758) at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701) at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665) at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499) at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149) at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124) at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:109) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:80) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:372) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:226) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) at java.lang.reflect.Method.invoke(Method.java:601) at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636) at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591) at org.eclipse.equinox.launcher.Main.run(Main.java:1450) at org.eclipse.equinox.launcher.Main.main(Main.java:1426)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.EditDirectoryContainerPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="421268" opendate="1383841500000" fixdate="1389083009000">
+<buginformation>
+<summary>Remove Error Log view from default PDE perspective</summary>
+<description>In the vogella trainings, a significant amount of participants are usually confused by the presence of the error log. They (newbies) don't understand that the errors are coming from the running IDE and not their RCP app. Thus, I wonder if we give too much attention to the error log or if it is better left hidden to be used by more experienced users.Also showing the error log right from startup might lead users to think Eclipse is not stable.Btw. I do know that the error log supports showing the log of the nested RCP app.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.PDEPerspective.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.views.target.StateViewPage.java</file>
+<file>org.eclipse.pde.internal.ui.views.target.TargetStateView.java</file>
+</fixedFiles>
+</bug>
+<bug id="421976" opendate="1384786980000" fixdate="1386872526000">
+<buginformation>
+<summary>Error Log view doesn't show/copy plug-in for log entry</summary>
+<description>The Error Log view doesn't show/copy the originating plug-in for a log entry.E.g. for this entry in .log:--------------------!ENTRY org.eclipse.pde.core 4 201 2013-11-18 15:05:39.250!MESSAGE Plug-in at 'C:\e\i\I20131112-0800\a\org.eclipse.swt.snippets' does not have a manifest. The PluginConverter service used to create manifests for old style plug-ins is not available, please install the 'org.eclipse.osgi.compatibility.plugins' compatibility fragment.--------------------... the Copy action and the Event Details dialog only contain:--------------------eclipse.buildId=4.4.0.I20131112-0800java.version=1.7.0_40java.vendor=Oracle CorporationBootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_USFramework arguments: -showlocationCommand-line arguments: -os win32 -ws win32 -arch x86_64 -consolelog -console -showlocation -data aErrorMon Nov 18 15:54:27 CET 2013Plug-in at 'C:\e\i\I20131112-0800\a\org.eclipse.swt.snippets' does not have a manifest. The PluginConverter service used to create manifests for old style plug-ins is not available, please install the 'org.eclipse.osgi.compatibility.plugins' compatibility fragment.-------------------=  The originating plug-in "org.eclipse.pde.core" is missing.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.internal.views.log.EventDetailsDialog.java</file>
+<file>org.eclipse.ui.internal.views.log.LogEntry.java</file>
+<file>org.eclipse.ui.internal.views.log.Messages.java</file>
+</fixedFiles>
+</bug>
+<bug id="421979" opendate="1384787580000" fixdate="1401120718000">
+<buginformation>
+<summary>Luna should allow to convert 2.0-style plug-in to OSGi bundle with manifest</summary>
+<description>I20131112-0800Luna should still allow to convert a 2.0-style plug-in from my workspace to an OSGi bundle with a MANIFEST.MF.2.0-style plug-ins were only seriously deprecated very late in Kepler, but they still worked there. Now, when I start Luna and have an old-style plug-in in my workspace (e.g. org.eclipse.swt.snippets from R4_3_maintenance), Ia) don't get any error in the Problems viewb) get a silent error in the log (the PDE builder should create a problem marker instead of a log entry):!ENTRY org.eclipse.pde.core 4 201 2013-11-18 15:05:39.250!MESSAGE Plug-in at 'C:\e\i\I20131112-0800\a\org.eclipse.swt.snippets' does not have a manifest. The PluginConverter service used to create manifests for old style plug-ins is not available, please install the 'org.eclipse.osgi.compatibility.plugins' compatibility fragment.c) can't convert the bundle to OSGi by clicking the "create an OSGi bundle manifest" link in the manifest editor.It's OK that Luna doesn't support 2.0-style plug-ins any more, but it still has to help the user with the transition. The advice to install the 'org.eclipse.osgi.compatibility.plugins' is bad. Normally, a user should NOT install that bundle, but should just fix the project. The compatibility bundle is not even easily available (bug 412886 comment 15). And I guess once it's installed, the user wouldn't even be forced to fix their bundle -- which is exactly the opposite from what we want to achieve.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.util.ManifestUtils.java</file>
+<file>org.eclipse.pde.internal.core.util.UtilMessages.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.plugin.OverviewPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="424111" opendate="1387193040000" fixdate="1387207267000">
+<buginformation>
+<summary>[patch] OpenLogDialog readFile does not close BufferedReader</summary>
+<description>OpenLogDialog readFile does not close BufferedReader, I upload a Gerrit review in a few minutes for the fix.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.internal.views.log.OpenLogDialog.java</file>
+</fixedFiles>
+</bug>
+<bug id="424113" opendate="1387195260000" fixdate="1389177952000">
+<buginformation>
+<summary>[patch] Add 256x256 branding icon support to product editor</summary>
+<description>I think we should also support that someone enters a 256x256 branding icon in the product configuration editor. This is for example used by Ubuntu on high resolution displays. I see that EPP enters this directly in the plugin.xml.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.iproduct.IWindowImages.java</file>
+<file>org.eclipse.pde.internal.core.product.WindowImages.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.WindowImagesSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="426503" opendate="1390503540000" fixdate="1391115911000">
+<buginformation>
+<summary>[patch] [target] TargetContentsGroup does not consider custom location images</summary>
+<description>In the TargetContentsGroup one can group the plugins by location. If a custom location type is involved then its icon doesn't show up, which looks odd. The cause is that TargetContentsGroup.createTree() uses a plain StyledBundleLabelProvider. With this code it seems to work for me:fTree.setLabelProvider(new StyledBundleLabelProvider(true, false) { @Override public Image getImage(Object element) { Image image = super.getImage(element); if (image == null    element instanceof ITargetLocation) { ILabelProvider provider = (ILabelProvider) Platform.getAdapterManager() .getAdapter(element, ILabelProvider.class); if (provider != null) { image = provider.getImage(element); } } return image; }});</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetContentsGroup.java</file>
+</fixedFiles>
+</bug>
+<bug id="426524" opendate="1390530420000" fixdate="1398799778000">
+<buginformation>
+<summary>[Product][Editors] Add support for p2 repo</summary>
+<description>The product editor should offer the ability to provide the URL of the p2 repos. This will avoid having to resort to p2.inf</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.product.PluginConfigurationSection.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.UpdatesSection.java</file>
+<file>org.eclipse.pde.internal.core.iproduct.IProduct.java</file>
+<file>org.eclipse.pde.internal.core.iproduct.IProductModelFactory.java</file>
+<file>org.eclipse.pde.internal.core.iproduct.IRepositoryInfo.java</file>
+<file>org.eclipse.pde.internal.core.product.Product.java</file>
+<file>org.eclipse.pde.internal.core.product.ProductModelFactory.java</file>
+<file>org.eclipse.pde.internal.core.product.RepositoryInfo.java</file>
+<file>org.eclipse.pde.internal.ui.IHelpContextIds.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.ProductEditor.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.UpdatesPage.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.UpdatesSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="426525" opendate="1390530540000" fixdate="1394039281000">
+<buginformation>
+<summary>[Product][Editors] Allow for system properties to be specified for an OS / Arch combination</summary>
+<description>There are a number of circumstances where the system properties need to be configured on a OS / Arch combination. The product editor needs to be enhanced to support this.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.iproduct.IConfigurationProperty.java</file>
+<file>org.eclipse.pde.internal.core.product.ConfigurationProperty.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.PropertiesSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="426527" opendate="1390530600000" fixdate="1394039290000">
+<buginformation>
+<summary>[Product][Editors] Allow for VM args to be specified for an OS / Arch combination</summary>
+<description>There are a number of circumstances where the VM args need to be configured on a OS / Arch combination. The product editor needs to be enhanced to support this.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.iproduct.IArgumentsInfo.java</file>
+<file>org.eclipse.pde.internal.core.product.ArgumentsInfo.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.ArgumentsSection.java</file>
+<file>org.eclipse.pde.internal.ui.launcher.LaunchAction.java</file>
+<file>org.eclipse.pde.internal.core.iproduct.IArgumentsInfo.java</file>
+<file>org.eclipse.pde.internal.core.product.ArgumentsInfo.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.ArgumentsSection.java</file>
+<file>org.eclipse.pde.internal.ui.launcher.LaunchAction.java</file>
+</fixedFiles>
+</bug>
+<bug id="426528" opendate="1390531080000" fixdate="1409646339000">
+<buginformation>
+<summary>[Product][Editors] Specify the name and location of the CSS file to use</summary>
+<description>In order to better support the CSS required by e4, the editor should allow for the name of the CSS file to be specified and synchronized with the appropriate value in the plugin.xml.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.iproduct.ICSSInfo.java</file>
+<file>org.eclipse.pde.internal.core.iproduct.IProduct.java</file>
+<file>org.eclipse.pde.internal.core.iproduct.IProductModelFactory.java</file>
+<file>org.eclipse.pde.internal.core.product.CSSInfo.java</file>
+<file>org.eclipse.pde.internal.core.product.Product.java</file>
+<file>org.eclipse.pde.internal.core.product.ProductModelFactory.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.CSSSection.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.CustomizationPage.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.PreferencesSection.java</file>
+<file>org.eclipse.pde.internal.ui.wizards.product.ProductDefinitionOperation.java</file>
+</fixedFiles>
+</bug>
+<bug id="426529" opendate="1390531260000" fixdate="1398799786000">
+<buginformation>
+<summary>[Product][Editors] Allow for default start level to easily be loaded</summary>
+<description>When creating a product from scratch, one does not know the necessary start level and it is always a pain to figure it out.Since in most situations these start levels are the same, I would like to add a button that populate "typical" start levels into the editor.There will be no smart implied, just a button with hardcoded values for now.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.PluginConfigurationSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="426531" opendate="1390531680000" fixdate="1423587199000">
+<buginformation>
+<summary>[category] Specify repository references (additional repositories) in category.xml editor</summary>
+<description>The category editor should allow for references to be specified.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.isite.IRepositoryReference.java</file>
+<file>org.eclipse.pde.internal.core.isite.ISite.java</file>
+<file>org.eclipse.pde.internal.core.isite.ISiteModelFactory.java</file>
+<file>org.eclipse.pde.internal.core.site.RepositoryReference.java</file>
+<file>org.eclipse.pde.internal.core.site.Site.java</file>
+<file>org.eclipse.pde.internal.core.site.SiteModelFactory.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.category.CategoryEditor.java</file>
+<file>org.eclipse.pde.internal.ui.editor.category.RepositoryMetadataPage.java</file>
+<file>org.eclipse.pde.internal.ui.editor.category.RepositoryReferenceSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="426532" opendate="1390531980000" fixdate="1410947074000">
+<buginformation>
+<summary>[category] Specify download stats URL and type of artifacts to monitor in category.xml</summary>
+<description>Dealing with download stats is always tricky. The bug is about adding support for download stats to the category editor. Users should be able to specify the URL of where to report the stats and the artifacts to track.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.isite.ISite.java</file>
+<file>org.eclipse.pde.internal.core.isite.ISiteModelFactory.java</file>
+<file>org.eclipse.pde.internal.core.isite.IStatsInfo.java</file>
+<file>org.eclipse.pde.internal.core.site.Site.java</file>
+<file>org.eclipse.pde.internal.core.site.SiteModelFactory.java</file>
+<file>org.eclipse.pde.internal.core.site.StatsInfo.java</file>
+<file>org.eclipse.pde.internal.ui.PDEUIMessages.java</file>
+<file>org.eclipse.pde.internal.ui.editor.category.DownloadStatsSection.java</file>
+<file>org.eclipse.pde.internal.ui.editor.category.RepositoryMetadataPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="427825" opendate="1392052560000" fixdate="1392885277000">
+<buginformation>
+<summary>Let subclasses of AbstractBundleContainer specify smoother progress monitoring for resolve()</summary>
+<description>My subclass of AbstractBundleContainer does all the resolve() work in resolveBundles() and resolveFeatures() just returns the already cached fFeatures.In this scenario it's a little annoying that resolve() allocates one third of the overall work to resolveFeatures() in a hardcoded way.https://git.eclipse.org/r/#/c/21720/ adds override points for subclasses with a work ratio different from 2/1. With the current defaults it should not impact existing subclasses, but maybe some of them could make use of the new methods, too.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.target.AbstractBundleContainer.java</file>
+</fixedFiles>
+</bug>
+<bug id="427995" opendate="1392212760000" fixdate="1393966888000">
+<buginformation>
+<summary>[patch] Minor clean-up in ManifestContentAssistProcessor</summary>
+<description></description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.contentassist.ManifestContentAssistProcessor.java</file>
+<file>org.eclipse.pde.internal.ui.editor.contentassist.ManifestContentAssistProcessor.java</file>
+</fixedFiles>
+</bug>
+<bug id="428065" opendate="1392277620000" fixdate="1393966897000">
+<buginformation>
+<summary>[patch] Minor clean-up in QuickFixProcessor</summary>
+<description>While starting to look at Bug 428064 I clean-up QuickFixProcessor a bit. I think such clean-up has been called "gratuitous" in the past (maybe its because I'm not a native speaker but isn't that a real negative work?) but I like to cleanup code before trying to do functional changes.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.correction.java.QuickFixProcessor.java</file>
+</fixedFiles>
+</bug>
+<bug id="428259" opendate="1392486600000" fixdate="1392754951000">
+<buginformation>
+<summary>[target] NullPointerException after updating ITargetLocation</summary>
+<description>In the TargetDefinitionContentPage I selected an ITargetLocation and clicked the "Update" button. That starts an asynchronous job (I've always wondered why, but thought someone must like that). Then I've closed the Preferences dialog without waiting for the job to finish and bang:!ENTRY org.eclipse.ui 4 4 2014-02-15 18:42:54.608!MESSAGE An internal error has occurred.!STACK 0java.lang.NullPointerException at org.eclipse.pde.internal.ui.wizards.target.TargetDefinitionContentPage$2.contentsChanged(TargetDefinitionContentPage.java:205) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.contentsChanged(TargetLocationsGroup.java:548) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.access$8(TargetLocationsGroup.java:545) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup$11$1.runInUIThread(TargetLocationsGroup.java:451) at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:95) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4147) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3764) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1122) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1006) at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:146) at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:615) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:566) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150) at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125) at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:109) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:80) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:372) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:226) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) at java.lang.reflect.Method.invoke(Method.java:606) at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636) at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591) at org.eclipse.equinox.launcher.Main.run(Main.java:1450) at org.eclipse.equinox.launcher.Main.main(Main.java:1426)Why is the "Update" performed asynchronously? Isn't there already an embedded progress bar in the preferences page?</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.java</file>
+</fixedFiles>
+</bug>
+<bug id="429280" opendate="1393564620000" fixdate="1396526220000">
+<buginformation>
+<summary>Classcast exceptions when using delta-pack (export to multiple platforms)</summary>
+<description>I was trying to test our "delta pack" but was seeing several errors related to the dialogs that prevented a very good test. The worst was classcast exception when selecting the "Launching" tab. I'll attach full log, but first part of exception stack is pasted below. The "Lanuching" page, remained blank. = = = = =java.lang.ClassCastException: org.eclipse.swt.custom.CCombo incompatible with org.eclipse.swt.widgets.Combo at org.eclipse.pde.internal.ui.editor.product.ArgumentsSection.createClient(ArgumentsSection.java:117) at org.eclipse.pde.internal.ui.editor.product.ArgumentsSection. init (ArgumentsSection.java:69) at org.eclipse.pde.internal.ui.editor.product.LaunchingPage.fillBody(LaunchingPage.java:57) at org.eclipse.pde.internal.ui.editor.product.LaunchingPage.createFormContent(LaunchingPage.java:47) at org.eclipse.ui.forms.editor.FormPage$1.run(FormPage.java:152) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70) at org.eclipse.ui.forms.editor.FormPage.createPartControl(FormPage.java:150) at org.eclipse.pde.internal.ui.editor.PDEFormPage.createPartControl(PDEFormPage.java:263).....</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.product.ArgumentsSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="429372" opendate="1393660560000" fixdate="1399975739000">
+<buginformation>
+<summary>[patch] ErrorLog view duplicates statuses</summary>
+<description>Created attachment 240423Target file to reproduce the problemThe ErrorLog view duplicates the children of MultiStatus entries. This code that has been changed in the context of bug 416507 to LogView.createLogEntry(IStatus) adds new child entries: private LogEntry createLogEntry(IStatus status) { LogEntry entry = new LogEntry(status); // [...] if (status.isMultiStatus()) { IStatus[] children = status.getChildren(); for (int i = 0; i   children.length; i++) { LogEntry childEntry = createLogEntry(children[i]); entry.addChild(childEntry); childEntry.setSession(currentSession); } }But child entries for the child statuses have already been added in new LogEntry(status).The problem can be reproduced with the attached test.target file. Just open it in an IDE and "Set as Target Platform". It shouldn't be able to resolve properly and as a result add nested multi statuses. They're displayed incorrectly in the ErrorLog view as you can see in the screenshot that I'll also attach.I've submitted a Gerrit review that also fixes the problem that the implicitely created child entries have no session set:https://git.eclipse.org/r/#/c/22151/</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.internal.views.log.LogEntry.java</file>
+<file>org.eclipse.ui.internal.views.log.LogView.java</file>
+<file>org.eclipse.ui.internal.views.log.LogEntry.java</file>
+<file>org.eclipse.ui.internal.views.log.LogView.java</file>
+</fixedFiles>
+</bug>
+<bug id="429373" opendate="1393662840000" fixdate="1393999924000">
+<buginformation>
+<summary>TargetLocationContentProvider shouldn't check "instanceof MultiStatus"</summary>
+<description>Near the bottom of TargetLocationContentProvider.getChildren() there is this code: } else if (parentElement instanceof MultiStatus) { return ((MultiStatus) parentElement).getChildren(); } else { ... }But the getChildren() methdod is declared in IStatus. The current instanceof check prevents IStatus implementations other than MultiStatus from showing their children. The fix is easy: } else if (parentElement instanceof IStatus) { return ((IStatus) parentElement).getChildren(); } else { ... }I'm going to submit a Gerrit review...</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetLocationContentProvider.java</file>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetStatus.java</file>
+</fixedFiles>
+</bug>
+<bug id="429679" opendate="1394033520000" fixdate="1394137919000">
+<buginformation>
+<summary>NPE trying to open Dependencies and target Platform State views</summary>
+<description>Created attachment 240558Fixmaster; was OK in I20140211-1100; same reason as bug 428890NPE when trying to open Dependencies and target Platform State views:java.lang.NullPointerException at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:419) at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:759) at org.eclipse.ui.part.PageBookView.showBootstrapPart(PageBookView.java:945) at org.eclipse.ui.part.PageBookView.createPartControl(PageBookView.java:501) at org.eclipse.pde.internal.ui.views.target.TargetStateView.createPartControl(TargetStateView.java:72) at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:137)...!ENTRY org.eclipse.e4.ui.workbench 4 0 2014-03-05 15:38:25.835!MESSAGE!STACK 0java.lang.NullPointerException at org.eclipse.ui.part.PageBookView.createPage(PageBookView.java:419) at org.eclipse.ui.part.PageBookView.partActivated(PageBookView.java:759) at org.eclipse.ui.part.PageBookView.showBootstrapPart(PageBookView.java:945) at org.eclipse.ui.part.PageBookView.createPartControl(PageBookView.java:501) at org.eclipse.pde.internal.ui.views.dependencies.DependenciesView.createPartControl(DependenciesView.java:319) at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.createPartControl(CompatibilityPart.java:137) at org.eclipse.ui.internal.e4.compatibility.CompatibilityView.createPartControl(CompatibilityView.java:155) at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:318) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) at java.lang.reflect.Method.invoke(Method.java:606) at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56) at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:888) at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:869) at org.eclipse.e4.core.internal.di.InjectorImpl.inject(InjectorImpl.java:120) at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:337) at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:258) at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:162) at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:102) at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:71) at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:53) at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:125) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:958) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:642) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$6.run(PartRenderingEngine.java:527) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:512) at org.eclipse.e4.ui.workbench.renderers.swt.ElementReferenceRenderer.createWidget(ElementReferenceRenderer.java:61) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:958) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:642) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:744) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.access$2(PartRenderingEngine.java:715) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$7.run(PartRenderingEngine.java:709) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:694) at org.eclipse.e4.ui.workbench.renderers.swt.StackRenderer.showTab(StackRenderer.java:1222) at org.eclipse.e4.ui.workbench.renderers.swt.LazyStackRenderer$1.handleEvent(LazyStackRenderer.java:65) at org.eclipse.e4.ui.services.internal.events.UIEventHandler$1.run(UIEventHandler.java:41) at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:187) at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:150) at org.eclipse.swt.widgets.Display.syncExec(Display.java:4731)...</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.views.dependencies.DependenciesView.java</file>
+<file>org.eclipse.pde.internal.ui.views.target.TargetStateView.java</file>
+</fixedFiles>
+</bug>
+<bug id="429852" opendate="1394185860000" fixdate="1400161242000">
+<buginformation>
+<summary>[Product][Editors] Arch selection combo is confusing/misleading</summary>
+<description>I20140305-2000.Specify VM args to be specified for an OS / Arch combination does not work for me. Here's what I tried when I wanted to verify the N N entry.1. create plug-in project2. create new Product Configuration3. on 'Launching' tab's 'Launching Arguments' section select 'win32' tab4. change 'Architecture' combo to 'x86_64' ==  editor does not get dirty, no preview5. Ctrl+S ==  combo switches to 'sparc'6. close and reopen the product editor ==  value of the combo for 'win32' is reset to 'All Architectures'</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.product.ArgumentsSection.java</file>
+</fixedFiles>
+</bug>
+<bug id="429902" opendate="1394216460000" fixdate="1395998822000">
+<buginformation>
+<summary>Support the root level features attribute installMode="root" in the product configuration editor</summary>
+<description>Our solution for the most-wanted Tycho feature (bug 361722) included adding the attribute "installMode" in product/features/feature elements in product configuration files.We are recommending our users to use the PDE Product Configuration editor for product files, so I wondered if it is possible to add some support for our extension of your product file format in the editor. The absolute minimum would already help: just have the editor leave the attribute unchanged when doing other modifications. If you say that this change is acceptable, we'll probably find someone from the Tycho community to contribute a patch.The background of the Tycho feature is the following: Tycho can create installations/distribution archives from product files. Up to recently, these installations only contained one root element, the product, so it was not possible (or only with advanced p2 magic) to create an installation where the installed features can be updated independently of the product. With Tycho 0.20.0, this has become a lot easier - to see how, try out this demo build:1. git clone https://git.eclipse.org/r/tycho/org.eclipse.tycho-demo.git2. git fetch origin refs/changes/59/23059/1    git checkout FETCH_HEAD 3. Follow the instructions here: https://git.eclipse.org/r/#/c/23059/</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.product.ProductFeature.java</file>
+</fixedFiles>
+</bug>
+<bug id="430812" opendate="1395336060000" fixdate="1395338107000">
+<buginformation>
+<summary>Incompatible EE when creating a project should be a warning not an error</summary>
+<description>1) Start Eclipse with Java8 support, but a 1.7 JRE2) Create a new plug-in project3) On the second wizard page, select the JavaSE-1.8 execution environmentResult:Wizard has an error that no compatible JRE foundThe wizard should warn you that no JRE is available, but it shouldn't put up an error preventing you from creating the project. Even if you use the button to open the preference page and add a compatible JRE, the wizard doesn't recognize the change and clear the error until you change the combo.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.wizards.plugin.PluginContentPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="431223" opendate="1395834660000" fixdate="1396456234000">
+<buginformation>
+<summary>UI loaded too early due to trace plug-in (was: Test fails since N20140324-2000: ExpressionTestsPluginUnloading.test01PluginStopping)</summary>
+<description>Test ExpressionTestsPluginUnloading.test01PluginStopping fails since N20140324-2000 on all platforms (green on N20140323-2000).The problem is that the "com.ibm.icu" bundle is expected to be in the STARTING state, but it's already ACTIVE when the very first test method runs.I can't reproduce the problem locally when running ExpressionTestsPluginUnloading from the IDE (I20140325-0830). I also didn't see any recent commits that could have caused early loading of com.ibm.icu.I don't know how to investigate this further. Is there an OSGi debug flag that prints a stacktrace when a bundle is activated?junit.framework.AssertionFailedError: expected: 8  but was: 32 at org.eclipse.core.internal.expressions.tests.ExpressionTestsPluginUnloading.test01PluginStopping(ExpressionTestsPluginUnloading.java:61)at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:657)at org.eclipse.test.EclipseTestRunner.run(EclipseTestRunner.java:310)at org.eclipse.test.CoreTestApplication.runTests(CoreTestApplication.java:36)at org.eclipse.test.CoreTestApplication.run(CoreTestApplication.java:32)at org.eclipse.equinox.internal.app.EclipseAppContainer.callMethodWithException(EclipseAppContainer.java:587)at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:198)at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:379)at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:233)at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)at org.eclipse.equinox.launcher.Main.run(Main.java:1462)at org.eclipse.equinox.launcher.Main.main(Main.java:1438)at org.eclipse.core.launcher.Main.main(Main.java:34)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.trace.internal.TracingUIActivator.java</file>
+</fixedFiles>
+</bug>
+<bug id="432375" opendate="1396995480000" fixdate="1421245189000">
+<buginformation>
+<summary>[target] Dependency with version=0.0.0 does not always resolve the latest version</summary>
+<description>Created attachment 241756Test fileWhen using version 0.0.0 for a dependency inside a target definition file, sometimes it doesn't resolve the latest version. You will find attached a test file that (sometimes) can reproduce the behavior with the guava and antlr dependencies. It should resolve guava 12.0.0 and antlr 3.2 but sometimes it resolves lower versions.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.target.P2TargetUtils.java</file>
+</fixedFiles>
+</bug>
+<bug id="433416" opendate="1398346740000" fixdate="1398799843000">
+<buginformation>
+<summary>Launch configurations can default to an unbound execution environment</summary>
+<description>Eclipse produces a launch configuration with Java 1.8 when launching an Eclipse application for a plug-in, although Java 1.8 is not installed on the PC and hence is not available for Eclipse.Tested with:Version: Luna (4.4)Build id: N20140423-2200</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.launching.launcher.VMHelper.java</file>
+</fixedFiles>
+</bug>
+<bug id="434317" opendate="1399465440000" fixdate="1400018031000">
+<buginformation>
+<summary>[spy] Spy doesn't work on context menus</summary>
+<description>Using 4.4.M6, I use Alt-Shift-F2 to turn on Menu spy, and I access the context menu (for a given resource or on a text editor), in order to get the Spy infos for the selected menu.First click: nothing happensSecond click: Spy is disabled so it trigger the action related to the menu.Log shows a NPE:!ENTRY org.eclipse.ui 4 0 2014-05-07 14:20:19.712!MESSAGE Unhandled event loop exception!STACK 0java.lang.NullPointerException at org.eclipse.pde.internal.runtime.spy.handlers.MenuSpyHandler.handleEvent(MenuSpyHandler.java:89) at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84) at org.eclipse.swt.widgets.Display.filterEvent(Display.java:1569) at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1387) at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3773) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3393) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1122) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1006) at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:147) at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:630) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:574) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150) at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125) at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:133) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:103) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:378) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:232) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) at java.lang.reflect.Method.invoke(Method.java:606) at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648) at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603) at org.eclipse.equinox.launcher.Main.run(Main.java:1462) at org.eclipse.equinox.launcher.Main.main(Main.java:1438)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.runtime.spy.handlers.MenuSpyHandler.java</file>
+</fixedFiles>
+</bug>
+<bug id="435205" opendate="1400504400000" fixdate="1400675565000">
+<buginformation>
+<summary>Can't launch second runtime workbench when org.eclipse.equinox.launcher is in workspace (from Git)</summary>
+<description>+++ This bug was initially created as a clone of Bug #407391 +++4.4.0.I20140518-2000I can't launch a second-level runtime workbench when org.eclipse.equinox.launcher is in the workspace (from Git).Steps:- new workspace- clone repo git://git.eclipse.org/gitroot/equinox/rt.equinox.framework.git- import org.eclipse.equinox.launcher from Git repo- create new Eclipse Application launch configuration with a unique workspace location- launch itIn the second workbench:- create new Eclipse Application launch configuration with a unique workspace location- launch itFails with dialog and log entryorg.eclipse.pde.launchingErrorMon May 19 14:38:26 CEST 2014Launching failed. Bootstrap code cannot be found.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.launching.launcher.LaunchArgumentsHelper.java</file>
+</fixedFiles>
+</bug>
+<bug id="435698" opendate="1400944680000" fixdate="1409336029000">
+<buginformation>
+<summary>NPE in Tracing UI if started w/o workspace</summary>
+<description>Tracing UI fails with an NPE if the platform was started without a workspace, e.g. using "-data @none".Platform.getInstanceLocation() is specified to return null in this case.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.trace.internal.TracingUIActivator.java</file>
+</fixedFiles>
+</bug>
+<bug id="435810" opendate="1401120600000" fixdate="1401355964000">
+<buginformation>
+<summary>PDE Manifest editor: Missing 2.0 compatibility should be shown as error</summary>
+<description>4.4 RC2.FUP of bug 421979.My test case always imported one of my demo bundles from CVS and then I replaced it with a version that did not have a manifest. Unfortunately, PDE can populate the PDE container during the initial import and then keeps it after replace. However, if one closes and reopens the project, or directly imports a 2.0 style bundle, then the PDE container won't resolve and the project stays full of errors. Hence, we should show an error when the compatibility bundle isn't installed and the message should say "to compile or run".</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.plugin.OverviewPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="435872" opendate="1401181560000" fixdate="1415168278000">
+<buginformation>
+<summary>NullPointerException when importing a project or opening MANIFEST.MF/plugin.xml</summary>
+<description>I get the following error with Eclipse RCP Luna RC1 when I import the sources of org.eclipse.jst.ws.jaxrs.ui (with HEAD commit = 903466b on 'master' branch)java.lang.NullPointerException at org.eclipse.pde.internal.core.builders.ExtensionsErrorReporter.validateInternalExtensionAttribute(ExtensionsErrorReporter.java:215) at org.eclipse.pde.internal.core.builders.ExtensionsErrorReporter.validateElement(ExtensionsErrorReporter.java:188) at org.eclipse.pde.internal.core.builders.ExtensionsErrorReporter.validateExtension(ExtensionsErrorReporter.java:110) at org.eclipse.pde.internal.core.builders.ExtensionsErrorReporter.validateContent(ExtensionsErrorReporter.java:75) at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.validateFiles(ManifestConsistencyChecker.java:291) at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.validateProject(ManifestConsistencyChecker.java:218) at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.build(ManifestConsistencyChecker.java:152) at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246) at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302) at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358) at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381) at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143) at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.builders.ExtensionsErrorReporter.java</file>
+<file>org.eclipse.pde.internal.ui.editor.plugin.ExtensionElementDetails.java</file>
+</fixedFiles>
+</bug>
+<bug id="436418" opendate="1401775200000" fixdate="1409335889000">
+<buginformation>
+<summary>Regression: Plug-ins view: Find References shows nothing</summary>
+<description>RC3:Window- Show View- PluginsSelect org.eclipse.ui.editorsFind ReferencesIn RC3 Nothing is displayed.RC2 shows numerous dependencies.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.PluginModelManager.java</file>
+</fixedFiles>
+</bug>
+<bug id="436950" opendate="1402308300000" fixdate="1409336579000">
+<buginformation>
+<summary>[target][p2] Update function of target editor does not re-resolve target</summary>
+<description>= Steps to reproduce =* Open a target file based on p2 update sites with outdated feature versions in the target editorObservation: target editor shows error complaining about first non-existing feature it is unable to spot =  OK* Select the p2 update site that contains to outdated feature in the target editor and click on the Update buttonExpected: a) Outdated features get updatedb) Target editor becomes dirtyc) Target editor starts a new attempt to resolve the target definitionActual:a), b): OKb): NOK, nothing happens and the previously displayed errors stay thereObservation/workaround: When opening the target file in a text editor, increasing the sequence number in the  ?pde ...  header by one and saving the file, the target editor restarts resolving and removes all previously displayed errors once the resolution process has been successfully completed.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.target.IUBundleContainer.java</file>
+</fixedFiles>
+</bug>
+<bug id="437726" opendate="1403162640000" fixdate="1426534791000">
+<buginformation>
+<summary>[patch] [target][p2] Wrong error messages when opening target definitions with non-existing IUs</summary>
+<description>When opening a target definition that contains a non-existing installable unit (e.g. the Nebula snapshot repo does not keep any old versions at all) a lot of "Unable to locate installable unit ..." messages for another installable unit are displayed. There is only one message for the actually missing unit.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.target.TargetDefinition.java</file>
+<file>org.eclipse.pde.internal.core.target.AbstractBundleContainer.java</file>
+<file>org.eclipse.pde.internal.core.target.IUBundleContainer.java</file>
+<file>org.eclipse.pde.internal.core.target.P2TargetUtils.java</file>
+<file>org.eclipse.pde.internal.core.target.TargetDefinition.java</file>
+</fixedFiles>
+</bug>
+<bug id="438059" opendate="1403621940000" fixdate="1407925539000">
+<buginformation>
+<summary>Template "Plug-in with a View" does not set selection provider</summary>
+<description>The "Plug-in with a View" template for PDE does not set the site selection provider in the createPartControl method. Therefore, pop-up items do not work as expected when the example is used out-of-the-box.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.ui.templates.templates_3.0.view.java.$className$.java</file>
+</fixedFiles>
+</bug>
+<bug id="438770" opendate="1404324840000" fixdate="1407925749000">
+<buginformation>
+<summary>Move JavadocHoverStyleSheet.css to css folder</summary>
+<description>Now that there is a css folder in the pde ui bundle, we should move the javadoc hover stylesheet into it and update any references to the file.We should wait until Bug 437121 is solved to ensure the css is included in the binary build.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.util.TextUtil.java</file>
+</fixedFiles>
+</bug>
+<bug id="438848" opendate="1404398940000" fixdate="1409683061000">
+<buginformation>
+<summary>NPE while editing target file</summary>
+<description>I was editing the target file: http://git.eclipse.org/c/orion/org.eclipse.orion.server.git/tree/releng/org.eclipse.orion.target/org.eclipse.orion.target.target?id=aa64da6a00f702054ec5d0f5e355f31bd05b456aI selected the egit-rc3 target and chose edit. I opened the dialog, and I then selected org.eclipse.jgit and clicked OK. The editor started re-resolving the content of the target file, then it opened this error:eclipse.buildId=4.4.0.I20140606-1215java.version=1.7.0_51java.vendor=Oracle CorporationBootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_USCommand-line arguments: -os linux -ws gtk -arch x86_64 -data /opt/pwebster/workspaces/orionorg.eclipse.uiErrorThu Jul 03 10:45:27 EDT 2014An internal error has occurred.java.lang.NullPointerException at org.eclipse.pde.internal.ui.shared.target.TargetLocationContentProvider.hasChildren(TargetLocationContentProvider.java:84) at org.eclipse.jface.viewers.AbstractTreeViewer.isExpandable(AbstractTreeViewer.java:2141) at org.eclipse.jface.viewers.TreeViewer.isExpandable(TreeViewer.java:553) at org.eclipse.jface.viewers.AbstractTreeViewer.isExpandable(AbstractTreeViewer.java:2171) at org.eclipse.jface.viewers.AbstractTreeViewer.updatePlus(AbstractTreeViewer.java:2863) at org.eclipse.jface.viewers.TreeViewer.updatePlus(TreeViewer.java:804) at org.eclipse.jface.viewers.AbstractTreeViewer.createTreeItem(AbstractTreeViewer.java:844) at org.eclipse.jface.viewers.AbstractTreeViewer$1.run(AbstractTreeViewer.java:818) at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70) at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:791) at org.eclipse.jface.viewers.TreeViewer.createChildren(TreeViewer.java:611) at org.eclipse.jface.viewers.AbstractTreeViewer.createChildren(AbstractTreeViewer.java:762) at org.eclipse.jface.viewers.AbstractTreeViewer.internalInitializeTree(AbstractTreeViewer.java:1543) at org.eclipse.jface.viewers.TreeViewer.internalInitializeTree(TreeViewer.java:790) at org.eclipse.jface.viewers.AbstractTreeViewer$5.run(AbstractTreeViewer.java:1527) at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1436) at org.eclipse.jface.viewers.TreeViewer.preservingSelection(TreeViewer.java:366) at org.eclipse.jface.viewers.StructuredViewer.preservingSelection(StructuredViewer.java:1397) at org.eclipse.jface.viewers.AbstractTreeViewer.inputChanged(AbstractTreeViewer.java:1519) at org.eclipse.jface.viewers.ContentViewer.setInput(ContentViewer.java:292) at org.eclipse.jface.viewers.StructuredViewer.setInput(StructuredViewer.java:1675) at org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.setInput(TargetLocationsGroup.java:290) at org.eclipse.pde.internal.ui.editor.targetdefinition.TargetEditor$TargetChangedListener$2$1.runInUIThread(TargetEditor.java:498) at org.eclipse.ui.progress.UIJob$1.run(UIJob.java:97) at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35) at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136) at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3806) at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3444) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032) at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148) at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636) at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332) at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579) at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150) at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135) at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134) at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:382) at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:236) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) at java.lang.reflect.Method.invoke(Method.java:606) at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648) at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603) at org.eclipse.equinox.launcher.Main.run(Main.java:1465) at org.eclipse.equinox.launcher.Main.main(Main.java:1438)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetLocationContentProvider.java</file>
+</fixedFiles>
+</bug>
+<bug id="439034" opendate="1404745080000" fixdate="1426503752000">
+<buginformation>
+<summary>[target] User cannot reload p2 target after error resolving</summary>
+<description>I had a working target platform (http://git.eclipse.org/c/orion/org.eclipse.orion.server.git/tree/releng/org.eclipse.orion.target/org.eclipse.orion.target.target?id=233b3bf5322c2f3bf164c5f5029a44d52d4a49a1 ), and today after saving a .product file I suddenly get these errors:eclipse.buildId=4.4.0.I20140606-1215java.version=1.7.0_51java.vendor=Oracle CorporationBootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_USCommand-line arguments: -os linux -ws gtk -arch x86_64 -data /opt/pwebster/workspaces/orion/org.eclipse.pde.coreErrorMon Jul 07 10:24:10 EDT 2014The current target platform contains errors, open Window   Preferences   Plug-in Development   Target Platform for details.org.eclipse.core.runtime.CoreException: Problems occurred getting the plug-ins in this container at org.eclipse.pde.internal.core.PluginModelManager.getExternalBundles(PluginModelManager.java:604) at org.eclipse.pde.internal.core.PluginModelManager.initializeTable(PluginModelManager.java:525) at org.eclipse.pde.internal.core.PluginModelManager.targetReloaded(PluginModelManager.java:473) at org.eclipse.pde.internal.core.RequiredPluginsInitializer$1.run(RequiredPluginsInitializer.java:34) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)Contains: Unable to locate installable unit org.eclipse.jgitContains: Unable to locate installable unit org.eclipse.jgitContains: Unable to locate installable unit org.eclipse.jgitContains: Unable to locate installable unit org.eclipse.jgitContains: Unable to locate installable unit org.eclipse.jgitContains: Unable to locate installable unit org.eclipse.jgitorg.eclipse.pde.coreErrorMon Jul 07 10:24:10 EDT 2014Problems occurred getting the plug-ins in this containerorg.eclipse.pde.coreErrorMon Jul 07 10:24:10 EDT 2014Unable to locate installable unit org.eclipse.jgit</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.target.P2TargetUtils.java</file>
+</fixedFiles>
+</bug>
+<bug id="439409" opendate="1405069440000" fixdate="1428570041000">
+<buginformation>
+<summary>NPE in Extension Editor</summary>
+<description>Cf following stack:java.lang.NullPointerException at org.eclipse.pde.internal.ui.editor.plugin.NewElementAction. init (NewElementAction.java:36) at org.eclipse.pde.internal.ui.editor.plugin.ExtensionsSection.fillContextMenu(ExtensionsSection.java:501) at org.eclipse.pde.internal.ui.editor.plugin.ExtensionsSection.fillContextMenu(ExtensionsSection.java:423) at org.eclipse.pde.internal.ui.editor.StructuredViewerSection$1.menuAboutToShow(StructuredViewerSection.java:56)I don't know exactly what are the preconditions to reproduce this issue, but the following stack shows the bug quite clearly.Would it be possible to leverage the @Nullable and @NonNull annotations?</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.plugin.NewElementAction.java</file>
+</fixedFiles>
+</bug>
+<bug id="440275" opendate="1406149740000" fixdate="1415102250000">
+<buginformation>
+<summary>Automatic wildcard support for adding plug-ins to plug-in based products</summary>
+<description>At the moment the has to enter * in the product editor to perform a regular expression matching at the beginning. This is different compared to the MANIFEST.MF dependencies and the feature based products. We should fix that.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.editor.product.PluginConfigurationSection.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.PluginSection.java</file>
+<file>org.eclipse.pde.internal.ui.editor.product.SplashLocationSection.java</file>
+<file>org.eclipse.pde.internal.ui.wizards.target.TargetDefinitionContentPage.java</file>
+</fixedFiles>
+</bug>
+<bug id="441190" opendate="1407251940000" fixdate="1426503752000">
+<buginformation>
+<summary>[target] Provide reload button in target editor to re-resolve p2 locations</summary>
+<description>Additional discussion on Bug 439034. We should consider having a reload button that clears the cached p2 profile, allowing the p2 sites to query the remote repositories.We now allow this after a successful update as well as when the resolution returned an error status.+++ This bug was initially created as a clone of Bug #439034 +++</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.Messages.java</file>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.java</file>
+</fixedFiles>
+</bug>
+<bug id="441331" opendate="1407407040000" fixdate="1427998048000">
+<buginformation>
+<summary>Integrate e4 project template into PDE</summary>
+<description>I plan to contribute our e4 tools wizard for creating Eclipse 4 RCP applications to PDE. This is a work item for me.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.templates.IHelpContextIds.java</file>
+<file>org.eclipse.pde.internal.ui.templates.PDETemplateMessages.java</file>
+<file>org.eclipse.pde.internal.ui.templates.e4.E4ApplicationNewWizard.java</file>
+<file>org.eclipse.pde.internal.ui.templates.e4.E4ApplicationTemplate.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.$activator$.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.$lifeCycleClassName$.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.handlers.AboutHandler.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.handlers.OpenHandler.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.handlers.QuitHandler.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.handlers.SaveHandler.java</file>
+<file>org.eclipse.pde.ui.templates.templates_3.5.E4Application.java.parts.SamplePart.java</file>
+</fixedFiles>
+</bug>
+<bug id="443338" opendate="1409845920000" fixdate="1412423882000">
+<buginformation>
+<summary>Errors during saving the plugin descriptor file</summary>
+<description>Created attachment 246735Dialog with errorFound in eclipse-SDK-M20140827-0800-win32-x86_64Steps to recreate the issue:1) Install the 'Eclipse 4 - Core tools' plugin from the update site: http://download.eclipse.org/e4/downloads/drops/S-0.16-201408072200/repository2) Generate sample E4 RCP application with the wizard: File/New/Eclipse 4/Eclipse 4 Application Project3) Open plugin.xml file and remove the property 'applicationCSS'4) Delete the following file from the project: css/default.css5) Open product configuration file and try to launch the application6) Application runs, but the PDE reports the issue, see attachment (it can be another issue connected to some assertion failure)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.text.plugin.PluginModelBase.java</file>
+</fixedFiles>
+</bug>
+<bug id="444137" opendate="1410795960000" fixdate="1426781197000">
+<buginformation>
+<summary>[target] Plug-in model initialization from p2 based target can block Eclipse startup</summary>
+<description>Created attachment 247079jstack thread outputVersion: Luna SR1 (4.4.1)Build id: M20140903-1600We have a product built on top of Eclipse and occasionally when my Eclipse starts up it blocks indefinitely at the splash screen with a prompt waiting for a username/password. (until I close the dialog)I've attached a jstack dump and you can see in Thread 60931 it appears that the target platform is being reloaded. The target platform that I am pointing to is on a remote server and requires a username/password.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.PluginModelManager.java</file>
+<file>org.eclipse.pde.internal.core.TargetPlatformHelper.java</file>
+<file>org.eclipse.pde.internal.core.PDECoreMessages.java</file>
+<file>org.eclipse.pde.internal.core.PluginModelManager.java</file>
+<file>org.eclipse.pde.internal.core.RequiredPluginsInitializer.java</file>
+<file>org.eclipse.pde.internal.core.PDECoreMessages.java</file>
+<file>org.eclipse.pde.internal.core.PluginModelManager.java</file>
+<file>org.eclipse.pde.internal.core.RequiredPluginsInitializer.java</file>
+</fixedFiles>
+</bug>
+<bug id="444936" opendate="1411558320000" fixdate="1421944435000">
+<buginformation>
+<summary>Problems occurred when invoking code from plug-in: "org.eclipse.core.resources". (err_grp: b7cd0245)</summary>
+<description>Hello committers,we received a new error report for Eclipse 4.4.0.I20140606-1215.General Information: anonymous-id: add6c249-d48d-4653-8f62-706278098ba8 eclipse-build-id: 4.4.0.I20140606-1215 eclipse-product: org.eclipse.epp.package.dsl.product operating system: Windows8 6.2.0 (x86) - win32 java-runtime-version: 1.8.0-b132The following plug-ins were present on the execution stack (*): 1. org.eclipse.core.jobs_3.6.0.v20140424-0053 2. org.eclipse.core.runtime_3.10.0.v20140318-2214 3. org.eclipse.pde.core_3.10.0.v20140519-1409 4. org.eclipse.pde_3.8.200.v20140606-1215Error Status: code: 2 message: Problems occurred when invoking code from plug-in: "org.eclipse.core.resources". fingerprint: b7cd0245 exception class: java.lang.NullPointerException exception message: - number of children: 0Topmost Stacktrace: java.lang.NullPointerException: null at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.validateManifestCasing(ManifestConsistencyChecker.java:348) at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.validateProjectStructure(ManifestConsistencyChecker.java:253) at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.validateProject(ManifestConsistencyChecker.java:209) at org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.build(ManifestConsistencyChecker.java:152) at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246) at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299) at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42) at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302) at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358) at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381) at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143) at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54) Messages, stacktraces, and nested status objects may be shortened. Please visit http://dev.eclipse.org/recommenders/reports/5422abcfe4b04444069656e2for the complete error log.The list of all reported error reports belonging to this error group can befetched from http://dev.eclipse.org/recommenders/states/5422abcfe4b04444069656e3/reportsThe Error Log Reporter presents the current processing state of this error to new reporters. This state can be updated by modifying the values of this bug.To update the error log database call the link below after each change made tothis bug report: http://dev.eclipse.org/recommenders/states/5422abcfe4b04444069656e3/syncThank you for caring.Your friendly error reports bot.--* Note: The list of present bundles and their respective versions was calculated by package naming heuristics. This may or may not reflect reality.</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.builders.ManifestConsistencyChecker.java</file>
+</fixedFiles>
+</bug>
+<bug id="454594" opendate="1418139720000" fixdate="1418287900000">
+<buginformation>
+<summary>Compile failure in I20141209-0800</summary>
+<description>[ERROR] Failed to execute goal org.eclipse.tycho:tycho-compiler-plugin:0.22.0:compile (default-compile) on project org.eclipse.ui.views.log: Compilation failure: Compilation failure:[ERROR] /opt/public/eclipse/builds/4I/gitCache/eclipse.platform.releng.aggregator/eclipse.pde.ui/ui/org.eclipse.ui.views.log/src/org/eclipse/ui/internal/views/log/LogReader.java:[153][ERROR] entries.add(new LogEntry(new Status(IStatus.WARNING, Activator.PLUGIN_ID, NLS.bind(Messages.LogReader_warn_noEntryWithinMaxLogTailSize, Long.valueOf(maxLogTailSizeInMegaByte)))));[ERROR] ^^^^^^^[ERROR] The method valueOf(String) in the type Long is not applicable for the arguments (long)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.ui.internal.views.log.LogReader.java</file>
+</fixedFiles>
+</bug>
+<bug id="458072" opendate="1421863440000" fixdate="1426762719000">
+<buginformation>
+<summary>Resource Exception when closing a project before model init is complete</summary>
+<description>The job in required classpath initializer runs asynch but does not check if the project exists and is open. So if you close the project while the model init happens, the following error is thrown.We should be checking that the project is open and exists before settings the classpath container.Java Model Exception: Core Exception [code 372] Resource '/org.eclipse.equinox.http.servlet' is not open. at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:129) at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313) at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:794) at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5479) at org.eclipse.pde.internal.core.RequiredPluginsInitializer$1.run(RequiredPluginsInitializer.java:38) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)Caused by: org.eclipse.core.internal.resources.ResourceException: Resource '/org.eclipse.equinox.http.servlet' is not open. at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:151) at org.eclipse.core.internal.resources.Resource.checkAccessibleAndLocal(Resource.java:222) at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1950) at org.eclipse.core.internal.resources.Project.touch(Project.java:1429) at org.eclipse.jdt.internal.core.SetContainerOperation.executeOperation(SetContainerOperation.java:115) at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729) at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313) at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:794) at org.eclipse.jdt.core.JavaCore.setClasspathContainer(JavaCore.java:5479) at org.eclipse.pde.internal.core.RequiredPluginsInitializer$1.run(RequiredPluginsInitializer.java:38) at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.core.RequiredPluginsInitializer.java</file>
+</fixedFiles>
+</bug>
+<bug id="461549" opendate="1425614160000" fixdate="1426743851000">
+<buginformation>
+<summary>[patch] [target] Dont increment sequence number during reload and provide tooltips for reload and update</summary>
+<description>+++ This bug was initially created as a clone of Bug #441190 +++Additional discussion on Bug 439034. We should consider having a reload button that clears the cached p2 profile, allowing the p2 sites to query the remote repositories.We now allow this after a successful update as well as when the resolution returned an error status.+++ This bug was initially created as a clone of Bug #439034 +++</description>
+</buginformation>
+<fixedFiles>
+<file>org.eclipse.pde.internal.ui.shared.target.Messages.java</file>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.java</file>
+<file>org.eclipse.pde.internal.core.target.P2TargetUtils.java</file>
+<file>org.eclipse.pde.internal.ui.shared.target.TargetLocationsGroup.java</file>
+</fixedFiles>
+</bug>
+</bugrepository>

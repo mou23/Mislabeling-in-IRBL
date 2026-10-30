@@ -1,0 +1,1025 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12357428",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428",
+  "key": "LUCENE-736",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312328",
+        "id": "12312328",
+        "description": "",
+        "name": "2.2",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-06-19"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13016",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12314363",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12314363",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12353904",
+          "key": "LUCENE-697",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12353904",
+          "fields": {
+            "summary": "Scorer.skipTo affects sloppyPhrase scoring",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+              "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+              "name": "Resolved",
+              "id": "5",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27312",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-736/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@c6e27fb[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7d28e7d8[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@547ab3d2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@6e5698a2[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@25a83391[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@3ca0de30[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3d450e55[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@678c02d7[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@35c910c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@39b79e09[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2c1518cc[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@2b083d23[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:32:42 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-04-24T05:37:43.163+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-736/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2006-12-01T09:13:34.000+0000",
+    "updated": "2022-08-28T11:32:42.250+0000",
+    "timeoriginalestimate": null,
+    "description": "This is an extension of https://issues.apache.org/jira/browse/LUCENE-697\n\nIn addition to abnormalities Yonik pointed out in 697, there seem to be other issues with slopy phrase search and scoring.\n\n1) A phrase with a repeated word would be detected in a document although it is not there.\nI.e. document = A B D C E , query = \"B C B\" would not find this document (as expected), but query \"B C B\"~2 would find it. \nI think that no matter how large the slop is, this document should not be a match.\n\n2) A document containing both orders of a query, symmetrically, would score differently for the queru and for its reveresed form.\nI.e. document = A B C B A would score differently for queries \"B C\"~2 and \"C B\"~2, although it is symmetric to both.\n\nI will attach test cases that show both these problems and the one reported by Yonik in 697. ",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346205",
+        "id": "12346205",
+        "filename": "perf-search-new.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-01T10:24:49.000+0000",
+        "size": 188239,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346205/perf-search-new.log"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346206",
+        "id": "12346206",
+        "filename": "perf-search-orig.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-01T10:24:49.000+0000",
+        "size": 188052,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346206/perf-search-orig.log"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346273",
+        "id": "12346273",
+        "filename": "res-search-new2.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-02T08:33:34.000+0000",
+        "size": 371871,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346273/res-search-new2.log"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346272",
+        "id": "12346272",
+        "filename": "res-search-orig2.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-02T08:33:34.000+0000",
+        "size": 372317,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346272/res-search-orig2.log"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346204",
+        "id": "12346204",
+        "filename": "sloppy_phrase_java.patch.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-01T10:24:49.000+0000",
+        "size": 12058,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346204/sloppy_phrase_java.patch.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346191",
+        "id": "12346191",
+        "filename": "sloppy_phrase_tests.patch.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-01T09:24:59.000+0000",
+        "size": 11812,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346191/sloppy_phrase_tests.patch.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346271",
+        "id": "12346271",
+        "filename": "sloppy_phrase.patch2.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-02T08:33:34.000+0000",
+        "size": 25389,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346271/sloppy_phrase.patch2.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356110",
+        "id": "12356110",
+        "filename": "sloppy_phrase.patch3.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2007-04-24T05:39:53.419+0000",
+        "size": 31150,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356110/sloppy_phrase.patch3.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12346374",
+        "id": "12346374",
+        "filename": "sloppy_phrase.patch3.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-04T21:49:59.000+0000",
+        "size": 27983,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12346374/sloppy_phrase.patch3.txt"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Sloppy Phrase Scorer matches the doc \"A B C D E\" for query = \"B C B\"~2",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12454847",
+          "id": "12454847",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "sloppy_phrase_tests.patch.txt  contains:\n\n- two test cases added in TestPhraseQuery. \nThese new tests currently fail. \n\n- skipTo() behavior tests that were originaly in issue 697. \nThis too currently fails.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-01T09:24:59.000+0000",
+          "updated": "2006-12-01T09:24:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12454866",
+          "id": "12454866",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Attached sloppy_phrase_java.patch.txt is fixing the failing new tests. \nThis also includes the skipTo() bug from issue 697.\n\nThe fix does not guarantee that document A B C B A would score \"A B C\"~4 and \"C B A\"~4 the same. \nIt does that for \"B C\"~2 and \"C B\"~2.\nThis is because a general fix for that (at least the one that I devised) would be too expensive.\nAlthough this is an interesting case, I'd like to think it is not an important one.\n\nThis fix comes with a performance cost:  about 15% degradation in CPU activity of sloppy phrase scoring, as the attcahed perf logs show.\nHere is the summary of these tests:\n\n.......Operation..........runCnt...recsPerRun.....rec/s..elapsedSec\nOrig:..SearchSameRdr_3000......4.........3000.....216.1.......55.52\nNew:...SearchSameRdr_3000......4.........3000.....187.8.......63.91\n\nI think that in a real life scenario - real index, real documents, real queries - this extra CPU will be shaded by IO, but I also belive we should refrain from slowing down search, so, unhappy with this degradation (anyone would:-), I would look for a other ways to fix this - ideas are welcome.\n\nPerf test was done using the task benchmark framework (see issue 675), The logs show also the queries that were searched.\n\nAll tests pass with new code.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-01T10:24:49.000+0000",
+          "updated": "2006-12-01T10:24:49.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12454955",
+          "id": "12454955",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Great investigations Doron!\nPersonally I'm more concerned with (1) than (2).  Was the fix for one issue more responsible for the performance loss than the other?\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-12-01T17:04:59.000+0000",
+          "updated": "2006-12-01T17:04:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12454971",
+          "id": "12454971",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I have had similar concerns when I implemented NearSpansOrdered.java and NearSpansUnordered.java,\nwhich are in the trunk now.\nThese match somewhat different phrases, but it would be good to ensure that the same matches score\nthe same for spans and phrases.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-12-01T19:02:18.000+0000",
+          "updated": "2006-12-01T19:02:18.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12455080",
+          "id": "12455080",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "The change to fix case 2 was not the main performance degradation cause.\n\nI agree with Yonik that case 2 is much more important than case 1.\nSo I modified to fix case 2 but not case 1. \nAlso extended the perf test to create also the \"reversed\" form of the sloppy phrases (slop increased for reversed cases so that queries would match docs).\n\nCost of this fix dropped from 15% more CPU time to about 3%. \nI feel ok with this.\n\n.....Operation..........runCnt...recsPerRun...rec/s..elapsedSec....avgUsedMem....avgTotalMem\nOrig.SearchSameRdr_6000......4.........6000...194.2......123.59.....8,032,732.....11,333,632\nNew..SearchSameRdr_6000......4.........6000...187.5......128.02.....8,172,258.....11,333,632\n\nAttached sloppy_phrase.patch2.txt has the updated fix, including both java and test parts. Some of the asserts in the new tests were commented out cause the patch takes decision not to fix case 1 above.\n\nAlso attaching the updates perf test logs - res-search-orig2.log and res-search-new2.log.\n\nI did not compare scoring of similar cases between sloppy phrase and near spans and Paul suggested - perhaps next week - not sure this should hold progress with this issue.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-02T08:33:34.000+0000",
+          "updated": "2006-12-02T08:33:34.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12455085",
+          "id": "12455085",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "There is no need to hold up this issue for span phrases.\nPerhaps a good way to get the spans and the phrases work well together is by adding a getSpans() to\nPhraseQuery, or by introduction of a SpanPhraseQuery. But this would better be done at a new jira issue.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-12-02T09:46:14.000+0000",
+          "updated": "2006-12-02T09:46:14.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12455422",
+          "id": "12455422",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "There is a bug in my recent patch (sloppy_phrase.patch2.txt):\n- for the case of phrase with repetitions, some additional computation is required before starting each doc. \n- this does not affect the regular/common case of phrase with no repetitions.\nI extended the test to expose this and will commit an updated patch later today.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-04T21:08:57.000+0000",
+          "updated": "2006-12-04T21:08:57.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12455429",
+          "id": "12455429",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Test case - testNonExistingWrappedPhrase - was extended.\nA bug in the patch (described above) was fixed.\n\nAll tests pass. \n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-04T21:49:59.000+0000",
+          "updated": "2006-12-04T21:49:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12489187",
+          "id": "12489187",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Doron, sounds like this is ripe for a commit now to take care of both this and LUCENE-697.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-16T18:23:55.747+0000",
+          "updated": "2007-04-16T18:23:55.747+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12489930",
+          "id": "12489930",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Need to see if the parts of the test (in QueryUtils) that were disabled by LUCENE-730 (BooleanScorer2 sometimes falls back to BooleanScorer). One possibility is to have two versions of this - a BooleanScoere version, and the rest - this issue (736) is about sloppy/exact phrase scoring, so it would fall into the \"rest\", and so the test would still catch this.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-19T05:23:14.852+0000",
+          "updated": "2007-04-19T05:23:14.852+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12491136",
+          "id": "12491136",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Changing the title to match what we decided to fix here.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-24T05:15:11.685+0000",
+          "updated": "2007-04-24T05:15:11.685+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12491138",
+          "id": "12491138",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Fixed.\n* Search time cost of this fix is 4%, for sloppy phrase search. \n* This fix also partially brings back the the tests checkSkipTo() in QueryUtils, \n  (which was disabled by LUCENE-730), but this is now invoked only for non Boolean scorers.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-24T05:37:43.112+0000",
+          "updated": "2007-04-24T05:37:43.112+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/12491141",
+          "id": "12491141",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Attaching for any future reference the fix that was applied for this.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-04-24T05:39:53.554+0000",
+          "updated": "2007-04-24T05:39:53.554+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357428/comment/17586925",
+          "id": "17586925",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1811|https://github.com/apache/lucene/issues/1811].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:32:42.250+0000",
+          "updated": "2022-08-28T11:32:42.250+0000"
+        }
+      ],
+      "maxResults": 14,
+      "total": 14,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i051br:",
+    "customfield_12314139": null
+  }
+}

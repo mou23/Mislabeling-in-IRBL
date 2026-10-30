@@ -1,0 +1,3565 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="SWARM">
+	<bug id="248" opendate="2016-01-15 13:54:11" fixdate="2016-01-18 19:32:01" resolution="Done">
+		<buginformation>
+			<summary>Classpath for wildfly-swarm:run includes jars that should only be present in WEB-INF/lib</summary>
+			<description>When running &amp;amp;apos;mvn wildfly-swarm:run&amp;amp;apos; to execute a Swarm application, every Jar that is a dependency of the project is added to the classpath of the execution.
+This has consequences for how META-INF/services files are detected via JBoss Modules, because it makes them visible through the sun.jdk module. The problem is that the class associated with that service entry is unable to be found and causes an exception.
+We need to limit the contents of the classpath when running the plugin to only what is necessary, and not jars which should only be present inside the Application</description>
+			<version>1.0.0.Alpha6</version>
+			<fixedVersion>1.0.0.Alpha8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.StartMojo.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="blocks">252</link>
+		</links>
+	</bug>
+	<bug id="249" opendate="2016-01-15 19:39:56" fixdate="2016-01-20 20:30:02" resolution="Done">
+		<buginformation>
+			<summary>Deps required by the app that are shadowed by swarm&amp;apos;s deps get removed from a wars WEB-INF/lib/</summary>
+			<description></description>
+			<version>1.0.0.Alpha6</version>
+			<fixedVersion>1.0.0.Alpha8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.DependencyManager.java</file>
+			<file type="M">org.wildfly.swarm.plugin.maven.PackageMojo.java</file>
+			<file type="M">org.wildfly.swarm.plugin.gradle.PackageTask.java</file>
+			<file type="M">org.wildfly.swarm.plugin.maven.MavenArtifactResolvingHelper.java</file>
+			<file type="M">org.wildfly.swarm.tools.BuildTool.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.ShrinkwrapArtifactResolvingHelper.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.UberjarSimpleContainer.java</file>
+			<file type="M">org.wildfly.swarm.tools.ArtifactSpec.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="276" opendate="2016-01-27 16:16:44" fixdate="2016-01-27 19:41:41" resolution="Done">
+		<buginformation>
+			<summary>wildfly-swarm:stop throws NullPointerException</summary>
+			<description>If I start an app with:
+
+
+
+
+
+
+mvn wildfly-swarm:start 
+
+
+
+
+
+
+Then try to terminate it with:
+
+
+
+
+
+
+mvn wildfly-swarm:stop 
+
+
+
+
+
+
+I always end up with:
+
+
+
+
+
+
+Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Alpha6:stop (default-cli) on project example-jaxrs-cdi: Execution default-cli of goal org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Alpha6:stop failed. NullPointerException -&amp;gt; [Help 1]
+
+
+
+
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Alpha6:stop (default-cli) on project example-jaxrs-cdi: Execution default-cli of goal org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Alpha6:stop failed.
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:224)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:120)
+
+
+
+
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:347)
+
+
+
+
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:154)
+
+
+
+
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:582)
+
+
+
+
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:214)
+
+
+
+
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:158)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+
+
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+	at java.lang.reflect.Method.invoke(Method.java:497)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+
+
+
+
+Caused by: org.apache.maven.plugin.PluginExecutionException: Execution default-cli of goal org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Alpha6:stop failed.
+
+
+
+
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:143)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:208)
+
+
+
+
+	... 19 more
+
+
+
+
+Caused by: java.lang.NullPointerException
+
+
+
+
+	at org.wildfly.swarm.plugin.maven.StopMojo.execute(StopMojo.java:38)
+
+
+
+
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:132)
+
+
+
+
+	... 20 more
+
+
+
+
+
+
+Tested with Maven 3.2.3, 3.2.5 &amp;amp; 3.3.3.</description>
+			<version>1.0.0.Alpha6</version>
+			<fixedVersion>1.0.0.Alpha8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.StopMojo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="309" opendate="2016-02-29 15:15:58" fixdate="2016-02-29 16:15:36" resolution="Done">
+		<buginformation>
+			<summary>ARQ protocol ignores setup actions</summary>
+			<description>In wildfly we have a number of thread context related things go on that associate the current thread with the deployment unit that the call originates from. For this to work in the context of an ARQ deployment we need to call SetupActions in the server side test piece.
+With standalone WildFly, this happens in the jmx protocol, which is not being used by Swarm.
+While this functionality is missing, certain JNDI, CDI and possibly other stuff won&amp;amp;apos;t work from a Swarm ARQ deployment.
+This code, for example, fails with NNFE although the bean is registered under this name.
+
+
+
+
+
+
+        InitialContext context = new InitialContext();
+
+
+
+
+        context.lookup("java:module/MySingletonBean");
+
+
+
+
+
+</description>
+			<version>1.0.0.Alpha8</version>
+			<fixedVersion>core_1.0.0.Beta3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.ejb.MySingleton.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.daemon.server.Server.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.ArquillianTest.java</file>
+			<file type="M">org.wildfly.swarm.ejb.EJBArqSingletonTest.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.daemon.DaemonServiceActivator.java</file>
+			<file type="M">org.wildfly.swarm.ejb.MySingletonBean.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.UberjarSimpleContainer.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.daemon.TestRunner.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.daemon.protocol.DaemonDeploymentPackager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="337" opendate="2016-03-09 19:48:16" fixdate="2016-03-23 02:21:32" resolution="Done">
+		<buginformation>
+			<summary>Can&amp;apos;t get Ribbon example running</summary>
+			<description>I was trying to get the Ribbon example running (current GitHub master 4/Mar/2016). It didn&amp;amp;apos;t work for me for a couple of reasons:
+According to the docs I first tried to launch the React frontend. It failed because the rules in src/main/resources/WEB-INF/undertow-handlers.conf could not be parsed during deployment. Emptying the file helped me to get it deployed, but I don&amp;amp;apos;t know if the rules are necessary.
+Benjamin Browning explained me the parsing problem could be because I am on Windows. 
+Then I went on launching the time service. The deployment failed because org.wildfly.swarm:jaxrs:1.0.0.Beta3-SNAPSHOT (referenced in some module.xml) could not be found. I worked around this by setting org.wildfly.swarm:jaxrs:1.0.0.Beta2 explicitly in the project&amp;amp;apos;s pom.xml.
+Same issue and work-around with the event service.
+Once I had all three projects running, I could see the services registering. In the logs as well as on the website. However, I was not able to invoke the time or event service methods by clicking the "GET..." buttons. This is because the services were registered with URLs localhost:8081 instead of http://localhost:8081. As a consequence the URL resolution failed. The frontend tried to connect to http://localhost:8080/localhost:8081 instead of http://localhost:8081. I could not find a way to work around this.
+I would appreciate your help to get the sample running.</description>
+			<version>1.0.0.Alpha8</version>
+			<fixedVersion>examples_1.0.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.StartMojo.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="is blocked by">341</link>
+			<link type="Dependency" description="is blocked by">373</link>
+			<link type="Related" description="is related to">344</link>
+		</links>
+	</bug>
+	<bug id="394" opendate="2016-03-30 21:21:35" fixdate="2016-03-30 21:36:42" resolution="Done">
+		<buginformation>
+			<summary>mvn wildfly-swarm:run does not destroy the process when executed in an embedded maven environment</summary>
+			<description></description>
+			<version>1.0.0.Beta6</version>
+			<fixedVersion>1.0.0.Beta7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.StartMojo.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">404</link>
+			<link type="Related" description="relates to">405</link>
+		</links>
+	</bug>
+	<bug id="385" opendate="2016-03-27 20:01:09" fixdate="2016-04-01 18:54:29" resolution="Done">
+		<buginformation>
+			<summary>Generated JAX-RS application should not take precedence</summary>
+			<description>I have a WAR which contains a bunch of JSF views and two JAX-RS applications, each with its own @ApplicationPath on a class extending javax.ws.rs.core.Application.
+When starting the Swarm JAR, I see this line in the log:
+
+
+
+
+
+
+2016-03-27 21:21:33,457 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 15) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.wildfly.swarm.generated.WildFlySwarmDefaultJAXRSApplication
+
+
+
+
+
+
+and it seems that all my JSF URLs are handled by RESTEasy:
+
+
+
+
+
+
+2016-03-27 21:21:48,757 ERROR [io.undertow.request] (default task-1) UT005023: Exception handling request to /myapp/login.xhtml: javax.ws.rs.NotFoundException: RESTEASY003210: Could not find resource for full path: http://localhost:8080/myapp/login.xhtml
+
+
+
+
+        at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:114)
+
+
+
+
+        at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+
+
+
+
+
+
+I don&amp;amp;apos;t think there is a need for a generated JAX-RS application in this setup, and it definitely shouldn&amp;amp;apos;t catch all URLs.</description>
+			<version>1.0.0.Beta6</version>
+			<fixedVersion>core_1.0.0.Beta5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.jaxrs.internal.JAXRSArchiveImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="189" opendate="2015-12-07 20:20:04" fixdate="2016-04-05 14:50:55" resolution="Done">
+		<buginformation>
+			<summary>HTTP endpoint should not be reachable before deployment is finished</summary>
+			<description>In e.g. SpringBoot, when I start my application I either cannot reach the HTTP port at all (port is closed) or it is serving my content.
+In WildFly Swarm (Alpha 5) the HTTP endpoint is open during the deployment phase what leads to HTTP 404 errors.
+This makes error handling unnecessary complicated for surrounding services.
+Swarm should therefore either not open the HTTP port or at least not accept connections until deployment is finished.</description>
+			<version>1.0.0.Alpha5</version>
+			<fixedVersion>core_1.0.0.Beta5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.internal.Server.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.RuntimeDeployer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.RuntimeServer.java</file>
+			<file type="M">org.wildfly.swarm.monitor.MonitorInVmTest.java</file>
+			<file type="M">org.wildfly.swarm.container.Container.java</file>
+			<file type="M">org.wildfly.swarm.undertow.UndertowFraction.java</file>
+			<file type="M">org.wildfly.swarm.integration.staticcontent.deployment.StaticContentDeploymentTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="403" opendate="2016-04-05 14:57:58" fixdate="2016-04-05 15:02:42" resolution="Done">
+		<buginformation>
+			<summary>FractionAnalyzer#detectNeededFractions should return the container fraction only if no other fractions are detected</summary>
+			<description>As the container fraction is already transitively resolved from other fractions, there is no need to add the container fraction unless no fractions are detected.</description>
+			<version>1.0.0.Beta6</version>
+			<fixedVersion>core_1.0.0.Beta5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.FractionUsageAnalyzer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="445" opendate="2016-04-19 15:53:45" fixdate="2016-04-19 17:49:29" resolution="Done">
+		<buginformation>
+			<summary>Methods on Swarm should return Swarm instead of Container</summary>
+			<description>Currently if you do
+    Swarm swarm = new Swarm();
+then swarm.start() should return a Swarm but instead returns a Container (its superclass).</description>
+			<version>core_1.0.0.Beta5</version>
+			<fixedVersion>core_1.0.0.Beta6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.Swarm.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="472" opendate="2016-05-18 11:53:33" fixdate="2016-05-18 11:54:30" resolution="Done">
+		<buginformation>
+			<summary>Incorrect service teardown order</summary>
+			<description>The MSC service order in the consul topology was incorrect, which lead to an NPE when trying to deregister services when the VM terminated.</description>
+			<version>1.0.0.Beta8</version>
+			<fixedVersion>topology-consul_1.0.0.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.topology.consul.runtime.ConsulTopologyConnectorActivator.java</file>
+			<file type="M">org.wildfly.swarm.topology.consul.runtime.ConsulTopologyConfiguration.java</file>
+			<file type="M">org.wildfly.swarm.topology.consul.runtime.ConsulTopologyConnector.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="493" opendate="2016-06-01 15:28:20" fixdate="2016-06-01 17:45:06" resolution="Done">
+		<buginformation>
+			<summary>Default configuration of ConsulTopologyFraction does not include default URL.</summary>
+			<description></description>
+			<version>topology-consul_1.0.0.Final</version>
+			<fixedVersion>topology-consul_1.0.1.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.topology.consul.ConsulTopologyFraction.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="479" opendate="2016-05-23 18:39:03" fixdate="2016-06-01 19:42:56" resolution="Done">
+		<buginformation>
+			<summary>Hot Swap of static content for JAXRSArchive doesn&amp;apos;t work</summary>
+			<description>Static content hot swap fails with JAXRSArchive type</description>
+			<version>core_1.0.0.Beta7</version>
+			<fixedVersion>core_1.0.0.FInal</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.jaxrs.internal.DefaultJAXRSWarDeploymentFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="485" opendate="2016-05-26 18:01:46" fixdate="2016-06-02 03:48:53" resolution="Done">
+		<buginformation>
+			<summary>Using a JAX-RS provider that extends JacksonJaxbJsonProvider throws a  java.lang.NoClassDefFoundError Link Error</summary>
+			<description>A java.lang.NoClassDefFoundError Link Error is thrown when deploying a JAX-RS application with a custom provider that overrides com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider
+This issue was introduced in 1.0.0.CR1 and did not occur in 1.0.0.Beta8</description>
+			<version>core_1.0.0.CR3</version>
+			<fixedVersion>core_1.0.0.FInal</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.jaxrs.JAXRSArquillianTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Causality" description="is caused by">476</link>
+		</links>
+	</bug>
+	<bug id="497" opendate="2016-06-03 18:36:55" fixdate="2016-06-03 18:38:47" resolution="Done">
+		<buginformation>
+			<summary>NPE when closing TempFileManager</summary>
+			<description>The following stacktrace may be seen when a service is stopped (possible race condition): 
+
+
+
+
+
+
+15:25:38,285 ERROR [stderr] (Thread-1) Exception in thread "Thread-1" java.lang.NullPointerException
+
+
+
+
+15:25:38,286 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:69)
+
+
+
+
+15:25:38,286 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,286 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,286 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,286 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,287 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,287 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,287 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.deleteRecursively(TempFileManager.java:70)
+
+
+
+
+15:25:38,287 ERROR [stderr] (Thread-1) 	at org.wildfly.swarm.bootstrap.util.TempFileManager.close(TempFileManager.java:60)
+
+
+
+
+
+</description>
+			<version>core_1.0.0.CR3</version>
+			<fixedVersion>core_1.0.0.FInal</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.bootstrap.util.TempFileManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="516" opendate="2016-06-13 15:47:04" fixdate="2016-06-14 19:17:24" resolution="Done">
+		<buginformation>
+			<summary>Auto detection scans transitive dependencies of fractions</summary>
+			<description>If you specify `additionalFractions` in the plugin, it ends up scanning through transitive dependencies of those fractions for auto detection.
+This results in a lot more fractions being detected than is actually required.</description>
+			<version>1.0.0.CR1</version>
+			<fixedVersion>core_1.0.0.FInal, 1.0.0.CR2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.BuildTool.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="500" opendate="2016-06-07 00:59:12" fixdate="2016-06-16 18:12:43" resolution="Done">
+		<buginformation>
+			<summary>Can&amp;apos;t Run javaee7-samples Stateless EJB Example</summary>
+			<description></description>
+			<version>1.0.0.CR1</version>
+			<fixedVersion>core_1.0.0.FInal, 1.0.0.CR2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.ejb.remote.EJBRemoteFraction.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="522" opendate="2016-06-20 08:43:38" fixdate="2016-06-20 12:52:05" resolution="Done">
+		<buginformation>
+			<summary>Cannot pass jvmArguments to multistart process configuration</summary>
+			<description>I was experimenting with multistart option of wildfly-swarm-plugin and realized that&amp;amp;apos;s not possible to pass jvmArguments to particular process configuration e.g:
+
+
+
+
+
+
+...
+
+
+
+
+      &amp;lt;execution&amp;gt;
+
+
+
+
+           &amp;lt;id&amp;gt;multistart&amp;lt;/id&amp;gt;
+
+
+
+
+           &amp;lt;phase&amp;gt;pre-integration-test&amp;lt;/phase&amp;gt;
+
+
+
+
+           &amp;lt;goals&amp;gt;
+
+
+
+
+                 &amp;lt;goal&amp;gt;multistart&amp;lt;/goal&amp;gt;
+
+
+
+
+           &amp;lt;/goals&amp;gt;
+
+
+
+
+           &amp;lt;configuration&amp;gt;
+
+
+
+
+                 &amp;lt;processes&amp;gt;
+
+
+
+
+                      &amp;lt;process&amp;gt;
+
+
+
+
+                           &amp;lt;artifactId&amp;gt;booker-web-client&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                       &amp;lt;/process&amp;gt;
+
+
+
+
+                       &amp;lt;process&amp;gt;
+
+
+
+
+                            &amp;lt;artifactId&amp;gt;booker-store&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                            &amp;lt;properties&amp;gt;
+
+
+
+
+                                 &amp;lt;swarm.http.port&amp;gt;8082&amp;lt;/swarm.http.port&amp;gt;
+
+
+
+
+                            &amp;lt;/properties&amp;gt;
+
+
+
+
+                            &amp;lt;jvmArguments&amp;gt;
+
+
+
+
+                                &amp;lt;jvmArgument&amp;gt;-agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=y&amp;lt;/jvmArgument&amp;gt;
+
+
+
+
+                                &amp;lt;/jvmArguments&amp;gt;
+
+
+
+
+                        &amp;lt;/process&amp;gt;
+
+
+
+
+...
+
+
+
+
+
+</description>
+			<version>1.0.0.CR1</version>
+			<fixedVersion>1.0.0.CR2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.MultiStartMojo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="544" opendate="2016-07-05 13:39:56" fixdate="2016-07-06 12:12:16" resolution="Done">
+		<buginformation>
+			<summary>swagger-ui error with jaxrs fraction</summary>
+			<description>Swagger-ui gives me an exception after I try to access: http://localhost:8080/swagger-ui
+Stack trace:
+
+
+
+
+
+
+ERROR [org.jboss.resteasy.resteasy_jaxrs.i18n] (default task-4) RESTEASY002010: Failed to execute: javax.ws.rs.NotFoundException: RESTEASY003210: Could not find resource for full path: http://localhost:8080/swagger-ui
+
+
+
+
+	at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:114)
+
+
+
+
+	at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+
+
+
+
+	at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+
+
+
+
+	at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:445)
+
+
+
+
+	at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:257)
+
+
+
+
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:194)
+
+
+
+
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:221)
+
+
+
+
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+
+
+
+
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+
+
+
+
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+
+
+
+
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:85)
+
+
+
+
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+
+
+
+
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+
+
+
+
+	at org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+
+
+
+
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+	at org.wildfly.swarm.generated.FaviconErrorHandler.handleRequest(FaviconErrorHandler.java:62)
+
+
+
+
+	at io.undertow.server.handlers.PathHandler.handleRequest(PathHandler.java:94)
+
+
+
+
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:131)
+
+
+
+
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+
+
+
+
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+
+
+
+
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+
+
+
+
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+
+
+
+
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+
+
+
+
+	at io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+
+
+
+
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+
+
+
+
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+	at org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+
+
+
+
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+
+
+
+
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:284)
+
+
+
+
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:263)
+
+
+
+
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:81)
+
+
+
+
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:174)
+
+
+
+
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:202)
+
+
+
+
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:793)
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+
+
+
+
+	at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+
+</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.swagger.runtime.SwaggerConfiguration.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="556" opendate="2016-07-11 20:35:22" fixdate="2016-07-12 16:14:55" resolution="Done">
+		<buginformation>
+			<summary>Expose stability index (and friendly word) in the fraction-lists</summary>
+			<description></description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.FractionDescriptor.java</file>
+			<file type="M">org.wildfly.swarm.fractionlist.FractionList.java</file>
+			<file type="M">org.wildfly.swarm.tools.FractionStability.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="528" opendate="2016-06-22 02:53:46" fixdate="2016-07-21 12:11:11" resolution="Done">
+		<buginformation>
+			<summary>swarm.http.port and swarm.port.offset do not work with @ArquillianResource URL baseURL</summary>
+			<description>First Example
+If you set the swarm port using either swarm.http.port or swarm.port.offset via arquillian.xml e.g.
+
+
+
+
+
+
+    &amp;lt;container qualifier="wildfly-swarm" default="true"&amp;gt;
+
+
+
+
+        &amp;lt;configuration&amp;gt;
+
+
+
+
+            &amp;lt;property name="javaVmArguments"&amp;gt;
+
+
+
+
+                -Dswarm.port.offset=1
+
+
+
+
+            &amp;lt;/property&amp;gt;
+
+
+
+
+        &amp;lt;/configuration&amp;gt;
+
+
+
+
+    &amp;lt;/container&amp;gt;
+
+
+
+
+
+
+the arquillian swarm container is correctly started on the specified port/offset.
+The problem is that if you use:
+
+
+
+
+
+
+@ArquillianResource
+
+
+
+
+private URL baseURL;
+
+
+
+
+
+
+to retrieve the url the swarm container is accessible via it always returns http://localhost:8080.
+Second Example
+If you set the port property in arquillian.xml
+
+
+
+
+
+
+    &amp;lt;container qualifier="wildfly-swarm" default="true"&amp;gt;
+
+
+
+
+        &amp;lt;configuration&amp;gt;
+
+
+
+
+            &amp;lt;property name="port"&amp;gt;8081&amp;lt;/property&amp;gt;
+
+
+
+
+        &amp;lt;/configuration&amp;gt;
+
+
+
+
+    &amp;lt;/container&amp;gt;
+
+
+
+
+
+
+it starts the swarm container on 8080 and 
+
+
+
+
+
+
+@ArquillianResource
+
+
+
+
+private URL baseURL;
+
+
+
+
+
+
+returns http://localhost:8081
+Third Example
+Attempting to combine the port property and the offset does not work either e.g. 
+
+
+
+
+
+
+    &amp;lt;container qualifier="wildfly-swarm" default="true"&amp;gt;
+
+
+
+
+        &amp;lt;configuration&amp;gt;
+
+
+
+
+            &amp;lt;property name="javaVmArguments"&amp;gt;
+
+
+
+
+                -Dswarm.port.offset=1
+
+
+
+
+            &amp;lt;/property&amp;gt;
+
+
+
+
+            &amp;lt;property name="port"&amp;gt;8081&amp;lt;/property&amp;gt;
+
+
+
+
+        &amp;lt;/configuration&amp;gt;
+
+
+
+
+    &amp;lt;/container&amp;gt;
+
+
+
+
+
+
+the port/offset is ignored and the container is started on 8080, while
+
+
+
+
+
+
+@ArquillianResource
+
+
+
+
+private URL baseURL;
+
+
+
+
+
+
+returns http:localhost:8081 
+note: while the examples above use swarm.port.offset, the same issue occurs if you use swarm.http.port</description>
+			<version>1.0.0.CR2</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.arquillian.resources.SwarmURLResourceProvider.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="486" opendate="2016-05-28 18:25:37" fixdate="2016-07-27 08:33:48" resolution="Done">
+		<buginformation>
+			<summary>Can&amp;apos;t load project-stages.yml on classpath with Arq</summary>
+			<description>problem
+project-stages.yml on classpath(src/main/resources) is not loaded with Arquillian tests. I attached the error log and the reproducer in &amp;amp;apos;Steps to Reproduce&amp;amp;apos; section.
+Though -swarm try to load it, apparently can&amp;amp;apos;t see it when Arq tests.
+https://github.com/wildfly-swarm/wildfly-swarm-core/blob/1.0.0.CR3/container/api/src/main/java/org/wildfly/swarm/cli/CommandLine.java#L109
+workaround
+To load the yml explicitly like below.
+
+
+
+
+
+
+container.withStageConfig(Paths.get("/tmp", "external-project-stages.yml").toUri().toURL())
+
+
+
+
+
+</description>
+			<version>core_1.0.0.CR3</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.ProjectStagesTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">507</link>
+		</links>
+	</bug>
+	<bug id="574" opendate="2016-07-28 10:21:58" fixdate="2016-07-28 17:15:27" resolution="Done">
+		<buginformation>
+			<summary>Keycloak Fraction fails because of ClassCastException when web.xml is added via Shrinkwrap</summary>
+			<description>When using Shrinkwrap to deploy a WARARchive (undertow-api) while adding the web.xml either via the WARArchive#addAsWebInfResource or the WARArchive#setWebXML methods the deployment fails with a ExtensionLoadingException based on the follwoing stack trace:
+
+
+
+
+
+
+Stacktrace
+
+
+
+
+
+
+Exception in thread "main" org.jboss.shrinkwrap.impl.base.ExtensionLoadingException: Failed to instantiate class of type class org.jboss.shrinkwrap.impl.base.MemoryMapArchiveImpl. The underlying constructor threw an exception.
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.ServiceExtensionLoader.createExtension(ServiceExtensionLoader.java:365)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.ServiceExtensionLoader.createFromLoadExtension(ServiceExtensionLoader.java:223)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.ServiceExtensionLoader.load(ServiceExtensionLoader.java:108)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.ArchiveBase.as(ArchiveBase.java:686)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.AssignableBase.as(AssignableBase.java:67)
+
+
+
+
+	at at.ac.fhkufstein.swarm.study.SwarmApp.main(SwarmApp.java:20)
+
+
+
+
+Caused by: java.lang.reflect.InvocationTargetException
+
+
+
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+
+
+
+
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+
+
+
+
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+
+
+
+
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.ServiceExtensionLoader.createExtension(ServiceExtensionLoader.java:354)
+
+
+
+
+	... 5 more
+
+
+
+
+Caused by: java.lang.ClassCastException: org.jboss.shrinkwrap.api.asset.ClassLoaderAsset cannot be cast to org.jboss.shrinkwrap.api.asset.NamedAsset
+
+
+
+
+	at org.wildfly.swarm.keycloak.internal.SecuredImpl.&amp;lt;init&amp;gt;(SecuredImpl.java:55)
+
+
+
+
+	... 10 more
+
+
+
+
+
+
+As far as I can see this happens as the constructor of the SecuredImpl class  looks for the web.xml node in the deployment and casts it explicitly to a NamedAsset - which causes the aforementioned Exception.
+As no method of the interface is ever used at this point and it fails at least in the cases I encountered today I propose to omit the cast and use the more general Asset interface instead - if you see this suggestion as a fitting solution I would be glad to set up the needed pull request.</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.keycloak.internal.SecuredImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="553" opendate="2016-07-08 19:50:16" fixdate="2016-07-29 06:31:15" resolution="Done">
+		<buginformation>
+			<summary>Error with logging fraction when using PeriodicSizeRotatingFileHandler</summary>
+			<description>When using LoggingFraction and PeriodicSizeRotatingFileHandler it gives me the following error:
+
+
+
+
+
+
+16:03:13,755 ERROR [org.jboss.as.controller.management-operation] (ServerService Thread Pool -- 9) WFLYCTL0013: Operation ("add") failed - address: ([
+
+
+
+
+    ("subsystem" =&amp;gt; "logging"),
+
+
+
+
+    ("periodic-size-rotating-file-handler" =&amp;gt; "cliente-handler")
+
+
+
+
+]) - failure description: "WFLYCTL0155: file may not be null"
+
+
+
+
+
+
+Here is my whole code:
+https://gist.github.com/rafaelszp/8bdfc147c676f35106eb4213670b568b</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.runtime.RuntimeServer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="551" opendate="2016-07-08 11:29:34" fixdate="2016-07-29 07:31:26" resolution="Done">
+		<buginformation>
+			<summary>Infinispan - access default cache - ClassCastException</summary>
+			<description>Hi,
+there is a problem with the casting from org.jboss.as.clustering.infinispan.DefaultCacheContainer to org.infinispan.manager.EmbeddedCacheManager. I don&amp;amp;apos;t know why I can&amp;amp;apos;t cast this classes. After I watched DefaultCacheContainer this class, I think this could be a bug.</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.infinispan.InfinispanFraction.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="587" opendate="2016-08-04 18:34:19" fixdate="2016-08-04 19:33:44" resolution="Done">
+		<buginformation>
+			<summary>Unable to connect to Remote JMS</summary>
+			<description>If I create a WildFly Swarm project that has some JMS topics or queues, an external client is unable to retrieve a connection factory to access JMS resources</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.messaging.EnhancedServer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="586" opendate="2016-08-04 14:47:13" fixdate="2016-08-05 02:22:44" resolution="Done">
+		<buginformation>
+			<summary>IllegalStateException when accessing monitoring endpoints</summary>
+			<description>When accessing any of the health endpoints from the monitor fraction, though the data is returned the logs show an IllegalStateException due to the response having already been started.
+Further details here: https://groups.google.com/forum/#!topic/wildfly-swarm/6Ue-QpIJq4I</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.monitor.runtime.HttpContexts.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="607" opendate="2016-08-16 18:38:00" fixdate="2016-08-16 19:48:56" resolution="Done">
+		<buginformation>
+			<summary>StringIndexOutOfBoundsException: String index out of range: -1 during plugin JAR build</summary>
+			<description>
+Unable to use Swarm maven plugin when using Fraction auto detect mode force. Regression from Beta7 in at least one project. Swarm plugin section of POM looks like. Fraction and additional fractions can be added or removed, but result is the same so long as &amp;lt;fractionDetectMode&amp;gt;force&amp;lt;/fractionDetectMode&amp;gt; is used.
+        &amp;lt;configuration&amp;gt;
+          &amp;lt;mainClass&amp;gt;com.myorg.swarm.SwarmMain&amp;lt;/mainClass&amp;gt;
+          &amp;lt;properties&amp;gt;
+            &amp;lt;swarm.context.path&amp;gt;/my-root-context&amp;lt;/swarm.context.path&amp;gt;
+          &amp;lt;/properties&amp;gt;
+          &amp;lt;fractionDetectMode&amp;gt;force&amp;lt;/fractionDetectMode&amp;gt;
+          &amp;lt;fractions&amp;gt;
+            &amp;lt;fraction&amp;gt;jaxrs-cdi&amp;lt;/fraction&amp;gt;
+            &amp;lt;fraction&amp;gt;undertow&amp;lt;/fraction&amp;gt;
+            &amp;lt;fraction&amp;gt;jpa&amp;lt;/fraction&amp;gt;
+            &amp;lt;fraction&amp;gt;ejb&amp;lt;/fraction&amp;gt;
+            &amp;lt;fraction&amp;gt;mail&amp;lt;/fraction&amp;gt;
+          &amp;lt;/fractions&amp;gt;
+          &amp;lt;additionalFractions&amp;gt;
+            &amp;lt;additionalFraction&amp;gt;jaxrs-cdi&amp;lt;/additionalFraction&amp;gt;
+            &amp;lt;additionalFraction&amp;gt;undertow&amp;lt;/additionalFraction&amp;gt;
+            &amp;lt;additionalFraction&amp;gt;jpa&amp;lt;/additionalFraction&amp;gt;
+            &amp;lt;additionalFraction&amp;gt;ejb&amp;lt;/additionalFraction&amp;gt;
+            &amp;lt;additionalFraction&amp;gt;mail&amp;lt;/additionalFraction&amp;gt;
+          &amp;lt;/additionalFractions&amp;gt;
+        &amp;lt;/configuration&amp;gt;
+      &amp;lt;/plugin&amp;gt;
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:1.0.0.Final:package (default) on project sam-war: Unable to create -swarm.jar
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:497)
+at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.plugin.MojoFailureException: Unable to create -swarm.jar
+at org.wildfly.swarm.plugin.maven.PackageMojo.execute(PackageMojo.java:138)
+at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+... 20 more
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+at java.lang.String.substring(String.java:1955)
+at org.wildfly.swarm.tools.FractionUsageAnalyzer.asClassNameMatch(FractionUsageAnalyzer.java:86)
+at org.wildfly.swarm.tools.FractionUsageAnalyzer$$Lambda$54/412497692.apply(Unknown Source)
+at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+at java.util.HashMap$KeySpliterator.forEachRemaining(HashMap.java:1540)
+at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:512)
+at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:502)
+at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)
+at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)
+at org.wildfly.swarm.tools.FractionUsageAnalyzer.detectNeededFractions(FractionUsageAnalyzer.java:63)
+at org.wildfly.swarm.tools.BuildTool.detectFractions(BuildTool.java:242)
+at org.wildfly.swarm.tools.BuildTool.addWildflySwarmBootstrapJar(BuildTool.java:303)
+at org.wildfly.swarm.tools.BuildTool.build(BuildTool.java:177)
+at org.wildfly.swarm.tools.BuildTool.build(BuildTool.java:171)
+at org.wildfly.swarm.plugin.maven.PackageMojo.execute(PackageMojo.java:121)
+... 22 more</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.FractionUsageAnalyzer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="611" opendate="2016-08-17 20:07:53" fixdate="2016-08-18 15:02:20" resolution="Done">
+		<buginformation>
+			<summary>Weld warnings being displayed when starting a swarmed app</summary>
+			<description>The app works 
+
+
+
+
+
+
+17:02:43,791 WARN  [org.jboss.weld.Bean] (main) WELD-000018: Executing producer field or method [BackedAnnotatedMethod] @Produces @Dependent public org.wildfly.swarm.container.runtime.RuntimeServer.stageConfig() on incomplete declaring bean Managed Bean [class org.wildfly.swarm.container.runtime.RuntimeServer] with qualifiers [@Any @Default] due to circular injection
+
+
+
+
+2016-08-17 17:02:45,700 WARN  [org.jboss.weld.Bean] (main) WELD-000018: Executing producer field or method [BackedAnnotatedMethod] @Produces @Singleton org.wildfly.swarm.container.runtime.RuntimeServer.client() on incomplete declaring bean Managed Bean [class org.wildfly.swarm.container.runtime.RuntimeServer] with qualifiers [@Any @Default] due to circular injection
+
+
+
+
+
+</description>
+			<version>2016.8</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.runtime.RuntimeServer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.xmlconfig.StandaloneXMLConfigProducer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.ServerBootstrapImpl.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.xmlconfig.StandaloneXMLParserProducer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.xmlconfig.XMLConfig.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.marshal.XMLMarshaller.java</file>
+			<file type="M">org.wildfly.swarm.internal.SwarmMessages.java</file>
+			<file type="M">org.wildfly.swarm.management.runtime.ManagementSocketBindingsCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.marshal.SubsystemMarshaller.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.marshal.ExtensionMarshaller.java</file>
+			<file type="M">org.wildfly.swarm.ejb.runtime.EJBSecurityCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.undertow.runtime.AJPCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.jpa.runtime.DefaultDatasourceCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.undertow.runtime.HTTPSCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.marshal.InterfaceMarshaller.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.marshal.ProjectStagePropertyMarshaller.java</file>
+			<file type="M">org.wildfly.swarm.transactions.runtime.TransactionsSocketBindingCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.monitor.runtime.UndertowFilterCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.drools.server.runtime.DroolsSetup.java</file>
+			<file type="M">org.wildfly.swarm.topology.consul.runtime.ConsultURLCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.ee.runtime.DefaultBindingCustomizer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="564" opendate="2016-07-14 18:54:23" fixdate="2016-08-20 02:03:27" resolution="Done">
+		<buginformation>
+			<summary>Can&amp;apos;t get underlying PostgreSQL database connection from datasource</summary>
+			<description>I need to get the underlying PostgreSQL database connection from a datasource, see "Steps to Reproduce" for how exactly I&amp;amp;apos;m trying to achieve this. In Wildfly Swarm this results in a ClassNotFoundException. I have also tried this with Wildfly 10 and there it does work.</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.datasources.DatasourcesFraction.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="588" opendate="2016-08-07 18:57:32" fixdate="2016-08-24 12:04:10" resolution="Done">
+		<buginformation>
+			<summary>HealthCheck endpoint doesn&amp;apos;t work when JAX-RS  javax.ws.rs.core.Application @ApplicationPath defined</summary>
+			<description>Issue described here along with Heko&amp;amp;apos;s initial analysis:
+https://groups.google.com/forum/#!topic/wildfly-swarm/balKuovlnAY</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.jaxrs.JAXRSArqMonitorTest.java</file>
+			<file type="M">org.wildfly.swarm.monitor.runtime.HealthAnnotationProcessor.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">527</link>
+		</links>
+	</bug>
+	<bug id="527" opendate="2016-06-21 18:50:30" fixdate="2016-08-25 14:15:57" resolution="Done">
+		<buginformation>
+			<summary>jboss-web defined context-root is ignored for health check resources</summary>
+			<description>The Arquillian container is ignoring the jboss-web defined context-root. e.g.
+
+
+
+
+
+
+JAXRSArchive deployment = ShrinkWrap.create(JAXRSArchive.class, "myapp.war");
+
+
+
+
+        deployment.addClass(HealthCheckResource.class);
+
+
+
+
+        deployment.addClass(CustomJsonProvider.class);
+
+
+
+
+        deployment.addAllDependencies();
+
+
+
+
+        deployment.setContextRoot("myapp");
+
+
+
+
+        return deployment;
+
+
+
+
+
+
+Creates a WAR with a jboss-web.xml that sets the context root to myapp. This can be confirmed by exporting the uber-jar using -Dswarm.export.uberjar=true
+This appears to be ignored when using the Arquillian container, as per below
+
+
+
+
+
+
+2016-06-21 11:40:15,830 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 5) WFLYUT0021: Registered web context: /
+
+
+
+
+
+</description>
+			<version>1.0.0.CR2</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.jaxrs.JaxRsActivator.java</file>
+			<file type="M">org.wildfly.swarm.monitor.MonitorTest.java</file>
+			<file type="M">org.wildfly.swarm.jaxrs.JAXRSArqMonitorTest.java</file>
+			<file type="M">org.wildfly.swarm.jaxrs.JAXRSArquillianTest.java</file>
+			<file type="M">org.wildfly.swarm.monitor.runtime.HealthAnnotationProcessor.java</file>
+			<file type="M">org.wildfly.swarm.jaxrs.HealthCheckResource.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="is related to">452</link>
+			<link type="Related" description="is related to">588</link>
+		</links>
+	</bug>
+	<bug id="615" opendate="2016-08-19 15:37:03" fixdate="2016-08-25 19:30:48" resolution="Done">
+		<buginformation>
+			<summary>Manual lookup of CDI-Instance doesn&amp;apos;t work since 2016.8.1</summary>
+			<description>Since swarm release 2016.8.1 a manual lookup of the current CDI-instance from within application code results the following error:
+
+
+
+
+
+
+Caused by: java.lang.IllegalStateException: Unable to locate CDIProvider
+
+
+
+
+        at javax.enterprise.inject.spi.CDI.findAllProviders(CDI.java:139)
+
+
+
+
+        at javax.enterprise.inject.spi.CDI.getCDIProvider(CDI.java:120)
+
+
+
+
+        at javax.enterprise.inject.spi.CDI.current(CDI.java:56)
+
+
+
+
+
+
+I&amp;amp;apos;ve got a scenario where i have to lookup a CDI-Bean manually and for this i need the CDI-instance. The problem occurs when starting the swarm app from the IDE and via java-jar swarmjar. It&amp;amp;apos;s possible to reproduce by add the following snippet in a simple rest-ressource.
+
+
+
+
+
+
+CDI&amp;lt;Object&amp;gt; current = CDI.current();
+
+
+
+
+
+
+</description>
+			<version>2016.8</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.cdi.CDIArquillianTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="635" opendate="2016-08-25 18:43:05" fixdate="2016-08-25 19:50:44" resolution="Done">
+		<buginformation>
+			<summary>ExplodedImporter not available in main()</summary>
+			<description></description>
+			<version>2016.8</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.Swarm.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="571" opendate="2016-07-20 15:43:44" fixdate="2016-08-29 10:04:05" resolution="Done">
+		<buginformation>
+			<summary>Arquillian does not include src/main/resource/modules</summary>
+			<description>I use the mssql JDBC driver which is configured in the src/main/module. When running a test with arquillian ("@RunWith(Arquillian.class)"). The jdbc driver is not found when I provide a datasource config via XML or via Java API. I ended up adding the src/main/module via the swarm.build.modules property.
+uberjar is working fine.</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.UberjarSimpleContainer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="575" opendate="2016-07-29 00:23:40" fixdate="2016-08-31 21:13:21" resolution="Done">
+		<buginformation>
+			<summary>swarmtool fails on javaee7 Stateless EJB example</summary>
+			<description>This is related to SWARM-500, which gives instructions on downloading the Java EE 7 samples. SWARM-500 uses maven plugin to create the -swarm.jar and now works correctly (hurray!). However, running swarmtool on the resulting .war file instead of using the plugin continues to fail with the following error:
+{{Failed downloading javax/transaction/jta/1.0.1B/jta-1.0.1B.jar from http://repository.jboss.org/nexus/content/groups/public/. Reason:
+org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find artifact javax.transaction:jta:jar:1.0.1B in jboss-public-repository-group (http://repository.jboss.org/nexus/content/groups/public/), try downloading from http://java.sun.com/products/jta}}</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.DependencyManager.java</file>
+			<file type="M">org.wildfly.swarm.tools.MockArtifactResolver.java</file>
+			<file type="M">org.wildfly.swarm.plugin.maven.MavenArtifactResolvingHelper.java</file>
+			<file type="M">org.wildfly.swarm.plugin.gradle.GradleArtifactResolvingHelper.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.resolver.ShrinkwrapArtifactResolvingHelper.java</file>
+			<file type="M">org.wildfly.swarm.tools.ArtifactResolvingHelper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="657" opendate="2016-09-05 07:06:13" fixdate="2016-09-05 15:29:15" resolution="Done">
+		<buginformation>
+			<summary>can&amp;apos;t run tests using the Arquillian Daemon when another application listens on port 12345</summary>
+			<description>On my laptop, a simple mvn clean install fails on the ArquillianTest with
+
+
+
+
+
+
+2016-09-05 08:59:54,708 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-5) MSC000001: Failed to start service wildfly.swarm.arquillian.daemon.runner: org.jboss.msc.service.StartException in service wildfly.swarm.arquillian.daemon.runner: Failed to start service
+
+
+
+
+        at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1904)
+
+
+
+
+        ...
+
+
+
+
+Caused by: java.net.BindException: Address already in use
+
+
+
+
+        at sun.nio.ch.Net.bind0(Native Method)
+
+
+
+
+        ...
+
+
+
+
+
+
+This is caused by another application already listening on port 12345. In my case, that application is the HipChat client. Sorry, I can&amp;amp;apos;t just stop using it right now , so I need a way to change the Arquillian Daemon&amp;amp;apos;s port. There&amp;amp;apos;s TODO: allow overriding the default port? for that already in DaemonServiceActivator.DaemonService.start.
+A simple system property would work just fine IMHO.</description>
+			<version>2016.8</version>
+			<fixedVersion>2016.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.spi.api.SwarmProperties.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.daemon.DaemonServiceActivator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="662" opendate="2016-09-08 15:17:02" fixdate="2016-09-08 17:31:20" resolution="Done">
+		<buginformation>
+			<summary>NPE when calling addAllDependencies()</summary>
+			<description>See https://groups.google.com/forum/?utm_medium=email&amp;amp;utm_source=footer#!msg/wildfly-swarm/jwiBt6zIGh8/pTwmLsj_CAAJ</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.bootstrap.env.MavenDependencyResolution.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="667" opendate="2016-09-09 18:20:32" fixdate="2016-09-13 13:44:00" resolution="Done">
+		<buginformation>
+			<summary>Arquillian container fails to find dependencies in active Maven Profile</summary>
+			<description>If a project defines WIldFly Swarm dependencies in a Maven Profile, any tests in the project are unable to find the bootstrap.jar from WildFly Swarm.
+Problem appears to be in UberjarSimpleContainer when it loads the `pom.xml` file and resolves the dependencies. Without a profile on that resolution, it doesn&amp;amp;apos;t find the dependencies</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.UberjarSimpleContainer.java</file>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.WildFlySwarmObserver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="681" opendate="2016-09-14 07:41:35" fixdate="2016-09-14 10:04:52" resolution="Done">
+		<buginformation>
+			<summary>health endpoints are available on their original paths, but only if they are not secured</summary>
+			<description>If a health endpoint is defined at path /app/health, it&amp;amp;apos;s primarily available under /health/app/health. If it&amp;amp;apos;s unsecured, it&amp;amp;apos;s also available at the original path /app/health, but if it&amp;amp;apos;s secured, the original path /app/health returns 403.
+That&amp;amp;apos;s inconsistent and counter-intuitive. I believe that all original paths should just return 301 redirect to /health/..., regardless of the security constraints.</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.jaxrs.JAXRSArqMonitorTest.java</file>
+			<file type="M">org.wildfly.swarm.jaxrs.SimpleHttp.java</file>
+			<file type="M">org.wildfly.swarm.monitor.runtime.Queries.java</file>
+			<file type="M">org.wildfly.swarm.monitor.runtime.HttpContexts.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="690" opendate="2016-09-16 16:58:08" fixdate="2016-09-16 21:52:46" resolution="Done">
+		<buginformation>
+			<summary>FractionList brings wrong fraction information when a fraction is declared as a dependency of other fraction</summary>
+			<description>The internal, name and other properties have incorrect (default) values if the fraction is declared as a dependency of another fraction. 
+Eg. archaius </description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.fractionlist.FractionList.java</file>
+			<file type="M">org.wildfly.swarm.fractionlist.FractionListTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="697" opendate="2016-09-19 17:20:49" fixdate="2016-09-21 10:04:08" resolution="Done">
+		<buginformation>
+			<summary>StackOverflowError during gradle artifactresolving</summary>
+			<description>When building with gradle an a StackOverflowError occurs when there is a 3rd-party dependency with circular dependencies to other 3rd-party-libs. (Recursion in method "fullTree")
+In gradle I have to possibility to force the build to take another version of the 3rd-party lib, which may have fixed the circular error. (https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.ResolutionStrategy.html). But this option to quick-fix the error from outside the swarm-buildplugin doesn&amp;amp;apos;t work, because the GradleArtifactResolvingHelper from swarm is using  a detached configuration, where I can&amp;amp;apos;t define this forced-dependencies.
+The GradleArtifactResolvingHelper should use gradle-features to resolve the artifacts from a specific configuration instead of implement this with the recursive method &amp;amp;apos;fullTree&amp;amp;apos;. gradle can handle this circular dependencies and is much faster! The ResolvingHelper should also apply the forced-versions from the resolutionstrategy of the configuration &amp;amp;apos;compile&amp;amp;apos; to the detached configuration.</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.gradle.GradleArtifactResolvingHelper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="700" opendate="2016-09-20 04:08:17" fixdate="2016-09-22 12:59:04" resolution="Done">
+		<buginformation>
+			<summary>"swarm.port.offset" not working</summary>
+			<description>The system property "swarm.port.offset" doesn&amp;amp;apos;t work for now.
+I found port-offset value is hard-coded with zero in DefaultSocketBindingGroupProducer.
+https://github.com/wildfly-swarm/wildfly-swarm/blob/master/container/src/main/java/org/wildfly/swarm/container/runtime/config/DefaultSocketBindingGroupProducer.java#L35
+It should be passed the system prop like this.
+
+
+
+
+
+
+new SocketBindingGroup(
+
+
+
+
+                "standard-sockets",
+
+
+
+
+                "public",
+
+
+
+
+                SwarmProperties.propertyVar(SwarmProperties.PORT_OFFSET, "0"))
+
+
+
+
+
+
+I&amp;amp;apos;ll send a p-r later.</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.runtime.config.DefaultSocketBindingGroupProducer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="710" opendate="2016-09-22 07:06:44" fixdate="2016-09-23 18:08:40" resolution="Done">
+		<buginformation>
+			<summary>ContextNotActiveException - No active contexts for scope type javax.inject.Singleton on shutdown</summary>
+			<description>There is following exception when doing application shutdown (ctrl+c):
+
+
+
+
+
+
+2016-09-22 08:30:31,084 ERROR [stderr] (Thread-4) org.jboss.weld.context.ContextNotActiveException: WELD-001303: No active contexts for scope type javax.inject.Singleton
+
+
+
+
+2016-09-22 08:30:31,085 ERROR [stderr] (Thread-4) 	at org.jboss.weld.manager.BeanManagerImpl.getContext(BeanManagerImpl.java:639)
+
+
+
+
+2016-09-22 08:30:31,085 ERROR [stderr] (Thread-4) 	at org.jboss.weld.bean.ContextualInstanceStrategy$DefaultContextualInstanceStrategy.get(ContextualInstanceStrategy.java:94)
+
+
+
+
+2016-09-22 08:30:31,085 ERROR [stderr] (Thread-4) 	at org.jboss.weld.bean.ContextualInstanceStrategy$ApplicationScopedContextualInstanceStrategy.get(ContextualInstanceStrategy.java:140)
+
+
+
+
+2016-09-22 08:30:31,085 ERROR [stderr] (Thread-4) 	at org.jboss.weld.bean.ContextualInstance.get(ContextualInstance.java:50)
+
+
+
+
+2016-09-22 08:30:31,085 ERROR [stderr] (Thread-4) 	at org.jboss.weld.manager.BeanManagerImpl.getReference(BeanManagerImpl.java:692)
+
+
+
+
+2016-09-22 08:30:31,086 ERROR [stderr] (Thread-4) 	at org.jboss.weld.bean.builtin.InstanceImpl.getBeanInstance(InstanceImpl.java:178)
+
+
+
+
+2016-09-22 08:30:31,086 ERROR [stderr] (Thread-4) 	at org.jboss.weld.bean.builtin.InstanceImpl.get(InstanceImpl.java:98)
+
+
+
+
+2016-09-22 08:30:31,086 ERROR [stderr] (Thread-4) 	at org.wildfly.swarm.container.runtime.RuntimeServer.stop(RuntimeServer.java:200)
+
+
+
+
+2016-09-22 08:30:31,086 ERROR [stderr] (Thread-4) 	at org.wildfly.swarm.container.runtime.RuntimeServer.lambda$new$26(RuntimeServer.java:111)
+
+
+
+
+2016-09-22 08:30:31,086 ERROR [stderr] (Thread-4) 	at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+
+</description>
+			<version>2016.10.0</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.runtime.RuntimeServer.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.RuntimeDeployer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="705" opendate="2016-09-21 08:40:03" fixdate="2016-09-26 13:45:01" resolution="Done">
+		<buginformation>
+			<summary>Sporadic build failure on wildfly-swarm-plugin package : Unable to create -swarm.jar</summary>
+			<description>[ERROR] Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:2016.9:package (package) on project microservice-session: Unable to create -swarm.jar: D:\github\microprofile-conference\microservice-session\target\microservice-session.war -&amp;gt; D:\github\microprofile-conference\microservice-session\target\microservice-session.war.original: The process cannot access the file because it is being used by another process. -&amp;gt; [Help 1]
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:2016.9:package (package) on project microservice-session: Unable to create -swarm.jar
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+        at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+        at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+        at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+        at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+        at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+        at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+        at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+        at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+        at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:497)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+        at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.apache.maven.plugin.MojoFailureException: Unable to create -swarm.jar
+        at org.wildfly.swarm.plugin.maven.PackageMojo.execute(PackageMojo.java:153)
+        at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+        at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+        ... 20 more
+Caused by: java.nio.file.FileSystemException: D:\github\microprofile-conference\microservice-session\target\microservice-session.war -&amp;gt; D:\github\microprofile-conference\microservice-session\target\microservice-session.war.original: The process cannot access the file because it is being used by another process.
+        at sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:86)
+        at sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:97)
+        at sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:387)
+        at sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:287)
+        at java.nio.file.Files.move(Files.java:1395)
+        at org.wildfly.swarm.tools.BuildTool.repackageWar(BuildTool.java:200)
+        at org.wildfly.swarm.plugin.maven.PackageMojo.execute(PackageMojo.java:150)
+        ... 22 more</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.DependencyManager.java</file>
+			<file type="M">org.wildfly.swarm.tools.BuildTool.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Causality" description="causes">511</link>
+			<link type="Duplicate" description="is duplicated by">669</link>
+		</links>
+	</bug>
+	<bug id="543" opendate="2016-07-04 22:34:30" fixdate="2016-09-27 20:20:22" resolution="Done">
+		<buginformation>
+			<summary>Cannot send JMS message to external ActiveMQ server when configured via ironjacamar</summary>
+			<description>I&amp;amp;apos;m trying to configure a wf swarm app in such a way that it sends JMS messages to an external ActiveMQ server via an embedded activemq-rar that is configured via ironjacamar.
+when I start the application in an IDE like intellij and try to create a new client via curl then I&amp;amp;apos;d expect to see a new queue created on the (local) activemq server but that&amp;amp;apos;s not the case.
+It seems that the MessagingFraction is creating an own (internal) ActiveMQ message broker
+which probably supersedes my resource adapter - I probably did something wrong but I read all the docks I could find so perhaps there is at least something missing in that regard...
+
+
+
+
+
+
+...
+
+
+
+
+2016-07-05 00:27:53,147 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 39) AMQ221000: live Message Broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=/tmp/wildfly-self-contained8810334072071990447.d/activemq/journal,bindingsDirectory=/tmp/wildfly-self-contained8810334072071990447.d/activemq/bindings,largeMessagesDirectory=/tmp/wildfly-self-contained8810334072071990447.d/activemq/largemessages,pagingDirectory=/tmp/wildfly-self-contained8810334072071990447.d/activemq/paging)
+
+
+
+
+2016-07-05 00:27:53,167 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 39) AMQ221013: Using NIO Journal
+
+
+
+
+2016-07-05 00:27:53,261 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 39) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
+
+
+
+
+2016-07-05 00:27:53,453 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 39) AMQ221007: Server is now live
+
+
+
+
+2016-07-05 00:27:53,454 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 39) AMQ221001: Apache ActiveMQ Artemis Message Broker version 1.1.0.wildfly-011 [nodeID=8c555aca-4236-11e6-8b69-7d8a4c92225d] 
+
+
+
+
+2016-07-05 00:27:53,456 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 39) AMQ221003: trying to deploy queue jms.queue.edff/EventsQueue
+
+
+
+
+2016-07-05 00:27:53,525 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 40) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+
+
+
+
+2016-07-05 00:27:53,555 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0007: Registered connection factory java:/DefaultJMSConnectionFactory
+
+
+
+
+
+
+
+
+
+2016-07-05 00:27:53,525 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 40) WFLYMSGAMQ0002: Bound messaging object to jndi name java:/ConnectionFactory
+
+
+
+
+2016-07-05 00:27:53,555 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-4) WFLYJCA0007: Registered connection factory java:/DefaultJMSConnectionFactory
+
+
+
+
+2016-07-05 00:27:53,603 INFO  [org.apache.activemq.artemis.ra] (MSC service thread 1-4) Resource adaptor started
+
+
+
+
+...
+
+
+
+
+
+
+after that I see the deployment of the resource adapter
+
+
+
+
+
+
+2016-07-05 00:27:54,742 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "activemq-ra.rar" (runtime-name: "activemq-ra.rar")
+
+
+
+
+2016-07-05 00:27:54,867 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-2) WFLYSRV0018: Deployment "deployment.activemq-ra.rar" is using a private module ("org.jboss.jts:main") which may be changed or removed in future versions without notice.
+
+
+
+
+2016-07-05 00:27:54,915 INFO  [org.jboss.as.server] (main) WFLYSRV0010: Deployed "activemq-ra.rar" (runtime-name : "activemq-ra.rar")
+
+
+
+
+
+
+</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.messaging.MessagingFraction.java</file>
+			<file type="M">org.wildfly.swarm.Swarm.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.ServerBootstrapImpl.java</file>
+			<file type="M">org.wildfly.swarm.container.internal.ServerBootstrap.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="691" opendate="2016-09-16 21:54:39" fixdate="2016-10-04 17:44:25" resolution="Done">
+		<buginformation>
+			<summary>Multiple Archive#as(Secured.class) executions occur ParseError of web.xml</summary>
+			<description>Multiple Archive#as(Secured.class) executions occur ParseError of web.xml.
+The method sets up web.xml, and if you use it multiple times, multiple login-config elements in web.xml would be registered</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.11.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.undertow.descriptors.WebXmlAsset.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="669" opendate="2016-09-12 08:49:53" fixdate="2016-10-04 18:54:44" resolution="Cannot Reproduce Bug">
+		<buginformation>
+			<summary>Building simple example fails under Windows 7 x64 (file locked by another process)</summary>
+			<description>Even trying to build the most simple demo application:
+
+either the scaffold generated from http://wildfly-swarm.io/generator/
+or the demo application shown in the GitBook https://wildfly-swarm.gitbooks.io/wildfly-swarm-users-guide/content/first-steps/maven_pom.html using their exact pom.xml and two Java classes
+
+and using the mvn commands:
+`mvn clean wildfly-swarm:run`; or just
+`mvn wildfly-swarm:run`
+fails at the war building step with the error message:
+```
+[INFO]  maven-war-plugin:2.2:war (default-war) @ restful-endpoint 
+[INFO] Packaging webapp
+[INFO] Assembling webapp [restful-endpoint] in [d:\eclipse-workspace-nkg\wildfly-swarm-test\target\restful-endpoint]
+[INFO] Processing war project
+[INFO] Webapp assembled in [9 msecs]
+[INFO] Building war: d:\eclipse-workspace-nkg\wildfly-swarm-test\target\restful-endpoint.war
+[INFO]
+[INFO]  wildfly-swarm-plugin:2016.9:package (default) @ restful-endpoint 
+[INFO] Scanning for needed WildFly Swarm fractions with mode: when_missing
+[INFO] Detected fractions: container:2016.9
+[INFO] Adding fractions: container:2016.9
+[INFO] Repackaging .war: d:\eclipse-workspace-nkg\wildfly-swarm-test\target\restful-endpoint.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.393 s
+[INFO] Finished at: 2016-09-12T10:46:48+02:00
+[INFO] Final Memory: 18M/243M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:2016.9:package (default) on project restful-endpoint: Unable to create -swarm.jar: d:\eclipse-workspace-nkg\wildfly-swarm-test\target\restful-endpoint.war -&amp;gt; d:\eclipse-workspace-nkg\wildfly-swarm-test\target\restful-endpoint.war.original: Der Prozess kann nicht auf die Datei zugreifen, da sie von einem anderen Prozess verwendet wird. -&amp;gt; [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+```
+which means that the process cannot access the file because it is locked by another process. I&amp;amp;apos;ve never had this issue with any other Maven applications/builds.
+Under Ubuntu 16.04, the same demo application builds just fine.
+EDIT:
+Using `mvn clean package` works and successfully creates the jar file.</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.10.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.tools.DependencyManager.java</file>
+			<file type="M">org.wildfly.swarm.tools.BuildTool.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">705</link>
+		</links>
+	</bug>
+	<bug id="671" opendate="2016-09-12 13:30:46" fixdate="2016-10-06 01:51:15" resolution="Done">
+		<buginformation>
+			<summary>mvn wildfly-swarm:package fails with "File must be specified"</summary>
+			<description>Though we expect most users to initiate our plugin via `mvn install` or `mvn package` there might be those that desire to call `mvn wildfly-swarm:package` directly.
+If its called directly we get the following error:
+
+
+
+
+
+
+[ERROR] Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:2016.9:package (default-cli) on project demo: Unable to create -swarm.jar: Failed to write asset to output: /_bootstrap/demo.war: File must be specified -&amp;gt; [Help 1]
+
+
+
+
+org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal org.wildfly.swarm:wildfly-swarm-plugin:2016.9:package (default-cli) on project demo: Unable to create -swarm.jar
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+
+
+
+
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+
+
+
+
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+
+
+
+
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+
+
+
+
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+
+
+
+
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+
+
+
+
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+
+
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+	at java.lang.reflect.Method.invoke(Method.java:498)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+
+
+
+
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+
+
+
+
+Caused by: org.apache.maven.plugin.MojoFailureException: Unable to create -swarm.jar
+
+
+
+
+	at org.wildfly.swarm.plugin.maven.PackageMojo.execute(PackageMojo.java:153)
+
+
+
+
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+
+
+
+
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+
+
+
+
+	... 20 more
+
+
+
+
+Caused by: org.jboss.shrinkwrap.api.exporter.ArchiveExportException: Failed to write asset to output: /_bootstrap/demo.war
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.exporter.AbstractOnDemandInputStream.read(AbstractOnDemandInputStream.java:133)
+
+
+
+
+	at java.io.InputStream.read(InputStream.java:179)
+
+
+
+
+	at java.io.InputStream.read(InputStream.java:101)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.io.IOUtil.copy(IOUtil.java:138)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.exporter.AbstractStreamExporterImpl.exportTo(AbstractStreamExporterImpl.java:120)
+
+
+
+
+	at org.wildfly.swarm.tools.BuildTool.createJar(BuildTool.java:414)
+
+
+
+
+	at org.wildfly.swarm.tools.BuildTool.build(BuildTool.java:193)
+
+
+
+
+	at org.wildfly.swarm.plugin.maven.PackageMojo.execute(PackageMojo.java:133)
+
+
+
+
+	... 22 more
+
+
+
+
+Caused by: java.lang.IllegalArgumentException: File must be specified
+
+
+
+
+	at org.jboss.shrinkwrap.api.ArchiveFactory.createFromZipFile(ArchiveFactory.java:176)
+
+
+
+
+	at org.jboss.shrinkwrap.api.ShrinkWrap.createFromZipFile(ShrinkWrap.java:185)
+
+
+
+
+	at org.wildfly.swarm.tools.ArtifactAsset.getArchive(ArtifactAsset.java:61)
+
+
+
+
+	at org.wildfly.swarm.tools.WebInfLibFilteringArchiveAsset.openStream(WebInfLibFilteringArchiveAsset.java:34)
+
+
+
+
+	at org.jboss.shrinkwrap.impl.base.exporter.AbstractOnDemandInputStream.read(AbstractOnDemandInputStream.java:130)
+
+
+
+
+	... 29 more
+
+
+
+
+
+</description>
+			<version>2016.9</version>
+			<fixedVersion>2016.11.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.PackageMojo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="757" opendate="2016-10-06 11:58:09" fixdate="2016-10-12 14:02:24" resolution="Done">
+		<buginformation>
+			<summary>javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory when using Infinispan as 2nd level cache for hibernate</summary>
+			<description>I am trying to enable Infinispan as a 2nd level cache for hibernate. As soon as I enable it, I get the following startup exception:
+
+
+
+
+
+
+016-10-06 13:48:58,182 ERROR [org.jboss.msc.service.fail] (ServerService Thread Pool -- 7) MSC000001: Failed to start service jboss.persistenceunit."demo.war#primary": org.jboss.msc.service.StartException in service jboss.persistenceunit."demo.war#primary": javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory
+
+
+
+
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:179)
+
+
+
+
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:121)
+
+
+
+
+	at org.wildfly.security.manager.WildFlySecurityManager.doChecked(WildFlySecurityManager.java:667)
+
+
+
+
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1.run(PersistenceUnitServiceImpl.java:193)
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+
+
+
+
+	at java.lang.Thread.run(Thread.java:745)
+
+
+
+
+	at org.jboss.threads.JBossThread.run(JBossThread.java:320)
+
+
+
+
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory
+
+
+
+
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:954)
+
+
+
+
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:882)
+
+
+
+
+	at org.jboss.as.jpa.hibernate5.TwoPhaseBootstrapImpl.build(TwoPhaseBootstrapImpl.java:44)
+
+
+
+
+	at org.jboss.as.jpa.service.PersistenceUnitServiceImpl$1$1.run(PersistenceUnitServiceImpl.java:161)
+
+
+
+
+	... 7 more
+
+
+
+
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.spi.CacheImplementor]
+
+
+
+
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:264)
+
+
+
+
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:228)
+
+
+
+
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:207)
+
+
+
+
+	at org.hibernate.internal.SessionFactoryImpl.&amp;lt;init&amp;gt;(SessionFactoryImpl.java:242)
+
+
+
+
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444)
+
+
+
+
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:879)
+
+
+
+
+	... 9 more
+
+
+
+
+Caused by: org.hibernate.cache.CacheException: Infinispan custom cache command factory not installed (possibly because the classloader where Infinispan lives couldn&amp;amp;apos;t find the Hibernate Infinispan cache provider)
+
+
+
+
+	at org.hibernate.cache.infinispan.InfinispanRegionFactory.getCacheCommandFactory(InfinispanRegionFactory.java:716)
+
+
+
+
+	at org.hibernate.cache.infinispan.InfinispanRegionFactory.startRegion(InfinispanRegionFactory.java:552)
+
+
+
+
+	at org.hibernate.cache.infinispan.InfinispanRegionFactory.buildTimestampsRegion(InfinispanRegionFactory.java:332)
+
+
+
+
+	at org.hibernate.cache.spi.UpdateTimestampsCache.&amp;lt;init&amp;gt;(UpdateTimestampsCache.java:57)
+
+
+
+
+	at org.hibernate.internal.CacheImpl.&amp;lt;init&amp;gt;(CacheImpl.java:53)
+
+
+
+
+	at org.hibernate.engine.spi.CacheInitiator.initiateService(CacheInitiator.java:28)
+
+
+
+
+	at org.hibernate.engine.spi.CacheInitiator.initiateService(CacheInitiator.java:20)
+
+
+
+
+	at org.hibernate.service.internal.SessionFactoryServiceRegistryImpl.initiateService(SessionFactoryServiceRegistryImpl.java:46)
+
+
+
+
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:254)
+
+
+
+
+	... 14 more
+
+
+
+
+
+
+
+
+
+2016-10-06 13:48:58,184 ERROR [org.jboss.as.controller.management-operation] (main) WFLYCTL0013: Operation ("add") failed - address: (("deployment" =&amp;gt; "demo.war")) - failure description: {
+
+
+
+
+    "WFLYCTL0080: Failed services" =&amp;gt; {"jboss.persistenceunit.\"demo.war#primary\"" =&amp;gt; "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"demo.war#primary\": javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory
+
+
+
+
+    Caused by: javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory
+
+
+
+
+    Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.spi.CacheImplementor]
+
+
+
+
+    Caused by: org.hibernate.cache.CacheException: Infinispan custom cache command factory not installed (possibly because the classloader where Infinispan lives couldn&amp;amp;apos;t find the Hibernate Infinispan cache provider)"},
+
+
+
+
+    "WFLYCTL0412: Required services that are not installed:" =&amp;gt; ["jboss.persistenceunit.\"demo.war#primary\""],
+
+
+
+
+    "WFLYCTL0180: Services with missing/unavailable dependencies" =&amp;gt; undefined
+
+
+
+
+}
+
+
+
+
+2016-10-06 13:48:58,185 ERROR [org.jboss.as.server] (main) WFLYSRV0021: Deploy of deployment "demo.war" was rolled back with the following failure message: 
+
+
+
+
+{
+
+
+
+
+    "WFLYCTL0080: Failed services" =&amp;gt; {"jboss.persistenceunit.\"demo.war#primary\"" =&amp;gt; "org.jboss.msc.service.StartException in service jboss.persistenceunit.\"demo.war#primary\": javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory
+
+
+
+
+    Caused by: javax.persistence.PersistenceException: [PersistenceUnit: primary] Unable to build Hibernate SessionFactory
+
+
+
+
+    Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.spi.CacheImplementor]
+
+
+
+
+    Caused by: org.hibernate.cache.CacheException: Infinispan custom cache command factory not installed (possibly because the classloader where Infinispan lives couldn&amp;amp;apos;t find the Hibernate Infinispan cache provider)"},
+
+
+
+
+    "WFLYCTL0412: Required services that are not installed:" =&amp;gt; ["jboss.persistenceunit.\"demo.war#primary\""],
+
+
+
+
+    "WFLYCTL0180: Services with missing/unavailable dependencies" =&amp;gt; undefined
+
+
+
+
+}
+
+
+
+
+
+</description>
+			<version>2016.10.0</version>
+			<fixedVersion>2016.11.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.infinispan.runtime.InfinispanCustomizer.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Superset" description="incorporates">7291</link>
+		</links>
+	</bug>
+	<bug id="762" opendate="2016-10-07 16:06:41" fixdate="2016-10-14 20:07:07" resolution="Done">
+		<buginformation>
+			<summary>Artifact resolution for wildfly-swarm-plugin ignores &lt;mirrorOf&gt; from settings.xml</summary>
+			<description>In a host which is not connected to Internet, there is a local nexus mirror which has all the necessary artifacts for a build. settings.xml file specify this host as a mirror of everything and mvn compile completes successfully. When reaching the package phase (where wildfly-swarm-plugin is used), it seems that the mirrorOf element is ignored and it tries to access repository.jboss.org and fails with a connection timeout.
+This is probably an aether bug, but I also suspect https://github.com/wildfly-swarm/wildfly-swarm/blob/master/plugin/src/main/java/org/wildfly/swarm/plugin/maven/MavenArtifactResolvingHelper.java which hardcodes the repository in the constructor (I don&amp;amp;apos;t know if this is relevant).
+Could someone with a broader view in the topic can take a look into this ?</description>
+			<version>1.0.0.Final</version>
+			<fixedVersion>2016.11.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.AbstractSwarmMojo.java</file>
+			<file type="M">org.wildfly.swarm.plugin.maven.MavenArtifactResolvingHelper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="844" opendate="2016-11-16 20:45:33" fixdate="2016-11-17 11:11:36" resolution="Done">
+		<buginformation>
+			<summary>Gradle project dependencies with 2 colons are resolved as jar dependencies</summary>
+			<description></description>
+			<version>2016.11.0</version>
+			<fixedVersion>2016.12.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.arquillian.adapter.GradleDependencyAdapter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="846" opendate="2016-11-17 11:46:22" fixdate="2016-11-17 18:23:11" resolution="Done">
+		<buginformation>
+			<summary>Topology ProxyService&amp;apos;s are never started</summary>
+			<description>Running the booker demo results in the UI being unable to access the store, or any, service because it can&amp;amp;apos;t find the location of the proxy.
+Debugging showed that the TopologyProxyService is not being activated, resulting in the Undertow Reverse Proxy pointing to a URL location that doesn&amp;amp;apos;t exist so the service on topology is never called.
+Have been able to reproduce with local JGroups and OpenShift</description>
+			<version>2016.11.0</version>
+			<fixedVersion>2016.12.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.topology.webapp.TopologyWebAppArquillianTest.java</file>
+			<file type="M">org.wildfly.swarm.topology.webapp.TopologyProxyService.java</file>
+			<file type="M">org.wildfly.swarm.topology.webapp.runtime.TopologyWebAppActivator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="879" opendate="2016-12-03 20:35:31" fixdate="2016-12-05 16:20:00" resolution="Done">
+		<buginformation>
+			<summary>Maven plugin is missing authentication for Maven mirrors</summary>
+			<description>The Maven plugin for Wildfly Swarm does not evaluate the authentication parameters from the settings.xml if mirrors are defined.
+Any attempt results in an exception that looks like:
+org.eclipse.aether.resolution.ArtifactResolutionException: Failure to transfer ... : Not authorized , ReasonPhrase:Unauthorized.</description>
+			<version>2016.11.0</version>
+			<fixedVersion>2017.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.plugin.maven.MavenArtifactResolvingHelper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="751" opendate="2016-10-05 02:48:11" fixdate="2016-12-06 00:07:07" resolution="Done">
+		<buginformation>
+			<summary>WildFly Swarm System Properties swarm.https.port  and swarm.https.certificate.generate do not work</summary>
+			<description>There is no documentation on how to configure WildFly Swarm Maven Plugin to set up SSL.
+I have configured System Properties swarm.https.port and swarm.https.certificate.generate , but they do not take effect. HTTP works fine without any problems, but HTTPS port does not work at all.
+Here&amp;amp;apos;s my Maven pom.xml 
+
+
+
+
+
+
+&amp;lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+
+
+
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&amp;gt;
+
+
+
+
+    &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
+
+
+
+
+    &amp;lt;parent&amp;gt;
+
+
+
+
+        &amp;lt;artifactId&amp;gt;RestProvider&amp;lt;/artifactId&amp;gt;
+
+
+
+
+        &amp;lt;groupId&amp;gt;com.acme&amp;lt;/groupId&amp;gt;
+
+
+
+
+        &amp;lt;version&amp;gt;1.0&amp;lt;/version&amp;gt;
+
+
+
+
+    &amp;lt;/parent&amp;gt;
+
+
+
+
+    &amp;lt;groupId&amp;gt;com.acme&amp;lt;/groupId&amp;gt;
+
+
+
+
+    &amp;lt;artifactId&amp;gt;RestProvider-web&amp;lt;/artifactId&amp;gt;
+
+
+
+
+    &amp;lt;version&amp;gt;1.0&amp;lt;/version&amp;gt;
+
+
+
+
+    &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;
+
+
+
+
+
+
+
+
+
+    &amp;lt;name&amp;gt;RestProvider-web&amp;lt;/name&amp;gt;
+
+
+
+
+
+
+
+
+
+    &amp;lt;properties&amp;gt;
+
+
+
+
+        &amp;lt;endorsed.dir&amp;gt;${project.build.directory}/endorsed&amp;lt;/endorsed.dir&amp;gt;
+
+
+
+
+        &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+
+
+
+
+    &amp;lt;/properties&amp;gt;
+
+
+
+
+
+
+
+
+
+    &amp;lt;dependencies&amp;gt;
+
+
+
+
+        &amp;lt;dependency&amp;gt;
+
+
+
+
+            &amp;lt;groupId&amp;gt;org.glassfish&amp;lt;/groupId&amp;gt;
+
+
+
+
+            &amp;lt;artifactId&amp;gt;javax.json&amp;lt;/artifactId&amp;gt;
+
+
+
+
+            &amp;lt;version&amp;gt;1.0.4&amp;lt;/version&amp;gt;
+
+
+
+
+        &amp;lt;/dependency&amp;gt;
+
+
+
+
+        &amp;lt;dependency&amp;gt;
+
+
+
+
+            &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt;
+
+
+
+
+            &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt;
+
+
+
+
+            &amp;lt;version&amp;gt;4.12&amp;lt;/version&amp;gt;
+
+
+
+
+            &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt;
+
+
+
+
+        &amp;lt;/dependency&amp;gt;
+
+
+
+
+        &amp;lt;dependency&amp;gt;
+
+
+
+
+            &amp;lt;groupId&amp;gt;javax&amp;lt;/groupId&amp;gt;
+
+
+
+
+            &amp;lt;artifactId&amp;gt;javaee-web-api&amp;lt;/artifactId&amp;gt;
+
+
+
+
+            &amp;lt;version&amp;gt;7.0&amp;lt;/version&amp;gt;
+
+
+
+
+            &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
+
+
+
+
+        &amp;lt;/dependency&amp;gt;
+
+
+
+
+    &amp;lt;/dependencies&amp;gt;
+
+
+
+
+
+
+
+
+
+    &amp;lt;build&amp;gt;
+
+
+
+
+        &amp;lt;plugins&amp;gt;
+
+
+
+
+            &amp;lt;plugin&amp;gt;
+
+
+
+
+                &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+
+
+
+
+                &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                &amp;lt;version&amp;gt;2.3.2&amp;lt;/version&amp;gt;
+
+
+
+
+                &amp;lt;configuration&amp;gt;
+
+
+
+
+                    &amp;lt;source&amp;gt;8&amp;lt;/source&amp;gt;
+
+
+
+
+                    &amp;lt;target&amp;gt;8&amp;lt;/target&amp;gt;
+
+
+
+
+                    &amp;lt;compilerArguments&amp;gt;
+
+
+
+
+                        &amp;lt;endorseddirs&amp;gt;${endorsed.dir}&amp;lt;/endorseddirs&amp;gt;
+
+
+
+
+                    &amp;lt;/compilerArguments&amp;gt;
+
+
+
+
+                &amp;lt;/configuration&amp;gt;
+
+
+
+
+            &amp;lt;/plugin&amp;gt;
+
+
+
+
+            &amp;lt;plugin&amp;gt;
+
+
+
+
+                &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+
+
+
+
+                &amp;lt;artifactId&amp;gt;maven-war-plugin&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                &amp;lt;version&amp;gt;2.1.1&amp;lt;/version&amp;gt;
+
+
+
+
+                &amp;lt;configuration&amp;gt;
+
+
+
+
+                    &amp;lt;failOnMissingWebXml&amp;gt;false&amp;lt;/failOnMissingWebXml&amp;gt;
+
+
+
+
+                &amp;lt;/configuration&amp;gt;
+
+
+
+
+            &amp;lt;/plugin&amp;gt;
+
+
+
+
+            &amp;lt;plugin&amp;gt;
+
+
+
+
+                &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+
+
+
+
+                &amp;lt;artifactId&amp;gt;maven-dependency-plugin&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                &amp;lt;version&amp;gt;2.1&amp;lt;/version&amp;gt;
+
+
+
+
+                &amp;lt;executions&amp;gt;
+
+
+
+
+                    &amp;lt;execution&amp;gt;
+
+
+
+
+                        &amp;lt;phase&amp;gt;validate&amp;lt;/phase&amp;gt;
+
+
+
+
+                        &amp;lt;goals&amp;gt;
+
+
+
+
+                            &amp;lt;goal&amp;gt;copy&amp;lt;/goal&amp;gt;
+
+
+
+
+                        &amp;lt;/goals&amp;gt;
+
+
+
+
+                        &amp;lt;configuration&amp;gt;
+
+
+
+
+                            &amp;lt;outputDirectory&amp;gt;${endorsed.dir}&amp;lt;/outputDirectory&amp;gt;
+
+
+
+
+                            &amp;lt;silent&amp;gt;true&amp;lt;/silent&amp;gt;
+
+
+
+
+                            &amp;lt;artifactItems&amp;gt;
+
+
+
+
+                                &amp;lt;artifactItem&amp;gt;
+
+
+
+
+                                    &amp;lt;groupId&amp;gt;javax&amp;lt;/groupId&amp;gt;
+
+
+
+
+                                    &amp;lt;artifactId&amp;gt;javaee-endorsed-api&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                                    &amp;lt;version&amp;gt;7.0&amp;lt;/version&amp;gt;
+
+
+
+
+                                    &amp;lt;type&amp;gt;jar&amp;lt;/type&amp;gt;
+
+
+
+
+                                &amp;lt;/artifactItem&amp;gt;
+
+
+
+
+                            &amp;lt;/artifactItems&amp;gt;
+
+
+
+
+                        &amp;lt;/configuration&amp;gt;
+
+
+
+
+                    &amp;lt;/execution&amp;gt;
+
+
+
+
+                &amp;lt;/executions&amp;gt;
+
+
+
+
+            &amp;lt;/plugin&amp;gt;
+
+
+
+
+            
+
+
+
+
+            &amp;lt;plugin&amp;gt;
+
+
+
+
+                &amp;lt;groupId&amp;gt;org.wildfly.swarm&amp;lt;/groupId&amp;gt;
+
+
+
+
+                &amp;lt;artifactId&amp;gt;wildfly-swarm-plugin&amp;lt;/artifactId&amp;gt;
+
+
+
+
+                &amp;lt;configuration&amp;gt;
+
+
+
+
+                    &amp;lt;properties&amp;gt;
+
+
+
+
+						&amp;lt;swarm.http.port&amp;gt;80&amp;lt;/swarm.http.port&amp;gt;
+
+
+
+
+                        &amp;lt;swarm.https.port&amp;gt;8181&amp;lt;/swarm.https.port&amp;gt;
+
+
+
+
+						&amp;lt;swarm.https.certificate.generate&amp;gt;true&amp;lt;/swarm.https.certificate.generate&amp;gt;
+
+
+
+
+                        &amp;lt;swarm.context.path&amp;gt;/RestProvider-web&amp;lt;/swarm.context.path&amp;gt;
+
+
+
+
+                    &amp;lt;/properties&amp;gt;
+
+
+
+
+                &amp;lt;/configuration&amp;gt;				
+
+
+
+
+                &amp;lt;version&amp;gt;2016.9&amp;lt;/version&amp;gt;
+
+
+
+
+                &amp;lt;executions&amp;gt;
+
+
+
+
+                    &amp;lt;execution&amp;gt;
+
+
+
+
+                        &amp;lt;goals&amp;gt;
+
+
+
+
+                            &amp;lt;goal&amp;gt;package&amp;lt;/goal&amp;gt;
+
+
+
+
+                        &amp;lt;/goals&amp;gt;
+
+
+
+
+                    &amp;lt;/execution&amp;gt;
+
+
+
+
+                &amp;lt;/executions&amp;gt;
+
+
+
+
+            &amp;lt;/plugin&amp;gt;
+
+
+
+
+            
+
+
+
+
+        &amp;lt;/plugins&amp;gt;
+
+
+
+
+    &amp;lt;/build&amp;gt;
+
+
+
+
+
+
+
+
+
+&amp;lt;/project&amp;gt;
+
+
+
+
+
+
+
+
+
+
+</description>
+			<version>2016.9</version>
+			<fixedVersion>2017.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.spi.api.SocketBindingGroup.java</file>
+			<file type="M">org.wildfly.swarm.undertow.UndertowProperties.java</file>
+			<file type="M">org.wildfly.swarm.container.runtime.cdi.configurable.ConfigurableExtension.java</file>
+			<file type="M">org.wildfly.swarm.undertow.UndertowFraction.java</file>
+			<file type="M">org.wildfly.swarm.undertow.runtime.HTTPSCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.undertow.runtime.UndertowSocketBindingsCustomizer.java</file>
+			<file type="M">org.wildfly.swarm.undertow.runtime.CertInfoProducer.java</file>
+			<file type="M">org.wildfly.swarm.undertow.descriptors.CertInfo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="884" opendate="2016-12-06 13:11:17" fixdate="2016-12-06 16:14:16" resolution="Done">
+		<buginformation>
+			<summary>Artifacts with classifiers are not found in ApplicationModuleFinder</summary>
+			<description>Having a dependency on an artifact that has a classifier produces the following (harmless) output when starting up: 
+
+
+
+
+
+
+Tue Dec 06 10:58:18 BRST 2016 ERROR [org.wildfly.swarm.modules.application] (main) Unable to find artifact for org.jboss.forge.addon:ui-spi:forge-addon:3.4.0.Final
+
+
+
+
+Tue Dec 06 10:58:18 BRST 2016 ERROR [org.wildfly.swarm.modules.application] (main) Unable to find artifact for org.jboss.forge.addon:environment:forge-addon:3.4.0.Final
+
+
+
+
+Tue Dec 06 10:58:18 BRST 2016 ERROR [org.wildfly.swarm.modules.application] (main) Unable to find artifact for org.jboss.forge.addon:facets:forge-addon:3.4.0.Final
+
+
+
+
+
+</description>
+			<version>2016.12.0</version>
+			<fixedVersion>2017.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.bootstrap.modules.ApplicationModuleFinder.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Superset" description="is incorporated by">885</link>
+		</links>
+	</bug>
+	<bug id="793" opendate="2016-10-25 19:04:09" fixdate="2016-12-07 23:35:16" resolution="Done">
+		<buginformation>
+			<summary>Cannot add custom modules to WildFly Swarm using &lt;resource-root&gt; instead of &lt;artifact&gt; in the module.xml </summary>
+			<description>JDBC drivers (DB2, Oracle, etc) not available to WildFly Swarm when added as modules (like in WildFly/EAP) using &amp;lt;resource-root&amp;gt; instead of &amp;lt;artifact&amp;gt; in the module.xml.
+Custom module "oracle.jdbc" (module.xml and JAR) copied into Uber-JAR&amp;amp;apos;s "modules\oracle\jdbc\main" directory (there are also some default modules there - jboss, javax, etc) when module is configured like this: 
+
+
+
+
+
+
+   &amp;lt;resources&amp;gt;
+
+
+
+
+      &amp;lt;resource-root path="oracle-driver-ojdbc6.jar"/&amp;gt;
+
+
+
+
+   &amp;lt;/resources&amp;gt;
+
+
+
+
+
+
+However, when running app (driver and datasource configured in the standalone.xml), I&amp;amp;apos;m getting this error:
+
+
+
+
+
+
+[jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 21) WFLYJCA0086: Unable to find driver class name in "oracle" jar
+
+
+
+
+
+
+However, when it is configured in module.xml as:
+
+
+
+
+
+
+      &amp;lt;artifact name="com.hynnet:oracle-driver-ojdbc6:12.1.0.1"/&amp;gt;
+
+
+
+
+
+
+JAR is copied to "m2repo\com\hynnet\oracle-driver-ojdbc6\12.1.0.1" directory of Uber-JAR and driver was successfully loaded.
+Looks like WFS adding to classpath only what is in "m2repo", but not the "oracle" module in "modules" directory.
+Am I missing some command-line parameter to define location of the custom modules, like "JBOSS_MODULEPATH" for JBoss EAP6?</description>
+			<version>2016.10.0</version>
+			<fixedVersion>2017.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.bootstrap.modules.BootstrapClasspathModuleFinder.java</file>
+			<file type="M">org.wildfly.swarm.bootstrap.modules.NestedJarResourceLoader.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="863" opendate="2016-11-30 14:54:40" fixdate="2016-12-12 17:26:22" resolution="Done">
+		<buginformation>
+			<summary>Version 2016.11.0 doesn&amp;apos;t stop properly (with custom main class)</summary>
+			<description>We are using a custom main class whose main method reacts on a single argument: "start" or "stop". Actually we are feeding that argument through Procrun (https://commons.apache.org/proper/commons-daemon/procrun.html). Inside that main class we hold a field
+
+
+
+
+
+
+    private static org.wildfly.swarm.Swarm container
+
+
+
+
+
+
+which we handle as following during startup:
+
+
+
+
+
+
+    container = new Swarm(); // fractions being added here also
+
+
+
+
+    container.start();
+
+
+
+
+    container.deploy(...);
+
+
+
+
+
+
+The reaction on the "stop" signal is as easy as following:
+
+
+
+
+
+
+    container.stop();
+
+
+
+
+
+
+We now have the problem that stopping such a Swarm service in version 2016.11.0 does not properly shutdown the Swarm container (or better the underlying `Server`). I did a debug session and found out that there remains one non-daemon thread blocking the JVM shutdown. With version 2016.10.0 everything works fine. The shutdown is clean and fast.
+An example project can be found at https://github.com/seelenvirtuose/de.mwa.testing.wfs. But I also have attached it as a zip.  de.mwa.testing.wfs-master.zip 
+Procrun can be downloaded at http://mirror.serversupportforum.de/apache//commons/daemon/binaries/windows/commons-daemon-1.0.15-bin-windows.zip
+Steps to reproduce:
+1) Clone the github project and start a "mvn package" to produce the uber-jar, which is located in the "swarm" sub-module of that project.
+2) Copy that uber-jar and both procrun executables ("prunsrv.exe" and "prunmgr.exe") into a test directory. For 64-bit OS&amp;amp;apos;s use the file "amd64/prunsrv.exe" (inside that procrun zip file). Rename the file "prunsrv.exe" to "testing-wfs.exe" and the file "prunmgr.exe" to "testing-wfsw.exe".
+3) Install a Windows service by running the command "testing-wfs.exe //IS". Now this service can be configured by running the "testing-wfsw.exe" (a Windows GUI Tool for that purpose).
+4) Configure the service as following:
+Tab Logging
+Log path: &amp;lt;path-to-the-service-directory&amp;gt;\logs
+Redirect Stdout: auto
+Redirect Stderror: auto
+Tab Java
+Java Virtual Machine: Path to the "jvm.dll" of a JRE 8 (usually &amp;lt;path-to-jdk&amp;gt;\jre\bin\server\jvm.dll).
+Java Classpath: Full path to the uber-jar.
+Java Options: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7777 (to enable remote debugging).
+Tab Startup
+Class: org.wildfly.swarm.bootstrap.Main
+Method: main
+Arguments: start
+Mode: jvm
+Tab Shutdown
+Class: org.wildfly.swarm.bootstrap.Main
+Method: main
+Arguments: stop
+Mode:jvm
+5) Now start the service. After a succesful start you can "GET http://localhost:8080/hello", which should result in a "Hello World" response.
+6) The service has many threads running. See first attached screenshot.  
+7) Now stop the service. Windows will hang in that stopping attempt and spit out a failure message after some time. The process is still running afterwards. The log file shows some output that indeed a shutdown is initalized. The GET does not work anymore.
+8) The service still has many threads (especially non-daemon threads). See second attached screenshot.  
+Note, that I have other services, which show only two non-deamon threads after a shutdown attempt.
+9) Killing the task "testing-wfs.exe" is the only way to stop the process completely.
+Switching the Wildfly Swarm version to 2016.10.0 (in the POM of "swarm" module) makes it work great. Starting and stopping run both smoothly.</description>
+			<version>2016.11.0</version>
+			<fixedVersion>2017.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.swarm.container.runtime.ServerBootstrapImpl.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

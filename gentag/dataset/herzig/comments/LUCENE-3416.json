@@ -1,0 +1,916 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12521431",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431",
+  "key": "LUCENE-3416",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "2697",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+      "name": "simonw",
+      "key": "simonw",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Simon Willnauer",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310236",
+        "id": "12310236",
+        "name": "core/store",
+        "description": "issues with store code (e.g. Directory)"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24598",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+      "name": "kimchy",
+      "key": "kimchy",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shay Banon",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+      "name": "kimchy",
+      "key": "kimchy",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shay Banon",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3416/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@6913b0b9[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7204a470[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6e283d04[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@39583395[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7025886[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@4b80b64a[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@646f7223[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@1c5331a0[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@9809cc4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@477c4958[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@581dc5fe[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@5d46216c[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:56:41 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-09-09T20:35:49.557+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3416/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2011-09-06T10:06:08.627+0000",
+    "updated": "2022-08-28T12:56:41.181+0000",
+    "timeoriginalestimate": null,
+    "description": "This can come in handy when running several Lucene indices in the same VM, and wishing to rate limit merge across all of them.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12493557",
+        "id": "12493557",
+        "filename": "LUCENE-3416.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+          "name": "kimchy",
+          "key": "kimchy",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shay Banon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-09-08T07:37:00.848+0000",
+        "size": 3736,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12493557/LUCENE-3416.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12493136",
+        "id": "12493136",
+        "filename": "LUCENE-3416.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+          "name": "kimchy",
+          "key": "kimchy",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shay Banon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-09-06T10:07:26.829+0000",
+        "size": 996,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12493136/LUCENE-3416.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Allow to pass an instance of RateLimiter to FSDirectory allowing to rate limit merge IO across several directories / instances",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13097873",
+          "id": "13097873",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Shay, can't you use a Input / Output wrapper on a RateLimitingDirectoryDelegate? With lucene 4.0 you get the IOContext when open / creating streams so you can decide based on this?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-06T10:19:56.547+0000",
+          "updated": "2011-09-06T10:19:56.547+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13098018",
+          "id": "13098018",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "It is possible, but requires more work to do, and depends on overriding the createOutput method (as well as all the other methods in Directory). If rate limiting makes sense on the directory level to be exposed as a \"feature\", I think that this small change allows for greater control over it.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-06T14:07:59.008+0000",
+          "updated": "2011-09-06T14:07:59.008+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13098286",
+          "id": "13098286",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I see, I guess that is kind of overkill here. This patch looks fine to me though while I wonder why this needs to be synchronized since we don't read it from a synced block. if you want this to take immediate effect you should rather use volatile here? I doubt that this is necessary in this context - I'd rather not invalidate a cache line for each IndexOutput creation.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-06T19:18:25.629+0000",
+          "updated": "2011-09-06T19:18:25.629+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099146",
+          "id": "13099146",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The only reason its synchronized is because the setMaxMergeWriteMBPerSec method is synchronized (I guess to protected from setting the rate limit concurrently). In practice, I don't see users changing it that often, so concerns about cache lines are not really relevant.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T17:52:06.286+0000",
+          "updated": "2011-09-07T17:52:06.286+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099154",
+          "id": "13099154",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. The only reason its synchronized is because the setMaxMergeWriteMBPerSec method is synchronized (I guess to protected from setting the rate limit concurrently). In practice, I don't see users changing it that often, so concerns about cache lines are not really relevant.\n\nthis make no sense to me. If you don't want to set this concurrently how does a lock protect you from this? I mean you if you have two threads accessing this you have either A B or B A. but this would happen without a lock too. if you want to have the changes to take effect immediately you need to either lock on each read on this var or make it volatile which is almost equivalent (a mem barrier). \n\nMy concern here was related to make this var volatile which would be a cacheline invalidation each time you read the var. I think we should get rid of the synchronized.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T17:58:40.851+0000",
+          "updated": "2011-09-07T17:58:40.851+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099160",
+          "id": "13099160",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> this make no sense to me. If you don't want to set this concurrently how does a lock protect you from this? I mean you if you have two threads accessing this you have either A B or B A. but this would happen without a lock too. if you want to have the changes to take effect immediately you need to either lock on each read on this var or make it volatile which is almost equivalent (a mem barrier).\n\nNo, thats not correct. setMaxMergeWriteMBPerSec (not the method I added, the other one) is a complex method, and I think Mike wanted to protect from two threads setting the value concurrently. As for reading the value, I think Mike logic was that its not that importnat the have \"immediate\" visibility of the change to require a volatile field (which is understandable). So, since setMaxMergeWriteMBPerSec is synchronized, the method added in this patch has to be as well.\n\n> My concern here was related to make this var volatile which would be a cacheline invalidation each time you read the var. I think we should get rid of the synchronized.\n\nReading a volatile var in x86 is not a cache invalidation, though it does come with a cost. Its not relevant here based on what I explained before (and second guessing Mike :) )",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T18:10:58.719+0000",
+          "updated": "2011-09-07T18:10:58.719+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099195",
+          "id": "13099195",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Reading a volatile var in x86 is not a cache invalidation, though it does come with a cost.\nyes unless you are reading and writing it. Yet since this is not intended here we don't need to get into details. Bottom line that synchronization doesn't make much sense here. we should try to control some order here that we can not control. if somebody sets either of those concurrently they should take care of synchronization. What should I expect if you set this concurrently? IMO we should craft those method to work without synchronization which is certainly possible. synchronized here buys us nothing and should be removed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T18:45:51.118+0000",
+          "updated": "2011-09-07T18:45:51.118+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099210",
+          "id": "13099210",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I made setMaxMergeWriteMBPerSec sync'd because ie has tricky logic about creating a new RateLimiter or reusing an existing one (so current merges can see the change on a \"best effort\" basis) or clearing the current one... so I just wanted to be safe and have only one thread doing this at once; else eg you could get NPE I think.\n\nBut, probably we should in fact make mergeWriteRateLimiter volatile, just to make sure the unsync'd read sees the current value?  The minor added read cost should be negligible vs the overhead of creating / writing / closing files.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-09-07T18:54:41.214+0000",
+          "updated": "2011-09-07T18:54:41.214+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099233",
+          "id": "13099233",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I agree with Mike, I think it should remain synchronized, it does safeguard concurrently calling setMaxMergeWriteMBPerSec from falling over itself (who \"wins\" the call is not really relevant). Since thats synchronized, the metod I added should be as well. Personally, I really don't think there is a need to make it thread safe without \"blocking\", since calling the \"setters\" is not something people do frequently at all, so the optimization is mute, and it will complicate the code.\n\nAs for making mergeWriteRateLimiter volatile, it can be done. Though, in practice, there really is no need to do it (there is a memory barrier when reading it before). But, I think that should go in a different issue? Just to keep changes clean and isolated?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T19:16:33.379+0000",
+          "updated": "2011-09-07T19:16:33.379+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099235",
+          "id": "13099235",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "what about something like that:\n\n{code}\n  public void setMaxMergeWriteMBPerSec(Double mbPerSec) {\n    final RateLimiter limiter = mergeWriteRateLimiter;\n    if (mbPerSec == null) {\n      if (limiter != null) {\n        limiter.setMaxRate(Double.MAX_VALUE);\n        mergeWriteRateLimiter = null;\n      }\n    } else if (limiter != null) {\n      limiter.setMaxRate(mbPerSec);\n    } else {\n      mergeWriteRateLimiter = new RateLimiter(mbPerSec);\n    }\n  }\n\n  /** See {@link #setMaxMergeWriteMBPerSec}.\n   *\n   * @lucene.experimental */\n  public Double getMaxMergeWriteMBPerSec() {\n    final RateLimiter limiter = mergeWriteRateLimiter;\n    return limiter == null ? null : limiter.getMaxRateMB();\n  }\n{code}\n\nI think we can make this simple without any synchronization which is totally unnecessary here.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T19:18:37.371+0000",
+          "updated": "2011-09-07T19:18:37.371+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099242",
+          "id": "13099242",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "That change looks fine to me Simon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-09-07T19:24:52.559+0000",
+          "updated": "2011-09-07T19:24:52.559+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13099287",
+          "id": "13099287",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I must say that I am at a lost in trying to understand why we need this \"optimization\", but it does not really matter to me as long as the ability to set the rate limiter instance gets in.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-07T20:23:55.765+0000",
+          "updated": "2011-09-07T20:23:55.765+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13100131",
+          "id": "13100131",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "A new patch, remove synchronization. It also adds another field to RateLimiter to record the original mbPerSec value set, so we can easily get it back.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-08T07:37:00.872+0000",
+          "updated": "2011-09-08T07:37:00.872+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13100133",
+          "id": "13100133",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "that looks good to me, thanks shay!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-08T07:41:04.571+0000",
+          "updated": "2011-09-08T07:41:04.571+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13101075",
+          "id": "13101075",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I am planning to commit this today, any objections?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-09T08:55:27.376+0000",
+          "updated": "2011-09-09T08:55:27.376+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/13101542",
+          "id": "13101542",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "committed to trunk. Thanks Shay",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-09-09T20:35:49.565+0000",
+          "updated": "2011-09-09T20:35:49.565+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12521431/comment/17589621",
+          "id": "17589621",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4489|https://github.com/apache/lucene/issues/4489].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:56:41.181+0000",
+          "updated": "2022-08-28T12:56:41.181+0000"
+        }
+      ],
+      "maxResults": 17,
+      "total": 17,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04kkn:",
+    "customfield_12314139": null
+  }
+}

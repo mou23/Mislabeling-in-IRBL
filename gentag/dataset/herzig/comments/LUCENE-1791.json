@@ -1,0 +1,1577 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12432496",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496",
+  "key": "LUCENE-1791",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312682",
+        "id": "12312682",
+        "description": "Last release (barring major bugs) before migrating to 3.0 and JDK 1.5",
+        "name": "2.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-09-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "11971",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12326165",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12326165",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12430699",
+          "key": "LUCENE-1749",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12430699",
+          "fields": {
+            "summary": "FieldCache introspection API",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26253",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+      "name": "hossman",
+      "key": "hossman",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+      },
+      "displayName": "Chris M. Hostetter",
+      "active": true,
+      "timeZone": "America/Phoenix"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1791/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/6",
+      "id": "6",
+      "description": "A new unit, integration or system test.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/issuetypes/requirement.png",
+      "name": "Test",
+      "subtask": false
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@1a90ce9b[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@123c3315[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6aeaa761[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@19bd95b2[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@294ef38b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@4de19627[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@720ff155[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@76afaa3[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5966936e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@18f766cb[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@15ffa9d9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@4590f627[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:05:36 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2009-08-18T20:24:48.164+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1791/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2009-08-07T06:30:23.361+0000",
+    "updated": "2022-08-28T12:05:36.440+0000",
+    "timeoriginalestimate": null,
+    "description": "methods in CheckHits & QueryUtils are in a good position to take any Searcher they are given and not only test it, but also test MultiReader & MultiSearcher constructs built around them",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416728",
+        "id": "12416728",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-08-16T22:38:23.378+0000",
+        "size": 15759,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416728/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416701",
+        "id": "12416701",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2009-08-16T05:13:23.868+0000",
+        "size": 14329,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416701/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416520",
+        "id": "12416520",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-08-14T00:32:07.224+0000",
+        "size": 17194,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416520/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416491",
+        "id": "12416491",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-08-13T21:14:55.534+0000",
+        "size": 18249,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416491/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416469",
+        "id": "12416469",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-08-13T18:06:48.884+0000",
+        "size": 18083,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416469/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416408",
+        "id": "12416408",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2009-08-13T07:53:44.460+0000",
+        "size": 9135,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416408/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416402",
+        "id": "12416402",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2009-08-13T06:30:00.854+0000",
+        "size": 6939,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416402/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12416365",
+        "id": "12416365",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-08-12T22:02:55.983+0000",
+        "size": 6789,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12416365/LUCENE-1791.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12415823",
+        "id": "12415823",
+        "filename": "LUCENE-1791.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2009-08-07T06:39:08.103+0000",
+        "size": 5673,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12415823/LUCENE-1791.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Enhance QueryUtils and CheckHIts to wrap everything they check in MultiReader/MultiSearcher",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12740427",
+          "id": "12740427",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "Patch showing what i have in mind.\n\nCurrent patch causes 14 failures in TestComplexExplanations, all of which stem from calling checkFirstSkipTo() on IndexSearcher created by wrapUnderlyingReader().  \n\nThe failure is QueryUtils.java:305: \"unstable skipTo(0) score! expected:<NaN> but was:<NaN>\" which seems like it could easily be a bug introduced by the patch, except...\n\n   * Why only cause 14/22 in TestComplexExplanations to fail?\n   * Why wouldn't the original IndexSearcher have produced a NaN score?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-07T06:39:08.190+0000",
+          "updated": "2009-08-07T06:39:08.190+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12740429",
+          "id": "12740429",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "FWIW: beyond just fixing the current failures, i'd like to enhance this patch (possibly using some sort of static cache of the wrapped readers it creates) so that it can work well in conjunction with LUCENE-1749.  \n\nAt the moment, the wrapping readers are go out of scope and are likely to be GCed well before anything interesting happens with the original IndexSearcher, so sanity checking the field cache isn't likely to find anything suspicious.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-07T06:45:32.372+0000",
+          "updated": "2009-08-07T06:45:32.372+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742548",
+          "id": "12742548",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "I just retried this patch against the trunk now that the FieldCacheSanityChecker and some other patches have been committed.  In addition to the possibly false-negatives from TestComplexExplanation (NaN score) this is now surfacing FielCache sanity failures from TestCustomScoreQuery, TestFieldScoreQuery, and TestOrdValues (suggesting that there are code paths where those query types don't correctly use the subreaders to get the FieldCache) as well as checkFirstSkipTo() failures for TestSpansAdvanced2 and an ArrayIndexOutOfBoundsException from TestBoolean2.testRandomQueries  (grr.... it uses it's own random so no seed was logged)\n\nI don't pretend this patch is perfect, but i can't imagine these are all false-negatives.  \n\nWe should get to the bottom of this before 2.9.  I'll start trying to figure it out on the train tonight.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-12T20:04:10.668+0000",
+          "updated": "2009-08-12T20:04:10.668+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742552",
+          "id": "12742552",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "bq. (grr.... it uses it's own random so no seed was logged)\n\nCorrection: it does log the seed, i was just looking for stderr when i should have been looking for stdout...\n\n{code}\nfailed query: +field:w2 field:w3 field:xx field:w4 field:w2\nNOTE: random seed of testcase 'testRandomQueries' was: 5695251427490718890\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-12T20:08:40.572+0000",
+          "updated": "2009-08-12T20:08:40.572+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742586",
+          "id": "12742586",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I'm guess the NAN failures are not a problem - looks like they fail because NAN != NAN ? Havn't looked closer.\n\nI don't think the fieldcache insanity is multi-reader related - it looks to me like some entries have a parser, and some null for the parser, even though the default parser is being used in both cases. The FieldSource types grab a FieldCache and may pass null as the parser, which ends up putting null in the cache entry - but if you specifically ask for the default parser, that puts the default parser in the fieldcache entry - same stuff now, doubled entry.\n\nAs for the out of bounds - havn't look at that one yet - odd one ...\n\n... interesting - it alternates between nullpointer and out of bounds exceptions ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-12T21:31:42.835+0000",
+          "updated": "2009-08-12T21:35:41.690+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742598",
+          "id": "12742598",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}I don't think the fieldcache insanity is multi-reader related - it looks to me like some entries have a parser, and some null for the parser, even though the default parser is being used in both cases. The FieldSource types grab a FieldCache and may pass null as the parser, which ends up putting null in the cache entry - but if you specifically ask for the default parser, that puts the default parser in the fieldcache entry - same stuff now, doubled entry.{quote}\n\nWell that explains half the output anyway - even if thats fixed there is still a fail. Its because the tests doesn't expand fully into the subreaders - just needed the top level before - with this test, we need to recursively grab them.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-12T21:51:53.395+0000",
+          "updated": "2009-08-12T21:51:53.395+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742600",
+          "id": "12742600",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "bq. I'm guess the NAN failures are not a problem - looks like they fail because NAN != NAN?\n\nright -- but why would the scores be NaN when wrapped in a MultiReader? when it's *not* wrapped in a MultiReader the test passes, so the scores must not be NaN in that case.\n\nbq. I don't think the fieldcache insanity is multi-reader related [...] same stuff now, doubled entry.\n\nThe sanity checker ignores when two CacheEntries differ only by parser (precisely because of the the null/default parser issue) and the resulting value object is the same.  but it does include all related CacheEntry objects in an Insanity object so that you have them all for debugging.\n\nLooking at TestCustomScoreQuery.testCustomScoreByte (for example)...\n\n{code}\n*** BEGIN org.apache.lucene.search.function.TestCustomScoreQuery.testCustomScoreByte: Insane FieldCache usage(s) ***\nSUBREADER: Found caches for decendents of org.apache.lucene.index.DirectoryReader@88d2ae+iii\n\t'org.apache.lucene.index.DirectoryReader@88d2ae'=>'iii',byte,null=>[B#841343 (size =~ 33 bytes)\n\t'org.apache.lucene.index.DirectoryReader@88d2ae'=>'iii',byte,org.apache.lucene.search.FieldCache.DEFAULT_BYTE_PARSER=>[B#841343 (size =~ 33 bytes)\n\t'org.apache.lucene.index.CompoundFileReader$CSIndexInput@77daaa'=>'iii',byte,org.apache.lucene.search.FieldCache.DEFAULT_BYTE_PARSER=>[B#981898 (size =~ 33 bytes)\n\t'org.apache.lucene.index.CompoundFileReader$CSIndexInput@77daaa'=>'iii',byte,null=>[B#981898 (size =~ 33 bytes)\n\n*** END org.apache.lucene.search.function.TestCustomScoreQuery.testCustomScoreByte: Insane FieldCache usage(s) ***\n\n{code}\n\nThe insanity type is \"SUBREADER\", so it's specificly identified a problem with that type of relationship.  There are 4 CacheEntries listed in the error all from the same field, but from two different readers.  If you note the value identity hashcodes (just before the size estimate) each reader has only one value cached for that field (with different parsers) which is why there isn't a seperate error about the multiple values. \nas the first line of hte Instanity.toString() states: what it found is that DirectoryReader@88d2ae and at least one of it's decendents both have cached entires for the same field.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-12T22:00:00.049+0000",
+          "updated": "2009-08-12T22:00:00.049+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742601",
+          "id": "12742601",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "just fully rolling out to all of the subreaders makes the test pass I believe.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-12T22:02:55.988+0000",
+          "updated": "2009-08-12T22:02:55.988+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742603",
+          "id": "12742603",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "{quote}\nWell that explains half the output anyway - even if thats fixed there is still a fail. Its because the tests doesn't expand fully into the subreaders - just needed the top level before - with this test, we need to recursively grab them.\n{quote}\nYou lost me there... are you saying the _tests_ needs to be changed? ... why?  \n\nFor this patch to trigger an error in an existing test, that test must either be using CheckHits or QueryUtils to execute a query against a seracher and validate the results are ok ... why would the test be responsible for any subreader expansion in this case?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-12T22:04:36.819+0000",
+          "updated": "2009-08-12T22:04:36.819+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742606",
+          "id": "12742606",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "midair collision (x2) ... i think i see what you mean in your revised patch ... the tests don't need changed, it's just the test utility methods that were trying to recurse the readers that weren't doing the entire job.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-12T22:09:48.779+0000",
+          "updated": "2009-08-12T22:09:48.779+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742608",
+          "id": "12742608",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Okay - so the first the original Parser issue:\n\nThe output looked odd - it showed multiple entries with the same type, field, and reader, but null and DefaultParser.\n\nWhen I quickly switched the code to use DefaultParser instead of null, those extra entries went away, and it just showed the segmentreader and directory reader that were doubled up. Thats what had me thinking that was involved. I'm not sure I understand why that was happening now though.\n\nAnyway, all of the issues appear to be because the test code was written expecting all of the readers to be top level.\n\nThe tests, in certain cases, use a Reader to grab from a fieldcache - that reader has to be the right subreader and not the top level reader -\n\nthe tests were just using getSequentialSubReaders - they need use gatherSubReaders instead - because you introduced the multi level reader stuff. They should have used gatherSubReaders from the start, but because it wasn't needed at the time (for the tests to pass), it didn't even occur to me.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-12T22:11:23.330+0000",
+          "updated": "2009-08-12T22:11:23.330+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742614",
+          "id": "12742614",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "FYI: with mark's updated path, we're back to just the NaN failures from TestComplexExplanations.  (and possibly TestBoolean2.testRandomQueries, but i can't confirm that)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-12T22:23:21.282+0000",
+          "updated": "2009-08-12T22:23:21.282+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742634",
+          "id": "12742634",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I only get the NAN issue showing up now.\n \nI don't know why its returning NAN as the score at the moment, but as far as the test is concerned, that particular failure appears to be false. Its just checking that two calls to score return the same things - but if it returns NAN, they are not considered equal.\n\nSo I guess the question is - does it make sense that the score is NAN?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-12T22:50:24.815+0000",
+          "updated": "2009-08-12T22:50:24.815+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742736",
+          "id": "12742736",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "I figured out the problem with TestComplexExplanations ... the test uses a searcher with a Custom Similarity, and the new code wasn't setting the same Similarity on the new Searcher & MultiSearcher being created.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-13T06:30:00.903+0000",
+          "updated": "2009-08-13T06:30:00.903+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742754",
+          "id": "12742754",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "one other thing i experimented with earlier today was making the \"wrapped\" MultiReaders and MultiSearchers a little more complicated (deeper structures, and adding some deleted docs to the other subreaders)\n\nat first i ran into problems because the deleted docs would through off the docIds of real docs (and some tests expected certain docs to have specific IDs) but even when the deleted docs only appear \"after\" the real docs, there are still some test failures with this latest patch.\n\nTestSimpleExplanations and TestComplexExplanations are the ones i've been looking at but there may be others (my laptop gets to hot if i try to run the full test suite too often)\n\nmy head hurts trying to figure out why the deeper nested structures and deleted docs might be causing these new failures ... i'll try to look at it tomorow.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-13T07:53:44.479+0000",
+          "updated": "2009-08-13T07:53:44.479+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742758",
+          "id": "12742758",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I just looked at the patch - one little minor thing. Would it make sense to randomized reader / searcher indexes in  wrapUnderlyingReader / wrapSearchers to catch possible array index related issues? This could also be done for the num of deleted terms and types of searcher / readers.\n\nsimon",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-08-13T08:06:16.455+0000",
+          "updated": "2009-08-13T08:06:16.455+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742813",
+          "id": "12742813",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Have you started working on the ItemizedFilter at all? It can't use outside doc ids like that. Saying to match doc 3 will match every doc 3 in every reader.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-13T12:45:46.536+0000",
+          "updated": "2009-08-13T12:45:46.536+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742868",
+          "id": "12742868",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I guess the out of bounds exception is still there:\n\n    [junit] Testsuite: org.apache.lucene.search.TestBoolean2\n    [junit] Tests run: 11, Failures: 0, Errors: 1, Time elapsed: 0.723 sec\n    [junit] ------------- Standard Output ---------------\n    [junit] failed query: field:yy field:zzz\n    [junit] NOTE: random seed of testcase 'testRandomQueries' was: -2696660952902803926\n    [junit] ------------- ---------------- ---------------\n    [junit] Testcase: testRandomQueries(org.apache.lucene.search.TestBoolean2):\tCaused an ERROR\n    [junit] -1\n    [junit] java.lang.ArrayIndexOutOfBoundsException: -1\n\nNo sure what to do about the ItemizedFilter - its not really a legal way to check things ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-13T15:33:30.813+0000",
+          "updated": "2009-08-13T15:33:30.813+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742900",
+          "id": "12742900",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Okay, I've got all tests passing.\n\nI rigged up a smarted ItemizedFilter that works for these tests.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-13T17:49:19.198+0000",
+          "updated": "2009-08-13T17:49:19.198+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12742972",
+          "id": "12742972",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "every so slight cleaned up \n\nremoved a couple unused imports\nadded a comment about whats going on with the ItemizedFilter",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-13T21:14:55.547+0000",
+          "updated": "2009-08-13T21:14:55.547+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12743032",
+          "id": "12743032",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "bq. Okay, I've got all tests passing.\n\nSweet! ... Even the random boolean query test? (i see changes to ReqExclScorer in your patch, but i don't relaly see how that could solve the problem)\n\nbq. I rigged up a smarted ItemizedFilter that works for these tests.\n\nI'm clearly missing something ... why does ItemizedFilter need to change?  I know it's an abomination and you would never want to use something like that in real code, but in this test the docIds passed to it on construction shouldn't change -- even when we wrap the reader/searcher in other searchers, i specificly only put empty indexes (with no deletions) in front of the original index when bulding the multireader/searcher so the docIds will be the same.  why doesn't the existing implementation work?\n\nbq. Would it make sense to randomized reader / searcher indexes\n\nSimon: randomized wrapping would be nice, but i didn't try to do that for two reasons:\n   * the utility has no way to get the seed from LuceneTestCase, and i didn't want to introduce randomness unless it was predictable randomness that could be logged.\n   * i needed to be sure we didn't add an index with deletions prior to the original index (but based on Mark's comments, it looks like that's not really an issue since we have to deal with it anyway)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-14T00:12:04.844+0000",
+          "updated": "2009-08-14T00:12:04.844+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12743036",
+          "id": "12743036",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Sweet! ... Even the random boolean query test? (i see changes to ReqExclScorer in your patch, but i don't relaly see how that could solve the problem)\n\nYes - the issue was again how it was dealing with the sub readers - my original fix was not fully correct  - it just happened to work with the previous tests. \n\nBy the way - any changes to non tests should have been pulled - sorry - I'll put up another patch.\n\nbq. I'm clearly missing something ... why does ItemizedFilter need to change? I know it's an abomination and you would never want to use something like that in real code, but in this test the docIds passed to it on construction shouldn't change - even when we wrap the reader/searcher in other searchers, i specificly only put empty indexes (with no deletions) in front of the original index when bulding the multireader/searcher so the docIds will be the same. why doesn't the existing implementation work?\n\nBecause it uses external ids - that only works if you have a single reader. The filter is applied per sub-reader - so if you use a filter that just sets doc 0 - every sub reader will match its first doc. You could do this in the past, because it just worked on the top level reader - in that case, external ids match completely against the reader - but with the sub-reader approach, each sub-reader has an id space that starts at 0.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-14T00:30:15.933+0000",
+          "updated": "2009-08-14T00:30:15.933+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12743039",
+          "id": "12743039",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "bq. The filter is applied per sub-reader\n\nDoh! .. right, that's the part i was forgetting -- filters are another thing that happen per reader now.\n\nsweet.  i'll review the patch for real tomorow or sat, and maybe rip out the ItemizedFilter and replace it with something more sensical (it's a bad example that people might stumble upon, that seems even more confusing now, and i feel responsible since i'm the one that wrote it for those explanation tests anyway)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-14T00:49:08.036+0000",
+          "updated": "2009-08-14T00:49:08.036+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12743061",
+          "id": "12743061",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}sweet. i'll review the patch for real tomorow or sat, and maybe rip out the ItemizedFilter and replace it with something more sensical (it's a bad example that people might stumble upon, that seems even more confusing now, and i feel responsible since i'm the one that wrote it for those explanation tests anyway)\n{quote}\n\nCool - it is very confusing now, and not super clean really - its kind of a hack - I just wasn't sure how else to handle it.\n\nEssentially, every time it sees a reader, it assumes its a reader thats part of a sequence of sub readers and adds maxDoc to a base to figure out what doc ids it should really set - and then if it sees the top level reader, or the the first sub reader, it resets that base - so it can start over if the set of sub readers need to come through again. It works for these tests, but it makes no sense to do such a thing in the real world.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-14T03:14:53.330+0000",
+          "updated": "2009-08-14T03:14:53.330+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12743813",
+          "id": "12743813",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "i put the doc \"ids\" into a KEY field and refactored ItemizedFilter to be a trivial subclass of FieldCacheTermsFilter.\n\nI also added more wrap permutations to address some of the possible edge cases Simon pointed out (good catch SImon) but didn't introduce any randomization for hte reasons mentioned before (even with the change to not rely on consistent docIds in ItemizedFilter, we can't allow deletions before the wrapped searcher/reader because CheckHIts does it magic based on docIds. \n\n(hmm... i suppose the wrap functions could return some metadata about what offset the old ids have in the new search/reader and CheckHits could use that .... hmmm ... seems kludgy so i'm not going to worry about it)\n\nI think we're good to go here unless anyone has any objections",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-16T05:13:23.871+0000",
+          "updated": "2009-08-16T05:13:23.871+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12743920",
+          "id": "12743920",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "One more minor entry from me:\n\nminor javadoc/spelling fixes\nremoved unused imports",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-16T22:38:23.408+0000",
+          "updated": "2009-08-16T22:38:23.408+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12744670",
+          "id": "12744670",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "You going to resolve this Hoss? Or was that commit just a tease?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-18T19:52:39.902+0000",
+          "updated": "2009-08-18T19:52:39.902+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12744692",
+          "id": "12744692",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "Geezz... you expect me to commit *and* resolve ... i thought this open source stuff was all about volunteering and cooperation, how come i gotta do _both_ ?!?!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2009-08-18T20:24:48.141+0000",
+          "updated": "2009-08-18T20:24:48.141+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/12744694",
+          "id": "12744694",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I would have been all over it ;) But who knows if you have your reasons for not resolving yet.\n\nThanks for all your work on this ! Brilliant issue that caught a lot of great stuff.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-18T20:29:35.856+0000",
+          "updated": "2009-08-18T20:29:35.856+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12432496/comment/17587987",
+          "id": "17587987",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2866|https://github.com/apache/lucene/issues/2866].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:05:36.440+0000",
+          "updated": "2022-08-28T12:05:36.440+0000"
+        }
+      ],
+      "maxResults": 30,
+      "total": 30,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04usf:",
+    "customfield_12314139": null
+  }
+}

@@ -1,0 +1,2693 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="IO">
+	<bug id="83" opendate="2006-07-12 13:50:05" fixdate="2006-08-25 21:44:03" resolution="Fixed">
+		<buginformation>
+			<summary>Bug with &amp;apos;df&amp;apos; command on AIX 5.3</summary>
+			<description>Reported via commons-owner@
+--------------------------------------------
+From: James Urie
+Sent: Tuesday, July 11, 2006 8:51 AM
+To: &amp;amp;apos;commons-dev-subscribe@jakarta.apache.org&amp;amp;apos;
+Subject: New AIX fix?
+Hello,
+I had to change the "commons-io" code to allow for usage on AIX 5.3.
+Attached is the file with changes.
+The long and short of the change is that the "df" command used in the
+File System Utils classes requires
+A "P" to be added to the switch to enable "POSIX" capability.
+James Urie</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">109</link>
+			<link type="Reference" description="is related to">110</link>
+		</links>
+	</bug>
+	<bug id="90" opendate="2006-08-02 17:13:47" fixdate="2006-08-26 00:06:22" resolution="Fixed">
+		<buginformation>
+			<summary>Infinite loop in FileSystemUtils.freeSpaceWindows if share directory empty</summary>
+			<description>When using FileSystemUtils.freeSpaceWindows in an empty share directory, the line containing the free space does not exist which causes an infinite loop (the outerloop doesn&amp;amp;apos;t decrease the i index).
+In fact to deal with all possible errors, I propose to test the exitCode of the dir command.
+Here is a proposed new code for this function :
+    /**
+
+Find free space on the Windows platform using the &amp;amp;apos;dir&amp;amp;apos; command.
+     *
+@param path  the path to get free space for, including the colon
+@return the amount of free drive space on the drive
+@throws IOException if an error occurs
+     */
+    long freeSpaceWindows(String path) throws IOException {
+        path = FilenameUtils.normalize(path);
+        if (path.length() &amp;gt; 2 &amp;amp;&amp;amp; path.charAt(1) == &amp;amp;apos;:&amp;amp;apos;) 
+{
+            path = path.substring(0, 2);  // seems to make it work
+        }
+
+        // build and run the &amp;amp;apos;dir&amp;amp;apos; command
+        String[] cmdAttrbs = new String[] 
+{"cmd.exe", "/C", "dir /-c " + path}
+;
+        // read in the output of the command to an ArrayList
+        BufferedReader in = null;
+        String line = null;
+        ArrayList lines = new ArrayList();
+        int errorLevel = 0;
+        try {
+            Process proc = Runtime.getRuntime().exec(cmdAttrbs);
+            in = new BufferedReader(
+                new InputStreamReader(proc.getInputStream()));
+            line = in.readLine();
+            while (line != null) 
+{
+                line = line.toLowerCase().trim();
+                lines.add(line);
+                line = in.readLine();
+            }
+
+            proc.waitFor();
+            errorLevel = proc.exitValue();
+        } finally 
+{
+            IOUtils.closeQuietly(in);
+        }
+
+        if (lines.size() == 0) 
+{
+            // unknown problem, throw exception
+            throw new IOException(
+                    "Command line &amp;amp;apos;dir /-c&amp;amp;apos; did not return any info " +
+                    "for command &amp;amp;apos;" + cmdAttrbs[2] + "&amp;amp;apos;");
+        }
+
+        if (errorLevel != 0) {
+            if (errorLevel == 2) 
+{
+                // Empty directory : unable to calculate the freeSpace
+                return Integer.MAX_VALUE; // ???
+            }
+ else 
+{
+                // unknown problem, throw exception
+                throw new IOException(
+                        "Command line &amp;amp;apos;dir /-c&amp;amp;apos; error [" + errorLevel +
+                        "] for command &amp;amp;apos;" + cmdAttrbs[2] + "&amp;amp;apos;");
+            }
+        }
+        // now iterate over the lines we just read and find the LAST
+        // non-empty line (the free space bytes should be in the last element
+        // of the ArrayList anyway, but this will ensure it works even if it&amp;amp;apos;s
+        // not, still assuming it is on the last non-blank line)
+        long bytes = -1;
+        int i = lines.size() - 1;
+        int bytesStart = 0;
+        int bytesEnd = 0;
+        outerLoop: while (i &amp;gt; 0) {
+            line = (String) lines.get;
+            if (line.length() &amp;gt; 0) {
+                // found it, so now read from the end of the line to find the
+                // last numeric character on the line, then continue until we
+                // find the first non-numeric character, and everything between
+                // that and the last numeric character inclusive is our free
+                // space bytes count
+                int j = line.length() - 1;
+                innerLoop1: while (j &amp;gt;= 0) {
+                    char c = line.charAt(j);
+                    if (Character.isDigit(c)) 
+{
+                      // found the last numeric character, this is the end of
+                      // the free space bytes count
+                      bytesEnd = j + 1;
+                      break innerLoop1;
+                    }
+                    j--;
+                }
+                innerLoop2: while (j &amp;gt;= 0) {
+                    char c = line.charAt(j);
+                    if (!Character.isDigit(c) &amp;amp;&amp;amp; c != &amp;amp;apos;,&amp;amp;apos; &amp;amp;&amp;amp; c != &amp;amp;apos;.&amp;amp;apos;) 
+{
+                      // found the next non-numeric character, this is the
+                      // beginning of the free space bytes count
+                      bytesStart = j + 1;
+                      break innerLoop2;
+                    }
+                    j--;
+                }
+                break outerLoop;
+            } else 
+{
+                // If the last line is empty we are unable to parse the freeSpace
+                throw new IOException(
+                        "Command line &amp;amp;apos;dir /-c&amp;amp;apos; did not return valid info " +
+                        "for command &amp;amp;apos;" + cmdAttrbs[2] + "&amp;amp;apos;");
+            }
+        }
+        // remove commas and dots in the bytes count
+        StringBuffer buf = new StringBuffer(line.substring(bytesStart, bytesEnd));
+        for (int k = 0; k &amp;lt; buf.length(); k++) {
+            if (buf.charAt(k) == &amp;amp;apos;,&amp;amp;apos; || buf.charAt(k) == &amp;amp;apos;.&amp;amp;apos;) 
+{
+                buf.deleteCharAt(k--);
+            }
+        }
+        bytes = Long.parseLong(buf.toString());
+        return bytes;
+    }</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="91" opendate="2006-08-03 07:12:33" fixdate="2006-08-29 20:52:38" resolution="Fixed">
+		<buginformation>
+			<summary>FileSystemUtils.freeSpace does not work on Sun Solaris</summary>
+			<description>The method FileSystemUtils.freeSpace does not work on Sun Solaris.
+ [junit] Testcase: testGetFreeSpace_String took 0.216 sec
+[junit] 	Caused an ERROR
+[junit] Command line &amp;amp;apos;df&amp;amp;apos; did not return info as expected for path &amp;amp;apos;/&amp;amp;apos;- response on first line was &amp;amp;apos;/                  (/dev/dsk/c0t0d0s0 ):41676304 block  3133314 filer&amp;amp;apos;
+[junit] java.io.IOException: Command line &amp;amp;apos;df&amp;amp;apos; did not return info as expected for path &amp;amp;apos;/&amp;amp;apos;- response on first line was &amp;amp;apos;/                  (/dev/dsk/c0t0d0s0 ):41676304 block  3133314 filer&amp;amp;apos;
+[junit] 	at org.apache.commons.io.FileSystemUtils.freeSpaceUnix(FileSystemUtils.java:315)
+[junit] 	at org.apache.commons.io.FileSystemUtils.freeSpaceOS(FileSystemUtils.java:179)
+[junit] 	at org.apache.commons.io.FileSystemUtils.freeSpace(FileSystemUtils.java:126)
+[junit] 	at org.apache.commons.io.FileSystemUtilsTestCase.testGetFreeSpace_String(FileSystemUtilsTestCase.java:90)
+This is because on Solaris the df command work different if the flag -k is used or not:
+$ df /
+/                  (/dev/dsk/c0t1d0s0 ): 1070402 blocks   294205 files
+$ df -k /
+Filesystem            kbytes    used   avail capacity  Mounted on
+/dev/dsk/c0t1d0s0    1350955  815754  481163    63%    /
+I haven&amp;amp;apos;t found any flag that makes it output GNU format even when -k is omitted.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="93" opendate="2006-09-19 01:47:37" fixdate="2006-10-07 11:59:33" resolution="Fixed">
+		<buginformation>
+			<summary>FileSystemUtils needs to call Process.destroy() on exec&amp;apos;d processes</summary>
+			<description>Calling the FileSystemUtils.getFreeSpace() method multiple times (~3000) will generate an IOException with the following text: "Too many open files". Documentation from Sun says this problem is due to not destroying the java.lang.Process object returned from the System.exec() call.
+Some sample code I wrote confirms that calling destroy prevents this error from occurring.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="96" opendate="2006-10-11 16:22:58" fixdate="2006-10-11 16:30:49" resolution="Fixed">
+		<buginformation>
+			<summary>Test case misuses read(byte[]) and read(char[])</summary>
+			<description>Message to mailing list from Anthony Green
+http://www.mail-archive.com/commons-dev@jakarta.apache.org/msg82127.html
+-----------------------------------------
+This support routine from the commons-io project test code assumed that
+FileReader.read(byte[]) would always read the entire file.  There&amp;amp;apos;s no
+such guarantee, and some tests were failing on GNU Classpath based VMs
+because of this.
+Thanks,
+AG
+ src/test/org/apache/commons/io/testtools/FileBasedTestCase.java~	2006-07-13 23:44:13.000000000 -0700
++++ src/test/org/apache/commons/io/testtools/FileBasedTestCase.java	2006-07-13 23:44:20.000000000 -0700
+@@ -167,18 +171,22 @@
+         throws IOException
+     {
+         Reader ir = new java.io.FileReader( file );
+
+try 
+{
+-            char[] c1 = new char[ c0.length ];
+-            int numRead = ir.read( c1 );
+-            assertTrue( "Different number of bytes", numRead == c0.length );
+-            for( int i = 0;
+-                 i &amp;lt; numRead;
+-                 assertTrue( "Byte " + i + " differs (" + c0[ i ] + " != " + c1[ i ] + ")", 
+-                    c0[ i ] == c1[ i ] ), i++
+-                );
+-        }
+ finally 
+{
+-            ir.close();
+-        }
++	int count = 0, numRead = 0;
++	char[] c1 = new char[ c0.length ];
++	try 
+Unknown macro: {+	  while (count &amp;lt; c0.length)+	    {
++	      numRead = ir.read( c1, count, c0.length);
++	      for( int i = count;
++		   i &amp;lt; count+numRead;
++		   assertTrue( "Byte " + i + " differs (" + c0[ i ] + " != " + c1[ i ] + ")", 
++			       c0[ i ] == c1[ i ] ), i++
++		   );
++	      count += numRead;
++	    }+	} 
+ finally 
+{
++	  ir.close();
++	}
+     }
+
+     protected void checkWrite(OutputStream output) throws Exception {</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.testtools.FileBasedTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="84" opendate="2006-07-14 16:31:49" fixdate="2006-10-13 04:55:09" resolution="Fixed">
+		<buginformation>
+			<summary>Many classes are limited to length of stream &lt; 2 GB, and behave incorrectly on larger streams</summary>
+			<description>java int.MAX_VALUE is 2 GB. Classes that handle streams larger than 2 GB will behave incorrectly.
+For example, see 
+http://svn.apache.org/viewvc/jakarta/commons/proper/io/trunk/src/java/org/apache/commons/io/IOUtils.java?view=markup
+Method: int copy(InputStream input, OutputStream output).
+The correct method would be: long copy(InputStream input, OutputStream output).
+This issue may affect many classes and routines.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOUtils.java</file>
+			<file type="M">org.apache.commons.io.IOUtilsCopyTestCase.java</file>
+			<file type="M">org.apache.commons.io.input.CountingInputStreamTest.java</file>
+			<file type="M">org.apache.commons.io.output.CountingOutputStreamTest.java</file>
+			<file type="M">org.apache.commons.io.input.CountingInputStream.java</file>
+			<file type="M">org.apache.commons.io.output.CountingOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="100" opendate="2006-11-28 15:01:00" fixdate="2006-12-04 23:36:44" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.touch should raise an IOException if I may not modify the file</summary>
+			<description>The documentation states, that FileUtils.touch implements the UNIX-touch command. However I may successfully FileUtils.touch files like /etc/passwd, which is not allowed on the shell as normal user. 
+Looking at the implementation, you should propably raise an IOException if the returnvalue of `file.setLastModified(System.currentTimeMillis());` is `false`.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="101" opendate="2006-12-04 20:49:18" fixdate="2006-12-09 00:32:26" resolution="Fixed">
+		<buginformation>
+			<summary>The method EndianUtils.writeSwappedDouble() and EndianUtils.readSwappedDouble() do not match!</summary>
+			<description>Code:
+public static void main(String[] args) {
+		double[] tests = new double[] 
+{34.345, -345.5645, 545.12, 10.043, 7.123456789123}
+;
+		for (int i = 0; i&amp;lt; tests.length ;i++) 
+{
+			byte[] buffer = new byte[8];			
+			EndianUtils.writeSwappedDouble(buffer, 0, tests[i]);
+			double val = EndianUtils.readSwappedDouble(buffer, 0);
+			System.out.println(val);	
+		}
+
+}
+Result:
+34.344969482421874
+-345.5645
+545.11951171875
+10.043
+7.123456789123
+Note:
+In my opinion the values shouldn&amp;amp;apos;t be changed at all.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.EndianUtils.java</file>
+			<file type="M">org.apache.commons.io.EndianUtilsTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="99" opendate="2006-11-16 18:11:09" fixdate="2006-12-29 13:12:17" resolution="Fixed">
+		<buginformation>
+			<summary>FileCleaner thread never ends and cause memory leak in AS</summary>
+			<description>FileCleaner opens a thread and no solution is given to the user to end it. So when an application is undeployed
+in an Application Server, a thread is still alive. The WebApp can&amp;amp;apos;t be undeployed and this results in a classloader
+leak that will cause an OutOfMemoryError.
+I think the API should be extended so that a user can end the thread. A better way would be to provide a class that
+cleans everything for commons IO.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileCleanerTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileCleaner.java</file>
+		</fixedFiles>
+		<links>
+			<link type="dependent" description="is depended upon by">120</link>
+		</links>
+	</bug>
+	<bug id="112" opendate="2007-02-04 22:12:41" fixdate="2007-02-04 22:17:16" resolution="Fixed">
+		<buginformation>
+			<summary>NPE in FileUtils.openOutputStream(File) when file has no parent in path.</summary>
+			<description>----Original Message----
+From: deng xinzi xinzi6388@gmail.com 
+Sent: Sunday, February 04, 2007 6:19 AM
+To: commons-dev@jakarta.apache.org
+Subject: [bug]commons-io 1.3 FileUtils.openOutputStream(File file) NullPointException
+FileUtils.openOutputStream(File file)
+When the file = new File( "abc.txt" );
+There will be a NullPointerException throw.
+Cause
+file = new File("abc.txt")
+file.getParentFile() returns null.
+So I suggest adding the null check code like this.
+            File parent = file.getParentFile();
+            if( parent Unable to render embedded object: File (= null ) {   // ADD THIS) not found.!!
+              if (parent.exists() == false) {
+                if (parent.mkdirs() == false) 
+{
+                    throw new IOException("File &amp;amp;apos;" + file + "&amp;amp;apos; could not be
+created");
+                }
+              }
+            }
+                                       Xinzi ...</description>
+			<version>1.3</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.testtools.FileBasedTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="113" opendate="2007-02-07 19:05:03" fixdate="2007-02-09 00:27:03" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.readFileToString is not static</summary>
+			<description>FileUtils.readFileToString isn&amp;amp;apos;t static.  It should be; since the constructor for FileUtils says "Instances should NOT be constructed in standard programming", this makes readFileToString unusable.  Right now I&amp;amp;apos;m using FileUtils.readBytesToByteArray(file).toString().</description>
+			<version>1.3</version>
+			<fixedVersion>1.3.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="117" opendate="2007-03-19 02:23:45" fixdate="2007-05-18 23:45:37" resolution="Fixed">
+		<buginformation>
+			<summary>EndianUtils.readSwappedUnsignedInteger() may return a negative number</summary>
+			<description>Methods about reading unsigned-integer in class EndianUtils may return a negative number, due to casting int to long.
+Calculations with operator &amp;amp; etc. are under integer in these methods so its results are integer,
+then implicit casting the results to long keeps its positive/negative sign.</description>
+			<version>1.3.1</version>
+			<fixedVersion>1.3.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.EndianUtilsTest.java</file>
+			<file type="M">org.apache.commons.io.EndianUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="66" opendate="2004-12-18 09:09:13" fixdate="2007-10-12 22:13:25" resolution="Duplicate">
+		<buginformation>
+			<summary>[IO] FilenameFilter that uses regular expressions (upload)</summary>
+			<description>I was in need of a FilenameFilter that observed case-sensetivity and couldn&amp;amp;apos;t
+find anything in the existing commons-io library to meet this requirement. So,
+I&amp;amp;apos;ve thrown together RegexFileFilter and an accompanying unit test to fill the
+void. Please add/apply to commons-io as necessary.
+-sp
+I don&amp;amp;apos;t see a way to attach files so heres the cut-n-paste:
+================================================================================
+/*
+
+Copyright 2002-2004 The Apache Software Foundation.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+package org.apache.commons.io.filefilter;
+
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.filefilter.AbstractFileFilter;
+import org.apache.regexp.RE;
+import org.apache.regexp.RESyntaxException;
+/**
+
+Filters files based on a regular expression that is matched against the
+entire filename (including drive, path, and name). Of particular note about
+this filter is the ability to express case-sensetivity.
+
+&amp;lt;p&amp;gt;
+For example, to retrieve and print all files that contain the string
+&amp;lt;code&amp;gt;"xyz"&amp;lt;/code&amp;gt; in the current directory, the regular expression
+&amp;lt;code&amp;gt;".xyz."&amp;lt;/code&amp;gt; can be used:
+ *
+&amp;lt;pre&amp;gt;
+File dir = new File(".");
+String[] files = dir.list(new RegexFileFilter(".xyz.", true));
+for (int i = 0; i &amp;lt; files.length; i++) 
+{
+ *     System.out.println(files[i]);
+ * }
+&amp;lt;/pre&amp;gt;
+
+To match using case-insensetivity,
+&amp;lt;code&amp;gt;new RegexFileFilter(".xyz.", false)&amp;lt;/code&amp;gt; would be appropriate.
+
+@author Semir Patel
+ */
+public class RegexFileFilter extends AbstractFileFilter {
+
+    //--------------------------------------------------------------------------
+    // Fields
+    //--------------------------------------------------------------------------
+    /** 
+
+Regular expression matcher.
+     */
+    private RE regExp;
+
+    //--------------------------------------------------------------------------
+    // Constructors
+    //--------------------------------------------------------------------------
+    /**
+
+Creates a file filter that applies a regular expression to the entire
+path + name of a file&amp;amp;apos;s absolute location.
+
+@param regExp Regular expression to match.
+@param matchCase Set to true to match using case sensetivity, false
+otherwise.
+@throws RESyntaxException if the regular expression is invalid.
+     */
+    public RegexFileFilter(String regExp, boolean matchCase)
+        throws RESyntaxException 
+{
+        
+        this.regExp = new RE(regExp, 
+            matchCase ? RE.MATCH_NORMAL: RE.MATCH_CASEINDEPENDENT);        
+    }
+
+    //--------------------------------------------------------------------------
+    // Overrides AbstractFileFilter
+    //--------------------------------------------------------------------------
+    /**
+
+Accepts by matching the filename against a regular expression.
+
+@throws RuntimeException if an IOException occurs.
+@see org.apache.commons.io.filefilter.AbstractFileFilter#accept(
+java.io.File)
+     */
+    public boolean accept(File file) {
+
+        try 
+{
+            return regExp.match(file.getCanonicalPath());
+        }
+        catch (IOException e) 
+{
+            
+            // TODO: Follow commons-io existing practice...
+            throw new RuntimeException(e);
+        }
+    }
+}
+==========================================================================
+/*
+
+Copyright 2002-2004 The Apache Software Foundation.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ */
+package org.apache.commons.io.filefilter;
+
+import java.io.File;
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
+import org.apache.commons.io.FileUtils;
+import org.apache.regexp.RESyntaxException;
+/**
+
+Unit test for 
+{@link RegexFileFilterTest}
+.
+
+@author Semir Patel
+ */
+public class RegexFileFilterTest extends TestCase {
+
+    //--------------------------------------------------------------------------
+    // Constants
+    //--------------------------------------------------------------------------
+    /**
+
+Temporary file names that unit tests will use for verification.
+     */
+    private static final String[] FILENAMES = new String[] 
+{
+        "EVENT.java",
+    }
+;
+
+    //--------------------------------------------------------------------------
+    // Fields
+    //--------------------------------------------------------------------------
+    /** 
+
+Test directory for filtering files.
+     */
+    private File testDir;
+
+    //--------------------------------------------------------------------------
+    // Main
+    //--------------------------------------------------------------------------
+    /** 
+
+Entrypoint.
+
+@param args None recognized.
+     */
+    public static void main(String[] args)
+    {
+        TestRunner.run(RegexFileFilterTest.class);
+    }
+
+    //--------------------------------------------------------------------------
+    // Overrides TestCase
+    //--------------------------------------------------------------------------
+    /** 
+
+Create a temporary directory with files to use for testing.
+     */
+    protected void setUp() throws Exception 
+{
+        
+        File tmpDir = new File(System.getProperty("java.io.tmpdir"));
+        testDir = File.createTempFile("temp", "", tmpDir);
+        testDir.delete();
+        
+        assertTrue(
+            "test dir creation failed for " + testDir.getCanonicalPath(), 
+            testDir.mkdirs()); 
+        
+        for (int i = 0; i &amp;lt; FILENAMES.length; i++)
+            FileUtils.writeStringToFile(
+                new File(testDir, FILENAMES[i]), "testing" + i, "UTF-8");
+    }
+
+    /**
+
+Clean up temporary directory.
+     */
+    protected void tearDown() throws Exception 
+{
+        FileUtils.forceDelete(testDir);
+        super.tearDown();
+    }
+
+    //--------------------------------------------------------------------------
+    // Case Insensetive 
+    //--------------------------------------------------------------------------
+    public void testAccept_CaseInsensetive_NotFound() throws Exception 
+{
+        IOFileFilter filter = new RegexFileFilter("bogus", false);
+        
+        String matches[] = testDir.list(filter);
+        assertEquals("No matches should have been found", 0, matches.length);
+    }
+ 
+    public void testAccept_CaseInsensetive_CaseMatch() throws Exception 
+{
+        IOFileFilter filter = new RegexFileFilter("EVENT", false);
+        
+        String matches[] = testDir.list(filter);
+        assertEquals("One match should have been found", 1, matches.length);
+        assertEquals("One match should have been found", "EVENT.java", matches[0]);
+    }
+ 
+    public void testAccept_CaseInsensetive_CaseMismatch() throws Exception 
+{
+        IOFileFilter filter = new RegexFileFilter("event", false);
+        
+        String matches[] = testDir.list(filter);
+        assertEquals("One match should have been found", 1, matches.length);
+        assertEquals("One match should have been found", "EVENT.java", matches[0]);
+    }
+
+    //--------------------------------------------------------------------------
+    // Case Sensetive 
+    //--------------------------------------------------------------------------
+    public void testAccept_CaseSensetive_NotFound() throws Exception 
+{
+        IOFileFilter filter = new RegexFileFilter("bogus", true);
+        
+        String matches[] = testDir.list(filter);
+        assertEquals("No matches should have been found", 0, matches.length);
+    }
+ 
+    public void testAccept_CaseSensetive_ExactMatch() throws Exception 
+{
+        IOFileFilter filter = new RegexFileFilter("EVENT", true);
+        
+        String matches[] = testDir.list(filter);
+        assertEquals("One match should have been found", 1, matches.length);
+        assertEquals("One match should have been found", "EVENT.java", matches[0]);
+    }
+ 
+    public void testAccept_CaseSensetive_CaseMismatch() throws Exception 
+{
+        IOFileFilter filter = new RegexFileFilter("event", true);
+        
+        String matches[] = testDir.list(filter);
+        assertEquals("No matches should have been found", 0, matches.length);
+    }
+ 
+    //--------------------------------------------------------------------------
+    // Negative Unit Tests
+    //--------------------------------------------------------------------------
+    /**
+
+Make sure constructor blows up on invalid regular expressions.
+     */
+    public void testConstructor_Invalid_RegExp() {
+
+        try 
+{
+            RegexFileFilter filter = new RegexFileFilter("*", true);
+            fail("Expected exception on invalid regular expression");
+        }
+        catch (RESyntaxException rese) 
+{
+            // Success
+        }
+    }
+}</description>
+			<version>1.3.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.filefilter.FileFilterUtils.java</file>
+			<file type="D">org.apache.commons.io.filefilter.RegexFilter.java</file>
+			<file type="M">org.apache.commons.io.filefilter.FileFilterTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">74</link>
+		</links>
+	</bug>
+	<bug id="74" opendate="2006-01-30 20:35:37" fixdate="2007-10-13 01:37:54" resolution="Fixed">
+		<buginformation>
+			<summary>Regular expression file name filter implementation</summary>
+			<description>I&amp;amp;apos;ve written a RegexFilter for commons-io. I&amp;amp;apos;d like to share it with other&amp;amp;apos;s.
+Hope there&amp;amp;apos;ll be a JDK 1.4+ branch soon, so this can be applied.</description>
+			<version>1.3.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.filefilter.FileFilterUtils.java</file>
+			<file type="D">org.apache.commons.io.filefilter.RegexFilter.java</file>
+			<file type="M">org.apache.commons.io.filefilter.FileFilterTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">150</link>
+			<link type="Duplicate" description="is duplicated by">66</link>
+			<link type="dependent" description="depends upon">127</link>
+		</links>
+	</bug>
+	<bug id="136" opendate="2007-11-20 12:08:09" fixdate="2007-11-20 12:36:43" resolution="Fixed">
+		<buginformation>
+			<summary>HexDump&amp;apos;s use of static StringBuffers isn&amp;apos;t thread-safe</summary>
+			<description>HexDump has two private static dump() method&amp;amp;apos;s that alter static instances of StringBuffer:
+dump(long) modifies static StringBuffer variable _lbuffer returning _lbuffer 
+dump(char) modifies static StringBuffer variable _cbuffer returning _cbuffer
+Both these methods are called by the public static dump(byte[], long, OutputStream, int) method. Multiple threads calling the public dump method at the same time could cause these StringBuffer to contain mixed up data and result in a bug.</description>
+			<version>1.3.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.HexDump.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="150" opendate="2007-12-27 21:34:13" fixdate="2007-12-28 11:02:58" resolution="Duplicate">
+		<buginformation>
+			<summary>Add a RegexpFilenameFilter</summary>
+			<description>It&amp;amp;apos;d be nice to have a filter like this:
+RegexpFileFilter reff = new RegexpFileFilter("^did
+{1,3}
+,+");
+WildcardFilter is nice but insufficent.</description>
+			<version>1.3.2</version>
+			<fixedVersion></fixedVersion>
+			<type>New Feature</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.filefilter.FileFilterUtils.java</file>
+			<file type="D">org.apache.commons.io.filefilter.RegexFilter.java</file>
+			<file type="M">org.apache.commons.io.filefilter.FileFilterTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">74</link>
+		</links>
+	</bug>
+	<bug id="147" opendate="2007-12-18 13:04:55" fixdate="2008-01-04 12:32:51" resolution="Fixed">
+		<buginformation>
+			<summary>Deletion of orphaned Softlinks does not work</summary>
+			<description>If there is an orphaned softlink a -&amp;gt; b, but b does not exists anymore than the softlink will not be removed. This happens when you call FileUtils.deleteDirectory() and when the linked target b is deleted earlier than the link.
+This is caused by the "ugly" file.exists() call in forceDelete()
+if (!file.exists()) {
+         throw new FileNotFoundException("File does not exist: " + file);
+}
+if this check is not done, everything works as expected. I think this test is not neccessery, cause file.delete will test this better.
+Please discuss and change this.
+thanx
+Stefan </description>
+			<version>1.3.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="141" opendate="2007-11-30 22:09:59" fixdate="2008-01-05 15:15:36" resolution="Fixed">
+		<buginformation>
+			<summary>Infinite loop on FileUtils.copyDirectory when the destination directory is within the source directory</summary>
+			<description>When you attempt to copy a directory and the destination directory is inside the source directory an inifinite loop occurs in the copyDirectory causing Commons-IO to create a folder w/o stopping until its reaches OS limitation.
+This code will recreate the bug:
+FileUtils.copyDirectory(new File("C:\\temp\\test-io\\a."), new File("C:\\temp\\test-io\\a." + File.separator + new Date().getTime()));
+Make sure C:\temp\test-io\a exists</description>
+			<version>1.3.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="163" opendate="2008-04-10 20:27:30" fixdate="2008-04-10 23:05:54" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.toURLs() uses deprecated (and bad) method of conversion to URL</summary>
+			<description>The method FileUtils.toURLs() uses the following method to convert from File to URL:
+    File.toURL();
+This method has scary warnings that it&amp;amp;apos;s a bad way to do the conversion because characters will not be escaped as required in URL strings.  In Java 1.6, this method has actually been deprecated.  All recent JDK versions recommend instead using:
+    File.toURI().toURL();
+as the URI code will properly perform the escaping.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="160" opendate="2008-03-28 15:38:29" fixdate="2008-05-30 11:14:26" resolution="Fixed">
+		<buginformation>
+			<summary>[patch] FileSystemUtils.freeSpace fails on solaris </summary>
+			<description>FileSystemUtils.freeSpace fails its tests on Solaris.  The following patch fixes it, and with it all tests pass on:
+RedHat (FC7, EL3, EL4, CentOS4, CentOS5) and Solaris (8, 9-sparc, 9-i386, 10-sparc, 10-i386).
+The fix is to force the use of /usr/xpg4/bin/df on Solaris, which is the posix version.  This then means that the output-parsing works as expected.
+Index: src/java/org/apache/commons/io/FileSystemUtils.java
+===================================================================
+RCS file: /cvsroot/upstream/jpackage/jakarta-commons-io/src/java/org/apache/commons/io/FileSystemUtils.java,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.3
+diff -u -r1.1.1.1 -r1.1.1.1.2.3
+ src/java/org/apache/commons/io/FileSystemUtils.java 2 Mar 2007 06:31:03 -0000       1.1.1.1
++++ src/java/org/apache/commons/io/FileSystemUtils.java 28 Mar 2008 11:56:06 -0000      1.1.1.1.2.3
+@@ -64,6 +64,10 @@
+     /** The operating system flag. */
+     private static final int OS;
++
++    /** The path to df */
++    private static String dfPath = "df";
++
+     static {
+         int os = OTHER;
+         try {
+@@ -76,9 +80,6 @@
+             if (osName.indexOf("windows") != -1) 
+{
+                 os = WINDOWS;
+             }
+ else if (osName.indexOf("linux") != -1 ||
+
+osName.indexOf("sun os") != -1 ||
+osName.indexOf("sunos") != -1 ||
+osName.indexOf("solaris") != -1 ||
+                 osName.indexOf("mpe/ix") != -1 ||
+                 osName.indexOf("freebsd") != -1 ||
+                 osName.indexOf("irix") != -1 ||
+@@ -86,6 +87,11 @@
+                 osName.indexOf("unix") != -1 ||
+                 osName.indexOf("mac os x") != -1) 
+{
+                 os = UNIX;
++            }
+ else if (osName.indexOf("sun os") != -1 ||
++                osName.indexOf("sunos") != -1 ||
++                osName.indexOf("solaris") != -1) 
+{
++                os = POSIX_UNIX;
++                dfPath = "/usr/xpg4/bin/df";
+             }
+ else if (osName.indexOf("hp-ux") != -1 ||
+                 osName.indexOf("aix") != -1) {
+                 os = POSIX_UNIX;
+@@ -116,7 +122,7 @@
+
+
+of 
+{@link #freeSpaceKb(String)}
+ which returns a result in kilobytes.
+&amp;lt;p&amp;gt;
+Note that some OS&amp;amp;apos;s are NOT currently supported, including OS/390,
+
+
+* OpenVMS and and SunOS 5. (SunOS is supported by &amp;lt;code&amp;gt;freeSpaceKb&amp;lt;/code&amp;gt;.)
++     * OpenVMS. 
+
+
+&amp;lt;pre&amp;gt;
+FileSystemUtils.freeSpace("C:");       // Windows
+FileSystemUtils.freeSpace("/volume");  // *nix
+@@ -317,14 +323,14 @@
+             flags += "P";
+         }
+         String[] cmdAttribs = 
+
+
+(flags.length() &amp;gt; 1 ? new String[] 
+{"df", flags, path}
+ : new String[] 
+{"df", path}
+);
++            (flags.length() &amp;gt; 1 ? new String[] 
+{dfPath, flags, path}
+ : new String[] 
+{dfPath, path}
+);
+
+         // perform the command, asking for up to 3 lines (header, interesting, overflow)
+         List lines = performCommand(cmdAttribs, 3);
+         if (lines.size() &amp;lt; 2) 
+{
+             // unknown problem, throw exception
+             throw new IOException(
+-                    "Command line &amp;amp;apos;df&amp;amp;apos; did not return info as expected " +
++                    "Command line &amp;amp;apos;" + dfPath + "&amp;amp;apos; did not return info as expected " +
+                     "for path &amp;amp;apos;" + path + "&amp;amp;apos;- response was " + lines);
+         }
+         String line2 = (String) lines.get(1); // the line we&amp;amp;apos;re interested in
+@@ -338,7 +344,7 @@
+                 tok = new StringTokenizer(line3, " ");
+             } else 
+{
+                 throw new IOException(
+-                        "Command line &amp;amp;apos;df&amp;amp;apos; did not return data as expected " +
++                        "Command line &amp;amp;apos;" + dfPath + "&amp;amp;apos; did not return data as expected " +
+                         "for path &amp;amp;apos;" + path + "&amp;amp;apos;- check path is valid");
+             }
+         } else {
+@@ -364,14 +370,14 @@
+             long bytes = Long.parseLong(freeSpace);
+             if (bytes &amp;lt; 0) 
+{
+                 throw new IOException(
+-                        "Command line &amp;amp;apos;df&amp;amp;apos; did not find free space in response " +
++                        "Command line &amp;amp;apos;" + dfPath + "&amp;amp;apos; did not find free space in response " +
+                         "for path &amp;amp;apos;" + path + "&amp;amp;apos;- check path is valid");
+             }
+             return bytes;
+         } catch (NumberFormatException ex) 
+{
+             throw new IOException(
+-                    "Command line &amp;amp;apos;df&amp;amp;apos; did not return numeric data as expected " +
++                    "Command line &amp;amp;apos;" + dfPath + "&amp;amp;apos; did not return numeric data as expected " +
+                     "for path &amp;amp;apos;" + path + "&amp;amp;apos;- check path is valid");
+         }
+     }
+Index: src/test/org/apache/commons/io/FileSystemUtilsTestCase.java
+===================================================================
+RCS file: /cvsroot/upstream/jpackage/jakarta-commons-io/src/test/org/apache/commons/io/FileSystemUtilsTestCase.java,v
+retrieving revision 1.1.1.1
+retrieving revision 1.1.1.1.2.6
+diff -u -r1.1.1.1 -r1.1.1.1.2.6
+ src/test/org/apache/commons/io/FileSystemUtilsTestCase.java 2 Mar 2007 06:30:58 -0000       1.1.1.1
++++ src/test/org/apache/commons/io/FileSystemUtilsTestCase.java 28 Mar 2008 15:26:43 -0000      1.1.1.1.2.6
+@@ -68,8 +68,13 @@
+             // have to figure out unix block size
+             String[] cmd = null;
+             String osName = System.getProperty("os.name");
++            osName = osName.toLowerCase();
++
+             if (osName.indexOf("hp-ux") &amp;gt;= 0 || osName.indexOf("aix") &amp;gt;= 0) {
+                 cmd = new String[] 
+{"df", "-P", "/"}
+;
++            } else if (osName.indexOf("sunos") &amp;gt;= 0 || osName.indexOf("sun os") &amp;gt;= 0
++                       || osName.indexOf("solaris") &amp;gt;= 0) {
++                cmd = new String[] 
+{"/usr/xpg4/bin/df", "-P", "/"}
+;
+             } else {
+                 cmd = new String[] 
+{"df", "/"}
+;
+             }</description>
+			<version>1.3.2</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="132" opendate="2007-10-20 06:37:53" fixdate="2008-05-30 15:52:58" resolution="Fixed">
+		<buginformation>
+			<summary>File Listener/Monitor</summary>
+			<description>Commons JCI has a "fam" (file alteration monitor) module[1] which provides a listener for file and directory create/change/delete events. I have done some work refactoring the JCI implementation and propose adding to to Commons IO. There is already an existing request/propsal to add similar functionality in IO-79 from Jim Harrington (which includes code).
+There are IMO two main differences (IMO improvements) in this implementation over exsiting JCI fam module:
+1) It uses a matching array technique to compare previous and current directory contents which minimizes object creation
+2) FileFilters can be specified to monitor only portions of the file system, ignoring files/directories of no interest. This is more efficient and reduces the amount of noise from un-wanted file/directory events
+From a quick look at IO-79, the above also applies to that proposal. Additionally IMO the solution in IO-79 would benefit from been broken out from the two DirectoryPoller and FilePoller artifacts.
+There are also some changes to the API specified in JCI&amp;amp;apos;s fam:
+1) FileObserver (FilesystemAlterationObserver in fam) has additional init() and destroy() methods
+2) FileMonitor (FilesystemAlterationMonitor in fam) has addObserver/removeObserver methods rather than addListener/removeListener methods. The issue (IMO) with fam is that the monitor is fixed to the FilesystemAlterationObserverImpl implementation, rather than any FilesystemAlterationObserver implementation. Also the ability to specify file filters means that there is a need to be able to add more than one observer for the same root directory.
+[1] http://svn.apache.org/repos/asf/commons/proper/jci/trunk/fam/</description>
+			<version>1.1</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>New Feature</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.apache.commons.io.monitor.FilesystemObserverTestCase.java</file>
+			<file type="D">org.apache.commons.io.monitor.CollectionFilesystemListener.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemListenerAdaptor.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemEntry.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemMonitor.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemObserver.java</file>
+			<file type="M">org.apache.commons.io.monitor.AbstractMonitorTestCase.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemListener.java</file>
+			<file type="D">org.apache.commons.io.monitor.FileSystemMonitorTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">79</link>
+			<link type="Reference" description="relates to">55</link>
+			<link type="Reference" description="relates to">79</link>
+		</links>
+	</bug>
+	<bug id="79" opendate="2006-01-02 20:04:55" fixdate="2008-05-30 15:55:20" resolution="Duplicate">
+		<buginformation>
+			<summary>[IO][PATCH] - file and directory pollers</summary>
+			<description>Add classes that will monitor a file/directory and notify registered observers 
+creation, deletion and content change events occur.  Source is in the 
+attachement file_directory_poller.jar as they are all new files.</description>
+			<version>1.1</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.apache.commons.io.monitor.FilesystemObserverTestCase.java</file>
+			<file type="D">org.apache.commons.io.monitor.CollectionFilesystemListener.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemListenerAdaptor.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemEntry.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemMonitor.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemObserver.java</file>
+			<file type="M">org.apache.commons.io.monitor.AbstractMonitorTestCase.java</file>
+			<file type="D">org.apache.commons.io.monitor.FilesystemListener.java</file>
+			<file type="D">org.apache.commons.io.monitor.FileSystemMonitorTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">132</link>
+			<link type="Reference" description="is related to">132</link>
+		</links>
+	</bug>
+	<bug id="167" opendate="2008-04-25 12:48:02" fixdate="2008-05-30 19:13:38" resolution="Fixed">
+		<buginformation>
+			<summary>Fix case-insensitive string handling</summary>
+			<description>Case-insensitive operations are currently platform-dependent, please see Common Bug #3 for details.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOCase.java</file>
+			<file type="M">org.apache.commons.io.IOCaseTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtilsWildcardTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="180" opendate="2008-09-08 18:03:20" fixdate="2008-09-11 09:59:49" resolution="Fixed">
+		<buginformation>
+			<summary>LineIterator documentation </summary>
+			<description>In the Javadoc for rg.apache.commons.io.LineIterator (in Commons IO 1.4),
+this code snippet is incorrect:  the last instance of "iterator" should be
+"it".
+  LineIterator it = FileUtils.lineIterator(file, "UTF-8");
+   try {
+     while (it.hasNext()) 
+{
+       String line = it.nextLine();
+       /// do something with line
+     }
+   } finally 
+{
+     LineIterator.closeQuietly(iterator);
+   }</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.LineIterator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="179" opendate="2008-08-21 10:09:59" fixdate="2008-11-29 01:51:49" resolution="Fixed">
+		<buginformation>
+			<summary>StringIndexOutOfBounds exception on FilenameUtils.getPathNoEndSeparator</summary>
+			<description>public void testFilenameUtils() 
+{
+ String path = "/foo.xml";
+ org.apache.commons.io.FilenameUtils.getPathNoEndSeparator(path);
+ }
+
+
+Leads to:
+java.lang.StringIndexOutOfBoundsException: String index out of range: -1
+	at java.lang.String.substring(String.java:1768)
+	at org.apache.commons.io.FilenameUtils.doGetPath(FilenameUtils.java:705)
+	at org.apache.commons.io.FilenameUtils.getPathNoEndSeparator(FilenameUtils.java:683)
+</description>
+			<version>1.3.2</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FilenameUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="161" opendate="2008-04-01 21:42:06" fixdate="2008-12-04 00:07:02" resolution="Fixed">
+		<buginformation>
+			<summary>FileCleaningTrackerTestCase hangs</summary>
+			<description>The following code in FileCleaningTrackerTestCase never exits, hanging the whole compilation/testing process:
+    private void waitUntilTrackCount() {
+        while (theInstance.getTrackCount() != 0) {
+            int total = 0;
+            while (theInstance.getTrackCount() != 0) 
+{
+                byte[] b = new byte[1024 * 1024];
+                b[0] = (byte) System.currentTimeMillis();
+                total = total + b[0];
+                System.gc();
+            }
+        }
+    }
+It is clear that in theory this code might loop forever, as the allocation of the byte arrays might never unleash a garbage collection complete enough to deallocate all marker objects, so to bring the track count to zero. Believe me, it&amp;amp;apos;s not only theory .</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileCleaningTrackerTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileCleaningTracker.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="202" opendate="2009-04-26 17:31:43" fixdate="2009-04-26 19:25:22" resolution="Fixed">
+		<buginformation>
+			<summary>NotFileFilter documentation is incorrect</summary>
+			<description>The documentation for NotFileFilter (http://commons.apache.org/io/api-release/index.html) incorrectly states that it, "Checks to see if both filters are true."  It looks to be the result of a hasty copy-and-paste from an old version of AndFileFilter (http://svn.apache.org/viewvc/commons/proper/io/trunk/src/java/org/apache/commons/io/filefilter/AndFileFilter.java?revision=140357&amp;amp;view=markup).  It should say something like, "Returns the logical NOT of the underlying filter&amp;amp;apos;s return value for the same arguments."
+Patch is attached.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.filefilter.NotFileFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="206" opendate="2009-05-18 16:46:18" fixdate="2009-05-18 19:40:35" resolution="Fixed">
+		<buginformation>
+			<summary>ProxyInputStream: misleading parameter names</summary>
+			<description>ProxyInputStream has a the following method signatures:
+
+public int read(byte[] bts, int st, int end)
+public void mark(int idx)
+
+But they should be:
+
+public int read(byte[] bts, int off, int length)
+public void mark(int readlimit)
+
+Especially the "end" parameter could be misinterpreted.</description>
+			<version>2.0</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ProxyInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="212" opendate="2009-08-17 21:43:36" fixdate="2009-08-17 21:44:31" resolution="Fixed">
+		<buginformation>
+			<summary>Incorrect ProxyInputStream.skip() javadoc</summary>
+			<description>The ProxyInputStream.skip() method documents the return value as "the number of bytes to skipped or -1 if the end of stream" when the underlying InputStream.skip() method returns "the actual number of bytes skipped", i.e. never -1.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ProxyInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="223" opendate="2009-11-17 09:32:27" fixdate="2010-01-07 02:37:22" resolution="Fixed">
+		<buginformation>
+			<summary>IOUtils.copy Javadoc inconsistency (return -1 vs. throw ArithmeticException)</summary>
+			<description>The javadoc for IOUtils.copy says:
+"Large streams (over 2GB) will return a bytes copied value of -1 after the copy has completed since the correct number of bytes cannot be returned as an int."
+but then it says:
+"Throws:
+ArithmeticException - if the byte count is too large"
+This is an inconsistency since -1 is always returned if the byte count is too large. ArithmeticException is never actually thrown.
+See IO-84 for discussion on solving the "too large byte count" problem.</description>
+			<version>1.3</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="231" opendate="2010-03-04 13:40:59" fixdate="2010-03-04 18:10:29" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils generate wrong exception message in isFileNewer method</summary>
+			<description>
+
+if (!reference.exists()) {
+    throw new IllegalArgumentException("The reference file &amp;amp;apos;" + file + "&amp;amp;apos; doesn&amp;amp;apos;t exist");
+}
+
+
+If second argument file does not exist isFileNewer method generates exception with message about first argument file does not exist.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="207" opendate="2009-05-18 23:24:47" fixdate="2010-03-05 01:28:02" resolution="Fixed">
+		<buginformation>
+			<summary>Race condition in forceMkdir</summary>
+			<description>If two processes or threads call forceMkdir() with the same directory there is a chance that one will throw an IOException even though a directory was correctly created (by the other process or thread). </description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="187" opendate="2008-12-15 16:19:26" fixdate="2010-03-06 01:59:21" resolution="Fixed">
+		<buginformation>
+			<summary>FileSystemUtils.freeSpaceKb doesn&amp;apos;t work with relative paths on Linux</summary>
+			<description>Calling FileSystemUtils.freeSpaceKb with ".", "./", "../", "../foo" etc. will result in an empty string being passed to df.
+freeSpaceKb calls FileNameUtils.normalize on the path which destroys relative paths.
+I don&amp;amp;apos;t see any need to normalize the path so the fix is simply to remove that call.</description>
+			<version>1.2</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="220" opendate="2009-10-23 20:32:20" fixdate="2010-08-04 00:37:05" resolution="Fixed">
+		<buginformation>
+			<summary>FileCleaningTracker Vector performs badly under load</summary>
+			<description>When subjected to heavy load, the performance of org.apache.commons.io.FileCleaningTracker degrades and becomes a bottleneck to the system.  In our case, we had over 2 millions entries on the "trackers" Vector.  Under these conditions, the call to trackers.remove(tracker) on line 214 becomes very inefficient as it causes the Vector to shift and reindex the remaining data.  In addition, calls to trackers.add are forced to wait on the inefficient remove operation.  With the application idle, it took several hours for the File Reaper thread to finish processing the entries on the trackers Vector.
+The solution for use was to implement trackers as a HashSet instead of a Vector.  Thus line 52 was changed from:
+    final Collection /* Tracker */ trackers = new Vector();  // synchronized
+to
+    final Collection /* Tracker */ trackers = Collections.synchronizedSet(new HashSet());  // synchronized
+Imports were also change appropriately.</description>
+			<version>1.0</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileCleaningTracker.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="181" opendate="2008-09-08 18:04:35" fixdate="2010-08-04 23:04:55" resolution="Won&apos;t Fix">
+		<buginformation>
+			<summary>LineIterator should implement Iterable </summary>
+			<description>org.apache.commons.io.LineIterator does not implement Iterable.  This makes
+it impossible to use in certain stylized ways, such as in a new-style for
+statement.  Such use is not always desirable (it might temporarily leak a
+file descriptor, until the finalizer is called), but should be possible in
+situations where it is known to be acceptable.</description>
+			<version>1.4</version>
+			<fixedVersion></fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.LineIterator.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">272</link>
+		</links>
+	</bug>
+	<bug id="243" opendate="2010-04-03 00:35:50" fixdate="2010-09-08 17:16:40" resolution="Fixed">
+		<buginformation>
+			<summary>SwappedDataInputStream readBoolean is inverted</summary>
+			<description>The method readBoolean in SwappedDataInputStream returns true when the byte is zero, false otherwise. In accordance with the contract in java.io.DataInput, true should indicate a non-zero byte. SwappedDataInputStream is for reading Little Endian formats, it should not change the boolean value of individual bytes.</description>
+			<version>1.0</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.SwappedDataInputStreamTest.java</file>
+			<file type="M">org.apache.commons.io.input.SwappedDataInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="216" opendate="2009-08-19 17:54:51" fixdate="2010-09-28 15:30:33" resolution="Fixed">
+		<buginformation>
+			<summary>Delete files quietly when an exception is thrown during initialization</summary>
+			<description>LockableFileWriter fails to report lock file deletion failure - it calls lockFile.delete() several times but fails to check the return code.
+N.B. IIRC, file.delete() returns false if there was no file to delete, so any fix needs to take this into account.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.output.LockableFileWriter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="168" opendate="2008-05-05 17:02:08" fixdate="2010-09-28 23:28:42" resolution="Fixed">
+		<buginformation>
+			<summary>Symbolic links (symlinks) followed when deleting directory.</summary>
+			<description>If &amp;amp;apos;dlink&amp;amp;apos; is a symbolic link to a directory &amp;amp;apos;dir&amp;amp;apos;, and FileUtils.forceDelete is called on dlink, then here is what happens:
+1) the contents of &amp;amp;apos;dir&amp;amp;apos; are emptied (the link is followed).
+2) &amp;amp;apos;dir&amp;amp;apos; continues to exist (but is empty).
+3) &amp;amp;apos;dlink&amp;amp;apos; is removed.
+The correct behavior is to simply remove &amp;amp;apos;dlink&amp;amp;apos; without following it and thus without altering the contents of &amp;amp;apos;dir&amp;amp;apos; (or &amp;amp;apos;dir&amp;amp;apos; itself).</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="217" opendate="2009-08-22 03:26:20" fixdate="2010-09-28 23:55:56" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.copyDirectoryToDirectory makes infinite loops</summary>
+			<description>When using FileUtils.copyDirectoryToDirectory, infinite loops has occurred.
+ detail 
+src directory :  D:\a
+dest directory : D:\a
+call : FileUtils.copyDirectoryToDirectory(new File("D:\a"), new File("D:\a"));
+expected result : directory D:\a\a will be created
+actual result      : D:\a\a\a\a.......   was created
+i guess FileUtils.copyDirectoryToDirectory causes of this result.
+("destDir.mkdir()" is done before "srcDir.listFiles()")
+am i calling wrong method?
+thank you.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="197" opendate="2009-02-20 17:52:34" fixdate="2010-09-29 01:29:43" resolution="Fixed">
+		<buginformation>
+			<summary>BoundedInputStream</summary>
+			<description>Apache Jackrabbit has an interesting InputStream implementation that reads up to a specified amount of bytes from an underlying stream, and then acts as if the end of the stream was reached:
+http://svn.apache.org/repos/asf/jackrabbit/trunk/jackrabbit-jcr-server/src/main/java/org/apache/jackrabbit/server/io/BoundedInputStream.java
+Similar classes are also found in other projects:
+http://svn.mucommander.com/cgi-bin/viewvc.cgi/trunk/source/com/mucommander/io/BoundedInputStream.java?content-type=text%2Fplain&amp;amp;view=co
+https://www.sunspotworld.com/docs/Purple/javadoc/com/sun/spot/peripheral/BoundedInputStream.html</description>
+			<version>2.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>New Feature</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.BoundedInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">339</link>
+			<link type="Reference" description="is related to">236</link>
+		</links>
+	</bug>
+	<bug id="166" opendate="2008-04-25 09:47:57" fixdate="2010-09-29 03:45:22" resolution="Fixed">
+		<buginformation>
+			<summary>Fix URL decoding in FileUtils.toFile()</summary>
+			<description>The sequence "%2520" should decode to "%20".</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">252</link>
+			<link type="Reference" description="is related to">13</link>
+		</links>
+	</bug>
+	<bug id="246" opendate="2010-07-26 09:17:55" fixdate="2010-09-29 11:29:20" resolution="Fixed">
+		<buginformation>
+			<summary>FilenameUtils.wildcardMatch gives incorrect results</summary>
+			<description>This wildcard pattern "*?" does not match correctly. The command:
+System.out.println(FilenameUtils.wildcardMatch("aaa", "*?"));
+prints out "false", even though it matches. The wildcard mask is a bit unusal, but not incorrect. It should match any input with at least one character.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FilenameUtilsWildcardTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="185" opendate="2008-11-04 16:53:17" fixdate="2010-09-29 15:49:53" resolution="Fixed">
+		<buginformation>
+			<summary>FileSystemUtils.freeSpaceWindows blocks</summary>
+			<description>Hi,
+in my Application I have the problem that FileSystemUtils.freeSpaceWindows works properly for hours and then the function call blocks and does not return anymore. Any Ideas? Thanks.
+The stacktrace:
+-------------
+"Thread-16" daemon prio=5 tid=33 RUNNABLE
+    java.io.FileInputStream.readBytes(Native Method)
+    java.io.FileInputStream.read(Unknown Source)
+    java.io.BufferedInputStream.read1(Unknown Source)
+    java.io.BufferedInputStream.read(Unknown Source)
+    sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+    sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+    sun.nio.cs.StreamDecoder.read(Unknown Source)
+    java.io.InputStreamReader.read(Unknown Source)
+    java.io.BufferedReader.fill(Unknown Source)
+    java.io.BufferedReader.readLine(Unknown Source)
+    java.io.BufferedReader.readLine(Unknown Source)
+    org.apache.commons.io.FileSystemUtils.performCommand(FileSystemUtils.java:413)
+    org.apache.commons.io.FileSystemUtils.freeSpaceWindows(FileSystemUtils.java:225)
+    org.apache.commons.io.FileSystemUtils.freeSpaceOS(FileSystemUtils.java:194)
+    org.apache.commons.io.FileSystemUtils.freeSpaceKb(FileSystemUtils.java:166)
+-------------
+Regards,
+Martin</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="190" opendate="2008-12-30 15:03:34" fixdate="2010-09-29 18:14:22" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.copyDirectory preserves destination subdirectories, rather than overwriting with the source subdirectories</summary>
+			<description>When using FileUtils.copyDirectory to copy directories with subdirectories, the source will overwrite all files that exist in the destination directory, but not the subdirectories themselves. The files inside the subdirectories will be overwritten. The only difference that I&amp;amp;apos;ve noticed thus far is that this preserves the old file dates of the subdirectories rather than using the dates from the source or the current date, if preserveFileDate is set to &amp;amp;apos;false.&amp;amp;apos;</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="248" opendate="2010-09-14 10:09:17" fixdate="2010-09-29 18:52:39" resolution="Fixed">
+		<buginformation>
+			<summary>getFullPathNoEndSeparator return empty while path is one level directory</summary>
+			<description>the getFullPathNoEndSeparator method in FilenameUtils.java (Revision 736890) 
+if filename="/" return "/" &amp;lt;&amp;lt;==right
+if filename="/abc" return empty &amp;lt;&amp;lt;==bug
+if filename="/abc/xyz" return "/abc" &amp;lt;&amp;lt;==right 
+
+
+885 	int index = indexOfLastSeparator(filename);
+886 	if (index &amp;lt; 0) {
+887 		return filename.substring(0, prefix);
+888 	}
+889 	int end = index + (includeSeparator ? 1 : 0);
+================
+                if(end==0) return "/";
+&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;&amp;gt;
+890 	return filename.substring(0, end);
+
+</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FilenameUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="209" opendate="2009-07-23 10:36:48" fixdate="2010-09-29 19:33:44" resolution="Fixed">
+		<buginformation>
+			<summary>FileSystemUtils.freeSpaceKb fails to return correct size for a windows mount point</summary>
+			<description>FileSystemUtils.freeSpaceKb fails to return correct result for a NTFS mount point or junction.
+Suppose I have a NTFS partition mounted at C:\Data\partition1.
+Now assume that the free space on Partition mounted as C: is 1GB and that mounted on "C:\Data\partition1" is 2GB. A call to FileSystemUtils.freeSpaceKb("C:\Data\partition1") will return the free space on C: and not on "C:\Data\partition1".
+This is because while running the "dir /-c" with the given path, the code just retains first 2 chars i.e. for any path under "C:\blah\de\blah", "dir /-c" will be called with "C:" which will return incorrect result.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="201" opendate="2009-03-26 13:59:51" fixdate="2010-10-04 01:12:33" resolution="Fixed">
+		<buginformation>
+			<summary>CountingInputStream/CountingOutputStream only partially synchronized</summary>
+			<description>CountingInputStream is only partially synchronized.
+The count is not synchronized when it is updated in read operations, so is not guaranteed to be published correctly
+The synchronization could be removed without loss of functionality.
+Not sure it makes sense to share a stream between threads anyway, as the underlying stream is unlikely to be thread-safe.
+If only one thread reads the stream, then the count field could be made volatile.
+This would allow other threads to read the count safely.</description>
+			<version>1.4</version>
+			<fixedVersion>2.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.CountingInputStream.java</file>
+			<file type="M">org.apache.commons.io.output.CountingOutputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">214</link>
+		</links>
+	</bug>
+	<bug id="252" opendate="2010-10-14 00:40:24" fixdate="2010-10-14 00:58:08" resolution="Duplicate">
+		<buginformation>
+			<summary>NumberFormatException from FileUtils.toFile method</summary>
+			<description>Certain strings can cause the org.apache.commons.io.FileUtils.toFile(URL url) method to call Integer.parseInt with an invalid argument and thus throw a NumberFormatException:
+Exception in thread "main" java.lang.NumberFormatException: For input string: "%2"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:48)
+	at java.lang.Integer.parseInt(Integer.java:449)
+	at org.apache.commons.io.FileUtils.toFile(FileUtils.java:476)
+One example of such a string: "both%20are%20100%20%25%20true"</description>
+			<version>1.4</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">166</link>
+		</links>
+	</bug>
+	<bug id="257" opendate="2010-12-22 03:13:21" fixdate="2010-12-22 23:06:21" resolution="Fixed">
+		<buginformation>
+			<summary>BOMInputStream.read(byte[]) can return 0 which it should not</summary>
+			<description>BOMInputStream.read(byte[]) returns 0 when it should return -1.
+This is not a valid action (unless buf.length == 0) and can cause problems, e.g. "java.io.IOException: Underlying input stream returned zero bytes - at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:268)"
+From java.io.InputStream.read(byte[]) JavaDocs: "If the length of b is zero, then no bytes are read and 0 is returned; otherwise, there is an attempt to read at least one byte. If no byte is available because the stream is at the end of the file, the value -1 is returned; otherwise, at least one byte is read and stored into b."
+Suggested fix, change line 287 of BOMInputStream.java from
+        return (secondCount &amp;lt; 0) ? firstCount : firstCount + secondCount;
+into
+        return (secondCount &amp;lt; 0) ? (firstCount &amp;gt; 0 ? firstCount : -1) : firstCount + secondCount;</description>
+			<version>2.0</version>
+			<fixedVersion>2.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.BOMInputStream.java</file>
+			<file type="M">org.apache.commons.io.input.BOMInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="258" opendate="2010-12-23 02:57:53" fixdate="2010-12-23 03:18:42" resolution="Fixed">
+		<buginformation>
+			<summary>XmlStreamReader consumes the stream during encoding detection</summary>
+			<description>XmlStreamReader reads the underlying InputStream to try and detect the encoding. However once that process is done the bytes read from the stream should still be available to be read - this was accidentally broken in r1004882 by creating the underlying reader with the original InputStream, rather than the wrapped streams used to detect encoding.</description>
+			<version>2.0</version>
+			<fixedVersion>2.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.XmlStreamReaderTest.java</file>
+			<file type="M">org.apache.commons.io.input.XmlStreamReader.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">162</link>
+		</links>
+	</bug>
+	<bug id="264" opendate="2011-03-10 13:09:56" fixdate="2011-03-12 00:48:48" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.moveFile() JavaDoc should specify FileExistsException thrown</summary>
+			<description>FileUtils.moveFile() JavaDoc does specify the behaviour of the method in a case when the destFile exists. It would be helpful to know from the JavaDoc that in such case an exception is thrown as it&amp;amp;apos;s not immediately obvious.</description>
+			<version>2.0</version>
+			<fixedVersion>2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="260" opendate="2011-02-03 22:59:18" fixdate="2011-03-12 01:14:45" resolution="Fixed">
+		<buginformation>
+			<summary>ClassLoaderObjectInputStream does not handle Proxy classes</summary>
+			<description>ObjectInputSteam has 2 methods that need to be overloaded for proper behavior in this case.
+resolveClass is ok, but resolveProxyClass doesn&amp;amp;apos;t attempt to look in the passed class loader to resolve the interfaces.</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ClassLoaderObjectInputStream.java</file>
+			<file type="M">org.apache.commons.io.input.ClassLoaderObjectInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="263" opendate="2011-03-08 02:12:45" fixdate="2011-04-10 11:27:58" resolution="Fixed">
+		<buginformation>
+			<summary>FileSystemUtils.freeSpaceKb throws exception for Windows volumes with no visible files.</summary>
+			<description>Doing a FileSystemUtils.freeSpaceKb("D:/") where the drive (in this example d:) is an empty drive (A drive with no non-hidden files on it yet) results in an exception being thrown.
+     "Command line returned OS error code &amp;amp;apos;1&amp;amp;apos; for command [cmd.exe, /C, dir /-c "D:\"]
+Perhaps it could do a "dir /a /-c" to work in more cases? (Since hidden file "System Volume Information" will usually be available)</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="266" opendate="2011-03-18 18:58:51" fixdate="2011-05-09 17:29:35" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.copyFile() throws IOException when copying large files to a shared directory (on Windows)</summary>
+			<description>java.io.IOException: Insufficient system resources exist to complete the requested service
+	at sun.nio.ch.FileDispatcher.pwrite0(Native Method)
+	at sun.nio.ch.FileDispatcher.pwrite(Unknown Source)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.write(Unknown Source)
+	at sun.nio.ch.FileChannelImpl.write(Unknown Source)
+	at sun.nio.ch.FileChannelImpl.transferFromFileChannel(Unknown Source)
+	at sun.nio.ch.FileChannelImpl.transferFrom(Unknown Source)
+	at org.apache.commons.io.FileUtils.doCopyFile(FileUtils.java:813)
+	at org.apache.commons.io.FileUtils.copyFile(FileUtils.java:783)
+	at org.test.igor.TestFileUtils.main(TestFileUtils.java:55)
+NOTE: the issue is cased by the function doCopyFile(File srcFile, File destFile, boolean preserveFileDate) using hardcoded data chunks of FIFTY_MB in the transferFrom() call.
+Reducing this chunk from 50M to 31M solves the issue for my situation (32M still fails).
+Here is a test program to reproduce the issue:
+package org.test.igor;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
+public class TestFileUtils {
+    public static void main(String[] args){
+        File src = new File("D:\\2011.1-dev\\testtest");
+        File dest = new File("\\\\ismerek1Shared");
+        String filename = "jdk-6u19-windows-x64.exe";
+        File file = new File(src, filename);
+        File toFile = new File(dest, filename);
+        try 
+{
+            FileUtils.copyFile(file, toFile, true);
+            System.out.println("Successful copy");
+        }
+        catch (IOException e1) 
+{
+            e1.printStackTrace();
+        }
+    }
+}
+</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="272" opendate="2011-05-11 21:13:27" fixdate="2011-05-11 22:54:40" resolution="Duplicate">
+		<buginformation>
+			<summary>LineIterator could easily support Iterable</summary>
+			<description>It could be useful to make LineIterator support Iterable&amp;lt;String&amp;gt;, which is very easy to add.</description>
+			<version>1.4</version>
+			<fixedVersion></fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.LineIterator.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">181</link>
+		</links>
+	</bug>
+	<bug id="274" opendate="2011-05-24 20:44:49" fixdate="2011-05-26 10:03:55" resolution="Fixed">
+		<buginformation>
+			<summary>Tailer returning partial lines when reaching EOF before EOL</summary>
+			<description>As reported here: http://mail-archives.apache.org/mod_mbox/commons-user/201105.mbox/%3cBANLkTim6hA-xGjn8cA6FfcPkVa6ax6KGag@mail.gmail.com%3e</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.TailerTest.java</file>
+			<file type="M">org.apache.commons.io.input.Tailer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="277" opendate="2011-07-10 05:26:35" fixdate="2011-09-05 23:39:13" resolution="Fixed">
+		<buginformation>
+			<summary>ReaderInputStream enters infinite loop when it encounters an unmappable character</summary>
+			<description>The ReaderInputStream.read(byte[] b, int off, int len) method enters an infinite loop when its CharsetEncoder encounters an unmappable character in the input buffer.
+When its CharsetEncoder encounters an unmappable character, the value of CoderResult lastCoderResult.isUnmappable() == true, and Reader.read() is not invoked on the underlying Reader ever again.
+Attaching source file that reproduces this behavior.
+One fix to consider is to call CharsetEncoder.onUnmappableCharacter(CodingErrorAction) in the ReaderInputStream constructor with a value other than the default CodingErrorAction.REPORT. e.g.:
+public ReaderInputStream(Reader reader, Charset charset, int bufferSize) {
+            this.reader = reader;
+            encoder = charset.newEncoder();
+            encoder.onUnmappableCharacter(CodingErrorAction.REPLACE);
+...
+By replacing the unmappable character with encoder&amp;amp;apos;s default replacement character, this effectively prevents the infinite loop from occurring. I&amp;amp;apos;m not sure if that&amp;amp;apos;s the ideal behavior, but it seems fairly consistent with what org.apache.commons.io.output.WriterOutputStream does.</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ReaderInputStream.java</file>
+			<file type="M">org.apache.commons.io.input.ReaderInputStreamTest.java</file>
+			<file type="M">org.apache.commons.io.output.WriterOutputStream.java</file>
+			<file type="M">org.apache.commons.io.input.XmlStreamReaderTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="303" opendate="2012-02-17 09:20:19" fixdate="2012-02-17 20:51:03" resolution="Fixed">
+		<buginformation>
+			<summary>TeeOutputStream does not call branch.close() when main.close() throws an exception</summary>
+			<description>TeeOutputStream.close() looks like this:
+TeeOutputStream.java
+
+    /**
+     * Closes both streams. 
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    public void close() throws IOException {
+        super.close();
+        this.branch.close();
+    }
+
+
+It is obvious that this.branch.close() is not executed when super.close() raises an exception. super.close() may in fact raise an IOException since ProxyOutputStream.handleIOException(IOException) is not overridden.</description>
+			<version>2.1</version>
+			<fixedVersion>2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.output.TeeOutputStream.java</file>
+			<file type="M">org.apache.commons.io.output.TeeOutputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="302" opendate="2012-02-13 08:16:56" fixdate="2012-02-22 19:23:29" resolution="Fixed">
+		<buginformation>
+			<summary>ArrayIndexOutOfBoundsException in BOMInputStream when reading a file without BOM multiple times</summary>
+			<description>Resetting the BOMInputStream doesn&amp;amp;apos;t reset the fbLength member variable. This causes fbLength to grow bigger than the firstBytes array (when the file doesn&amp;amp;apos;t contain a BOM), which leads to an ArrayIndexOutOfBoundsException in the readFirstBytes method.
+The attached test case reveals the problem.</description>
+			<version>2.1</version>
+			<fixedVersion>2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.BOMInputStreamTest.java</file>
+			<file type="M">org.apache.commons.io.input.BOMInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="304" opendate="2012-03-01 06:35:32" fixdate="2012-03-01 14:39:50" resolution="Fixed">
+		<buginformation>
+			<summary>The second constructor of Tailer  class does not pass &amp;apos;delay&amp;apos; to the third one</summary>
+			<description>Here is the second contructor of Tailer class:
+
+
+    public Tailer(File file, TailerListener listener, long delay) {
+        this(file, listener, 1000, false);
+    }
+
+</description>
+			<version>2.1</version>
+			<fixedVersion>2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.Tailer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="298" opendate="2012-01-06 15:08:09" fixdate="2012-03-01 15:31:30" resolution="Fixed">
+		<buginformation>
+			<summary>Various methods of class &amp;apos;org.apache.commons.io.FileUtils&amp;apos; incorrectly suppress &amp;apos;java.io.IOException&amp;apos;s.</summary>
+			<description></description>
+			<version>2.1</version>
+			<fixedVersion>2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="306" opendate="2012-03-13 17:25:50" fixdate="2012-03-13 17:42:14" resolution="Fixed">
+		<buginformation>
+			<summary>ReaderInputStream#read(byte[] b, int off, int len) should always return 0 for length == 0</summary>
+			<description>The method read(byte[] b, int off, int len) should always return 0 if the requested length == 0, even if the stream is empty or at EOF, as that is how the overridden java.io.InputStream method is documented to behave.</description>
+			<version>2.1</version>
+			<fixedVersion>2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ReaderInputStream.java</file>
+			<file type="M">org.apache.commons.io.input.ReaderInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="307" opendate="2012-03-13 17:40:22" fixdate="2012-03-14 02:09:54" resolution="Fixed">
+		<buginformation>
+			<summary>ReaderInputStream#read(byte[] b, int off, int len) should check for valid parameters</summary>
+			<description>If the buffer is null, the method should throw NPE immediately (rather than letting it occur later)
+If the offset or length are &amp;lt; 0 or would overflow the buffer, then throw IndexOutOfBoundsException with details of the values.</description>
+			<version>2.1</version>
+			<fixedVersion>2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ReaderInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="319" opendate="2012-03-30 23:03:51" fixdate="2012-04-16 13:07:07" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.sizeOfDirectory follows symbolic links.</summary>
+			<description>First of all Thanks tons Apache Commons folks for all the amazing work!  My first JIRA. Yayyy. I contributed B-)
+A symbolic link may create a cycle and so sizeOfDirectory crashes with an IllegalArgumentException. e.g. 
+
+$ tree test
+test
+ file
+ ravi
+     cycle -&amp;gt; ../../test
+     file
+
+
+causes FileUtils.sizeOfDirectory to crash like so
+
+java TestJAVA
+Exception in thread "main" java.lang.IllegalArgumentException: &amp;lt;somepath&amp;gt;/test/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle/ravi/cycle does not exist
+        at org.apache.commons.io.FileUtils.sizeOf(FileUtils.java:2053)
+        at org.apache.commons.io.FileUtils.sizeOfDirectory(FileUtils.java:2089)
+        at org.apache.commons.io.FileUtils.sizeOf(FileUtils.java:2057)
+        at org.apache.commons.io.FileUtils.sizeOfDirectory(FileUtils.java:2089)
+        at org.apache.commons.io.FileUtils.sizeOf(FileUtils.java:2057)
+        at org.apache.commons.io.FileUtils.sizeOfDirectory(FileUtils.java:2089)
+        at org.apache.commons.io.FileUtils.sizeOf(FileUtils.java:2057)
+        at org.apache.commons.io.FileUtils.sizeOfDirectory(FileUtils.java:2089)
+
+
+We faced the same issue in Hadoop . Checkout https://issues.apache.org/jira/browse/HADOOP-6963 for our solution</description>
+			<version>2.1</version>
+			<fixedVersion>2.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="329" opendate="2012-05-28 12:11:59" fixdate="2012-05-28 13:43:31" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.writeLines uses unbuffered IO</summary>
+			<description>FileUtils.writeLines looks like next:
+ out = openOutputStream(file, append);
+ IOUtils.writeLines(lines, lineEnding, out, encoding);
+openOutputStream opens plain FileOutputStream without any buffering and IOUtils.writeLines does not add abyt buffering. This means each line require 2 write syscalls (one for the line and one for line separator). This makes call very slow, especially for short lines</description>
+			<version>2.3</version>
+			<fixedVersion>2.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="331" opendate="2012-06-01 04:20:09" fixdate="2012-06-05 14:48:40" resolution="Fixed">
+		<buginformation>
+			<summary>BOMInputStream wrongly detects UTF-32LE_BOM files as UTF-16LE_BOM files in method getBOM()</summary>
+			<description>Hi,
+The BOMInputStream works great for most UTF encoded files when detecting Byte Order Marks. However, if a file is UTF-32LE encoded with BOM the class takes it as UTF-16LE instead. This is not expected behavior.
+The problem comes from method getBOM(). And the first two bytes for UTF-16LE and UTF-32LE are the same, which might be the root cause of the problem.
+The following lists the bytes for UTF encodings for reference. The content is a BOM followed by letter &amp;amp;apos;t&amp;amp;apos;.
+
+
+Encoding
+Byte 1
+Byte 2
+Byte 3
+Byte 4
+
+
+
+
+
+
+UTF8
+EF
+BB
+BF
+74
+
+
+
+
+
+
+UTF16-LE
+FF
+FE
+74
+00
+
+
+
+
+
+
+UTF16-BE
+FE
+FF
+00
+74
+
+
+
+
+
+
+UTF32-LE
+FF
+FE
+00
+00
+74
+00
+00
+00
+
+
+UTF32-BE
+00
+00
+FE
+FF
+00
+00
+00
+74
+
+
+I personally used the following code to work around this problem at the moment. Hope it helps.
+
+
+	private void detectBOM(InputStream in) throws IOException{
+		List&amp;lt;ByteOrderMark&amp;gt; all=availableBOMs();
+		int max=0;
+        for (ByteOrderMark bom : all) {
+            max = Math.max(max, bom.length());
+        }
+		byte[] firstBytes=new byte[max];
+		for (int i = 0; i &amp;lt; max; i++) {
+			firstBytes[i]=(byte) in.read();
+			System.out.print(Integer.toHexString(firstBytes[i] &amp;amp; 0xff).toUpperCase()+" ");
+		}
+		
+		boolean found=false;
+		for (int j = max; j &amp;gt;1; j--) {
+			byte[] _copy=Arrays.copyOf(firstBytes, j);
+			for (ByteOrderMark mark : all) {
+				found=Arrays.equals(_copy, mark.getBytes());
+				if (found) {
+					System.out.println("\nBOM is: "+mark.getCharsetName());
+					break;
+				}
+			}
+			if (found) break;
+		}
+	}
+	
+	private static List&amp;lt;ByteOrderMark&amp;gt; availableBOMs(){
+		List&amp;lt;ByteOrderMark&amp;gt; all=new ArrayList&amp;lt;ByteOrderMark&amp;gt;();
+		all.add(ByteOrderMark.UTF_8);
+		all.add(ByteOrderMark.UTF_16BE);
+		all.add(ByteOrderMark.UTF_16LE);
+		all.add(ByteOrderMark.UTF_32BE);
+		all.add(ByteOrderMark.UTF_32LE);
+		return all;
+	}
+
+</description>
+			<version>2.3</version>
+			<fixedVersion>2.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.compatibility.XmlStreamReaderUtilitiesCompatibilityTest.java</file>
+			<file type="M">org.apache.commons.io.input.BOMInputStream.java</file>
+			<file type="M">org.apache.commons.io.input.XmlStreamReaderUtilitiesTest.java</file>
+			<file type="M">org.apache.commons.io.input.XmlStreamReaderTest.java</file>
+			<file type="M">org.apache.commons.io.input.XmlStreamReader.java</file>
+			<file type="M">org.apache.commons.io.input.compatibility.XmlStreamReader.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="336" opendate="2012-06-12 20:27:11" fixdate="2012-06-12 20:39:51" resolution="Fixed">
+		<buginformation>
+			<summary>Yottabyte (YB) incorrectly defined in FileUtils</summary>
+			<description>In FileUtils, a yottabyte is currently defined as follows:
+public static final BigInteger ONE_YB = ONE_ZB.multiply(BigInteger.valueOf(ONE_EB));
+I believe this should be:
+public static final BigInteger ONE_YB = ONE_ZB.multiply(BigInteger.valueOf(ONE_KB));</description>
+			<version>2.3</version>
+			<fixedVersion>2.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="362" opendate="2013-01-01 01:05:26" fixdate="2013-01-04 15:57:58" resolution="Fixed">
+		<buginformation>
+			<summary>IOUtils.contentEquals* methods returns false if input1 == input2, should return true</summary>
+			<description>The fix should be relatively simple, just add an identity check to the beginning of the method:
+if(is1 == is2) 
+{
+  return true;
+}
+
+The methods affected are:
+
+org.apache.commons.io.IOUtils.contentEquals(InputStream, InputStream)
+org.apache.commons.io.IOUtils.contentEquals(Reader, Reader)
+org.apache.commons.io.IOUtils.contentEqualsIgnoreEOL(Reader, Reader)
+
+</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.IOUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="374" opendate="2013-04-07 21:46:15" fixdate="2013-04-07 22:09:08" resolution="Fixed">
+		<buginformation>
+			<summary>WildcardFileFilter ctors should not use null to mean IOCase.SENSITIVE when delegating to other ctors</summary>
+			<description>WildcardFileFilter ctors should not use null to mean IOCase.SENSITIVE when delegating to other ctors.
+Just because null happens to mean case-sensitive, does not mean that internal calls to ctors should use that feature. It makes the code harder to read.</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.filefilter.WildcardFileFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="355" opendate="2012-10-31 16:25:24" fixdate="2013-04-16 20:51:05" resolution="Fixed">
+		<buginformation>
+			<summary>IOUtils copyLarge() and skip() methods are performance hogs</summary>
+			<description>IOUtils.skip(InputStream, long) and IOUtils.skip(Reader, long) have the worst possible performance as they always use read() on the input instead of using skip(). In many cases, using skip() from a subclass of InputStream is much faster than read(), as the skip() can be implemented via a disk seek.
+The IOUtils.skip() methods are also used in the copyLarge() methods that involve a skip.
+Case in point: I have observed this performance degradation with Java 7 on Windows 7. A series of consecutive copyLarge() invocations on a large file on disk that involved skips changed my performance from 30 secs as my baseline to 10 minutes after starting to use IOUtils.copyLarge().</description>
+			<version>2.3</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="323" opendate="2012-04-16 13:09:58" fixdate="2013-04-16 22:09:24" resolution="Fixed">
+		<buginformation>
+			<summary>What should happen in FileUtils.sizeOf[Directory] when an overflow takes place?</summary>
+			<description>FileUtils.sizeOf[Directory] adds longs. What should happen when an overflow happens?</description>
+			<version>2.3</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="368" opendate="2013-02-24 07:13:40" fixdate="2013-04-17 14:17:13" resolution="Fixed">
+		<buginformation>
+			<summary>ClassLoaderObjectInputStream does not handle primitive typed members</summary>
+			<description>Any class with a simple primitive (such as long, or int) cannot be deserialized.  For example, the following code:
+
+
+    ObjectInputStream ois = null;
+    try {
+      ois = new ClassLoaderObjectInputStream(getClass().getClassLoader(), new ByteArrayInputStream(bytes));
+      return (T) ois.readObject();
+    } catch (ClassNotFoundException e) {
+      LOGGER.error("Deserialization failed for {}", objectClass, e);
+    } catch (IOException e) {
+      LOGGER.error("Deserialization failed for {}", objectClass, e);
+    } finally {
+      if (ois != null) {
+        try {
+          ois.close();
+        } catch (IOException ignored) {
+        }
+      }
+    }
+
+
+Will fail if bytes represents a byte[] of the serialized version of the following class:
+
+
+public class Foo {
+
+  private static final long serialVersionUID = 1L;
+
+  private long thisFieldWillCauseCLOISToFail;
+
+  // class logic, ctors, etc...
+
+}
+
+
+With the following stacktrace:
+
+Caused by: java.lang.ClassNotFoundException: long
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:247)
+        at org.apache.commons.io.input.ClassLoaderObjectInputStream.resolveClass(ClassLoaderObjectInputStream.java:68)
+        at java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1574)
+        at java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1495)
+        at java.io.ObjectInputStream.readClass(ObjectInputStream.java:1461)
+        at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1311)
+        at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1946)
+        at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1870)
+        at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1752)
+        at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1328)
+        at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1946)
+        at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1870)
+        at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1752)
+        at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1328)
+        at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1946)
+        at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1870)
+        at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1752)
+        at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1328)
+        at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1946)
+        at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1870)
+        at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1752)
+        at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1328)
+        at java.io.ObjectInputStream.readObject(ObjectInputStream.java:350)
+        at java.util.ArrayList.readObject(ArrayList.java:593)
+        at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at java.io.ObjectStreamClass.invokeReadObject(ObjectStreamClass.java:974)
+        at java.io.ObjectInputStream.readSerialData(ObjectInputStream.java:1848)
+        at java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1752)
+        at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1328)
+        at java.io.ObjectInputStream.defaultReadFields(ObjectInputStream.java:1946)
+...
+
+
+Of some relevance may be:
+http://issues.liferay.com/browse/LPS-30742
+https://groups.google.com/forum/?hl=en&amp;amp;fromgroups=#!topic/akka-user/3PC4L48qyqs</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.ClassLoaderObjectInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">378</link>
+		</links>
+	</bug>
+	<bug id="343" opendate="2012-08-22 07:20:31" fixdate="2013-04-17 23:54:48" resolution="Fixed">
+		<buginformation>
+			<summary>org.apache.commons.io.comparator Javadoc is inconsistent with real code</summary>
+			<description>Package org.apache.commons.io.comparator has a lot of inconsistent JavaDocs. 
+For example this class org.apache.commons.io.comparator.NameFileComparator
+http://svn.apache.org/viewvc/commons/proper/io/trunk/src/main/java/org/apache/commons/io/comparator/NameFileComparator.java?view=markup
+has JavaDocs
+ List&amp;lt;File&amp;gt; list = ...
+ NameFileComparator.NAME_COMPARATOR.sort(list); ....
+ File[] array = ...
+ NameFileComparator.NAME_INSENSITIVE_REVERSE.sort(array);
+but this will not work because all static members of NameFileComparator declared as Comparator&amp;lt;File&amp;gt; for example 
+ public static final Comparator&amp;lt;File&amp;gt; NAME_REVERSE = new ReverseComparator(NAME_COMPARATOR);
+public static final Comparator&amp;lt;File&amp;gt; NAME_INSENSITIVE_REVERSE = new ReverseComparator(NAME_INSENSITIVE_COMPARATOR);
+and Comparator class doesn&amp;amp;apos;t have the sort() method.</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.comparator.SizeFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.PathFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.LastModifiedFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.NameFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.CompositeFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.DefaultFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.ExtensionFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.DirectoryFileComparator.java</file>
+			<file type="M">org.apache.commons.io.comparator.DefaultFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.ExtensionFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.ComparatorAbstractTestCase.java</file>
+			<file type="M">org.apache.commons.io.comparator.CompositeFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.NameFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.SizeFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.DirectoryFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.PathFileComparatorTest.java</file>
+			<file type="M">org.apache.commons.io.comparator.LastModifiedFileComparatorTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="299" opendate="2012-01-17 09:57:57" fixdate="2013-04-22 17:52:42" resolution="Fixed">
+		<buginformation>
+			<summary>getPrefixLength returns null if filename has leading slashes</summary>
+			<description>Situation:
+FilenameUtils.getPrefixLength is used in FilenameUtils.doNormalize.
+FilenameUtils.normalize("////I don&amp;amp;apos;t want to become null!") returns null.
+Problem:
+Expected was: "I don&amp;amp;apos;t want to become null!"
+The method FilenameUtils.getPrefixLength returns -1 for the mentioned string.
+The root problem is found in following lines of code:
+FilenameUtils.getPrefixLength
+
+...
+                int posUnix = filename.indexOf(UNIX_SEPARATOR, 2);
+                int posWin = filename.indexOf(WINDOWS_SEPARATOR, 2);
+                if ((posUnix == -1 &amp;amp;&amp;amp; posWin == -1) || posUnix == 2 || posWin == 2) {
+                    return -1;
+                }
+...
+
+
+Solution:
+All leading slashes should be ignored at all, but considering the rest of the string.</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FilenameUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="356" opendate="2012-11-06 16:28:54" fixdate="2013-04-24 00:17:31" resolution="Fixed">
+		<buginformation>
+			<summary>CharSequenceInputStream#reset() behaves incorrectly in case when buffer size is not dividable by data size</summary>
+			<description>The size effect happens when buffer size of input stream is not dividable by requested data size. The bug is hidden in CharSequenceInputStream#reset() method which should also call (I think) bbuf.limit(0) otherwise next call to CharSequenceInputStream#read() will return the remaining tail which bbuf has accumulated.
+In the attached test case the test fails, if dataSize = 13 (not dividable by 10) and runs OK if dataSize = 20 (dividable by 10).</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.CharSequenceInputStreamTest.java</file>
+			<file type="M">org.apache.commons.io.input.CharSequenceInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="354" opendate="2012-10-27 00:08:26" fixdate="2013-05-16 13:33:57" resolution="Fixed">
+		<buginformation>
+			<summary>Commons IO Tailer does not respect UTF-8 Charset</summary>
+			<description>I just realized there is a defect in the source code of "org.apache.commons.io.input.Tailer.java". Basically, the current implementation does not work for multi-byte encoded files. See the following snippet,
+448    private long readLines(RandomAccessFile reader) throws IOException {
+449        StringBuilder sb = new StringBuilder();
+450
+451        long pos = reader.getFilePointer();
+452        long rePos = pos; // position to re-read
+453
+454        int num;
+455        boolean seenCR = false;
+456        while (run &amp;amp;&amp;amp; ((num = reader.read(inbuf)) != -1)) {
+457            for (int i = 0; i &amp;lt; num; i++) {
+458                byte ch = inbuf[i];
+459                switch (ch) {
+460                case &amp;amp;apos;\n&amp;amp;apos;:
+461                    seenCR = false; // swallow CR before LF
+462                    listener.handle(sb.toString());
+463                    sb.setLength(0);
+464                    rePos = pos + i + 1;
+465                    break;
+466                case &amp;amp;apos;\r&amp;amp;apos;:
+467                    if (seenCR) 
+{
+468                        sb.append(&amp;amp;apos;\r&amp;amp;apos;);
+469                    }
+470                    seenCR = true;
+471                    break;
+472                default:
+473                    if (seenCR) 
+{
+474                        seenCR = false; // swallow final CR
+475                        listener.handle(sb.toString());
+476                        sb.setLength(0);
+477                        rePos = pos + i + 1;
+478                    }
+479                    sb.append((char) ch); // add character, not its ascii value
+480                }
+481            }
+482
+483            pos = reader.getFilePointer();
+484        }
+485
+486        reader.seek(rePos); // Ensure we can re-read if necessary
+487        return rePos;
+488    }
+At line 479, the conversion of byte to char type breaks the encoding.</description>
+			<version>2.3</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.TailerTest.java</file>
+			<file type="M">org.apache.commons.io.input.Tailer.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">377</link>
+		</links>
+	</bug>
+	<bug id="339" opendate="2012-07-24 17:12:48" fixdate="2013-05-16 14:38:59" resolution="Duplicate">
+		<buginformation>
+			<summary>MaxBytesInputStream to limit size of bytes read</summary>
+			<description>I wrote an input stream that stops when it reaches a configured size in bytes.  I found it useful for applications that download web pages and images, but want to enforce a max size to avoid memory problems for extremely large pages/images.
+I was thinking that this class is generic and useful enough to include in the commons-io distribution.  Please consider it, and if it isn&amp;amp;apos;t appropriate for inclusion here, please recommend a better place to open source and share it.
+
+
+
+package org.apache.commons.io.input;
+
+import java.io.IOException;
+import java.io.InputStream;
+
+/**
+ * An input stream that will end when the amount of bytes read reaches
+ * the configured amount of maxBytes.
+ * This is useful for preventing OutOfMemoryExceptions when downloading
+ * very large files in cases where getting partial content is acceptable.
+ * @author Ken Weiner
+ */
+public class MaxBytesInputStream extends CountingInputStream {
+    private long maxBytes;
+
+    public MaxBytesInputStream(InputStream is, long maxBytes) {
+        super(is);
+        this.maxBytes = maxBytes;
+    }
+
+    @Override
+    protected void afterRead(int n) {
+        super.afterRead((int) Math.min(n, this.maxBytes - getByteCount()));
+    }
+
+    @Override
+    public int read() throws IOException {
+        if (getByteCount() &amp;lt; this.maxBytes) {
+            return super.read();
+        }
+        return -1;
+    }
+
+    @Override
+    public int read(byte[] b) throws IOException {
+        if (getByteCount() &amp;lt; this.maxBytes) {
+            return super.read(b);
+        }
+        return -1;
+    }
+
+    @Override
+    public int read(byte[] b, int off, int len) throws IOException {
+        if (getByteCount() &amp;lt; this.maxBytes) {
+            return super.read(b, off, len);
+        }
+        return -1;
+    }
+}
+
+</description>
+			<version>2.4</version>
+			<fixedVersion></fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.BoundedInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">197</link>
+		</links>
+	</bug>
+	<bug id="383" opendate="2013-06-02 11:53:45" fixdate="2013-06-02 13:18:10" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.doCopyFile caches the file size; needs to be documented</summary>
+			<description>FileUtils.doCopyFile saves the input file size before starting the copy.
+The copy is considered complete when the original file size is reached.
+The method then checks the new input file size against the destination size.
+This will fail if the file has changed in size since the copy started.
+This behaviour should be documented; also it would help if the two sizes were shown in the exception message.</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">384</link>
+			<link type="Reference" description="is related to">385</link>
+		</links>
+	</bug>
+	<bug id="390" opendate="2013-07-10 09:44:56" fixdate="2013-07-10 11:49:38" resolution="Fixed">
+		<buginformation>
+			<summary>FileUtils.sizeOfDirectoryAsBigInteger can overflow</summary>
+			<description>FileUtils.sizeOfDirectoryAsBigInteger can overflow.
+This is because it calls FileUtils.sizeOf(file) which calls sizeOfDirectory() for processing subdirectories.
+As it stands, the method only works properly at the top level.
+A possible solution would be to create private "Big" versions of the called methods; these would not need all the checks so should be faster.</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtilsTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="436" opendate="2014-04-10 12:34:39" fixdate="2014-04-10 14:08:40" resolution="Fixed">
+		<buginformation>
+			<summary>Improper JavaDoc comment for FilenameUtils.indexOfExtension</summary>
+			<description>The method FilenameUtils.indexOfExtension contains this JavaDoc comment:
+  * @param filename  the filename to find the last path separator in, null returns -1
+  * @return the index of the last separator character, or -1 if there
+  * is no such character
+This comment was obviously copied from the FilenameUtils.indexOfLastSeparator method, where it makes perfect sense.
+The JavaDoc comment for FilenameUtils.indexOfExtension should rather read e.g. as follows:
+  * @param filename  the filename to find the last extension separator in, null returns -1
+  * @return the index of the last extension separator character, or -1 if there
+  * is no such character</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="423" opendate="2014-01-30 22:57:15" fixdate="2014-07-16 21:35:26" resolution="Invalid">
+		<buginformation>
+			<summary>FilenameUtils.directoryContains assumes separator at end of parent path</summary>
+			<description>FilenameUtils.directoryContains("/abc", "/abcd") returns true, while FilenameUtils.directoryContains("/abc/", "/abcd") returns false.
+The implementation does a simple checkStartsWith() without taking the separator into consideration.</description>
+			<version>2.4</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtilsDirectoryContainsTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">466</link>
+		</links>
+	</bug>
+	<bug id="453" opendate="2014-07-17 20:43:34" fixdate="2014-07-30 23:21:07" resolution="Fixed">
+		<buginformation>
+			<summary>Regression in FileUtils.readFileToString from 2.0.1</summary>
+			<description>FileUtils.readFileToString has changed it&amp;amp;apos;s behavior to make a call from IOUtils.toByteArray(in) to IOUtils.toByteArray(in, file.length()) in FileUtils.readFileToString. This is a regression because if the file.length = 0, then it will return 0. According to the javadocs for File#length, it is possible to return 0 if it is a System dependent entities, so even though the File.length might return 0, the stream is still open and  
+Steps to reproduce (Ubuntu):
+1. Execute nohup sleep 10000 &amp;amp; in a terminal, and get the process id of the sleep command (ps -ef | grep sleep).
+2. Call FileUtils.readFileToString(new File("/proc/$PID/environ")); where $PID is the process ID from step 1.
+You will notice that in 2.0.1 it returns several elements, however in 2.1 it will return nothing.
+See nicolas de loof&amp;amp;apos;s comment in https://github.com/apache/commons-io/commit/53a40a6d9dcaaa616b404255406edc30fe2d524c.</description>
+			<version>2.1</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">486</link>
+			<link type="Reference" description="is related to">251</link>
+		</links>
+	</bug>
+	<bug id="462" opendate="2014-12-03 12:48:42" fixdate="2014-12-09 13:49:43" resolution="Fixed">
+		<buginformation>
+			<summary>IOExceptionWithCause no longer needed</summary>
+			<description>The class IOExceptionWithCause is no longer needed in Java 6, because IOException now includes a constructor that takes a Throwable.
+The class should be deprecated and internal usage can revert to using IOException directly.</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOExceptionWithCause.java</file>
+			<file type="M">org.apache.commons.io.IOExceptionWithCauseTestCase.java</file>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+			<file type="M">org.apache.commons.io.TaggedIOException.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="428" opendate="2014-03-12 13:10:44" fixdate="2015-06-23 06:00:05" resolution="Fixed">
+		<buginformation>
+			<summary>BOMInputStream.skip returns wrong count if stream contains no BOM</summary>
+			<description>If the skip method of BOMInputStream is used on a stream without a BOM, skip returns the wrong number of bytes (n - max(BOM-length)). This can lead to problems if the return value is evaluated for example from guava ByteStreams.skipFully.
+BomTest.java
+
+public class BomTest {
+
+	private static InputStream createInputStream(boolean addBOM) {
+		ByteBuffer bb = ByteBuffer.allocate(64);
+		if (addBOM) {
+			// UTF-8 BOM
+			bb.put(new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF });
+		}
+		bb.put((byte) 0x31);
+		bb.put((byte) 0x32);
+		bb.put((byte) 0x33);
+		return new ByteArrayInputStream(bb.array());
+	}
+	
+	public static void main(String[] args) throws IOException {
+		BOMInputStream is1 = new BOMInputStream(createInputStream(true));
+		assertEquals(2, is1.skip(2));
+		assertEquals((byte) 0x33, is1.read());
+		
+		BOMInputStream is2 = new BOMInputStream(createInputStream(false));
+		assertEquals(2, is2.skip(2)); // fails here - skip returns 0
+		assertEquals((byte) 0x33, is2.read());
+	}
+	
+}
+
+
+I catched this bug in 2.0.1, but as far as I can see on the source 2.5 is still affected.
+I suggest the following change to the skip method:
+BOMInputStream.java
+
+    public long skip(long n) throws IOException {
+    	int skipped = 0;
+        while ((n &amp;gt; skipped) &amp;amp;&amp;amp; (readFirstBytes() &amp;gt;= 0)) {
+            skipped++;
+        }
+        return in.skip(n - skipped) + skipped;
+    }
+
+</description>
+			<version>2.0.1</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.input.BOMInputStream.java</file>
+			<file type="M">org.apache.commons.io.input.BOMInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="466" opendate="2015-01-06 21:35:56" fixdate="2015-06-23 06:02:09" resolution="Duplicate">
+		<buginformation>
+			<summary>FileUtils.directoryContains returns wrong response due to startsWith comparison</summary>
+			<description>Consider the following:
+
+
+File fooDir = new File("/temp/foo");
+File fooFile = new File("/temp/foo.txt");
+FileUtils.directoryContains(fooDir, fooFile); // returns true, should return false
+
+
+fooFile is a sibling of fooDir.  fooDir does not contain fooFile.
+This is due to the way FilenameUtils.directoryContains is implemented in that this method uses a simple &amp;amp;apos;startsWith&amp;amp;apos; comparison.  A related bug is filed for the FilenameUtils method that I believe should be fixed as well.</description>
+			<version>2.4</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtilsDirectoryContainsTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">423</link>
+		</links>
+	</bug>
+	<bug id="481" opendate="2015-06-19 18:19:48" fixdate="2015-06-23 17:42:48" resolution="Fixed">
+		<buginformation>
+			<summary>org.apache.commons.io.FileUtils#waitFor waits too long</summary>
+			<description>The timing algorithm is basically broken, since Thread.sleep is imprecise. There is also a counter error in the looping code. 
+The following testcase will never run in less than 4 seconds on my machine
+  public void testRealWallTime() 
+{
+        long start = System.currentTimeMillis();
+        FileUtils.waitFor(new File(""), 2);
+        System.out.println("elapsed = " + (System.currentTimeMillis() - start));
+    }</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="484" opendate="2015-08-06 11:15:06" fixdate="2015-08-06 11:48:50" resolution="Fixed">
+		<buginformation>
+			<summary>FilenameUtils should handle embedded null bytes</summary>
+			<description>embedding nulls in filenames exposes injection vectors if the application passes unsanitized data to some functions in FileNameUtils</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FilenameUtilsTestCase.java</file>
+			<file type="M">org.apache.commons.io.FilenameUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="492" opendate="2015-12-29 12:12:43" fixdate="2015-12-29 15:40:37" resolution="Fixed">
+		<buginformation>
+			<summary>Typo: In an IOUtils.java comment it says "focussed" instead of "focused"</summary>
+			<description>See here: https://github.com/apache/commons-io/blob/trunk/src/main/java/org/apache/commons/io/IOUtils.java#L101</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.IOUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="494" opendate="2016-01-06 16:40:12" fixdate="2016-01-07 21:18:17" resolution="Fixed">
+		<buginformation>
+			<summary>Mismatch return type in api docs of class DirectoryWalker.</summary>
+			<description>In the api docs of class org.apache.commons.io.DirectoryWalker&amp;lt;T&amp;gt;, topic of 3.1 External / Multi-threaded.Method handleIsCancelled in demo code returns boolean but with a void return type.</description>
+			<version>2.4</version>
+			<fixedVersion>2.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.DirectoryWalker.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="502" opendate="2016-04-25 14:20:08" fixdate="2016-04-27 17:32:47" resolution="Fixed">
+		<buginformation>
+			<summary>Exceptions are suppressed incorrectly when copying files.</summary>
+			<description>When copying files or directories, exceptions thrown on closing streams are suppressed incorrectly and need to be propagated to the caller.</description>
+			<version>2.4</version>
+			<fixedVersion>2.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.FileSystemUtils.java</file>
+			<file type="M">org.apache.commons.io.FileUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="512" opendate="2016-08-15 15:51:50" fixdate="2016-08-17 00:51:26" resolution="Fixed">
+		<buginformation>
+			<summary>ThresholdingOutputStream.thresholdReached() results in FileNotFoundException</summary>
+			<description>I upgraded from commons-io-2.0.1.jar to v2.5 (and fileupload to v1.32)
+and now I get
+java.io.FileNotFoundException: /usr/share/tomcat/temp/dfifp/upload_4d9f8898_1a83_4092_9070_ddf9c15de6d1_00000027.tmp (No such file or directory)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.&amp;lt;init&amp;gt;(FileOutputStream.java:213)
+	at java.io.FileOutputStream.&amp;lt;init&amp;gt;(FileOutputStream.java:162)
+	at org.apache.commons.io.output.DeferredFileOutputStream.thresholdReached(DeferredFileOutputStream.java:179)
+In thresholdReached(), the prefix is null, so no temp file is created.
+In the subsequent new FileOutputStream(outputFile), the exception is thrown.
+Suggested fix:
+before new FileOutputStream(outputFile) , add
+FileUtils.forceMkdirParent(outputFile);
+Similar issues reported by others:
+
+IO-497
+https://java.net/jira/browse/GLASSFISH-20581
+https://jira.sakaiproject.org/si/jira.issueviews:issue-html/SAM-1537/SAM-1537.html
+
+</description>
+			<version>2.5</version>
+			<fixedVersion>2.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.io.output.DeferredFileOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

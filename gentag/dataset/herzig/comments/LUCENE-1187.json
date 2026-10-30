@@ -1,0 +1,1933 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12389380",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380",
+  "key": "LUCENE-1187",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312681",
+        "id": "12312681",
+        "description": "",
+        "name": "2.4",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-10-08"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12558",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12312028",
+        "id": "12312028",
+        "name": "modules/other",
+        "description": "issues related to any module that does not have it's own JIRA component. Usage of this component is discouraged - please create (or ask on dev@) for a proper module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26860",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+      "name": "paul.elschot@xs4all.nl",
+      "key": "paul.elschot@xs4all.nl",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+      },
+      "displayName": "Paul Elschot",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+      "name": "paul.elschot@xs4all.nl",
+      "key": "paul.elschot@xs4all.nl",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+      },
+      "displayName": "Paul Elschot",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1187/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@2283a644[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@30a8a11[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@317b3530[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@66767b0c[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7ddc3096[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@5b16b0f2[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@33accc15[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@66576f77[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7a93abab[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@146c152b[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4175bfd7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1c045c59[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:46:48 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2008-05-23T19:27:21.046+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1187/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2008-02-23T10:33:04.172+0000",
+    "updated": "2022-08-28T11:46:48.671+0000",
+    "timeoriginalestimate": null,
+    "description": "(Aside: where is the documentation on how to mark up text in jira comments?)\n\nThe following things are left over after LUCENE-584 :\n\nFor Lucene 3.0  Filter.bits() will have to be removed.\n\nThere is a CHECKME in IndexSearcher about using ConjunctionScorer to have the boolean behaviour of a Filter.\n\nI have not looked into Filter caching yet, but I suppose there will be some room for improvement there.\nIirc the current core has moved to use OpenBitSetFilter and that is probably what is being cached.\nIn some cases it might be better to cache a SortedVIntList instead.\n\nBoolean logic on DocIdSetIterator is already available for Scorers (that inherit from DocIdSetIterator) in the search package. This is currently implemented by ConjunctionScorer, DisjunctionSumScorer,\nReqOptSumScorer and ReqExclScorer.\nBoolean logic on BitSets is available in contrib/misc and contrib/queries\n\nDisjunctionSumScorer calls score() on its subscorers before the score value actually needed.\nThis could be a reason to introduce a DisjunctionDocIdSetIterator, perhaps as a superclass of DisjunctionSumScorer.\n\nTo fully implement non scoring queries a TermDocIdSetIterator will be needed, perhaps as a superclass of TermScorer.\n\nThe javadocs in org.apache.lucene.search using matching vs non-zero score:\nI'll investigate this soon, and provide a patch when necessary.\n\nAn early version of the patches of LUCENE-584 contained a class Matcher,\nthat differs from the current DocIdSet in that Matcher has an explain() method.\nIt remains to be seen whether such a Matcher could be useful between\nDocIdSet and Scorer.\n\nThe semantics of scorer.skipTo(scorer.doc()) was discussed briefly.\nThis was also discussed at another issue recently, so perhaps it is wortwhile to open a separate issue for this.\n\nSkipping on a SortedVIntList is done using linear search, this could be improved by adding multilevel skiplist info much like in the Lucene index for documents containing a term.\n\nOne comment by me of 3 Dec 2008:\n\nA few complete (test) classes are deprecated, it might be good to add the target release for removal there.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12378589",
+        "id": "12378589",
+        "filename": "BooleanFilter20080325.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2008-03-25T19:48:11.783+0000",
+        "size": 17485,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12378589/BooleanFilter20080325.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12377842",
+        "id": "12377842",
+        "filename": "ChainedFilterAndCachingFilterTest.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+          "name": "markrmiller@gmail.com",
+          "key": "markrmiller@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+          },
+          "displayName": "Mark Miller",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-03-13T22:54:15.185+0000",
+        "size": 2190,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12377842/ChainedFilterAndCachingFilterTest.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12378594",
+        "id": "12378594",
+        "filename": "Contrib20080325.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2008-03-25T22:31:18.463+0000",
+        "size": 26449,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12378594/Contrib20080325.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12378654",
+        "id": "12378654",
+        "filename": "Contrib20080326.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2008-03-26T18:23:26.954+0000",
+        "size": 27431,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12378654/Contrib20080326.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12380999",
+        "id": "12380999",
+        "filename": "Contrib20080427.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2008-04-27T19:19:05.599+0000",
+        "size": 28828,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12380999/Contrib20080427.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12376550",
+        "id": "12376550",
+        "filename": "javadocsZero2Match.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2008-02-26T21:30:02.642+0000",
+        "size": 2410,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12376550/javadocsZero2Match.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12382611",
+        "id": "12382611",
+        "filename": "lucene-1187.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-05-22T22:57:23.174+0000",
+        "size": 49172,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12382611/lucene-1187.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12382542",
+        "id": "12382542",
+        "filename": "lucene-1187.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-05-22T08:15:49.532+0000",
+        "size": 32771,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12382542/lucene-1187.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12378442",
+        "id": "12378442",
+        "filename": "OpenBitSetDISI-20080322.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2008-03-22T21:44:06.964+0000",
+        "size": 1979,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12378442/OpenBitSetDISI-20080322.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Things to be done now that Filter is independent from BitSet",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12571718",
+          "id": "12571718",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I did something wrong here, I wanted to review the text above before posting it.\nI'm sorry about that,  I'll just continue here, when it gets too messy, another jira issue can easily be opened.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-02-23T10:36:45.363+0000",
+          "updated": "2008-02-23T10:36:45.363+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12571719",
+          "id": "12571719",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Iirc the boolean logic on contrib/queries is defined in two places: ChainedFilter and BooleanFilter. Ideally these could me merged and their functions be implemented by the DocIdSetIterators underlying the current scorers used by BooleanScorer2 (Conjunction/Disjunction/ReqOpt/ReqExcl). See also the comments of Micheal Bush and Eks Dev at the end of Jan 2008 at LUCENE-584.\n\nThat's it for the moment. Sorry for the mess, at least it should save others from reviewing all the comments at LUCENE-584. I hope I have not missed anything...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-02-23T10:43:42.659+0000",
+          "updated": "2008-02-23T10:43:42.659+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12571939",
+          "id": "12571939",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=eksdev",
+            "name": "eksdev",
+            "key": "eksdev",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Eks Dev",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Paul, I think there is one CHEKME in DisjunctionSumScorer I have stumbled upon recently when I realized \n(token1+ token2+) query works way faster than (token1 token2).setMinimumSholdMatch(2). It is not directly related to the LUCENE-584, but just as a reminder. \n\nalso I think there is a hard_to_detect_small_maybe_performance_bug in ConjuctionScorer, :\n{code:java}\n    // If first-time skip distance is any predictor of\n    // scorer sparseness, then we should always try to skip first on\n    // those scorers.\n    // Keep last scorer in it's last place (it will be the first\n    // to be skipped on), but reverse all of the others so that\n    // they will be skipped on in order of original high skip.\n    int end=(scorers.length-1)-1;\n    for (int i=0; i<(end>>1); i++) {\n      Scorer tmp = scorers[i];\n      scorers[i] = scorers[end-i];\n      scorers[end-i] = tmp;\n    }\n{code}\n\n\nIt has not been detected so far as it has only performance implications (I think?), and it sometimes works and sometimes not, depending on number of scorers:\n\nto see what I am talking about, try this \"simulator\":\n\n{code:java}\n  public static void main(String[] args) {\n    int[] scorers = new int[7]; //3 and 7 do not work\n   \n    for (int i=0; i<scorers.length; i++) {\n      scorers[i]=i;\n    }\n   \n    System.out.println(Arrays.toString(scorers));\n   \n   \n    int end=(scorers.length-1)-1;\n    for (int i=0; i<(end>>1); i++) {\n      int tmp = scorers[i];\n      scorers[i] = scorers[end-i];\n      scorers[end-i] = tmp;\n    }\n\n    System.out.println(Arrays.toString(scorers));\n\n  }\n\n{code}\nfor 7 you get:\n[0, 1, 2, 3, 4, 5, 6]\n[5, 4, 2, 3, 1, 0, 6]\n\ninstead of [5, 4, 3, 2, 1, 0, 6]\n\nand for 3\n[0, 1, 2]\n[0, 1, 2] (should be [1, 0, 2])\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=eksdev",
+            "name": "eksdev",
+            "key": "eksdev",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Eks Dev",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-02-24T20:16:48.440+0000",
+          "updated": "2008-02-24T20:16:48.440+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12571951",
+          "id": "12571951",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Eks, \n\nAs both issues you mention are not related to filters, could you open a new issue for each of them?\nFor the first issue: iirc BooleanScorer2 will use a ConjunctionScorer in the case when all clauses are actually required in a disjunction, so normal usage via BooleanQuery should not have a performance problem there.\nThe second issue is beyond me at the moment.\n\nRegards,\nPaul Elschot",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-02-24T20:42:22.973+0000",
+          "updated": "2008-02-24T20:42:22.973+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12571979",
+          "id": "12571979",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}also I think there is a hard_to_detect_small_maybe_performance_bug in ConjuctionScorer {quote}\n\nYup, I introduced that feature + bug.  I just committed a fix that makes the code do what the comments say (no correctness implications, just perhaps minor performance).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-02-24T22:46:02.566+0000",
+          "updated": "2008-02-24T22:46:02.566+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12572669",
+          "id": "12572669",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Attached javadocsZero2Match.patch that replaces the last few occurrences 'zero scoring' in the java docs of org.apache.lucene.search by 'matching'.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-02-26T21:30:02.681+0000",
+          "updated": "2008-02-26T21:30:02.681+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12578525",
+          "id": "12578525",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Test that now fails with ChainedFilter.\n\n{code}\njava.lang.ClassCastException: org.apache.lucene.util.OpenBitSet cannot be cast to java.util.BitSet\n\tat org.apache.lucene.search.CachingWrapperFilter.bits(CachingWrapperFilter.java:55)\n\tat org.apache.lucene.misc.ChainedFilter.doChain(ChainedFilter.java:258)\n\tat org.apache.lucene.misc.ChainedFilter.bits(ChainedFilter.java:193)\n\tat org.apache.lucene.misc.ChainedFilter.bits(ChainedFilter.java:156)\n\tat org.apache.lucene.search.Filter.getDocIdSet(Filter.java:49)\n\tat org.apache.lucene.search.IndexSearcher.search(IndexSearcher.java:141)\n{code}\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-03-13T22:54:15.228+0000",
+          "updated": "2008-03-13T22:54:15.228+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12578626",
+          "id": "12578626",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}\nTest that now fails with ChainedFilter.\n{quote}\n\nThe reason apparently is that the core moved from BitSets to OpenBitSets,\nwhereas the contrib packages haven't.\n\nIf we change the contrib packages to also use OpenBitSets, then this is \nstill not completely backwards compatible. For example, if a user upgrades\nto 2.4, uses a ChainedFilter to combine a 2.4 core filter with their own \ncustom Filter that is based on 2.3 and thus uses a BitSet, then it won't\nwork. So a simple drop-in replacement with the new lucene jar would not\nbe possible, the user would have to change their own filters.\n\nMaybe we should introduce a DocIdSetFactory in the core? For \nbackwards compatibility a factory that produces BitSets can be used,\nfor speed one that creates OpenBitSets. Thoughts?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-03-14T07:04:54.964+0000",
+          "updated": "2008-03-14T07:04:54.964+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12578656",
+          "id": "12578656",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=eksdev",
+            "name": "eksdev",
+            "key": "eksdev",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Eks Dev",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Michael, \nI do not think we need to add Factory (for this particular reason), DocIdSet type should not be assumed as we could come up with smart ways to select optimal Filter representation depending on doc-id distribution, size... \n\nThe only problem we have with is that contrib classes, ChainedFilter and BooleanFilter assume BitSet. \nAnd the solution for this would be to add just a few methods to the DocIdSet that are able to do AND/OR/NOT on DocIdSet[] using DocIdSetIterator()\ne.g. \nDocIdSet or(DocIdSet[], int minimumShouldMatch);\nDocIdSet or(DocIdSet[]);\n\n\nOptimized code for these basic operations *already exists*, can be copied from Conjunction/Disjunction/ReqOpt/ReqExcl Scorer classes by just simply stripping-off scoring part.\n\nwith these utility methods in DocIdSet, rewriting ChainedFilter/BooleanFilter to work with DocIdSet (and that works on all implementations of Fileter/DocIdSet) is 10 minutes job... than, if needed this implementation can be  optimized to cover type specific cases. Imo, BoolenFilter is better bet, we do not need both of them.  \n\nUnfortunately I do not have time to play with it next 3-4 weeks, but should be no more than 2 days work (remember, we have difficult part already done in Scorers). Having so much code duplication is not something really good, but we can then later \"merge\" these somehow.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=eksdev",
+            "name": "eksdev",
+            "key": "eksdev",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Eks Dev",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-03-14T09:06:14.833+0000",
+          "updated": "2008-03-14T09:06:14.833+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12581281",
+          "id": "12581281",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I started adding getDocIdSet() to BooleanFilter of contrib/queries. When trying to collect the interim results into an OpenBitSet I soon needed OpenBitSet.conjunction(DocIdSetIterator), as well as similar disjunction() and exclusion() methods.\n\nWould it be ok to add such methods to Lucene's OpenBitSet, or would it be preferable to subclass OpenBitSet for this? At first sight I prefer subclassing, but I'd like to hear some opinions on this before going further.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-22T17:42:13.223+0000",
+          "updated": "2008-03-22T17:42:13.223+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12581295",
+          "id": "12581295",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The OpenBitSetDISI-20080322.patch illustrates my previous question.\nDISI means DocIdSetIterator, for want of a better name.\nThe patch compiles, but is untested.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-22T21:44:06.996+0000",
+          "updated": "2008-03-22T21:44:06.996+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12581299",
+          "id": "12581299",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "For the record: the and() method in the patch misses a last statement: clear(index, size());\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-22T22:00:58.941+0000",
+          "updated": "2008-03-22T22:00:58.941+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12582045",
+          "id": "12582045",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "BooleanFilter20080325.patch contains a non BitSet version of BooleanFilter. The contrib/queries tests pass, and it includes a finished version of OpenBitSetDISI of a few days ago.\nI've also changed the indentation of all of BooleanFilter and added some minor refactorings. This makes the patch itself somewhat less easy to read, but I couldn't leave the indendation in different styles.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-25T19:48:11.797+0000",
+          "updated": "2008-03-25T19:48:11.797+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12582063",
+          "id": "12582063",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "All tests pass, except the one for ChainedFilter provided here by Mark Miller. Stay tuned.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-25T21:35:32.096+0000",
+          "updated": "2008-03-25T21:35:32.096+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12582073",
+          "id": "12582073",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The Contrib20080325 also includes Mark Miller's test patch, and a non BitSet version of ChainedFilter. It passes the tests contrib/miscellaneous, no time left to run all tests.\n\nContrib20080325.patch should supersede all patches currently here, except the javadoc patch.\n\nThere are no type checks yet to use the inter OpenBitSet boolean operations directly, but at least it should work. Remember to profile before adding such optimisations, for sparse OpenBitSets this could well be competitive. Well, I'd hope so.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-25T22:31:18.501+0000",
+          "updated": "2008-03-25T22:31:18.501+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12582388",
+          "id": "12582388",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Contrib20080326.patch: supersedes the 20080325 version. Generally the same as yesterday, some extensions:\n- fix a possible synchronisation issue by using a local int[1] array instead of an object int attribute,\n- return a SortedVIntList when it is definitely smaller than an OpenBitSet, the method doing this is protected.\n- all constructors in OpenBitSetDISI now also take a initial size argument\n(still called maxSize, perhaps better renamed to initialSize).\n\nBoth ChainedFilter and BooleanFilter should work normally, except perhaps using less memory because of the SortedVIntList.\n\nChainedFilter still has the 1.1 ASL, it's probably time to upgrade it, but I did not change it in the patch.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-26T18:23:26.978+0000",
+          "updated": "2008-03-26T18:23:26.978+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12582414",
+          "id": "12582414",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks for your patches, Paul. I'll be traveling the next days, but I'll try to look at the patches next week.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-03-26T20:02:51.547+0000",
+          "updated": "2008-03-26T20:02:51.547+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12583287",
+          "id": "12583287",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "One thing: I added the max size parameter to the OpenBitSetDISI ctor rather late, so there is probably some room to use more of the fast... bit access methods of OpenBitSet.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-03-29T08:36:10.340+0000",
+          "updated": "2008-03-29T08:36:10.340+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12592672",
+          "id": "12592672",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Contrib20080427.patch is the same as the previous one from March, except for OpenBitSetDISI: added javadocs there and use fast... bit access methods consistently.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-04-27T19:19:05.632+0000",
+          "updated": "2008-04-27T19:19:05.632+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12596546",
+          "id": "12596546",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mharwood",
+            "name": "mharwood",
+            "key": "markh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Mark Harwood",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Paul,\nGood work.\nJust tried the patch and ran some pre and post-patch benchmarks.\n\nI wanted to measure the overhead of :\n   the new OpenBitSetDISI.inPlaceOr(DocIdSetIterator) \nvs \n  the previous scheme of BitSet.or(BitSet).\n\nMy test was on the biggest index I have here which was 3 million Wikipedia docs. I had 2 cached TermFilters on very popular terms (500k docs in each) and was measuring the cost of combining these as 2 \"shoulds\" in a BooleanFilter.\nThe expectation was the new scheme would add some overhead in extra method calls.\n\nThe average cost of iterating across BooleanFilter.getDocIdSet() was:\n\nold BitSet scheme: 78 milliseconds\nnew DISI scheme: 156 milliseconds.\n\nTo address this I tried adding this optimisation into BooleanFilter...\n\n               DocIdSet dis = ((Filter)shouldFilters.get(i)).getDocIdSet(reader);\n        \tif(dis instanceof OpenBitSet)\n        \t{\n        \t\tres.or((OpenBitSet) dis); // go-faster method\n        \t}\n        \telse\n               {\n        \t\tres.inPlaceOr(getDISI(shouldFilters, i, reader)); //your patch code\n               }\nBefore I could benchmark this I had to amend TermsFilter to use OpenBitSet rather than plain old BitSet \n\navg speed of your patch with OpenBitSet-enabled TermFilter :   100 milliseconds\navg speed of your patch with OpenBitSet-enabled TermFilter and above optimisation :   70 milliseconds\n\nI'll try and post a proper patch when I get more time to look at this...\n\nCheers,\nMark\n\n\n\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mharwood",
+            "name": "mharwood",
+            "key": "markh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Mark Harwood",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-13T22:16:53.660+0000",
+          "updated": "2008-05-13T22:16:53.660+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12596556",
+          "id": "12596556",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "That sounds like the overhead of the DocIdSetIterator is never more than directly using an OpenBitSet in the dense cases that you tested so far (1 in 6 is more than 1 bit per byte).\n\nThat means that a DocIdSetIterator should have acceptable performance in the sparse case when it uses a SortedVIntList underneath. Could you share some test results for sparse cases as well? I'd expect it to outperform OpenBitSet even at CPU time when it is sparse enough.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-13T22:54:47.075+0000",
+          "updated": "2008-05-13T22:54:47.075+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12598920",
+          "id": "12598920",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Good benchmarking, Mark.\n\nI'm actually wondering about the performance of BooleanFilter, when used\nwith a mix of Filters where some use OpenBitSets and others use BitSets.\n\nThis will happen when users upgrade to Lucene 2.4 (core filters use \nOpenBitSets now) and keep using their own custom Filters that use\nBitSets. \n\nYour patch, Paul, makes this combination possible, and thus guarantees\nbackwards-compatibility of BooleanFilter and ChainedFilter, which is \ngreat! I'm just wondering if those user might encounter bad performance\nsurprises?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-22T06:30:39.025+0000",
+          "updated": "2008-05-22T06:30:39.025+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12598929",
+          "id": "12598929",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I would not expect bad performance problems mixing OpenBitSet and BitSet for Filters using this patch, although some performance may be lost. However, if a problem surfaces, the solution is to upgrade the existing Filter from BitSet to OpenBitSet, which amounts to the expected work after deprecation of BitSet in Filter.\nA direct implementation of the bit manipulation operations on an OpenBitSet from a BitSet would probably be faster (taking the DocIdSetIterator out of the loop), but at the moment I see no good reason to implement that.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-22T07:08:12.844+0000",
+          "updated": "2008-05-22T07:08:12.844+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12598931",
+          "id": "12598931",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}\nthe solution is to upgrade the existing Filter from BitSet to OpenBitSet, which amounts to the expected work after deprecation of BitSet in Filter.\n{quote}\n\nI agree.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-22T07:16:25.839+0000",
+          "updated": "2008-05-22T07:16:25.839+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12598941",
+          "id": "12598941",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The patches look good to me, Paul!\n\nI'm attaching a new file that contains both your patches Contrib20080427.patch\nand  javadocsZero2Match.patch. I also added the optimizations for OpenBitSets\nthat Mark suggested to BooleanFilter and ChainedFilter.\nAnd I added the check (disi.doc() < size()) to OpenBitSetDISI.inPlaceOr() and\nOpenBitSetDISI.inPlaceXor().\n\nAll unit tests pass, however I think they don't cover all code paths now. We \nshould test both the ChainedFilter and the BooleanFilter on OpenBitSet-Filters \nonly as well as on combinations of different filters.\n\nPaul, maybe you can help me with adding those tests? Then I would go ahead\nand commit this patch soon. Otherwise I probably won't have time before next\nweek.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-22T08:15:49.542+0000",
+          "updated": "2008-05-22T08:15:49.542+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599062",
+          "id": "12599062",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "With the size tests added in OpenBitSetDISI, the javadocs of the changed methods could also be relaxed.\n\nThe filter tests in the contrib modules misc and queries look fairly complete to me in their current state. Did I overlook anything there? I don't have a coverage test tool here.\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-22T15:53:25.689+0000",
+          "updated": "2008-05-22T15:53:25.689+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599232",
+          "id": "12599232",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I added a test helper class called OldBitSetFilterWrapper that helps to\ntest compatibility with old filters based on BitSets.\n\nI changed ChainedFilterTest and BooleanFilterTest to run all tests on\nnew (OpenBitSet) and old (BitSet) filters to test both different code paths\nthat we have for OpenBitSet and DocIdSetIterator.\n\nI verified with a code coverage tool that now all those paths are covered\nand all tests pass.\n\nWould be nice if you could quickly review the patch, Paul. If you're ok\nwith it then I'll commit it tomorrow.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-22T22:57:23.211+0000",
+          "updated": "2008-05-22T22:57:23.211+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599295",
+          "id": "12599295",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Thanks for the backward compatibility additions in the tests.\n\nOne nice little detail: the patch contains this in OldBitSetFilterWrapper:\n{code}\n+      BitSet bits = new BitSet(reader.maxDoc());\n+      DocIdSetIterator it = filter.getDocIdSet(reader).iterator();\n...\n{code}\n\nbut I expected:\n\n{code}\nBitSet bits = filter.bits(reader); // use deprecated method\n{code}\n\nOn old filters both will versions will work, but the alternative makes it explicit that the filter must be an 'old' one. \nUsing the deprecated method would have the advantage that it (the whole wrapper class in fact) would _have_ to be removed in 3.0.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-23T07:33:44.197+0000",
+          "updated": "2008-05-23T07:33:44.197+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599298",
+          "id": "12599298",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}\nUsing the deprecated method would have the advantage that it (the whole wrapper class in fact) would have to be removed in 3.0.\n{quote}\n\nThanks for reviewing! You're right, I will change it to use the deprecated method and also deprecate the wrapper class itself.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-23T07:44:10.387+0000",
+          "updated": "2008-05-23T07:44:10.387+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599479",
+          "id": "12599479",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed with mentioned changes to OldBitSetFilterWrapper.\n\nThanks Paul!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-23T19:27:20.982+0000",
+          "updated": "2008-05-23T19:27:20.982+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599481",
+          "id": "12599481",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I missed TermsFilter initially, so I had another look there. It could use sth like this:\n\n{code}\n   /** Provide a SortedVIntList when it is definitely smaller than an OpenBitSet */\n   protected DocIdSet finalResult(OpenBitSetDISI result, int maxDocs) {\n       return (result.cardinality() < (maxDocs / 9))\n             ? (DocIdSet) new SortedVIntList(result)\n             : (DocIdSet) result;\n   }\n{code}\n\nBut that would leave three copies this finalResult method in the patch, which is just beyond my refactoring tolerance level.\nPerhaps this method could move to a static method in the o.a.l.search.DocIdSet class under a better name, sth like defaultDocIdSet(), or into a new helper class o.a.l.util.DefaultDocIdSet, to prepare for the availability of better implementations in the future.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-23T19:45:30.450+0000",
+          "updated": "2008-05-23T19:45:30.450+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599483",
+          "id": "12599483",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "And in that case, the first argument could also be changed from OpenBitSetDISI to OpenBitSet.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-23T19:47:15.801+0000",
+          "updated": "2008-05-23T19:47:15.801+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599489",
+          "id": "12599489",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Do we actually know about the performance of SortedVIntList?\n\nI'm a little worried, because it doesn't have a skip list.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-23T20:11:14.076+0000",
+          "updated": "2008-05-23T20:11:14.076+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599492",
+          "id": "12599492",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "OpenBitSet does not have a skip list either, so I'd expect SortedVIntList to be faster when the underlying set is sparse enough.\n\nAs I missed the commit, I'll provide a patch for my latest comments in the next few days. :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-23T20:15:47.237+0000",
+          "updated": "2008-05-23T20:15:47.237+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599497",
+          "id": "12599497",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}\nI'll provide a patch for my latest comments in the next few days\n{quote}\n\nSounds good!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-23T20:29:52.287+0000",
+          "updated": "2008-05-23T20:29:52.287+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12599709",
+          "id": "12599709",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "While considering DefaultDocIdSet as a class, I thought that perhaps a better way would be to add a method to class Filter that takes the usual DocIdSet and provides the DocIdSet that should be used for caching, for example in CachingWrapperFilter. Sth like this:\n{code}\npublic class Filter {\n  ... the abstract bits() deprecated method ... ;\n\n  public DocIdSet getDocIdSet(IndexReader reader) {\n    // unchanged implementation for now. to become abstract later.\n  }\n\n  public DocIdSet getDocIdSetForCache(IndexReader reader) {\n    // Use a default implementation here that provides a tradeoff for caching,\n    // fairly compact when possible, but still fast.\n    // For the moment this could be close to the code of the finalResult() method\n    // mentioned above:\n    DocIdSet result = getDocIdSet(reader);\n   \n    if (!(result instanceof SortedVIntList)) \n                and (result.cardinality() < (reader.maxDoc() / 9))) {\n      return  new SortedVIntList(result);\n    }\n    return result;\n  }\n{code}\n(One minor problem with this is that DocIdSet does not have a cardinality() method\nand that SortedVIntList does not have a constructor for a DocIdSet.)\n\nThe question is: how about adding such a getDocIdSetForCache() method to Filter?\nOr is there a better place for this functionality, for example in CachingWrapperFilter?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-25T18:56:23.162+0000",
+          "updated": "2008-05-25T18:56:23.162+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12600798",
+          "id": "12600798",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "As this has had some time so settle, I think the cache should decide what it wants to store.\nThat means I'm in favour of changing CachingWrapperFilter to let it decide which DocIdSet implementation to cache, sth. like this:\n{code}\nprotected DocIdSet docIdSetToCache(DocIdSet dis) { ... }\n{code}\nwhere dis is the result of getDocIdSet(reader) on the wrapped Filter.\nAt the same time the protected finalResult() methods in the contrib code could be removed.\n\nComments?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-29T15:22:46.546+0000",
+          "updated": "2008-05-29T15:22:46.546+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12600829",
+          "id": "12600829",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Sounds good to me Paul.\n\nCould you open a separate issue and attach a patch?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-29T16:45:38.646+0000",
+          "updated": "2008-05-29T16:45:38.646+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12600906",
+          "id": "12600906",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "After the commit here, I'm opening a new issue for filter caching.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-29T20:11:49.920+0000",
+          "updated": "2008-05-29T20:11:49.920+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/12602031",
+          "id": "12602031",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Just to be complete, the new issue for filter caching is LUCENE-1296 ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-06-03T19:08:51.005+0000",
+          "updated": "2008-06-03T19:08:51.005+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12389380/comment/17587379",
+          "id": "17587379",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2264|https://github.com/apache/lucene/issues/2264].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:46:48.671+0000",
+          "updated": "2022-08-28T11:46:48.671+0000"
+        }
+      ],
+      "maxResults": 41,
+      "total": 41,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04yjb:",
+    "customfield_12314139": null
+  }
+}

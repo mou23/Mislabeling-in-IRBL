@@ -1,0 +1,769 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12381535",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535",
+  "key": "JCR-1198",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312447",
+        "id": "12312447",
+        "description": "Apache Jackrabbit 1.4",
+        "name": "1.4",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-01-15"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "78632",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/2",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/critical.svg",
+      "name": "Critical",
+      "id": "2"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+      "name": "clombart",
+      "key": "clombart",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Christophe Lombart",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311754",
+        "id": "12311754",
+        "name": "jackrabbit-ocm"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "190296",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+      "name": "kaizers",
+      "key": "kaizers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Kaizer",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+      "name": "kaizers",
+      "key": "kaizers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Kaizer",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-1198/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@66bad444[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@13fd3a0f[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7ae0bd82[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@b7cd93[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7d659cc7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@75e69890[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@a153703[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@34f0a887[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6522997a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2441bf56[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7cf29f2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@364a1d1c[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/10591",
+      "id": "10591",
+      "key": "JCR",
+      "name": "Jackrabbit Content Repository",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=10591&avatarId=10052",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=10591&avatarId=10052",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=10591&avatarId=10052",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=10591&avatarId=10052"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10170",
+        "id": "10170",
+        "description": "Jackrabbit related projects",
+        "name": "Jackrabbit"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Wed Dec 05 12:44:50 UTC 2007",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-11-28T10:19:45.846+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-1198/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2007-10-31T09:29:23.255+0000",
+    "updated": "2008-01-15T23:27:02.543+0000",
+    "timeoriginalestimate": null,
+    "description": "Hi,\n\nI cannot retrieve list of objects that are directly under the path that they were saved in. I did not know where to simulate this issue and hence I have used DigesterSimpleQueryTest. I have attached the path for the newly added test case testObjectListRetrievalAtBasePath. In case the patch is not up to the mark I have attached the modified file too.\n\nInstead of creating Page in /test if I create it in /sample/test and search in /sample/test it returns nothing but if I search in /sample it would return the object.\n\nAnother important point here is that it is causing issues while retrieving Page class, the other test cases that are retrieving Paragraph class (embedded inside Page class) are still working fine!\n\nRegards,\n\nKaizer",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370048",
+        "id": "12370048",
+        "filename": "JCR-1198.zip",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+          "name": "kaizers",
+          "key": "kaizers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Kaizer",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-11-22T06:28:34.054+0000",
+        "size": 26461,
+        "mimeType": "application/zip",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370048/JCR-1198.zip"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12371012",
+        "id": "12371012",
+        "filename": "TestGetObjectsAnywhereInPath.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+          "name": "kaizers",
+          "key": "kaizers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Kaizer",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-12-05T09:18:31.373+0000",
+        "size": 7434,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12371012/TestGetObjectsAnywhereInPath.patch"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Issue while loading list of classes at that path itself.",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Windows XP",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12544417",
+          "id": "12544417",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patch for a new method of getObjects(Class, path) in OCM",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-21T11:07:51.380+0000",
+          "updated": "2007-11-21T11:07:51.380+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12544615",
+          "id": "12544615",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks but the unit test failed. Can you review your patch for the  unit test DigesterSimpleQueryTest and add a new one for the new method getObjects",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-21T22:21:22.800+0000",
+          "updated": "2007-11-21T22:21:22.800+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12544709",
+          "id": "12544709",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I have removed the earlier file. I have attached a new zip file JCR-1198.zip which contains the patch (JCR-1198.patch) and also the source files. The patch also includes the test method testGetObjectsByClassNameAndPath which tests the new method added in OCM. In case of any issues in patch let me know. Since we are in different timezones it would take time to respond back to you.\n\nI am not convinced that the code in ObjectContentManager is correct. Extract from my earlier mail so that it is recorded as part of this issue id.\n\n- forming of jcrExpression in ObjectContentManagerImpl instead of QueryManager\n- It will retrieve objects in that path only; basically no objects from child nodes are retrieved.\n\nIdeally in getObjects I would have formed a Query object and called the method of QueryManager to get the jcrExpression. The reason I could not do it right now is because the way query behaves for objects stored directly under that path.\n\nIf there is any other idea or suggestion to change this then let me know and I can contribute a patch.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-22T06:28:34.149+0000",
+          "updated": "2007-11-22T06:28:34.149+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12544900",
+          "id": "12544900",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patch applied. Thanks. \n\nI changed the jcr expression in the method getObjects otherwise it doesn't work. We have to use \"/\" and not \"//\"\n Let me know if you are agree with that change. I also change the unit test to add more tests. \nTomorrow, I will refactor the getObjects impl to use the Query object.\n\nI would like also to make public the method getObjects(String jcrExpression, String language). What do you think about that ? ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-22T23:27:41.429+0000",
+          "updated": "2007-11-22T23:27:41.429+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12544986",
+          "id": "12544986",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I had changed the getObjects method to check if the parent path is \"/\" and if so, set it to \"\" so that the expression wouldnt become \"///element\". But if the path is \"some/test\", then the parent path would be \"some\" in which case the jcr expression should be \"some//element\". But if we use \"/\", wouldnt the expression then become \"some/element\"?\n\nIf the getObjects method uses a Query object, we'll again be faced with the same scenario as the way the QueryManagerImpl builds the jcrExpression does not retrieve objects stored directly under the given path. This is why i feel that perhaps it is Jackrabbits implementation that may be incorrect. \n\nYes, i think its a good idea to include the method getObjects(String jcrExpression, String language). \n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-23T11:25:49.288+0000",
+          "updated": "2007-11-23T11:25:49.288+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12544991",
+          "id": "12544991",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Concerning the Query object, it has to manage the node name to make this kind of query. I will review your patch this week-end.\n\nanyway, the query support in the OCM is not ideal. We should refactor later this part depending the community feedback ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-23T11:40:14.203+0000",
+          "updated": "2007-11-23T11:40:14.203+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12546037",
+          "id": "12546037",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Kaiser, \n\nI think the problem is solved. Is it ok for you ? \nDid you review the code ? \n\nthanks",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-27T22:55:32.290+0000",
+          "updated": "2007-11-27T22:55:32.290+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12546190",
+          "id": "12546190",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi,\n\nI had a look at the code and it does solve our problem. The test case works perfectly fine. It's a good idea to have the node name in the Filter. Ideally i'd have liked the splitting of the path into the scope and the node name that is currently in ObjectContentManager to be part of QueryManagerImpl but i dont think it can be done as then the search would be restricted to that path itself and not its children.\n\nI think this issue can be marked as fixed now.\n\nThanks a lot for your help!\n\nKaizer",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-28T10:07:59.090+0000",
+          "updated": "2007-11-28T10:07:59.090+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12546194",
+          "id": "12546194",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks for the feedback \nFYI, we will maybe refactor the OCM  query implementation depending on the community feedback. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=clombart",
+            "name": "clombart",
+            "key": "clombart",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christophe Lombart",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-28T10:19:45.830+0000",
+          "updated": "2007-11-28T10:19:45.830+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12546617",
+          "id": "12546617",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi,\n\nPlease let me know if we would we be getting this fix as part of release 1.4 as it's very important for my project.\n\nThanks.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-29T09:04:29.919+0000",
+          "updated": "2007-11-29T09:04:29.919+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12548600",
+          "id": "12548600",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "It seems that the original problem still persists. When I verified I checked for objects in that node only and another test case which checked for anywhere in the child. But for query to retrieve objects in current node or anywhere in child (self-or-descendant-axis?) it does not retrieve the objects of current node :-(.\n\nTestGetObjectsAnywhereInPath.patch demonstrates what I have stated above.\n\nIs there a way to form a Query in such a way that it retrieves objects from current node and also from its child nodes.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-12-05T09:18:31.449+0000",
+          "updated": "2007-12-05T09:18:31.449+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12548646",
+          "id": "12548646",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This issue seems to be bigger than I thought. Right now objects are retrieved just below one level of the scope set. E.g. after applying the patch TestGetObjectsAnywhereInPath.patch in the method if we change the scope from \"/folder/test/\" to \"/folder/\" it just retrieves 4 objects and does not retrieve the one under /folder/test/test1.\n\nThis has happened after this issue was fixed.\n\nIn QueryManagerImpl.buildJCRExpression method if I change \n        if (((filter.getScope() != null) && (!filter.getScope().equals(\"\")))) {\n            jcrExp += \"/jcr:root\" + filter.getScope() + \"element(\" + filter.getNodeName() + \", \";\n        }\nto\n        if (((filter.getScope() != null) && (!filter.getScope().equals(\"\")))) {\n            if(filter.getNodeName().equals(\"*\") && !filter.getScope().equals(\"//\"))\n                filter.setScope(filter.getScope() + \"/\");\n            jcrExp += \"/jcr:root\" + filter.getScope() + \"element(\" + filter.getNodeName() + \", \";\n        }\nit works fine. Although this looks more like a hack to me but nevertheless all the test cases (including new one) pass.\n\nIf there is a better way to accomplish this (not changing QueryManagerImpl code) then do let me know.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-12-05T12:16:17.595+0000",
+          "updated": "2007-12-10T09:39:13.145+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12381535/comment/12548658",
+          "id": "12548658",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Changed the fix versions to 1.4 as this is quite critical part for my project",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kaizers",
+            "name": "kaizers",
+            "key": "kaizers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Kaizer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-12-05T12:44:50.456+0000",
+          "updated": "2007-12-05T12:44:50.456+0000"
+        }
+      ],
+      "maxResults": 13,
+      "total": 13,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0wxw7:",
+    "customfield_12314139": null
+  }
+}

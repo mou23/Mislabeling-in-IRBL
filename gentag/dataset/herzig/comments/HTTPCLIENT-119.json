@@ -1,0 +1,943 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12333678",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678",
+  "key": "HTTPCLIENT-119",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12311082",
+        "id": "12311082",
+        "name": "2.0 Beta 1",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2003-05-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "133172",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "5.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+      "name": "adrian@ephox.com",
+      "key": "adrian@ephox.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Adrian Sutton",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311010",
+        "id": "12311010",
+        "name": "HttpClient (classic)",
+        "description": "HttpClient classic (blocking) code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "189149",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+      "name": "adrian@ephox.com",
+      "key": "adrian@ephox.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Adrian Sutton",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+      "name": "adrian@ephox.com",
+      "key": "adrian@ephox.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Adrian Sutton",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-119/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@34f50e96[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3a9876f7[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3bbcab00[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@426a4d4e[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@62948636[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@49984dd8[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@17a21b40[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@73224c7[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4151a721[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@4aacd45e[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4dd3be50[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@5bd1bf31[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310360",
+      "id": "12310360",
+      "key": "HTTPCLIENT",
+      "name": "HttpComponents HttpClient",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310360&avatarId=10011",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310360&avatarId=10011",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310360&avatarId=10011",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310360&avatarId=10011"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10280",
+        "id": "10280",
+        "description": "Apache HttpComponents Project",
+        "name": "HttpComponents"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Tue Feb 04 11:51:57 UTC 2003",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-04-22T07:10:09.688+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-119/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2002-10-16T13:01:59.000+0000",
+    "updated": "2007-04-22T07:10:09.688+0000",
+    "timeoriginalestimate": null,
+    "description": "When using a FilePart with the MultipartPostMethod and a server that requires \nauthentication, the first call to FilePart.send() sends the data correctly and \nHttpClient receives an unauthorized response from the server.  If HttpClient is \nset to automatically handle authentication attempts it then attempts to send \nthe FilePart again at which time the InputStream FilePart reads from is empty \nso it doesn't send any data.\n\nDue to this, the data actually sent by HttpClient doesn't match the content \nlength specified so the server continues to wait for the data and doesn't \nrespond, leaving HttpClient to timeout while waiting for a response.\n\nThis occurs with the latest source from CVS as of 16 October 2002.",
+    "customfield_10010": 13676.0,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12326699",
+        "id": "12326699",
+        "filename": "ASF.LICENSE.NOT.GRANTED--addPartsTest.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+          "name": "adrian@ephox.com",
+          "key": "adrian@ephox.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Adrian Sutton",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2002-10-28T17:28:59.000+0000",
+        "size": 602,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12326699/ASF.LICENSE.NOT.GRANTED--addPartsTest.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12326696",
+        "id": "12326696",
+        "filename": "ASF.LICENSE.NOT.GRANTED--filepart.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+          "name": "adrian@ephox.com",
+          "key": "adrian@ephox.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Adrian Sutton",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2002-10-16T13:17:11.000+0000",
+        "size": 1512,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12326696/ASF.LICENSE.NOT.GRANTED--filepart.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12326697",
+        "id": "12326697",
+        "filename": "ASF.LICENSE.NOT.GRANTED--filepart2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+          "name": "adrian@ephox.com",
+          "key": "adrian@ephox.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Adrian Sutton",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2002-10-17T06:42:40.000+0000",
+        "size": 4561,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12326697/ASF.LICENSE.NOT.GRANTED--filepart2.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12326698",
+        "id": "12326698",
+        "filename": "ASF.LICENSE.NOT.GRANTED--filepart3.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+          "name": "adrian@ephox.com",
+          "key": "adrian@ephox.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Adrian Sutton",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2002-10-17T08:07:54.000+0000",
+        "size": 5358,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12326698/ASF.LICENSE.NOT.GRANTED--filepart3.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12326700",
+        "id": "12326700",
+        "filename": "ASF.LICENSE.NOT.GRANTED--TestPartsNoHost.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+          "name": "adrian@ephox.com",
+          "key": "adrian@ephox.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Adrian Sutton",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2002-10-28T17:29:36.000+0000",
+        "size": 7065,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12326700/ASF.LICENSE.NOT.GRANTED--TestPartsNoHost.java"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "[PATCH] FilePart fails to send data on second call to send",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Operating System: other\nPlatform: Other",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379689",
+          "id": "12379689",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=3482)\nPatch to add buffering to FilePart.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-16T13:17:11.000+0000",
+          "updated": "2002-10-16T13:17:11.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379690",
+          "id": "12379690",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The attached patch adds a buffer to FilePart which stores the file data so it \ncan be resent, allowing FilePart to work correctly with authenticated servers.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-16T13:20:37.000+0000",
+          "updated": "2002-10-16T13:20:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379691",
+          "id": "12379691",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martinc",
+            "name": "martinc",
+            "key": "martinc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martin Cooper",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I understand the issue the patch is trying to address, but this is not the \nright way to do it. The problem is that the entire file is being buffered in \nmemory. That's fine if the file is small, and there's only one, but if you're \ntrying to upload multiple large files, this will just run the system out of \nmemory.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martinc",
+            "name": "martinc",
+            "key": "martinc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martin Cooper",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T00:20:44.000+0000",
+          "updated": "2002-10-17T00:20:44.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379692",
+          "id": "12379692",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Agreed that buffering in memory isn't desirable, however if only an InputStream \nis given there isn't a lot of choice.  This new patch provides the option to \nturn buffering on and off and does not buffer in RAM if a java.io.File is \nprovided (it creates a new FileInputStream each time instead).\n\nWhile it is possible to take an InputStream and buffer the data to a file, this \nseems somewhat redundant when a File can be taken as a parameter anyway and it \nis a part designed for file uploading.\n\nI have enabled buffering by default as without it, HttpClient will hang if \nauthentication or a redirect is required and default settings should avoid that.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T06:42:09.000+0000",
+          "updated": "2002-10-17T06:42:09.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379693",
+          "id": "12379693",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=3494)\nNew patch, disregard the previous patch.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T06:42:40.000+0000",
+          "updated": "2002-10-17T06:42:40.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379694",
+          "id": "12379694",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martinc",
+            "name": "martinc",
+            "key": "martinc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martin Cooper",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Another possibility would be to use mark()/reset() if it's available on the \nsupplied InputStream. That would be kinda nice.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martinc",
+            "name": "martinc",
+            "key": "martinc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martin Cooper",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T06:47:30.000+0000",
+          "updated": "2002-10-17T06:47:30.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379695",
+          "id": "12379695",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Excellent idea.  I've implemented that so please ignore the current patch.  \nIt's getting too complex for me to be confident without specific test cases \nthough.  I'll look into those when I get a chance.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T07:08:41.000+0000",
+          "updated": "2002-10-17T07:08:41.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379696",
+          "id": "12379696",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=3495)\nLatest patch, ignore previous ones.  No test cases yet.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T08:07:54.000+0000",
+          "updated": "2002-10-17T08:07:54.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379697",
+          "id": "12379697",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "HttpClient test cases won't run for me at all and I don't have time to struggle \nwith it just yet.  I've uploaded the patch in case anyone has the inspiration \nto write tests before I get around to it, otherwise I'll follow up during the \nweek sometime.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-17T08:08:57.000+0000",
+          "updated": "2002-10-17T08:08:57.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379698",
+          "id": "12379698",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=3624)\nPatch to add tests for parts to TestNoHost.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-28T17:28:59.000+0000",
+          "updated": "2002-10-28T17:28:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379699",
+          "id": "12379699",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=3625)\nTests for resending part data.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-28T17:29:36.000+0000",
+          "updated": "2002-10-28T17:29:36.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379700",
+          "id": "12379700",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "These two patches add test cases for this fix.  It would be good to get this \nfix committed.  There's still more test cases that need to be written for \nMultipartPostMethod, but these are the only ones relevant to this bug.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-28T17:31:31.000+0000",
+          "updated": "2002-10-28T17:31:31.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379701",
+          "id": "12379701",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jsdever%40sympatico.ca",
+            "name": "jsdever@sympatico.ca",
+            "key": "jsdever@sympatico.ca",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jeff Dever",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patches 3495, 3624, 3625 committed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jsdever%40sympatico.ca",
+            "name": "jsdever@sympatico.ca",
+            "key": "jsdever@sympatico.ca",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jeff Dever",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2002-10-29T14:43:42.000+0000",
+          "updated": "2002-10-29T14:43:42.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379702",
+          "id": "12379702",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jsdever%40apache.org",
+            "name": "jsdever@apache.org",
+            "key": "jsdever@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jeff Dever",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Adrian, it appears that this bug is fixed.  Can it be closed?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jsdever%40apache.org",
+            "name": "jsdever@apache.org",
+            "key": "jsdever@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jeff Dever",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2003-02-03T23:08:06.000+0000",
+          "updated": "2003-02-03T23:08:06.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379703",
+          "id": "12379703",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Yes, I believe this bug should have been closed quite some time ago.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=adrian%40ephox.com",
+            "name": "adrian@ephox.com",
+            "key": "adrian@ephox.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Adrian Sutton",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2003-02-04T07:15:58.000+0000",
+          "updated": "2003-02-04T07:15:58.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12333678/comment/12379704",
+          "id": "12379704",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jsdever%40apache.org",
+            "name": "jsdever@apache.org",
+            "key": "jsdever@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jeff Dever",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Currently in REMIND state, need to close.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jsdever%40apache.org",
+            "name": "jsdever@apache.org",
+            "key": "jsdever@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jeff Dever",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2003-02-04T11:51:57.000+0000",
+          "updated": "2003-02-04T11:51:57.000+0000"
+        }
+      ],
+      "maxResults": 16,
+      "total": 16,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0wqtb:",
+    "customfield_12314139": null
+  }
+}

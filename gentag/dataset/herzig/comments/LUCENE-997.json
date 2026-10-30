@@ -1,0 +1,2583 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12378204",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204",
+  "key": "LUCENE-997",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12747",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "13.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12337833",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12337833",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12493610",
+          "key": "LUCENE-2822",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12493610",
+          "fields": {
+            "summary": "TimeLimitingCollector starts thread in static {} with no way to stop them",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      },
+      {
+        "id": "12337830",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12337830",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12446742",
+          "key": "LUCENE-2237",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12446742",
+          "fields": {
+            "summary": "allow TimeLimitedCollector timer thread to be shutdown",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+              "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+              "name": "Resolved",
+              "id": "5",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27050",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+      "name": "timmsc",
+      "key": "timmsc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Sean Timm",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+      "name": "timmsc",
+      "key": "timmsc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Sean Timm",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-997/votes",
+      "votes": 3,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4849dd09[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6c0df1d[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@8fbfabf[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@843e48a[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6c6e9549[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@4a5b4b3[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@53dc889a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@44ac41df[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5cf040de[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@755967df[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@42f6b9b6[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@64f2ba8e[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:40:53 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2008-02-12T21:02:16.136+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-997/watchers",
+      "watchCount": 6,
+      "isWatching": false
+    },
+    "created": "2007-09-13T21:04:21.178+0000",
+    "updated": "2022-08-28T11:40:53.266+0000",
+    "timeoriginalestimate": null,
+    "description": "This patch is based on Nutch-308. \n\nThis patch adds support for a maximum search time limit. After this time is exceeded, the search thread is stopped, partial results (if any) are returned and the total number of results is estimated.\n\nThis patch tries to minimize the overhead related to time-keeping by using a version of safe unsynchronized timer.\n\nThis was also discussed in an e-mail thread.\nhttp://www.nabble.com/search-timeout-tf3410206.html#a9501029",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12372376",
+        "id": "12372376",
+        "filename": "HitCollectorTimeoutDecorator.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+          "name": "tcn",
+          "key": "tcn",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Timo Nentwig",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-01-01T12:23:27.834+0000",
+        "size": 1427,
+        "mimeType": "text/x-java",
+        "content": "https://issues.apache.org/jira/secure/attachment/12372376/HitCollectorTimeoutDecorator.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374081",
+        "id": "12374081",
+        "filename": "LuceneTimeoutTest.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-01-25T20:12:52.009+0000",
+        "size": 1615,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374081/LuceneTimeoutTest.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12365769",
+        "id": "12365769",
+        "filename": "LuceneTimeoutTest.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-09-13T21:11:30.537+0000",
+        "size": 1649,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12365769/LuceneTimeoutTest.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12372377",
+        "id": "12372377",
+        "filename": "MyHitCollector.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+          "name": "tcn",
+          "key": "tcn",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Timo Nentwig",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-01-01T12:24:05.164+0000",
+        "size": 322,
+        "mimeType": "text/x-java",
+        "content": "https://issues.apache.org/jira/secure/attachment/12372377/MyHitCollector.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374880",
+        "id": "12374880",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2008-02-06T16:21:01.584+0000",
+        "size": 15923,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374880/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374879",
+        "id": "12374879",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2008-02-06T16:16:41.585+0000",
+        "size": 15923,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374879/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374858",
+        "id": "12374858",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2008-02-06T12:43:44.291+0000",
+        "size": 15922,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374858/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374801",
+        "id": "12374801",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-02-05T17:47:03.583+0000",
+        "size": 10342,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374801/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374283",
+        "id": "12374283",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-01-29T19:18:55.596+0000",
+        "size": 4559,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374283/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374080",
+        "id": "12374080",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-01-25T20:11:45.374+0000",
+        "size": 4807,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374080/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12368042",
+        "id": "12368042",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-10-19T19:41:19.054+0000",
+        "size": 15630,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12368042/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12366044",
+        "id": "12366044",
+        "filename": "timeout.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-09-17T21:54:44.459+0000",
+        "size": 14829,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12366044/timeout.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12374083",
+        "id": "12374083",
+        "filename": "TimerThreadTest.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+          "name": "timmsc",
+          "key": "timmsc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sean Timm",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-01-25T20:34:58.298+0000",
+        "size": 4815,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12374083/TimerThreadTest.java"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Add search timeout support to Lucene",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12527260",
+          "id": "12527260",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch against trunk revision 575451.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-09-13T21:09:00.505+0000",
+          "updated": "2007-09-13T21:09:00.505+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12527263",
+          "id": "12527263",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Simple test case.  Run by passing in the index directory as an argument.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-09-13T21:11:30.615+0000",
+          "updated": "2007-09-13T21:11:30.615+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12527264",
+          "id": "12527264",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here are some additional details on the changes.\n\nNew files:\nTimeLimitedCollector.java\n\n    Extends HitCollector and detects timeouts resulting in a TimeLimitedCollector.TimeExceeded exception being thrown.\n\nTimerThread.java\n\n    TimerThread provides a pseudo-clock service to all searching threads, so that they can count elapsed time with less overhead than repeatedly calling System.currentTimeMillis.  A single thread should be created to be used for all searches.\n\nModified Files:\nHits.java\n\n    Added partial result flag.\n\nIndexSearcher.java\n\n    Catches TimeLimitedCollector.TimeExceeded, sets partial results flag on TopDocs and estimates the total hit count (if we hadn't timed out partway through).  Returns TopDocs with partial results.\n\nSearcher.java\n\n    Added methods to set and get the timeout parameters.  This implementation decision has the limitation of only permitting a single timeout value per Searcher instance (of which there is usually only one).  However, this greatly minimizes the number of search methods that would need to be added.  In practice, I have not needed the functionality to change the timeout settings on a per query basis.\n\nTopFieldDocCollector.java\n\n    Uses TimeLimitedCollector functionality.\n\nTopDocCollector.java\n\n    Uses TimeLimitedCollector functionality and exposes it to child class TopFieldDocCollector.\n\nTopDocs.java\n\n    Added partial results flag.  Note, TopFieldDocs extends this class and inherits the new functionality.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-09-13T21:14:58.445+0000",
+          "updated": "2007-09-13T21:14:58.445+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12527605",
+          "id": "12527605",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks for the patch. I didn't have a very close look, just one small thing: it's probably no good idea to catch and ignore the InterruptedException. See http://www-128.ibm.com/developerworks/java/library/j-jtp05236.html",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-09-14T18:55:44.563+0000",
+          "updated": "2007-09-14T18:55:44.563+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12527666",
+          "id": "12527666",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "I'm not entirely convinced it makes sense to modify these classes to include timeouts as core functionality ... would it make more sense to deal with this in subclasses of IndexSearcher/TopDocs/Hits ?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-09-15T00:41:20.129+0000",
+          "updated": "2007-09-15T00:41:20.129+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12528170",
+          "id": "12528170",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "http://www-128.ibm.com/developerworks/java/library/j-jtp05236.html\n\nTimerThread Now follows Brian Goetz's best practice for a noncancelable task that restores interrupted status before returning rather than ignoring the InterruptedException.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-09-17T21:54:44.581+0000",
+          "updated": "2007-09-17T21:54:44.581+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12536326",
+          "id": "12536326",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Two issues are addressed in this latest patch:\n\n1) Timeout support was not added to: public TopFieldDocs search(Weight weight, Filter filter, final int nDocs, Sort sort)\n\n2) getCounter() in TimerThread was replaced by getMilliseconds()\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-10-19T19:41:19.225+0000",
+          "updated": "2007-10-19T19:41:19.225+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12537128",
+          "id": "12537128",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "I think this is a nice feature to have.\n\nBut I am not sure about the propsed API - the application creates a TimerThread, starts it, and the timer thread is then passed to the searcher with setTimeOut(timer,ticks). Not so simple.\n\nI think my preference for the API and implementation would be in HitCllector.collect() - in other words, we consider this new feature as an advanced one, and so only allow applications to provide their \"timed\" hitCollector. The modified collect() would either throw a TimeoutException or return a timedOut indication. If this is a (subclass of) RunTimeException (thuogh I am not crazy about this alternative) then there's no API change (a plus) but we need to verify that the code below propagates the RuntimeException gracefully and closes all the streams and everything (which I believe it does with all last careful changes by Mike and Michael). If RuntimeEXception is not acceptable, then this is an API change (a minus) and also many (simple) changes will be required in scorers (callers to collect). \n\nThe application's timedColletor will have all the logic in that collector for both announcing and detecting the timeout. Next we can add a TimedCollector for the benefit of applications, and last, consider adding search() methods with timeOut, but I doubt that last step.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-10-23T20:37:03.576+0000",
+          "updated": "2007-10-23T20:37:03.576+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12537153",
+          "id": "12537153",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> allow applications to provide their \"timed\" hitCollector\n\n+1\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-10-23T21:43:05.470+0000",
+          "updated": "2007-10-23T21:43:05.470+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12538142",
+          "id": "12538142",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goksron",
+            "name": "goksron",
+            "key": "goksron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Lance Norskog",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "\nI just requested a more fancy feature in the Solr Jira. My apologies, I did not think to search the Lucene Jira.\n\n\n1) timeout: stop searching after N milliseconds and return results using only those hits already found\n2) hit limit: stop searching after N milliseconds and return results using only those hits already found\n3) ram limit: estimate the amount of ram used so far and stop searching at a given amount\n\nHere is the complete request:\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goksron",
+            "name": "goksron",
+            "key": "goksron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Lance Norskog",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-10-26T23:44:07.576+0000",
+          "updated": "2007-10-26T23:44:07.576+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12538144",
+          "id": "12538144",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goksron",
+            "name": "goksron",
+            "key": "goksron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Lance Norskog",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I stumbled above; I do not yet know Jira :)  The Solr code is SOLR-392.\n\nThis request is inspired by a public search engine with millions of records. \n There are three different aspects mentioned above that can cause a query to \"go rogue\": timing out, finding too many records to give a truly useable result, and using up too much memory. The point is that if a search is going to find 14 million hits, Google does not go and tally them. It stops quickly and estimates how many might remain. I would like to have similar control. \n\nThe HitCollector implementation mentioned above would allow all three of these control options. If they could be pipelined together we could use any or all of them.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goksron",
+            "name": "goksron",
+            "key": "goksron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Lance Norskog",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-10-26T23:49:58.558+0000",
+          "updated": "2007-10-26T23:49:58.558+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12542675",
+          "id": "12542675",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> I think my preference for the API and implementation would be in HitCollector.collect()\n\nThis would be simpler, but I don't see how it would be possible to estimate the total number of results and return partial results in that case.  I think that is an important feature.\n\nIf the concern is complexity for the application, perhaps it is possible to hide the TimerThread altogether.  The TimerThread could be created and started via a searcher setTimeOut(tick, numTicks) method.\n\nTo simplify it further, ticks could be fixed at a reasonable number, e.g., 100 ms, and a timeout in milliseconds could be passed in: setTimeout(milliseconds).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-15T05:44:43.870+0000",
+          "updated": "2007-11-15T05:44:43.870+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12552143",
+          "id": "12552143",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "{quote}\nTimerThread provides a pseudo-clock service to all searching threads, \nso that they can count elapsed time with less overhead than repeatedly \ncalling System.currentTimeMillis. A single thread should be created to \nbe used for all searches.\n{quote}\nIs this really faster than calling System.currentTimeMillis()?\nI quick searched but found no references supporting this. \nThis one says the opposite:\n  http://www.devx.com/Java/Article/28685\nBecause if this is not the case, you could do without the TimerThread?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-12-15T21:57:12.243+0000",
+          "updated": "2007-12-15T21:57:12.243+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12552147",
+          "id": "12552147",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think one benefit of a dedicated timer thread is not being affected\nby clock shift on the machine.  System.currentTimeMillis() is not\nguaranteed to be monotonic.  System.nanoTime() (1.5 only!) tries\nto be (I think), but it's still not guaranteed.\n\nWithout a monotonic clock, if the clock shifts forward then it could\ntimeout in-flight queries (way) too early.\n\nBut: what happens when TimerThread overflows the int (a\n2*1024*1024*1024)?  Is it the caller's job to deal with the\nwraparound?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-12-15T22:30:51.210+0000",
+          "updated": "2007-12-15T22:30:51.210+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12552170",
+          "id": "12552170",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Nice, I didn't think of this.\n\nSo with this understanding the timer thread  (with long vs int) \nmakes sense while in Java 1.4, then in 1.5 System.nanoTime\nwill do.\n\nThe suggested patch relied on collect() being called, and\nso if a scorer takes long going over all the posting lists but\nfails to find a single match after the time passed, the search \noperation will not be stopped. I guess it is a fair assumption \nthat this would be very rare... \n(so would be a system clock shift...  : - ) )\n\nAlso important to understand is what happens with IO \nresources once search is aborted with timeout exception. \nCurrent patch does not close the underlying streams (I \nmean IndexInput clones). I think this is ok, because \nonce the search is aborted and there are no more references \nto the weights&scorers, the IndexInput clones would be \neventually garbage collected. Others?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-12-16T06:47:40.273+0000",
+          "updated": "2007-12-16T06:47:40.273+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12552174",
+          "id": "12552174",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=nyh",
+            "name": "nyh",
+            "key": "nyh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Nadav Har'El",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "I'd like to add my 2 cents on this issue.\n\nThe more I use Lucene in various ways, the more I'm getting convinced that the \"Hits\" API should be de-emphasized (if not outright depracated), and users should be encouraged to use the HitCollector API (search() taking a hitcollector, TopDocCollector, and so on) - especially for advanced usage.\n\nI believe that your TimeLimitedCollector is an interesting idea. However, there is simply no justification to change TopDocCollector, TopFieldDocCollector, Topdocs, Hits and Searcher. There's a MUCH simpler, and in my opinion cleaner, approach: Just make TimeLimitedCollector be a front-end for another collector (for example, TopDocCollector) which will be passed to TimeLimitedCollector's constructor. For every document that is presented to TimeLimitedCollector's collect(), it would call the inner collector's collect().\n\nThis way, without any changes to Lucene's core APIs, and just the addition of a new class, you can add the new functionality that you wanted. This, I think, is the beauty of the HitCollector interface over the \"monolithic\" Hits approach, and I think we should encourage this way of thinking instead of adding more and more features to Hits.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=nyh",
+            "name": "nyh",
+            "key": "nyh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Nadav Har'El",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2007-12-16T07:56:17.149+0000",
+          "updated": "2007-12-16T07:56:17.149+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12552295",
+          "id": "12552295",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}make TimeLimitedCollector be a front-end for another collector (for example, TopDocCollector) which will be passed to TimeLimitedCollector's constructor.{quote}\n+1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-12-16T22:09:31.452+0000",
+          "updated": "2007-12-16T22:09:31.452+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12552322",
+          "id": "12552322",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Sean, can you revise your patch to follow the suggestions above?\n\nThat is, create a TimeLimitedCollector that takes and Collector parameter \nfor its constructor. You should be able to hide all the TimerThread \ndetails (use long instead of int) within the implementation of this \nnew collector class, and so when moving to Java5  the TimeThread \ncan be replaced by nanoTime.\n\nThen we can add to either core search or under contrib.\n\nOn a related point - I am not happy with programming by a \nruntimException - if others agree that this should become \na standard functionality, how about modifying Collector.collect()\nto return a stop-or-continue indicator?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-12-17T04:53:26.076+0000",
+          "updated": "2007-12-17T04:53:26.076+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12553586",
+          "id": "12553586",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks for all of the feedback.  I'll take another stab at this.  I'm on vacation now and probably won't have time until I get back.  It'll probably be early Jan. before I have a new patch ready.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-12-20T05:39:49.913+0000",
+          "updated": "2007-12-20T05:39:49.913+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12555190",
+          "id": "12555190",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "IMHO it definitely should be part of the core. Being able to control the runtime of queries/your ressources is crucial for every live system and I really wonder this it has taken so long to address this.\n\nOtherwise I totally agree with Navdav: that Hits thingie is nice and fine for simple full-text queries but as soon as things become somewhat more complex you don't get around writing your own HitCollector (and do stuff like Facets).\n\nI also strongly agree that the timeout HC should be implemented as an decorator (what's been called \"front-end\" here), I just quickly wrote an example and attached it (no, I'm not happy throwing an runtime exception either):\n\nMyHitCollector hc = new MyHitCollector();\ns.search(q, null, HitCollectorTimeoutDecorator.decorate( hc, 10 ) );\n\nAnd finally, why return partial results? I don't think that this is reasonable.\n\nBTW I'm not sure whether volatile in the timer thread is really working reliably in 1.4...\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-01-01T12:22:09.572+0000",
+          "updated": "2008-01-01T12:22:09.572+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12555191",
+          "id": "12555191",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Example of the timeout HitCollector implemented as an decorator.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-01-01T12:23:28.012+0000",
+          "updated": "2008-01-01T12:23:28.012+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12555192",
+          "id": "12555192",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Example HitCollector to be decorated by HitCollectorTimeoutDecorator.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-01-01T12:24:05.264+0000",
+          "updated": "2008-01-01T12:24:05.264+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12555203",
+          "id": "12555203",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "By using only a HitCollector it cannot be guaranteed that searches will not take too long. The reason is that there are searches that take a long time but do not collect any docs.\n\nFor example consider the case where every even doc has term A and every odd doc has term B, and the query requires both A and B. This is going to take an amount of time that is linear in the size of the index but no document will be collected.\n\nThis means that every conjunction (boolean queries with more than one required clause, phrase queries, span near queries) will need to check for timeout. Also a HitCollector with a timeout facility will need a way\nto be informed of a timeout when no document is collected.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-01-01T15:00:54.339+0000",
+          "updated": "2008-01-01T15:00:54.339+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12555205",
+          "id": "12555205",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "True, unfortunately, but still better than nothing (->current situation). This approach isn't very precise in matters of timing either. Also, throwing a RuntimeException feels more like a hack than well thought out code...\n\nI don't know Lucene's code good enough in order to estimate whether it's possible to build a real timeout machanism at all/without changing the API/rewriting a lot of code but it's incredibly important to be able to cancel running queries. You don't want to servers under high load suffering from lucene queries running up to multiple *minutes* at the same time consuming quite a lot of memory. And it makes no sense either because nobody is waiting so long for results...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-01-01T15:32:15.051+0000",
+          "updated": "2008-01-01T15:32:15.051+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562642",
+          "id": "12562642",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Created a patch using Timo's HitCollectorTimeoutDecorator.  This patch just has a few mostly minor changes.  The biggest changes are that it uses a long instead of an int for the counter in TimerThread and the TimerThread interval is fixed at 10 ms.  It also throws a TimeLimitedCollector.TimeExceeded exception on a timeout.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-25T20:02:08.064+0000",
+          "updated": "2008-01-25T20:02:08.064+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562646",
+          "id": "12562646",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Updated bad patch with good copy.\n\nCreated a patch using Timo's HitCollectorTimeoutDecorator. This patch just has a few mostly minor changes. The biggest changes are that it uses a long instead of an int for the counter in TimerThread and the TimerThread interval is fixed at 10 ms. It also throws a TimeLimitedCollector.TimeExceeded exception on a timeout.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-25T20:11:45.521+0000",
+          "updated": "2008-01-25T20:11:45.521+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562647",
+          "id": "12562647",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Updated to work with latest patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-25T20:12:52.081+0000",
+          "updated": "2008-01-25T20:12:52.081+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562654",
+          "id": "12562654",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "The TimerThreadTest illustrates the accuracy of the TimerThread under load.  On my 2GHz Xeon 4 CPU dual core RH AS 4 Linux box, it get a 20% difference between the TimerThread implementation and System.currentTimeMillis() and is independent of load.\n\njava TimerThreadTest 8\n[...]\n10010   12020   [...]\n\nWith my single core single CPU Windows XP laptop I see a 20% difference at load, but when adding additional threads, I see an increasing difference.\n\njava TimerThreadTest 0\n[...]\n10000   11819 [...]\n\njava TimerThreadTest 2\n[...]\n10040   18890 [...]\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-25T20:34:58.484+0000",
+          "updated": "2008-01-25T20:34:58.484+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562765",
+          "id": "12562765",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ab",
+            "name": "ab",
+            "key": "ab",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=ab&avatarId=36393",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=ab&avatarId=36393",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=ab&avatarId=36393",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=ab&avatarId=36393"
+            },
+            "displayName": "Andrzej Bialecki",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I believe this version of the patch won't work properly unless you add synchronization - writes to long values are non-atomic (Java Language Specification 17.7, as the comment says), that's why Nutch uses an int there. Perhaps using AtomicLong would be an answer, if you really need a long value.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ab",
+            "name": "ab",
+            "key": "ab",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=ab&avatarId=36393",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=ab&avatarId=36393",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=ab&avatarId=36393",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=ab&avatarId=36393"
+            },
+            "displayName": "Andrzej Bialecki",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-01-25T23:35:25.860+0000",
+          "updated": "2008-01-25T23:35:25.860+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562838",
+          "id": "12562838",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+            "name": "hibou",
+            "key": "hibou",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+            },
+            "displayName": "Nicolas Lalev\u00e9e",
+            "active": true,
+            "timeZone": "Europe/Paris"
+          },
+          "body": "AtomicLong is a Java 1.5 feature, so it doesn't fit either.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+            "name": "hibou",
+            "key": "hibou",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+            },
+            "displayName": "Nicolas Lalev\u00e9e",
+            "active": true,
+            "timeZone": "Europe/Paris"
+          },
+          "created": "2008-01-26T09:52:14.742+0000",
+          "updated": "2008-01-26T09:52:14.742+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562845",
+          "id": "12562845",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "After LUCENE-584 more work will be needed to get all conjunctions in the same place, but it is a starting point.\n\nOnce all conjunctions are in the same place, it would make sense to add a timeout there.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-01-26T11:10:54.489+0000",
+          "updated": "2008-01-26T11:10:54.489+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562869",
+          "id": "12562869",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Andrzej--\n\nJLS 17.7 Non-atomic Treatment of double and long\n\n\"Writes and reads of volatile long and double values are always atomic.\"",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-26T14:59:13.254+0000",
+          "updated": "2008-01-26T14:59:13.254+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562936",
+          "id": "12562936",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ab",
+            "name": "ab",
+            "key": "ab",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=ab&avatarId=36393",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=ab&avatarId=36393",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=ab&avatarId=36393",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=ab&avatarId=36393"
+            },
+            "displayName": "Andrzej Bialecki",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Indeed, thanks for the correction - I forgot about the special treatment of volatile values.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ab",
+            "name": "ab",
+            "key": "ab",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=ab&avatarId=36393",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=ab&avatarId=36393",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=ab&avatarId=36393",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=ab&avatarId=36393"
+            },
+            "displayName": "Andrzej Bialecki",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-01-26T23:23:44.590+0000",
+          "updated": "2008-01-26T23:23:44.590+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562952",
+          "id": "12562952",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "You are right that I forgot to change the comment when I changed it from an int to a long though.  \"* updates to 32-bit-sized variables are atomic\" is a pretty pointless comment now. :-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-27T03:59:10.808+0000",
+          "updated": "2008-01-27T03:59:10.808+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562964",
+          "id": "12562964",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "@Sean: \"The biggest changes are that it uses a long instead of an int for the counter in TimerThread\" - didn't I use a volatile long already? :)\n\nI hope this will become part of the next release. IMHO this is Priority Major or above...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-01-27T08:08:52.101+0000",
+          "updated": "2008-01-27T08:08:52.101+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12562972",
+          "id": "12562972",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "In the timeout.patch, instead of this:\n{code}\ntime += resolution;\n{code}\nI'd rather have this:\n{code}\ntime = System.currentTimeMillis();\n{code}\nbecause all of the wait() methods can become unreliable, especially at high loads.\n\nWith (or without) this change, 100 msecs or even 200 msecs could be used as the\nupdate frequency instead of the current 10 msecs.\n\nBy computing the time out moment up front, one subtraction can be saved at each document collection. Then only TIMER_THREAD.getMilliseconds() method is needed at document collection time, and the getElapsedMilliseconds() method is superfluous.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-01-27T08:54:20.793+0000",
+          "updated": "2008-01-27T08:54:20.793+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12563155",
+          "id": "12563155",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "@Timo: \"didn't I use a volatile long already?\"  Indeed.  I guess that wasn't a very big change then. ;-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-28T14:32:18.531+0000",
+          "updated": "2008-01-28T14:32:18.531+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12563624",
+          "id": "12563624",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "This is a minor update to timeout.patch which fixes the comment about updates to 32-bit-sized variables being atomic and instead talks about volatile longs, as pointed out by Andrzej.  It also computes the time out moment up front to save a subtraction on each document collection as suggested by Paul.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-29T19:18:55.848+0000",
+          "updated": "2008-01-29T19:18:55.848+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12563632",
+          "id": "12563632",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I could go either way on the System.currentTimeMillis() versus a TimerThread issue.  I agree nanoTime is the correct implementation when using 1.5.\n\nIt doesn't seem like on Linux running ntp it matters much either way.  NTP tries to perform smoothing and makes clock changes slowly over a longer period of time when it can rather than have an abrupt change, but YMMV if your system is having clock issues.  On a really overloaded Windows box, the TimerThread implementation will not behave well as demonstrated above.  I can't speak to any other platforms.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-01-29T19:38:49.203+0000",
+          "updated": "2008-01-29T19:38:49.203+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12563698",
+          "id": "12563698",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The idea of System.currentTimeMillis() is to guard against misbehaviour of the java wait() method and against unexpected delays because of thread scheduling during the jump back for the loop around the wait() call.\nOne way to reduce such misbehaviour under heavy load is by increasing the scheduling priority of the timing thread, but I don't think that is necessary.\n\nAlso System.currentTimeMillis() is obviously correct, whereas timeout += resolution is never more than an assumption about correct wait() behaviour.\n\nClock changes by NTP are normally so slow that they don't really matter for query time outs.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-01-29T22:28:10.958+0000",
+          "updated": "2008-01-29T22:28:10.958+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12564126",
+          "id": "12564126",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Sean, can you add a Junit test to timeout.patch?\n\nI think such test should check (1) search correctness (regardless of timeout), (2) expected timeout behavior, and (3) some sanity test with multiple searching threads. This can also serve as an example for using this new collector.\n\nCheers.\nDoron\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2008-01-30T18:48:37.400+0000",
+          "updated": "2008-01-30T18:48:37.400+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12565720",
+          "id": "12565720",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "IIRC I did time=System.currentTimeMillis() first but was surprised how slow this method actally is.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-02-05T12:09:34.755+0000",
+          "updated": "2008-02-05T12:09:34.755+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12565809",
+          "id": "12565809",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Would that still be a problem with a 200ms resolution?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-02-05T16:57:03.542+0000",
+          "updated": "2008-02-05T16:57:03.542+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12565835",
+          "id": "12565835",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch adds JUnit test cases as suggested by Doron.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-02-05T17:47:03.809+0000",
+          "updated": "2008-02-05T17:51:09.882+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12565838",
+          "id": "12565838",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "200ms? No, probably not. I don't recall what resolution I used in my test but actually the timeout check took more time than the Lucene query...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-02-05T18:03:25.981+0000",
+          "updated": "2008-02-05T18:03:25.981+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12565906",
+          "id": "12565906",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Paul,\nI think that if we were to use System.currentTimeMillis(), we would eschew the TimerThread as Doron suggests in his Dec. 15 comment.  I haven't seen any performance issues with System.currentTimeMillis().\n\nAs far as 200ms, I think that is too large of a default resolution (and with the current implementation it is not configurable).  With a 200 ms resolution, a query with a 1 second time allowed could timeout in 800 ms, and one with a time allowed of 500 ms could timeout in 300 ms.  I think it is much worse to timeout a query early than to timeout late.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-02-05T22:11:33.380+0000",
+          "updated": "2008-02-05T22:11:33.380+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12566116",
+          "id": "12566116",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Sean thanks for adding the test.\n\nIn the attached I tightened the check of allowed elapsed time until timeout.\nAlso added info in the exception, and added ability to modify the resolution - default is 20ms (was 5ms).\nPlease let me know what you think. \n\nAs for System.currentTimeMillis() vs. Timer thread - IMHO Mike's comment on 'system clock changes' makes the timer thread favorable.\n\nI checked this with up to 10,000 threads and with that number the test sometimes fails because it is quite tight on the max elapsed time required comparing to the timeout, so I don't see this is a problem. In the attached N_THREADS = 50 and this number of threads always passes for me.\n\nIf there are no more major concerns I think this is now ready to go in, question is where to - under core o.a.l.search or under contrib (query or misc). \nOthers?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2008-02-06T12:43:44.764+0000",
+          "updated": "2008-02-06T12:43:44.764+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12566171",
+          "id": "12566171",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Doron, your comment for setResolution(long) says \"The default timer resolution is 50 milliseconds\", however, the default is actually 20 ms (public static final int DEFAULT_RESOLUTION = 20;).  Other than that, everything looks great.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-02-06T16:02:25.516+0000",
+          "updated": "2008-02-06T16:02:25.516+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12566175",
+          "id": "12566175",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Oh wrote comment that was before I decided to change the default... \nThanks for catching this.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2008-02-06T16:10:24.513+0000",
+          "updated": "2008-02-06T16:10:24.513+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12566179",
+          "id": "12566179",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Attached patch corrects default resolution comment.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2008-02-06T16:16:41.871+0000",
+          "updated": "2008-02-06T16:16:41.871+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12568280",
+          "id": "12568280",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\"If there are no more major concerns I think this is now ready to go in, question is where to - under core o.a.l.search or under contrib (query or misc).\"\n\nMy preference would be for core o.a.l.search.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-02-12T18:48:06.821+0000",
+          "updated": "2008-02-12T18:48:06.821+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12568286",
+          "id": "12568286",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I agree, core.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tcn",
+            "name": "tcn",
+            "key": "tcn",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Timo Nentwig",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-02-12T18:53:52.251+0000",
+          "updated": "2008-02-12T18:53:52.251+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12568292",
+          "id": "12568292",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> My preference would be for core o.a.l.search.\n+1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-02-12T18:57:26.680+0000",
+          "updated": "2008-02-12T18:57:26.680+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/12568312",
+          "id": "12568312",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Committed (under core o.a.l.search).\nThanks Sean!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2008-02-12T21:02:15.358+0000",
+          "updated": "2008-02-12T21:02:15.358+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12378204/comment/17587188",
+          "id": "17587188",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2073|https://github.com/apache/lucene/issues/2073].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:40:53.266+0000",
+          "updated": "2022-08-28T11:40:53.266+0000"
+        }
+      ],
+      "maxResults": 55,
+      "total": 55,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04zpj:",
+    "customfield_12314139": null
+  }
+}

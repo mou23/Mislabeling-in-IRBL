@@ -1,0 +1,2886 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="DATAREDIS">
+	<bug id="75" opendate="2011-07-22 07:30:35" fixdate="2011-07-27 01:45:52" resolution="Complete">
+		<buginformation>
+			<summary>&lt;redis:collection/&gt; breaks for type="PROPERTIES" because defaults are not initialized</summary>
+			<description>&amp;lt;redis:collection/&amp;gt; breaks for type="PROPERTIES" because defaults are not initialized.  The "defaults" field is protected i nthe super class (java.util.Properties) but not initialized by default, and it is referenced in the propertyNames() method (line 111) -&amp;gt; NullPointerException on startup.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.support.collections.RedisPropertiesTests.java</file>
+			<file type="M">org.springframework.data.redis.support.collections.RedisProperties.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="78" opendate="2011-10-24 20:27:29" fixdate="2011-10-25 01:55:33" resolution="Complete">
+		<buginformation>
+			<summary>RedisCacheManager throw UnsupportedOperationException</summary>
+			<description>I am try to config a cache layer use the spring 3.1 cache abstraction and redis. when i config @Cacheable("relation") in my code and run the unit test , it throw UnsupportedOperationException. i tracking the source code ,and found that there is something wrong in the RedisCacheManager.java file.
+	private final Collection&amp;lt;String&amp;gt; names = Collections.unmodifiableSet(caches.keySet()); //this collection announce to be unmodifiable.
+	private final RedisTemplate template;
+	private boolean usePrefix;
+	private RedisCachePrefix cachePrefix = new DefaultRedisCachePrefix();
+	public RedisCacheManager(RedisTemplate template) 
+{
+		this.template = template;
+	}
+
+	public Cache getCache(String name) {
+		Cache c = caches.get(name);
+		if (c == null) 
+{
+			c = new RedisCache(name, (usePrefix ? cachePrefix.prefix(name) : null), template);
+			caches.put(name, c);
+			names.add(name);     // this collection is modified .
+		}
+
+		return c;
+	}</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0 GA</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManager.java</file>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="79" opendate="2011-11-01 04:05:13" fixdate="2011-11-01 10:36:09" resolution="Complete">
+		<buginformation>
+			<summary>In RedisTemplate class,expireAt has a bug</summary>
+			<description>In redis,ExpireAt takes an absolute UNIX timestamp as parameter. But in RedisTemplate source code,it uses date.getTime() function to get timestamp, getTime() returns the number of milliseconds since January 1, 1970.</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0 GA</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="83" opendate="2012-03-26 23:55:34" fixdate="2012-03-29 07:37:00" resolution="Complete">
+		<buginformation>
+			<summary>invoke the template.opsForSet().randomMember(Object key) method throw exception</summary>
+			<description>use the jedis driver 2.0.0 , invoke the api template.opsForSet().randomMember(Object key), throw exception stack:
+org.springframework.data.redis.serializer.SerializationException: Cannot deserialize; nested exception is org.springframework.core.serializer.support.SerializationFailedException: Failed to deserialize payload. Is the byte array a result of corresponding serialization for DefaultDeserializer?; nested exception is java.io.StreamCorruptedException: invalid stream header: 69736C61
+	at org.springframework.data.redis.serializer.JdkSerializationRedisSerializer.deserialize(JdkSerializationRedisSerializer.java:44)
+	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:189)
+	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:50)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:162)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:133)
+	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:75)
+	at org.springframework.data.redis.core.DefaultSetOperations.randomMember(DefaultSetOperations.java:164)
+	at com.anansi.gs.common.db.redis.RedisProxy.srandmember(RedisProxy.java:164)
+	at com.anansi.gs.parking.model.dao.PlayerDAO.getRaceStrangers(PlayerDAO.java:216)
+	at com.anansi.gs.parking.service.PlayerService.getRaceStrangers(PlayerService.java:424)
+	at com.anansi.gs.parking.service.PlayerService$$FastClassByCGLIB$$f64d8f94.invoke(&amp;lt;generated&amp;gt;)
+	at net.sf.cglib.proxy.MethodProxy.invoke(MethodProxy.java:191)</description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.DefaultSetOperations.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="81" opendate="2012-01-05 04:36:32" fixdate="2012-03-29 07:48:11" resolution="Complete">
+		<buginformation>
+			<summary>Mixed lifecycle in RedisMessageListenerContainer</summary>
+			<description>RedisMessageListenerContainer should not be invoking its start() method from afterPropertiesSet(). I believe it should follow the lifecycle of the enclosing class. In other words if one should be able to delegate to RedisMessageListenerContainer.start() method when its own start method is invoked.</description>
+			<version>1.0.0 GA</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.listener.RedisMessageListenerContainer.java</file>
+			<file type="M">org.springframework.data.redis.listener.PubSubTests.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">2358</link>
+		</links>
+	</bug>
+	<bug id="82" opendate="2012-03-05 09:41:31" fixdate="2012-05-23 08:08:19" resolution="Complete">
+		<buginformation>
+			<summary>JedisUtils shouldn&amp;apos;t wrap unknow Exception</summary>
+			<description>The project I&amp;amp;apos;m working on has 2 data access configuration, one with Spring-data-jpa, and an other with Spring-data-redis. 
+Since I added the JedisConnectionFactory as a Spring bean, one of my JPA-based junit failed because it attempts to catch a DataIntegrityViolationException. But instead this exception is wrapped into a JedisSystemException (see JedisUtils.convertJedisAccessException()).
+When I read the code in ChainedPersistenceExceptionTranslator, I understand that a PersistenceExceptionTranslator that doesn&amp;amp;apos;t handle an exception should return null. So I think JedisUtils.convertJedisAccessException() should return null also in case of unhandled exception.</description>
+			<version>1.0.0 GA</version>
+			<fixedVersion>1.0.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="246" opendate="2013-12-19 18:36:43" fixdate="2014-02-17 04:29:03" resolution="Fixed">
+		<buginformation>
+			<summary>RedisCacheManagers getCache method does not match the logical of CompositeCacheManager</summary>
+			<description>RedisCacheManager&amp;amp;apos;s getCache(name) always return RedisCache, that doesn&amp;amp;apos;t match the CompositeCacheManager&amp;amp;apos;s getCache(name) logic, so hardly combined with each other.
+Maybe RedisCacheManager should provide allowed cache names, and getCache(name) should return null if absent.
+Thanks.</description>
+			<version>1.1.0</version>
+			<fixedVersion>1.2.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManager.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">283</link>
+		</links>
+	</bug>
+	<bug id="283" opendate="2014-03-12 04:57:56" fixdate="2014-03-13 04:23:28" resolution="Fixed">
+		<buginformation>
+			<summary>RedisCacheManager.loadCaches overrides already defined cache names in afterPropertiesSet().</summary>
+			<description>Already defined cache names should not be cleared when loading remote caches.</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1, 1.3 M1 (Dijkstra)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManager.java</file>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManagerUnitTests.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">246</link>
+		</links>
+	</bug>
+	<bug id="285" opendate="2014-03-17 23:26:09" fixdate="2014-03-19 04:01:40" resolution="Complete">
+		<buginformation>
+			<summary>LettuceTemplate.execute should read and convert entire response.</summary>
+			<description>LettuceConnection uses ByteArrayOutput as result definition which does not apply for multi bulk reply. For those cases ValueListOutput has to be used.</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1, 1.3 M1 (Dijkstra)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jredis.JRedisConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.srp.SrpConnectionIntegrationTests.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Depend" description="is depended on by">2918</link>
+		</links>
+	</bug>
+	<bug id="286" opendate="2014-03-20 16:59:34" fixdate="2014-03-24 04:03:38" resolution="Fixed">
+		<buginformation>
+			<summary>RedisTemplate.expire() overflow</summary>
+			<description>The method
+
+
+
+
+
+
+    RedisTemplate&amp;lt;K, V&amp;gt;.expire(K key, long timeout, TimeUnit unit)
+
+
+
+
+
+
+won&amp;amp;apos;t work for a timeout of 200 days.
+I got this bug after upgrading Spring Data Redis from 1.1.1.RELEASE to 1.2.0.RELEASE.
+The root cause is that Jedis is having an issue with the pexpire() method (See Jedis Issue 575, 576, and 577).  Basically that method takes an integer as the timeout which easily overflows.
+The work-around is to use Jedis&amp;amp;apos;s pexpireAt() instead, which takes a long integer.
+My environment:
+1) Spring Data Redis 1.2.0-RELEASE
+2) Jedis 2.4.1
+3) Redis 2.8.6</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1, 1.3 M1 (Dijkstra)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionUnitTestSuite.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnection.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">564</link>
+		</links>
+	</bug>
+	<bug id="294" opendate="2014-04-21 20:09:31" fixdate="2014-04-25 04:15:17" resolution="Fixed">
+		<buginformation>
+			<summary>ZSetOperations.TypedTuple will throw ClassCastException during sorting</summary>
+			<description>The interface TypedTuple&amp;lt;V&amp;gt; extends Comparable&amp;lt;Double&amp;gt; instead of TypedTuple&amp;lt;V&amp;gt; extends Comparable&amp;lt;TypedTuple&amp;lt;V&amp;gt;&amp;gt;. 
+That means code like this:
+
+
+
+
+
+
+SortedSet&amp;lt;ZSetOperations.TypedTuple&amp;lt;String&amp;gt;&amp;gt; lb= new TreeSet&amp;lt;&amp;gt;();
+
+
+
+
+Set&amp;lt;ZSetOperations.TypedTuple&amp;lt;String&amp;gt;&amp;gt; users = zSetOperations.reverseRangeWithScores(USERS, 0, 0);
+
+
+
+
+lb.addAll(users);
+
+
+
+
+
+
+will throw a ClassCastException 
+
+
+
+
+
+
+Exception in thread "main" java.lang.ClassCastException: org.springframework.data.redis.core.DefaultTypedTuple cannot be cast to java.lang.Double
+
+
+
+
+	at org.springframework.data.redis.core.DefaultTypedTuple.compareTo(DefaultTypedTuple.java:27)
+
+
+
+
+	at java.util.TreeMap.compare(TreeMap.java:1290)
+
+
+
+
+	at java.util.TreeMap.put(TreeMap.java:538)
+
+
+
+
+	at java.util.TreeSet.add(TreeSet.java:255)
+
+
+
+
+	at java.util.AbstractCollection.addAll(AbstractCollection.java:344)
+
+
+
+
+	at java.util.TreeSet.addAll(TreeSet.java:312)
+
+
+
+
+	at org.dripstat.lb.Leaderboard.getLeaderboardForUser(Leaderboard.java:36)
+
+
+
+
+
+
+Making the Comparable use Double instead of TypedTuple&amp;lt;V&amp;gt; means it can&amp;amp;apos;t be used by any of Java&amp;amp;apos;s sort() methods since they pass the object itself to the compare() method.
+This is a major flaw and will bite a lot of people with runtime exceptions.</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3 M1 (Dijkstra)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.ZSetOperations.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultTypedTuple.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="226" opendate="2013-07-23 14:46:48" fixdate="2014-04-29 04:24:22" resolution="Complete">
+		<buginformation>
+			<summary>Individual syntax errors on Lettuce transactions are not reported</summary>
+			<description>See the "exceptionExecuteNative" test case in LettuceConnTransIntTest. Syntax errors that happen through the "execute" method are somehow being suppressed on tx exec.</description>
+			<version>1.0.5</version>
+			<fixedVersion>1.3 RC1 (Dijkstra)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionTransactionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisCommand.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="300" opendate="2014-05-15 06:15:57" fixdate="2014-05-16 05:49:02" resolution="Complete">
+		<buginformation>
+			<summary>RedisConnectionUtils: inconsistency with connection open() and close()</summary>
+			<description>All Redis operations are handled within RedisTemplate#execute
+It does
+
+
+
+
+
+
+conn = RedisConnectionUtils.bindConnection(factory, enableTransactionSupport);
+
+
+
+
+
+
+before operation and
+
+
+
+
+
+
+} finally {
+
+
+
+
+            RedisConnectionUtils.releaseConnection(conn, factory);
+
+
+
+
+}
+
+
+
+
+
+
+after.
+In our case it is JedisConnectionFactory with default settings. The most interesting thing is usePool = true
+Suppose that means we can&amp;amp;apos;t use more connections, than Pool allows.
+Well.
+RedisConnectionUtils#doGetConnection populates  RedisConnectionHolder with RedisConnection from pool to the TransactionSynchronizationManager.bindResource
+because:
+
+
+
+
+
+
+public static RedisConnection bindConnection(RedisConnectionFactory factory, boolean enableTranactionSupport) {
+
+
+
+
+        return doGetConnection(factory, true, true, enableTranactionSupport);
+
+
+
+
+}
+
+
+
+
+
+
+and bind = true.
+But RedisConnectionUtils#releaseConnection does a check
+
+
+
+
+
+
+// Only release non-transactional/non-bound connections.
+
+
+
+
+        if (!isConnectionTransactional(conn, factory)) {
+
+
+
+
+
+
+which returns true and I never see
+
+
+
+
+
+
+log.debug("Closing Redis Connection");
+
+
+
+
+
+
+And it causes ConnectionPool leak.</description>
+			<version>1.3 RC1 (Dijkstra)</version>
+			<fixedVersion>1.3 GA (Dijkstra)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.RedisConnectionUtils.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="317" opendate="2014-06-17 09:16:24" fixdate="2014-06-29 23:30:52" resolution="Complete">
+		<buginformation>
+			<summary>Cannot increment RedisAtomicInteger</summary>
+			<description>I am trying to increment a RedisAtomicInteger object by a given delta:
+
+
+
+
+
+
+    private void updateBandwidthUsage(String remoteAddr, int length) {
+
+
+
+
+        RedisAtomicInteger counter = new RedisAtomicLong("someKey", redisTemplate)
+
+
+
+
+        counter.getAndAdd(length);
+
+
+
+
+        counter.expire(1, TimeUnit.DAYS);
+
+
+
+
+    }
+
+
+
+
+
+
+This fails with
+
+
+
+
+
+
+    redis.clients.jedis.exceptions.JedisDataException: ERR value is not an integer or out of range
+
+
+
+
+
+
+When I use the MONITOR command on the server, this is what I can see:
+
+
+
+
+
+
+    1403019417.097887 [0 10.0.2.2:46694] "INCRBY" "\xac\xed\x00\x05t\x00\x150:0:0:0:0:0:0:1:16238" "7625"
+
+
+
+
+
+
+I am using Spring Data Redis (1.3.0) with the Jedis (2.5.1) connector, the server is running Redis 2.8.6.
+It seems that the underlying reason is that Spring Data Redis is not storing the value as an integer, but as a byte-dump of a Java Integer object, as can be observed on this log entry from a counter.set(1) call:
+
+
+
+
+
+
+    1403020463.368050 [0 10.0.2.2:47127] "SET" "\xac\xed\x00\x05t\x00\x150:0:0:0:0:0:0:1:16238" "\xac\xed\x00\x05sr\x00\x11java.lang.Integer\x12\xe2\xa0\xa4\xf7\x81\x878\x02\x00\x01I\x00\x05valuexr\x00\x10java.lang.Number\x86\xac\x95\x1d\x0b\x94\xe0\x8b\x02\x00\x00xp\x00\x00\x00\x00"
+
+
+
+
+
+</description>
+			<version>1.3 GA (Dijkstra)</version>
+			<fixedVersion>1.3.1 (Dijkstra SR1)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicIntegerTests.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicInteger.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicLongTests.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicDoubleTests.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicLong.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicDouble.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="310" opendate="2014-05-28 01:21:27" fixdate="2014-06-30 01:20:11" resolution="Fixed">
+		<buginformation>
+			<summary>Lock of RedisCache is not safe</summary>
+			<description>RedisCache get lock only in clear() method.
+RedisCache checks clear()&amp;amp;apos;s lock in the other methods, but inconsistencies may occur due to race conditions.
+put() method is serious because there is a serialize process.
+For example...
+1. Thread-A(put method) check lock.
+2. Thread-A start serialize value.
+3. Thread-B(clear method) check lock.
+4. Thread-B get lock.
+5. Thread-A put key and value.
+6. Thread-B start del keys.
+7. Thread-B del key from Thread-A
+I think it is better to get lock in all methods(get/put/evict).
+Or serialize value before call connection.multi(), and deserialize value after call connection.exec().</description>
+			<version>1.3 GA (Dijkstra)</version>
+			<fixedVersion>1.3.1 (Dijkstra SR1), 1.4 M1 (Evans)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCache.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="333" opendate="2014-07-29 13:29:46" fixdate="2014-07-30 23:03:50" resolution="Fixed">
+		<buginformation>
+			<summary>EvalSha returns incorrect result</summary>
+			<description>I use version 1.3.0 (not sure what is 1.3 GA (Dijkstra)).
+Redis (in case of evalsha) returns bytes as String.
+Spring Data Redis encodes them to bytes again (convert back for consistency) in JedisScriptReturnConverter.convert() method.
+SafeEncoder.encode() uses UTF-8 charset for encoding but this encoding is incorrect. Probably Redis use other charset. Please check.</description>
+			<version>1.3 GA (Dijkstra)</version>
+			<fixedVersion>1.4 RC1 (Evans), 1.3.4 (Dijkstra SR4)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConverters.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnection.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">334</link>
+		</links>
+	</bug>
+	<bug id="337" opendate="2014-08-09 12:51:38" fixdate="2014-08-13 00:10:42" resolution="Fixed">
+		<buginformation>
+			<summary>MessageListener method should only be invoked once per message</summary>
+			<description>The problem is in MessageListenerAdapter in approximately 113 line (version 1.3.2.RELEASE), where using reflection youre extracting methods to be invoked by listener.
+Problem appears, when Listener is subclass of another class with the same method definition (i.e class A has abstract method doSmth and class B extends A and implements doSmth method). 
+Then, methods array is populated with wrong number of method which then are invoked on listener (one for each parent classes that have same method definition), which can lead to invoking same method on listener several times.
+You can reproduce this bug with those steps:
+1. Create abstract class
+
+
+
+
+
+
+AbstractTest.java
+
+
+
+
+
+
+public abstract class AbstractTest {
+
+
+
+
+   public abstract void foo(); 
+
+
+
+
+} 
+
+
+
+
+
+
+2. Create implementation to this class
+
+
+
+
+
+
+Test.java
+
+
+
+
+
+
+public class Test extends AbstractTest {
+
+
+
+
+   @Override
+
+
+
+
+   public void foo() {
+
+
+
+
+      System.out.println("in foo");
+
+
+
+
+   } 
+
+
+
+
+} 
+
+
+
+
+
+
+3. Define Test as spring bean and as message listener
+
+
+
+
+
+
+&amp;lt;bean id="test" class="Test"/&amp;gt;
+
+
+
+
+ &amp;lt;redis:listener-container connection-factory="jedisConnectionFactory"&amp;gt;
+
+
+
+
+        &amp;lt;redis:listener ref="test" method="foo" topic="testTopic"/&amp;gt;
+
+
+
+
+    &amp;lt;/redis:listener-container&amp;gt;
+
+
+
+
+
+
+When message will come to topic &amp;amp;apos;testTopic&amp;amp;apos;, method foo will be invoked twice. </description>
+			<version>1.3.2 (Dijkstra SR2)</version>
+			<fixedVersion>1.4 RC1 (Evans), 1.3.4 (Dijkstra SR4)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.listener.adapter.MessageListenerAdapter.java</file>
+			<file type="M">org.springframework.data.redis.listener.adapter.MessageListenerTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="347" opendate="2014-09-11 06:31:27" fixdate="2014-10-24 10:34:58" resolution="Fixed">
+		<buginformation>
+			<summary>DefaultScriptExecutor always runs script twice if Exception is thrown</summary>
+			<description>The DefaultScriptExecutor seems to optimistically attempt to run the server-cached version of a script by passing the SHA1.  If any exception is thrown, it assumes that this is because the script does not exist on the server and attempts to send the script and run it.
+Here is the code in question:
+
+
+
+
+
+
+DefaultScriptExecutor.java
+
+
+
+
+
+
+protected &amp;lt;T&amp;gt; T eval(RedisConnection connection, RedisScript&amp;lt;T&amp;gt; script, ReturnType returnType, int numKeys,
+
+
+
+
+			byte[][] keysAndArgs, RedisSerializer&amp;lt;T&amp;gt; resultSerializer) {
+
+
+
+
+		Object result;
+
+
+
+
+		try {
+
+
+
+
+			result = connection.evalSha(script.getSha1(), returnType, numKeys, keysAndArgs);
+
+
+
+
+		} catch (Exception e) {
+
+
+
+
+			result = connection.eval(scriptBytes(script), returnType, numKeys, keysAndArgs);
+
+
+
+
+		}
+
+
+
+
+		if (script.getResultType() == null) {
+
+
+
+
+			return null;
+
+
+
+
+		}
+
+
+
+
+		return deserializeResult(resultSerializer, result);
+
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+This means that ANY exception thrown by a script causes it to be run twice, and obviously any side affects of running the script (i.e. data insertions) which occur before the error are duplicated.
+I believe this is likely not the intended behaviour.  The DefaultScriptExecutor should verify the reason for the exception prior to re-attempting to run the script in every case.
+I have seen this behaviour in 1.3.4, 1.4.0 and as of writing, the source seems to be the same.</description>
+			<version>1.3.4 (Dijkstra SR4)</version>
+			<fixedVersion>1.4.1 (Evans SR1), 1.5 M1 (Fowler)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.script.DefaultScriptExecutor.java</file>
+			<file type="M">org.springframework.data.redis.core.script.DefaultRedisScript.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="354" opendate="2014-11-12 12:34:17" fixdate="2014-11-28 00:34:25" resolution="Fixed">
+		<buginformation>
+			<summary>Jackson2JsonRedisSerializer should allow to customise the JavaType for deserialization via getJavaType()</summary>
+			<description>The Jackson2JsonRedisSerializer has an overridable `getJavaType(Class&amp;lt;?&amp;gt; class)` method, but it does not delegate to this method to determine the `javaType` used by the object mapper when deserializing.
+The fix is simple. Instead of setting the private field `JavaType javaType` to the `Class&amp;lt;T&amp;gt; type` passed in from the constructor, it should be set to the type returned by `getJavaType(Class&amp;lt;?&amp;gt; class)`.</description>
+			<version>1.4.1 (Evans SR1)</version>
+			<fixedVersion>1.5 M1 (Fowler), 1.4.2 (Evans SR2)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.serializer.JacksonJsonRedisSerializer.java</file>
+			<file type="M">org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="356" opendate="2014-11-24 08:34:01" fixdate="2014-11-28 01:18:02" resolution="Fixed">
+		<buginformation>
+			<summary>Scripts don&amp;apos;t try EVAL after EVALSHA fails</summary>
+			<description>(noticed after upgrading from 1.3.1 to 1.4.1, then adding a new script)
+If I run a script that hasn&amp;amp;apos;t been run on the Redis before, Spring executes EVALSHA first, which fails with error "NOSCRIPT", throwing an exception.
+In version 1.3.1 (expected): the exception is caught and EVAL is executed instead
+In version 1.4.1 (bug): the exception caused by NOSCRIPT reaches my code, instead of being properly caught and handled.</description>
+			<version>1.4.1 (Evans SR1)</version>
+			<fixedVersion>1.5 M1 (Fowler), 1.4.2 (Evans SR2)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.test.util.RelaxedJUnit4ClassRunner.java</file>
+			<file type="M">org.springframework.data.redis.core.script.DefaultScriptExecutor.java</file>
+			<file type="M">org.springframework.data.redis.RedisTestProfileValueSource.java</file>
+			<file type="D">org.springframework.data.redis.core.script.DefaultScriptExecutorTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="369" opendate="2015-01-23 20:18:40" fixdate="2015-02-05 00:57:35" resolution="Fixed">
+		<buginformation>
+			<summary>RedisCache zset leak</summary>
+			<description>I&amp;amp;apos;m using the spring-data-redis caching abstraction support feature, and I&amp;amp;apos;ve run into a serious redis leak. 
+RedisCache maintains a "~keys" ZSET in redis that collects the keys for a logical cache (i.e. person~keys for a cache named person). When using expirations, the actual key expires fine, and I see code setting a TTL on the ZSET at the same time as the TTL for the real key, but that TTL applies to the entire set. If you have constant cache puts for new items into the same cache, the ZSET never expires and just grows unbounded. In a production scenario with a cache that has a TTL of 5 minutes, I&amp;amp;apos;ve seen 2.9 million keys in the ZSET for the cache with hardly any of those keys actually still valid.</description>
+			<version>1.4.1 (Evans SR1)</version>
+			<fixedVersion>1.5 RC1 (Fowler), 1.4.3 (Evans SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCache.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="328" opendate="2014-07-22 18:30:57" fixdate="2015-03-02 04:02:30" resolution="Fixed">
+		<buginformation>
+			<summary>RedisCacheManager should not instantiate caches in setCacheNames()</summary>
+			<description>It is possible that setCacheNames() is called on the cache manager before all other properties are set, in which case the caches constructed during the call will be instantiated with default values for some properties.
+Affected properties include usePrefix, defaultExpiration, and the expires map.
+RedisCacheManager should implement InitializingBean or similar and set up its caches after initialization completes.
+E.g.
+This fails (prefixes aren&amp;amp;apos;t used): 
+
+
+
+
+
+
+    &amp;lt;bean id="cache.manager"
+
+
+
+
+          class="org.springframework.data.redis.cache.RedisCacheManager"
+
+
+
+
+          c:template-ref="redis.template"
+
+
+
+
+    &amp;gt;
+
+
+
+
+        &amp;lt;property name="cacheNames" value="cache.test.spring"/&amp;gt;
+
+
+
+
+        &amp;lt;property name="usePrefix" value="true"/&amp;gt;
+
+
+
+
+    &amp;lt;/bean&amp;gt;
+
+
+
+
+
+
+...but this works:
+
+
+
+
+
+
+    &amp;lt;bean id="cache.manager"
+
+
+
+
+          class="org.springframework.data.redis.cache.RedisCacheManager"
+
+
+
+
+          c:template-ref="redis.template"
+
+
+
+
+    &amp;gt;
+
+
+
+
+        &amp;lt;property name="usePrefix" value="true"/&amp;gt;
+
+
+
+
+        &amp;lt;property name="cacheNames" value="cache.test.spring"/&amp;gt;
+
+
+
+
+    &amp;lt;/bean&amp;gt;
+
+
+
+
+
+</description>
+			<version>1.3.1 (Dijkstra SR1)</version>
+			<fixedVersion>1.5 RC1 (Fowler), 1.4.3 (Evans SR3), 1.3.6 (Dijkstra SR6)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManager.java</file>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManagerUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">12026</link>
+		</links>
+	</bug>
+	<bug id="375" opendate="2015-02-18 12:20:54" fixdate="2015-03-04 22:25:27" resolution="Fixed">
+		<buginformation>
+			<summary>A transactional RedisCacheManager decorates the cache with the TransactionAwareCacheDecorator twice</summary>
+			<description>When the RedisCacheManager is configured the following way:
+
+
+
+
+
+
+RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate());
+
+
+
+
+cacheManager.setTransactionAware(true);
+
+
+
+
+cacheManager.setCacheNames(Arrays.asList(cacheName));
+
+
+
+
+
+
+then the created Cache instances are decorated twice with the TransactionAwareCacheDecorator.
+The problem is that in the addConfiguredCachesIfNecessary method the not configured caches are retrieved with the getCache(cacheName) method which already returns a decorated cache. This cache is then used in the loadCaches() method of the AbstractCacheManager and there it will be decorated again with the TransactionAwareCacheDecorator.
+The attached patch was created on the master branch and contains tests which show the issue and a quick fix is also implemented.
+Shall I create a pull request for this?</description>
+			<version>1.3.5 (Dijkstra SR5)</version>
+			<fixedVersion>1.5 RC1 (Fowler), 1.4.3 (Evans SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheManager.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="332" opendate="2014-07-29 02:33:33" fixdate="2015-04-13 04:41:17" resolution="Complete">
+		<buginformation>
+			<summary>@Transactional Using multiple connections</summary>
+			<description>When using a RedisTemplate with enableTransactionSupport set to true, it will open new connections for each redis operation.
+Given this example:
+@Transactional
+public void test() {
+	listOperations.rightPush("test", "a");
+	listOperations.rightPush("test", "a");
+}
+When monitoring everything that the server handles, you will see this output:
+1406625662.861592 [0 127.0.0.1:54842] "MULTI"
+1406625662.861592 [0 127.0.0.1:54842] "RPUSH" "test" "\"a\""
+1406625662.861592 [0 127.0.0.1:54842] "EXEC"
+1406625663.220937 [0 127.0.0.1:54843] "MULTI"
+1406625663.220937 [0 127.0.0.1:54843] "RPUSH" "test" "\"a\""
+1406625663.220937 [0 127.0.0.1:54843] "EXEC"
+With debugging the spring-data-redis source code we found that in RedisTemplate.java line 201 (version 1.3.1-RELEASE) the if condition checks for "enableTransactionSupport". If that is true, the connection is unbound. This leads to the next redis operation not working on the same connection anymore. If the condition would be "if (!enableTransactionSupport)" then the output is as we expect it to be:
+1406626330.259418 [0 127.0.0.1:54894] "MULTI"
+1406626330.259418 [0 127.0.0.1:54894] "RPUSH" "test" "\"a\""
+1406626330.259418 [0 127.0.0.1:54894] "RPUSH" "test" "\"a\""
+1406626330.259418 [0 127.0.0.1:54894] "EXEC"
+</description>
+			<version>1.3.1 (Dijkstra SR1)</version>
+			<fixedVersion>1.6 M1 (Gosling), 1.5.1 (Fowler SR1), 1.4.3 (Evans SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.RedisConnectionUtils.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="392" opendate="2015-04-04 17:44:22" fixdate="2015-08-31 12:16:15" resolution="Fixed">
+		<buginformation>
+			<summary>Jackson2RedisSerializer cannot deserialize ObjectId fields</summary>
+			<description>This code:
+
+
+
+
+
+
+public static void main(String[] args) throws IOException
+
+
+
+
+    {
+
+
+
+
+
+
+
+
+
+        GlobalMetricID txnID = new GlobalMetricID();
+
+
+
+
+        txnID.appId = new ObjectId("530a4bf1fe0e15115a197577");
+
+
+
+
+        txnID.metricId = 1;
+
+
+
+
+        txnID.metricName = "hello";
+
+
+
+
+
+
+
+
+
+        Jackson2JsonRedisSerializer serializer = new Jackson2JsonRedisSerializer(GlobalMetricID.class);
+
+
+
+
+        byte[] bytes = serializer.serialize(txnID);
+
+
+
+
+        String s1 = new String(bytes);
+
+
+
+
+        System.out.println(s1);
+
+
+
+
+
+
+
+
+
+        Object deserialize = serializer.deserialize(bytes);
+
+
+
+
+        System.out.println(deserialize);
+
+
+
+
+    }
+
+
+
+
+
+
+results in this 
+
+
+
+
+
+
+{"appId":{"time":1393183729000,"date":1393183729000,"timestamp":1393183729,"machine":-32631535,"timeSecond":1393183729,"new":false,"inc":1511617911},"metricName":"hello","metricId":1,"name":"hello"}
+
+
+
+
+Exception in thread "main" org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Unrecognized field "time" (class org.bson.types.ObjectId), not marked as ignorable (0 known properties: ])
+
+
+
+
+ at [Source: [B@4387b79e; line: 1, column: 31] (through reference chain: com.dripstat.metricprocessor.mongo.GlobalMetricID["appId"]-&amp;gt;org.bson.types.ObjectId["time"]); nested exception is com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "time" (class org.bson.types.ObjectId), not marked as ignorable (0 known properties: ])
+
+
+
+
+ at [Source: [B@4387b79e; line: 1, column: 31] (through reference chain: com.dripstat.metricprocessor.mongo.GlobalMetricID["appId"]-&amp;gt;org.bson.types.ObjectId["time"])
+
+
+
+
+	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:73)
+
+
+
+
+	at com.dripstat.metricprocessor.metric.caches.MetricIdCache.main(MetricIdCache.java:120)
+
+
+
+
+Caused by: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "time" (class org.bson.types.ObjectId), not marked as ignorable (0 known properties: ])
+
+
+
+
+ at [Source: [B@4387b79e; line: 1, column: 31] (through reference chain: com.dripstat.metricprocessor.mongo.GlobalMetricID["appId"]-&amp;gt;org.bson.types.ObjectId["time"])
+
+
+
+
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:51)
+
+
+
+
+	at com.fasterxml.jackson.databind.DeserializationContext.reportUnknownProperty(DeserializationContext.java:731)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:915)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1298)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1276)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:243)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:538)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:106)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:238)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118)
+
+
+
+
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3051)
+
+
+
+
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2255)
+
+
+
+
+	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:71)
+
+
+
+
+	... 1 more
+
+
+
+
+
+
+This means anyone trying to cache mongodb documents using redis will face this exception.
+This is a critical exception since the error is thrown during deserialization, so users will fill up their cache with data that cannot be serialized</description>
+			<version>1.5 GA (Fowler)</version>
+			<fixedVersion>1.6 GA (Gosling), 1.5.3 (Fowler SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.AbstractOperationsTestParams.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">390</link>
+		</links>
+	</bug>
+	<bug id="417" opendate="2015-07-24 06:38:17" fixdate="2015-10-16 13:01:07" resolution="Fixed">
+		<buginformation>
+			<summary>ScanCursor throw " java.util.NoSuchElementException"</summary>
+			<description>when scan big key with "match" options, redis server continuous return empty resultScanCursor throw " java.util.NoSuchElementException"</description>
+			<version>1.5 GA (Fowler)</version>
+			<fixedVersion>1.6.1 (Gosling SR1), 1.7 M1 (Hopper), 1.5.3 (Fowler SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.ScanCursor.java</file>
+			<file type="M">org.springframework.data.redis.connection.AbstractConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.AbstractConnectionTransactionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.AbstractConnectionPipelineIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.core.ScanCursorUnitTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="435" opendate="2015-10-26 19:41:56" fixdate="2015-10-27 09:46:05" resolution="Fixed">
+		<buginformation>
+			<summary>PubSubResubscribeTests and PubSubTests rely on other tests having already run previously</summary>
+			<description>If PubSubResubscribeTests or PubSubTests run before another test that&amp;amp;apos;s instantiated RedisTestProfileValueSource they fail with a NullPointerException:
+
+
+
+
+
+
+java.lang.NullPointerException
+
+
+
+
+	at org.springframework.data.redis.RedisTestProfileValueSource.matches(RedisTestProfileValueSource.java:112)
+
+
+
+
+	at org.springframework.data.redis.listener.PubSubResubscribeTests.shouldRun(PubSubResubscribeTests.java:85)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+
+
+
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+	at java.lang.reflect.Method.invoke(Method.java:606)
+
+
+
+
+(31 more lines...)
+
+
+
+
+
+
+And:
+
+
+
+
+
+
+java.lang.NullPointerException
+
+
+
+
+	at org.springframework.data.redis.RedisTestProfileValueSource.matches(RedisTestProfileValueSource.java:112)
+
+
+
+
+	at org.springframework.data.redis.listener.PubSubTests.shouldRun(PubSubTests.java:78)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+
+
+
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+	at java.lang.reflect.Method.invoke(Method.java:606)
+
+
+
+
+(31 more lines...)
+
+
+
+
+
+
+You can recreate the problem by running either of the two test classes on their own in your IDE. I just saw the failure trying to build Spring IO Platform 2.0 RC1 (which is using Spring Data Redis 1.6.0.RELEASE). I&amp;amp;apos;d appreciate a backport of any fix you make to all maintained branches as it&amp;amp;apos;s a huge pain to have these two tests be the only two that fail among the 10000s of tests that the Platform runs to verify compatibility.</description>
+			<version>1.6 GA (Gosling)</version>
+			<fixedVersion>1.6.1 (Gosling SR1), 1.7 M1 (Hopper), 1.5.3 (Fowler SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.RedisTestProfileValueSource.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="448" opendate="2016-01-28 06:41:51" fixdate="2016-01-28 08:44:47" resolution="Fixed">
+		<buginformation>
+			<summary>DefaultSetOperations.intersectAndStore don&amp;apos;t return operation result</summary>
+			<description>Method intersectAndStore in DefaultSetOperations don&amp;amp;apos;t return count the number of elements in the resulting set.
+http://redis.io/commands/sinterstore
+
+
+
+
+
+
+public Long intersectAndStore(K key, Collection&amp;lt;K&amp;gt; otherKeys, K destKey) {
+
+
+
+
+  final byte[][] rawKeys = rawKeys(key, otherKeys);
+
+
+
+
+  final byte[] rawDestKey = rawKey(destKey);
+
+
+
+
+  return execute(new RedisCallback&amp;lt;Long&amp;gt;() {
+
+
+
+
+
+
+
+
+
+    public Long doInRedis(RedisConnection connection) {
+
+
+
+
+      connection.sInterStore(rawDestKey, rawKeys);
+
+
+
+
+      return null; // &amp;lt;&amp;lt;&amp;lt;&amp;lt;
+
+
+
+
+    }
+
+
+
+
+  }, true);
+
+
+
+
+}
+
+
+
+
+
+
+</description>
+			<version>1.4.4 (Evans SR4)</version>
+			<fixedVersion>1.6.2 (Gosling SR2), 1.7 M1 (Hopper), 1.5.3 (Fowler SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.DefaultSetOperations.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultSetOperationsTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="431" opendate="2015-09-17 22:21:58" fixdate="2016-02-02 13:31:16" resolution="Fixed">
+		<buginformation>
+			<summary>SELECT not called with @Caching annotations and Lettuce library</summary>
+			<description>It seems like when items are put in the cache / retrieved from the cache using spring caching and when using the lettuce library (which i have recently switched to from jedis), that when a RedisConnection is retrieved from the pool and used by the RedisCache class, SELECT is not called and all the cache operations are happening in dbIndex 0, instead of the appropriate database index configured on the RedisTemplate.   I have confirmed that operations done using the redistemplate directly select the correct dbIndex before operations, but when simply using @Cacheable, @CachePut, and @CacheEvict attributes on a method the operations happen in dbIndex 0.</description>
+			<version>1.6 GA (Gosling)</version>
+			<fixedVersion>1.6.1 (Gosling SR1), 1.7 M1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.srp.SrpConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionPipelineIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionFactoryTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jredis.JRedisConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionTransactionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.java</file>
+			<file type="M">org.springframework.data.redis.connection.AbstractConnectionIntegrationTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionUnitTestSuite.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="415" opendate="2015-07-22 10:24:05" fixdate="2016-02-18 07:06:30" resolution="Fixed">
+		<buginformation>
+			<summary>Listener Container Does Not Set Interrupted Bit</summary>
+			<description>While waiting for the subscription task to start, the container catches InterruptedException but does not re-set the interrupted bit. Needs Thread.currentThread.interrupt().</description>
+			<version>1.5 GA (Fowler)</version>
+			<fixedVersion>1.7 RC1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.listener.RedisMessageListenerContainer.java</file>
+			<file type="M">org.springframework.data.redis.connection.ClusterCommandExecutor.java</file>
+			<file type="D">org.springframework.data.redis.listener.RedisMessageListenerContainerTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="467" opendate="2016-02-24 00:51:47" fixdate="2016-02-26 08:37:26" resolution="Fixed">
+		<buginformation>
+			<summary>Cluster mget not working</summary>
+			<description>With a 3-node redis cluster, all masters, I&amp;amp;apos;ve set 100 keys via mset, which seems to have worked correctly. Note: all keys do not slot to the same cluster member. Calling JedisClusterConnection.mGet with all 100 keys returns 3 results. It&amp;amp;apos;s hard to tell from debugging but I think the problem is in ClusterCommandExecutor.executeMuliKeyCommand, where a Map of RedisClusterNode to Future&amp;lt;T&amp;gt; is collected and processed. I believe it&amp;amp;apos;s discarding the multiple futures per host here by putting them in a Map with the same key, so that the only result we end up with is the last for each cluster member.</description>
+			<version>1.7 M1 (Hopper)</version>
+			<fixedVersion>1.7 RC1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisClusterConnectionTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisClusterConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceClusterConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.ClusterCommandExecutorUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceClusterConnectionTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.ClusterCommandExecutor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="472" opendate="2016-03-03 14:06:38" fixdate="2016-03-04 14:00:33" resolution="Fixed">
+		<buginformation>
+			<summary>Update/Add guards in JedisConnetion that (no longer) require casts from long to int when exceeding Integer.MAX_VALUE</summary>
+			<description>The Jedis API in JedisConnection has not been updated for a while. It was using the old Jedis API for expiries where time is passed as integer. As a workaround the expiration time was checked if it is &amp;gt; Integer.MAX_VALUE which then caused the exception when calling pExpire(key, time) on JedisConnection in the pipeline with time in ms &amp;gt; Integer.MAX_VALUE , which is 24 days.
+This pull request removes this guard and uses new Jedis API that accepts long time instead of int. All tests pass.</description>
+			<version>1.7 M1 (Hopper)</version>
+			<fixedVersion>1.7 RC1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionUnitTestSuite.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="495" opendate="2016-04-13 19:56:42" fixdate="2016-04-14 17:37:56" resolution="Duplicate">
+		<buginformation>
+			<summary>Arrays are incorrectly considered Collections</summary>
+			<description>For example, attempting to store an Exception fails with ClassCastException:
+Caused by: java.lang.ClassCastException: [Ljava.lang.StackTraceElement; cannot be cast to java.util.Collection
+	at org.springframework.data.redis.core.convert.MappingRedisConverter$3.doWithPersistentProperty(MappingRedisConverter.java:411) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter$3.doWithPersistentProperty(MappingRedisConverter.java:394) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.mapping.model.BasicPersistentEntity.doWithProperties(BasicPersistentEntity.java:310) ~[spring-data-commons-1.12.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.writeInternal(MappingRedisConverter.java:394) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.access$900(MappingRedisConverter.java:104) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter$3.doWithPersistentProperty(MappingRedisConverter.java:414) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter$3.doWithPersistentProperty(MappingRedisConverter.java:394) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.mapping.model.BasicPersistentEntity.doWithProperties(BasicPersistentEntity.java:310) ~[spring-data-commons-1.12.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.writeInternal(MappingRedisConverter.java:394) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.write(MappingRedisConverter.java:349) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.write(MappingRedisConverter.java:104) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.RedisKeyValueAdapter.put(RedisKeyValueAdapter.java:177) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.keyvalue.core.KeyValueTemplate$2.doInKeyValue(KeyValueTemplate.java:213) ~[spring-data-keyvalue-1.1.1.RELEASE.jar:na]
+	at org.springframework.data.keyvalue.core.KeyValueTemplate.execute(KeyValueTemplate.java:377) ~[spring-data-keyvalue-1.1.1.RELEASE.jar:na]
+	... 32 common frames omitted
+Similarly, attempting to save a String array results in:
+Caused by: java.lang.IllegalArgumentException: Unsupported Collection type: [Ljava.lang.String;
+	at org.springframework.core.CollectionFactory.createCollection(CollectionFactory.java:201) ~[spring-core-4.2.5.RELEASE.jar:4.2.5.RELEASE]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.readCollectionOfSimpleTypes(MappingRedisConverter.java:547) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.access$300(MappingRedisConverter.java:104) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter$1.doWithPersistentProperty(MappingRedisConverter.java:232) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter$1.doWithPersistentProperty(MappingRedisConverter.java:204) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.mapping.model.BasicPersistentEntity.doWithProperties(BasicPersistentEntity.java:310) ~[spring-data-commons-1.12.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.readInternal(MappingRedisConverter.java:204) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.read(MappingRedisConverter.java:156) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.convert.MappingRedisConverter.read(MappingRedisConverter.java:104) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.redis.core.RedisKeyValueAdapter.get(RedisKeyValueAdapter.java:275) ~[spring-data-redis-1.7.1.RELEASE.jar:na]
+	at org.springframework.data.keyvalue.core.KeyValueTemplate$4.doInKeyValue(KeyValueTemplate.java:274) ~[spring-data-keyvalue-1.1.1.RELEASE.jar:na]
+	at org.springframework.data.keyvalue.core.KeyValueTemplate.execute(KeyValueTemplate.java:377) ~[spring-data-keyvalue-1.1.1.RELEASE.jar:na]
+	... 32 common frames omitted</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverterUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverter.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.ConversionTestEntities.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.PathIndexResolver.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">492</link>
+		</links>
+	</bug>
+	<bug id="498" opendate="2016-04-15 05:50:05" fixdate="2016-04-15 09:51:12" resolution="Fixed">
+		<buginformation>
+			<summary>MappingRedisConverter uses List.sort which requires Java 8.</summary>
+			<description></description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="489" opendate="2016-04-07 17:08:26" fixdate="2016-04-15 09:51:35" resolution="Fixed">
+		<buginformation>
+			<summary>Store and retrieve type hints for Object type property values even when those are considered as simple types.</summary>
+			<description>
+
+
+
+
+
+static class Foo {
+
+
+
+
+	Map&amp;lt;String, Object&amp;gt; map = new HashMap&amp;lt;String, Object&amp;gt;();
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+Foo foo = new Foo();
+
+
+
+
+foo.map.put("foo", "bar");
+
+
+
+
+
+
+
+
+
+RedisData rd = write(foo);
+
+
+
+
+
+
+
+
+
+Foo result = converter.read(Foo.class, rd);
+
+
+
+
+assertThat(result.map.get("foo"), instanceof(String.class));
+
+
+
+
+
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverterUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverter.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.ConversionTestEntities.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="492" opendate="2016-04-11 14:59:16" fixdate="2016-04-15 09:52:20" resolution="Fixed">
+		<buginformation>
+			<summary>"CollectionLike" properties are force cast into Collection&lt;?&gt; even though they could be arrays</summary>
+			<description>MappingRedisConverter.writeInternal() does a check against properties. If they are "collection like" then they get cast as Collection&amp;lt;?&amp;gt;. However, isCollectionLike() detects iterables, arrays, and collections, hence this is a faulty assumption for casting.
+
+
+
+
+
+
+...
+
+
+
+
+if (persistentProperty.isMap()) {
+
+
+
+
+	writeMap(keyspace, propertyStringPath, persistentProperty.getMapValueType(),
+
+
+
+
+		(Map&amp;lt;?, ?&amp;gt;) accessor.getProperty(persistentProperty), sink);
+
+
+
+
+} else if (persistentProperty.isCollectionLike()) {
+
+
+
+
+	writeCollection(keyspace, propertyStringPath, (Collection&amp;lt;?&amp;gt;) accessor.getProperty(persistentProperty),
+
+
+
+
+			persistentProperty.getTypeInformation().getComponentType(), sink);
+
+
+
+
+} else if (persistentProperty.isEntity()) {
+
+
+
+
+	writeInternal(keyspace, propertyStringPath, accessor.getProperty(persistentProperty),
+
+
+
+
+			persistentProperty.getTypeInformation().getActualType(), sink);
+
+
+
+
+} else {
+
+
+
+
+	Object propertyValue = accessor.getProperty(persistentProperty);
+
+
+
+
+	writeToBucket(propertyStringPath, propertyValue, sink, persistentProperty.getType());
+
+
+
+
+}
+
+
+
+
+...
+
+
+
+
+
+
+TypeDiscoverer.isCollectionLike...
+
+
+
+
+
+
+	public boolean isCollectionLike() {
+
+
+
+
+
+
+
+
+
+		Class&amp;lt;?&amp;gt; rawType = getType();
+
+
+
+
+
+
+
+
+
+		if (rawType.isArray() || Iterable.class.equals(rawType)) {
+
+
+
+
+			return true;
+
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+		return Collection.class.isAssignableFrom(rawType);
+
+
+
+
+	}
+
+
+
+
+
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverterUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverter.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.ConversionTestEntities.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.PathIndexResolver.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">495</link>
+		</links>
+	</bug>
+	<bug id="501" opendate="2016-04-22 13:10:45" fixdate="2016-04-26 13:32:08" resolution="Fixed">
+		<buginformation>
+			<summary>RedisTemplate&amp;apos;s default serializer assumes that its ClassLoader can load application types</summary>
+			<description>By default, RedisTemplate uses a JdkSerializationRedisSerializer that will use the default class loader (typically the app class loader) for deserialization. This assumes that the class loader that loaded RedisTemplate will also be able to load an application&amp;amp;apos;s own classes. This doesn&amp;amp;apos;t hold true when using Spring Boot&amp;amp;apos;s DevTools or in a container where Spring Data Redis is installed as a shared library.
+DATAREDIS-427 made it easier to configure the class loader used by JdkSerializationRedisSerializer. Could RedisTemplate be updated to take advantage of this and configure its default JdkSerializationRedisSerializer to use the application context&amp;amp;apos;s ClassLoader?</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.RedisTemplateUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="509" opendate="2016-05-04 15:40:56" fixdate="2016-05-09 13:30:09" resolution="Fixed">
+		<buginformation>
+			<summary>Handle serializing arrays of primitives</summary>
+			<description>MappingRedisConverter.writeInternal() does a check against properties. If they are "collection like" then there is an additional check for array. However, array is assumed to be an array of objects and is cast to Object[]. That does not work for array of primitives.
+
+
+
+
+
+
+if (persistentProperty.isMap()) {
+
+
+
+
+					writeMap(keyspace, propertyStringPath, persistentProperty.getMapValueType(),
+
+
+
+
+							(Map&amp;lt;?, ?&amp;gt;) accessor.getProperty(persistentProperty), sink);
+
+
+
+
+				} else if (persistentProperty.isCollectionLike()) {
+
+
+
+
+
+
+
+
+
+					final Object property = accessor.getProperty(persistentProperty);
+
+
+
+
+
+
+
+
+
+					if (property == null || Iterable.class.isAssignableFrom(property.getClass())) {
+
+
+
+
+
+
+
+
+
+						writeCollection(keyspace, propertyStringPath, (Iterable&amp;lt;?&amp;gt;) property,
+
+
+
+
+								persistentProperty.getTypeInformation().getComponentType(), sink);
+
+
+
+
+					} else if (property.getClass().isArray()) {
+
+
+
+
+
+
+
+
+
+						writeCollection(keyspace, propertyStringPath, Arrays.asList((Object[]) property),
+
+
+
+
+								persistentProperty.getTypeInformation().getComponentType(), sink);
+
+
+
+
+					} else {
+
+
+
+
+
+
+
+
+
+						throw new RuntimeException("Don&amp;amp;apos;t know how to handle " + property.getClass() + " type collection");
+
+
+
+
+					}
+
+
+
+
+
+
+If we add the following test to org/springframework/data/redis/core/convert/MappingRedisConverterUnitTests.java:
+
+
+
+
+
+
+@Test
+
+
+
+
+    public void writeHandlesArraysOfPrimitivesProperly() {
+
+
+
+
+        WithArrays source = new WithArrays();
+
+
+
+
+        source.arrayOfPrimitives = new int[] { 1, 2, 3 };
+
+
+
+
+        assertThat(write(source).getBucket(), isBucket().containingUtf8String("arrayOfPrimitives.[0]", "1")
+
+
+
+
+                .containingUtf8String("arrayOfPrimitives.[1]", "2")
+
+
+
+
+                .containingUtf8String("arrayOfPrimitives.[2]", "3"));
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+, it fails with: 
+
+
+
+
+
+
+java.lang.ClassCastException: [I cannot be cast to [Ljava.lang.Object;
+
+
+
+
+
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.convert.PathIndexResolverUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.ConversionTestEntities.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverterUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.MappingRedisConverter.java</file>
+			<file type="M">org.springframework.data.redis.core.convert.PathIndexResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="469" opendate="2016-02-26 07:23:22" fixdate="2016-05-17 06:45:37" resolution="Fixed">
+		<buginformation>
+			<summary>RedisAtomicLong throws a null pointer if key is removed</summary>
+			<description>RedisAtomicLong throws a null pointer on get, if the key has been removed/expired from the underlying Redis store.  It looks like an autoboxing issue, when jedis returns null as the value for the key.
+The code is quite clear. operations.get(key); returns null, and java unboxing to an int throws a NullPointer . 
+
+
+
+
+
+
+// In RedisAtomicLong:152
+
+
+
+
+public long get() {
+
+
+
+
+	return operations.get(key);
+
+
+
+
+}
+
+
+
+
+
+
+Stacktrace
+
+
+
+
+
+
+java.lang.NullPointerException
+
+
+
+
+	at org.springframework.data.redis.support.atomic.RedisAtomicLong.get(RedisAtomicLong.java:152)
+
+
+
+
+
+
+Can be reproduced with a simple test
+
+
+
+
+
+
+class RedisAtomicLongNullPointerTest extends GroovyTestCase {
+
+
+
+
+    
+
+
+
+
+    void testNewAtomicLong() {
+
+
+
+
+        
+
+
+
+
+        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(port: 6379, hostName: "127.0.0.1",usePool: false);
+
+
+
+
+        jedisConnectionFactory.afterPropertiesSet();
+
+
+
+
+        
+
+
+
+
+        // setup long
+
+
+
+
+        def test = new RedisAtomicLong("test",jedisConnectionFactory, 1)
+
+
+
+
+        assertThat(test.get(), equalTo(1L))  // this passes
+
+
+
+
+
+
+
+
+
+        // delete key
+
+
+
+
+        new StringRedisTemplate(jedisConnectionFactory).delete("test")
+
+
+
+
+
+
+
+
+
+        try {
+
+
+
+
+            assertThat(test.get(), equalTo(0L))    
+
+
+
+
+        } catch (NullPointerException npe) {
+
+
+
+
+            fail("Unexpected Null Pointer");  // fails here
+
+
+
+
+        }        
+
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+</description>
+			<version>1.6.2 (Gosling SR2)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls), 1.6.5 (Gosling SR5)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicIntegerTests.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicInteger.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicLongTests.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicDoubleTests.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicLong.java</file>
+			<file type="M">org.springframework.data.redis.support.atomic.RedisAtomicDouble.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="491" opendate="2016-04-11 05:45:41" fixdate="2016-05-25 13:27:22" resolution="Fixed">
+		<buginformation>
+			<summary>Prevent KeyspaceEventMessageListener from starting when no repository detected</summary>
+			<description>Do not automatically start the KeyspaceEventMessageListener when there&amp;amp;apos;s no repository at hand and check the ConnectionFactory in case there&amp;amp;apos;s no connection returned. 
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.repository.configuration.EnableRedisRepositories.java</file>
+			<file type="M">org.springframework.data.redis.repository.configuration.RedisRepositoryConfigurationExtension.java</file>
+			<file type="M">org.springframework.data.redis.repository.configuration.RedisRepositoryConfigurationExtensionUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisKeyValueAdapterUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisKeyValueAdapter.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisKeyValueAdapterTests.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">505</link>
+			<link type="Relate" description="is related to">502</link>
+		</links>
+	</bug>
+	<bug id="513" opendate="2016-05-19 04:41:30" fixdate="2016-06-02 08:38:25" resolution="Fixed">
+		<buginformation>
+			<summary>Pipelining doesn&amp;apos;t supports time operation</summary>
+			<description>
+
+
+
+
+
+		List&amp;lt;Object&amp;gt; results = (List&amp;lt;Object&amp;gt;) stringRedisTemplate.executePipelined(new RedisCallback&amp;lt;Object&amp;gt;() {
+
+
+
+
+			@Override
+
+
+
+
+			public List&amp;lt;Object&amp;gt; doInRedis(RedisConnection connection) throws DataAccessException {
+
+
+
+
+				connection.incr("test".getBytes());
+
+
+
+
+				connection.time();
+
+
+
+
+				return null;
+
+
+
+
+			}
+
+
+
+
+		});
+
+
+
+
+		System.out.println(results);
+
+
+
+
+
+
+
+
+
+
+
+
+redis.clients.jedis.exceptions.JedisDataException: Cannot use Jedis when in Pipeline. Please use Pipeline or reset jedis state .
+
+
+
+
+	at redis.clients.jedis.BinaryJedis.checkIsInMultiOrPipeline(BinaryJedis.java:1671)
+
+
+
+
+	at redis.clients.jedis.BinaryJedis.time(BinaryJedis.java:3226)
+
+
+
+
+	at org.springframework.data.redis.connection.jedis.JedisConnection.time(JedisConnection.java:3184)
+
+
+
+
+	at org.springframework.data.redis.connection.DefaultStringRedisConnection.time(DefaultStringRedisConnection.java:2365)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+
+
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+
+
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+
+
+
+	at java.lang.reflect.Method.invoke(Method.java:498)
+
+
+
+
+	at org.springframework.data.redis.core.CloseSuppressingInvocationHandler.invoke(CloseSuppressingInvocationHandler.java:57)
+
+
+
+
+	at com.sun.proxy.$Proxy142.time(Unknown Source)
+
+
+
+
+
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls), 1.6.5 (Gosling SR5)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConverters.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnection.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConverters.java</file>
+			<file type="M">org.springframework.data.redis.connection.AbstractConnectionIntegrationTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="510" opendate="2016-05-09 03:29:56" fixdate="2016-06-14 15:19:59" resolution="Fixed">
+		<buginformation>
+			<summary>Current CacheValueAccessor implementation Make null value to empty string</summary>
+			<description>
+
+
+
+
+
+		byte[] convertToBytesIfNecessary(Object value) {
+
+
+
+
+
+
+
+
+
+			if (value == null) {
+
+
+
+
+				return new byte[0];
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+
+			if (valueSerializer == null &amp;amp;&amp;amp; value instanceof byte[]) {
+
+
+
+
+				return (byte[]) value;
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+
+			return valueSerializer.serialize(value);
+
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+		Object deserializeIfNecessary(byte[] value) {
+
+
+
+
+
+
+
+
+
+			if (valueSerializer != null) {
+
+
+
+
+				return valueSerializer.deserialize(value);
+
+
+
+
+			}
+
+
+
+
+
+
+
+
+
+			return value;
+
+
+
+
+		}
+
+
+
+
+
+
+The code above convert null to empty byte array when save to redis, but did not do the reverse when read from redis.
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.7.2 (Hopper SR2), 1.8 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCache.java</file>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="500" opendate="2016-04-21 05:06:32" fixdate="2016-06-17 08:56:31" resolution="Fixed">
+		<buginformation>
+			<summary>executePipelined with RedisCallback uses wrong serializer (RedisTemplate.java)</summary>
+			<description>RedisTemplate.executePipelined with RedisCallback uses wrong serializer when hashKeySerializer is different from  hashValueSerializer. 
+
+
+
+
+
+
+    @Test
+
+
+
+
+    public void testExecutePipelinedWidthDifferentHashKeySerializerAndHashValueSerializer() {
+
+
+
+
+        assumeTrue(redisTemplate instanceof RedisTemplate);
+
+
+
+
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+
+
+
+
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+
+
+
+
+        redisTemplate.setHashValueSerializer(new GenericToStringSerializer&amp;lt;Long&amp;gt;(Long.class));
+
+
+
+
+        redisTemplate.opsForHash().put((K) "foo", "key", 1L);
+
+
+
+
+        List&amp;lt;Object&amp;gt; results = redisTemplate.executePipelined(new RedisCallback() {
+
+
+
+
+            public Object doInRedis(RedisConnection connection) throws DataAccessException {
+
+
+
+
+                connection.hGetAll(((StringRedisSerializer) redisTemplate.getKeySerializer()).serialize("foo"));
+
+
+
+
+                return null;
+
+
+
+
+            }
+
+
+
+
+        });
+
+
+
+
+        assertEquals(((Map) results.get(0)).get("key"), 1L);
+
+
+
+
+    }
+
+
+
+
+
+</description>
+			<version>1.7.1 (Hopper SR1)</version>
+			<fixedVersion>1.8 M1 (Ingalls), 1.6.5 (Gosling SR5), 1.7.3 (Hopper SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplateTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="524" opendate="2016-06-22 07:14:52" fixdate="2016-07-06 12:33:02" resolution="Fixed">
+		<buginformation>
+			<summary>NOAUTH Authentication required when connecting to Redis Sentinel with LettuceConnectionFactory</summary>
+			<description>Using LettuceConnectionFactory with Redis Sentinel and password-protected Redis nodes causes NOAUTH errors because the configured password is not set in RedisURI.</description>
+			<version>1.7.2 (Hopper SR2)</version>
+			<fixedVersion>1.8 M1 (Ingalls), 1.7.3 (Hopper SR3)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.lettuce.DefaultLettucePool.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnectionFactoryUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.DefaultLettucePoolTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="548" opendate="2016-08-24 07:15:47" fixdate="2016-08-30 11:24:31" resolution="Fixed">
+		<buginformation>
+			<summary>Connection should be released when used with read-only transactions</summary>
+			<description>A RedisTemplate with enabled transaction support does not close the connection when used in read-only transactions.
+
+
+
+
+
+
+	@Transactional(readOnly = true)
+
+
+
+
+	public void readonly() {
+
+
+
+
+			template.opsForValue().set("key", "value");
+
+
+
+
+	}
+
+
+
+
+
+
+RedisTemplate.execute performs a check after the callback whether transaction support is enabled and if so, it skips connection releasing.</description>
+			<version>1.6.4 (Gosling SR4)</version>
+			<fixedVersion>1.6.5 (Gosling SR5), 1.7.3 (Hopper SR3), 1.8 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisTransactionalConnectionStarvationTest.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisConnectionUtils.java</file>
+			<file type="M">org.springframework.data.redis.connection.AbstractTransactionalTestBase.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="531" opendate="2016-07-07 09:05:52" fixdate="2016-09-05 09:32:19" resolution="Fixed">
+		<buginformation>
+			<summary>ScanCursor holds reference to closed/released Jedis connection</summary>
+			<description>The concurrent use of SCAN and iteration over the resulting Cursor causes various Exceptions using the Jedis Driver.
+Test case: https://gist.github.com/mp911de/327cb876117bc1d74049aff25e5509cb
+
+
+
+
+
+
+redis.clients.jedis.exceptions.JedisConnectionException: Unknown reply: 5
+
+
+
+
+	at redis.clients.jedis.Protocol.process(Protocol.java:154)
+
+
+
+
+	at redis.clients.jedis.Protocol.processMultiBulkReply(Protocol.java:196)
+
+
+
+
+	at redis.clients.jedis.Protocol.process(Protocol.java:147)
+
+
+
+
+	at redis.clients.jedis.Protocol.processMultiBulkReply(Protocol.java:196)
+
+
+
+
+	at redis.clients.jedis.Protocol.process(Protocol.java:147)
+
+
+
+
+	at redis.clients.jedis.Protocol.read(Protocol.java:205)
+
+
+
+
+	at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:297)
+
+
+
+
+	at redis.clients.jedis.Connection.getRawObjectMultiBulkReply(Connection.java:242)
+
+
+
+
+	at redis.clients.jedis.Connection.getObjectMultiBulkReply(Connection.java:248)
+
+
+
+
+	at redis.clients.jedis.BinaryJedis.hscan(BinaryJedis.java:3300)
+
+
+
+
+	at org.springframework.data.redis.connection.jedis.JedisConnection$5.doScan(JedisConnection.java:3437)
+
+
+
+
+
+
+
+
+
+
+
+
+java.lang.ClassCastException: [B cannot be cast to java.util.List
+
+
+
+
+	at redis.clients.jedis.Connection.getRawObjectMultiBulkReply(Connection.java:242)
+
+
+
+
+	at redis.clients.jedis.Connection.getObjectMultiBulkReply(Connection.java:248)
+
+
+
+
+	at redis.clients.jedis.BinaryJedis.hscan(BinaryJedis.java:3300)
+
+
+
+
+	at org.springframework.data.redis.connection.jedis.JedisConnection$5.doScan(JedisConnection.java:3437)
+
+
+
+
+
+
+This issue gets only visible if:
+1. Multiple threads try to use the SCAN command and iterate over the resulting Cursor
+2. There is enough data to keep the iteration busy
+The reason is that the resulting Cursor s hold a reference to the connection that was allocated during the .scan() invocation. .scan() allocates a connection but then it releases the connection back and so can multiple Cursors in different Thread s share the same Jedis connection.</description>
+			<version>1.7.2 (Hopper SR2)</version>
+			<fixedVersion>1.8 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.core.RedisTemplateUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnectionUnitTestSuite.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisOperations.java</file>
+			<file type="M">org.springframework.data.redis.core.ZSetOperations.java</file>
+			<file type="M">org.springframework.data.redis.support.collections.AbstractRedisMapTests.java</file>
+			<file type="M">org.springframework.data.redis.support.collections.AbstractRedisSetTests.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultSetOperationsTests.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultZSetOperationsTests.java</file>
+			<file type="M">org.springframework.data.redis.support.collections.AbstractRedisZSetTest.java</file>
+			<file type="M">org.springframework.data.redis.core.SetOperations.java</file>
+			<file type="M">org.springframework.data.redis.support.collections.RedisPropertiesTests.java</file>
+			<file type="M">org.springframework.data.redis.connection.lettuce.LettuceConnection.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultHashOperations.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultHashOperationsTests.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultZSetOperations.java</file>
+			<file type="M">org.springframework.data.redis.connection.jedis.JedisConnection.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisTemplate.java</file>
+			<file type="M">org.springframework.data.redis.core.DefaultSetOperations.java</file>
+			<file type="M">org.springframework.data.redis.core.HashOperations.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">550</link>
+			<link type="Supersede" description="supersedes">454</link>
+			<link type="Supersede" description="supersedes">382</link>
+		</links>
+	</bug>
+	<bug id="547" opendate="2016-08-23 14:09:54" fixdate="2016-09-12 14:53:50" resolution="Fixed">
+		<buginformation>
+			<summary>Getting NPE when writing valid Query Method without any criteria</summary>
+			<description>When creating a valid query method in Spring Data Redis without any criteria, for example:
+
+
+
+
+
+
+Game findFirstByOrderByStartDesc();
+
+
+
+
+
+
+We don&amp;amp;apos;t get an error stating that Ordering/Sorting is not supported for Redis, but instead we receive a NPE in the following class:
+
+
+
+
+
+
+org.springframework.data.redis.repository.query.RedisQueryCreator#complete
+
+
+
+
+
+</description>
+			<version>1.7.2 (Hopper SR2)</version>
+			<fixedVersion>1.7.3 (Hopper SR3), 1.8 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.repository.RedisRepositoryIntegrationTestBase.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisQueryEngine.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisKeyValueAdapter.java</file>
+			<file type="M">org.springframework.data.redis.repository.query.RedisQueryCreator.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Depend" description="depends on">142</link>
+		</links>
+	</bug>
+	<bug id="551" opendate="2016-09-12 14:56:55" fixdate="2016-09-13 08:58:09" resolution="Fixed">
+		<buginformation>
+			<summary>NPE when counting keys while invoking findBy(Pageable)</summary>
+			<description>When invoking a derived query without criteria but with Pageable
+
+
+
+
+
+
+Page&amp;lt;Person&amp;gt; findBy(Pageable page);
+
+
+
+
+
+
+then a NullPointerException occurs:
+
+
+
+
+
+
+Caused by: java.lang.NullPointerException
+
+
+
+
+	at org.springframework.data.redis.core.RedisQueryEngine$2.doInRedis(RedisQueryEngine.java:169)
+
+
+
+
+	at org.springframework.data.redis.core.RedisQueryEngine$2.doInRedis(RedisQueryEngine.java:163)
+
+
+
+
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:207)
+
+
+
+
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:169)
+
+
+
+
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:157)
+
+
+
+
+
+</description>
+			<version>1.7.2 (Hopper SR2)</version>
+			<fixedVersion>1.7.3 (Hopper SR3), 1.8 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.repository.RedisRepositoryIntegrationTestBase.java</file>
+			<file type="M">org.springframework.data.redis.core.RedisQueryEngine.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="542" opendate="2016-07-28 10:12:11" fixdate="2016-10-07 11:54:01" resolution="Fixed">
+		<buginformation>
+			<summary>RedisCache.putIfAbsent does not set the TTL on the element</summary>
+			<description>RedisCache.putIfAbsent does not set the TTL on the element in redis. This appears to be because the RedisCachePutIfAbsentCallback performs the wrong check to decide whether it should set the TTL.
+The check at
+https://github.com/spring-projects/spring-data-redis/blob/master/src/main/java/org/springframework/data/redis/cache/RedisCache.java#L725
+Looks like it should check for null being returned from the set rather than checking equality with the supplied value.</description>
+			<version>1.6.6 (Gosling SR6)</version>
+			<fixedVersion>1.8 RC1 (Ingalls), 1.6.7 (Gosling SR7), 1.7.5 (Hopper SR5)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.redis.cache.RedisCacheUnitTests.java</file>
+			<file type="M">org.springframework.data.redis.cache.RedisCache.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

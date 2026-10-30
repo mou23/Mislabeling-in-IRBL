@@ -1,0 +1,548 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="SOCIALFB">
+	<bug id="33" opendate="2011-10-17 06:07:11" fixdate="2011-11-07 15:25:27" resolution="Complete">
+		<buginformation>
+			<summary>NPE when FB sends back data for likes instead of count</summary>
+			<description>Sometimes Facebook sends back a count for the number of people who have "liked" a post and sometimes they send back data containing references to those people who liked the post. Currently, PostMixin is written to assume that it will receive the count and will fail when it receives reference data. This should be written to more gracefully handle either situation.</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.0.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PostMixin.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="42" opendate="2011-11-14 00:46:00" fixdate="2012-01-30 09:15:11" resolution="Complete">
+		<buginformation>
+			<summary>FacebookErrorHandler will be handle 404 Not Found Error as org.springframework.social.ResourceNotFoundException.</summary>
+			<description>as you know, org.springframework.social.facebook.api.impl.FacebookErrorHandler doesn&amp;amp;apos;t handle there 404 Not found error.
+they (404 not found error) still handle by handleUncategorizedError (DefaultResponseErrorHandler.handleError detect and make HttpClientErrorException, and FacebookErrorHandler caught all of exception &amp;amp; translate to UncategorizedApiException)
+it&amp;amp;apos;s harmful if you using spring-social-facebook on your project.
+(that&amp;amp;apos; why i catch UncategorizedApiException and check that&amp;amp;apos;s rootCause is instanceof HttpClientErrorException, and another check HttpStatus is equal to HttpStatus.NOT_FOUND (404), then finally i can do what i want.)
+and there org.springframework.social.SocialException hierarchy still there. (and i want 404 Not Found Error translate to org.springframework.social.ResourceNotFoundException. no more Uncategorized Exception)</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.1.0.M1, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.FacebookErrorHandler.java</file>
+			<file type="M">org.springframework.social.facebook.api.ErrorHandlingTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="75" opendate="2012-04-03 12:29:27" fixdate="2012-04-16 13:19:48" resolution="Complete">
+		<buginformation>
+			<summary>FqlResult.getList(String fieldName, FqlResultMapper&lt;T&gt; mapper) throws null pointer when field value is null</summary>
+			<description>Using FQL to access the stream table, many of the json elements return are null at times.
+if you call FqlResult.getList(String fieldName, FqlResultMapper&amp;lt;T&amp;gt; mapper) with a field that exists, but is null, a null pointer exception will be thrown:
+java.lang.NullPointerException
+    at org.springframework.social.facebook.api.FqlResult.getList(FqlResult.java:163)
+    at com.inqmobile.inqcloud.domain.facebook.FbStreamItemMapper.mapObject(FbStreamItemMapper.java:58)
+    at com.inqmobile.inqcloud.domain.facebook.FbStreamItemMapper.mapObject(FbStreamItemMapper.java:1)
+    at org.springframework.social.facebook.api.impl.FqlTemplate.query(FqlTemplate.java:48)
+which corresponds to
+List&amp;lt;Map&amp;lt;String, Object&amp;gt;&amp;gt; arrayItems = (List&amp;lt;Map&amp;lt;String, Object&amp;gt;&amp;gt;) resultMap.get(fieldName);
+for (Map&amp;lt;String, Object&amp;gt; arrayItem : arrayItems) {    ~~~~~ this line  ~~~~~
+	response.add(mapper.mapObject(new FqlResult(arrayItem)));
+}		
+Expected behavior is to return null if the json value is null.
+https://graph.facebook.com/fql?q=SELECT post_id, message, action_links FROM stream WHERE source_id=100002487294420 LIMIT 1
+returns
+{  "data": [
+    {
+      "post_id": "100002487294420_404871966208922",
+      "message": "Robert Blair http://sphotos.xx.fbcdn.net/hphotos-ash4/s320x320/375127_183841518401962_100003283444808_309767_1436664147_n.jpg wat is dat! ",
+      "action_links": null
+    }
+  ]
+}
+
+note that other getXYZ calls throw null pointer or number format exceptions if the value is null, as opposed to not present.
+Facebook fql will sometimes return null for values documented as type &amp;amp;apos;int&amp;amp;apos; 
+I would like the ability to call getLong without first checking if the original result is null.
+Might also want to expose resultMap.containsKey() on the FqlResult class too.
+</description>
+			<version>1.1.0.RELEASE</version>
+			<fixedVersion>1.1.0.M1, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.FqlTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.FqlResult.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="80" opendate="2012-05-08 08:49:25" fixdate="2012-05-09 10:34:15" resolution="Complete">
+		<buginformation>
+			<summary>OperationNotPermittedException thrown when an InsufficientPermissionException should have been thrown.</summary>
+			<description>Facebook has recently started improving its errors from the Graph API. This is a good thing (the existing errors left much to be desired). However, the side effect of this is that FacebookErrorHandler may now throw the wrong exception in some cases.
+One such case is when the user has not authorized an application to post to their feed and a post is attempted. An InsufficientPermissionException is expected, but instead an OperationNotPermittedException is thrown. 
+This issue addresses this specific case. A separate task will be created for reviewing Facebook&amp;amp;apos;s new errors and updating FacebookErrorHandler appropriately for all cases.</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.1.0.M1, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.FacebookErrorHandler.java</file>
+			<file type="M">org.springframework.social.facebook.api.ErrorHandlingTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="92" opendate="2012-08-23 09:57:31" fixdate="2012-08-30 13:22:32" resolution="Complete">
+		<buginformation>
+			<summary>Changes to page pictures property will break API binding</summary>
+			<description>On 10/3/2012 the Facebook API will be changed such that the pictures property on page objects will no longer be a string, but will instead be an object. This will break the existing API binding when trying to deserialize the picture property. In mid-August 2012, Facebook applied this breaking change, but apps can be reconfigured (temporarily) to opt out of the change.
+See https://developers.facebook.com/roadmap/#october-2012 for details.
+The Spring Social Facebook API binding should be fixed to address this change in time for the October 3rd change. </description>
+			<version>1.0.1.RELEASE</version>
+			<fixedVersion>1.0.2.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PageMixin.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.json.VideoMixin.java</file>
+			<file type="M">org.springframework.social.facebook.api.MediaTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.Video.java</file>
+			<file type="M">org.springframework.social.facebook.api.Photo.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PostMixin.java</file>
+			<file type="M">org.springframework.social.facebook.api.FeedTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.Post.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PhotoMixin.java</file>
+			<file type="M">org.springframework.social.facebook.api.LikeTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.Page.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="97" opendate="2012-09-06 21:09:44" fixdate="2012-09-06 21:21:21" resolution="Complete">
+		<buginformation>
+			<summary>FacebookTemplate.initialize() is called twice if constructing with accessToken only.</summary>
+			<description>public FacebookTemplate(String accessToken) {
+	this(accessToken, null);
+	initialize();
+}
+omit initialize() call as it is already called by FacebookTemplate(accessToken, applicationNamespace)</description>
+			<version>1.1.0.RELEASE</version>
+			<fixedVersion>1.1.0.M1, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.FacebookTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="128" opendate="2013-04-05 09:31:31" fixdate="2013-08-09 09:06:16" resolution="Complete">
+		<buginformation>
+			<summary>Error 405 using CanvasSignInController</summary>
+			<description>Error 405 is encountered using CanvasSignInController. Steps to reproduce are below - 
+1. Log out of Facebook
+2. Close Browser
+3. Go to http://apps.facebook.com/springsocialcanvas/
+4. Enter user credential
+5. Error is recreated</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.M4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.web.CanvasSignInController.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="141" opendate="2013-11-05 14:59:48" fixdate="2014-04-10 13:49:06" resolution="Complete">
+		<buginformation>
+			<summary>LikeOperations.getPagesLiked doesn&amp;apos;t get cover obj and link</summary>
+			<description>I tested directly the fb graph api explorer and got the full information. In the Java LikesOPerations call I get all the information less the cover object (id, image url, offsetx, offsety) and the link of the link
+Apparently the permissions are the same in the graph api explorer and the fb connect (user_likes,friends_likes,publish_stream,user_photos,offline_access,friends_birthday,friends_location,read_friendlists)
+GET me/friends?fields=likes.fields(link,name,website,cover),name,link&amp;amp;limit=5</description>
+			<version>1.1.0.M4</version>
+			<fixedVersion>1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.LikeTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.LikeTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="138" opendate="2013-09-24 00:59:11" fixdate="2014-04-10 14:00:09" resolution="Complete">
+		<buginformation>
+			<summary>Jackson Map Exception on checkinposts</summary>
+			<description>Some checkins do not provide a complete location mapping, only a String telling the location. 
+I suggest adding a location deserializer like this:
+	@Override
+	public Location deserialize(JsonParser jp, DeserializationContext ctxt) throws IOException, JsonProcessingException {
+		try
+{
+			Location node = jp.readValueAs(Location.class);
+			return node;
+		}
+catch (Exception e)
+{
+			Location location = new Location(jp.getText());
+			return null;
+		}
+	}</description>
+			<version>1.1.0.M4</version>
+			<fixedVersion>1.1.0.RC1, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PageMixin.java</file>
+			<file type="M">org.springframework.social.facebook.api.PlacesTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.Location.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="165" opendate="2014-12-16 13:02:53" fixdate="2014-12-30 13:48:06" resolution="Complete">
+		<buginformation>
+			<summary>In Spring soical facebook 2.0.0.M release, though i set the birthdate in facebook and get the age range using the spring social Facebook api it returns only UNKNOW value</summary>
+			<description>FacebookProfile prof=con.getApi().userOperations().getUserProfile();
+System.out.println(prof.getAgeRange().toString());
+Result:
+The above output generates UNKNOWN as its value, though we set up the birthdate field in facebook.</description>
+			<version>2.0.0.M1</version>
+			<fixedVersion>2.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.UserTemplateTest.java</file>
+			<file type="M">org.springframework.social.facebook.api.UserOperations.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.UserTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="153" opendate="2014-07-14 17:07:43" fixdate="2014-12-30 14:23:04" resolution="Complete">
+		<buginformation>
+			<summary>V2 API - FeedOperations.getFeed() throws exception deserializing photo post</summary>
+			<description>The following issue occurs in 2.0.0.M1 and I&amp;amp;apos;ve tested the same in 1.x and it works fine.
+Code that generated problem.
+
+
+
+
+
+
+        PagedList&amp;lt;Post&amp;gt; posts = facebook.feedOperations().getFeed("JimsMowingAU");
+
+
+
+
+
+
+Exception:
+
+
+
+
+
+
+org.springframework.social.UncategorizedApiException: Error deserializing photo post
+
+
+
+
+	at org.springframework.social.facebook.api.impl.FeedTemplate.deserializePost(FeedTemplate.java:299)
+
+
+
+
+	at org.springframework.social.facebook.api.impl.FeedTemplate.deserializeList(FeedTemplate.java:275)
+
+
+
+
+	at org.springframework.social.facebook.api.impl.FeedTemplate.getFeed(FeedTemplate.java:78)
+
+
+
+
+	at org.springframework.social.facebook.api.impl.FeedTemplate.getFeed(FeedTemplate.java:72)
+
+
+
+
+	... (my company classes and intellij/junit used to kick them off) ...
+
+
+
+
+
+
+
+
+
+Caused by: com.fasterxml.jackson.databind.JsonMappingException: Can not instantiate value of type [simple type, class org.springframework.social.facebook.api.Post$Privacy] from String value (&amp;amp;apos;&amp;amp;apos;); no single-String constructor/factory method (through reference chain: org.springframework.social.facebook.api.Post["privacy"]-&amp;gt;org.springframework.social.facebook.api.Privacy["value"])
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._createFromStringFallbacks(StdValueInstantiator.java:428)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:299)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1150)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:139)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:126)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:525)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:106)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:242)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:525)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:106)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:242)
+
+
+
+
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:118)
+
+
+
+
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1270)
+
+
+
+
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:897)
+
+
+
+
+	at org.springframework.social.facebook.api.impl.FeedTemplate.deserializePost(FeedTemplate.java:297)
+
+
+
+
+	... 37 more
+
+
+
+
+
+</description>
+			<version>2.0.0.M1</version>
+			<fixedVersion>2.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.json.FacebookModule.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PostMixin.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="163" opendate="2014-11-06 08:19:30" fixdate="2014-12-30 14:23:55" resolution="Fixed">
+		<buginformation>
+			<summary>JsonMappingException Upon FeedOperations.getPost( contentId ) Invocation</summary>
+			<description>This code, which worked on 1.1.0.RELEASE, is now throwing a JsonMappingException:
+
+
+
+
+
+
+FeedOperations fo = api.feedOperations();
+
+
+
+
+String contentId = "xyz"; // represents a photo post on a Facebook Page
+
+
+
+
+Post post = fo.getPost( contentId );
+
+
+
+
+
+
+
+
+
+
+
+
+Caused by: com.fasterxml.jackson.databind.JsonMappingException: Can not instantiate value of type [simple type, class org.springframework.social.facebook.api.Post$Privacy] from String value; no single-String constructor/factory method (through reference chain: org.springframework.social.facebook.api.Post["privacy"]-&amp;gt;org.springframework.social.facebook.api.Privacy["value"])
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator._createFromStringFallbacks(StdValueInstantiator.java:428)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:299)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1056)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:136)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:123)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:464)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:107)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:295)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:121)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:464)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:107)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:295)
+
+
+
+
+        at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:121)
+
+
+
+
+        at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1216)
+
+
+
+
+        at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:830)
+
+
+
+
+        at org.springframework.social.facebook.api.impl.FeedTemplate.deserializePost(FeedTemplate.java:297)
+
+
+
+
+        ... 82 more
+
+
+
+
+
+</description>
+			<version>2.0.0.M1</version>
+			<fixedVersion>2.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.json.FacebookModule.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PostMixin.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="168" opendate="2015-02-03 07:18:57" fixdate="2015-04-02 08:53:56" resolution="Complete">
+		<buginformation>
+			<summary>PagingParameters must use paging token</summary>
+			<description>When fetching the posts of a page, the response from facebook contains the paging links "next" and "previous". Those will have a "until" or "since" parameter and additionally a parameter "__paging_token"
+The PagingParameters implementation ignores the paging token, but with only "until" the last post from the previous page is returned as first item of the next page.
+Until seems to be the time of the last post on the previous page.
+And of course there might be more than one post at this time, so facebook returns all posts starting with this time. The paging token seems to add additional information for facebook so that the next page will start really at the next post.
+Example call...
+facebook.feedOperations().getPosts(facebookPageId, new PagingParameters(10, 0, null, null));
+Example next link returned from facebook:
+https://graph.facebook.com/v1.0/1234567890/posts?limit=10&amp;amp;until=1402415239&amp;amp;__paging_token=enc_Aew9rTpQB8B9zCX9BYus-GhWKOtQzhoiKlV9vpk7D4y-QgcEoCH09rNOydIOOr76wGbTxX-2pV9tMf__6bjs2_DqGcBLFDirt315VXS6_zgG7N</description>
+			<version>1.1.0.RELEASE</version>
+			<fixedVersion>2.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.PagingParameters.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.FeedTemplate.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.PagedListUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="169" opendate="2015-03-22 14:46:38" fixdate="2015-04-02 09:47:12" resolution="Fixed">
+		<buginformation>
+			<summary>Add updated_time property to UserOperations.PROFILE_FIELDS</summary>
+			<description></description>
+			<version>2.0.0.M1</version>
+			<fixedVersion>2.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.UserOperations.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="189" opendate="2015-08-19 10:00:23" fixdate="2015-08-19 10:05:57" resolution="Complete">
+		<buginformation>
+			<summary>Error deserializing null into primitives when using Jackson 2.6</summary>
+			<description>Prior to Jackson 2.6 custom deserializers apparently weren&amp;amp;apos;t even used if the field to be deserialized was null...consequently, they would remain at the default value. An int, for example, would be left as 0.
+Starting with Jackson 2.6, the custom deserializer will be used even if the field is null, resulting in a NPE attempting to deserialize null into a non-nullable primitive.
+This can be fixed by overriding the getNullValue() method in any custom deserializers such as AchievementPointsDeserializer. </description>
+			<version>2.0.1.RELEASE</version>
+			<fixedVersion>2.0.2.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.facebook.api.impl.json.PostMixin.java</file>
+			<file type="M">org.springframework.social.facebook.api.impl.json.AchievementTypeMixin.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

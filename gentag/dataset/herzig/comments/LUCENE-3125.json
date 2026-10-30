@@ -1,0 +1,435 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12507796",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12507796",
+  "key": "LUCENE-3125",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12315428",
+        "id": "12315428",
+        "description": "Branch for column-stride fields",
+        "name": "CSF branch",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-10-12"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "10810",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "1.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+      "name": "simonw",
+      "key": "simonw",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Simon Willnauer",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24888",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=selckin",
+      "name": "selckin",
+      "key": "selckin",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "selckin",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=selckin",
+      "name": "selckin",
+      "key": "selckin",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "selckin",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3125/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4316176f[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4822ce30[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2f1a0998[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@71171105[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@24fb947b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@5e458424[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@21ec00bd[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@68baa2bc[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@109aab9c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@620c790f[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@23a4741b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1e369d91[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:47:33 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-05-19T21:13:27.779+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3125/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2011-05-19T18:42:03.689+0000",
+    "updated": "2022-08-28T12:47:33.034+0000",
+    "timeoriginalestimate": null,
+    "description": "doc values branch r1124825, reproducible \n{code}\n    [junit] Testsuite: org.apache.lucene.index.values.TestDocValuesIndexing\n    [junit] Tests run: 1, Failures: 0, Errors: 1, Time elapsed: 0.716 sec\n    [junit] \n    [junit] ------------- Standard Error -----------------\n    [junit] NOTE: reproduce with: ant test -Dtestcase=TestDocValuesIndexing -Dtestmethod=testAddIndexes -Dtests.seed=5939035003978436534:-6429764582682717131\n    [junit] NOTE: test params are: codec=RandomCodecProvider: {id=MockRandom, BYTES_VAR_DEREF=MockRandom, INTS=Pulsing(freqCutoff=13)}, locale=da_DK, timezone=Asia/Macao\n    [junit] NOTE: all tests run in this JVM:\n    [junit] [TestDocValuesIndexing]\n    [junit] NOTE: Linux 2.6.37-gentoo amd64/Sun Microsystems Inc. 1.6.0_25 (64-bit)/cpus=8,threads=1,free=88582432,total=125632512\n    [junit] ------------- ---------------- ---------------\n    [junit] Testcase: testAddIndexes(org.apache.lucene.index.values.TestDocValuesIndexing):     Caused an ERROR\n    [junit] null\n    [junit] java.nio.channels.ClosedChannelException\n    [junit]     at sun.nio.ch.FileChannelImpl.ensureOpen(FileChannelImpl.java:88)\n    [junit]     at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:603)\n    [junit]     at org.apache.lucene.store.NIOFSDirectory$NIOFSIndexInput.readInternal(NIOFSDirectory.java:161)\n    [junit]     at org.apache.lucene.store.BufferedIndexInput.refill(BufferedIndexInput.java:222)\n    [junit]     at org.apache.lucene.store.BufferedIndexInput.readByte(BufferedIndexInput.java:39)\n    [junit]     at org.apache.lucene.store.DataInput.readInt(DataInput.java:73)\n    [junit]     at org.apache.lucene.store.BufferedIndexInput.readInt(BufferedIndexInput.java:162)\n    [junit]     at org.apache.lucene.store.DataInput.readLong(DataInput.java:115)\n    [junit]     at org.apache.lucene.store.BufferedIndexInput.readLong(BufferedIndexInput.java:175)\n    [junit]     at org.apache.lucene.store.MockIndexInputWrapper.readLong(MockIndexInputWrapper.java:136)\n    [junit]     at org.apache.lucene.index.values.PackedIntsImpl$IntsEnumImpl.<init>(PackedIntsImpl.java:263)\n    [junit]     at org.apache.lucene.index.values.PackedIntsImpl$IntsEnumImpl.<init>(PackedIntsImpl.java:249)\n    [junit]     at org.apache.lucene.index.values.PackedIntsImpl$IntsReader.getEnum(PackedIntsImpl.java:239)\n    [junit]     at org.apache.lucene.index.values.DocValues.getEnum(DocValues.java:54)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.getValuesEnum(TestDocValuesIndexing.java:484)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.testAddIndexes(TestDocValuesIndexing.java:202)\n    [junit]     at org.apache.lucene.util.LuceneTestCase$LuceneTestCaseRunner.runChild(LuceneTestCase.java:1304)\n    [junit]     at org.apache.lucene.util.LuceneTestCase$LuceneTestCaseRunner.runChild(LuceneTestCase.java:1233)\n    [junit] \n    [junit] \n    [junit] Test org.apache.lucene.index.values.TestDocValuesIndexing FAILED\n{code}\n\nand\n\n{code}\n\n    [junit] Testsuite: org.apache.lucene.index.values.TestDocValuesIndexing\n    [junit] Tests run: 1, Failures: 0, Errors: 1, Time elapsed: 0.94 sec\n    [junit] \n    [junit] ------------- Standard Error -----------------\n    [junit] NOTE: reproduce with: ant test -Dtestcase=TestDocValuesIndexing -Dtestmethod=testAddIndexes -Dtests.seed=-3677966427932339626:-4746638811786223564\n    [junit] NOTE: test params are: codec=RandomCodecProvider: {id=Standard, BYTES_FIXED_DEREF=MockSep, FLOAT_64=SimpleText}, locale=ca, timezone=Asia/Novosibirsk\n    [junit] NOTE: all tests run in this JVM:\n    [junit] [TestDocValuesIndexing]\n    [junit] NOTE: Linux 2.6.37-gentoo amd64/Sun Microsystems Inc. 1.6.0_25 (64-bit)/cpus=8,threads=1,free=88596152,total=125632512\n    [junit] ------------- ---------------- ---------------\n    [junit] Testcase: testAddIndexes(org.apache.lucene.index.values.TestDocValuesIndexing):     Caused an ERROR\n    [junit] Bad file descriptor\n    [junit] java.io.IOException: Bad file descriptor\n    [junit]     at java.io.RandomAccessFile.seek(Native Method)\n    [junit]     at org.apache.lucene.store.SimpleFSDirectory$SimpleFSIndexInput.readInternal(SimpleFSDirectory.java:101)\n    [junit]     at org.apache.lucene.store.BufferedIndexInput.refill(BufferedIndexInput.java:222)\n    [junit]     at org.apache.lucene.store.BufferedIndexInput.readByte(BufferedIndexInput.java:39)\n    [junit]     at org.apache.lucene.store.MockIndexInputWrapper.readByte(MockIndexInputWrapper.java:105)\n    [junit]     at org.apache.lucene.index.values.Floats$FloatsReader.load(Floats.java:281)\n    [junit]     at org.apache.lucene.index.values.SourceCache$DirectSourceCache.load(SourceCache.java:101)\n    [junit]     at org.apache.lucene.index.values.DocValues.getSource(DocValues.java:101)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.getSource(TestDocValuesIndexing.java:472)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.getValuesEnum(TestDocValuesIndexing.java:482)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.testAddIndexes(TestDocValuesIndexing.java:203)\n    [junit]     at org.apache.lucene.util.LuceneTestCase$LuceneTestCaseRunner.runChild(LuceneTestCase.java:1304)\n    [junit]     at org.apache.lucene.util.LuceneTestCase$LuceneTestCaseRunner.runChild(LuceneTestCase.java:1233)\n    [junit] \n    [junit] \n    [junit] Test org.apache.lucene.index.values.TestDocValuesIndexing FAILED\n{code}",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12479832",
+        "id": "12479832",
+        "filename": "LUCENE-3125.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+          "name": "simonw",
+          "key": "simonw",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Simon Willnauer",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-05-19T21:10:12.234+0000",
+        "size": 1051,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12479832/LUCENE-3125.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "TestDocValuesIndexing.testAddIndexes failures on docvalues branch",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12507796/comment/13036378",
+          "id": "13036378",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=selckin",
+            "name": "selckin",
+            "key": "selckin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "selckin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "{code}\n    [junit] Testsuite: org.apache.lucene.index.values.TestDocValuesIndexing\n    [junit] Testcase: testAddIndexes(org.apache.lucene.index.values.TestDocValuesIndexing):     Caused an ERROR\n    [junit] MMapIndexInput already closed\n    [junit] org.apache.lucene.store.AlreadyClosedException: MMapIndexInput already closed\n    [junit]     at org.apache.lucene.store.MMapDirectory$MMapIndexInput.clone(MMapDirectory.java:291)\n    [junit]     at org.apache.lucene.store.MockIndexInputWrapper.clone(MockIndexInputWrapper.java:68)\n    [junit]     at org.apache.lucene.index.values.Bytes$BytesReaderBase.cloneData(Bytes.java:454)\n    [junit]     at org.apache.lucene.index.values.VarSortedBytesImpl$Reader.getEnum(VarSortedBytesImpl.java:234)\n    [junit]     at org.apache.lucene.index.values.DocValues.getEnum(DocValues.java:54)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.getValuesEnum(TestDocValuesIndexing.java:484)\n    [junit]     at org.apache.lucene.index.values.TestDocValuesIndexing.testAddIndexes(TestDocValuesIndexing.java:203)\n    [junit]     at org.apache.lucene.util.LuceneTestCase$LuceneTestCaseRunner.runChild(LuceneTestCase.java:1304)\n    [junit]     at org.apache.lucene.util.LuceneTestCase$LuceneTestCaseRunner.runChild(LuceneTestCase.java:1233)\n    [junit] \n    [junit] \n    [junit] Tests run: 10, Failures: 0, Errors: 1, Time elapsed: 16.858 sec\n    [junit] \n    [junit] ------------- Standard Error -----------------\n    [junit] NOTE: reproduce with: ant test -Dtestcase=TestDocValuesIndexing -Dtestmethod=testAddIndexes -Dtests.seed=2717387190169859484:6990694723425578308\n    [junit] NOTE: test params are: codec=RandomCodecProvider: {id=Pulsing(freqCutoff=14), FLOAT_32=Pulsing(freqCutoff=14), BYTES_FIXED_DEREF=MockSep, BYTES_VAR_DEREF=MockFixedIntBlock(blockSize=1259), BYTES_VAR_SORTED=MockSep, BYTES_VAR_STRAIGHT=MockVariableIntBlock(baseBlockSize=15), BYTES_FIXED_STRAIGHT=MockVariableIntBlock(baseBlockSize=15), docId=MockSep, FLOAT_64=Standard, INTS=Standard, BYTES_FIXED_SORTED=MockSep}, locale=uk_UA, timezone=EST\n    [junit] NOTE: all tests run in this JVM:\n    [junit] [TestAssertions, TestDemo, TestCachingTokenFilter, TestDocument, TestDeletionPolicy, TestDirectoryReader, TestDocumentWriter, TestFlex, TestIndexReaderCloneNorms, TestLongPostings, TestMultiReader, TestOmitTf, TestRollingUpdates, TestSegmentTermEnum, TestDocValuesIndexing]\n    [junit] NOTE: Linux 2.6.37-gentoo amd64/Sun Microsystems Inc. 1.6.0_25 (64-bit)/cpus=8,threads=1,free=165611040,total=263258112\n    [junit] ------------- ---------------- ---------------\n    [junit] TEST org.apache.lucene.index.values.TestDocValuesIndexing FAILED\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=selckin",
+            "name": "selckin",
+            "key": "selckin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "selckin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-05-19T19:10:07.516+0000",
+          "updated": "2011-05-19T19:10:07.516+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12507796/comment/13036464",
+          "id": "13036464",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "good catch selkin.... here is a patch",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-05-19T21:10:12.353+0000",
+          "updated": "2011-05-19T21:10:12.353+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12507796/comment/13036467",
+          "id": "13036467",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed in revision 1125108. Thanks Selckin - I will make sure I not you in the CHANGES.TXT for all your testing help!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-05-19T21:13:27.787+0000",
+          "updated": "2011-05-19T21:13:27.787+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12507796/comment/17589329",
+          "id": "17589329",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4198|https://github.com/apache/lucene/issues/4198].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:47:33.034+0000",
+          "updated": "2022-08-28T12:47:33.034+0000"
+        }
+      ],
+      "maxResults": 4,
+      "total": 4,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04md3:",
+    "customfield_12314139": null
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12314399",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399",
+  "key": "LUCENE-249",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13500",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310286",
+        "id": "12310286",
+        "description": "",
+        "name": "1.4",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2004-07-01"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=java-dev%40lucene.apache.org",
+      "name": "java-dev@lucene.apache.org",
+      "key": "java-dev@lucene.apache.org",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Lucene Developers",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27800",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+      "name": "alan@collison.net",
+      "key": "alan@collison.net",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "alan",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+      "name": "alan@collison.net",
+      "key": "alan@collison.net",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "alan",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-249/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@19bec7f1[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@69c77539[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@d186dcb[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@5fa4afec[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@63600541[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@3438e1e1[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7a00a498[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@a1bffb[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6388f8a3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@104c2ada[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6f17782f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@62445c51[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:17:34 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-05-27T01:38:00.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-249/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2004-07-27T03:36:42.000+0000",
+    "updated": "2022-08-28T11:17:34.787+0000",
+    "timeoriginalestimate": null,
+    "description": "It appears that delete(term) fails to delete the last document containing term, which\nfor a unique match means that you can't remove an individual document.\n\nCode attempting to remove document with specific 'path' (slightly modified version of demo code):\n\nDirectory directory = FSDirectory.getDirectory(\"index\", false);\nIndexReader reader = IndexReader.open(directory);\nTerm term = new Term(\"path\", args[0]);  // path passed via command line arg\nint deleted = reader.delete(term);\nreader.close();\ndirectory.close();\n\nSystem.out.println(\"deleted \" + deleted + \" documents containing \" + term);\n\nExecuting this always returns \"deleted 0 documents containing <path entered>\"\n\nIn IndexReader.java, delete() has:\n\npublic final int delete(Term term) throws IOException {\n  TermDocs docs = termDocs(term);\n  if (docs == null) return 0;\n  int n = 0;\n  try {\n    while (docs.next()) {\n      delete(docs.doc());\n      n++;\n    }\n  } finally {\n    docs.close();\n  }\n  return n;\n}\n\nIt appears that docs.next() always returns false when there is only one doc, hence\ndelete() is never called and 0 is always returned.  I assume that this also means that\nif there are multiple matches, the last doc will not be deleted either, but I have not tested\nthat.\n\nI modified the code as follows:\n\n    boolean more = true;\n    try {\n      docs.next();\n      while (more) {\n        delete(docs.doc());\n        n++;\n        more = docs.next();\n      }\n    } finally {\n      docs.close();\n    }\n\nand then it worked as expected (at least attempts to delete a single document from the\nindex succeeded whereas previously they did not).",
+    "customfield_10010": 30330.0,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312365",
+        "id": "12312365",
+        "filename": "ASF.LICENSE.NOT.GRANTED--DeleteFile.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+          "name": "alan@collison.net",
+          "key": "alan@collison.net",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "alan",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-07-31T03:39:54.000+0000",
+        "size": 1869,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312365/ASF.LICENSE.NOT.GRANTED--DeleteFile.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312364",
+        "id": "12312364",
+        "filename": "ASF.LICENSE.NOT.GRANTED--IndexFile.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+          "name": "alan@collison.net",
+          "key": "alan@collison.net",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "alan",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-07-31T03:39:08.000+0000",
+        "size": 2439,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312364/ASF.LICENSE.NOT.GRANTED--IndexFile.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312366",
+        "id": "12312366",
+        "filename": "ASF.LICENSE.NOT.GRANTED--lucene-demos.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+          "name": "alan@collison.net",
+          "key": "alan@collison.net",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "alan",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-07-31T03:42:59.000+0000",
+        "size": 49235,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312366/ASF.LICENSE.NOT.GRANTED--lucene-demos.jar"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Demo: DeleteFiles doesn't delete files by their path names",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Operating System: other\nPlatform: Other",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321766",
+          "id": "12321766",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goller%40detego-software.de",
+            "name": "goller@detego-software.de",
+            "key": "goller@detego-software.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christoph Goller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I think that you somehow break/corrupt the content of the path field either \nwhile adding it into your document or while providing it for delete, so that the\ntwo terms are not equal. I am quite sure that Termdocs.next() works as it should.\nThis means that the doc numbers provided by a TermDocs is only valid if next()\nreturned true. \n\nHowever, if you are convinced, that there is a bug in TermDocs/delete(term),\nplease provide a self-contained test case.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goller%40detego-software.de",
+            "name": "goller@detego-software.de",
+            "key": "goller@detego-software.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christoph Goller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-07-30T23:05:04.000+0000",
+          "updated": "2004-07-30T23:05:04.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321767",
+          "id": "12321767",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=12282)\nModification of IndexFiles.java to add single doc to index\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-07-31T03:39:08.000+0000",
+          "updated": "2004-07-31T03:39:08.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321768",
+          "id": "12321768",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=12283)\nModification of DeleteFiles.java to delete a single doc from the index\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-07-31T03:39:54.000+0000",
+          "updated": "2004-07-31T03:39:54.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321769",
+          "id": "12321769",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=12284)\nDemos jar file which includes IndexFile and DeleteFile\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-07-31T03:42:59.000+0000",
+          "updated": "2004-07-31T03:42:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321770",
+          "id": "12321770",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "It is quite possible that there is a problem with how I am adding and then deleting a document from the\nindex which is the source of the problem, although what I am doing is only a small variation on the \nDemo code.  I'm not a Java programmer and have only just recently started playing with Lucene.\n\nI've attached two class files which are small modifications to the IndexFiles.java and DeleteFiles.java \nfiles included in the lucene distro.   I've also included the jar file that includes them (although I received\nan error when uploading and am not positive it got uploaded safely).  I'm afraid\nI don't have a publicly accessible server where you can see directly what I have, but here's a complete\nrundown of what I did:\n\n- created and archive of plain text/html documents (in this case in the directory /home/acolliso/\narchive)\n\n- ran java org.apache.lucene.demo.IndexFiles /home/acolliso/archive\n   This created an index of about 190 MB and searching on the index appears to work fine.\n\n- then I ran the following:\n\n> java org.apache.lucene.demo.IndexFile /home/acolliso/archive/newdoc1.html\nadding /home/acolliso/archive/newdoc1.html\n244 total milliseconds\n\n  newdoc1.html is a small file with a few unique words in it so I know it will show up at the top\n  of my search later on.  Note that IndexFile does *not* run optimize.  don't know if that has any\n  consequences.\n\n> java org.apache.lucene.demo.SearchFiles\nQuery:  +white +dwarfs +black +holes\nSearching for: +white +dwarfs +black +holes\n2 total matching documents\n0. /home/acolliso/archive/newdoc.html\n1. /home/acolliso/archive/newdoc1.html\n\n> java org.apache.lucene.demo.DeleteFile /home/acolliso/archive/newdoc1.html\nPath to delete: /home/acolliso/archive/newdoc1.html\nTerm: path:/home/acolliso/archive/newdoc1.html\nGot next doc ...false\nTerm docs: 164437\ndeleted 0 documents containing path:/home/acolliso/archive/newdoc1.html\n\nThe 'path' *seems* to be o.k., but next() returns false and the doc is not deleted,\nas the following search confirms:\n\n> java org.apache.lucene.demo.SearchFiles\nQuery: +white +dwarfs +black +holes\nSearching for: +white +dwarfs +black +holes\n2 total matching documents\n0. /home/acolliso/archive/newdoc.html\n1. /home/acolliso/archive/newdoc1.html\n\nThe I modified the delete() code as noted in the original report\nand tried delete() again:\n\n> java org.apache.lucene.demo.DeleteFile /home/acolliso/archive/newdoc1.html\nPath to delete: /home/acolliso/archive/newdoc1.html\nTerm: path:/home/acolliso/archive/newdoc1.html\nGot next doc ...false\nTerm docs: 164437\ndeleted 1 documents containing path:/home/acolliso/archive/newdoc1.html\n\nAnd to see if the document really was deleted, I did the search again:\n\n> java org.apache.lucene.demo.SearchFiles\nQuery: +white +dwarfs +black +holes\nSearching for: +white +dwarfs +black +holes\n1 total matching documents\n0. /home/acolliso/archive/newdoc.html\n\nWhich makes it seem that the doc was successfully deleted.\n\nIf there is any other info I can provide that would help, or could provide\nin a different format, I'm happy to provide it.  Or, if this really ought to\ngo to the distro list instead, I'm happy to do that as well.  Thanks!\n\n\n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=alan%40collison.net",
+            "name": "alan@collison.net",
+            "key": "alan@collison.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "alan",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-07-31T03:59:29.000+0000",
+          "updated": "2004-07-31T03:59:29.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321771",
+          "id": "12321771",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The path field is tokenized, so you cannot use a TermQuery with the path name \nto identify the document. I keep this bug open, as the demo is misleading in \nthis regard. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-07-31T04:41:07.000+0000",
+          "updated": "2004-07-31T04:41:07.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321772",
+          "id": "12321772",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goller%40detego-software.de",
+            "name": "goller@detego-software.de",
+            "key": "goller@detego-software.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christoph Goller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "That\u00c2\u00b4s it. Daniel is right. Maybe the Demo code should be changed and\nthe path field should not be tokenized.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=goller%40detego-software.de",
+            "name": "goller@detego-software.de",
+            "key": "goller@detego-software.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Christoph Goller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-08-01T23:37:04.000+0000",
+          "updated": "2004-08-01T23:37:04.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321773",
+          "id": "12321773",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "+1.  It doesn't make sense to have a tokenied path.  It just confuses people. \nWant to change that, Daniel?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-08-02T20:39:31.000+0000",
+          "updated": "2004-08-02T20:39:31.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/12321774",
+          "id": "12321774",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The demo has been modified so that using it should be easier. \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-08-04T04:56:03.000+0000",
+          "updated": "2004-08-04T04:56:03.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314399/comment/17586441",
+          "id": "17586441",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1327|https://github.com/apache/lucene/issues/1327].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:17:34.787+0000",
+          "updated": "2022-08-28T11:17:34.787+0000"
+        }
+      ],
+      "maxResults": 10,
+      "total": 10,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i054c7:",
+    "customfield_12314139": null
+  }
+}

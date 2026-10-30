@@ -1,0 +1,1053 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12509312",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312",
+  "key": "LUCENE-3174",
+  "fields": {
+    "parent": {
+      "id": "12501006",
+      "key": "LUCENE-2959",
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/12501006",
+      "fields": {
+        "summary": "[GSoC] Implementing State of the Art Ranking for Lucene",
+        "status": {
+          "self": "https://issues.apache.org/jira/rest/api/2/status/4",
+          "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/reopened.png",
+          "name": "Reopened",
+          "id": "4",
+          "statusCategory": {
+            "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        },
+        "priority": {
+          "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+          "name": "Major",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+          "id": "2",
+          "description": "A new feature of the product, which has yet to be developed.",
+          "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+          "name": "New Feature",
+          "subtask": false,
+          "avatarId": 21141
+        }
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12316437",
+        "id": "12316437",
+        "description": "",
+        "name": "flexscoring branch",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-10-12"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "10795",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "7.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12316437",
+        "id": "12316437",
+        "description": "",
+        "name": "flexscoring branch",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-10-12"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+      "name": "david_nemeskey",
+      "key": "david_nemeskey",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "David Mark Nemeskey",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24841",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+      "name": "david_nemeskey",
+      "key": "david_nemeskey",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "David Mark Nemeskey",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+      "name": "david_nemeskey",
+      "key": "david_nemeskey",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "David Mark Nemeskey",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3174/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+      "id": "7",
+      "description": "The sub-task of the issue",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+      "name": "Sub-task",
+      "subtask": true,
+      "avatarId": 21146
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@508dcca2[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7b3c92db[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5724d934[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@48912341[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@40ce3fe1[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@3ec106dc[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4fdd8549[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@e172cd8[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3f972bcc[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@9d62d04[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2a8216ba[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1d449ede[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:49:06 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-06-20T11:44:34.424+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3174/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2011-06-05T15:21:57.379+0000",
+    "updated": "2022-08-28T12:49:06.747+0000",
+    "timeoriginalestimate": null,
+    "description": "In order to support ranking methods besides TF-IDF, we need to make the statistics they need available. These statistics could be computed in computeWeight (soon to become computeStats) and stored in a separate object for easy access. Since this object will be used solely by subclasses of Similarity, it should be implented as a static inner class, i.e. Similarity.Stats.\n\nThere are two ways this could be implemented:\n- as a single Similarity.Stats class, reused by all ranking algorithms. In this case, this class would have a member field for all statistics;\n- as a hierarchy of Stats classes, one for each ranking algorithm. Each subclass would define only the statistics needed for the ranking algorithm.\n\nIn the second case, the Stats class in DefaultSimilarity would have a single field, idf, while the one in e.g. BM25Similarity would have idf and average field/document length.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482158",
+        "id": "12482158",
+        "filename": "LUCENE-3174_normalize_boost.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-06-11T18:50:25.840+0000",
+        "size": 13024,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482158/LUCENE-3174_normalize_boost.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482760",
+        "id": "12482760",
+        "filename": "LUCENE-3174.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-06-16T08:10:21.105+0000",
+        "size": 67208,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482760/LUCENE-3174.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482756",
+        "id": "12482756",
+        "filename": "LUCENE-3174.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-06-16T07:34:16.713+0000",
+        "size": 64735,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482756/LUCENE-3174.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482752",
+        "id": "12482752",
+        "filename": "LUCENE-3174.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-06-16T06:58:20.365+0000",
+        "size": 63636,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482752/LUCENE-3174.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482338",
+        "id": "12482338",
+        "filename": "LUCENE-3174.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+          "name": "david_nemeskey",
+          "key": "david_nemeskey",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "David Mark Nemeskey",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-13T13:57:10.208+0000",
+        "size": 43352,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482338/LUCENE-3174.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12482141",
+        "id": "12482141",
+        "filename": "LUCENE-3174.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+          "name": "david_nemeskey",
+          "key": "david_nemeskey",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "David Mark Nemeskey",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-11T10:12:16.296+0000",
+        "size": 14638,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12482141/LUCENE-3174.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12481690",
+        "id": "12481690",
+        "filename": "LUCENE-3174.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+          "name": "david_nemeskey",
+          "key": "david_nemeskey",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "David Mark Nemeskey",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-07T12:52:03.970+0000",
+        "size": 14607,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12481690/LUCENE-3174.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Similarity.Stats class for term & collection statistics",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13045403",
+          "id": "13045403",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patch v0.1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-07T12:52:04.000+0000",
+          "updated": "2011-06-07T12:52:04.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13045598",
+          "id": "13045598",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here's what the patch does:\n- it introduces the Similarity.Stats class and its subclasses\n- renames computeWeight() to computeStats()\n- fixes methods that call computeStats()\n\nWhat remains to be done:\n- rewrite the javadoc\n- Stats will be used inside other Similarity methods: its availability should be unsured somehow. The current solution in MockBM25Similarity is not satisfactory because there is only one Similarity object at a time.\n- MultiPhraseWeight, PhraseWeight, SpanWeight, TermWeight call computeStats and extract the IDFExplain object. This level of coupling is not desirable, and should be eliminated. All the more so, as not all Similarity subclasses will have an idf\n- It might not even make sense to expose computeStats()?\n\nTo consider:\n- it might be better if Stats were static, because they could inherit fields from each other",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-07T19:23:08.381+0000",
+          "updated": "2011-06-07T19:23:08.381+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13045706",
+          "id": "13045706",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hi David, after reviewing the patch, I think we should do this:\n\n* make Similarity.Stats static\n* pass this, instead of Weight, to exactDocScorer() and sloppyDocScorer(). this should fix the MockBM25Sim issue as it wont need to hold a stats since its passed here.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-07T23:43:08.746+0000",
+          "updated": "2011-06-07T23:43:08.746+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13047875",
+          "id": "13047875",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Made Similarity.Stats static.\n\nHowever, passing Stats to the methods you mentioned would only be possible if Stats already defined every possible statistic, either as public members or getter methods. I don't mind if it becomes like that; Similarity subclasses would not be required to compute all statistics, only the once they need.\n\nAlso, I am thinking of leaving idf out of Stats in favor of df, and doing the computation in the DocScorers. This would make it possible to reuse the same Stats object e.g. for composite Similarities.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-11T10:12:16.340+0000",
+          "updated": "2011-06-11T10:12:16.340+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13047889",
+          "id": "13047889",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nHowever, passing Stats to the methods you mentioned would only be possible if Stats already defined every possible statistic, either as public members or getter methods. I don't mind if it becomes like that; \n{quote}\n\nI don't think anything needs to be in Stats itself. If i write BM25Similarity, then i make my own BM25Similarity.BM25Stats and put what i need in it. its passed to my docscorer as Stats and I cast to BM25Stats...done.\n\n{quote}\nAlso, I am thinking of leaving idf out of Stats in favor of df, and doing the computation in the DocScorers. This would make it possible to reuse the same Stats object e.g. for composite Similarities.\n{quote}\n\nI would disagree in this case, i think a composite similarity that has N sub-similarities would just return a MultiStats that keeps these in an array, as this composite doesnt care at all whats in them, it just needs to be able to delegate them back to the sub's docscorers later.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-11T11:58:27.114+0000",
+          "updated": "2011-06-11T11:58:27.114+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13047928",
+          "id": "13047928",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. I would disagree in this case, i think a composite similarity that has N sub-similarities would just return a MultiStats that keeps these in an array, as this composite doesnt care at all whats in them, it just needs to be able to delegate them back to the sub's docscorers later.\n\nI didn't think of that. I really like this idea.\n\nAs for Stats, I see several advantages of a single class:\n- no need for casting. It may be just me, but having to cast everywhere doesn't feel right for me;\n- we show in one place what statistics the ranking algorithms use, the user of the library doesn't need to \"hunt\" for this information;\n- I think there will be Similarities that use the same Stats subclass, e.g. MockLMSimilarity uses TFIDFSimilarity.IDFStats. Or it could define its own Stats that looks exactly the same. Either solution seems a bit strange for me;\n- one less class to write if you want to add a new Similarity (provided you don't need a new statistic, in which case you have to write your own and cast it).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-11T15:36:32.831+0000",
+          "updated": "2011-06-11T15:36:32.831+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13047941",
+          "id": "13047941",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Right, but there are some serious disadvantages:\n\n* we don't know what custom stats someone might want to integrate... it could be computed based however they want.\n* we might add newer stats, but keeping it opaque to the sim relieves us of backwards compatibility hassles.\n\nfor this reason i would like it completely opaque... its not like you are gonna have to cast everywhere, only a \nsingle time when creating your docscorer.\n\nI agree with you that for researchers, they want to see all the ordinary IR stats available like terrier or whatever\nWe should just make an EasySimilarity extends Similarity for them, that returns AllStats with all these common ones.\n\nBut I think other people are going to want to extend lucene to their domain so keeping it opaque is best, so they can do this.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-11T16:34:35.062+0000",
+          "updated": "2011-06-11T16:34:35.062+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13047954",
+          "id": "13047954",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Ok, let's go with EasySimilarity then.\n\nTODOs (according to the irc chat):\n- move sumOfSquaredWeights() and normalize to Stats, so that Weight doesn't need to know about IDF\n- rename sumOfSquaredWeights()\n- make BooleanWeight & friends independent of the normalization method? (currently BooleanWeight expects the sqrt() in DefaultSimilarityProvider).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-11T17:38:14.809+0000",
+          "updated": "2011-06-11T17:38:14.809+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13047969",
+          "id": "13047969",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nmake BooleanWeight & friends independent of the normalization method?\n{quote}\n\nI don't like how they rely upon the normalization to integrate their boost to the lower level queries... I think we should always keep this 'separate' so a sim can handle the boost how it wants... here's a patch (probably not the ultimate end-all but a step)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-11T18:50:25.866+0000",
+          "updated": "2011-06-11T18:50:25.866+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13048564",
+          "id": "13048564",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Almost completely removed idf from the Weights -- it still lingers in explain(). The DocScorer factory methods now need both the Weight and the Stats; that's the best I could do for now.\n\nRobert: if you don't mind, I have included you patch in this one as well.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=david_nemeskey",
+            "name": "david_nemeskey",
+            "key": "david_nemeskey",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "David Mark Nemeskey",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-13T13:57:10.244+0000",
+          "updated": "2011-06-13T13:57:10.244+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13048575",
+          "id": "13048575",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nAlmost completely removed idf from the Weights \u2013 it still lingers in explain(). \n{quote}\n\nRight, explain() is a big TODO of a refactoring job, you did the right thing, its not easily solved until we refactor it big-time so that any arbitrary Similarity can explain its own scoring. Not to make any promises, but I think by doing such a thing (letting a Similarity control how the explaining works), we will make progress towards LUCENE-3118 too: if you customize the scoring system for your app, you should be able to explain the scores in a way that make sense to your app too.\n\n{quote}\nThe DocScorer factory methods now need both the Weight and the Stats; that's the best I could do for now.\n{quote}\n\nThis sounds like a good step to me! We want to just pass only the Stats to the DocScorer factory methods, but we have some more work to do before that... such as better handling of the whole boosting situation and pushing all responsibility for query normalization into stats.\n\nonce we have done this, i think Weight/Stats will make sense (except for naming) as it will be be the parallel of Scorer/DocScorer, full responsibility for scoring is in the Similarity and Weight/Scorer only handle things like seeking to terms, creating docsenums, iterating postings lists, etc :)\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-13T14:22:21.647+0000",
+          "updated": "2011-06-13T14:22:21.647+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13050244",
+          "id": "13050244",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "here's an updated patch, i pushed query normalization into the Stats, and removed idf/etc from the weight impls.\n\nI think this is close, all tests pass except TestCustomScoreQuery (its some explanation problem). I'm this close to @Ignoring it, since the query nor the test make any sense.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-16T06:58:20.423+0000",
+          "updated": "2011-06-16T06:58:20.423+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13050259",
+          "id": "13050259",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "here's the patch with the unrelated bug fixed in CustomScoreQuery.\n\nnow all tests pass.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-16T07:34:16.743+0000",
+          "updated": "2011-06-16T07:34:16.743+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13050277",
+          "id": "13050277",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "i fixed a few problems: javadocs warnings and also the fact that i had left an assert commented out from hair-pulling with CustomScoreQuery.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-16T08:10:21.139+0000",
+          "updated": "2011-06-16T08:10:21.139+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/13051938",
+          "id": "13051938",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "thanks David!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-20T11:44:34.451+0000",
+          "updated": "2011-06-20T11:44:34.451+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12509312/comment/17589378",
+          "id": "17589378",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4247|https://github.com/apache/lucene/issues/4247].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:49:06.747+0000",
+          "updated": "2022-08-28T12:49:06.747+0000"
+        }
+      ],
+      "maxResults": 16,
+      "total": 16,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04m2n:",
+    "customfield_12314139": null
+  }
+}

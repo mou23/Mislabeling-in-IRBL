@@ -1,0 +1,1121 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12334034",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034",
+  "key": "HTTPCLIENT-475",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12311646",
+        "id": "12311646",
+        "description": "",
+        "name": "4.0 Alpha 1",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2007-07-20"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "133521",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "6.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [
+      {
+        "id": "12314574",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12314574",
+        "type": {
+          "id": "10032",
+          "name": "Blocker",
+          "inward": "is blocked by",
+          "outward": "blocks",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10032"
+        },
+        "outwardIssue": {
+          "id": "12348654",
+          "key": "HTTPCLIENT-602",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12348654",
+          "fields": {
+            "summary": "refactor HttpClientConnection and HttpProxyConnection",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+      "name": "rolandw",
+      "key": "rolandw",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Roland Weber",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311010",
+        "id": "12311010",
+        "name": "HttpClient (classic)",
+        "description": "HttpClient classic (blocking) code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "48276",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+      "name": "bchevill.ml@gmail.com",
+      "key": "bchevill.ml@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Benjamin Chevillon",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+      "name": "bchevill.ml@gmail.com",
+      "key": "bchevill.ml@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Benjamin Chevillon",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-475/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@61ed9ac3[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4c6243a1[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4b281a81[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@1509270e[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@521fd4db[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@61ea2b28[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6a1dd986[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@3670a29c[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1a650185[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2a66da8a[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2eb3f7a9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1de4c4a1[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310360",
+      "id": "12310360",
+      "key": "HTTPCLIENT",
+      "name": "HttpComponents HttpClient",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310360&avatarId=10011",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310360&avatarId=10011",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310360&avatarId=10011",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310360&avatarId=10011"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10280",
+        "id": "10280",
+        "description": "Apache HttpComponents Project",
+        "name": "HttpComponents"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Thu Dec 28 10:08:42 UTC 2006",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-12-28T10:08:42.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-475/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2005-06-16T18:18:20.000+0000",
+    "updated": "2016-09-20T19:30:13.890+0000",
+    "timeoriginalestimate": null,
+    "description": "Overview description:\nIf Proxy settings are incorrect or host does not reply, the\nHttpClient.executeMethod() hangs, and HttpMethod.abort() does not stop it. Thus,\nyou cannot assert that the entire application will stop immediately on demand.\n\nExpected Results:\nDuring a HttpMethod.executeMethod(), HttpMethod.abort() should cancel\nimmediately the executeMethod().\n\nActual Results:\nIf HttpMethod.executeMethod() freezes because of Proxy bad settings or not\nresponding hostname (in fact impossible to open the socket), the abort() method\ndoes not do anything.\n\nPlatform:\nI tested it on Windows XP and Linux Debian with HttpClient 3.0 RC2 (but if you\nlook further I point the problem and the source code of the nightly build is\nidentical).\n\nSee comments for the dialogue about the problem, and 2 Test cases. The solution\nis described at the end, but it may implies a change in the API and works only\nsince Java 1.4.",
+    "customfield_10010": 35383.0,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12347946",
+        "id": "12347946",
+        "filename": "2k6-12-27-socketfactory-1.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+          "name": "rolandw",
+          "key": "rolandw",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Roland Weber",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2006-12-27T17:25:32.000+0000",
+        "size": 14047,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12347946/2k6-12-27-socketfactory-1.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12327256",
+        "id": "12327256",
+        "filename": "ASF.LICENSE.NOT.GRANTED--ConnectTest.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+          "name": "bchevill.ml@gmail.com",
+          "key": "bchevill.ml@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Benjamin Chevillon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-06-16T18:39:42.000+0000",
+        "size": 1134,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12327256/ASF.LICENSE.NOT.GRANTED--ConnectTest.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12327257",
+        "id": "12327257",
+        "filename": "ASF.LICENSE.NOT.GRANTED--ConnectTest.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+          "name": "bchevill.ml@gmail.com",
+          "key": "bchevill.ml@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Benjamin Chevillon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-06-16T18:40:12.000+0000",
+        "size": 596,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12327257/ASF.LICENSE.NOT.GRANTED--ConnectTest.log"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12327253",
+        "id": "12327253",
+        "filename": "ASF.LICENSE.NOT.GRANTED--MethodAbortTest.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+          "name": "bchevill.ml@gmail.com",
+          "key": "bchevill.ml@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Benjamin Chevillon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-06-16T18:29:52.000+0000",
+        "size": 2747,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12327253/ASF.LICENSE.NOT.GRANTED--MethodAbortTest.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12327255",
+        "id": "12327255",
+        "filename": "ASF.LICENSE.NOT.GRANTED--MethodAbortTestWithoutProxy.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+          "name": "bchevill.ml@gmail.com",
+          "key": "bchevill.ml@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Benjamin Chevillon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-06-16T18:35:16.000+0000",
+        "size": 5422,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12327255/ASF.LICENSE.NOT.GRANTED--MethodAbortTestWithoutProxy.log"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12327254",
+        "id": "12327254",
+        "filename": "ASF.LICENSE.NOT.GRANTED--MethodAbortTestWithProxy.log",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+          "name": "bchevill.ml@gmail.com",
+          "key": "bchevill.ml@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Benjamin Chevillon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-06-16T18:31:41.000+0000",
+        "size": 5686,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12327254/ASF.LICENSE.NOT.GRANTED--MethodAbortTestWithProxy.log"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Provide support for unconnected sockets",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Operating System: All\nPlatform: PC",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382446",
+          "id": "12382446",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "First mail to httpclient-user list\nDate: 15 juin 2005 12:08\nObjet: Abort HttpMethod hangs due to bad proxy config\nRelated to File MethodAbortTest.java and MethodAbortTest.log\n--------------------------------------------------------------\n\nHello,\n\nI use HttpClient in my application to download description file. I\nwork on ensuring that if the application gets closed, everything stop\nas fast as possible.\n\nI'm getting problem with this: as many companies network, http request\nget out through an http proxy. If I configure correctly the proxy\nsettings, and if I try to abort a GetMethod, the connection is\nimmediately stopped, no problem.\nNow if I don't configure the proxy settings, the abort method does not\nwork, and my application hangs until timeout.\nAs my application will be deployed on many networks on which I cannot\nbe sure of the correct settings, I cannot accept that the application\nhangs until timeout.\n\nFor better understanding, here is the unit case I'm using to test it\n(source code at the end of this email):\nThere is two thread:\n- The main thread that starts the second one, sleeps for 3 seconds\nthen aborts the second one.\n- The GetMethod thread that execute the GetMethod on a dummy site\n(http://test.dyndns.org does not work for me) that do not reply and\ntimeouts in 10 seconds.\n\nPreliminary for testing:\nYou must be on a network with a proxy. Configure the proxy settings at\nthe beginning of the class.\n\nWhat do the test:\nIt just gets http://test.dyndns.org\n\nExpected result:\n- http://test.dyndns.org does not reply correctly\n- so the execute wait for 10 seconds,\n- and the main method abort the GetMethod after only 3 seconds\n- So the application stops just after the abort and don't wait for 10 seconds.\n\n1st test : with proxy settings.\n- uncomment the line \"\nclient.getHostConfiguration().setProxy(PROXY_HOST, PROXY_PORT);\"\n- Compile and start the class\n\nResult:\n- The application stops correctly in 3 seconds (just after the abort).\n\n2nd test : without proxy settings.\n- comment the line \"\nclient.getHostConfiguration().setProxy(PROXY_HOST, PROXY_PORT);\"\n- Compile and start the class\n\nResult:\n- the abort method is executed in 3 seconds\n- BUT the execute method still hangs until the end of the 10 seconds timeout.\n\nDo anybody can produce the same type of acting?\nSee below my test class and logs.\n\nThanks in advance\n\nBenjamin Chevillon\nFrance T\u00e9l\u00e9com R&D",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:20:37.000+0000",
+          "updated": "2005-06-16T18:20:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382447",
+          "id": "12382447",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=15430)\nFirst test case: test if HttpMethod thread is aborted immediately or not\n\nSee HttpMethod logs for results",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:29:52.000+0000",
+          "updated": "2005-06-16T18:29:52.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382448",
+          "id": "12382448",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=15431)\nFirst test case result: HttpMethod thread with correct proxy settings aborts\nimmediately\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:31:41.000+0000",
+          "updated": "2005-06-16T18:31:41.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382449",
+          "id": "12382449",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=15432)\nFirst test case result: HttpMethod thread without correct proxy settings aborts\ndoes not do anything and thread die at timeout\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:35:16.000+0000",
+          "updated": "2005-06-16T18:35:16.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382450",
+          "id": "12382450",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Second mail reply from Oleg\nOleg Kalnichevski \t\nDe: Oleg Kalnichevski <olegk@apache.org>\nDate: 15 juin 2005 15:06\nObjet: Re: Abort HttpMethod hangs due to bad proxy config\n-----------------------------------------------------------\n\nBenjamin,\n\nJava (version 1.2 and below) does not seem to offer any other means to\ninterrupt a blocking I/O operation except for Socket#close. All\nHttpMethod#abort can do is calling Connection#close, which in its turn\nsimply closes in sequence the output stream, the input stream and the\nsocket itself\n\nhttp://jakarta.apache.org/commons/httpclient/3.0/xref/org/apache/commons/httpclient/HttpMethodBase.html#1007\nhttp://jakarta.apache.org/commons/httpclient/3.0/xref/org/apache/commons/httpclient/HttpConnection.html#1141\n\nApparently the socket was blocked in the connect method while trying to\nestablish the connection with the target host (which in your case was\nthe proxy):\n\n> org.apache.commons.httpclient.ConnectTimeoutException: The host did\n> not accept the connection within timeout of 10000 ms\n>        at\n>\norg.apache.commons.httpclient.protocol.ReflectionSocketFactory.createSocket(ReflectionSocketFactory.java:154)\n>        at\n>\norg.apache.commons.httpclient.protocol.DefaultProtocolSocketFactory.createSocket(DefaultProtocolSocketFactory.java:124)\n\nSo, technically speaking from the JRE perspective the socket was still\nclosed when HttpMethod#abort was attempted, hence Socket#close appears\nto have made no effect on the blocked socket.\n\nI am afraid there's not really much we can do here. The only resort\ncould possibly try would be calling Socket#shutdownInput through\nreflection, but I suspect it will have no effect on sockets blocked\nin the connect method either:\n\nhttp://java.sun.com/j2se/1.4.2/docs/api/java/net/Socket.html#shutdownInput()\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:36:46.000+0000",
+          "updated": "2005-06-16T18:36:46.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382451",
+          "id": "12382451",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Third mail reply from Benjamin\nDate: 15 juin 2005 18:01\nObjet: Re: Abort HttpMethod hangs due to bad proxy config\n-----------------------------------------------------------\n\nThank you for your precise and quick reply.\nEncourage by this precision, I downloaded the source code and traced it.\nMaybe this email should be posted to dev mailing list, except if this\nquestion has already been fixed.\n\nIndeed, the client.executeMethod hangs in\norg.apache.commons.httpclient.protocol.ReflectionSocketFactory where\nthe socket is opened. It hangs on the line 139 in the trunk CVS\n138 SOCKETBIND_METHOD.invoke(socket, new Object[] { localaddr});\n139 SOCKETCONNECT_METHOD.invoke(socket, new Object[] { remoteaddr, new\nInteger(timeout)});\nThese 2 lines are similar to\n       //  socket.bind(localaddr);\n       //  socket.connect(remoteaddr, timeout);\n\nBut I was puzzled when you say that we cannot do much against it,\nbecause, we can cancel some similar problem on web browser and it\ntakes effect immediately.\n\nActually, the socket.connect() method can be canceled with\nsocket.close(): see the class attached: a socket is opened with a 10\nseconds timeout and a second thread close it only 5 seconds later. It\nworks. (sorry for the quick & dirty style of the class)\n\nIt does not work on HttpClient, because the abort() method close only\nthe InputStream which is not already created at this moment (since the\nsocket hangs on opening).\nThere are 2 problems:\n- the socket is open within the same call of its creation (so we don't\nhave a pointer to it, to close it).\n- the abort() method has no way to call the close() method deeply.\n\nThe chain of call is here:\nHttpClient.executeMethod() ->...-> HttpConnection.open() ->\nDefaultSocketFactory.createSocket() ->\nReflectionSocketFactory.createSocket()\n\nThe public class closest to Socket is HttpConnection. A socket is\ncreated with the open() method. It calls\nReflectionSocketFactory.createSocket() but inside this method the\nsocket.bind(..) and socket.connect(..) methods are not separated and\nhangs. Thus, the HttpConnection.open() method never returns and the\nHttpConnection cannot close() the socket (since it socket variable is\nnull).\n\nTo resolve it, there should be 2 calls to ReflectionSocketFactory in\nHttpConnection:\n- One to create the socket (until bind). This method always return\nimmediately and this way, we could have a variable that points to the\nSocket instance.\n- A second call to connect the socket.\nIf the second call hangs, then we could call HttpConnection.close()\nsince the socket variable is not null.\n\nFinally, there should be a way to for the HttpClient to close the\nHttpConnection which concerns it.\n\nWhat do you think about this? Tell me if I am wrong.\n\nThanks\n\nBenjamin\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:37:37.000+0000",
+          "updated": "2005-06-16T18:37:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382452",
+          "id": "12382452",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=15433)\nSecond test case: It is possible to cancel immediately even if the socket\ncannot be connected\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:39:42.000+0000",
+          "updated": "2005-06-16T18:39:42.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382453",
+          "id": "12382453",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=15434)\nSecond test case results: socket.close() stops immediately\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:40:12.000+0000",
+          "updated": "2005-06-16T18:40:12.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382454",
+          "id": "12382454",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Fourth Mail reply from Oleg : decision to file a bug\nDate: 15 juin 2005 18:41\nObjet: Re: Abort HttpMethod hangs due to bad proxy config\n-----------------------------------------------------------------\n\nBenjamin,\n\nYour analysis is correct. Sockets blocked waiting in the connect()\nmethod can indeed be interrupted by calling close() on them. My\nassumption was wrong. The trouble is that the changes you are suggesting\ncannot be implemented without breaking the existing API. We cannot\nchange ProtocolSocketFactory interface so late in the release process.\nBesides, ability to create unconnected sockets has been introduced in\nJava 1.4 and cannot be easily simulated in older versions, whereas\nHttpClient must stay Java 1.2 compatible until next major release (4.0\nthat is). Please file a bug / feature request in Bugzilla and we'll get\nthis feature incorporated in the next major release of HttpClient. As of\nversion 4.0 HttpClient will require Java 1.4 or above.\n\nOleg\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:41:23.000+0000",
+          "updated": "2005-06-16T18:41:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382455",
+          "id": "12382455",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Resume of action to take and what's wrong:\n\nPb reason:\nIt does not work on HttpClient, because the abort() method close only\nthe InputStream which is not already created at this moment (since the\nsocket hangs on opening).\nActually, the socket.connect() method can be canceled with\nsocket.close(): see the class attached\n\nThere are 2 problems:\n- the socket is open within the same call of its creation (so we don't\nhave a pointer to it, to close it).\n- the abort() method has no way to call the close() method deeply.\n\nSolution:\nTo resolve it, there should be 2 calls to ReflectionSocketFactory in\nHttpConnection:\n- One to create the socket (until bind). This method always return\nimmediately and this way, we could have a variable that points to the\nSocket instance.\n- A second call to connect the socket.\nIf the second call hangs, then we could call HttpConnection.close()\nsince the socket variable is not null.\n\nFinally, there should be a way to for the HttpClient to close the\nHttpConnection which concerns it.\n\nTroubles:\nThe trouble is that the changes you are suggesting cannot be implemented without\nbreaking the existing API.\nBesides, ability to create unconnected sockets has been introduced in\nJava 1.4 and cannot be easily simulated in older versions, whereas\nHttpClient must stay Java 1.2 compatible until next major release (4.0\nthat is).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-16T18:44:20.000+0000",
+          "updated": "2005-06-16T18:44:20.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382456",
+          "id": "12382456",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "What happens if you just call Thread.interrupt()? A blocking call should\nimmediately return with an InterruptedException IMHO.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2005-06-17T19:20:59.000+0000",
+          "updated": "2005-06-17T19:20:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382457",
+          "id": "12382457",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Right. But it depends on what you want to achieve. There may be cases where one\nmay want to unblock the socket but not necessarily kill the running thread\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-06-17T20:25:24.000+0000",
+          "updated": "2005-06-17T20:25:24.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382458",
+          "id": "12382458",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Anyway, I tried Thread.interrupt() and it does not interrupt:\nhttp://java.sun.com/j2se/1.4.2/docs/api/java/lang/Thread.html#interrupt()\nI don't think the thread is on any of the states listed:\nno wait or sleep\nI don't think Socket creation is an InterruptibleChannel (since it is not\nalready connected) nor Selector (I don't understand quite well, but...). These\nstates seems to be linked to java.nio package which is not the case of\njava.net.Socket.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-18T00:19:15.000+0000",
+          "updated": "2005-06-18T00:19:15.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382459",
+          "id": "12382459",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manningr%40spamcop.net",
+            "name": "manningr@spamcop.net",
+            "key": "manningr@spamcop.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Rob Manning",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "If memory serves me correctly, you must close the socket that a thread is\nblocked reading on in order to get that thread to continue processing beyond the\ncall to read.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manningr%40spamcop.net",
+            "name": "manningr@spamcop.net",
+            "key": "manningr@spamcop.net",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Rob Manning",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-19T10:08:38.000+0000",
+          "updated": "2005-06-19T10:08:38.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12382460",
+          "id": "12382460",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "That's correct, but as I said it on comment #10, you cannot close the socket\nsince there is no variable pointing to it. There is no variable because the\ncreation and the connection of the socket are in the same function.\nThe workaround is to split the creation and the connection (ie split bind() and\nconnect()) of the Socket. This way, a pointer to the Socket is returned and you\ncan call close() on this socket if the thread is blocked, as you said it. As\nOleg said, these changes involve modifying the API, so it marked for release 4.0.\n\nBy the way. I don't know how important this bug has been marked (I see P2, but I\ndon't know what it means), but I think it is very important because this bug\nmeans that you cannot control the behaviour of the client in a real time\nenvironnement (for example you cannot be sure that the client will be closed\nimmediately).\n\nBenjamin",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=bchevill.ml%40gmail.com",
+            "name": "bchevill.ml@gmail.com",
+            "key": "bchevill.ml@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Benjamin Chevillon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-20T17:23:37.000+0000",
+          "updated": "2005-06-20T17:23:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12461044",
+          "id": "12461044",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here is a take on a new socket factory interface for HttpClient 4.x that supports unconnected sockets. It has a new method for returning an unconnected socket, and the old method gets an (optional) unconnected socket as an additional argument. That way, the timeout and local address binding stuff remains encapsulated in the factory.\nThis patch addresses mainly the new interface. Implementations are modified, but not necessarily pretty and definitely not tested. Since this issue is likely to affect HTTPCLIENT-602, I'll commit the patch next week unless somebody complains. We can straighten out the details later.\nConsidering the original problem report, this patch will not solve the issue completely. We can support unconnected sockets all right, but where does the abort() method go now that HttpMethod is gone? ;-)\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-12-27T17:25:32.000+0000",
+          "updated": "2006-12-27T17:25:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12461095",
+          "id": "12461095",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch look good. It, however, breaks some test cases. TestSSLSocketFactory no longer compiles for me.\n\nCan this method be given a better name? connectSocket maybe?\n\n    Socket createSocket(\n        Socket sock,\n        String host, \n        int port, \n        InetAddress localAddress, \n        int localPort,\n        HttpParams params\n    ) throws IOException, UnknownHostException, ConnectTimeoutException;\n\n> Considering the original problem report, this patch will not solve the issue completely. We can support \n> unconnected sockets all right, but where does the abort() method go now that HttpMethod is gone? ;-) \n\nImplementing abort() method should be double. Connection release may prove a much more serious problem in my opinion. I was thinking about something along these lines:\n\ninterface Request extends HttpRequest {\n \n void setConnection(HttpConnection conn);\n\n void abort() throws IOException;\n\n}\n\n\ninterface Response extends HttpResponse {\n \n void setConnection(HttpConnection conn);\n\n void abort() throws IOException;\n\n void releaseConnection();\n\n}\n\nBetter interface names are welcome.\n\nOleg\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-12-27T20:09:37.000+0000",
+          "updated": "2006-12-27T20:09:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12461102",
+          "id": "12461102",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Oleg,\n\nI had forgotten that there are test cases ;-( Will fix them before checking in.\nI had the method called connectSocket, then realized that all other methods in the socket factory were called createSocket. I'll change it back (tomorrow).\n\nMy thoughts for abort() were with the HttpClient:\n\ninterface HttpClient {\n  void abort(HttpRequest request)\n}\n\nand internally, the HttpClient keeps a map from requests to allocated connections (and other resources).\nShould work for connection release as well, and avoids setting the connection on request and response.\nThe response might need a link back to the client if we want to have a release method there.\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-12-27T20:59:36.000+0000",
+          "updated": "2006-12-27T20:59:36.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12334034/comment/12461169",
+          "id": "12461169",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "patch committed with modifications:\n- createSocket renamed to connectSocket\n- test case fixed\n\nMarking this issue as resolved. Additional work to make use of the unconnected sockets will be performed has part of other issues.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-12-28T10:08:42.000+0000",
+          "updated": "2006-12-28T10:08:42.000+0000"
+        }
+      ],
+      "maxResults": 19,
+      "total": 19,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i08mp3:",
+    "customfield_12314139": null
+  }
+}

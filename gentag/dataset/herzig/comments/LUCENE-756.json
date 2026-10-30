@@ -1,0 +1,1385 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12359171",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171",
+  "key": "LUCENE-756",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310854",
+        "id": "12310854",
+        "description": "",
+        "name": "2.1",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-02-17"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12996",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "7.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27292",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+      "name": "doronc",
+      "key": "doronc",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+      },
+      "displayName": "Doron Cohen",
+      "active": true,
+      "timeZone": "Asia/Gaza"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-756/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@6ed0efc3[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@859c634[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2a735548[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@6cdd4e54[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@75150461[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@16624a8d[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@268b941c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@20a2c177[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7dc9ff0e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@797be418[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3aaa45f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@35357424[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:33:19 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-01-16T20:28:17.927+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-756/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2006-12-21T02:10:02.000+0000",
+    "updated": "2022-08-28T11:33:19.602+0000",
+    "timeoriginalestimate": null,
+    "description": "Non-compound indexes are ~10% faster at indexing, and perform 50% IO activity comparing to compound indexes. But their file descriptors foot print is much higher. \n\nBy maintaining all field norms in a single .nrm file, we can bound the number of files used by non compound indexes, and possibly allow more applications to use this format.\n\nMore details on the motivation for this in: http://www.nabble.com/potential-indexing-perormance-improvement-for-compound-index---cut-IO---have-more-files-though-tf2826909.html (in particular http://www.nabble.com/Re%3A-potential-indexing-perormance-improvement-for-compound-index---cut-IO---have-more-files-though-p7910403.html).\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12349016",
+        "id": "12349016",
+        "filename": "index.premergednorms.cfs.zip",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-01-16T16:36:29.673+0000",
+        "size": 1905,
+        "mimeType": "application/zip",
+        "content": "https://issues.apache.org/jira/secure/attachment/12349016/index.premergednorms.cfs.zip"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12349017",
+        "id": "12349017",
+        "filename": "index.premergednorms.nocfs.zip",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-01-16T16:36:45.976+0000",
+        "size": 5206,
+        "mimeType": "application/zip",
+        "content": "https://issues.apache.org/jira/secure/attachment/12349017/index.premergednorms.nocfs.zip"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12349015",
+        "id": "12349015",
+        "filename": "LUCENE-756-Jan16.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-01-16T16:36:02.377+0000",
+        "size": 16330,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12349015/LUCENE-756-Jan16.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12349021",
+        "id": "12349021",
+        "filename": "LUCENE-756-Jan16.Take2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-01-16T17:50:01.249+0000",
+        "size": 18495,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12349021/LUCENE-756-Jan16.Take2.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12347715",
+        "id": "12347715",
+        "filename": "nrm.patch.2.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-22T08:51:01.000+0000",
+        "size": 16493,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12347715/nrm.patch.2.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12348226",
+        "id": "12348226",
+        "filename": "nrm.patch.3.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2007-01-03T22:49:30.052+0000",
+        "size": 23906,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12348226/nrm.patch.3.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12347639",
+        "id": "12347639",
+        "filename": "nrm.patch.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-12-21T04:26:54.000+0000",
+        "size": 12770,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12347639/nrm.patch.txt"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Maintain norms in a single file .nrm",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460113",
+          "id": "12460113",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Attached patch - nrm.patch.txt - modifies field norms maintenance to a single .nrm file.\n\nModification is backwards compatible - existing indexes with norms in a file per norm are read. - the first merge would create a single .nrm file.\n\nAll tests pass.\n\nNo performance degtadations were observed as result of this change, but my tests so far were not very extensive.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-21T02:15:03.000+0000",
+          "updated": "2006-12-21T02:15:03.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460139",
+          "id": "12460139",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Replacing the patch file (prev file was garbage - \"svn stat\" instead of \"svn diff\").\n\nFew words on how this patch works: \n- <segment>.nrm file was added.\n- addDocument  (DocumentWriter) still writes each norm to a separate file - but that's in memory, \n- at merge, all norms are written to a single file.\n- CFS now also maintains all norms in a single file.\n- IndexWriter merge-decision now considers hasSeparateNorms() not only for CFS but also for non compound.\n- SegmentReader.openNorms() still creates ready-to-use/load Norm objects (which would read the norms only when needed). But the Norm object is now assigned a normSeek value, which is nonzero if the norm file is <segment>.nrm.\n- existing indexes, prior to this change, are managed the same way that segments resulted of addDocument are managed.\n\nTests:\n- I verified that also the (contrib) tests for FieldNormModifier and LengthNormModofier are working.\n\nRemaining:\n- I might add a test.\n- more benchmarking?\n- update fileFormat document.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-21T04:26:54.000+0000",
+          "updated": "2006-12-21T04:26:54.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460285",
+          "id": "12460285",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Seems like a good idea... given that norms are read once on-demand, I wouldn't expect anything search related to be slower with this.  Opening a new reader should actually be slightly faster due to fewer files to open.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-12-21T15:03:37.000+0000",
+          "updated": "2006-12-21T15:03:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460287",
+          "id": "12460287",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> - CFS now also maintains all norms in a single file. \n\nDoes this mean a separate file outside the final .cfs files?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-12-21T15:18:12.000+0000",
+          "updated": "2006-12-21T15:18:12.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460292",
+          "id": "12460292",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "> Does this mean a separate file outside the final .cfs files? \n\nOh no - there's a single .nrm file in the .cfs file (instead of multiple .fN files in the .cfs file). \nAs before, only .sN files (separated norm files) are outside of .cfs file.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-21T15:53:12.000+0000",
+          "updated": "2006-12-21T15:53:12.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460313",
+          "id": "12460313",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "Since we're adding a new file, shouldn't we give it a header, so that it's format can be revised?  Something like:\n  new byte[] {'N','R','M',VERSION}\nas the first four bytes.  We might someday decide to change the representation used, e.g., a different one-byte-float format, or permit higher resolution, or compression, or somesuch.\n\nAlso, should we use a constant for \".nrm\" extension, so that it's checked at compile-time?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2006-12-21T18:47:01.000+0000",
+          "updated": "2006-12-21T18:47:01.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460316",
+          "id": "12460316",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Thanks for the comments, Doug. \nYou're right of course, I will add both the header and the constant.\n(that would be either today or only in a week from now.)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-21T19:00:57.000+0000",
+          "updated": "2006-12-21T19:00:57.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12460412",
+          "id": "12460412",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "nrm.patch.2.txt:\n\nUpdated as Doug suggested: \n- \".nrm\" extension now maintained in a constant .\n- .nrm file now has a 4 bytes header.\n\nAnd, fileFormat document is updated.\n\nAlso, I checked again that the seeks for the various field norms are lazy - performed only when bytes are actually read with refill().\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-12-22T08:51:01.000+0000",
+          "updated": "2006-12-22T08:51:01.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12462069",
+          "id": "12462069",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "I am updating the patch (nrm.patch.3.txt): \n\n- using a single constant for the norms file extension:\n  static final String NORMS_EXTENSION = \"nrm\";\n(This is more in line with existing extension constants in the code.)\n(As a side comment, there are various extension names (e.g. \".cfs\") in the code that are also candidate for factoring as a constant, but this is a separate issue.)\n\n- adding a test - TestNorms\nThis test verifies that norm values assigned with field.setBoost() are preserved during the life cycle of an index, including adding documents, updating norms values (separate norms), addIndexes(), and optimize.\n\nAll tests pass.\nOn my side this is ready to go in.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-01-03T22:47:12.098+0000",
+          "updated": "2007-01-03T22:47:12.098+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12462765",
+          "id": "12462765",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed.  Thanks Doron!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-07T04:20:31.804+0000",
+          "updated": "2007-01-07T04:20:31.804+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12462774",
+          "id": "12462774",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Thanks for commiting this Yonik!\n\nSeems the added test TestNorms was not commited..?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-01-07T05:59:16.667+0000",
+          "updated": "2007-01-07T05:59:16.667+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12462914",
+          "id": "12462914",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hmmm, I actually did an \"svn status\" to see if there was anything to add too.\nProblem is, my current tree is too messy and I missed it.\nThanks for the double-check.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-08T01:07:46.859+0000",
+          "updated": "2007-01-08T01:07:46.859+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465199",
+          "id": "12465199",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I would like to propose some small improvements to this nice feature.\n\nI've worked out a patch (will attach shortly).  Doron if you agree /\nor we can iterate then I'll commit it!  Thanks.\n\nProposed changes:\n\n  * Renamed \"withNrm()\" to \"getHasMergedNorms\" to be more\n    descriptive.  Also changed the field to \"hasMergedNorms\".\n\n  * Explicitly store \"hasMergedNorms\" in the segments_N file.\n\n    I think in general we should favor storing things like this\n    explicitly instead of relying on IO operations (fileExists).\n    We've made great progress lately in reducing such IO operations so\n    I'd like to keep that up when possible :)\n\n    I created a new FORMAT_MERGED_NORMS in SegmentInfos for this.  The\n    change is fully backwards compatible (old indices work fine).  I\n    extended TestBackwardsCompatibility to test this.\n\n    This then has the nice side effect of not having to create the\n    fleeting CompoundFileReader in \"SegmentInfo.getHasMergedNorms\"\n    (which was somewhat spooky to me) for indices written to after\n    this is committed.  For indices written to before this gets\n    committed but after the first version was committed (10 days ago),\n    the check is still needed so I've left it in there with a comment.\n\n  * Fixed the TestDoc unit test to actually create & return\n    SegmentInfo's vs recreating a new SegmentInfo every time (which\n    causes problems whenever we add something to SegmentInfo).  This\n    is still a correct test but more scalable with time as we make\n    changes to SegmentInfo.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T16:35:30.931+0000",
+          "updated": "2007-01-16T16:35:30.931+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465208",
+          "id": "12465208",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I agree that reducing the IO operations on an index open is a good thing.\n\n> For indices written to before this gets\n> committed but after the first version was committed (10 days ago),\n\nNo hard rule on this, but IMO that may be a small enough window that compatibility is not needed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T16:49:23.818+0000",
+          "updated": "2007-01-16T16:49:23.818+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465214",
+          "id": "12465214",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> No hard rule on this, but IMO that may be a small enough window that compatibility is not needed.\n\nThis is a good question.  I had flip/flop'd on it.  It would be nice\nto not have to support reading indices that were written to based on\nthe past 10 days of Lucene trunk builds.  Then we could greatly\nsimplify the \"SegmentInfo.getHasMergedNorms\" to not create then\ndestroy the CompoundFileReader.\n\nAny objections to this?\n\nIf not I will re-work the patch (it makes things a fair bit cleaner).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T17:04:19.013+0000",
+          "updated": "2007-01-16T17:04:19.013+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465216",
+          "id": "12465216",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "As an aside, I think we need to start making more frequent releases... then \"trunk\" could be designated as a work-in-progress and unstable, and hence compatibility concerns could be limited to those releases.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T17:08:44.796+0000",
+          "updated": "2007-01-16T17:08:44.796+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465230",
+          "id": "12465230",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, take two!  I attached LUCENE-756-Jan16.Take2.patch\n\nI removed backwards compatibility for the past 10 days of Lucene\nnightly trunk builds.  I also fixed fileformats.xml to describe the\nnew \"HasMergedNorms\" entry in the segments_N file.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T17:50:39.727+0000",
+          "updated": "2007-01-16T17:50:39.727+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465240",
+          "id": "12465240",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+            "name": "manawiz",
+            "key": "manawiz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I may have the only app that will be broken by the 10-day backwards incompatibility, but the change seems worth it.  I need to create some large indexes to take on the road for demos.  Is the index format in the latest patch final?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+            "name": "manawiz",
+            "key": "manawiz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-01-16T18:11:50.249+0000",
+          "updated": "2007-01-16T18:11:50.249+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465250",
+          "id": "12465250",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Actually, if you apply my first change above, regen your index, then the format will be readable to the 2nd patch.\n\nChuck, I think this latest patch would likely be the \"final\" index file format for this issue, pending any more feedback on it though!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T18:34:03.531+0000",
+          "updated": "2007-01-16T18:34:03.531+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465260",
+          "id": "12465260",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Michael, I like this improvement!\n\n(At first I considered adding such FORMAT level but decided that it is not worth it, - aiming backwards compatibility with pre-lockless indexes. Then I had to add that file check - wrong trade-off indeed.)\n\nTwo minor comments:\n- getHasMergedNorms() is private and now the method has no logic - I would remove that method and refer to hasMergedNorms instead.\n- the term \"merged\" (in hasMergedNorms) is a little overloaded with other semantics (in Lucene), though I cannot think of other matching descriptive (short) term.\n\nThanks for improving this,\nDoron",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-01-16T19:33:05.243+0000",
+          "updated": "2007-01-16T19:33:05.243+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465265",
+          "id": "12465265",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "body": "> the term \"merged\" (in hasMergedNorms) is a little overloaded with other semantics (in Lucene)\n\nUnified?  Single?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting",
+            "name": "cutting",
+            "key": "cutting",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Doug Cutting",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2007-01-16T19:42:51.392+0000",
+          "updated": "2007-01-16T19:42:51.392+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465271",
+          "id": "12465271",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Catenated?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-01-16T19:53:57.728+0000",
+          "updated": "2007-01-16T19:53:57.728+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465273",
+          "id": "12465273",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Just to let you know - I checked this with recent patch for Lucene-741 (Field norm modifier) --> working as is with this improvement.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-01-16T19:55:17.077+0000",
+          "updated": "2007-01-16T19:55:17.077+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465274",
+          "id": "12465274",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK thanks Doron.  I will make the fixes you suggested!\n\nI like \"single\" -- I will redo the \"non backwards compatible for past 10 days\" patch with these fixes!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T19:57:48.219+0000",
+          "updated": "2007-01-16T19:57:48.219+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12465283",
+          "id": "12465283",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK I committed the fix (changed the name to \"singleNormFile\").  Thanks\neveryone!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-01-16T20:28:17.902+0000",
+          "updated": "2007-01-16T20:28:17.902+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/12476277",
+          "id": "12476277",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Closing all issues that were resolved for 2.1.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-02-27T18:10:39.068+0000",
+          "updated": "2007-02-27T18:10:39.068+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359171/comment/17586945",
+          "id": "17586945",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1831|https://github.com/apache/lucene/issues/1831].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:33:19.602+0000",
+          "updated": "2022-08-28T11:33:19.602+0000"
+        }
+      ],
+      "maxResults": 27,
+      "total": 27,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0517b:",
+    "customfield_12314139": null
+  }
+}

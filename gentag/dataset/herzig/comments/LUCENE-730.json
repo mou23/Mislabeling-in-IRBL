@@ -1,0 +1,1099 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12357055",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055",
+  "key": "LUCENE-730",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312328",
+        "id": "12312328",
+        "description": "",
+        "name": "2.2",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-06-19"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13022",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "4.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27318",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+      "name": "paul.elschot@xs4all.nl",
+      "key": "paul.elschot@xs4all.nl",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+      },
+      "displayName": "Paul Elschot",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+      "name": "paul.elschot@xs4all.nl",
+      "key": "paul.elschot@xs4all.nl",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+      },
+      "displayName": "Paul Elschot",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-730/votes",
+      "votes": 2,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@5878573a[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@512564c0[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5f9bf319[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@25629f4e[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2049a19e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@60a1d046[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6022e470[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@510b8fd5[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3c23913b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@526e5519[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@25983a40[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@28e07c01[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:32:31 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-05-28T19:34:27.245+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-730/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "created": "2006-11-27T20:32:32.000+0000",
+    "updated": "2022-08-28T11:32:31.048+0000",
+    "timeoriginalestimate": null,
+    "description": "This patch restores the performance of top level disjunctions. \nThe introduction of BooleanScorer2 had impacted this as reported\non java-user on 21 Nov 2006 by Stanislav Jordanov.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12358337",
+        "id": "12358337",
+        "filename": "lucene-730.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-05-27T19:20:07.735+0000",
+        "size": 11661,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12358337/lucene-730.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12358322",
+        "id": "12358322",
+        "filename": "lucene-730.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-05-27T02:08:24.977+0000",
+        "size": 8848,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12358322/lucene-730.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12358175",
+        "id": "12358175",
+        "filename": "lucene-730.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-05-25T00:11:15.706+0000",
+        "size": 5531,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12358175/lucene-730.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12345859",
+        "id": "12345859",
+        "filename": "TopLevelDisjunction20061127.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+          "name": "paul.elschot@xs4all.nl",
+          "key": "paul.elschot@xs4all.nl",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+          },
+          "displayName": "Paul Elschot",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-11-27T20:37:45.000+0000",
+        "size": 5685,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12345859/TopLevelDisjunction20061127.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Restore top level disjunction performance",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12453697",
+          "id": "12453697",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "This patches BooleanScorer2 to use BooleanScorer in the score(HitCollector) method.\nThis also patches BooleanScorer to accept a minimum number of optional matchers.\n\nThe patch also disables some test code: the use of checkSkipTo in QueryUtils\ncaused a test failure in TestBoolean2 with the above changes. I think this\ncould be expected because of the changed document scoring order\nfor top level disjunction queries.\nAt the moment I don't know how to resolve this.\n\nWith the complete patch, all tests pass here.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-11-27T20:37:45.000+0000",
+          "updated": "2006-11-27T20:37:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12488889",
+          "id": "12488889",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Just a quick note that I contacted Stanislav Jordanov about Paul's patch here.  Stanislav only used BooleanScorer.setUseScorer14() and that restored performance for him, but he did not try this patch (and won't be doing that as he's not working with Lucene at the moment).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-14T21:44:24.578+0000",
+          "updated": "2007-04-14T21:44:24.578+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12489199",
+          "id": "12489199",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Paul, what is special about the number 32 here (BooleanScorer2):\n\n+    if ((requiredScorers.size() == 0) &&\n+        prohibitedScorers.size() < 32) {\n+      // fall back to BooleanScorer, scores documents somewhat out of order\n+      BooleanScorer bs = new BooleanScorer(getSimilarity(), minNrShouldMatch);\n\nWhy can we use BooleanScorer if there are less than 32 prohibited clauses, but not otherwise?  Thanks.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-16T19:15:44.464+0000",
+          "updated": "2007-04-16T19:15:44.464+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12489206",
+          "id": "12489206",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "32 is the max number of required + prohibited clauses in the orig BooleanScorer (because it uses an int as a bitfield for each document in the current id range being considered).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-16T19:32:07.540+0000",
+          "updated": "2007-04-16T19:32:07.540+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12489229",
+          "id": "12489229",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Further to Yonik's answer, I have not done any tests with prohibited scorers comparing BooleanScorer and BooleanScorer2.\n\nIt is quite possible that using skipTo() on any prohibited scorer (via BooleanScorer2) is generally faster than using BooleanScorer. Prohibited clauses in queries are quite seldom, so it is going to be difficult to find out whether a smaller value than 32 would be generally optimal.\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-16T21:01:10.951+0000",
+          "updated": "2007-04-16T21:01:10.951+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12489559",
+          "id": "12489559",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I've committed this (changed a few minor things in the patch)...without benchmarking BS vs. BS2 with < 32 prohibited clauses.\n\nHm, if I exposed that 32 as a static setter method, then one could easily benchmark and compare BS vs. BS2 with Doron's contrib/benchmark.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-04-17T22:04:05.790+0000",
+          "updated": "2007-04-17T22:04:05.790+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12498818",
+          "id": "12498818",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "As discussed on java-dev the default behavior of BooleanScorer should be to return the documents in order, because there are people who rely in their apps on that. Docs out of order should only be allowed if BooleanQuery.setUseScorer14(true) is set explicitly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-24T20:39:22.997+0000",
+          "updated": "2007-05-24T20:39:22.997+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12498896",
+          "id": "12498896",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "With this patch the old BooleanScorer is only used if BooleanQuery.setUseScorer14(true) is set. It also enables the tests in QueryUtils again that check if the docs are returned in order.\n\nAll tests pass.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-25T00:11:15.826+0000",
+          "updated": "2007-05-25T00:11:15.826+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499293",
+          "id": "12499293",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The patch applies cleanly here, all core tests pass.\nAnd I like the allowDocsOutOfOrder approach.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-05-26T07:45:08.728+0000",
+          "updated": "2007-05-26T07:45:08.728+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499320",
+          "id": "12499320",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks for reviewing, Paul!\n\nI will commit this soon if nobody objects...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-26T16:14:32.230+0000",
+          "updated": "2007-05-26T16:14:32.230+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499344",
+          "id": "12499344",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "No objection, only some remarks.\n\nOne bigger issue:\n\nThe latest patch defaults to docs in order above performance,\nbut my personal taste is to have performance by default.\n\nAnd some smaller ones:\n\nOne could still adapt QueryUtills to take the possibility\nof docs out of order into account.\n\nSome performance tests with prohibited scorers could still\nbe needed to find out which of the boolean scorers does better\non them.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-05-26T19:17:54.666+0000",
+          "updated": "2007-05-26T19:17:54.666+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499362",
+          "id": "12499362",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Two comments: \n\nWith this patch the class BooleanWeight is not\nin (direct) use anymore - it is extended by \nBooleanWeight2 and then only the latter is used, \nand creates either Scorer2 or Scorer. We could \nget rid of BolleanWeight2, and have a single \nclass BooleanWeight.\n\nJavadocs for useScorer14 methods:\n  /**\n   * Indicates that 1.4 BooleanScorer should be used.\n   * Being static, This setting is system wide.\n   * Scoring in 1.4 mode may be faster.\n   * But note that unlike the default behavior, it does \n   * not guarantee that docs are collected in docid\n   * order. In other words, with this setting, \n   * {@link HitCollector#collect(int,float)} might be\n   * invoked first for docid N and only later for docid N-1. \n   */\n  public static void setUseScorer14(boolean use14) {\n\n  /**\n   * Whether 1.4 BooleanScorer should be used.\n   * @see #setUseScorer14(boolean)\n   */\n  public static boolean getUseScorer14() {\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2007-05-26T22:38:42.214+0000",
+          "updated": "2007-05-26T22:38:42.214+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499365",
+          "id": "12499365",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "\n> The latest patch defaults to docs in order above performance,\n> but my personal taste is to have performance by default.\n\nI think it makes more sense to \"default\" to the most consistent rigidly defined behavior (docs in order), since that behavior will work (by definition) for any caller regardless of whether the caller expects the docs in order or not.\n\npeople who find performance lacking can then assess their needs and make a conscious choice to change the setting, and see if it actually improves performance in their use cases.\n\n(ie: \"avoid premature optimization\" and all that)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-05-26T23:42:22.395+0000",
+          "updated": "2007-05-26T23:42:22.395+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499371",
+          "id": "12499371",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> The latest patch defaults to docs in order above performance,\n> but my personal taste is to have performance by default.\n\nI agree with Hoss here. IMO allowing docs out of order is a big\nAPI change. I think if people switch to 2.2 they just want it\nto work as before without having to add special settings. If \nthey need better performance for certain types of queries and \nthey know that their application can deal with docs out of order\nthey can enable the faster scoring. \nSo my vote is +1 for docs in order by default.\n\n> Some performance tests with prohibited scorers could still\n> be needed to find out which of the boolean scorers does better\n> on them. \n\nThat'd be helpful. However, I'm currently working on some other\nissues. Maybe you or others would have some time to run those\ntests?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-27T01:58:38.513+0000",
+          "updated": "2007-05-27T01:58:38.513+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499372",
+          "id": "12499372",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> With this patch the class BooleanWeight is not\n> in (direct) use anymore - it is extended by \n> BooleanWeight2 and then only the latter is used, \n> and creates either Scorer2 or Scorer. We could \n> get rid of BolleanWeight2, and have a single \n> class BooleanWeight.\n\nAgree. Will do.\n\n> Javadocs for useScorer14 methods:\n\nThis is good! Thanks Doron, I will add the javadocs\nto my patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-27T02:00:37.594+0000",
+          "updated": "2007-05-27T02:00:37.594+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499375",
+          "id": "12499375",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "New patch with the following changes:\n\n- Removes BooleanWeight2\n- Javadocs for useScorer14 methods provided by Doron",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-27T02:08:25.092+0000",
+          "updated": "2007-05-27T02:08:25.092+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499400",
+          "id": "12499400",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "(Is the patch reversed? It did not apply at the first attempt,\nprobably because my working copy is not the same as the trunk.)\nAfter ant clean, the boolean tests still pass here:\nant -Dtestcase='TestBool*' test-core\n\nA slight improvement for the javadocs of BooleanQuery.java.\nIn the javadocs of the scorer() method it is indicated that a BooleanScorer2\nwill always be used, so it is better to mention here that BooleanScorer2\ndelegates to a 1.4 scorer in some cases:\n\n  /**\n   * Indicates that BooleanScorer2 will delegate\n   * the scoring to a 1.4 BooleanScorer\n   * for most queries without required clauses.\n   * Being static, this setting is system wide.\n   * Scoring in 1.4 mode may be faster.\n   * But note that unlike the default behavior, it does\n   * not guarantee that docs are collected in docid\n   * order. In other words, with this setting,\n   * {@link HitCollector#collect(int,float)} might be\n   * invoked first for docid N and only later for docid N-1.\n   */\n  public static void setUseScorer14(boolean use14) {\n    useScorer14 = use14;\n  }\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-05-27T08:49:18.104+0000",
+          "updated": "2007-05-27T08:49:18.104+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499415",
+          "id": "12499415",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> A slight improvement for the javadocs of BooleanQuery.java.\n> In the javadocs of the scorer() method it is indicated that a BooleanScorer2\n> will always be used, so it is better to mention here that BooleanScorer2\n> delegates to a 1.4 scorer in some cases:\n\nMaybe we should just deprecate the useScorer14 methods and add new methods\nallowDocsOutOfOrder. That should be easier to understand for the users. \nAnd probably most users don't know (or don't care about) the differences\nbetween BooleanScorer and BooleanScorer2 anyway.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-27T17:08:13.456+0000",
+          "updated": "2007-05-27T17:08:13.456+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499438",
+          "id": "12499438",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "New patch that deprecates the useScorer14 methods and adds new\nmethods:\n\n  /**\n   * Indicates whether hit docs may be collected out of docid\n   * order. In other words, with this setting, \n   * {@link HitCollector#collect(int,float)} might be\n   * invoked first for docid N and only later for docid N-1.\n   * Being static, this setting is system wide.\n   * If docs out of order are allowed scoring might be faster\n   * for certain queries (disjunction queries with less than\n   * 32 prohibited terms). This setting has no effect for \n   * other queries.\n   */\n  public static void setAllowDocsOutOfOrder(boolean allow);\n  \n  /**\n   * Whether hit docs may be collected out of docid order.\n   * @see #setAllowDocsOutOfOrder(boolean)\n   */\n  public static boolean getAllowDocsOutOfOrder();\n  \n\nI think this is easier to understand for the users because it \ntells them what they need to know (docs in or out of order) \nand hides technical details (BooleanScorer vs. BooleanScorer2).\n\nAll tests pass.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-27T19:20:07.791+0000",
+          "updated": "2007-05-27T19:20:07.791+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/12499627",
+          "id": "12499627",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I just committed the latest patch. Thanks everyone!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-05-28T19:34:27.236+0000",
+          "updated": "2007-05-28T19:34:27.236+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12357055/comment/17586919",
+          "id": "17586919",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1805|https://github.com/apache/lucene/issues/1805].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:32:31.048+0000",
+          "updated": "2022-08-28T11:32:31.048+0000"
+        }
+      ],
+      "maxResults": 21,
+      "total": 21,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i051d3:",
+    "customfield_12314139": null
+  }
+}

@@ -1,0 +1,959 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12343593",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593",
+  "key": "LUCENE-580",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13170",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "4.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310334",
+        "id": "12310334",
+        "description": "last 1.x release, has new 2.x APIs",
+        "name": "1.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2006-02-27"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27465",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+      "name": "karl.wettin",
+      "key": "karl.wettin",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Karl Wettin",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+      "name": "karl.wettin",
+      "key": "karl.wettin",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Karl Wettin",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-580/votes",
+      "votes": 3,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4f2bcf2c[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@772dee8c[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@98a4e5c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@114b986f[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6cceb273[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@39d460ac[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@62772164[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@2f3255a5[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@36f6271a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2c3de068[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@771a888a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@4a3874b1[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:27:55 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-04-29T19:28:24.853+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-580/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2006-05-27T12:56:43.000+0000",
+    "updated": "2022-08-28T11:27:55.476+0000",
+    "timeoriginalestimate": null,
+    "description": "Adds the possibility to set a TokenStream at Field constrution time, available as tokenStreamValue in addition to stringValue, readerValue and binaryValue.\n\nThere might be some problems with mixing stored fields with the same name as a field with tokenStreamValue.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356471",
+        "id": "12356471",
+        "filename": "lucene-580.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+          "name": "karl.wettin",
+          "key": "karl.wettin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Karl Wettin",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2007-04-29T02:50:58.889+0000",
+        "size": 14908,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356471/lucene-580.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356463",
+        "id": "12356463",
+        "filename": "lucene-580.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-04-28T18:41:23.316+0000",
+        "size": 21289,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356463/lucene-580.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12334647",
+        "id": "12334647",
+        "filename": "preanalyze.tar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+          "name": "karl.wettin",
+          "key": "karl.wettin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Karl Wettin",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-05-27T12:57:37.000+0000",
+        "size": 10240,
+        "mimeType": "application/x-tar",
+        "content": "https://issues.apache.org/jira/secure/attachment/12334647/preanalyze.tar"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12356209",
+        "id": "12356209",
+        "filename": "trunk.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+          "name": "karl.wettin",
+          "key": "karl.wettin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Karl Wettin",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2007-04-25T07:41:53.440+0000",
+        "size": 12988,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12356209/trunk.diff"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Pre-analyzed fields",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12413562",
+          "id": "12413562",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Field.java.diff\nDocumentWriter.java.diff",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-27T12:57:37.000+0000",
+          "updated": "2006-05-27T12:57:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12413563",
+          "id": "12413563",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "The description should be \"This patch\"... and not \"This page\"...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-05-27T12:58:42.000+0000",
+          "updated": "2006-05-27T12:58:42.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12465797",
+          "id": "12465797",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=nyh",
+            "name": "nyh",
+            "key": "nyh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Nadav Har'El",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "This patch will be useful for users LUCENE-755, the payloads patch. That patch adds \"payloads\" to tokens, but using it to add a few tokens with payloads in some field can be ugly because you need to split the code into two places: at one place you add the field, only text, and at another place you need to write a special analyzer which will work only on that field, recognize the specific tokens and add the payloads to them. This patch makes this easier, because when you add a field, you can add it pre-analyzed, already as a list of tokens, and these tokens will already have their special payloads in them.\n\nI have just a few comments on this patch:\n\n1. The description above suggests that it might not work if the same field name is used for two Field's, one stored and the other preanalyzed. I think it is important that this combination (as well as all other combinations) are supported. I actually use all these combinations in my code, and I don't see why it should cause problems.\n\n2. The patch has some strange changes in the comments, changing the word \"Index\" to \"NotificationService\". I bet this wasn't intentional :-)\n\n3. The new Field constructor still has a \"Index\" paramter, taking TOKENIZED, UN_TOKENIZED or NO_NORMS (only NO is forbidden). I wonder, what's the difference between TOKENIZED and UN_TOKENIZED in this case? The NO_NORMS is a very useful case, because it allows you to do something not previously possible in Lucene (a tokenized field, but without norms). Perhaps this parameter should be better documented in the javadoc comment.\n\n4. In the new Field constructor's comment, the phrase \"if name or reader\" should be \"if name or tokenStream\".\n\nThanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=nyh",
+            "name": "nyh",
+            "key": "nyh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Nadav Har'El",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2007-01-18T16:21:04.311+0000",
+          "updated": "2007-01-18T16:21:04.311+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12465811",
+          "id": "12465811",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Nadav Har'El [18/Jan/07 08:21 AM]\n\n> The description above suggests that it might not work if the same\n> field name is used for two Field's, one stored and the other preanalyzed. \n> I think it is important that this combination (as well as all other \n> combinations) are supported. I actually use all these combinations in my\n> code, and I don't see why it should cause problems.\n\nActually, I can't remember why I thought there could be a problem, nor can I think of one now.  This code is from my pre-tests era, and it should could need some.\n\nIf you like this  strategy, I think it would be more elegant passing a factory rather than the actual token stream.\n\n> The patch has some strange changes in the comments, changing the word\n>  \"Index\" to \"NotificationService\". I bet this wasn't intentional :-)\n\nHehe, that must be an old refactoring search and replace incident.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-01-18T17:03:04.977+0000",
+          "updated": "2007-01-18T17:03:04.977+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12491114",
+          "id": "12491114",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Michael, let me know if you start working on this. I would not mind a discussion on how the token stream supplier should look like. For one it should be an interface/class that supplies the token stream and not a TokenStream it self as it could only be read once. Or?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-24T02:25:29.534+0000",
+          "updated": "2007-04-24T02:25:29.534+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12491127",
+          "id": "12491127",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Perhaps it would be nice if standard term vector, positions et c. was available for easy extraction? Pass a TokenStream to the constructor of the pre analyzed field, buffer it up in a LinkedHashMap, or something in that direction.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-24T04:28:23.553+0000",
+          "updated": "2007-04-24T04:28:23.553+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12491543",
+          "id": "12491543",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "An implementation suggestion. The project will not compile as there are two Fieldable implementations that does not implement the tokenStreamFactoryValue() method, LazyField and FieldForMerge. I suspect they could just return null values, but I leave it open as I'm not sure.\n\nPatch contains:\n\npublic interface TokenStreamFactory {\n  public abstract TokenStream factory() throws IOException;\n}\n\n/** Encapuslates a single instance of TokenStream that can be passed on ONCE. */\npublic class SimplePreAnalyzedField implements TokenStreamFactory {\n\n/** Caches an instance of TokenStream in a List, reassembled to a TokenStream for each call to factory() */\npublic class CachedPreAnalyzedField implements TokenStreamFactory {\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-25T07:41:53.570+0000",
+          "updated": "2007-04-25T07:41:53.570+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12491555",
+          "id": "12491555",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Karl,\n\nthank you for your comments and your new patch! I actually updated you initial patch a couple of days ago to apply cleanly on the current trunk as I found it quite simple and straightforward. \n\nI have a question regarding the new patch: What kind of use cases do you have in mind with the cached field? I would think that a TokenStream will only be read once by the DocumentWriter? Currently you can add a field with a Reader, and as far as I know is it not guaranteed that a Reader supports reset(), which means it can only be read once, too. Thoughts?\n\nMichael",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-25T08:21:29.036+0000",
+          "updated": "2007-04-25T08:21:29.036+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12491557",
+          "id": "12491557",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "25 apr 2007 kl. 10.23 skrev Michael Busch (JIRA):\n> What kind of use cases do you have in mind with the cached field?\n\nI made the inital implementation for text mining purposes -- I needed the term vector prior to inserting the document to the index. Back then I analyzed, cached it up, did my secondary analysis of the vector, and finally reconstructed the token stream and passed it to the field. I think it would be easier to just pass a token stream to an extention of CachedPreAn.. that also features a termFreqVector(), termPosVector(), et c.\n\nKarl",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-25T08:32:00.954+0000",
+          "updated": "2007-04-25T08:32:00.954+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492509",
+          "id": "12492509",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Karl,\n\nthanks again for your suggestions. I created a patch with a slightly different approach compared to your latest patch. Similar to java.io.Reader I added the public method reset() to TokenStream, which does nothing per default. Subclasses may or may not overwrite this method. I also added the new class CachingTokenFilter to the analysis package which does the same as your CachedPreAnalyzedField. Before the DocumentWriter consumes the TokenStream it calls reset() reposition the stream at the beginning.\n\nWith this approach it is not neccessary anymore to introduce a TokenStreamFactory and the PreAnalyzedField classes, which is simpler and more consistent with the Analyzer API in my opinion. Yet it also allows to consume the Tokens of a stream more than once, which should satisfy your needs?\n\nPlease let me know what you thing about this new patch. Maybe other committers could take a look as well, since this is an API change (well, extension) to two very common classes: TokenStream and Field.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-28T18:41:23.446+0000",
+          "updated": "2007-04-28T18:41:23.446+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492521",
+          "id": "12492521",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "28 apr 2007 kl. 20.42 skrev Michael Busch (JIRA):\n> Please let me know what you thing about this new patch.\n\n+1. Very clean.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-28T22:07:10.208+0000",
+          "updated": "2007-04-28T22:07:10.208+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492538",
+          "id": "12492538",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "A patch that supports omitting norms.\n\n /**\n   * Create a tokenized and indexed field that is not stored, optionally with \n   * storing term vectors.\n   * \n   * @param name The name of the field\n   * @param tokenStream The reader with the content\n+   * @param index Must be tokenized or no norms.\n   * @param termVector Whether term vector should be stored\n   * @throws NullPointerException if name or reader is <code>null</code>\n   */ \n - public Field(String name, TokenStream tokenStream, TermVector termVector) {\n+ public Field(String name, TokenStream tokenStream, Index index, TermVector termVector) {\n\n    if (name == null)\n      throw new NullPointerException(\"name cannot be null\");\n    if (tokenStream == null)\n      throw new NullPointerException(\"tokenStream cannot be null\");\n+    if (index != Index.TOKENIZED && index != Index.NO_NORMS) {\n+      throw new IllegalArgumentException(\"index must be either TOKENIZED or NO_NORMS\");\n+    }\n\n\nAlso fixed some copy/paste related javadoc errors.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-29T02:50:59.003+0000",
+          "updated": "2007-04-29T02:50:59.003+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492540",
+          "id": "12492540",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'd like to keep the new Constructor consistent with the Constructor that takes a Reader argument. You can use Fieldable.setOmitNorms() to disable norms.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-29T03:33:27.182+0000",
+          "updated": "2007-04-29T03:33:27.182+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492542",
+          "id": "12492542",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "How about two constructors?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=karl.wettin",
+            "name": "karl.wettin",
+            "key": "karl.wettin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Karl Wettin",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-04-29T03:46:32.117+0000",
+          "updated": "2007-04-29T03:46:32.117+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492562",
+          "id": "12492562",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I hesitate to add even more constructors to Field, since it has already a bunch of them. And I don't see the value in the constructor you proposed, because the same can be achieved by using setOmitNorms(). I think it is a bit confusing to have the Index parameter with only two out of four allowed values in the constructor.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-29T11:01:33.597+0000",
+          "updated": "2007-04-29T11:01:33.597+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/12492594",
+          "id": "12492594",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I just committed this. Thanks a lot for your patches and the productive discussions, Karl!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-04-29T19:28:24.836+0000",
+          "updated": "2007-04-29T19:28:24.836+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343593/comment/17586772",
+          "id": "17586772",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1658|https://github.com/apache/lucene/issues/1658].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:27:55.476+0000",
+          "updated": "2022-08-28T11:27:55.476+0000"
+        }
+      ],
+      "maxResults": 17,
+      "total": 17,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0529r:",
+    "customfield_12314139": null
+  }
+}

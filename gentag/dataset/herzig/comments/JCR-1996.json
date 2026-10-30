@@ -1,0 +1,828 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12415469",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469",
+  "key": "JCR-1996",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12313709",
+        "id": "12313709",
+        "description": "Apache Jackrabbit 1.5.5",
+        "name": "1.5.5",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-04-28"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "78361",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12313599",
+        "id": "12313599",
+        "description": "Apache Jackrabbit 1.5.3",
+        "name": "1.5.3",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-02-27"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [
+      {
+        "id": "12327281",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12327281",
+        "type": {
+          "id": "12310000",
+          "name": "Duplicate",
+          "inward": "is duplicated by",
+          "outward": "duplicates",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/12310000"
+        },
+        "inwardIssue": {
+          "id": "12437496",
+          "key": "JCR-2350",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12437496",
+          "fields": {
+            "summary": "Indexing node when date time is too late for lucene",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12313825": null,
+    "assignee": null,
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310870",
+        "id": "12310870",
+        "name": "indexing",
+        "description": "Search indices and lucene integration"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310114",
+        "id": "12310114",
+        "name": "jackrabbit-core",
+        "description": "Jackrabbit Core"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12312057",
+        "id": "12312057",
+        "name": "jackrabbit-jcr-commons",
+        "description": "Jackrabbit JCR Commons"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "192541",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+      "name": "martijnh",
+      "key": "martijnh",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Martijn Hendriks",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+      "name": "martijnh",
+      "key": "martijnh",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Martijn Hendriks",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-1996/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@73be7680[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@738e4958[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4fd51078[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@4e105453[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@28261f78[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@1c6623c4[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7bd7b6e0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@37a9c705[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2f6cd357[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2b9bd7d[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@441f6b7c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@3d770d15[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/10591",
+      "id": "10591",
+      "key": "JCR",
+      "name": "Jackrabbit Content Repository",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=10591&avatarId=10052",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=10591&avatarId=10052",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=10591&avatarId=10052",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=10591&avatarId=10052"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10170",
+        "id": "10170",
+        "description": "Jackrabbit related projects",
+        "name": "Jackrabbit"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Wed Apr 22 14:33:40 UTC 2009",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2009-03-24T20:33:44.639+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-1996/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2009-02-24T13:10:52.951+0000",
+    "updated": "2009-10-09T07:34:36.351+0000",
+    "timeoriginalestimate": null,
+    "description": "Setting a date property with a value in the far future (e.g., the year 20009) and saving the session causes the index component to throw an exception (see the DateField#timeToString method). Furthermore, when the repository is restarted, the properties' value cannot be retrieved anymore because of a ValueFormatException caused by an empty value. Restarting the repository with an empty search index does not work because indexing fails. I haven't looked into the effect on queries.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12401006",
+        "id": "12401006",
+        "filename": "JCR-1996.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+          "name": "mreutegg",
+          "key": "mreutegg",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+          },
+          "displayName": "Marcel Reutegger",
+          "active": true,
+          "timeZone": "Europe/Zurich"
+        },
+        "created": "2009-02-26T09:12:38.100+0000",
+        "size": 10515,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12401006/JCR-1996.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12400925",
+        "id": "12400925",
+        "filename": "JCR-1996.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+          "name": "mreutegg",
+          "key": "mreutegg",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+          },
+          "displayName": "Marcel Reutegger",
+          "active": true,
+          "timeZone": "Europe/Zurich"
+        },
+        "created": "2009-02-25T09:03:51.129+0000",
+        "size": 2379,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12400925/JCR-1996.patch"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Handle date values in the far future or prevent these from being persisted",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676564",
+          "id": "12676564",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Ah right, I remember the limits on the value range for dates. The DateField class is a copy of the Lucene DateField, but with a slightly larger value range. In Jackrabbit the range is from 30 BC to 3189.\n\nI suggest we ignore values outside of the supported date range and log a warning. As a workaround one may use a long property where the full value range is supported.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-02-25T09:03:31.675+0000",
+          "updated": "2009-02-25T09:03:31.675+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676566",
+          "id": "12676566",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Proposed patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-02-25T09:03:51.164+0000",
+          "updated": "2009-02-25T09:03:51.164+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676598",
+          "id": "12676598",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gjoseph",
+            "name": "gjoseph",
+            "key": "gjoseph",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Gr\u00e9gory Joseph",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Would that mean a date in the far future would not be *persisted* or simply not indexed ?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gjoseph",
+            "name": "gjoseph",
+            "key": "gjoseph",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Gr\u00e9gory Joseph",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-02-25T10:13:31.650+0000",
+          "updated": "2009-02-25T10:13:31.650+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676604",
+          "id": "12676604",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Date properties are always persisted (even the ones far in the future, that cause this indexing issue). The patch fixes the issue on the indexing part, by ignoring the value.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-02-25T10:34:00.966+0000",
+          "updated": "2009-02-25T10:34:00.966+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676621",
+          "id": "12676621",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Marcel, thanks for your quick response and patch! I noticed that retrieving the value through the JCR API will not work for the big dates (even when the repository is restarted):\n\nCaused by: javax.jcr.ValueFormatException: empty value\n        at org.apache.jackrabbit.value.DateValue.getDate(DateValue.java:139)\n\nIs this also solved by the patch?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-02-25T11:56:21.637+0000",
+          "updated": "2009-02-25T11:56:21.637+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676647",
+          "id": "12676647",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "> Is this also solved by the patch?\n\nno, it isn't. My test used a time that wasn't far enough in the future ;)\n\nThe problem is the five digit year. Bundle persistence managers store a date property as a string representation and on read parse the string using ISO8601.parse(String). This method returns null when there are five year digits.\n\nHmm, I'm not sure how this should be fixed. The specification says that a date is converted to String using ISO8601, but it doesn't say what should happen when the year cannot be represented with four digits. At the same time ValueFactory.createValue(Calendar) does not declare an exception, which makes it difficult to prevent such values. We might be able to throw an exception on setProperty() though. I'll have to check....",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-02-25T13:30:33.642+0000",
+          "updated": "2009-02-25T13:30:33.642+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676931",
+          "id": "12676931",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Updated patch with following changes:\n\n- ISO8601.format(Calendar) now throws an IllegalArgumentException if the Calendar cannot be formatted according to ISO 8601.\n- DateValue constructor does the same\n- Exception is caught in PropertyImpl.setValue(Calendar) and a ValueFormatException is thrown\n- ValueFactory.createValue(Calendar) now also throws an InvalidArgumentException in case the calendar cannot be formatted according to ISO 8601.\n\nSee also added test case.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-02-26T09:12:38.146+0000",
+          "updated": "2009-02-26T09:12:38.146+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676932",
+          "id": "12676932",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Also affects jackrabbit-jcr-commons.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-02-26T09:13:11.924+0000",
+          "updated": "2009-02-26T09:13:11.924+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12676983",
+          "id": "12676983",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Patch looks fine! Node.setProperty(farFuture) (and related methods) now throw a ValueFormatException which is fine behavior I would say.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-02-26T12:54:18.639+0000",
+          "updated": "2009-02-26T12:54:18.639+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12688636",
+          "id": "12688636",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Is the proposed solution ready for commit, or are there doubts about it?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-03-24T10:40:04.902+0000",
+          "updated": "2009-03-24T10:40:04.902+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12688853",
+          "id": "12688853",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "Committed patch in revision: 758003",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mreutegg",
+            "name": "mreutegg",
+            "key": "mreutegg",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=mreutegg&avatarId=18658",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=mreutegg&avatarId=18658",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=mreutegg&avatarId=18658",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=mreutegg&avatarId=18658"
+            },
+            "displayName": "Marcel Reutegger",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2009-03-24T20:33:43.253+0000",
+          "updated": "2009-03-24T20:33:43.253+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12689073",
+          "id": "12689073",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Great, thanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=martijnh",
+            "name": "martijnh",
+            "key": "martijnh",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Martijn Hendriks",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-03-25T10:55:36.909+0000",
+          "updated": "2009-03-25T10:55:36.909+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12415469/comment/12701551",
+          "id": "12701551",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jukkaz",
+            "name": "jukkaz",
+            "key": "jukkaz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=jukkaz&avatarId=15130",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=jukkaz&avatarId=15130",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=jukkaz&avatarId=15130",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=jukkaz&avatarId=15130"
+            },
+            "displayName": "Jukka Zitting",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Merged to the 1.5 branch in revision 767539.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jukkaz",
+            "name": "jukkaz",
+            "key": "jukkaz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=jukkaz&avatarId=15130",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=jukkaz&avatarId=15130",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=jukkaz&avatarId=15130",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=jukkaz&avatarId=15130"
+            },
+            "displayName": "Jukka Zitting",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-22T14:33:40.296+0000",
+          "updated": "2009-04-22T14:33:40.296+0000"
+        }
+      ],
+      "maxResults": 13,
+      "total": 13,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0xbr3:",
+    "customfield_12314139": null
+  }
+}

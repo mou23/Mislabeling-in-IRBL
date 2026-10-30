@@ -1,0 +1,1812 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12382787",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787",
+  "key": "LUCENE-1058",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312531",
+        "id": "12312531",
+        "description": "",
+        "name": "2.3",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-01-23"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12687",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "7.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12318332",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12318332",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12375615",
+          "key": "SOLR-330",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12375615",
+          "fields": {
+            "summary": "Use new Lucene Token APIs (reuse and char[] buff)",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+              "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+              "name": "Resolved",
+              "id": "5",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26989",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1058/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@45c5238d[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3d936289[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@792352ff[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@5f82f078[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2a9d1a15[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@9bc1757[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6a6b0835[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@22223430[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@602dcfd3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@9c26a2e[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3bdaf183[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@86ad17c[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:42:47 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-11-29T15:18:39.641+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1058/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2007-11-19T13:45:41.161+0000",
+    "updated": "2022-08-28T11:42:47.329+0000",
+    "timeoriginalestimate": null,
+    "description": "In some cases, it would be handy to have Analyzer/Tokenizer/TokenFilters that could siphon off certain tokens and store them in a buffer to be used later in the processing pipeline.\n\nFor example, if you want to have two fields, one lowercased and one not, but all the other analysis is the same, then you could save off the tokens to be output for a different field.\n\nPatch to follow, but I am still not sure about a couple of things, mostly how it plays with the new reuse API.\n\nSee http://www.gossamer-threads.com/lists/lucene/java-dev/54397?search_string=BufferingAnalyzer;#54397",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370420",
+        "id": "12370420",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-28T15:57:20.937+0000",
+        "size": 11518,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370420/LUCENE-1058.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370417",
+        "id": "12370417",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-28T15:16:29.205+0000",
+        "size": 11569,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370417/LUCENE-1058.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370324",
+        "id": "12370324",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-27T17:30:21.221+0000",
+        "size": 29558,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370324/LUCENE-1058.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370306",
+        "id": "12370306",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-27T14:10:51.763+0000",
+        "size": 29250,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370306/LUCENE-1058.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12370256",
+        "id": "12370256",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-27T01:57:26.132+0000",
+        "size": 28187,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12370256/LUCENE-1058.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12369942",
+        "id": "12369942",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-21T02:51:50.889+0000",
+        "size": 17524,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12369942/LUCENE-1058.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12369788",
+        "id": "12369788",
+        "filename": "LUCENE-1058.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2007-11-19T13:52:55.147+0000",
+        "size": 13022,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12369788/LUCENE-1058.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "New Analyzer for buffering tokens",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12543570",
+          "id": "12543570",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "First draft at a patch, provides two different approaches:\n\n1.  CachedAnalyzer and CachedTokenizer take in a list of Tokens and output them as appropriate.  Similar to CachingTokenFilter, but assumes you already have the Tokens\n\n2. In contrib/analyzers/buffered, add CollaboratingAnalyzer and related classes for creating a Analyzer, etc. that work in the stream.\n\nStill not sure if and how this plays with the Token reuse (I think it doesn't)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-19T13:52:55.215+0000",
+          "updated": "2007-11-19T13:52:55.215+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12544096",
+          "id": "12544096",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think the discussion in LUCENE-1063 is relevant to this issue: if you store (& re-use) Tokens you may need to return a copy of the Token from the next() method to ensure that nay filters that alter the Token don't mess up your private copy.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-20T22:10:19.039+0000",
+          "updated": "2007-11-20T22:10:19.039+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12544145",
+          "id": "12544145",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Some javadoc comments for the modifyToken method in BufferingTokenFilter should be sufficient, right?  Something to the effect that if this TokenFilter is not the last in the chain that it should make a full copy.  \n\nAs for the CachedTokenizer and CachedAnalyzer, those should be implied, since the user is passing them in to begin with.\n\nThe other thing of interest, is that calling Analyzer.tokenStream(String, Reader) is not needed.  In fact, this somewhat suggests having a new Fieldable property akin to tokenStreamValue(), etc. that says don't even ask the Fieldable for a value.  \n\nLet me take a crack at what that means and post a patch.  It will mean some changes to invertField() in DocumentsWriter and possibly changing it to not require that one of tokenStreamValue, readerValue() or stringValue() be defined.  Not sure if that is a good idea or not.  \n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-21T02:21:15.123+0000",
+          "updated": "2007-11-21T02:21:15.123+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12544147",
+          "id": "12544147",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's a patch that modifies the DocumentsWriter to not throw an IllegalArgumentException if no Reader is specified.  Thus, an Analyzer needs to be able to handle a null Reader (this still needs to be documented).  Basically, the semantics of it are that the Analyzer is producing Tokens from some other means.  I probably should spell this out in a new Field constructor as well, but this should suffice for now, and I will revisit it after the break.\n\n I also added in a TestCollaboratingAnalyzer.  All tests pass.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-21T02:51:51.059+0000",
+          "updated": "2007-11-21T02:51:51.059+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545677",
+          "id": "12545677",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "A new version of this with the following changes/additions:\n\nDocumentsWriter no longer requires that a Field have a value (i.e. stringValue, etc.)  Added a new Field constructor that allows for the construction of a Field without a value.  This would allow for Analyzer implementations that produce their own tokens (whatever that means)\n\nMoved CollaboratingAnalyzer, et. al to the core under analysis.buffered as I thought these items should be in core given the changes to Field and DocsWriter.\n\nNote, I think this is a subtle, but important change in DocumentsWriter/Field behavior.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T01:57:26.300+0000",
+          "updated": "2007-11-27T01:57:26.300+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545846",
+          "id": "12545846",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Added some more documentation, plus a test showing it is bad to use the no value Field constructor w/o support from the Analyzer to produce tokens.\n\nIf no objections, I will commit on Thursday or Friday of this week.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T14:10:51.906+0000",
+          "updated": "2007-11-27T14:11:37.907+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545932",
+          "id": "12545932",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "fixed a failing test",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T17:30:21.466+0000",
+          "updated": "2007-11-27T17:30:21.466+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545959",
+          "id": "12545959",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Grant,\n\nI'm not sure why we need this patch.\n\nFor the testcase that you're describing:\n{quote}\nFor example, if you want to have two fields, one lowercased and one not, but all the other analysis is the same, then you could save off the tokens to be output for a different field.\n{quote}\n\ncan't you simply do something like this:\n{code:java}\nDocument d = new Document();\nTokenStream t1 = new CachingTokenFilter(new WhitespaceTokenizer(reader));\nTokenStream t2 = new LowerCaseFilter(t1);\nd.add(new Field(\"f1\", t1));\nd.add(new Field(\"f2\", t2));\n{code}\n\nMaybe I'm missing something?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-27T18:48:56.933+0000",
+          "updated": "2007-11-27T18:48:56.933+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545966",
+          "id": "12545966",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Maybe I'm not looking at it the right way yet, but I'm not sure this feels \"right\"...\nSince Field has a tokenStreamValue(), wouldn't it be easiest to just use that?\nIf the tokens of two fields are related, one could just pre-analyze those fields and set the token streams appropriately.  Seems more flexible and keeps any convoluted cross-field logic in the application domain.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T18:58:23.346+0000",
+          "updated": "2007-11-27T18:58:23.346+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545995",
+          "id": "12545995",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nMaybe I'm missing something?\n{quote}\n\nNo, I don't think you are missing anything in that use case, it's just an example of its use.  And I am not totally sold on this approach, but mostly am :-) \n\nI had originally considered your option, but didn't feel it was satisfactory for the case where you are extracting things like proper nouns or maybe it is generating a category value.  The more general case is where not all the tokens are needed (in fact, very few are).  In those cases, you have to go back through the whole list of cached tokens in order to extract the ones you want.  In fact, thinking some more of on it, I am not sure my patch goes far enough in the sense that what if you want it to buffer in mid stream.  \n\nFor example, if you had:\nStandardTokenizer\nProper Noun TF\nLowerCaseTF\nStopTF\n\nand Proper Noun TF is solely responsible for setting aside proper nouns as it comes across them in the stream.\n\nAs for the convoluted cross-field logic, I don't think it is all that convoluted.  There are only two fields and the implementing Analyzer takes care of all of it.  Only real requirement the application has is that the fields be ordered correctly.  \n\nI do agree somewhat about the pre-analysis approach, except for the case where there may be a large number of tokens in the source field, in which case, you are holding them around in memory (maxFieldLength mitigates to some extent.)  Also, it puts the onus on the app. writer to do it, when it could be pretty straight forward for Lucene to do it w/o it's usual analysis pipeline.\n\nAt any rate, separate of the CollaboratingAnalyzer, I do think the CachedTokenFilter is useful, especially in supporting the pre-analysis approach.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T20:31:07.523+0000",
+          "updated": "2007-11-27T20:31:07.523+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12545999",
+          "id": "12545999",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}As for the convoluted cross-field logic, I don't think it is all that convoluted.{quote}\n\nBut it's baked into CollaboratingAnalyzer... it seems like this is better left to the user.  What if they wanted 3 fields instead of two?\n\n{quote}\nI do agree somewhat about the pre-analysis approach, except for the case where there may be a large number of tokens in the source field, in which case, you are holding them around in memory\n{quote}\nIsn't this what your current code does?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T20:43:05.719+0000",
+          "updated": "2007-11-27T20:43:05.719+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546002",
+          "id": "12546002",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nWhat if they wanted 3 fields instead of two?\n{quote}\nTrue.  I'll have to think about a more generic approach.  In some sense, I think 2 is often sufficient, but you are right it isn't totally generic in the spirit of Lucene.  \n\nTo some extent, I was thinking that this could help optimize Solr's copyField mechanism.  In Solr's case, I think you often have copy fields that have marginal differences in the filters that are applied.  It would be useful for Solr to be able to optimize these so that it doesn't have to go through the whole analysis chain again.\n\n{quote}\nIsn't this what your current code does?\n{quote}\nNo, in my main use case (# of buffered tokens is << # of source tokens) the only tokens kept around is the (much) smaller subset of buffered tokens.  In the pre-analysis approach you have to keep the source field tokens and the buffered tokens.  Not to mention that you are increasing the work by having to iterate over the cached tokens in the list in Lucene.  Thus, you have the cost of the analysis in your application plus the storage of both token lists (one large, one small, likely) then in Lucene you have the cost of iterating over two lists.  In my approach, I think, you have the cost of analysis plus the cost of storage of one list of tokens (small) and the cost of iterating that list.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T21:03:45.637+0000",
+          "updated": "2007-11-27T21:03:45.637+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546004",
+          "id": "12546004",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}To some extent, I was thinking that this could help optimize Solr's copyField mechanism.{quote}\nMaybe... it would take quite a bit of work to automate it though I think.\n\nAs far as pre-analysis costs. iteration is pretty much free in comparison to everything else.  Memory is the big factor.\n\nThings like entity extraction are normally not done by lucene analyzers AFAIK... but if one wanted a framework to do that, the problem is more generic.  Your really want to be able to add to multiple fields from multiple other fields.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T21:13:06.966+0000",
+          "updated": "2007-11-27T21:13:06.966+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546022",
+          "id": "12546022",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Any objection to me committing the CachedAnalyzer and CachedTokenizer pieces of this patch, as I don't think they are effected by the other parts of this and they solve the pre-analysis portion of this discussion.  In the meantime, I will think some more about the generic field case, as I do think it is useful.  I am also trying out some basic benchmarking on this.\n\n{quote}\nThings like entity extraction are normally not done by lucene analyzers AFAIK\n{quote}\n\nConsider yourself in the \"know\" now, as I have done this on a few occasions, but, yes, I do agree a one to many approach is probably better if it can be done in a generic way.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T22:11:53.519+0000",
+          "updated": "2007-11-27T22:11:53.519+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546028",
+          "id": "12546028",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I dunno... it feels like we should have the right generic solution (many-to-many) before committing anything in this case, simply because this is all user-level code (the absence of this patch doesn't prohibit the user from doing anything... no package protected access rights are needed, etc).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T22:27:13.937+0000",
+          "updated": "2007-11-27T22:27:13.937+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546031",
+          "id": "12546031",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I think the ideas here make sense, e. g. to have a buffering\nTokenFilter that doesn't buffer all tokens but enables the \nuser to control which tokens to buffer. \n\nWhat is still not clear to me is why we have to introduce a\nnew API for this and a new kind of analyzer? To allow creating\nan no-value field seems strange. Can't we achieve all this\nby using the Field(String, TokenStream) API without the\nanalyzer indirection?\n\nThe javadocs should make clear that the IndexWriter processes\nfields in the same order the user added them. So if a user \nadds TokenStream ts1 and thereafter ts2, they can be sure \nthat ts1 is processed first. With that knowledge ts1 can\nbuffer certain tokens that ts2 uses then. Adding even more\nfields that use the same tokens is straightforward.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-27T22:31:00.908+0000",
+          "updated": "2007-11-27T22:31:00.908+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546040",
+          "id": "12546040",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I am trying not be fixated on the Analyzer.   I guess I haven't fully synthesized the new TokenStream use in DocsWriter\n\nI agree, I don't like the no-value Field, and am open to suggestions.\n\nSo, I guess I am going to push back and ask, how would you solve the case of where you have two fields and the Analysis given by:\nsource field:\nStandardTokenizer\nProper Noun TF\nLowerCaseTF\nStopTF\n\nbuffered1 Field:\nProper Noun Cache TF  (cache of all terms found to be proper nouns by the Proper Noun TF)\n\nbuffered2 Field:\nAll terms lower cased\n\nAnd the requirement is that you only do the Analysis phase once (i.e. for the source field) and the other two fields are from memory.\n\nI am just not seeing it yet, so I appreciate the explanation as it will better cement my understanding of the new Token Stream stuff and DocsWriter\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-27T22:56:37.404+0000",
+          "updated": "2007-11-27T22:56:37.404+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546050",
+          "id": "12546050",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "We need to change the CachingTokenFilter a bit (untested code):\n\n{code:java}\npublic class CachingTokenFilter extends TokenFilter {\n  private List cache;\n  private Iterator iterator;\n  \n  public CachingTokenFilter(TokenStream input) {\n    super(input);\n    this.cache = new LinkedList();\n  }\n  \n  public Token next() throws IOException {\n    if (iterator != null) {\n      if (!iterator.hasNext()) {\n        // the cache is exhausted, return null\n        return null;\n      }   \n      return (Token) iterator.next();\n    } else {\n      Token token = input.next();\n      addTokenToCache(token);\n      return token;\n    }\n  }\n  \n  public void reset() throws IOException {\n    if(cache != null) {\n    \titerator = cache.iterator();\n    }\n  }\n  \n  protected void addTokenToCache(Token token) {\n    if (token != null) {\n      cache.add(token);\n    }\n  }\n}\n{code}\n\nThen you can implement the ProperNounTF:\n\n{code:java}\nclass ProperNounTF extends CachingTokenFilter {\n  protected void addTokenToCache(Token token) {\n    if (token != null && isProperNoun(token)) {\n      cache.add(token);\n    }\n  }\n  \n  private boolean isProperNoun() {...}\n}  \n{code}\n\nAnd then you add everything to Document:\n\n{code:java}\nDocument d = new Document();\nTokenStream properNounTf = new ProperNounTF(new StandardTokenizer(reader));\nTokenStream stdTf = new CachingTokenFilter(new StopTokenFilter(properNounTf));\nTokenStrean lowerCaseTf = new LowerCaseTokenFilter(stdTf);\n\n\nd.add(new Field(\"std\", stdTf));\nd.add(new Field(\"nouns\", properNounTf));\nd.add(new Field(\"lowerCase\", lowerCaseTf));\n{code}\n\nAgain, this is untested, but I believe should work? ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-27T23:50:55.934+0000",
+          "updated": "2007-11-27T23:50:55.934+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546052",
+          "id": "12546052",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Very similar to what I came up with I think... (all untested, etc)\n\n{code}\nclass ListTokenizer extends Tokenizer {\n  protected List<Token> lst = new ArrayList<Token>();\n  protected Iterator<Token> iter;\n\n  public ListTokenizer(List<Token> input) {\n    this.lst = input;\n    if (this.lst==null) this.lst = new ArrayList<Token>();\n  }\n\n  /** only valid if tokens have not been consumed,\n   * i.e. if this tokenizer is not part of another tokenstream\n   */\n  public List<Token> getTokens() {\n    return lst;\n  }\n\n  public Token next(Token result) throws IOException {\n    if (iter==null) iter = lst.iterator();\n    return iter.next();\n  }\n\n  /** Override this method to cache only certain tokens, or new tokens based\n   * on the old tokens.\n   */\n  public void add(Token t) {\n    if (t==null) return;\n    lst.add((Token)t.clone());\n  }\n\n  public void reset() throws IOException {\n    iter = lst.iterator();\n  }\n}\n\nclass TeeTokenFilter extends TokenFilter {\n  ListTokenizer sink;\n\n  protected TeeTokenFilter(TokenStream input, ListTokenizer sink) {\n    super(input);\n    this.sink = sink;\n  }\n\n  public Token next(Token result) throws IOException {\n    Token t = input.next(result);\n    sink.add(t);\n    return t;\n  }\n}\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T00:07:51.879+0000",
+          "updated": "2007-11-28T00:07:51.879+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546058",
+          "id": "12546058",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think having the \"tee\" solves the many-to-many case... you can have many fields contribute tokens to a new field.\n\n{code}\nListTokenizer sink1 = new ListTokenizer(null);\nListTokenizer sink2 = new ListTokenizer(null);\n\nTokenStream source1 = new TeeTokenFilter(new TeeTokenFilter(new WhitespaceTokenizer(reader1), sink1), sink2);\nTokenStream source2 = new TeeTokenFilter(new TeeTokenFilter(new WhitespaceTokenizer(reader2), sink1), sink2);    \n\n// now sink1 and sink2 will both get tokens from both reader1 and reader2 after whitespace tokenizer\n// now we can further wrap any of these in extra analysis, and more \"tees\" can be inserted if desired.\n\nTokenStream final1 = new LowerCaseFilter(source1);\nTokenStream final2 = source2;\nTokenStream final3 = new EntityDetect(sink1);\nTokenStream final4 = new URLDetect(sink2);\n    \nd.add(new Field(\"f1\", final1));\nd.add(new Field(\"f2\", final2));\nd.add(new Field(\"f3\", final3));\nd.add(new Field(\"f4\", final4));\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T00:31:14.524+0000",
+          "updated": "2007-11-28T00:31:14.524+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546062",
+          "id": "12546062",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I like the TeeTokenFilter! +1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-28T00:44:28.487+0000",
+          "updated": "2007-11-28T00:44:28.487+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546069",
+          "id": "12546069",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, looks good to me and is much simpler.  Only thing that gets complicated is the constructors, but that should be manageable.  Thanks for bearing w/ me :-)\n\nOne of you want to whip up a patch w/ tests or do you want me to do it?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T01:06:26.055+0000",
+          "updated": "2007-11-28T01:06:26.055+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546072",
+          "id": "12546072",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'm quite busy currently with other stuff. Feel free to go ahead ;)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-28T01:10:14.410+0000",
+          "updated": "2007-11-28T01:10:14.410+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546255",
+          "id": "12546255",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Will do.  Patch to follow shortly",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T14:32:03.665+0000",
+          "updated": "2007-11-28T14:32:03.665+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546271",
+          "id": "12546271",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Whew.  I think we are there and I like it!  \n\nI renamed Yonik's suggestions to be SinkTokenizer and SourceTokenFilter to model the whole source/sink notion.  Hopefully people won't think the SourceTokenFilter is for processing code.  :-)\n\nI will commit tomorrow if there are no objections.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T15:16:29.407+0000",
+          "updated": "2007-11-28T15:16:29.407+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546274",
+          "id": "12546274",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "The SinkTokenizer name could make sense, but I think TeeTokenFilter makes more sense than SourceTokenFilter (it is a tee, it splits a single token stream into two, just like the UNIX tee command).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T15:27:43.063+0000",
+          "updated": "2007-11-28T15:27:43.063+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546282",
+          "id": "12546282",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Tee it is.  And here I just thought you liked golf!  I guess I have never used the tee command in UNIX.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-28T15:57:21.159+0000",
+          "updated": "2007-11-28T15:57:21.159+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546759",
+          "id": "12546759",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed revision 599478.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-29T15:18:39.619+0000",
+          "updated": "2007-11-29T15:18:39.619+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546861",
+          "id": "12546861",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Sorry, this review is a bit late. Only a simple remark:\n\nIn SinkTokenizer you could initalize the iterator in the constructor,\nthen you can avoid the check if (iter==null) in next()?\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-29T20:02:12.497+0000",
+          "updated": "2007-11-29T20:02:12.497+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546866",
+          "id": "12546866",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> In SinkTokenizer you could initalize the iterator in the constructor\n\nIterators are generally fail-fast, hence it would throw an exception when you tried to use it later after adding some elements.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-29T20:15:04.199+0000",
+          "updated": "2007-11-29T20:15:04.199+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546871",
+          "id": "12546871",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I see. Then we should set iter=null in add() in case after reset() more tokens\nare added to the list, right?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-11-29T20:27:08.974+0000",
+          "updated": "2007-11-29T20:27:08.974+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546872",
+          "id": "12546872",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "In looking again, I also wonder whether the getTokens() shouldn't return an immutable list?  Or should we allow adding tokens outside of the Tee process?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-29T20:31:18.800+0000",
+          "updated": "2007-11-29T20:31:18.800+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546874",
+          "id": "12546874",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> I see. Then we should set iter=null in add() in case after reset() more tokens are added to the list, right?\nDepends on what we consider valid usecases... reset could also just null out iter.\n\n> Or should we allow adding tokens outside of the Tee process?\nWhy not?  Seems more flexible, and this is an expert level API.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-29T20:37:46.651+0000",
+          "updated": "2007-11-29T20:37:46.651+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546875",
+          "id": "12546875",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "And, of course, if we are calling add() outside of the Tee process, we probably don't need to clone the token, either.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-29T20:39:05.303+0000",
+          "updated": "2007-11-29T20:39:05.303+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12546891",
+          "id": "12546891",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nWhy not? Seems more flexible, and this is an expert level API.\n{quote}\nThen we should document that they must call reset before calling next(), right?  Same could go for the add() method.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-11-29T20:58:47.426+0000",
+          "updated": "2007-11-29T20:58:47.426+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12549059",
+          "id": "12549059",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I also added, in SinkTokenizer, to override the close() method on Tokenizer so that it doesn't try to close the Reader, which throws an NullPointerEx.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-12-06T14:42:11.700+0000",
+          "updated": "2007-12-06T14:42:11.700+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/12554794",
+          "id": "12554794",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "http://www.gossamer-threads.com/lists/lucene/java-dev/56255\n\nChanged to override next() instead of next(Token)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-12-28T14:17:55.264+0000",
+          "updated": "2007-12-28T14:17:55.264+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12382787/comment/17587249",
+          "id": "17587249",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2134|https://github.com/apache/lucene/issues/2134].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:42:47.329+0000",
+          "updated": "2022-08-28T11:42:47.329+0000"
+        }
+      ],
+      "maxResults": 38,
+      "total": 38,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04zbz:",
+    "customfield_12314139": null
+  }
+}

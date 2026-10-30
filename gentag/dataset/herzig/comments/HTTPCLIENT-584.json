@@ -1,0 +1,969 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12343902",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902",
+  "key": "HTTPCLIENT-584",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12311100",
+        "id": "12311100",
+        "name": "3.1 Alpha 1",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2006-06-26"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "133623",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12311099",
+        "id": "12311099",
+        "name": "3.0.1",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2006-05-08"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+      "name": "olegk",
+      "key": "olegk",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Oleg Kalnichevski",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "48245",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+      "name": "sebb",
+      "key": "sebb@apache.org",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Sebb",
+      "active": true,
+      "timeZone": "Europe/London"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+      "name": "sebb",
+      "key": "sebb@apache.org",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Sebb",
+      "active": true,
+      "timeZone": "Europe/London"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-584/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/3",
+      "id": "3",
+      "description": "A task that needs to be done.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21148&avatarType=issuetype",
+      "name": "Task",
+      "subtask": false,
+      "avatarId": 21148
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@69e34b61[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@77224511[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6bbf93bc[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@e505917[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@561af713[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@6d09be2b[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7abcf245[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@762884e4[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@778b475d[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@57d35761[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4a60b904[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@785d1b08[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310360",
+      "id": "12310360",
+      "key": "HTTPCLIENT",
+      "name": "HttpComponents HttpClient",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310360&avatarId=10011",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310360&avatarId=10011",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310360&avatarId=10011",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310360&avatarId=10011"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10280",
+        "id": "10280",
+        "description": "Apache HttpComponents Project",
+        "name": "HttpComponents"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Jun 11 20:50:04 UTC 2006",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-06-09T21:07:03.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-584/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2006-06-04T07:10:29.000+0000",
+    "updated": "2007-04-22T07:11:19.041+0000",
+    "timeoriginalestimate": null,
+    "description": "build.xml expects to find junit.jar in the lib directory for building and running tests.\n\nThe jar is not included in SVN, but nor is the jar ignored, so when it is downloaded it shows up as an unversioned file.\n\nThe file should be included in or excluded from SVN.\n\n==\n\nNote: In JMeter we use a lib/opt directory.\nThis is present in SVN - but all contents are ignored.\n\nThis can be used for extra jars that cannot be or are not included in SVN.\n\nCould use the same approach for junit.jar...",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335316",
+        "id": "12335316",
+        "filename": "dependencies.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+          "name": "sebb",
+          "key": "sebb@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Sebb",
+          "active": true,
+          "timeZone": "Europe/London"
+        },
+        "created": "2006-06-11T20:35:32.000+0000",
+        "size": 805,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335316/dependencies.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335045",
+        "id": "12335045",
+        "filename": "dependencies.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+          "name": "olegk",
+          "key": "olegk",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Oleg Kalnichevski",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2006-06-06T01:33:58.000+0000",
+        "size": 1097,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335045/dependencies.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12335289",
+        "id": "12335289",
+        "filename": "nolibdiranymore.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+          "name": "rolandw",
+          "key": "rolandw",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Roland Weber",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2006-06-10T12:49:43.000+0000",
+        "size": 482,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12335289/nolibdiranymore.patch"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Remove lib directory from SVN trunk",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414736",
+          "id": "12414736",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I suggest lib directory be removed all together\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-05T18:11:54.000+0000",
+          "updated": "2006-06-05T18:11:54.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414776",
+          "id": "12414776",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I am in favor of removing the lib/...jar files from SVN.\nWe could put a README.txt file there, telling people\nwhat JAR files they should download and copy there.\nOr at least where to look for that information on our\nweb page. Not everyone is familiar with maven and\nwill look under \"Project Info\"/\"Dependencies\".\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-05T22:32:47.000+0000",
+          "updated": "2006-06-05T22:32:47.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414809",
+          "id": "12414809",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch (take 1). Please review\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-06T01:33:58.000+0000",
+          "updated": "2006-06-06T01:33:58.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414816",
+          "id": "12414816",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Oleg,\n\nI would mention the \"optional requirements\" after the hard requirements.\n\nShould we split the description into \"build time\" and \"runtime\" requirements?\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-06T01:51:29.000+0000",
+          "updated": "2006-06-06T01:51:29.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414821",
+          "id": "12414821",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Both logging and codec are compile time and runtime requirements. I do not see a split here. \n\nFee free to take this issue over and change the description any way you see fit\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-06T02:01:11.000+0000",
+          "updated": "2006-06-06T02:01:11.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414824",
+          "id": "12414824",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Oleg,\n\nwasn't this bug report openend because of junit, which is a build-time dependency only?\n\nOf course we can have \"DEPENDENCIES.txt\" list the runtime dependencies,\nwhile build-time dependencies are listed on the maven-generated website.\nMakes more sense for the binary distribution at least.\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-06T02:11:02.000+0000",
+          "updated": "2006-06-06T02:11:02.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414826",
+          "id": "12414826",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "> wasn't this bug report openend because of junit, which is a build-time dependency only\n\nOne does not need junit.jar in order to build the thing, only to be able to run test cases. It is a test time dependency. My preference would be to describe runtime dependencies only and be done with it\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-06T02:19:21.000+0000",
+          "updated": "2006-06-06T02:19:21.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12414828",
+          "id": "12414828",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Oleg,\n\nOK, lets leave it with the runtime dependencies.\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-06T02:32:34.000+0000",
+          "updated": "2006-06-06T02:32:34.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415015",
+          "id": "12415015",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "body": "Fine by me if the jars are removed.\n\nHowever, unless the lib directory properties are set to ignore the jars, they will show up as un-versioned whenever someone does a build.\n\nSo please can the appropriate svn:ignore properties be added to the lib directory?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "created": "2006-06-07T02:03:28.000+0000",
+          "updated": "2006-06-07T02:03:28.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415546",
+          "id": "12415546",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "> So please can the appropriate svn:ignore properties be added to the lib directory?\n\nAbsolutely. \n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-09T20:56:43.000+0000",
+          "updated": "2006-06-09T20:56:43.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415548",
+          "id": "12415548",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Lib directory removed from the SVN trunk and added to the svn:ignore list\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-09T21:07:03.000+0000",
+          "updated": "2006-06-09T21:07:03.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415641",
+          "id": "12415641",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Looks like this change broke the GUMP build. From the mail on the developer list:\n\n> Project commons-httpclient has an issue affecting its community integration.\n[...]\n> dist:\n>    [copy] Copying 1 file to /x1/gump/public/workspace/jakarta-commons/httpclient/dist\n>    [copy] Copying 1 file to /x1/gump/public/workspace/jakarta-commons/httpclient/dist\n>    [copy] Copying 1 file to /x1/gump/public/workspace/jakarta-commons/httpclient/dist\n>    [copy] Copying 1 file to /x1/gump/public/workspace/jakarta-commons/httpclient/dist\n>    [jar] Building jar: /x1/gump/public/workspace/jakarta-commons/httpclient/dist/commons-httpclient.jar\n>    [mkdir] Created dir: /x1/gump/public/workspace/jakarta-commons/httpclient/dist/src\n>    [copy] Copying 284 files to /x1/gump/public/workspace/jakarta-commons/httpclient/dist/src\n>    [mkdir] Created dir: /x1/gump/public/workspace/jakarta-commons/httpclient/dist/lib\n>\n>BUILD FAILED\n>/x1/gump/public/workspace/jakarta-commons/httpclient/build.xml:164: /x1/gump/public/workspace/jakarta-commons/httpclient/lib not found.\n\nThere is some historic step in the \"dist\" target that will copy the now removed lib/ directory to the\ndistribution target directory. The libs are not part of the distribution, so I guess this step is pointless.\n\npatch follows\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-10T12:48:13.000+0000",
+          "updated": "2006-06-10T12:48:13.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415642",
+          "id": "12415642",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "please review and test, I don't have the environment running at the moment\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-10T12:49:43.000+0000",
+          "updated": "2006-06-10T12:49:43.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415662",
+          "id": "12415662",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Looks good. Please go ahead and commit it\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-10T17:40:00.000+0000",
+          "updated": "2006-06-10T17:40:00.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415663",
+          "id": "12415663",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "body": "There are several aspects to this\n\n1) whether or not to include the jar dependencies in releases\n2) whether or not to include the jar dependencies in SVN\n3) where to put the required jars for building and testing\n\nThe decision on 1+2 seems to be  NO.\n\nBut 3 still needs to be satisfied for both Gump and developer (Ant, Eclipse) builds.\n\nGump is probably best satisfied by adding dependencies on the required projects.\n[I will try and sort this]\n\nDeveloper builds require somewhere to put the jars.\nOne way to do this is to re-instate the lib directory, but then add svn:ignore for the relevant jars (or indeed all jars).\nDevelopers can then download the jars and put them in the lib directory, which is where build.xml expects to find them.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "created": "2006-06-10T17:55:03.000+0000",
+          "updated": "2006-06-10T17:55:03.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415664",
+          "id": "12415664",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "body": "Sorry, I was wrong about needing to fix Gump - that just needs the build.xml patch to remove the copy of the files in lib.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "created": "2006-06-10T18:02:53.000+0000",
+          "updated": "2006-06-10T18:02:53.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415752",
+          "id": "12415752",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "body": "Update DEPENDENCIES.txt: describe where to put the jar files for building and testing",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sebb",
+            "name": "sebb",
+            "key": "sebb@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sebb",
+            "active": true,
+            "timeZone": "Europe/London"
+          },
+          "created": "2006-06-11T20:35:32.000+0000",
+          "updated": "2006-06-11T20:35:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12343902/comment/12415753",
+          "id": "12415753",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch checked in. Many thanks, Sebastian. I have also added your name to the list of project contributors\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2006-06-11T20:50:04.000+0000",
+          "updated": "2006-06-11T20:50:04.000+0000"
+        }
+      ],
+      "maxResults": 18,
+      "total": 18,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i08mi7:",
+    "customfield_12314139": null
+  }
+}

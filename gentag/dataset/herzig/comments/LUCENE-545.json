@@ -1,0 +1,670 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12332170",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170",
+  "key": "LUCENE-545",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13205",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310853",
+        "id": "12310853",
+        "description": "mostly 1.9 with deprecated items removed",
+        "name": "2.0.0",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2006-05-26"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12312647",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12312647",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12332782",
+          "key": "LUCENE-558",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332782",
+          "fields": {
+            "summary": "Selective field loading",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+              "id": "2",
+              "description": "A new feature of the product, which has yet to be developed.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+              "name": "New Feature",
+              "subtask": false,
+              "avatarId": 21141
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310236",
+        "id": "12310236",
+        "name": "core/store",
+        "description": "issues with store code (e.g. Directory)"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27500",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+      "name": "gsingers",
+      "key": "gsingers",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Grant Ingersoll",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-545/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@57c5ea98[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4382b57c[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@670f7e27[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@31f00eef[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1115c107[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@38e988c2[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@240b27be[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@15bdc2a6[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2a9f34ef[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@5ec416e6[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@230ffc57[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@58dcb262[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:26:49 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-06-10T08:40:12.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-545/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2006-04-15T21:49:32.000+0000",
+    "updated": "2022-08-28T11:26:49.676+0000",
+    "timeoriginalestimate": null,
+    "description": "The patch to come shortly implements a Field Selection and Lazy Loading mechanism for Document loading on the IndexReader.\n\nIt introduces a FieldSelector interface that defines the accept method:\nFieldSelectorResult accept(String fieldName);\n\n(Perhaps we want to expand this to take in other parameters such as the field metadata (term vector, etc.))\n\nAnyone can implement a FieldSelector to define how they want to load fields for a Document.  \nThe FieldSelectorResult can be one of four values: LOAD, LAZY_LOAD, NO_LOAD, LOAD_AND_BREAK.  \nThe FieldsReader, as it is looping over the FieldsInfo, applies the FieldSelector to determine what should be done with the current field.\n\nI modeled this after the java.io.FileFilter mechanism.  There are two implementations to date: SetBasedFieldSelector and LoadFirstFieldSelector.  The former takes in two sets of field names, one to load immed. and one to load lazily.  The latter returns LOAD_AND_BREAK on the first field encountered.  See TestFieldsReader for examples.\n\nIt should support UTF-8 (I borrowed code from Issue 509, thanks!).  See TestFieldsReader for examples\n\nI added an expert method on IndexInput  named skipChars that takes in the number of characters to skip.  This is a compromise on changing the file format of the fields to better support seeking.  It does some of the work of readChars, but not all of it.  It doesn't require buffer storage and it doesn't do the bitwise operations.  It just reads in the appropriate number of bytes and promptly ignores them.  This is useful for skipping non-binary, non-compressed stored fields.\n\nThe biggest change is by far the introduction of the Fieldable interface (as per Doug's suggestion from a mailing list email on Lazy Field loading from a while ago).  Field is now a Fieldable.  All uses of Field have been changed to use Fieldable.  FieldsReader.LazyField also implements Fieldable.\n\nLazy Field loading is now implemented.  It has a major caveat (that is Documented) in that it clones the underlying IndexInput upon lazy access to the Field value.  IT IS UNDEFINED whether a Lazy Field can be loaded after the IndexInput parent has been closed (although, from what I saw, it does work).  I thought about adding a reattach method, but it seems just as easy to reload the document.  See the TestFieldsReader and DocHelper for examples.\n\nI updated a couple of other tests to reflect the new fields that are on the DocHelper document.\n\nAll tests pass.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12325383",
+        "id": "12325383",
+        "filename": "fieldSelectorPatch.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2006-04-16T03:57:24.000+0000",
+        "size": 111478,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12325383/fieldSelectorPatch.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12326193",
+        "id": "12326193",
+        "filename": "LazyFields.tar.gz",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+          "name": "manawiz",
+          "key": "manawiz",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chuck Williams",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2006-05-03T16:30:05.000+0000",
+        "size": 30220,
+        "mimeType": "application/x-gzip",
+        "content": "https://issues.apache.org/jira/secure/attachment/12326193/LazyFields.tar.gz"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12325964",
+        "id": "12325964",
+        "filename": "newFiles.tar.gz",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+          "name": "gsingers",
+          "key": "gsingers",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Grant Ingersoll",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2006-04-28T02:29:26.000+0000",
+        "size": 5151,
+        "mimeType": "application/x-gzip",
+        "content": "https://issues.apache.org/jira/secure/attachment/12325964/newFiles.tar.gz"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Field Selection and Lazy Field Loading",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12374656",
+          "id": "12374656",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "All main tests pass and most of contrib (I think the failures are unrelated to my changes).  All of contrib compiles as well.  \n\nAs always, let me know if I can help with anything.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-04-16T03:57:24.000+0000",
+          "updated": "2006-04-16T03:57:24.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12376787",
+          "id": "12376787",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Forgot the new files.  ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-04-28T02:29:26.000+0000",
+          "updated": "2006-04-28T02:29:26.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12377542",
+          "id": "12377542",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+            "name": "manawiz",
+            "key": "manawiz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Continuing the discussion from Lucene-558, LazyFields.tar.gz extends this patch (Lucene-545) with an additional optimization so that ParallelReader does not read fields from readers all of whose fields are NO_LOAD.  No change to the FieldSelector interface was required to achieve this.  Also, a useful new FieldSelector is provided, MapFieldSelector, and TestParallelReader is extended to test these things.\n\nBug fixes to ParallelReader from Lucene-561 are also included.\n\nKeeping everything involved factored and managing this with my other local changes has led to a slightly more complex file structure.  The steps to use LazyFields.tar.gz are:\n\nUnpack it\nApply fieldSelectorPatch.txt\nApply ParallelReader.patch\nApply TestParallelReader.patch\nUnpack and copy fieldSelectorNewFiles.tar.gz\nCopy LazyFields.new\n\nThe target of all patch applications and copies is the Lucene trunk.\n\nWhen I applied fieldSelectorPatch.txt against the latest Lucene trunk, a couple hunks failed to apply, but they were not relevant.  The version included here is the original version unchanged.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+            "name": "manawiz",
+            "key": "manawiz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-05-03T16:30:05.000+0000",
+          "updated": "2006-05-03T16:30:05.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12415240",
+          "id": "12415240",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Chuck, \n\nI think the patch is missing your ListFieldSelector.java file.  Can you please attach it?\n\nThanks,\nGrant",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-06-08T07:14:55.000+0000",
+          "updated": "2006-06-08T07:14:55.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12415243",
+          "id": "12415243",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+            "name": "manawiz",
+            "key": "manawiz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Grant,\n\nListFieldSelector is not part of the update as MapFieldSelector subsumed its functionality.  It appears there is a dangling import of ListFieldSelector in TestParallelReader.  This line should just be deleted.\n\nI'd update the patch, but a) fieldSelectorPatch.txt does not apply cleanly against the current svn head, and b) my local copy has other modifications and so I can't reliably extract just this patch.\n\nAlso, there is one minor fix/improvment to ParallelReader.document().  The iterator over the fields of a subreader should not be constructed if it won'd be used, i.e., move the construction inside the first if:\n\n      boolean include = (fieldSelector==null);\n      if (!include) {\n        Iterator it = ((Collection)readerToFields.get(reader)).iterator();\n\nSorry about these issues...\n\nFYI, I've been using the capability extensively and it is working well.  Thanks for lazy fields!\n\nChuck\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=manawiz",
+            "name": "manawiz",
+            "key": "manawiz",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-06-08T08:38:49.000+0000",
+          "updated": "2006-06-08T08:38:49.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12415321",
+          "id": "12415321",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I will take care of it, thanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-06-08T18:08:45.000+0000",
+          "updated": "2006-06-08T18:08:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/12415633",
+          "id": "12415633",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks, Chuck, for the assistance!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-06-10T08:40:12.000+0000",
+          "updated": "2006-06-10T08:40:12.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12332170/comment/17586737",
+          "id": "17586737",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1623|https://github.com/apache/lucene/issues/1623].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:26:49.676+0000",
+          "updated": "2022-08-28T11:26:49.676+0000"
+        }
+      ],
+      "maxResults": 8,
+      "total": 8,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i052hj:",
+    "customfield_12314139": null
+  }
+}

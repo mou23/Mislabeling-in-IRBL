@@ -1,0 +1,257 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="MOBILE">
+	<bug id="25" opendate="2011-05-15 11:42:31" fixdate="2012-02-03 09:12:08" resolution="Complete">
+		<buginformation>
+			<summary>LiteDeviceResolver does not see IPAD user-agent as mobile.</summary>
+			<description>I have been testing using Firefox user-agent switcher to simulate the IPAD.
+Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10
+This is seen by the LiteDeviceResolver as &amp;amp;apos;not mobile&amp;amp;apos;.
+In the forum discussion referenced it is believed this is not correct.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolverTest.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="21" opendate="2011-03-03 00:28:13" fixdate="2012-04-18 19:23:30" resolution="Complete">
+		<buginformation>
+			<summary>False positives in LiteDeviceResolver</summary>
+			<description>I&amp;amp;apos;m getting a false positive from a request via the Layar app (www.layar.com). The app sends a request from an android device with the following user-agent: "Layar/4.0 Android/2.2.1".
+Would it be somehow possible to create a list of prefixes which must not be in the user-agent?
+</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.LiteDevice.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolverTest.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="51" opendate="2012-11-06 03:08:34" fixdate="2012-11-07 12:06:54" resolution="Complete">
+		<buginformation>
+			<summary>Blackberry 10 user agent missing</summary>
+			<description>Hi,
+I&amp;amp;apos;m working with a blackberry 10 simulator and it never detect this device as mobile. I reviewed the KNOWN_MOBILE_USER_AGENT_KEYWORDS variable and I think it&amp;amp;apos;s only add the "touch" as new keyworkd, I&amp;amp;apos;m not sure 
+There is the user agent example:
+Mozilla/5.0 (BB10; Touch) AppleWebKit/537.3+ (KHTML, like Gecko) Version/10.0.9.386 Mobile Safari/537.3+
+And here the description of user agent for this device:
+http://crackberry.com/developers-here-blackberry-10-user-agent
+More Info:
+http://us.blackberry.com/sites/developers/resources/simulators.html</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.0.1.RELEASE, 1.1.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.UserAgent.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolverTest.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="61" opendate="2013-02-11 08:05:11" fixdate="2013-02-22 14:31:29" resolution="Fixed">
+		<buginformation>
+			<summary>SiteSwitcherRequestFilter - initFilterBean() overwrites values from constructor</summary>
+			<description>The SiteSwitcherRequestFilter provides two constructors: the default constructor and one where all the SiteUrlFactories etc. can be specified.
+We need to use the last-mentioned (with a DelegatingFilterProxy) since we want to configure our own implementation of the SiteUrlFactory (which always redirects to the same url - we named it StaticSiteUrlFactory).
+Unfortunately our configuration gets overwritten in the initFilterBean-method.</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.switcher.SiteSwitcherRequestFilterTest.java</file>
+			<file type="M">org.springframework.mobile.device.switcher.SiteSwitcherRequestFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="62" opendate="2013-02-12 02:43:43" fixdate="2013-02-25 13:41:15" resolution="Fixed">
+		<buginformation>
+			<summary>SiteSwitcherRequestFilter - filterChain.doFilter should only be called if the response is not already committed</summary>
+			<description>In doFilterInternal(...) the call to the filterChain should only be executed, if the response is not already committed - i.e. the SiteSwitcherHandler did not handle the response.
+Possible fix:
+
+
+
+
+
+
+@Override
+
+
+
+
+protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+
+
+
+
+			throws ServletException, IOException {
+
+
+
+
+	if(siteSwitcherHandler.handleSiteSwitch(request, response)) {
+
+
+
+
+			filterChain.doFilter(request, response);
+
+
+
+
+	}
+
+
+
+
+}
+
+
+
+
+
+</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.switcher.SiteSwitcherRequestFilterTest.java</file>
+			<file type="M">org.springframework.mobile.device.switcher.SiteSwitcherRequestFilter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="63" opendate="2013-02-21 09:05:59" fixdate="2013-02-27 10:56:25" resolution="Fixed">
+		<buginformation>
+			<summary>DeviceDelegatingViewResolver redirects to "mobile//"</summary>
+			<description>When configuring a prefix of "mobile/" with the DeviceDelegatingViewResolver, mobile requests for "redirect:/" are redirected to "website.com/mobile//". Note the extra forward slash.</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolver.java</file>
+			<file type="M">org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolverTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="68" opendate="2013-03-08 09:17:04" fixdate="2013-03-08 09:28:08" resolution="Fixed">
+		<buginformation>
+			<summary>Site path formatting is overwritten if it contains no slashes or only trailing slashes</summary>
+			<description>In AbstractSitePathUrlFactory, if a site path is configured with no slashes or only a trailing slash, formatPath incorrectly formats the path.</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.switcher.AbstractSitePathUrlFactoryTest.java</file>
+			<file type="M">org.springframework.mobile.device.switcher.AbstractSitePathUrlFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="69" opendate="2013-03-08 09:50:39" fixdate="2013-03-29 13:43:06" resolution="Fixed">
+		<buginformation>
+			<summary>QueryString parameters not honored when redirecting</summary>
+			<description>See forum reference for details.</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.switcher.AbstractSiteUrlFactory.java</file>
+			<file type="M">org.springframework.mobile.device.switcher.SiteSwitcherHandlerInterceptorTest.java</file>
+			<file type="M">org.springframework.mobile.device.switcher.MobileSitePathUrlFactoryTest.java</file>
+			<file type="M">org.springframework.mobile.device.switcher.SiteSwitcherRequestFilterTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="79" opendate="2013-07-05 02:32:08" fixdate="2013-07-14 20:48:52" resolution="Fixed">
+		<buginformation>
+			<summary>Firefox OS user agent missing</summary>
+			<description>Hi,
+I usually use Spring Framework on my project with Spring Mobile on them to be able to know if users are on mobile or not to put correct view...
+Some users are now on mobile with Firefox OS and not have mobile but desktop view.
+For information, user agent of Firefox OS is : 
+
+
+
+
+
+
+Mozilla/5.0 (Mobile; rv:15.0) Gecko/15.0 Firefox/15.0
+
+
+
+
+
+
+So when i try to use user agent switcher on firefox to try that user agent, i don&amp;amp;apos;t have mobile view but normal view. So it means that the Device recovered by the DeviceResolver answer "false" on device.isMobile()
+I actually work with 1.0.1.RELEASE version of spring mobile
+Thanks for your help</description>
+			<version>1.0.1.RELEASE</version>
+			<fixedVersion>1.1.0.RC1, 1.0.2.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.UserAgent.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolverTest.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="70" opendate="2013-03-08 12:23:23" fixdate="2013-07-19 13:39:33" resolution="Fixed">
+		<buginformation>
+			<summary>Absolute URLs are not handled correctly when redirecting</summary>
+			<description>The LiteDeviceDelegatingViewResolver does not correctly handle absolute URLs when redirecting.
+For example, the following URL, 
+
+
+
+
+
+
+redirect:http://www.google.com/
+
+
+
+
+
+
+redirects to  
+
+
+
+
+
+
+www.website.com/context/mobile/http://www.google.com/
+
+
+
+
+
+</description>
+			<version>1.1.0.M2</version>
+			<fixedVersion>1.1.0.RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.view.LiteDeviceDelegatingViewResolverTest.java</file>
+			<file type="M">org.springframework.mobile.device.view.AbstractDeviceDelegatingViewResolver.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="95" opendate="2014-02-04 09:58:11" fixdate="2014-02-11 11:28:50" resolution="Complete">
+		<buginformation>
+			<summary>Device resolver possibly returning MOBILE_INSTANCE when the device is a tablet</summary>
+			<description>LiteDeviceResolver will return that a tablet is a phone if it has UAProf headers (e.g. Galaxy Tab 8.9)</description>
+			<version>1.1.0.RELEASE</version>
+			<fixedVersion>1.1.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.mobile.device.UserAgent.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolverTest.java</file>
+			<file type="M">org.springframework.mobile.device.LiteDeviceResolver.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

@@ -1,0 +1,1049 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12513066",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066",
+  "key": "LUCENE-3286",
+  "fields": {
+    "parent": {
+      "id": "12512420",
+      "key": "LUCENE-3272",
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/12512420",
+      "fields": {
+        "summary": "Consolidate Lucene's QueryParsers into a module",
+        "status": {
+          "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+          "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+          "name": "Closed",
+          "id": "6",
+          "statusCategory": {
+            "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+            "id": 3,
+            "key": "done",
+            "colorName": "green",
+            "name": "Done"
+          }
+        },
+        "priority": {
+          "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+          "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+          "name": "Major",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+          "id": "4",
+          "description": "An improvement or enhancement to an existing feature or task.",
+          "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+          "name": "Improvement",
+          "subtask": false,
+          "avatarId": 21140
+        }
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "2772",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "6.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12314357",
+        "id": "12314357",
+        "name": "modules/queryparser",
+        "description": "issues related to QueryParser module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24728",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+      "name": "cmale",
+      "key": "cmale",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chris Male",
+      "active": true,
+      "timeZone": "Pacific/Auckland"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3286/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/7",
+      "id": "7",
+      "description": "The sub-task of the issue",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21146&avatarType=issuetype",
+      "name": "Sub-task",
+      "subtask": true,
+      "avatarId": 21146
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@77543449[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6c6f8915[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4e749192[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@5e439e68[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7696a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@382e18a7[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@523ce631[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@10ce92c0[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2bb9f58a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@631a2b7a[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@56225446[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@329e84d0[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:52:37 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-09-05T05:56:37.729+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3286/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2011-07-07T02:06:44.322+0000",
+    "updated": "2022-08-28T12:52:37.308+0000",
+    "timeoriginalestimate": null,
+    "description": "The XML QueryParser will be ported across to queryparser module.\n\nAs part of this work, we'll move the QP's demo into the demo module.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12490502",
+        "id": "12490502",
+        "filename": "LUCENE-3286.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-08-16T03:52:29.035+0000",
+        "size": 11151,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12490502/LUCENE-3286.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12491999",
+        "id": "12491999",
+        "filename": "LUCENE-3286-core.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-08-28T14:05:54.354+0000",
+        "size": 66328,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12491999/LUCENE-3286-core.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12491084",
+        "id": "12491084",
+        "filename": "LUCENE-3286-core.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-08-21T08:17:18.273+0000",
+        "size": 65659,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12491084/LUCENE-3286-core.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12491083",
+        "id": "12491083",
+        "filename": "LUCENE-3286-core.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-08-21T06:19:07.843+0000",
+        "size": 65449,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12491083/LUCENE-3286-core.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12491036",
+        "id": "12491036",
+        "filename": "LUCENE-3286-core.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-08-20T05:25:13.776+0000",
+        "size": 64304,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12491036/LUCENE-3286-core.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12490741",
+        "id": "12490741",
+        "filename": "LUCENE-3286-core.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+          "name": "cmale",
+          "key": "cmale",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chris Male",
+          "active": true,
+          "timeZone": "Pacific/Auckland"
+        },
+        "created": "2011-08-18T03:37:47.530+0000",
+        "size": 58359,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12490741/LUCENE-3286-core.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Move XML QueryParser to queryparser module",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13061002",
+          "id": "13061002",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "we had an idea to expand the demo module, to cover more than just the basics now (e.g. including examples and such).\n\nMaybe we can put it there?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-07T02:19:08.183+0000",
+          "updated": "2011-07-07T02:19:08.183+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13061005",
+          "id": "13061005",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Sounds like a great location for it.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-07-07T02:22:02.494+0000",
+          "updated": "2011-07-07T02:22:02.494+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13084953",
+          "id": "13084953",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Okay I thought about the demo code a little more.  Yes I think its a great idea to put it into the demo contrib (which hopefully will become a module one day?).  To make the directory layout more standard, I will:\n\n- Move the packages from xml-query-parser/src/demo/java into demo/src/java\n- Move the contents xml-query-parser/src/demo/WebContent into demo/src/resources/org/apache/lucene/demo/xmlqp/\n\nIts a bit ugly still, but when the demo contrib grows we might be able to clean it up someway.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-15T04:01:10.030+0000",
+          "updated": "2011-08-15T04:01:10.030+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13085515",
+          "id": "13085515",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Patch which moves the demo into the demo contrib.  \n\nThis adds a temporary dependency from the demo contrib to the xml-query-parser contrib.  Once this is committed, I'll be moving the XML qp into the QP module so the dependency will change.\n\nThis also adds the servlet-api dependency as a lib to the demo module.  I noticed before it was an optional dependency and IntelliJ was tacking on Solr's version.  This makes it cleaner and standard.\n\nCommand for patch coming up.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-16T03:52:29.083+0000",
+          "updated": "2011-08-16T03:52:29.083+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13085516",
+          "id": "13085516",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Command for patch:\n\n{code}\nsvn move --parents lucene/contrib/xml-query-parser/src/demo/java/org/apache/lucene/xmlparser/webdemo/FormBasedXmlQueryDemo.java lucene/contrib/demo/src/java/org/apache/lucene/demo/xmlparser/FormBasedXmlQueryDemo.java\nsvn move --parents lucene/contrib/xml-query-parser/src/demo/WebContent/* lucene/contrib/demo/src/resources/org/apache/lucene/demo/xmlparser/\nsvn copy --parents solr/lib/servlet-api-2.4.jar lucene/contrib/demo/lib/servlet-api-2.4.jar\nsvn copy --parents solr/lib/servlet-api-LICENSE-ASL.txt lucene/contrib/demo/lib/servlet-api-LICENSE-ASL.txt\nsvn copy --parents solr/lib/servlet-api-NOTICE.txt lucene/contrib/demo/lib/servlet-api-NOTICE.txt\nsvn delete lucene/contrib/xml-query-parser/src/demo\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-16T03:52:57.311+0000",
+          "updated": "2011-08-16T03:52:57.311+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13086758",
+          "id": "13086758",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Moved demo code into demo contrib.\n\nCommitted revision 1159002.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-18T02:59:11.741+0000",
+          "updated": "2011-08-18T02:59:11.741+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13086771",
+          "id": "13086771",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "New patch which moves the actual parser into the queryparser module.\n\nThere is currently a dependency problem related to the FuzzyLikeThisQuery which I'm about to move in another issue.\n\nThings are untested at this stage.  Will move further forward soon.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-18T03:37:47.544+0000",
+          "updated": "2011-08-18T03:37:47.544+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13086774",
+          "id": "13086774",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Command for patch:\n\n{code}\nsvn move --parents lucene/contrib/xml-query-parser/docs/* modules/queryparser/docs/xml/\nsvn move lucene/contrib/xml-query-parser/README.htm modules/queryparser/docs/xml/README.htm\nsvn move --parents lucene/contrib/xml-query-parser/src/java/org/apache/lucene/xmlparser/* modules/queryparser/src/java/org/apache/lucene/queryparser/xml/\nsvn move --parents lucene/contrib/xml-query-parser/src/test/org/apache/lucene/xmlparser/* modules/queryparser/src/test/org/apache/lucene/queryparser/xml/\nsvn move lucene/contrib/xml-query-parser/dtddocbuild.xml modules/queryparser/xmldtddocbuild.xml\nsvn move --parents lucene/contrib/xml-query-parser/LuceneContribQuery.dtd modules/queryparser/src/resources/org/apache/lucene/queryparser/xml/LuceneContribQuery.dtd\nsvn move lucene/contrib/xml-query-parser/LuceneCoreQuery.dtd modules/queryparser/src/resources/org/apache/lucene/queryparser/xml/LuceneCoreQuery.dtd\nsvn delete lucene/contrib/xml-query-parser\nsvn delete dev-tools/idea/lucene/contrib/xml-query-parser\nsvn delete dev-tools/maven/lucene/contrib/xml-query-parser\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-18T03:38:09.192+0000",
+          "updated": "2011-08-18T03:38:09.192+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13088139",
+          "id": "13088139",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "New patch which incorporates the creation of the sandbox as well as cleaning up more references to the XML queryparser.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-20T05:25:13.817+0000",
+          "updated": "2011-08-20T05:25:13.817+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13088140",
+          "id": "13088140",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Command for patch:\n\n{code}\nsvn move --parents lucene/contrib/xml-query-parser/docs/* modules/queryparser/docs/xml/\nsvn move lucene/contrib/xml-query-parser/README.htm modules/queryparser/docs/xml/README.htm\nsvn move --parents lucene/contrib/xml-query-parser/src/java/org/apache/lucene/xmlparser/* modules/queryparser/src/java/org/apache/lucene/queryparser/xml/\nsvn move --parents lucene/contrib/xml-query-parser/src/test/org/apache/lucene/xmlparser/* modules/queryparser/src/test/org/apache/lucene/queryparser/xml/\nsvn move lucene/contrib/xml-query-parser/dtddocbuild.xml modules/queryparser/xmldtddocbuild.xml\nsvn move --parents lucene/contrib/xml-query-parser/LuceneContribQuery.dtd modules/queryparser/src/resources/org/apache/lucene/queryparser/xml/LuceneContribQuery.dtd\nsvn move lucene/contrib/xml-query-parser/LuceneCoreQuery.dtd modules/queryparser/src/resources/org/apache/lucene/queryparser/xml/LuceneCoreQuery.dtd\nsvn delete lucene/contrib/xml-query-parser\nsvn delete dev-tools/idea/lucene/contrib/xml-query-parser\nsvn delete dev-tools/maven/lucene/contrib/xml-query-parser\n{code}\n\nI'll commit this in a day or so.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-20T05:25:41.107+0000",
+          "updated": "2011-08-20T05:25:41.107+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13088323",
+          "id": "13088323",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "New patch (which uses the same commands) that removes the XML QP dependencies from solr's build.xml",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-21T06:19:07.868+0000",
+          "updated": "2011-08-21T06:19:07.868+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13088329",
+          "id": "13088329",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Another patch removing more xml QP build dependencies.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-21T08:17:18.315+0000",
+          "updated": "2011-08-21T08:17:18.315+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13089272",
+          "id": "13089272",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Hm, from what I understand of Luke, it depends on the XML QueryParser.  Consequently moving the QP breaks Luke.  This isn't a problem really except for the 'luke' ant target which downloads versions of Luke which are now incompatible.\n\nAny thoughts on how to address this? The target seems a little inflexible since if any dependent code is moved, it doesn't work anymore.  Yet it seems useful for testing changes that are compatible.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-23T05:12:20.540+0000",
+          "updated": "2011-08-23T05:12:20.540+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13091675",
+          "id": "13091675",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Okay there doesn't seem anyway to support the luke target going forward.  So I'm going to comment it out in the build.xml and when the incompatibility issue is addressed, it can be added back in.\n\nI'll wait for some of the GSoC merges to be completed and then I'll commit this.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-26T08:37:24.777+0000",
+          "updated": "2011-08-26T08:37:24.777+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13092487",
+          "id": "13092487",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Updated patch to incorporate FieldType changes.\n\nCommented out the luke target and included a description as to why.\n\nI'm going to commit this tomorrow.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-08-28T14:05:54.380+0000",
+          "updated": "2011-08-28T14:05:54.380+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/13097021",
+          "id": "13097021",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "body": "Committed revision 1165174.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cmale",
+            "name": "cmale",
+            "key": "cmale",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Male",
+            "active": true,
+            "timeZone": "Pacific/Auckland"
+          },
+          "created": "2011-09-05T05:56:37.855+0000",
+          "updated": "2011-09-05T05:56:37.855+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12513066/comment/17589490",
+          "id": "17589490",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4359|https://github.com/apache/lucene/issues/4359].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:52:37.308+0000",
+          "updated": "2022-08-28T12:52:37.308+0000"
+        }
+      ],
+      "maxResults": 17,
+      "total": 17,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04ldj:",
+    "customfield_12314139": null
+  }
+}

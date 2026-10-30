@@ -1,0 +1,817 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12376572",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572",
+  "key": "LUCENE-986",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312531",
+        "id": "12312531",
+        "description": "",
+        "name": "2.3",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-01-23"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12757",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12317283",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12317283",
+        "type": {
+          "id": "10001",
+          "name": "dependent",
+          "inward": "is depended upon by",
+          "outward": "depends upon",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10001"
+        },
+        "inwardIssue": {
+          "id": "12358344",
+          "key": "LUCENE-743",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12358344",
+          "fields": {
+            "summary": "IndexReader.reopen()",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27061",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-986/votes",
+      "votes": 1,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4b3e0934[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7713f99d[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@67f4cbc9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@fc319bb[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@311f22de[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@2d4d7ca8[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6ca6504b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@7bbf92a5[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@33fe46de[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@7510d435[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2b6af6d4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@2cc763a6[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:40:32 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-09-20T07:30:35.133+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-986/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2007-08-22T08:20:13.485+0000",
+    "updated": "2022-08-28T11:40:32.633+0000",
+    "timeoriginalestimate": null,
+    "description": "References to segmentInfos in IndexReader cause different kinds of problems\nfor subclasses of IndexReader, like e. g. MultiReader.\n\nOnly subclasses of IndexReader that own the index directory, namely \nSegmentReader and MultiSegmentReader, should have a SegmentInfos object\nand be able to access it.\n\nFurther information:\nhttp://www.gossamer-threads.com/lists/lucene/java-dev/51808\nhttp://www.gossamer-threads.com/lists/lucene/java-user/52460\n\nA part of the refactoring work was already done in LUCENE-781",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12366121",
+        "id": "12366121",
+        "filename": "lucene-986.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-09-18T20:24:22.890+0000",
+        "size": 49626,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12366121/lucene-986.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12366073",
+        "id": "12366073",
+        "filename": "lucene-986.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+          "name": "hossman",
+          "key": "hossman",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+          },
+          "displayName": "Chris M. Hostetter",
+          "active": true,
+          "timeZone": "America/Phoenix"
+        },
+        "created": "2007-09-18T08:18:46.442+0000",
+        "size": 42623,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12366073/lucene-986.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12365691",
+        "id": "12365691",
+        "filename": "lucene-986.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-09-13T06:54:45.167+0000",
+        "size": 41335,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12365691/lucene-986.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Refactor segmentInfos from IndexReader into its subclasses",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12522025",
+          "id": "12522025",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "one aspect of this that should be considered: It may not make sense for MultiReader to extend MultiSegmentReader ... as Michael says, only subclasses that own the index directory should have segmentInfos, and a MultiReader (as defined on the trunk now) can never own it's own directory.\n\nI haven't worked through all the implications, but perhaps the most logical refactoring would be...\n\n * IndexReader \n    ...as abstract as possible given that we can't actually make methods abstract\n    * DirectoryIndexReader extends IndexReader\n       ...new class, encapsulated all the segmentInfos and locking logic currently in \n          IndexReader (can definitely be made abstract if helpful)\n       * SegmentReader extends DirectoryIndexReader\n       * MultiSegmentReader extends DirectoryIndexReader\n    * ParallelIndexReader extends IndexReader\n    * FilterIndexReader extends IndexReader\n    * MultiReader extends IndexReader\n       ...(side note that i *really* haven't thought through completley: should \n          MultiReader extend FilterIndexReader?)\n\nthere would likely be some utlity functionality that could be reused between MultiReader and MultiSegmentReader ... possible as static methods in IndexReader (or a new util class)\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-08-23T04:46:22.790+0000",
+          "updated": "2007-08-23T04:46:22.790+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12522038",
+          "id": "12522038",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This is good stuff, Hoss. I like the DirectoryIndexReader idea.\nSounds like a very clean and logical separation.\n\nI'll work through the code to understand all consequences.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-08-23T06:19:01.149+0000",
+          "updated": "2007-08-23T06:19:01.149+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12523768",
+          "id": "12523768",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "What do you think about this alternative approach:\n\n- SegmentReader, MultiSegmentReader and MultiReader all extend IndexReader\n- IndexReader.open() always returns a MultiSegmentReader instance, even\nif the index has only one segment. We can make some optimizations, so that\ne. g. MultiSegmentReader.termDocs() returns a SegmentTermDocs in case \nthere's only one underlying SegmentReader.\n- All write lock and transaction logic goes into MultiSegmentReader, as\nit is the only reader that has to obtain a write lock.\n\nThe advantage here is that only one class (MultiSegmentReader) is\nresponsible for acquiring the write lock. It would also make \nIndexReader.open() simpler,  because it can then return a \nMultiSegmentReader instance in all cases. The logic of opening the \ndifferent segments could move from IndexReader.open() to the constructor\nof MultiSegmentReader. Also LUCENE-743 (IndexReader.reopen()) would\nbecome simpler.\nThe disadvantage of this approach is apparently that always using\na MultiSegmentReader would add some overhead when reading optimized \nindexes, but actually I don't think that this overhead would really be\nsignificant.\n\nIf we go the DirectoryIndexReader way (where SegmentReader and \nMultiSegmentReader both extend DirectoryIndexReader), then we still need\nan ownDirectory variable that tells SegmentReader if it has to acquire a\nwrite lock or not, depending on whether it is a subreader of \nMultiSegmentReader or not. And of course we add another layer to the\nIndexReader hierachy. \n\nSo I'm not sure which approach is the better one. I'm hoping to get some\nopionions here! Hoss? Others?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-08-30T05:35:36.013+0000",
+          "updated": "2007-08-30T05:35:36.013+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12523774",
+          "id": "12523774",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "i rarely remember a week later what i was thinking when i wrote something, but i suspect that when i suggested the DirectoryIndexReader i was assuming it would have everything directory/lock related thta currently exists in the IndexReader base class (including the directoryOwner boolean) ... in cases where there is a single Segment in a directory, there will be SegmentReader with directoryOwner==true ... in the multi segment cases, the MultiSegmentReader will have directoryOwner==true, and it's sub SegmentReaders will all have directoryOwner==false. ...\n\n...the key point of DirectoryIndexReader being that any subclass *can* own a directory (and automaticly inherits all the code for dealing with locks properly when it needs/wants to) but doesn't always *have* to own the directory.  meanwhile MultiReader (and ParallelIndexReader and FilteredIndexReader) make no attempt at owning a directory, and inherit no code for doing so (or for dealing with the locking of such non existent directories)\n\nI don't really know enough about the performance characteristics of SegmentReader vs a MultiSegmentReader of one segment to have a sense of how possible/practical it would be to eliminate the need for SegmentReader and replace it completely with MultiSegmentReader ... \n\none hitch might be that SegmentReader.get is public, and in order to keep supporting it, SegmentReader still needs to have/inherit the same segment info and directory owning/locking code that we want to move out of IndexReader (so just putting it MultiSegmentReader won't fly unless we kill that public method)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-08-30T06:13:39.716+0000",
+          "updated": "2007-08-30T06:13:39.716+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12526998",
+          "id": "12526998",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here is the patch with the DirectoryIndexReader approach.\n\nIt moves SegmentInfos and Directory from IndexReader into\nDirectoryIndexReader, as well as the commit and rollback logic.\n\nMultiSegmentReader and SegmentReader extend DirectoryIndexReader. \nMultiReader extends IndexReader now and uses some methods from \nMultiSegmentReader that I made static.\n\nI added the method acquireWriteLock() to IndexReader that does \nnothing by default. Subclasses must implement it if they require \na write lock (so does DirectoryIndexReader now).\n\nIndexReader is very abstract now and almost all logic moved into\nthe subclasses. The methods isOptimized(), isCurrent(), and \ngetVersion() all throw an UnsupportedOperationException (UOE). I \nfurther deprecated the IndexReader constructor that takes a\nDirectory as argument. As soon as we remove this ctr the method\nIndexReader.getDirectory() should throw an UOE as well. I added\na TODO comment as a reminder.\n\nAll unit tests pass with this patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-09-13T06:54:45.346+0000",
+          "updated": "2007-09-13T06:54:45.346+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12528225",
+          "id": "12528225",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> one hitch might be that SegmentReader.get is public, and in order to keep \n> supporting it, SegmentReader still needs to have/inherit the same segment info \n> and directory owning/locking code that we want to move out of IndexReader (so \n> just putting it MultiSegmentReader won't fly unless we kill that public method).\n\nOK, I implemented the DirectoryIndexReader approach. Also because I'm not sure \nabout the performance characteristics of a MultiSegmentReader acting as a \nSegmentReader. \n\nI'd like to commit this rather soon. A review of the patch would be highly \nappreciated.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-09-18T02:23:08.372+0000",
+          "updated": "2007-09-18T02:23:08.372+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12528271",
+          "id": "12528271",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "Michael: I've been meaning to look at this, but haven't had the time ... your recent update has goaded me :)\n\njust to clarify: the patch you added on September 12th is your latest patch right?  ... it's not clear from you comment on the 17th if you intended to attach an update and something went wrong.\n\nI ask because i'm haivng trouble applying the patch from the 12th ... i must be tired because i can't understand why, it doesn't look like the files have changed since you posted the patch, so i'm not sure what it's complaining about ...  visually everything seems to match up...\n\nhossman@coaster:~/lucene/lucene$ svn update\nAt revision 576718.\nhossman@coaster:~/lucene/lucene$ svn status\n?      lucene-986.patch\nhossman@coaster:~/lucene/lucene$ patch --dry-run -p0 -i lucene-986.patch patching file src/java/org/apache/lucene/index/DirectoryIndexReader.java\npatching file src/java/org/apache/lucene/index/FilterIndexReader.java\npatching file src/java/org/apache/lucene/index/IndexReader.java\npatching file src/java/org/apache/lucene/index/MultiReader.java\nHunk #1 FAILED at 19.\n1 out of 2 hunks FAILED -- saving rejects to file src/java/org/apache/lucene/index/MultiReader.java.rej\npatching file src/java/org/apache/lucene/index/MultiSegmentReader.java\nHunk #1 FAILED at 30.\nHunk #2 FAILED at 39.\nHunk #3 FAILED at 156.\nHunk #4 FAILED at 171.\nHunk #5 FAILED at 256.\nHunk #6 FAILED at 278.\n6 out of 6 hunks FAILED -- saving rejects to file src/java/org/apache/lucene/index/MultiSegmentReader.java.rej\npatching file src/java/org/apache/lucene/index/ParallelReader.java\npatching file src/java/org/apache/lucene/index/SegmentReader.java\nHunk #1 succeeded at 32 with fuzz 2.\npatching file src/test/org/apache/lucene/index/TestMultiReader.java\nhossman@coaster:~/lucene/lucene$ \n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-09-18T06:20:40.635+0000",
+          "updated": "2007-09-18T06:20:40.635+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12528298",
+          "id": "12528298",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "I got the patch to apply cleanly (see mailing list for details)  On the whole it looks really good, i'm attaching an updated version with some minor improvements (mainly javadocs), but first a few questions...\n\n* just to clarify: IndexReader(Directory) is only around for\n  backwards compatibility in subclasses right?  And the only reason\n  for the \"private Directory\" is to keep supporting the directory()\n  method for any subclasses relying on it?\n\n* IndexReader() says it can be removed once the other constructor is\n  removed ... why? is that just pointing out that we can rely on the\n  default constructor?\n\n* since one of the goals is that IndexReaders which don't own their\n  directory shouldn't utilize segmentInfos, would it make sense to\n  eliminate directoryOwner from DirectoryIndexReader and instead test\n  whether (null == segmentInfos) ?\n\n* the way TestMultiReader is setup with the \"mode\" is a bit confusing\n  ... perhaps instead we should make a subclass where only openReader\n  is overwritten (it will inherit the individual test methods) ?\n\n\n\nhere's the list of tweaks I made...\n\n* added a note in the IndexReader class javadocs about\n  methods that throw UnSupOp but aren't abstract.\n* added javadocs to the IndexReader(Directory) constructor based on my \n  understanding\n* added back javadocs to IndexReader methods that now throw UnSupOp to\n  make it clear what they do to callers looking at the API, but made\n  it clear tthe default impls throw UnSupOp\n* made IndexReader.directory() throw UnSupOp if directory is null,\n  enhanced it's javadocs.\n* /* NOOP */ in IndexReader.acquireWriteLock so it's clear to code analysis tools that it's not a mistake.\n* small additions to javadocs for DirectoryIndexReader class, but\n  these should probably be elaborated on (depending on what you think\n  of my segmentInfos==null idea above)\n* made DirectoryIndexReader(...) call init(...) to eliminate a small\n  about of duplication.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2007-09-18T08:18:46.581+0000",
+          "updated": "2007-09-18T08:18:46.581+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12528522",
+          "id": "12528522",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I got the patch to apply cleanly (see mailing list for details) \n\nThanks, Hoss! I'm using TortoiseSVN, I have to check how to set those\ndefault properties for new files correctly.\n\n>    * just to clarify: IndexReader(Directory) is only around for\n>      backwards compatibility in subclasses right? And the only reason\n>      for the \"private Directory\" is to keep supporting the directory()\n>      method for any subclasses relying on it?\n\nYes, correct.\n\n>    * IndexReader() says it can be removed once the other constructor is\n>      removed ... why? is that just pointing out that we can rely on the\n>      default constructor?\n\nYes, just a suggested simplification. Keeping the constructor wouldn't hurt\nthough.\n\n>    * since one of the goals is that IndexReaders which don't own their\n>      directory shouldn't utilize segmentInfos, would it make sense to\n>      eliminate directoryOwner from DirectoryIndexReader and instead test\n>      whether (null == segmentInfos) ?\n\nSounds good, will do...\n\n>    * the way TestMultiReader is setup with the \"mode\" is a bit confusing\n>      ... perhaps instead we should make a subclass where only openReader\n>      is overwritten (it will inherit the individual test methods) ?\n\nYes, that's cleaner, will make that change as well.\n\n> here's the list of tweaks I made...\n\nThe improvements look good to me.\nThanks for the review, Hoss! I'll attach a new patch shortly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-09-18T19:34:39.307+0000",
+          "updated": "2007-09-18T19:34:39.307+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12528547",
+          "id": "12528547",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "In addition to Hoss' changes this patch:\n\n   * Removes the boolean directoryOwner variable from DirectoryIndexReader\n     and checks for segmentInfos != null instead. I also added a comment\n     to DirectoryIndexReader about this.\n\n   * TestMultiReader now extends the new unit test TestMultiSegmentReader\n     and overwrites the method openReader().\n    \n\nI'm planning to commit this in a day or so if nobody objects.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-09-18T20:24:23.073+0000",
+          "updated": "2007-09-18T20:24:23.073+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/12529006",
+          "id": "12529006",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed Rev. 577596\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-09-20T07:30:34.981+0000",
+          "updated": "2007-09-20T07:30:34.981+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12376572/comment/17587177",
+          "id": "17587177",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2062|https://github.com/apache/lucene/issues/2062].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:40:32.633+0000",
+          "updated": "2022-08-28T11:40:32.633+0000"
+        }
+      ],
+      "maxResults": 12,
+      "total": 12,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04zrz:",
+    "customfield_12314139": null
+  }
+}

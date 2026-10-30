@@ -1,0 +1,1606 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12542053",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053",
+  "key": "LUCENE-3767",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12319070",
+        "id": "12319070",
+        "description": "Major release after 3.5",
+        "name": "3.6",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-04-12"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "227340",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "8.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12348914",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12348914",
+        "type": {
+          "id": "10001",
+          "name": "dependent",
+          "inward": "is depended upon by",
+          "outward": "depends upon",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10001"
+        },
+        "inwardIssue": {
+          "id": "12545062",
+          "key": "LUCENE-3843",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12545062",
+          "fields": {
+            "summary": "implement PositionLengthAttribute for all tokenstreams where its appropriate",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/1",
+              "description": "The issue is open and ready for the assignee to start work on it.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/open.png",
+              "name": "Open",
+              "id": "1",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/2",
+                "id": 2,
+                "key": "new",
+                "colorName": "blue-gray",
+                "name": "To Do"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+      "name": "cm",
+      "key": "cm",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+      },
+      "displayName": "Christian Moen",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "24250",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3767/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@3344e7e7[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1f2bcb3f[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@69471e37[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@28745213[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1ac81c4e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@22757f58[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@73926b87[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@79fc4b2c[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@238c1231[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2a8a36a7[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4aa4ae22[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@511a3971[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 13:07:40 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2012-03-10T15:56:51.715+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-3767/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2012-02-09T23:39:00.393+0000",
+    "updated": "2022-08-28T13:07:40.758+0000",
+    "timeoriginalestimate": null,
+    "description": "I've been playing with the idea of changing the Kuromoji viterbi\nsearch to be 2 passes (intersect, backtrace) instead of 4 passes\n(break into sentences, intersect, score, backtrace)... this is very\nmuch a work in progress, so I'm just getting my current state up.\nIt's got tons of nocommits, doesn't properly handle the user dict nor\nextended modes yet, etc.\n\nOne thing I'm playing with is to add a double backtrace for the long\ncompound tokens, ie, instead of penalizing these tokens so that\nshorter tokens are picked, leave the scores unchanged but on backtrace\ntake that penalty and use it as a threshold for a 2nd best\nsegmentation...\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12514836",
+        "id": "12514836",
+        "filename": "compound_diffs.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2012-02-16T18:34:39.210+0000",
+        "size": 49572,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12514836/compound_diffs.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12517372",
+        "id": "12517372",
+        "filename": "LUCENE-3767_branch_3x.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+          "name": "cm",
+          "key": "cm",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+          },
+          "displayName": "Christian Moen",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2012-03-07T06:12:16.503+0000",
+        "size": 191069,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12517372/LUCENE-3767_branch_3x.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12516461",
+        "id": "12516461",
+        "filename": "LUCENE-3767.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2012-02-28T23:18:37.906+0000",
+        "size": 190492,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12516461/LUCENE-3767.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12516156",
+        "id": "12516156",
+        "filename": "LUCENE-3767.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2012-02-27T11:38:36.950+0000",
+        "size": 188028,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12516156/LUCENE-3767.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12514833",
+        "id": "12514833",
+        "filename": "LUCENE-3767.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2012-02-16T18:25:10.925+0000",
+        "size": 192343,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12514833/LUCENE-3767.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12514096",
+        "id": "12514096",
+        "filename": "LUCENE-3767.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2012-02-10T10:52:04.984+0000",
+        "size": 69892,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12514096/LUCENE-3767.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12514048",
+        "id": "12514048",
+        "filename": "LUCENE-3767.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2012-02-09T23:41:45.797+0000",
+        "size": 60185,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12514048/LUCENE-3767.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12516300",
+        "id": "12516300",
+        "filename": "SolrXml-5498.xml",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+          "name": "cm",
+          "key": "cm",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+          },
+          "displayName": "Christian Moen",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2012-02-28T09:41:22.992+0000",
+        "size": 31701,
+        "mimeType": "text/xml",
+        "content": "https://issues.apache.org/jira/secure/attachment/12516300/SolrXml-5498.xml"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Explore streaming Viterbi search in Kuromoji",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13205355",
+          "id": "13205355",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "New patch.\n\nI cleaned up some silly nocommits, got extended mode and user dict working, added a few more nocommits.\n\nAll tests now pass if you set KuromojiTokenizer2.DO_OUTPUT_COMPOUND to false, which does the same score penalty logic as the current tokenizer.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-10T10:52:05.084+0000",
+          "updated": "2012-02-10T10:52:05.084+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13206266",
+          "id": "13206266",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I created a branch for this issue: https://svn.apache.org/repos/asf/lucene/dev/branches/lucene3767\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-11T21:06:06.159+0000",
+          "updated": "2012-02-11T21:06:06.159+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13209540",
+          "id": "13209540",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think the branch is ready to land... I'll post an applyable patch\nsoon.\n\nIn Mode.SEARCH the tokenizer produces the same tokens as current\ntrunk.\n\nThe only real end-user visible change is the addition of\nMode.SEARCH_WITH_COMPOUNDS, which can produce two paths (compound\ntoken + its segmentation).  This mode uses the new\nPositionLengthAttribute to record how \"long\" the compound token is.\n\nIn this mode, the Viterbi search first runs without penalties, but\nthen, if a too-long token (a token where the penalty would have been >\n0) is in the best path, we effectively re-run the Viterbi under that\ncompound token, this time with penalties included.  If this results in\na different backtrace, we add that into the output tokens as well.\n\nNote that this will not produce congruent results as Mode.SEARCH,\nbecause the 2nd segmentation runs \"in context\" of the best path,\nmeaning the chosen best wordID before and after the compound token are\n\"enforced\" in the 2nd segmentation.  Sometimes this results in still\npicking only the compound token where trunk today would have split it\nup.  From TestQuality, the total number of edits was 4418 vs trunk's\n4828.\n\nI didn't explore this, but, we may want to use harsher penalties in\nSEARCH_WITH_COMPOUNDS mode, ie, since we're going to output the\ncompound as well we may as well \"try harder\" to produce the 2nd best\nsegmentation.\n\nI left the default mode as Mode.SEARCH... maybe if we can somehow\nrun some relevance tests we can make the default SEARCH_WITH_COMPOUNDS.\nBut it'd also be tricky at query time...\n\nIt looks like the rolling Viterbi is a bit faster (~16%: 1460\nbytes/msec vs 1700 bytes/msec on TestQuality.testSingleText).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-16T17:52:49.383+0000",
+          "updated": "2012-02-16T17:52:49.383+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13209579",
+          "id": "13209579",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Applyable patch.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-16T18:25:11.600+0000",
+          "updated": "2012-02-16T18:25:11.600+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13209586",
+          "id": "13209586",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Attaching a file showing the segmentation change when you run with\nSEARCH_WITH_COMPOUNDS vs SEARCH.\n\nLeft is SEARCH and right is SEARCH_WITH_COMPOUNDS.\n\nI believe these diffs are due to the forced \"best path context\" that\nwe re-tokenize a given compound word in.  Ie, the left / right wordIDs\nwere picked because they had best path with this compound word, but\nthen we force the segmentation to also use these words.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-16T18:34:39.328+0000",
+          "updated": "2012-02-16T18:34:39.328+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13212623",
+          "id": "13212623",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Mike,\n\nThanks a lot for this.  I'd meant to comment on this earlier and I'd like to look further into the details, but I really like your idea of running the Viterbi in a streaming fashion.\n\nKuromoji originally split input using two punctuation characters as this would be an articulation point in the lattice/graph in practice, but your idea is much more elegant and also faithful to the statistical model.\n\nAs for dealing with compounds, the penalization is a crude hack as you know, but it turns to work quite well in practice as many of the \"decompounds\" are known to the statistical model.  However, in cases where not not all of them are known, we sometimes get wrong decomounds.  I've done some analysis of these cases and it's possible to add more heuristics to deal with some that are obviouslt wrong, such a word starting with a long vowel sound in katakana.  This is a slippery slope that I'm reluctant to pursue...\n\nRobert mentioned earlier that he believes IPADIC could have been annotated with compounds as the documentation mentions them, but they're not part of the IPADIC model we are using.  If it is possible to get the decompounds from the training data (Kyoto Corpus), a better overall approach is then to do regular segmentation (normal mode) and then provide the decompounds directly from the token info for the compounds.  We might need to retrain the model and preserving the decompounds in order for this to work, but I think it is worth investigating.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-02-21T14:41:14.669+0000",
+          "updated": "2012-02-21T14:41:14.669+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214148",
+          "id": "13214148",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nRobert mentioned earlier that he believes IPADIC could have been annotated with compounds as the documentation mentions them, but they're not part of the IPADIC model we are using. If it is possible to get the decompounds from the training data (Kyoto Corpus), a better overall approach is then to do regular segmentation (normal mode) and then provide the decompounds directly from the token info for the compounds. We might need to retrain the model and preserving the decompounds in order for this to work, but I think it is worth investigating.\n{quote}\n\nThe dictionary documentation for the original ipadic has the ability to hold compound data (not in mecab-ipadic though, so maybe it was never implemented?!), \nbut I don't actually see it in any implementations. So yeah, we would need to find a corpus containing compound information (and of course extend the file format\nand add support to kuromoji) to support that.\n\nHowever, would this really solve the total issue? Wouldn't that really only help for known kanji compounds... whereas most katakana compounds \n(e.g. the software engineer example) are expected to be OOV anyway? So it seems like, even if we ensured the dictionary was annotated for \nlong kanji such that we always used decompounded forms, we need a 'heuristical' decomposition like search-mode either way, at least for \nthe unknown katakana case?\n\nAnd I tend to like Mike's improvements from a relevance perspective for these reasons:\n# keeping the original compound term for improved precision\n# preventing compound decomposition from having any unrelated negative impact on the rest of the tokenization\n\nSo I think we should pursue this change, even if we want to separately train a dictionary in the future, because in that case, \nwe would just disable the kanji decomposition heuristic but keep the heuristic (obviously re-tuned!) for katakana?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-23T00:59:08.235+0000",
+          "updated": "2012-02-23T00:59:08.235+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214159",
+          "id": "13214159",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nI've done some analysis of these cases and it's possible to add more heuristics to deal with some that are obviouslt wrong, such a word starting with a long vowel sound in katakana.  This is a slippery slope that I'm reluctant to pursue...\n{quote}\n\nI've wondered about that also at least for the unknown katakana case: (though I don't know all the rules that could be applied).\n\nAdding such heuristics isn't really unprecedented, in a way its very similar to the compounds/ package (geared towards german, etc)\nusing TeX hyphenation rules to restrict word splits to hyphenation breaks; and similar to DictionaryBasedBreakIterators in\nICU/your JRE that use orthographic rules in combination with a dictionary to segment southeast asian languages like Thai, and \nnot too far from simple rules like \"don't separate a base character from any combining characters that follow it\", or \"don't\nseparate a lead surrogate from a trail surrogate\" that you would generally use across all languages.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-23T01:13:58.414+0000",
+          "updated": "2012-02-23T01:13:58.414+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214196",
+          "id": "13214196",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I agree completely; we should definitely proceed with Mike's improvements.  A big +1 from me.\n\nI'm sorry if this wasn't clear.  My comments on search mode are unrelated and I didn't mean to confuse these with the improvements made.  None of this is necessary for Mike's improvements to be used, of course.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-02-23T02:02:59.677+0000",
+          "updated": "2012-02-23T02:02:59.677+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214201",
+          "id": "13214201",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Well my comments are only questions based on your previous JIRA comments,\nI don't really know anything about decompounding Japanese and my suggestions\nare only intuition, mostly based on patterns that have worked for other\nlanguages... so just consider it thinking out loud.\n\nI think your points on search mode are actually related here: though we can't \nreally have a plan its good to think about possible paths we might take in the \nfuture so that we don't lock ourselves out.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-23T02:11:27.261+0000",
+          "updated": "2012-02-23T02:11:27.261+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214217",
+          "id": "13214217",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Robert, some comments are below.\n\n{quote}\nAnd I tend to like Mike's improvements from a relevance perspective for these reasons:\n\n# keeping the original compound term for improved precision\n# preventing compound decomposition from having any unrelated negative impact on the rest of the tokenization\n{quote}\n\nVery good points.\n\n{quote}\nSo I think we should pursue this change, even if we want to separately train a dictionary in the future, because in that case, we would just disable the kanji decomposition heuristic but keep the heuristic (obviously re-tuned!) for katakana?\n{quote}\n\nI agree completely.\n\n{quote}\nThe dictionary documentation for the original ipadic has the ability to hold compound data (not in mecab-ipadic though, so maybe it was never implemented?!), but I don't actually see it in any implementations. So yeah, we would need to find a corpus containing compound information (and of course extend the file format and add support to kuromoji) to support that.\n\nHowever, would this really solve the total issue? Wouldn't that really only help for known kanji compounds... whereas most katakana compounds (e.g. the software engineer example) are expected to be OOV anyway? So it seems like, even if we ensured the dictionary was annotated for long kanji such that we always used decompounded forms, we need a 'heuristical' decomposition like search-mode either way, at least for the unknown katakana case?\n{quote}\n\nI've made an inquiry to a friend who did his PhD work at Prof. Matsumoto's lab at NAIST (where ChaSen was made) and I've made en inquiry regarding compound information and the Kyoto Corpus.\n\n\nYou are perfectly right that this doesn't solve the complete problem as unknown words can actually be compounds -- unknown compounds.  The approach used today is basically adding all the potential decompounds the model knows about to the lattice and see if a short path can be found often in combination with an unknown word.\n\nWe get errors such as \u30af\u30a4\u30fc\u30f3\u30ba\u30b3\u30df\u30c3\u30af\u30b9 (Queen's Comics) becoming \u30af\u30a4\u30fc\u30f3\u3000\u30ba\u30b3\u30df\u30c3\u30af\u30b9 (Queen Zukuomikkusu) because \u30af\u30a4\u30fc\u30f3 (Queen) is known.\n\nI'll open up a separate JIRA for discussing search-mode improvements. :)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-02-23T02:28:09.271+0000",
+          "updated": "2012-02-23T02:28:09.271+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214227",
+          "id": "13214227",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}\nI left the default mode as Mode.SEARCH... maybe if we can somehow run some relevance tests we can make the default SEARCH_WITH_COMPOUNDS.\nBut it'd also be tricky at query time...\n{quote}\n\nMike, could you share some details on any query-time trickiness here?  Are you thinking about composing a query with both the compound and its parts/decompounds?  Thanks.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-02-23T02:34:26.497+0000",
+          "updated": "2012-02-23T02:34:26.497+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13214232",
+          "id": "13214232",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nMike, could you share some details on any query-time trickiness here? Are you thinking about composing a query with both the compound and its parts/decompounds? Thanks.\n{quote}\n\nI don't understand Mike's comment there either. positionIncrement=0 is really going to be treated like synonyms by the QP,\nso it shouldn't involve any trickiness.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-23T02:39:26.375+0000",
+          "updated": "2012-02-23T02:39:26.375+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13215713",
+          "id": "13215713",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nbq. I left the default mode as Mode.SEARCH... maybe if we can somehow run some relevance tests we can make the default SEARCH_WITH_COMPOUNDS. But it'd also be tricky at query time...\n\nMike, could you share some details on any query-time trickiness here? Are you thinking about composing a query with both the compound and its parts/decompounds? Thanks.\n{quote}\n\nSorry, I was wrong about this!  Apparently QueryParser works fine if\nthe analyzer produces a graph (it just creates a\nsomewhat-scary-yet-works MultiPhraseQuery).\n\nSo I think we have no issue at query time... and I guess we should\ndefault to SEARCH_WITH_COMPOUNDS.\n\nI agree we can explore better tweaking the decompounding in a new\nissue.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-24T16:09:17.920+0000",
+          "updated": "2012-02-24T16:09:17.920+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13217156",
+          "id": "13217156",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "New patch, making Mode.SEARCH always produce a graph output (ie no\nmore separate SEARCH_WITH_COMPOUNDS).  Mode.NORMAL and Mode.EXTENDED\nare as they were before...\n\nI think it's ready!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-27T11:38:37.023+0000",
+          "updated": "2012-02-27T11:38:37.023+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13218026",
+          "id": "13218026",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Mike,\n\nThanks a lot for this.  I've been taking this patch for a spin and I'm seeing some exceptions being thrown when indexing some Wikipedia test documents.\n\nI haven't had a chance to analyze this in detail, but when indexing the attached {{SolrXml-5498.xml}} I'm getting:\n\n{code}\njava.lang.ArrayIndexOutOfBoundsException: -69\n\tat org.apache.lucene.util.RollingCharBuffer.get(RollingCharBuffer.java:98)\n\tat org.apache.lucene.analysis.kuromoji.KuromojiTokenizer.computePenalty(KuromojiTokenizer.java:236)\n\tat org.apache.lucene.analysis.kuromoji.KuromojiTokenizer.computeSecondBestThreshold(KuromojiTokenizer.java:227)\n\tat org.apache.lucene.analysis.kuromoji.KuromojiTokenizer.backtrace(KuromojiTokenizer.java:910)\n\tat org.apache.lucene.analysis.kuromoji.KuromojiTokenizer.parse(KuromojiTokenizer.java:567)\n\tat org.apache.lucene.analysis.kuromoji.KuromojiTokenizer.incrementToken(KuromojiTokenizer.java:394)\n\tat org.apache.lucene.analysis.kuromoji.TestKuromojiTokenizer.doTestBocchan(TestKuromojiTokenizer.java:567)\n\tat org.apache.lucene.analysis.kuromoji.TestKuromojiTokenizer.testBocchan(TestKuromojiTokenizer.java:528)\n\t...\n{code}\n\nI believe you can reproduce this by changing {{TestKuromojiTokenizer.doTestBocchan()}} to read the attached {{SolrXml-5498.xml}} instead of {{bocchan.utf-8}}.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-02-28T09:40:09.729+0000",
+          "updated": "2012-02-28T09:40:09.729+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13218154",
+          "id": "13218154",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Egads, I'll dig... thanks Christian.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-28T13:23:30.717+0000",
+          "updated": "2012-02-28T13:23:30.717+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13218685",
+          "id": "13218685",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "New patch, fixing the exc Christian found: the 2nd best search was corrupting the bestIDX on the backtrace in the case where a compound wasn't selected.\n\nI also set a limit on the max UNK word length, and pulled the limits into static final private constants.\n\nI was able to parse the 2012/02/20 jaenwiki export with this (see commented out test case in TestKuromojiTokenizer).  I think it's ready (again!).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-28T23:18:39.037+0000",
+          "updated": "2012-02-28T23:18:39.037+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13219015",
+          "id": "13219015",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks, Mike.\n\nI've tried the latest patch and things look fine here now.  I haven't had a chance to review the code changes yet, but I'm happy to do that over the next couple of days and commit this -- unless you'd like to do that yourself.  (This would be my first commit.)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-02-29T09:15:20.405+0000",
+          "updated": "2012-02-29T09:15:20.405+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13219115",
+          "id": "13219115",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hi Christian, sure feel free to commit this!  Thanks :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-02-29T11:33:20.578+0000",
+          "updated": "2012-02-29T11:33:20.578+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13221544",
+          "id": "13221544",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks, Mike.  I'll commit this to {{trunk}} tomorrow and backport to {{branch_3x}} as well.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-03-03T09:03:04.787+0000",
+          "updated": "2012-03-03T09:03:04.787+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13221599",
+          "id": "13221599",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Christian!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-03-03T14:50:51.000+0000",
+          "updated": "2012-03-03T14:50:51.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13221707",
+          "id": "13221707",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "+1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-03-03T21:45:57.971+0000",
+          "updated": "2012-03-03T21:45:57.971+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13221903",
+          "id": "13221903",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed to {{trunk}} with revision 1296805.\n\nWill backport to {{branch_3x}} and then mark as fixed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-03-04T14:36:57.346+0000",
+          "updated": "2012-03-04T14:36:57.346+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13224025",
+          "id": "13224025",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I've attached a patch for {{branch_3x}} and I'd be very thankful if Robert or Mike could have a quick look before I commit.\n\nThese are some comments and questions:\n\n# I haven't backported the test for {{PositionLengthAttribute}} since the structure seems very different in {{branch_3x}}.  Perhaps this is something we could look to as we start using PositionLength in more of the other analyzers?\n# There will be some minor discrepancies between {{trunk}} and {{branch_3x}} with regards to {{Set<?>}} and {{CharArraySet}} types.  Perhaps we should use {{CharArraySet}} on across the board here in the future?\n# Does the {{svn:mergeinfo}} look okay in the patch?\n\nTests pass on {{branch_3x}} and I've verified that the new feature seems fine in a Solr build as well.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-03-07T06:34:42.530+0000",
+          "updated": "2012-03-07T06:34:42.530+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13224551",
+          "id": "13224551",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. I haven't backported the test for PositionLengthAttribute since the structure seems very different in branch_3x. Perhaps this is something we could look to as we start using PositionLength in more of the other analyzers?\n\nHmm you mean TestSimpleAttributeImpl?  I think that's fine.  We'll\nimprove testing of pos length as we make more tokenizers/filters\ngraphs...\n\nbq. Does the svn:mergeinfo look okay in the patch?\n\nHmm looks spooky... there was a trick for this... (and I know it's\nhard to merge back since the path changed in trunk).  Maybe do svn\npropdel svn:mergeinfo on all affected files, and then at the top level\nyou can just do an \"svn merge --record-only\" to update toplevel\nmergeinfo?\n\nbq. There will be some minor discrepancies between trunk and branch_3x with regards to Set<?> and CharArraySet types. Perhaps we should use CharArraySet on across the board here in the future?\n\nThis was from LUCENE-3765; I think it's OK to require\nCharArraySet to Kuromoji...\n\nLooks like the added files are not included in the patch (eg\nRollingCharBuffer)... if you're using svn >= 1.7, you can run \"svn\ndiff --show-copies-as-adds\" maybe?  Or, use\ndev-tools/scripts/diffSources.py... but I don't think it's\nreally necessary before committing...\n\nOtherwise patch looks great!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-03-07T17:53:09.109+0000",
+          "updated": "2012-03-07T17:53:09.109+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13226279",
+          "id": "13226279",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch looks good: KuromojiAnalyzer can take CharArraySet because its not yet released, the only reason\nits kinda funky in LUCENE-3765 is to avoid backwards compatibility breaks in 3.x.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2012-03-09T18:14:59.935+0000",
+          "updated": "2012-03-09T18:14:59.935+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13226868",
+          "id": "13226868",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks for the feedback.\n\nMike, you are right that the added files aren't included in the patch, but I believe they will be added on check-in. (I've verified that they're marked for addition, including {{RollingCharBuffer}}. Sorry for the confusion.)\n\nI believe the patch is correct with regards to {{svn:mergeinfo}} -- only the root directory, {{lucene}} and {{solr}} should have them.\n\nI'll commit to {{branch_3x}} shortly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-03-10T14:38:43.208+0000",
+          "updated": "2012-03-10T14:38:43.208+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13226872",
+          "id": "13226872",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed revision 1299213 on {{branch_3x}}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-03-10T14:55:31.787+0000",
+          "updated": "2012-03-10T14:55:31.787+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/13226881",
+          "id": "13226881",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Confirmed this working in a {{branch_3x}} build.\n\nThanks, Mike and Robert! :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cm",
+            "name": "cm",
+            "key": "cm",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=cm&avatarId=21726",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=cm&avatarId=21726",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=cm&avatarId=21726",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=cm&avatarId=21726"
+            },
+            "displayName": "Christian Moen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2012-03-10T15:56:21.922+0000",
+          "updated": "2012-03-10T15:56:21.922+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12542053/comment/17589972",
+          "id": "17589972",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#4840|https://github.com/apache/lucene/issues/4840].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T13:07:40.758+0000",
+          "updated": "2022-08-28T13:07:40.758+0000"
+        }
+      ],
+      "maxResults": 31,
+      "total": 31,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04ifb:",
+    "customfield_12314139": null
+  }
+}

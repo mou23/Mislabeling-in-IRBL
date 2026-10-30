@@ -1,0 +1,977 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12461758",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758",
+  "key": "LUCENE-2392",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12316437",
+        "id": "12316437",
+        "description": "",
+        "name": "flexscoring branch",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-10-12"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "11409",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "5.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12338030",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12338030",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12501006",
+          "key": "LUCENE-2959",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12501006",
+          "fields": {
+            "summary": "[GSoC] Implementing State of the Art Ranking for Lucene",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/4",
+              "description": "This issue was once resolved, but the resolution was deemed incorrect. From here issues are either marked assigned or resolved.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/reopened.png",
+              "name": "Reopened",
+              "id": "4",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/2",
+                "id": 2,
+                "key": "new",
+                "colorName": "blue-gray",
+                "name": "To Do"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+              "id": "2",
+              "description": "A new feature of the product, which has yet to be developed.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+              "name": "New Feature",
+              "subtask": false,
+              "avatarId": 21141
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+      "name": "rcmuir",
+      "key": "rcmuir",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+      },
+      "displayName": "Robert Muir",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25617",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2392/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@61718d98[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1ad967ff[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1f2f84f5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@4e18ee70[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@327bdfff[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@3e7b5749[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5d90645f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@54726af3[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@389ad3a5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@5c3f1ae0[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2532fa4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@4531f8ef[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:24:28 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-07-08T05:08:44.257+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2392/watchers",
+      "watchCount": 11,
+      "isWatching": false
+    },
+    "created": "2010-04-11T17:29:40.341+0000",
+    "updated": "2022-08-28T12:24:28.426+0000",
+    "timeoriginalestimate": null,
+    "description": "This is a first step (nowhere near committable!), implementing the\ndesign iterated to in the recent \"Baby steps towards making Lucene's\nscoring more flexible\" java-dev thread.\n\nThe idea is (if you turn it on for your Field; it's off by default) to\nstore full stats in the index, into a new _X.sts file, per doc (X\nfield) in the index.\n\nAnd then have FieldSimilarityProvider impls that compute doc's boost\nbytes (norms) from these stats.\n\nThe patch is able to index the stats, merge them when segments are\nmerged, and provides an iterator-only API.  It also has starting point\nfor per-field Sims that use the stats iterator API to compute boost\nbytes.  But it's not at all tied into actual searching!  There's still\ntons left to do, eg, how does one configure via Field/FieldType which\nstats one wants indexed.\n\nAll tests pass, and I added one new TestStats unit test.\n\nThe stats I record now are:\n\n  - field's boost\n\n  - field's unique term count (a b c a a b --> 3)\n\n  - field's total term count (a b c a a b --> 6)\n\n  - total term count per-term (sum of total term count for all docs\n    that have this term)\n\nStill need at least the total term count for each field.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12441412",
+        "id": "12441412",
+        "filename": "ASF.LICENSE.NOT.GRANTED--LUCENE-2392.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-04-11T17:30:11.446+0000",
+        "size": 71208,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12441412/ASF.LICENSE.NOT.GRANTED--LUCENE-2392.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12469301",
+        "id": "12469301",
+        "filename": "LUCENE-2392_take2.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-01-25T17:24:38.446+0000",
+        "size": 105944,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12469301/LUCENE-2392_take2.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12485621",
+        "id": "12485621",
+        "filename": "LUCENE-2392.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-07-07T16:45:49.813+0000",
+        "size": 254088,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12485621/LUCENE-2392.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12474750",
+        "id": "12474750",
+        "filename": "LUCENE-2392.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-03-28T02:49:26.263+0000",
+        "size": 123864,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12474750/LUCENE-2392.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12457447",
+        "id": "12457447",
+        "filename": "LUCENE-2392.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+          "name": "rcmuir",
+          "key": "rcmuir",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+          },
+          "displayName": "Robert Muir",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2010-10-18T14:52:39.567+0000",
+        "size": 121585,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12457447/LUCENE-2392.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Enable flexible scoring",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855757",
+          "id": "12855757",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Rough first patch attached....",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-04-11T17:30:11.482+0000",
+          "updated": "2010-04-11T17:30:11.482+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855802",
+          "id": "12855802",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Mike, I don't think overlapTermCount should really exist in the Stats.\nTrying to implement some concrete FieldSimProviders, it starts getting messy.\nWhen using term unique pivoted length norm, i don't want to count these positionIncrement=0 terms either...\nso do we need a uniqueOverlapTermCount?\nEven when using non-unique (BM25) pivoted length norm, we don't want to count these when summing to calculate \naverages either.\n\nSo i know you probably see this as 'baking something into the index' but I think positionIncrement=0 means \n\"doesn't contribute to the document length\" by definition, and the discountOverlaps=false (no longer the default)\nshould be considered deprecated compatibility behavior :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-04-12T01:11:45.594+0000",
+          "updated": "2010-04-12T01:11:45.594+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855875",
+          "id": "12855875",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "Mike - it'll also be great if we can store the length of the document in a custom way. I think what I'm saying is that if we can open up the norms computation to custom code - that will do what I want, right? Maybe we can have a class like DocLengthProvider which apps can plug in if they want to customize how that length is computed. Wherever we write the norms, we'll call that impl, which by default will do what Lucene does today?\nI think though that it's not a field-level setting, but an IW one?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2010-04-12T07:35:40.895+0000",
+          "updated": "2010-04-12T07:35:40.895+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855905",
+          "id": "12855905",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Mike, I don't think overlapTermCount should really exist in the Stats.\n\nOK I will remove it -- I was unsure whether it was overkill :)  So\nit's purely an index time decision, whether the posIncr 0 tokens\n\"count\".\n\nHmm, but... we have a problem, which is that these posIncr 0 tokens\nare now counted in the unique token count.  Have to mull how to avoid\nthat...hmm... to do it correctly, I think means \"count this token as\n+1 on the unique tokens for this doc if ever it has non-zero posIncr\"?\n\nReally, maybe somehow we should be using at attr about the token\nitself?  Instead of posIncr == 0?  I mean a broken synonym injector\ncould conceivably provide the synonyms first (w/ first one having\nposIncr 1), followed by the real term (w/ posIncr 0)?\n\nBTW the cost of storing the stats isn't that bad -- it increases index\nsize by 1.5%, on a 10M wikipedia index where each doc is 1KB of text\n(~171 words per doc on avg).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-04-12T09:48:59.425+0000",
+          "updated": "2010-04-12T09:48:59.425+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855906",
+          "id": "12855906",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. I think what I'm saying is that if we can open up the norms computation to custom code - that will do what I want, right? \n\nI'm calling the norms \"boost bytes\" :)  This was Marvin's term.. I\nlike it.\n\nThis patch makes boost byte computation completely private to the\nsim (see the *FieldSimProvider).  Ie the sim providers walk the stats\nand do whatever they want to \"prepare\" for real searching.  EG if you\nhave the RAM maybe you want to use a true float[] not boost bytes.  Or\nif you really don't have the RAM maybe you use only 4 bits per-doc,\nnot 8.  The FieldSim just provides a \"float boost(int docID)\" so what\nit does under the hood is private.\n\nbq. Maybe we can have a class like DocLengthProvider which apps can plug in if they want to customize how that length is computed.\n\nSo... I'm actually trying to avoid extensibility on the first go, here\n(this is the \"baby steps\" part of the original thread).\n\nIe, the IR world seems to have converged on a smallish set of \"stats\"\nthat are commonly required, so I'd like to make those initial stats\nwork well, for starters.  Commit that (it enables all sorts of state\nof the art scoring models), and perhaps cutover to the default Robert\ncreated in LUCENE-2187 (which needs stats to work correctly).  And\nthen (phase 2) work out plugability so you can put your own stats\nin....\n\nbq. Wherever we write the norms, we'll call that impl, which by default will do what Lucene does today?\n\nRight, this is the DefaultSimProvider in my current patch -- it simply\ncomputes the same thing Lucene does today, but uses the stats at IR\nopen time (once it's hooked up) to do, instead of doing so during\nindexing.\n\nbq. I think though that it's not a field-level setting, but an IW one?\n\nIt's field level now and I think we should keep it that way.  EG\nTerrier was apparently document oriented in the past but has now\ndeprecated that and moved to per-field.\n\nYou can always make a catch-all field if you \"really\" want aggregated\nstats across the entire doc?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-04-12T09:57:35.871+0000",
+          "updated": "2010-04-12T09:57:35.871+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855913",
+          "id": "12855913",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "I'd like to withdraw my request from above. I misunderstood that the stats I need are stored per-field per-doc. So that will allow me to compute the docLength as I want.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2010-04-12T10:18:12.547+0000",
+          "updated": "2010-04-12T10:18:12.547+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12855934",
+          "id": "12855934",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nReally, maybe somehow we should be using at attr about the token\nitself? Instead of posIncr == 0? I mean a broken synonym injector\ncould conceivably provide the synonyms first (w/ first one having\nposIncr 1), followed by the real term (w/ posIncr 0)?\n{quote}\n\nRight, its my opinion all along (others disagree with me) that since\nwe have this 'ordered (incrementToken) Attributesource' / Token*Stream* that \nthis sorta broken filter isn't a valid equivalent..., its definitely a different\nTokenStream,even if its treated in some ways today as the same... we gotta\nbreak away from this for reasons like this.\n\notherwise why have it ordered at all?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-04-12T11:49:47.564+0000",
+          "updated": "2010-04-12T11:49:47.564+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12922091",
+          "id": "12922091",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "i brought the patch up to trunk: didn't fix any problems \n(e.g. some tests still fail, things outside of core lucene won't even compile)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-10-18T14:52:39.672+0000",
+          "updated": "2010-10-18T14:52:39.672+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/12986531",
+          "id": "12986531",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "here's a really really rough \"take 2\" at the problem.\n\nThe general idea is to take a smaller \"baby-step\" as Mike calls it, to the problem.\nReally we have been working our way towards this anyway, exposing additional statistics,\nmaking Similarity per-field, fixing up inconsistencies... and this is the way I prefer, as we\nget things actually committed and moving.\n\nSo whatever is in this patch (which is full of nocommits, but all tests pass and all queries work with it),\nwe could possibly then split up into other issues and continue slowly proceeding, or maybe\ncreate a branch, whatever.\n\nMy problem with the other patch is it requires a ton more work to make any progress on it...\nand things don't even compile with it, forget about tests.\n\nThe basics here are to:\n# Split the \"matching\" and \"scoring calculations\" of Scorer. All responsibility of calculations belongs\nin the Similarity, the Scorer should be matching positions, working docsEnums, etc etc.\n# Similarity as we know it now, gets a more low-level API, and TFIDFSimilarity implements this API,\nbut exposes its customizations via the tf(), idf(), etc we know now.\n# Things like score-caching and specialization of calculations are the responsibility of the Similarity,\nas these depend upon the formula being used. For TFIDFSimilarity, i added some optimizations here,\nfor example it specializes its norms == null case away to remove the per-doc \"if\".\n# Since all Weights create PerReaderTermState (<-- this one needs a new name), to separate the\nseeking/stats collection from the calculations, i also optimized PhraseQuery's Weight/Scorer construction\nto be single-pass. \n\nAlso I like to benchmark every step of the way, so we don't come up with\nthis design that won't be performant: here are the scores for lucene's default Sim with the patch:\n||Query||QPS trunk||QPS patch||Pct diff||||\n|spanNear([unit, state], 10, true)|3.04|2.92|{color:red}-4.0%{color}|\n|doctitle:.*[Uu]nited.*|4.00|3.99|{color:red}-0.1%{color}|\n|+unit +state|8.11|8.12|{color:green}0.2%{color}|\n|united~2.0|4.36|4.40|{color:green}1.0%{color}|\n|united~1.0|18.70|18.93|{color:green}1.2%{color}|\n|unit~2.0|8.54|8.71|{color:green}2.1%{color}|\n|spanFirst(unit, 5)|11.35|11.59|{color:green}2.2%{color}|\n|unit~1.0|8.69|8.91|{color:green}2.6%{color}|\n|unit state|7.03|7.23|{color:green}2.8%{color}|\n|\"unit state\"~3|3.74|3.86|{color:green}3.2%{color}|\n|u*d|16.72|17.30|{color:green}3.5%{color}|\n|state|19.24|20.04|{color:green}4.1%{color}|\n|un*d|49.42|51.55|{color:green}4.3%{color}|\n|\"unit state\"|5.99|6.31|{color:green}5.3%{color}|\n|+nebraska +state|140.74|151.85|{color:green}7.9%{color}|\n|uni*|10.66|11.55|{color:green}8.4%{color}|\n|unit*|18.77|20.41|{color:green}8.7%{color}|\n|doctimesecnum:[10000 TO 60000]|6.97|7.70|{color:green}10.4%{color}|\n\nAll Lucene/Solr tests pass, but there are lots of nocommits, especially\n# No Javadocs\n# Explains need to be fixed: in general the explanation of \"matching\" belongs where it is now,\nbut the explanation of \"score calculations\" belongs in the Similarity.\n# need to refactor more out of Weight, currently we pass it to the docscorer, but\nits the wrong object, as it can only \"hold\" a single float.\n\nAnyway, its gonna take some time to rough all this out I'm sure, but I wanted\nto show some progress/invite ideas, and also show we can do this stuff\nwithout losing performance.\n\nI have separate patches that need to be integrated/relevance tested e.g. \nfor average doc length... maybe i'll do that next so we can get some concrete\nalternate sims in here before going any further.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-25T17:24:38.525+0000",
+          "updated": "2011-01-25T17:24:38.525+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/13011900",
+          "id": "13011900",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Updated patch, i brought the patch to trunk, cleaned up, enabled some more of the stats in scoring (e.g. totalTermFreq/sumOfTotalTermFreq).\n\nIn src/test i added a MockLMSimilarity, that implements \"Bayesian smoothing using Dirichlet priors\" from http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.136.8113\n\nThis one is interesting, as its faster than lucene's scoring formula today :)\n\nI want to get some of this stuff in shape for David (or any other GSOC students) to be able to implement their algorithms, but there is a lot of refactoring (e.g. explains) to do.\n\nI'll create a branch under https://svn.apache.org/repos/asf/lucene/dev/branches/flexscoring with this infrastructure in a bit.\n\nTonight i'll see if i can get the avg doc length stuff in the branch too.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-03-28T02:49:26.317+0000",
+          "updated": "2011-03-28T02:49:26.317+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/13061332",
+          "id": "13061332",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think we need to commit the refactoring portions (separating TF-IDF out) to trunk very soon, because its really difficult\nto keep this branch in sync with trunk, e.g. lots of activity and refactoring going on.\n\nI'd like to get this merged in as quickly as possible. I don't think the svn history is interesting, especially given\nall the frustrations I am having with merging... The easiest way will be to commit a patch, I'll get everything in shape\nand upload one soon, like, today.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-07T14:10:28.836+0000",
+          "updated": "2011-07-07T14:10:28.836+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/13061420",
+          "id": "13061420",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}\nI'd like to get this merged in as quickly as possible. I don't think the svn history is interesting, especially given\nall the frustrations I am having with merging... The easiest way will be to commit a patch, I'll get everything in shape\nand upload one soon, like, today.\n{quote}\n\n+1 even if this is not entirely in shape we can still iterate on trunk. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=simonw",
+            "name": "simonw",
+            "key": "simonw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Simon Willnauer",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-07-07T16:32:20.892+0000",
+          "updated": "2011-07-07T16:32:20.892+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/13061433",
+          "id": "13061433",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Attached is a patch, with this CHANGES entry:\n\n{noformat}\n* LUCENE-2392: Decoupled vector space scoring from Query/Weight/Scorer. If you\n  extended Similarity directly before, you should extend TFIDFSimilarity instead.\n  Similarity is now a lower-level API to implement other scoring algorithms.\n  See MIGRATE.txt for more details.\n{noformat}\n\nI would like to commit this, and then proceed onward with issues such as LUCENE-3220 and LUCENE-3221",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-07T16:45:49.841+0000",
+          "updated": "2011-07-07T16:45:49.841+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/13061769",
+          "id": "13061769",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed revision 1144158.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-07-08T05:08:44.281+0000",
+          "updated": "2011-07-08T05:08:44.281+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12461758/comment/17588592",
+          "id": "17588592",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#3467|https://github.com/apache/lucene/issues/3467].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:24:28.426+0000",
+          "updated": "2022-08-28T12:24:28.426+0000"
+        }
+      ],
+      "maxResults": 15,
+      "total": 15,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04qv3:",
+    "customfield_12314139": null
+  }
+}

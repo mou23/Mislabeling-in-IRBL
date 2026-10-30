@@ -1,0 +1,565 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="BATCHADM">
+	<bug id="28" opendate="2010-02-08 21:50:09" fixdate="2010-02-09 00:16:32" resolution="Complete">
+		<buginformation>
+			<summary>Multiple registration of some URLS</summary>
+			<description>E.g. /files/** is mapped to GET, POST and DELETE (where only GET was requested).  (Actually it probably shouldn&amp;amp;apos;t be on the home page at all.)</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.util.AnnotationMappingMetaDataControllerTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.FileControllerTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.FileController.java</file>
+			<file type="M">org.springframework.batch.admin.web.util.AnnotationMappingMetaDataController.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="29" opendate="2010-02-09 10:16:57" fixdate="2010-03-03 22:08:05" resolution="Fixed">
+		<buginformation>
+			<summary>Dates are displayed in GMT instead of using the locale of the jvm</summary>
+			<description>Version 1.0.0.CI-SNAPSHOT
+The timezone is hardcoded in the org.springframework.batch.admin.web.JobExecutionController class. 
+In this class you see the following hardcoding of timezone to GMT all over the place...
+model.addAttribute(new JobExecutionInfo(jobExecution, TimeZone.getTimeZone("GMT"))); 
+I think it would be better to default the timezone to the users locale and make it possible to override it using a configuration setting.  I&amp;amp;apos;m in a GMT+10 timezone so displaying GMT times makes times appear way off and there is no indication on the web page that the time is displayed in GMT.  </description>
+			<version>1.0.0</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.sample.RestartJobIntegrationTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobController.java</file>
+			<file type="M">org.springframework.batch.admin.web.StepExecutionController.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobExecutionController.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobExecutionInfo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="38" opendate="2010-03-12 16:43:42" fixdate="2010-03-12 19:02:24" resolution="Fixed">
+		<buginformation>
+			<summary>Job configuration upload overwrites all existing jobs</summary>
+			<description>Job configuration upload either overwrites existing jobs or throws duplicate job exception (depending on whether we choose to reload() or load() it in the JobLoader).  There is no way to identify the Resource that is being loaded, so any resource coming from an upload is treated equally.  Might be tough to fix in general, but at least something with the original filename might be do-able.</description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.integration.JobConfigurationRequestToResourceAdapter.java</file>
+			<file type="M">org.springframework.batch.admin.integration.JobConfigurationResourceLoader.java</file>
+			<file type="M">org.springframework.batch.admin.integration.JobConfigurationRequest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="44" opendate="2010-03-31 00:10:18" fixdate="2010-04-01 17:22:39" resolution="Fixed">
+		<buginformation>
+			<summary>Restart button on Job execution screen generates incorrect url</summary>
+			<description>I currently have over a thousand executions and when I press the Restart button on the Job execution screen it seems to generate a url with a thousand separator comma in it: /admin/batch/jobs/myJob/1,459/executions</description>
+			<version>1.0.0.M1</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.views.JobExecutionViewTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="42" opendate="2010-03-30 00:49:59" fixdate="2010-04-02 22:57:42" resolution="Complete">
+		<buginformation>
+			<summary>Job configuration upload of String fails with NPE</summary>
+			<description></description>
+			<version>1.0.0.M3</version>
+			<fixedVersion>1.0.0.M3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.integration.MultipartJobConfigurationRequest.java</file>
+			<file type="M">org.springframework.batch.admin.integration.JobConfigurationRequestToResourceAdapter.java</file>
+			<file type="M">org.springframework.batch.admin.web.views.ConfigurationViewTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="52" opendate="2010-07-16 00:47:40" fixdate="2010-09-13 05:32:14" resolution="Complete">
+		<buginformation>
+			<summary>Colons are escaped in job parameters in Jobs page</summary>
+			<description>Colons are escaped in job parameters in Jobs page (e.g. input.file=files\://foo/bar.txt).  This is not fatal, it just means that you have to backspace over them before you submit the job.</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.2.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.JobController.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobControllerTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="71" opendate="2010-09-14 19:18:03" fixdate="2010-09-22 08:53:11" resolution="Complete">
+		<buginformation>
+			<summary>Protect admin console from CannotResolveClassException when deserializing from meta data tables</summary>
+			<description>When using Spring Batch Admin Console to view job executions from different JVMs causes a CannotResolveClassException from XStream. 
+Specifically, jobs saving custom classes to the job execution will have serialized objects stored in the meta data tables. When viewing the job execution in Spring Batch Admin Console, the console will attempt to deserialize these objects, and if the class is not available at runtime, the above exception will be thrown, causing an error to appear instead of the job execution.
+As the deserialized objects are not used by the admin console, there is no reason to report this error and the exception can be caught and ignored or logged.
+See the forum link for further details.</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.2.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.service.SimpleJobService.java</file>
+			<file type="M">org.springframework.batch.admin.service.SimpleJobServiceTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="73" opendate="2010-10-03 11:31:18" fixdate="2010-10-03 11:34:50" resolution="Complete">
+		<buginformation>
+			<summary>XSS vulnerability in file download</summary>
+			<description>If there is an error the filename is by default not escaped in the html output.  A workaround for existing users is to provide a MessageSource with the relevant error codes from the FileController (file.download.missing and file.download.failed) so that the default text is not used. The fix is easy, and it only applies to the @RequestMapping with the wildcard "**" url pattern (others are rejected by the dispatcher).</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.2.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.FileControllerTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.FileController.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="78" opendate="2010-10-11 08:17:12" fixdate="2010-11-16 07:10:55" resolution="Complete">
+		<buginformation>
+			<summary>period (&amp;apos;.&amp;apos;), in jobName seems to confuse SBA UI when displaying Job Instances.</summary>
+			<description>After an execution of mycom.myJob  I can see the job in the Jobs Tab. If I click on that job I get &amp;amp;apos;There are no job instances for this job.&amp;amp;apos;  on the Job Instances Page
+If I run the  same job  but using &amp;amp;apos;-&amp;amp;apos;  instead of &amp;amp;apos;.&amp;amp;apos; in the jobName ie mycom-myJob  then I can see the job Instances as expected.  </description>
+			<version>1.0.0</version>
+			<fixedVersion>1.2.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.JobController.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobControllerTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="77" opendate="2010-10-11 08:08:01" fixdate="2010-11-16 08:43:42" resolution="Complete">
+		<buginformation>
+			<summary>StepExecution JMX and UI stats should be scoped by owning Job.</summary>
+			<description>Using CommandLineJobRunner it is possible to re-use a job definition in different contexts, differentiating runs using the JobRegistryBeanPostProcessor.groupName feature.
+If I run instances of  jobA consisting of Step.id="step1" and then run instances of  jobB - also consisting of Step.id="step1"  then the cumulative stats for step1 will consist of all executions of the step regardless of the job context in which they were run. 
+The stepExecution stats for step1 should be grouped by owning Job.jobName so that there is distinct view of jobA.step1 stats and jobB.step1 stats.
+This should also be reflected in the JMX stats.</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.2.0.M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.service.JdbcSearchableStepExecutionDao.java</file>
+			<file type="M">org.springframework.batch.admin.service.JdbcSearchableStepExecutionDaoTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.BindingHttpMessageConverter.java</file>
+			<file type="M">org.springframework.batch.admin.web.StepExecutionControllerTests.java</file>
+			<file type="M">org.springframework.batch.admin.service.SimpleJobServiceTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.StepExecutionController.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleStepExecutionMetrics.java</file>
+			<file type="M">org.springframework.batch.admin.service.JobService.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.BatchMBeanExporter.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobControllerTests.java</file>
+			<file type="M">org.springframework.batch.admin.service.SimpleJobService.java</file>
+			<file type="M">org.springframework.batch.admin.service.SearchableStepExecutionDao.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="87" opendate="2010-11-22 04:58:44" fixdate="2010-11-26 08:06:59" resolution="Complete">
+		<buginformation>
+			<summary>MySQL timestamps have 1s resolution so no use for pagination in concurrent environment</summary>
+			<description>The integration tests (ignored) fail in an obvious way for any paged query.  Maybe we could make MySQL a special case (yuck), but even then it&amp;amp;apos;s not clear what the correct field is to order by since ids are not monotonic in a cluster / group of application nodes.  Maybe MySQL will only ever work if jobs are launched non-concurrently and/or from command line?</description>
+			<version>1.2.0.M1</version>
+			<fixedVersion>1.2.0.RC1</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.service.JdbcSearchableJobExecutionDao.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleStepExecutionMetricsTests.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleStepExecutionMetrics.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleJobExecutionMetricsTests.java</file>
+			<file type="M">org.springframework.batch.admin.service.JdbcSearchableStepExecutionDao.java</file>
+			<file type="M">org.springframework.batch.admin.util.CumulativeHistory.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleJobExecutionMetrics.java</file>
+			<file type="M">org.springframework.batch.admin.service.JdbcDaoIntegrationTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.StepExecutionHistoryTests.java</file>
+			<file type="M">org.springframework.batch.admin.util.CumulativeHistoryTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="91" opendate="2011-01-10 01:47:40" fixdate="2011-01-10 02:05:55" resolution="Complete">
+		<buginformation>
+			<summary>NPE in ContentTypeInterceptor: On WebSphere the method request.getPathInfo() returns null</summary>
+			<description>The method-call String path = WebUtils.extractFullFilenameFromUrlPath(request.getPathInfo()); throws a NullPointerException, because the pathInfo is null and the method only accepts not-null values.
+I am not sure where it should be fixed (Spring Web oder Spring Batch Admin?). Is there maybe a workaround? 
+Note: The first call against the application works, because then the method returns "/". 
+Stacktrace:
+
+
+
+
+
+
+at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:656)
+
+
+
+
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:549)
+
+
+
+
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:743)
+
+
+
+
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:856)
+
+
+
+
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1097)
+
+
+
+
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1038)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:145)
+
+
+
+
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+
+
+
+
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:190)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:130)
+
+
+
+
+	at org.springframework.web.filter.ShallowEtagHeaderFilter.doFilterInternal(ShallowEtagHeaderFilter.java:58)
+
+
+
+
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:190)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:130)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain._doFilter(WebAppFilterChain.java:87)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:834)
+
+
+
+
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:682)
+
+
+
+
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:566)
+
+
+
+
+	at com.ibm.ws.wswebcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:486)
+
+
+
+
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:90)
+
+
+
+
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:748)
+
+
+
+
+	at com.ibm.ws.wswebcontainer.WebContainer.handleRequest(WebContainer.java:1461)
+
+
+
+
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:118)
+
+
+
+
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:458)
+
+
+
+
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewInformation(HttpInboundLink.java:387)
+
+
+
+
+	at com.ibm.ws.http.channel.inbound.impl.HttpICLReadCallback.complete(HttpICLReadCallback.java:102)
+
+
+
+
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:165)
+
+
+
+
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+
+
+
+
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+
+
+
+
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:136)
+
+
+
+
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:195)
+
+
+
+
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:743)
+
+
+
+
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:873)
+
+
+
+
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1473)
+
+
+
+
+Caused by: java.lang.NullPointerException
+
+
+
+
+	at org.springframework.web.util.WebUtils.extractFullFilenameFromUrlPath(WebUtils.java:670)
+
+
+
+
+	at org.springframework.batch.admin.web.interceptor.ContentTypeInterceptor.postHandle(ContentTypeInterceptor.java:96)
+
+
+
+
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:801)
+
+
+
+
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:719)
+
+
+
+
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:644)
+
+
+
+
+	... 34 more
+
+
+
+
+
+</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.interceptor.ContentTypeInterceptorTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.interceptor.ContentTypeInterceptor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="92" opendate="2011-01-14 08:16:04" fixdate="2011-02-01 04:00:49" resolution="Complete">
+		<buginformation>
+			<summary>BatchMBeanExporter creation fails due to malformed object name</summary>
+			<description>After integrating spring batch admin with an existing web application, on restarting the server after running a job, the context fails to initialize with the following exception
+org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [org.springframework.batch.admin.jmx.SimpleStepExecutionMetrics@18b3e62] with key &amp;amp;apos;spring.application:type=JobExecution,name=analysisJob,step=performAnalysis:partition3&amp;amp;apos;; nested exception is javax.management.MalformedObjectNameException: Invalid character `:&amp;amp;apos; in value
+	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:602)
+	at org.springframework.batch.admin.jmx.BatchMBeanExporter.registerSteps(BatchMBeanExporter.java:125)
+	at org.springframework.batch.admin.jmx.BatchMBeanExporter.doStart(BatchMBeanExporter.java:281)
+	at org.springframework.batch.admin.jmx.BatchMBeanExporter.start(BatchMBeanExporter.java:234)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:166)
+	... 24 more
+Caused by: javax.management.MalformedObjectNameException: Invalid character `:&amp;amp;apos; in value
+	at javax.management.ObjectName.parseValue(ObjectName.java:958)
+	at javax.management.ObjectName.checkValue(ObjectName.java:990)
+	at javax.management.ObjectName.construct(ObjectName.java:709)
+	at javax.management.ObjectName.&amp;lt;init&amp;gt;(ObjectName.java:1446)
+	at javax.management.ObjectName.getInstance(ObjectName.java:1346)
+	at org.springframework.jmx.support.ObjectNameManager.getInstance(ObjectNameManager.java:95)
+	at org.springframework.jmx.export.naming.MetadataNamingStrategy.getObjectName(MetadataNamingStrategy.java:128)
+	at org.springframework.jmx.export.MBeanExporter.getObjectName(MBeanExporter.java:728)
+	at org.springframework.jmx.export.MBeanExporter.registerBeanInstance(MBeanExporter.java:631)
+	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:598)
+	... 28 more
+Jan 14, 2011 7:11:54 PM org.apache.catalina.core.StandardContext listenerStart</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.jmx.BatchMBeanExporter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="99" opendate="2011-02-11 10:17:17" fixdate="2011-02-11 10:17:49" resolution="Complete">
+		<buginformation>
+			<summary>Ensure that all partitions in a step are represented in the job execution view</summary>
+			<description>Partition step executions are missing because of the way that the JobExecutionController tries to account for steps that have not yet started.</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.JobExecutionController.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="121" opendate="2011-08-12 04:00:48" fixdate="2011-08-18 09:58:06" resolution="Complete">
+		<buginformation>
+			<summary>/jobs/executions/{jobExecutionId}/steps.json returns the HTML page instead of JSON</summary>
+			<description>Both /jobs/executions/
+{jobExecutionId}/steps and /jobs/executions/{jobExecutionId}
+/steps.json return the same HTML page. The .json page should return JSON.
+How about writing an end-to-end test which checks that all the .json pages listed in Home return JSON?</description>
+			<version>1.2.0</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.springframework.batch.admin.web.views.StepExecutionsJsonViewTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.server.JsonIntegrationTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="115" opendate="2011-05-03 02:27:35" fixdate="2011-08-30 05:04:31" resolution="Complete">
+		<buginformation>
+			<summary>SimpleJobMetrics.getLatestStepExitDescription() doesn&amp;apos;t work if the last step is very quick.</summary>
+			<description>I&amp;amp;apos;ve found (running against MySQL  and derby) that the timestamp comparison of steps isn&amp;amp;apos;t granular enough when the step executions are close together (within same second I think).  Adding another test comparing id&amp;amp;apos;s did the trick for me:
+eg:
+if (stepDate.after(latest)) {
+    latest = stepDate;
+    stepExecution = candidate;
+    // hack when stepExecution endTimes are not granular enough.
+} else if (stepDate.equals(latest) &amp;amp;&amp;amp; candidate.getId() &amp;gt; stepExecution.getId()) {
+    latest = stepDate;
+    stepExecution = candidate;
+}
+</description>
+			<version>1.2.0</version>
+			<fixedVersion>1.2.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleJobExecutionMetrics.java</file>
+			<file type="M">org.springframework.batch.admin.jmx.SimpleJobExecutionMetricsTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="129" opendate="2012-02-14 03:55:50" fixdate="2012-02-22 08:25:35" resolution="Complete">
+		<buginformation>
+			<summary>Abandoned job is viewed as a running execution by JdbcSearchableJobExecutionDao </summary>
+			<description>When a job is abandoned from the UI it&amp;amp;apos;s status is updated to ABANDONED, but its end time is left open (null).  
+Therefore when JdbcSearchableJobExecutionDao.getRunningJobExecutions() is invoked the ABANDONED jobs are included in the result set, and calling jobExecution.isRunning() will return true for them. 
+Was this what was intended ?
+</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.2.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.service.SimpleJobService.java</file>
+			<file type="M">org.springframework.batch.admin.service.SimpleJobServiceTests.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="137" opendate="2012-05-16 13:00:45" fixdate="2013-04-19 14:09:32" resolution="Complete">
+		<buginformation>
+			<summary>MessageChannelPartitionHandler in version 1.2.1 is not listening on replyChannel</summary>
+			<description>MessageChannelPartitionHandler in version 1.2.1 is creating new QueueChannel instead of getting it from the instance variable. In version 1.2.0, it is working fine. There is a property tag we can set in version 1.2.0 but not in version 1.2.1.
+	&amp;lt;bean id="partitionHandler"
+		class="org.springframework.batch.integration.partition.MessageChannelPartitionHandler"&amp;gt;
+		&amp;lt;property name="messagingOperations"&amp;gt;
+			&amp;lt;bean class="org.springframework.integration.core.MessagingTemplate"&amp;gt;
+				&amp;lt;property name="defaultChannel" ref="request" /&amp;gt;
+				&amp;lt;property name="receiveTimeout" value="10000" /&amp;gt;
+			&amp;lt;/bean&amp;gt;
+		&amp;lt;/property&amp;gt;
+		&amp;lt;property name="replyChannel" ref="reply" /&amp;gt;
+		&amp;lt;property name="stepName" value="step1" /&amp;gt;
+		&amp;lt;property name="gridSize" value="2" /&amp;gt;
+	&amp;lt;/bean&amp;gt;</description>
+			<version>1.2.1</version>
+			<fixedVersion>1.3.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.integration.partition.MessageChannelPartitionHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="154" opendate="2013-03-20 03:22:50" fixdate="2014-04-22 15:48:09" resolution="Complete">
+		<buginformation>
+			<summary>The start time for Steps are displayed with hard coded GMT time zone</summary>
+			<description>The StepExecutionController uses a hard coded value of &amp;amp;apos;GMT&amp;amp;apos; when creating a new StepExecutionInfo in a couple of places (three). Fix for JobExecutionInfo is already implemented (https://jira.springsource.org/browse/BATCHADM-29). </description>
+			<version>1.2.2</version>
+			<fixedVersion>1.3.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.StepExecutionController.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="177" opendate="2013-10-22 08:59:08" fixdate="2014-05-15 18:55:46" resolution="Complete">
+		<buginformation>
+			<summary>Wrong StepExecutions displayed for partitioned jobs</summary>
+			<description>When going to the details page of a JobExecution (/jobs/executions/15610) a lot of StepExecutions are displayed that don&amp;amp;apos;t belong to the JobExecution. In the JobExecutionController for some reason all step names for the Job are collected and then listed as StepExecutions. For partitioned jobs step names are created automatically with a suffix (:partitionx). So currently I see a StepExecution displayed for every step name that has been created before in any job.
+I deleted the part from the details - method in the JobExecutionController that adds StepExecutionInfo objects for those step names, and everything is fine.
+</description>
+			<version>1.3.0</version>
+			<fixedVersion>1.3.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.batch.admin.web.JobExecutionControllerTests.java</file>
+			<file type="M">org.springframework.batch.admin.web.JobExecutionController.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

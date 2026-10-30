@@ -1,0 +1,933 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12395228",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228",
+  "key": "JCR-1571",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312920",
+        "id": "12312920",
+        "description": "Apache Jackrabbit 1.5.0",
+        "name": "1.5",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2008-12-08"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "78502",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [],
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+      "name": "angela",
+      "key": "anchela",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Angela Schreiber",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310821",
+        "id": "12310821",
+        "name": "jackrabbit-webdav",
+        "description": "Jackrabbit WebDAV Library"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "191083",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+      "name": "jcastillo",
+      "key": "jcastillo",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Julio Castillo",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+      "name": "jcastillo",
+      "key": "jcastillo",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Julio Castillo",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-1571/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@73579298[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@124cdf73[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@b89cf9b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7f4a2ede[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@77439526[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@191ef651[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5c2e17fe[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@72bcee7b[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@193dafaf[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@777f7ea7[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5b421651[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@4e18e474[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/10591",
+      "id": "10591",
+      "key": "JCR",
+      "name": "Jackrabbit Content Repository",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=10591&avatarId=10052",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=10591&avatarId=10052",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=10591&avatarId=10052",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=10591&avatarId=10052"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10170",
+        "id": "10170",
+        "description": "Jackrabbit related projects",
+        "name": "Jackrabbit"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Fri May 16 20:04:56 UTC 2008",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2008-05-15T14:46:30.115+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/JCR-1571/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2008-05-02T22:43:15.058+0000",
+    "updated": "2008-12-08T11:08:01.303+0000",
+    "timeoriginalestimate": null,
+    "description": "I have a set up that uses the JCR Webdav Server from a custom remote client.\nI've noticed one thing, anytime I request a node that doesn't exist the error that comes back from the server is as follows:\n\n[Fatal Error] :1:941: The element type \"HR\" must be terminated by the matching end-tag \"</HR>\".\njavax.jcr.RepositoryException: The element type \"HR\" must be terminated by the matching end-tag \"</HR>\".: The element type \"HR\" must be terminated by the matching end-tag \"</HR>\".\n\nDoesn't really make sense, but that is OK, I can handle that.\n\nMy problem:\nI have a partially populated repository that at the root has a few nodes like\n/edu/....\n/com/ibm/..\n\nSo, I want to create a few nodes of type nt:folder under\n\ncom/myCompany/folder1\n\nI have no problem creating them, but since \"com\" already exists I end up with\ncom[2]/myCompany/folder1.\n\nSo, I went ahead and used the parentNode.hasNode(\"folderName\") method.\n\nThis method returns true for the \"com\" portion, but when I test for the \"myCompany\" folder which should return false I get the error response shown above from the server.\n\nThe webdav request looks as follows:\nPROPFIND /jackrabbit/server/default/jcr%3aroot/com/myCompany\n\nThe snippet of code looks as follows:\n  private Node createFolders (Session session, Node parentNode, List <String> folders)\n\t  throws RepositoryException {\n    Node folderNode = null;\n    for (String folder : folders) {\n\tif (parentNode.hasNode(folder))\n\t    folderNode = parentNode.getNode(folder);\n\telse\n\t    folderNode = parentNode.addNode(folder, \"nt:folder\");\n\tparentNode = folderNode;\n    }\n    session.save();\n    return (folderNode);\n  }",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12381655",
+        "id": "12381655",
+        "filename": "HasNodeTest.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+          "name": "angela",
+          "key": "anchela",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Angela Schreiber",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-05-08T08:37:03.696+0000",
+        "size": 2384,
+        "mimeType": "text/x-java",
+        "content": "https://issues.apache.org/jira/secure/attachment/12381655/HasNodeTest.java"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12381773",
+        "id": "12381773",
+        "filename": "JCR-1571.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+          "name": "angela",
+          "key": "anchela",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Angela Schreiber",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-05-09T15:26:44.113+0000",
+        "size": 7529,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12381773/JCR-1571.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12381518",
+        "id": "12381518",
+        "filename": "trace_JCR-1571.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+          "name": "jcastillo",
+          "key": "jcastillo",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Julio Castillo",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-05-06T17:26:55.826+0000",
+        "size": 4607,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12381518/trace_JCR-1571.txt"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "DavMethodBase#getResponseException fails if the body is not (valid) XML",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "JDK 1.6; Tomcat 6; Windows 2003",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12594218",
+          "id": "12594218",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "julio, could you attach the http-conversion? that would make it easier for me to\ntrack the problem.\n\nthanks in advance!\nangela",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-05T11:53:26.993+0000",
+          "updated": "2008-05-05T11:53:26.993+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12594642",
+          "id": "12594642",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Angela,\nattached are the excerpts of 2 PROPFIND http requests:\nfirst one searching for the node /com which it finds and the second one searching for the node /com/myCompany which will not find because it doesn't exist.\n\nLet me know if you need more information.\n\n** julio",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-06T17:26:55.830+0000",
+          "updated": "2008-05-06T17:26:55.830+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595148",
+          "id": "12595148",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "hi julio\n\nfirst of all: i don't think that the <HR> is sent by the JCR-server.\n\ni quickly tried it out having the attached test cases:\n\ntest 1) creating a 'myTest' node -> save -> new session -> parent.hasNode should return true\ntest 2) same as 1) by trying parent.hasNode without the node being created before.\n\nboth work for me as expected... did i misunderstand your test? please let me know.\n\ntest 1) log\n\nC-2-#022602 -> [PROPFIND /mytest/server/default/jcr%3aroot/testroot/myTest HTTP/1.1 ]\nC-2-#022671 -> [Depth: 1 ]\nC-2-#022681 -> [Authorization: Basic YWRtaW46YWRtaW4= ]\nC-2-#022720 -> [User-Agent: Jakarta Commons-HttpClient/3.0 ]\nC-2-#022764 -> [Host: localhost:5502 ]\nC-2-#022786 -> [Content-Length: 599 ]\nC-2-#022807 -> [Content-Type: text/xml; charset=UTF-8 ]\nC-2-#022846 -> [ ]\nC-2-#022848 -> [<?xml version=\"1.0\" encoding=\"UTF-8\"?>]\nC-2-#022887 -> [<D:propfind xmlns:D=\"DAV:\"><D:prop><dcr:name xmlns:dcr=\"http://www.day.com/jcr/webdav/1.0\"/><dcr:referen\nces xmlns:dcr=\"http://www.day.com/jcr/]\nC-2-#023028 -> [webdav/1.0\"/><dcr:index xmlns:dcr=\"http://www.day.com/jcr/webdav/1.0\"/><dcr:path xmlns:dcr=\"http://www.d\nay.com/jcr/webdav/1.0\"/><dcr:mixinnod]\nC-2-#023169 -> [etypes xmlns:dcr=\"http://www.day.com/jcr/webdav/1.0\"/><dcr:parent xmlns:dcr=\"http://www.day.com/jcr/webd\nav/1.0\"/><dcr:primarynodetype xmlns:d]\nC-2-#023310 -> [cr=\"http://www.day.com/jcr/webdav/1.0\"/><D:resourcetype/><dcr:uuid xmlns:dcr=\"http://www.day.com/jcr/web\ndav/1.0\"/></D:prop></D:propfind>]\nS-2-#117910 -> [HTTP/1.1 207 Code 207 ]\n[...]\n\n\ntest 2) log\n\nC-0-#013648 -> [PROPFIND /mytest/server/default/jcr%3aroot/testroot/myTest HTTP/1.1 ]\nC-0-#013717 -> [Depth: 1 ]\nC-0-#013727 -> [Authorization: Basic YW5vbnltb3VzOg== ]\nC-0-#013766 -> [User-Agent: Jakarta Commons-HttpClient/3.0 ]\nC-0-#013810 -> [Host: localhost:5502 ]\nC-0-#013832 -> [Content-Length: 599 ]\nC-0-#013853 -> [Content-Type: text/xml; charset=UTF-8 ]\nC-0-#013892 -> [ ]\nC-0-#013894 -> [<?xml version=\"1.0\" encoding=\"UTF-8\"?>]\nC-0-#013933 -> [<D:propfind xmlns:D=\"DAV:\"><D:prop><dcr:name xmlns:dcr=\"http://www.day.com/jcr/webdav/1.0\"/><dcr:referen\nces xmlns:dcr=\"http://www.day.com/jcr/]\nC-0-#014074 -> [webdav/1.0\"/><dcr:index xmlns:dcr=\"http://www.day.com/jcr/webdav/1.0\"/><dcr:path xmlns:dcr=\"http://www.d\nay.com/jcr/webdav/1.0\"/><dcr:mixinnod]\nC-0-#014215 -> [etypes xmlns:dcr=\"http://www.day.com/jcr/webdav/1.0\"/><dcr:parent xmlns:dcr=\"http://www.day.com/jcr/webd\nav/1.0\"/><dcr:primarynodetype xmlns:d]\nC-0-#014356 -> [cr=\"http://www.day.com/jcr/webdav/1.0\"/><D:resourcetype/><dcr:uuid xmlns:dcr=\"http://www.day.com/jcr/web\ndav/1.0\"/></D:prop></D:propfind>]\nS-0-#077856 -> [HTTP/1.1 404 Not Found ]\nS-0-#077880 -> [Host: localhost:4302 ]\nS-0-#077902 -> [Connection: Close ]\nS-0-#077921 -> [Server: Communique Servlet Engine/4.0.2 ]\nS-0-#077962 -> [Content-Type: text/html ]\nS-0-#077987 -> [Date: Thu, 08 May 2008 08:26:54 GMT ]\nS-0-#078024 -> [Transfer-Encoding: chunked ]\nS-0-#078052 -> [ ]\nS-0-#078054 -> [65 ]\nS-0-#078058 -> [<html><head><title> ]\nS-0-#078079 -> [404 ]\nS-0-#078084 -> [  ]\nS-0-#078087 -> [Not Found ]\nS-0-#078098 -> [</title></head><body><h1> ]\nS-0-#078125 -> [Not Found ]\nS-0-#078136 -> [</h1> ]\nS-0-#078143 -> [</body></html> ]\nS-0-#078159 -> [ ]\nS-0-#078161 -> [0 ]\nS-0-#078164 -> [ ]\nS-0-Finished: 78166 bytes (3.0 kb/s)\nC-0-Finished: 14493 bytes (0.0 kb/s)\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-08T08:35:25.181+0000",
+          "updated": "2008-05-08T08:35:25.181+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595151",
+          "id": "12595151",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "testcases (my understanding of the problem description).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-08T08:37:03.834+0000",
+          "updated": "2008-05-08T08:37:03.834+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595203",
+          "id": "12595203",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=reschke",
+            "name": "reschke",
+            "key": "reschke",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=reschke&avatarId=52677",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=reschke&avatarId=52677",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=reschke&avatarId=52677",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=reschke&avatarId=52677"
+            },
+            "displayName": "Julian Reschke",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "What happens here is that the servlet container generates an error page for the 404 status, and sends it out as text/html.\n\nThe client component seems to try to parse it as XML, which of course fails.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=reschke",
+            "name": "reschke",
+            "key": "reschke",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=reschke&avatarId=52677",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=reschke&avatarId=52677",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=reschke&avatarId=52677",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=reschke&avatarId=52677"
+            },
+            "displayName": "Julian Reschke",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-08T12:19:55.197+0000",
+          "updated": "2008-05-08T12:19:55.197+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595376",
+          "id": "12595376",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Angela,\nYes that is the process to reproduce the problem (test on a node that\ndoesn't yet exist -BTW, I created my repository by using the \"Populate\" link\nin the default Jackrabbit deployment of the war file.\n\nI don't know if the comment from Julian Reschle is sufficient to isolate it.\nThese are some notes on your log and mine\n- I do see HR tags in the response from the server\n- The version of the http client you are using is different from mine (I'm\nrunning 3.1 -although I don't think this is the problem)\n- You are using a different version of the servlet container (I am using\nTomcat)\n\nLet me know if you need more information from me.\n\nThanks\n\n** julio\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-08T20:04:56.203+0000",
+          "updated": "2008-05-08T20:04:56.203+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595553",
+          "id": "12595553",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I created my repository by using the \"Populate\" link in the default Jackrabbit deployment of \n> the war file.\n\nthat's fine (an probably does something similar as my manual test)\n\n> I don't know if the comment from Julian Reschle is sufficient to isolate it.\n\ni guess it is.\n\n> These are some notes on your log and mine\n> - I do see HR tags in the response from the server\n\nyes. but i'm quite sure, that they are not generated by the webdav servlet.\n\n> - The version of the http client you are using is different from mine (I'm\n> running 3.1 -although I don't think this is the problem)\n\nnor do i. httpclient 3.0 is the version used with the spi2dav project.\n\n> - You are using a different version of the servlet container (I am \n>   usingTomcat)\n\nyes. and i assume, that it is tomcat that generates the html error\npage... and i assume that there is a way to turn that off as it should\nbe possible to configure a custom error page. can you try that?\n\nangela\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-09T11:04:25.144+0000",
+          "updated": "2008-05-09T11:04:25.144+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595568",
+          "id": "12595568",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=reschke",
+            "name": "reschke",
+            "key": "reschke",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=reschke&avatarId=52677",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=reschke&avatarId=52677",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=reschke&avatarId=52677",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=reschke&avatarId=52677"
+            },
+            "displayName": "Julian Reschke",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "> yes. and i assume, that it is tomcat that generates the html error\n> page... and i assume that there is a way to turn that off as it should\n> be possible to configure a custom error page. can you try that? \n\nWait.\n\nIt's perfectly ok for a server to send a text/html response body with a 404 status. The client really needs to be able to deal with that!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=reschke",
+            "name": "reschke",
+            "key": "reschke",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=reschke&avatarId=52677",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=reschke&avatarId=52677",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=reschke&avatarId=52677",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=reschke&avatarId=52677"
+            },
+            "displayName": "Julian Reschke",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-09T11:33:01.366+0000",
+          "updated": "2008-05-09T11:33:01.366+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595572",
+          "id": "12595572",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "if there is a simple way to disable the HTML (which the servlet did not generate), i don't want \nto spent a lot of time extracting the original response body created by the servlet. it's a \nsandbox project... ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-09T11:39:11.056+0000",
+          "updated": "2008-05-09T11:39:11.056+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595576",
+          "id": "12595576",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=reschke",
+            "name": "reschke",
+            "key": "reschke",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=reschke&avatarId=52677",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=reschke&avatarId=52677",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=reschke&avatarId=52677",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=reschke&avatarId=52677"
+            },
+            "displayName": "Julian Reschke",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "(talked to Angela on the phone, summarizing)\n\n- for a non-success code, it's ok for the server to return text/html\n\n- in Angela's case (see trace), this did not cause problems as the response body appears to be wellformed XML anyway (although HTML)\n\n- the code that handles responses and tries to extract error details should handle this case as non-fatal; there's simply no information in addition to the HTTP status code available\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=reschke",
+            "name": "reschke",
+            "key": "reschke",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=reschke&avatarId=52677",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=reschke&avatarId=52677",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=reschke&avatarId=52677",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=reschke&avatarId=52677"
+            },
+            "displayName": "Julian Reschke",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2008-05-09T12:04:31.883+0000",
+          "updated": "2008-05-09T12:04:31.883+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595637",
+          "id": "12595637",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "without having built julios case on my checkout, i think the problem is caused\nby DavMethodBase#getResponseException() which did not handle exceptions upon\nparsing (xml) the response body.\n\ni created a patch for that and a dumb test. \n\njulio, if you had time to try if that solves the problem, it would be very helpful.\nthanks in advance\n\nangela",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-09T15:31:26.104+0000",
+          "updated": "2008-05-09T15:31:26.104+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12595748",
+          "id": "12595748",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Angela,\nI updated my entire sandbox tree, and tried to rebuild\njackrabbit-spi-spi2dav-1.5-SNAPSHOT.jar file but the build failed this time\naround (had worked for me all the time before):\n \n c:\\svn\\jackrabbit\\sandbox\\spi> mvn install\n[ERROR] BUILD FAILURE\n[INFO]\n------------------------------------------------------------------------\n[INFO] Compilation failure\nC:\\svn\\jackrabbit\\sandbox\\spi\\spi2dav\\src\\main\\java\\org\\apache\\jackrabbit\\sp\ni2dav\\RepositoryServiceImpl.java:[190,7]\norg.apache.jackrabbit.spi2dav.RepositoryServiceImpl is not abstract and does\nnot override abstract method\nexists(org.apache.jackrabbit.spi.SessionInfo,org.apache.jackrabbit.spi.ItemI\nd) in org.apache.jackrabbit.spi.RepositoryService\n\nAngela, I suppose this is the tree you wanted me to test (I did see a few\nchanges coming in on the main trunk, but I haven't been building anything on\nthe main trunk, I just pick up the latest jar files released).\n\nLet me know.\n\nThanks\n\n** julio\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-09T23:16:56.155+0000",
+          "updated": "2008-05-09T23:16:56.155+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12596299",
+          "id": "12596299",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I updated my entire sandbox tree\n\nyou have to update jackrabbit trunk as well.\nfirst we got rid of some unused repository-service methods, second the fix for this issue affects the jackrabbit-webdav project and not the spi2dav sandbox project.\n\nangela",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-13T06:39:38.246+0000",
+          "updated": "2008-05-13T06:39:38.246+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12596499",
+          "id": "12596499",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Angela,\nI rebuilt jackrabbit-webdav from the main trunk refreshed today (\n-1.5-SNAPSHOT.jar) and deployed in my tomcat webapp lib directory for\njackrabbit, but unfortunately the behavior is still the same. This time I\ndebugged the client further as I understood the comment about the XML\nresponse.\n\nThe client as it stands right now\n(org.apache.jackrabbit.webdav.client.methods.DaveMethodBase:getResponseBodyA\nsDocument:118) still expects a response in XML format (fails while trying to\nparse an HTML document -the HR tag is not terminated). This method is called\non failure too by (getResponseException()).\n\nThe server side with the new webdav jar file sends an HTML document with the\n\"404 Not Found\" response. I captured the response again, see is below.\nPlease also note the Content-Type is html rather than xml.\n\nHTTP/1.1 404 Not Found\nServer: Apache-Coyote/1.1\nContent-Type: text/html;charset=utf-8\nContent-Length: 952\nDate: Tue, 13 May 2008 18:08:40 GMT\n\n<html>\n<head><title>Apache Tomcat/6.0.16 - Error report</title>\n<style><!--H1\n{font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;fo\nnt-size:22px;} H2\n{font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;fo\nnt-size:16px;} H3\n{font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;fo\nnt-size:14px;} BODY\n{font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B\n{font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;}\nP\n{font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:\n12px;}A {color : black;}A.name {color : black;}HR {color :\n#525D76;}--></style> </head>\n<body><h1>HTTP Status 404 - </h1><HR size=\"1\"\nnoshade=\"noshade\"><p><b>type</b> Status report</p><p><b>message</b>\n<u></u></p><p><b>description</b> <u>The requested resource () is not\navailable.</u></p><HR size=\"1\" noshade=\"noshade\"><h3>Apache\nTomcat/6.0.16</h3>\n</body>\n</html>\n\nI just checked the svn log file for the jackrabbit-webdav directory and\nnoticed that the last check-in was on March 5th. So I'm guessing I'm picking\nthe wrong tree?\n\nThanks\n\n** julio\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-13T19:00:56.528+0000",
+          "updated": "2008-05-13T19:00:56.528+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12597101",
+          "id": "12597101",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "i didn't commit it yet but attached a patch.\n\nangela",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-15T11:52:32.588+0000",
+          "updated": "2008-05-15T11:52:32.588+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12597149",
+          "id": "12597149",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "fix at revision: 656685  \n\ninstalled tomcat and executed some basic tests where the response body is invalid xml (it was a 500 response instead of 404 but parsing failed with the same message).\ni concluded that the fix works as expected\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=angela",
+            "name": "angela",
+            "key": "anchela",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Angela Schreiber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-15T14:46:30.095+0000",
+          "updated": "2008-05-15T14:46:30.095+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12395228/comment/12597597",
+          "id": "12597597",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thank you Angela.\nThe fix works.\n\nThanks again for your great work.\n\n** julio \n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jcastillo",
+            "name": "jcastillo",
+            "key": "jcastillo",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Julio Castillo",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-05-16T20:04:56.525+0000",
+          "updated": "2008-05-16T20:04:56.525+0000"
+        }
+      ],
+      "maxResults": 17,
+      "total": 17,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0x2r3:",
+    "customfield_12314139": null
+  }
+}

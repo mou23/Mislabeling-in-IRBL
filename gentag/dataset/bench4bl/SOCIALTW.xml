@@ -1,0 +1,156 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="SOCIALTW">
+	<bug id="14" opendate="2011-10-13 06:38:42" fixdate="2011-10-13 06:39:24" resolution="Fixed">
+		<buginformation>
+			<summary>Daily trends date format incorrect</summary>
+			<description>Twitter recently changed the date format in the JSON returned for the /trends/daily endpoint from "yyyy-MM-dd HH:mm:ss" to "yyyy-MM-dd HH:mm". This causes the date to not be parsed correctly and ultimately in a NullPointerException when calling searchOperations().getDailyTrends().
+Changing the format to "yyyy-MM-dd HH:mm" will fix this.</description>
+			<version>1.0.0.RELEASE</version>
+			<fixedVersion>1.0.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.DailyTrendsList.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="27" opendate="2012-01-18 09:31:43" fixdate="2012-01-18 11:03:04" resolution="Complete">
+		<buginformation>
+			<summary>RateLimitExceededException not thrown when user hit&amp;apos;s their daily status update limit. </summary>
+			<description>I&amp;amp;apos;ve discovered TwitterErrorHandler does not handle when the user has exceeded their daily status update limit (or part thereof) as determined by Twitter. Whenever a HttpStatus.FORBIDDEN status code is returned; duplicate status; status too long; and invalid recipient are checked before throwing a general OperationNotPermittedException. However the text "User is over daily status update limit" is not checked which should result in a RateLimitExceeded exception being thrown. 
+Adding this exception would make it consistent with the spring-social-facebook. </description>
+			<version>1.0.1.RELEASE</version>
+			<fixedVersion>1.0.2.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.TwitterErrorHandler.java</file>
+			<file type="M">org.springframework.social.twitter.api.impl.ApiErrorTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="28" opendate="2012-01-24 08:44:09" fixdate="2012-01-30 08:15:30" resolution="Complete">
+		<buginformation>
+			<summary>RateLimitExceededException not thrown when user hit&amp;apos;s their hourly request limit</summary>
+			<description>An UncategorizedApiException is thrown when a user hits their hourly rate limit. An authorised user is only permitted 350 API requests each hour, if this is exceeded an UncategorizedApiException is thrown rather than RateLimitExceeded by the TwitterErrorHandler. 
+The errorText returned from Twitter follows:
+Rate limit exceeded. Clients may not make more than 350 requests per hour.
+The rate limit should be checked using RateLimitStatus anyway so this problem can be predicted. . </description>
+			<version>1.0.2.RELEASE</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.TwitterErrorHandler.java</file>
+			<file type="M">org.springframework.social.twitter.api.impl.ApiErrorTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="57" opendate="2013-06-19 12:07:01" fixdate="2013-06-19 13:47:37" resolution="Complete">
+		<buginformation>
+			<summary>TwitterErrorHandler doesn&amp;apos;t detect 401 from streaming API</summary>
+			<description>Using TwitterTemplate to invoke the streaming API, if I deliberately get a 401, it isn&amp;amp;apos;t handled by TwitterErrorHandler. The extractErrorDetailsFromResponse method returns null, so the handleClientErrors method returns immediately. The result is a UncategorizedApiException, whereas a NotAuthorizedException would be preferable.</description>
+			<version>1.0.5.RELEASE</version>
+			<fixedVersion>1.1.0.M3, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.TwitterErrorHandler.java</file>
+			<file type="M">org.springframework.social.twitter.api.impl.ApiErrorTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="58" opendate="2013-07-03 13:00:41" fixdate="2013-07-15 11:58:00" resolution="Complete">
+		<buginformation>
+			<summary>Posting a status with a star symbol (*) fails authentication</summary>
+			<description>Any attempt to call timelineOperations().updateStatus with a star symbol in the message fails with a NotAuthorizedException.  Exception message is "Could not authenticate you".
+I suspect the problem is in the oauth signature when a * exists in the additionalParameters map, but I don&amp;amp;apos;t know enough about OAuth to figure out a fix.
+Example failing message: "* Test"</description>
+			<version>1.0.5.RELEASE</version>
+			<fixedVersion>1.1.0.M4, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.TimelineTemplateTest.java</file>
+			<file type="M">org.springframework.social.twitter.api.impl.TwitterTemplate.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="64" opendate="2013-07-15 09:11:09" fixdate="2013-08-02 09:16:39" resolution="Complete">
+		<buginformation>
+			<summary>page size for searching users doesn&amp;apos;t work</summary>
+			<description>page size for searching users doesn&amp;amp;apos;t work , it always queries 20 entities regardless of the parameter. The problem is spring social twitter api execute the url "https://api.twitter.com/1.1/users/search.json?page=1&amp;amp;per_page=1&amp;amp;q=text"
+but the twitter url that should be executed is : "https://api.twitter.com/1.1/users/search.json?count=3&amp;amp;page=1&amp;amp;q=text". The problem is in the class UserTemplate.java the method - "public List&amp;lt;TwitterProfile&amp;gt; searchForUsers(String query, int page, int pageSize)" calls the method in "PagingUtils PagingUtils.buildPagingParametersWithPerPage(...)". It should call the method 
+"PagingUtils.buildPagingParametersWithCount (...)".</description>
+			<version>1.1.0.M3</version>
+			<fixedVersion>1.1.0.M4, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.UserTemplate.java</file>
+			<file type="M">org.springframework.social.twitter.api.impl.PagingUtils.java</file>
+			<file type="M">org.springframework.social.twitter.api.impl.UserTemplateTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="71" opendate="2013-09-25 07:20:05" fixdate="2014-03-07 08:43:41" resolution="Complete">
+		<buginformation>
+			<summary>TwitterEscapingFormHttpMessageConverter corrupting images</summary>
+			<description>Since 1.1.0.M4 updateStatus with media results in an corrupted image.
+The normal FormHttpMessageConverter works fine. </description>
+			<version>1.1.0.M4</version>
+			<fixedVersion>1.1.0.RC1, 1.1.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.TwitterEscapingFormHttpMessageConverter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="37" opendate="2012-06-05 20:32:31" fixdate="2015-07-24 14:46:36" resolution="Fixed">
+		<buginformation>
+			<summary>Encoding problem with status update with media api</summary>
+			<description>Encoding breaks when using updateStatus with media in the timelineOperaions()
+tw.timelineOperations().updateStatus("", details);
+https://twitter.com/amoeba_daumsoft/status/209873215911235584
+this works ok!
+But if i use 
+tw.timelineOperations().updateStatus("", media, details);
+-&amp;gt; here the media contains image url
+https://twitter.com/amoeba_daumsoft/status/209873058314465280
+it fails to get the proper encoding
+seems the Content-type is set to ISO-8859-1
+i have the spring 3.1 with the latest SNAPSHOT of spring social
+Example korean text producing similar encoding problem:
+       .
+Console with DEBUG level:
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "POST /1/statuses/update_with_media.json HTTP/1.1[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Accept: application/json[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Type: multipart/form-data;boundary=dcikZijK06wDqXewoxMCEMYADAfzjZdAOHMa 2YsJ[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Authorization: OAuth oauth_version="1.0", oauth_nonce="756438553", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="t6Y77DYUh4Cr2sleHlE64w", oauth_token="561734297-QP9HYnzVzNzmuLpSXQCSNUz9yXD7QHsvgD2PrnjE", oauth_timestamp="1338873843", oauth_signature="5MrurmzjYX%2BjKsOr2RqsEc1KVVU%3D"[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Length: 59991[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Host: upload.twitter.com[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Connection: Keep-Alive[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "User-Agent: Apache-HttpClient/4.2-beta1 (java 1.5)[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "[\r][\n]"
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; POST /1/statuses/update_with_media.json HTTP/1.1
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; Accept: application/json
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; Content-Type: multipart/form-data;boundary=dcikZijK06wDqXewoxMCEMYADAfzjZdAOHMa 2YsJ
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; Authorization: OAuth oauth_version="1.0", oauth_nonce="756438553", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="t6Y77DYUh4Cr2sleHlE64w", oauth_token="561734297-QP9HYnzVzNzmuLpSXQCSNUz9yXD7QHsvgD2PrnjE", oauth_timestamp="1338873843", oauth_signature="5MrurmzjYX%2BjKsOr2RqsEc1KVVU%3D"
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; Content-Length: 59991
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; Host: upload.twitter.com
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; Connection: Keep-Alive
+DEBUG: org.apache.http.headers - &amp;gt;&amp;gt; User-Agent: Apache-HttpClient/4.2-beta1 (java 1.5)
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "--dcikZijK06wDqXewoxMCEMYADAfzjZdAOHMa2YsJ[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Disposition: form-data; name="status"[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Type: text/plain;charset=ISO-8859-1[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Length: 2[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "??[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "--dcikZijK06wDqXewoxMCEMYADAfzjZdAOHMa2YsJ[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Disposition: form-data; name="media"; filename="3929889463_249e03e5f9_o.jpg"[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Type: image/jpeg[\r][\n]"
+DEBUG: org.apache.http.wire - &amp;gt;&amp;gt; "Content-Length: 59424[\r][\n]"
+....</description>
+			<version>1.0.2.RELEASE</version>
+			<fixedVersion>1.1.1.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.twitter.api.impl.TwitterEscapingFormHttpMessageConverter.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

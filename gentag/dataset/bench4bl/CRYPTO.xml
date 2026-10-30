@@ -1,0 +1,184 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="CRYPTO">
+	<bug id="26" opendate="2016-04-26 03:04:20" fixdate="2016-04-26 03:47:38" resolution="Fixed">
+		<buginformation>
+			<summary>Utility classes should not have public constructors</summary>
+			<description>Utility classes should not have public constructors</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.cipher.CipherFactory.java</file>
+			<file type="M">org.apache.commons.crypto.utils.Utils.java</file>
+			<file type="M">org.apache.commons.crypto.conf.ConfigurationKeys.java</file>
+			<file type="M">org.apache.commons.crypto.random.OpensslSecureRandomNative.java</file>
+			<file type="M">org.apache.commons.crypto.utils.ReflectionUtils.java</file>
+			<file type="M">org.apache.commons.crypto.utils.IOUtils.java</file>
+			<file type="M">org.apache.commons.crypto.utils.OSInfo.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.OpensslNative.java</file>
+			<file type="M">org.apache.commons.crypto.utils.NativeCodeLoader.java</file>
+			<file type="M">org.apache.commons.crypto.random.SecureRandomFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="3" opendate="2016-04-15 06:37:59" fixdate="2016-04-27 01:50:51" resolution="Fixed">
+		<buginformation>
+			<summary>Change default cipher as OpensslCipher</summary>
+			<description>We should change the default cipher as OpensslCipher instead of JceCipher.</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.cipher.CipherFactory.java</file>
+			<file type="M">org.apache.commons.crypto.utils.Utils.java</file>
+			<file type="M">org.apache.commons.crypto.conf.ConfigurationKeys.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="34" opendate="2016-04-26 14:37:17" fixdate="2016-04-28 03:28:13" resolution="Fixed">
+		<buginformation>
+			<summary>JavaSecureRandom should throw Exception if it cannot create the instance</summary>
+			<description>JavaSecureRandom should throw Exception if it cannot create the instance - there&amp;amp;apos;s no point in continuing as the main method nextBytes() will just throw NPE.</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.random.TestOpensslSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.OpensslCipherTest.java</file>
+			<file type="M">org.apache.commons.crypto.random.OpensslSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.random.JavaSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.random.TestOsSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.random.TestJavaSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.random.SecureRandomFactory.java</file>
+			<file type="M">org.apache.commons.crypto.random.AbstractRandomTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="32" opendate="2016-04-26 14:16:02" fixdate="2016-04-28 03:37:48" resolution="Fixed">
+		<buginformation>
+			<summary>Add missing @Overrides</summary>
+			<description>Add missing @Overrides.</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.stream.CBCPKCS5PaddingCipherStreamTest.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CBCNoPaddingCipherStreamTest.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CTRNoPaddingCipherStreamTest.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CTRCipherStreamTest.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CTRCipherInputStream.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CipherOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="30" opendate="2016-04-26 11:14:34" fixdate="2016-04-29 02:57:13" resolution="Fixed">
+		<buginformation>
+			<summary>Mutable fields should be private</summary>
+			<description>Mutable fields should be private or possibly package-protected, never protected or public.
+Once a field is published, it&amp;amp;apos;s impossible to ensure that it is properly synchronised, and it is impossible to change the implementation without API breakage.
+Only constants should be published.
+If there is really a need to access the field externally, this should be done through getters/setters, as those allow synchronisation to be added and make it easier to change the implementation.
+Also, it&amp;amp;apos;s easy to add a getter/setter later if access is found to be needed.
+Don&amp;amp;apos;t add one &amp;amp;apos;just in case&amp;amp;apos; because it cannot easily be removed.
+This observation applies to:
+StreamOutput.out
+CTRCipherInputStream.streamOffset
+CTRCipherOutputStream.streamOffset
+CipherInputStream - lots of protected mutable state
+CipherOutputStream - ditto</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.stream.CTRCipherInputStream.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CipherInputStream.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CipherOutputStream.java</file>
+			<file type="M">org.apache.commons.crypto.stream.CTRCipherOutputStream.java</file>
+			<file type="M">org.apache.commons.crypto.stream.output.StreamOutput.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="29" opendate="2016-04-26 11:05:33" fixdate="2016-04-29 03:00:51" resolution="Fixed">
+		<buginformation>
+			<summary>Make sure Cipher.ENCRYPT_MODE is consistent with JDK</summary>
+			<description>Cipher.ENCRYPT_MODE should be an enum
+Or is it supposed to be the same as Openssl.ENCRYPT_MODE?
+In which case, why not use that?</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.cipher.Cipher.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="33" opendate="2016-04-26 14:34:03" fixdate="2016-04-29 09:14:17" resolution="Fixed">
+		<buginformation>
+			<summary>SecureRandom shadows JVM class</summary>
+			<description>The SecureRandom interface also exists  as a class in java.security.
+This makes it awkward to use, for example in JavaSecureRandom the fully qualified name has to be used for the java class.
+Ideally it should be renamed.</description>
+			<version>0.9.2</version>
+			<fixedVersion>1.0.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.stream.input.Input.java</file>
+			<file type="M">org.apache.commons.crypto.stream.output.StreamOutput.java</file>
+			<file type="M">org.apache.commons.crypto.utils.ReflectionUtils.java</file>
+			<file type="M">org.apache.commons.crypto.conf.ConfigurationKeys.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.CryptoCipher.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.OpensslCipher.java</file>
+			<file type="M">org.apache.commons.crypto.stream.output.Output.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.CipherTransformation.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.JceCipher.java</file>
+			<file type="M">org.apache.commons.crypto.random.OpensslCryptoRandomNative.java</file>
+			<file type="M">org.apache.commons.crypto.random.OsCryptoRandom.java</file>
+			<file type="M">org.apache.commons.crypto.stream.output.ChannelOutput.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.AbstractCipherTest.java</file>
+			<file type="M">org.apache.commons.crypto.utils.Utils.java</file>
+			<file type="D">org.apache.commons.crypto.random.TestOpensslSecureRandom.java</file>
+			<file type="D">org.apache.commons.crypto.random.OpensslSecureRandom.java</file>
+			<file type="D">org.apache.commons.crypto.cipher.CipherFactoryTest.java</file>
+			<file type="D">org.apache.commons.crypto.cipher.Cipher.java</file>
+			<file type="D">org.apache.commons.crypto.stream.PositionedCipherInputStream.java</file>
+			<file type="D">org.apache.commons.crypto.random.SecureRandomFactory.java</file>
+			<file type="D">org.apache.commons.crypto.cipher.CipherFactory.java</file>
+			<file type="D">org.apache.commons.crypto.random.TestOsSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.stream.AbstractCipherStreamTest.java</file>
+			<file type="M">org.apache.commons.crypto.random.AbstractRandomTest.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.Openssl.java</file>
+			<file type="D">org.apache.commons.crypto.random.OpensslSecureRandomNative.java</file>
+			<file type="D">org.apache.commons.crypto.random.JavaSecureRandom.java</file>
+			<file type="M">org.apache.commons.crypto.stream.input.StreamInput.java</file>
+			<file type="D">org.apache.commons.crypto.stream.CipherOutputStream.java</file>
+			<file type="D">org.apache.commons.crypto.stream.CTRCipherOutputStream.java</file>
+			<file type="D">org.apache.commons.crypto.stream.CTRCipherInputStream.java</file>
+			<file type="D">org.apache.commons.crypto.stream.CipherInputStream.java</file>
+			<file type="M">org.apache.commons.crypto.cipher.package-info.java</file>
+			<file type="D">org.apache.commons.crypto.stream.PositionedCipherInputStreamTest.java</file>
+			<file type="D">org.apache.commons.crypto.random.SecureRandom.java</file>
+			<file type="D">org.apache.commons.crypto.stream.CTRCipherStreamTest.java</file>
+			<file type="M">org.apache.commons.crypto.stream.input.ChannelInput.java</file>
+			<file type="D">org.apache.commons.crypto.random.TestJavaSecureRandom.java</file>
+			<file type="D">org.apache.commons.crypto.random.OsSecureRandom.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="125" opendate="2016-10-17 03:32:17" fixdate="2016-10-26 08:05:18" resolution="Fixed">
+		<buginformation>
+			<summary>CryptoOutputStream does not call write in a loop when underlying channel works in non-block mode.</summary>
+			<description>The encrypt function call output.write without loop which lead to data loss when creating the output encryption stream with a SocketChannel and works in non-block mode.
+As suggested, it should be call as following way:
+while(buf.hasRemaining()) 
+{
+    channel.write(buf);
+}</description>
+			<version>1.0.0</version>
+			<fixedVersion>1.1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.crypto.stream.CryptoOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

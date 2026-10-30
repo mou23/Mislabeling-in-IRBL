@@ -1,0 +1,857 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="JBMETA">
+	<bug id="228" opendate="2009-12-07 12:30:51" fixdate="2009-12-07 13:32:14" resolution="Done">
+		<buginformation>
+			<summary>ejb-version in the metadata should be set to the "latest" ejb-jar xsd version if metadata is created solely from annotations</summary>
+			<description>If a user deployment does not have ejb-jar.xml with the ejb-version set and is based on annotations, then the metadata creators should set the ejb-version to the "latest" version of the ejb-jar xsd.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-2</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.test.metadata.annotation.ejb3.JBossAnnotationEjb3UnitTestCase.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.EjbJar30Creator.java</file>
+			<file type="M">org.jboss.test.metadata.jbmeta41.unit.HomeProcessingUnitTestCase.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.JBoss50Creator.java</file>
+			<file type="M">org.jboss.test.metadata.jbmeta41.unit.JBossProcessingUnitTestCase.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.EjbJarMetaData.java</file>
+			<file type="M">org.jboss.test.metadata.annotation.ejb3.AnnotationEjb3UnitTestCase.java</file>
+			<file type="M">org.jboss.test.metadata.ejb.EjbJarJBossMergeEverythingUnitTestCase.java</file>
+			<file type="M">org.jboss.test.metadata.jbmeta40.unit.JBossImplicitLocalIntefaceUnitTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="207" opendate="2009-06-11 13:59:31" fixdate="2009-12-14 23:54:09" resolution="Done">
+		<buginformation>
+			<summary>NullPointerException during deployment of EJB3 methods with zero parameters</summary>
+			<description>Deploying an EJB3 based EAR results in an NPE with the below stack trace.  The problem appears to manifest with EJB3&amp;amp;apos;s containing methods that take zero arguments.  There are also XML descriptor based attributes for several of the metadata elements.  To the best of my knowledge the descriptors only augment, not override anything specified in annotations.
+Patch for this should be trivial (an additional null check on line 83 of RolesAllowedProcessor.java should do it).  I&amp;amp;apos;m in the process of attempting to get JBMETA built from source and integrated into my stack.  Will attach patch &amp;amp; tests unless someone beats me to it.
+The stack:
+09:44:51,219 ERROR [AbstractKernelController] Error installing to PostClassLoader: name=vfszip:/jboss/jboss-eap-5.0/server/ucmsfc/deploy/ucms.ear/ state=ClassLoader mode=Manual requiredState=PostClassLoader
+org.jboss.deployers.spi.DeploymentException: Cannot process metadata
+	at org.jboss.deployers.spi.DeploymentException.rethrowAsDeploymentException(DeploymentException.java:49)
+	at org.jboss.deployment.AnnotationMetaDataDeployer.deploy(AnnotationMetaDataDeployer.java:181)
+	at org.jboss.deployment.AnnotationMetaDataDeployer.deploy(AnnotationMetaDataDeployer.java:93)
+	at org.jboss.deployers.plugins.deployers.DeployerWrapper.deploy(DeployerWrapper.java:171)
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.doDeploy(DeployersImpl.java:1439)
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.doInstallParentFirst(DeployersImpl.java:1157)
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.install(DeployersImpl.java:1098)
+	at org.jboss.dependency.plugins.AbstractControllerContext.install(AbstractControllerContext.java:348)
+	at org.jboss.dependency.plugins.AbstractController.install(AbstractController.java:1598)
+	at org.jboss.dependency.plugins.AbstractController.incrementState(AbstractController.java:934)
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractController.java:1062)
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractController.java:984)
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:822)
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:553)
+	at org.jboss.deployers.plugins.deployers.DeployersImpl.process(DeployersImpl.java:781)
+	at org.jboss.deployers.plugins.main.MainDeployerImpl.process(MainDeployerImpl.java:698)
+	at org.jboss.system.server.profileservice.repository.MainDeployerAdapter.process(MainDeployerAdapter.java:117)
+	at org.jboss.system.server.profileservice.repository.ProfileDeployAction.install(ProfileDeployAction.java:59)
+	at org.jboss.system.server.profileservice.repository.AbstractProfileAction.install(AbstractProfileAction.java:53)
+	at org.jboss.system.server.profileservice.repository.AbstractProfileService.install(AbstractProfileService.java:355)
+	at org.jboss.dependency.plugins.AbstractControllerContext.install(AbstractControllerContext.java:348)
+	at org.jboss.dependency.plugins.AbstractController.install(AbstractController.java:1598)
+	at org.jboss.dependency.plugins.AbstractController.incrementState(AbstractController.java:934)
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractController.java:1062)
+	at org.jboss.dependency.plugins.AbstractController.resolveContexts(AbstractController.java:984)
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:822)
+	at org.jboss.dependency.plugins.AbstractController.change(AbstractController.java:553)
+	at org.jboss.system.server.profileservice.repository.AbstractProfileService.activateProfile(AbstractProfileService.java:310)
+	at org.jboss.system.server.profileservice.ProfileServiceBootstrap.start(ProfileServiceBootstrap.java:241)
+	at org.jboss.bootstrap.AbstractServerImpl.start(AbstractServerImpl.java:461)
+	at org.jboss.Main.boot(Main.java:216)
+	at org.jboss.Main$1.run(Main.java:546)
+	at java.lang.Thread.run(Thread.java:637)
+Caused by: java.lang.NullPointerException
+	at org.jboss.metadata.annotation.creator.ejb.jboss.RolesAllowedProcessor.process(RolesAllowedProcessor.java:83)
+	at org.jboss.metadata.annotation.creator.ejb.jboss.RolesAllowedProcessor.process(RolesAllowedProcessor.java:48)
+	at org.jboss.metadata.annotation.creator.AbstractProcessor.processClass(AbstractProcessor.java:215)
+	at org.jboss.metadata.annotation.creator.AbstractProcessor.processClass(AbstractProcessor.java:172)
+	at org.jboss.metadata.annotation.creator.ejb.jboss.AbstractEnterpriseBeanProcessor.process(AbstractEnterpriseBeanProcessor.java:151)
+	at org.jboss.metadata.annotation.creator.ejb.jboss.AbstractEnterpriseBeanProcessor.process(AbstractEnterpriseBeanProcessor.java:94)
+	at org.jboss.metadata.annotation.creator.ejb.jboss.AbstractEnterpriseBeanProcessor.process(AbstractEnterpriseBeanProcessor.java:52)
+	at org.jboss.metadata.annotation.creator.AbstractCreator.process(AbstractCreator.java:154)
+	at org.jboss.metadata.annotation.creator.AbstractCreator.processMetaData(AbstractCreator.java:87)
+	at org.jboss.metadata.annotation.creator.ejb.jboss.JBoss50Creator.create(JBoss50Creator.java:109)
+	at org.jboss.deployment.OptAnnotationMetaDataDeployer.processJBossMetaData(OptAnnotationMetaDataDeployer.java:134)
+	at org.jboss.deployment.OptAnnotationMetaDataDeployer.processMetaData(OptAnnotationMetaDataDeployer.java:84)
+	at org.jboss.deployment.AnnotationMetaDataDeployer.deploy(AnnotationMetaDataDeployer.java:177)
+	... 31 more</description>
+			<version>1.0.0.GA</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-CR-1, 1.0.2.GA</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.RolesAllowedProcessor.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">152</link>
+			<link type="Superset" description="is incorporated by">3213</link>
+		</links>
+	</bug>
+	<bug id="286" opendate="2010-06-01 13:04:21" fixdate="2010-06-01 13:12:51" resolution="Done">
+		<buginformation>
+			<summary>Ignore HandlerChain configuration with improper leading namespace prefix</summary>
+			<description>For more information see JBWS-3050</description>
+			<version>jboss-metadata-common-2.0.0-alpha-15</version>
+			<fixedVersion>jboss-metadata-common-2.0.0-alpha-16</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.annotation.creator.ws.WebServiceHandlerChainProcessor.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Superset" description="is incorporated by">8167</link>
+		</links>
+	</bug>
+	<bug id="289" opendate="2010-06-06 17:49:14" fixdate="2010-06-06 19:01:07" resolution="Done">
+		<buginformation>
+			<summary>PersistenceMDUnitTestCase in jpa and jpa/v2 packages fail with latest JBoss XB </summary>
+			<description>The PersistenceMDUnitTestCase in org.jboss.test.metadata.jpa.v2 and org.jboss.test.metadata.jpa fail with JBoss XB 2.0.2.Beta5 and the latest (2.0.2.Beta7) with the following exception:
+-------------------------------------------------------------------------------
+Test set: org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.258 sec &amp;lt;&amp;lt;&amp;lt; FAILURE!
+testDefaultMetaData(org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase)  Time elapsed: 0.015 sec  &amp;lt;&amp;lt;&amp;lt; ERROR!
+org.jboss.xb.binding.JBossXBException: Failed to parse source: file:/NotBackedUp/jpai/business/jboss/wc/jbossas/projects/metadata/ejb/trunk/target/tests-classes/org/jboss/test/metadata/jpa/PersistenceMD_testDefaultMetaData.xml@13,15
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.parse(SaxJBossXBParser.java:169)
+	at org.jboss.xb.binding.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:147)
+	at org.jboss.test.metadata.javaee.JBossXBTestDelegate.unmarshal(JBossXBTestDelegate.java:150)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:254)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:208)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:174)
+	at org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase.getPersistenceUnits(PersistenceMDUnitTestCase.java:88)
+	at org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase.testDefaultMetaData(PersistenceMDUnitTestCase.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:81)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+Caused by: java.lang.RuntimeException: QName 
+{http://java.sun.com/xml/ns/persistence}
+persistence-unit error setting property persistenceUnits with value java.util.ArrayList@138b0d5 to org.jboss.xb.spi.DefaultBeanAdapter@81a2e1
+	at org.jboss.xb.builder.runtime.PropertyHandler.handle(PropertyHandler.java:60)
+	at org.jboss.xb.builder.runtime.AbstractPropertyHandler.doHandle(AbstractPropertyHandler.java:98)
+	at org.jboss.xb.binding.sunday.unmarshalling.CollectionRepeatableParticleHandler.endRepeatableParticle(CollectionRepeatableParticleHandler.java:76)
+	at org.jboss.xb.binding.sunday.unmarshalling.AbstractPosition.endRepeatableParticle(AbstractPosition.java:127)
+	at org.jboss.xb.binding.sunday.unmarshalling.SundayContentHandler.endElement(SundayContentHandler.java:133)
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.endElement(SaxJBossXBParser.java:342)
+	at org.apache.xerces.parsers.AbstractSAXParser.endElement(Unknown Source)
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.endElement(Unknown Source)
+	at org.apache.xerces.xinclude.XIncludeHandler.endElement(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanEndElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.parse(SaxJBossXBParser.java:165)
+	... 30 more
+Caused by: java.lang.IllegalArgumentException: Property is not writable: persistenceUnits for org.jboss.metadata.jpa.spec.PersistenceMetaData
+	at org.jboss.beans.info.plugins.DefaultPropertyInfo.set(DefaultPropertyInfo.java:141)
+	at org.jboss.xb.spi.DefaultBeanAdapter.set(DefaultBeanAdapter.java:102)
+	at org.jboss.xb.builder.runtime.PropertyHandler.handle(PropertyHandler.java:56)
+	... 47 more
+testMultipleMetaData(org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase)  Time elapsed: 0.008 sec  &amp;lt;&amp;lt;&amp;lt; ERROR!
+org.jboss.xb.binding.JBossXBException: Failed to parse source: file:/NotBackedUp/jpai/business/jboss/wc/jbossas/projects/metadata/ejb/trunk/target/tests-classes/org/jboss/test/metadata/jpa/PersistenceMD_testMultipleMetaData.xml@21,15
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.parse(SaxJBossXBParser.java:169)
+	at org.jboss.xb.binding.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:147)
+	at org.jboss.test.metadata.javaee.JBossXBTestDelegate.unmarshal(JBossXBTestDelegate.java:150)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:254)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:208)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:174)
+	at org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase.getPersistenceUnits(PersistenceMDUnitTestCase.java:88)
+	at org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase.testMultipleMetaData(PersistenceMDUnitTestCase.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:81)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+Caused by: java.lang.RuntimeException: QName 
+{http://java.sun.com/xml/ns/persistence}
+persistence-unit error setting property persistenceUnits with value java.util.ArrayList@1119a16 to org.jboss.xb.spi.DefaultBeanAdapter@117fd27
+	at org.jboss.xb.builder.runtime.PropertyHandler.handle(PropertyHandler.java:60)
+	at org.jboss.xb.builder.runtime.AbstractPropertyHandler.doHandle(AbstractPropertyHandler.java:98)
+	at org.jboss.xb.binding.sunday.unmarshalling.CollectionRepeatableParticleHandler.endRepeatableParticle(CollectionRepeatableParticleHandler.java:76)
+	at org.jboss.xb.binding.sunday.unmarshalling.AbstractPosition.endRepeatableParticle(AbstractPosition.java:127)
+	at org.jboss.xb.binding.sunday.unmarshalling.SundayContentHandler.endElement(SundayContentHandler.java:133)
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.endElement(SaxJBossXBParser.java:342)
+	at org.apache.xerces.parsers.AbstractSAXParser.endElement(Unknown Source)
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.endElement(Unknown Source)
+	at org.apache.xerces.xinclude.XIncludeHandler.endElement(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanEndElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.parse(SaxJBossXBParser.java:165)
+	... 30 more
+Caused by: java.lang.IllegalArgumentException: Property is not writable: persistenceUnits for org.jboss.metadata.jpa.spec.PersistenceMetaData
+	at org.jboss.beans.info.plugins.DefaultPropertyInfo.set(DefaultPropertyInfo.java:141)
+	at org.jboss.xb.spi.DefaultBeanAdapter.set(DefaultBeanAdapter.java:102)
+	at org.jboss.xb.builder.runtime.PropertyHandler.handle(PropertyHandler.java:56)
+	... 47 more
+testMultipleProperties(org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase)  Time elapsed: 0.232 sec  &amp;lt;&amp;lt;&amp;lt; ERROR!
+org.jboss.xb.binding.JBossXBException: Failed to parse source: file:/NotBackedUp/jpai/business/jboss/wc/jbossas/projects/metadata/ejb/trunk/target/tests-classes/org/jboss/test/metadata/jpa/PersistenceMD_testMultipleProperties.xml@17,15
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.parse(SaxJBossXBParser.java:169)
+	at org.jboss.xb.binding.UnmarshallerImpl.unmarshal(UnmarshallerImpl.java:147)
+	at org.jboss.test.metadata.javaee.JBossXBTestDelegate.unmarshal(JBossXBTestDelegate.java:150)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:254)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:208)
+	at org.jboss.test.metadata.javaee.AbstractJavaEEMetaDataTest.unmarshal(AbstractJavaEEMetaDataTest.java:174)
+	at org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase.getPersistenceUnits(PersistenceMDUnitTestCase.java:88)
+	at org.jboss.test.metadata.jpa.PersistenceMDUnitTestCase.testMultipleProperties(PersistenceMDUnitTestCase.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at junit.framework.TestCase.runTest(TestCase.java:168)
+	at junit.framework.TestCase.runBare(TestCase.java:134)
+	at junit.framework.TestResult$1.protect(TestResult.java:110)
+	at junit.framework.TestResult.runProtected(TestResult.java:128)
+	at junit.framework.TestResult.run(TestResult.java:113)
+	at junit.framework.TestCase.run(TestCase.java:124)
+	at junit.framework.TestSuite.runTest(TestSuite.java:232)
+	at junit.framework.TestSuite.run(TestSuite.java:227)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:81)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+Caused by: java.lang.RuntimeException: QName 
+{http://java.sun.com/xml/ns/persistence}
+persistence-unit error setting property persistenceUnits with value java.util.ArrayList@1095197 to org.jboss.xb.spi.DefaultBeanAdapter@3ed98c
+	at org.jboss.xb.builder.runtime.PropertyHandler.handle(PropertyHandler.java:60)
+	at org.jboss.xb.builder.runtime.AbstractPropertyHandler.doHandle(AbstractPropertyHandler.java:98)
+	at org.jboss.xb.binding.sunday.unmarshalling.CollectionRepeatableParticleHandler.endRepeatableParticle(CollectionRepeatableParticleHandler.java:76)
+	at org.jboss.xb.binding.sunday.unmarshalling.AbstractPosition.endRepeatableParticle(AbstractPosition.java:127)
+	at org.jboss.xb.binding.sunday.unmarshalling.SundayContentHandler.endElement(SundayContentHandler.java:133)
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.endElement(SaxJBossXBParser.java:342)
+	at org.apache.xerces.parsers.AbstractSAXParser.endElement(Unknown Source)
+	at org.apache.xerces.impl.xs.XMLSchemaValidator.endElement(Unknown Source)
+	at org.apache.xerces.xinclude.XIncludeHandler.endElement(Unknown Source)
+	at org.apache.xerces.impl.XMLNSDocumentScannerImpl.scanEndElement(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl$FragmentContentDispatcher.dispatch(Unknown Source)
+	at org.apache.xerces.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XML11Configuration.parse(Unknown Source)
+	at org.apache.xerces.parsers.XMLParser.parse(Unknown Source)
+	at org.apache.xerces.parsers.AbstractSAXParser.parse(Unknown Source)
+	at org.apache.xerces.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	at org.jboss.xb.binding.parser.sax.SaxJBossXBParser.parse(SaxJBossXBParser.java:165)
+	... 30 more
+Caused by: java.lang.IllegalArgumentException: Property is not writable: persistenceUnits for org.jboss.metadata.jpa.spec.PersistenceMetaData
+	at org.jboss.beans.info.plugins.DefaultPropertyInfo.set(DefaultPropertyInfo.java:141)
+	at org.jboss.xb.spi.DefaultBeanAdapter.set(DefaultBeanAdapter.java:102)
+	at org.jboss.xb.builder.runtime.PropertyHandler.handle(PropertyHandler.java:56)
+	... 47 more
+</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-15 </version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-16</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.jpa.spec.PersistenceMetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="290" opendate="2010-06-06 18:58:28" fixdate="2010-06-06 19:01:49" resolution="Done">
+		<buginformation>
+			<summary>@Schedules annotation isn&amp;apos;t being processed</summary>
+			<description>JBMETA-287 was supposed to include support for @Schedules too. But the code didn&amp;amp;apos;t make it into 2.0.0-alpha-15. Introduce the processor for handle @Schedules and its xml counterpart.
+</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-15 </version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-16</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.common.ejb.IScheduleTarget.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.StatelessProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.MessageDrivenProcessor.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossSessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.StatelessProcessor.java</file>
+			<file type="M">org.jboss.metadata.ejb.test.schedule.unit.ScheduleTestCase.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.ScheduleProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.SingletonProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.MessageDrivenProcessor.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.TimerMetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossMessageDrivenBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.MessageDrivenBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.SessionBean31MetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="291" opendate="2010-06-21 17:16:03" fixdate="2010-06-21 17:26:28" resolution="Done">
+		<buginformation>
+			<summary>JBoss50MessageDrivenBeanMetaData doesn&amp;apos;t extend JBossMessageDrivenBean31MetaData</summary>
+			<description>With the introduction of JBossMessageDrivenBean31MetaData in JBMETA-287, some of the tests fail with:
+is in error due to the following reason(s): java.lang.ClassCastException: org.jboss.metadata.ejb.jboss.JBoss50MessageDrivenBeanMetaData cannot be cast to org.jboss.metadata.ejb.jboss.JBossMessageDrivenBean31MetaData
+This needs to be fixed similar to what we did for JBossSessionBean31MetaData.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-16</version>
+			<fixedVersion> jboss-metadata-ejb-2.0.0-alpha-17</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossEnterpriseBeanMetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBoss51MessageDrivenBeanMetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBoss50MessageDrivenBeanMetaData.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.JBoss50Creator.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="301" opendate="2010-10-07 06:54:34" fixdate="2010-10-07 07:01:39" resolution="Done">
+		<buginformation>
+			<summary>Session bean and message driven bean metadata does not merge (auto) timer metadata correctly</summary>
+			<description>MessageDrivenBean31MetaData, JBossMessageDrivenBean31MetaData, JBossSessionBean31MetaData, SessionBean31MetaData don&amp;amp;apos;t merge timer metadata correctly leading to incorrect timer information when a deployment contains both xml dd and annotations for the bean.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-18</version>
+			<fixedVersion> jboss-metadata-ejb-2.0.0-alpha-19</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossSessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.SessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.test.schedule.unit.ScheduleTestCase.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossMessageDrivenBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.MessageDrivenBean31MetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="302" opendate="2010-10-13 13:06:42" fixdate="2010-10-13 13:22:59" resolution="Done">
+		<buginformation>
+			<summary>SetDefaultLocalBusinessInterfaceProcessor should not set the default local business interface if the bean exposes a nointerface view</summary>
+			<description>SetDefaultLocalBusinessInterfaceProcessor currently doesn&amp;amp;apos;t take into account the nointerface view exposed by a bean. As a result, it sets a default business interface even when a bean exposes a no-interface view. This shouldn&amp;amp;apos;t happen.</description>
+			<version> jboss-metadata-ejb-2.0.0-alpha-19</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-20</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossSessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.process.processor.ejb.jboss.SetDefaultLocalBusinessInterfaceProcessor.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossSessionBeanMetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="305" opendate="2010-10-19 10:16:17" fixdate="2010-10-19 11:27:41" resolution="Done">
+		<buginformation>
+			<summary>@Local and @Remote annotation processors should not pick up interfaces of super class of bean class</summary>
+			<description>Consider these EJBs:
+@Stateless
+public class BaseBean implements A
+{
+...
+}
+
+@Local
+public interface A
+{...
+}
+
+@Stateless
+public class ChildBean extends BaseBean implements B{
+...
+}
+
+@Local
+public interface B
+{
+...
+}
+
+In this case, the ChildBean is expected to expose just B as the local business view. It should not expose A as the local business view. 
+However, our current annotation processors currently don&amp;amp;apos;t handle this scenario which breaks the EJB3.1 spec which says:
+"4.9.2.1 Session Bean Superclasses:
+A session bean class is permitted to have superclasses that are themselves session bean classes. However, there are no special rules that apply to the processing of annotations or the deployment descriptor for this case. For the purposes of processing a particular session bean class, all superclass processing is identical regardless of whether the superclasses are themselves session bean classes. In this regard, the use of session bean classes as superclasses merely represents a convenient use of implementation inheritance, but does not have component inheritance semantics.
+As an example, the client views exposed by a particular session bean are not inherited by a subclass that also happens to define a session bean.
+@Stateless
+public class A implements Foo 
+{ ... }
+
+@Stateless
+public class B extends A implements Bar { ... }
+
+Assuming Foo and Bar are local business interfaces and there is no associated deployment descriptor, session bean A exposes local business interface Foo and session bean B exposes local business interface Bar, but not Foo."
+</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-20</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-21</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.RemoteProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.AbstractEnterpriseBeanProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.AbstractEnterpriseBeanProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.RemoteProcessor.java</file>
+			<file type="M">org.jboss.test.metadata.jbmeta40.unit.JBossImplicitLocalIntefaceUnitTestCase.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.LocalProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.LocalProcessor.java</file>
+			<file type="M">org.jboss.test.metadata.jbmeta40.unit.ImplicitLocalIntefaceUnitTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="315" opendate="2010-11-23 11:52:51" fixdate="2010-11-23 16:26:10" resolution="Done">
+		<buginformation>
+			<summary>JBossMetaData.getInterceptors(String beanName, JBossMetaData jbossMetaData) doesn&amp;apos;t return the default interceptors for a bean</summary>
+			<description>If no explicit interceptor bindings have been specified for a bean, then JBossMetaData.getInterceptors(String beanName, JBossMetaData jbossMetaData) doesn&amp;amp;apos;t return the default interceptor bindings (i.e. bindings for ejb-name=*)</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-23</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-24</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossMetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="317" opendate="2010-11-30 14:25:04" fixdate="2010-12-01 17:12:42" resolution="Done">
+		<buginformation>
+			<summary>JBossMetaData.getInterceptors(String beanName, JBossMetaData jbossMetaData) doesn&amp;apos;t take into account interceptor-order</summary>
+			<description>Consider the following ejb-jar.xml:
+&amp;lt;assembly-descriptor&amp;gt;
+        &amp;lt;interceptor-binding&amp;gt;
+            &amp;lt;ejb-name&amp;gt;mybean&amp;lt;/ejb-name&amp;gt;
+            &amp;lt;interceptor-order&amp;gt;
+                &amp;lt;interceptor-class&amp;gt;org.myapp.MyInterceptor&amp;lt;/interceptor-class&amp;gt;
+            &amp;lt;/interceptor-order&amp;gt;
+        &amp;lt;/interceptor-binding&amp;gt;
+    &amp;lt;/assembly-descriptor&amp;gt;
+Currently, JBossMetaData.getInterceptors doesn&amp;amp;apos;t check the interceptor-order on the binding and instead just checks for interceptor-classes. This results in the method return empty interceptors for the bean.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-24</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-25</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossMetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="320" opendate="2010-12-07 14:08:55" fixdate="2010-12-07 14:27:44" resolution="Done">
+		<buginformation>
+			<summary>Methods access timeout metadata should apply to best matched</summary>
+			<description></description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-25</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-26</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.StatefulProcessor.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.NamedMethodMetaData.java</file>
+			<file type="D">org.jboss.metadata.ejb.spec.ConcurrentMethodsCollectionToMapAdapter.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.AccessTimeoutMethodProcessor.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.LockMethodProcessor.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossSessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.ConcurrentMethodMetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.spec.SessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.test.concurrency.unit.ConcurrencyManagementTestCase.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">263</link>
+			<link type="Related" description="is related to">2179</link>
+		</links>
+	</bug>
+	<bug id="324" opendate="2010-12-20 07:24:53" fixdate="2010-12-20 08:30:28" resolution="Done">
+		<buginformation>
+			<summary>@Lock annotation on super class(es) of bean class should be taken into account while processing @Lock annotation</summary>
+			<description>EJB3.1 spec, section 4.8.5.5 has specific rules for @Lock annotation on super class(es) of bean:
+If the bean class has superclasses, the following additional rules apply:
+
+A concurrency locking attribute specified on a superclass S appplies to the business methods defined by S. If a class-level concurrency attribute is not specified on S, it is equivalent to specification of Lock(WRITE)on S.
+
+
+A concurrency locking attribute may be specified on a business method M defined by class S to override for method M the concurrency locking attribute value explicitly or implicitly specified on the class S.
+
+
+If a method M of class S overrides a business method defined by a superclass of S, the concurrency locking attribute of M is determined by the above rules as applied to class S.
+
+These rules need to be taken into account while creating metadata as well as at runtime, during bean invocation.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-26</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-27</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.jboss.JBossSessionBean31MetaData.java</file>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.LockClassProcessor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="326" opendate="2011-01-04 20:10:32" fixdate="2011-01-04 20:15:21" resolution="Done">
+		<buginformation>
+			<summary>Class-level @Asynchronous should only apply to the declared methods on the class</summary>
+			<description>Currently we&amp;amp;apos;re employing a "*" strategy applying to every business method of the bean.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-27</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-28</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.AsyncClassProcessor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="327" opendate="2011-01-06 07:55:14" fixdate="2011-01-06 07:56:26" resolution="Done">
+		<buginformation>
+			<summary>Class-level @Asynchronous processor has inconsistent application of async methods</summary>
+			<description>AsyncMethodMetaData needs to be created inside the loop, not out.</description>
+			<version>jboss-metadata-ejb-2.0.0-alpha-28</version>
+			<fixedVersion>jboss-metadata-ejb-2.0.0-alpha-29</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.annotation.creator.ejb.jboss.AsyncClassProcessor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="336" opendate="2011-08-31 14:22:14" fixdate="2011-09-01 10:35:02" resolution="Done">
+		<buginformation>
+			<summary>jboss-ejb3.xml ignores metadata-complete</summary>
+			<description></description>
+			<version>7.0.0.Beta6</version>
+			<fixedVersion>7.0.0.Beta11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.parser.jboss.ejb3.JBossEjb3MetaDataParser.java</file>
+			<file type="M">org.jboss.metadata.ejb.test.extension.ExtensionTestCase.java</file>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.EjbJarMetaDataParser.java</file>
+			<file type="M">org.jboss.metadata.ejb.jboss.ejb3.JBossEjb31MetaData.java</file>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.AbstractEjbJarMetaDataParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="blocks">1211</link>
+		</links>
+	</bug>
+	<bug id="338" opendate="2011-09-21 13:23:17" fixdate="2011-09-22 08:44:10" resolution="Done">
+		<buginformation>
+			<summary>Fix WS ref parsing &amp; merging process</summary>
+			<description></description>
+			<version>7.0.0.Beta12</version>
+			<fixedVersion>7.0.0.Beta13</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.merge.javaee.jboss.JBossServiceReferencesMetaDataMerger.java</file>
+			<file type="M">org.jboss.metadata.merge.javaee.jboss.JBossPortComponentRefMerger.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="blocks">3328</link>
+		</links>
+	</bug>
+	<bug id="348" opendate="2011-12-12 14:05:10" fixdate="2011-12-12 14:54:11" resolution="Done">
+		<buginformation>
+			<summary>WebApp24ValidationUnitTestCase tries to connect to java.sun.com</summary>
+			<description>The tests must never connect to the outside world.</description>
+			<version>7.0.0.Beta30</version>
+			<fixedVersion>7.0.0.Beta31</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.test.metadata.web.WebApp24ValidationUnitTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="351" opendate="2012-01-19 20:44:58" fixdate="2012-01-23 14:21:22" resolution="Done">
+		<buginformation>
+			<summary>Missing parser support for replication-config and passivation-config</summary>
+			<description></description>
+			<version>7.0.0.Beta31</version>
+			<fixedVersion>7.0.0.Beta32</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.test.metadata.web.JBossWeb60UnitTestCase.java</file>
+			<file type="M">org.jboss.metadata.parser.jbossweb.JBossWebMetaDataParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="blocks">3399</link>
+		</links>
+	</bug>
+	<bug id="355" opendate="2012-03-29 13:17:03" fixdate="2012-04-12 08:27:27" resolution="Done">
+		<buginformation>
+			<summary>Application Exception Class is not trimmed</summary>
+			<description>All parsers use super.getElementText(XML...), the Application Exception parser does not.</description>
+			<version>7.0.0.Final</version>
+			<fixedVersion>7.0.2.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.ApplicationExceptionMetaDataParser.java</file>
+			<file type="M">org.jboss.test.metadata.ejb.whitespace.WhitespaceUnitTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="371" opendate="2014-01-22 23:19:35" fixdate="2014-01-24 22:32:04" resolution="Done">
+		<buginformation>
+			<summary>DefaultPropertyReplacer + PropertyResolver is broken for vault expressions</summary>
+			<description>The DefaultPropertyReplacer + PropertyResolver algorithm is broken for vault expressions. It&amp;amp;apos;s based on the assumption that the contents of the expression string between "$
+{" and "}
+" have a fixed format a la the old JBoss AS system properties (e.g. propertyname[: default value]) and then the PropertyResolver tries to resolve "propertyname".
+This is incorrect in the case of vault expressions, which do not follow this format. In particular the ":" char appears multiple places in a vault expression and does not serve as a delimiter between "propertyname" and "default value".</description>
+			<version>7.0.4.Final</version>
+			<fixedVersion>8.0.0.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.test.metadata.property.PropertyReplacerTest.java</file>
+			<file type="M">org.jboss.metadata.property.DefaultPropertyReplacer.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned to">373</link>
+			<link type="Related" description="relates to">372</link>
+			<link type="Related" description="is related to">2812</link>
+		</links>
+	</bug>
+	<bug id="364" opendate="2013-03-07 22:54:23" fixdate="2014-01-27 16:47:51" resolution="Done">
+		<buginformation>
+			<summary>message-destination element in assembly-descriptor throws exception for EJB 2.1 ejb-jar.xml</summary>
+			<description>message-destination is not being parsed for ejb 2.1.
+14:21:01,507 INFO  [org.jboss.as.server] (host-controller-connection-threads - 11) JBAS015870: Deploy of deployment "xxxx-service-impl.ear" was rolled back with failure message {"JBAS014671: Failed services" =&amp;gt; {"jboss.deployment.subunit.\"xxxx-service-impl.ear\".\"xxxx-service-impl.jar\".PARSE" =&amp;gt; "org.jboss.msc.service.StartException in service jboss.deployment.subunit.\"xxxx-service-impl.ear\".\"xxxx-service-impl.jar\".PARSE: JBAS018733: Failed to process phase PARSE of subdeployment \"xxxx-service-impl.jar\" of deployment \"xxxx-service-impl.ear\"
+    Caused by: org.jboss.as.server.deployment.DeploymentUnitProcessingException: JBAS014185: Exception while parsing ejb-jar.xml: /content/xxxx-service-impl.ear/xxxx-service-impl.jar/META-INF/ejb-jar.xml
+    Caused by: javax.xml.stream.XMLStreamException: ParseError at [row,col]:[142,4] 
+Message: Unexpected element &amp;amp;apos;
+{http://java.sun.com/xml/ns/j2ee}
+message-destination&amp;amp;apos; encountered"},"JBAS014771: Services with missing/unavailable dependencies" =&amp;gt; ["jboss.deployment.unit.\"xxxx-service-impl.ear\".DEPENDENCIES Missing[JBAS014861: &amp;lt;one or more transitive dependencies&amp;gt;]"]}</description>
+			<version>7.0.4.Final</version>
+			<fixedVersion>8.0.0.Alpha1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.AssemblyDescriptorMetaDataParserFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="379" opendate="2014-07-31 18:48:18" fixdate="2014-09-09 15:24:01" resolution="Done">
+		<buginformation>
+			<summary>Missing param-name in a web.xml  causes NullPointerException during deployment</summary>
+			<description>
+While deploying a WAR, If the web.xml file is used which has context &amp;lt;param-value&amp;gt; defined, However it has missing &amp;lt;param-name&amp;gt; then it causes NullPointerException as following:
+
+
+
+
+
+
+
+00:12:09,583 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: Starting deployment of "ContextParamNullDemo.war" (runtime-name: "ContextParamNullDemo.war")
+
+
+
+
+00:12:09,591 ERROR [org.jboss.msc.service.fail] (MSC service thread 1-7) MSC000001: Failed to start service jboss.deployment.unit."ContextParamNullDemo.war".PARSE: org.jboss.msc.service.StartException in service jboss.deployment.unit."ContextParamNullDemo.war".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment "ContextParamNullDemo.war"
+
+
+
+
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:163) [wildfly-server-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+
+
+
+
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+
+
+
+
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [rt.jar:1.7.0_51]
+
+
+
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [rt.jar:1.7.0_51]
+
+
+
+
+	at java.lang.Thread.run(Thread.java:744) [rt.jar:1.7.0_51]
+
+
+
+
+Caused by: java.lang.NullPointerException
+
+
+
+
+	at org.jboss.as.jsf.deployment.JSFVersionProcessor.deploy(JSFVersionProcessor.java:91)
+
+
+
+
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:156) [wildfly-server-9.0.0.Alpha1-SNAPSHOT.jar:9.0.0.Alpha1-SNAPSHOT]
+
+
+
+
+	... 5 more
+
+
+
+
+
+
+
+
+
+00:12:09,598 ERROR [org.jboss.as.controller.management-operation] (DeploymentScanner-threads - 1) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" =&amp;gt; "ContextParamNullDemo.war")]) - failure description: {"WFLYCTL0080: Failed services" =&amp;gt; {"jboss.deployment.unit.\"ContextParamNullDemo.war\".PARSE" =&amp;gt; "org.jboss.msc.service.StartException in service jboss.deployment.unit.\"ContextParamNullDemo.war\".PARSE: WFLYSRV0153: Failed to process phase PARSE of deployment \"ContextParamNullDemo.war\"
+
+
+
+
+    Caused by: java.lang.NullPointerException"}}
+
+
+
+
+
+
+
+
+
+
+
+</description>
+			<version>8.0.0.Final</version>
+			<fixedVersion>7.2.0.Final, 8.1.1.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.javaee.spec.ParamValueMetaData.java</file>
+			<file type="M">org.jboss.metadata.parser.ee.ParamValueMetaDataParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">377</link>
+			<link type="Superset" description="is incorporated by">3832</link>
+		</links>
+	</bug>
+	<bug id="377" opendate="2014-08-03 12:28:08" fixdate="2014-09-09 15:25:00" resolution="Duplicate Issue">
+		<buginformation>
+			<summary>NullPointerException occurs during parsing web.xml with missing context param-name</summary>
+			<description>[Opening this issue to track down the issue specific to jboss metadata] 
+While deploying a WAR, If the web.xml file is used which has context &amp;lt;param-value&amp;gt; defined, However it has missing &amp;lt;param-name&amp;gt; then it causes NullPointerException.
+Refer to for more details: https://issues.jboss.org/browse/WFLY-3699 </description>
+			<version>7.1.1.Final</version>
+			<fixedVersion>8.1.1.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.javaee.spec.ParamValueMetaData.java</file>
+			<file type="M">org.jboss.metadata.parser.ee.ParamValueMetaDataParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">379</link>
+		</links>
+	</bug>
+	<bug id="354" opendate="2012-02-29 09:13:16" fixdate="2014-12-05 09:42:37" resolution="Done">
+		<buginformation>
+			<summary>Support EJB 2.0 dtd descriptors</summary>
+			<description></description>
+			<version>7.0.0.Final</version>
+			<fixedVersion>8.1.2.Final, 7.2.1.Final</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.EjbJarElement.java</file>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.EnterpriseBeansMetaDataParser.java</file>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.MessageDrivenBean31Parser.java</file>
+			<file type="M">org.jboss.metadata.ejb.parser.spec.AbstractMessageDrivenBeanParser.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Dependency" description="blocks">4156</link>
+		</links>
+	</bug>
+	<bug id="386" opendate="2015-06-02 13:42:15" fixdate="2015-06-03 13:00:50" resolution="Done">
+		<buginformation>
+			<summary>Deployment fails when jboss-web.xml contains &lt;enable-websockets&gt;true&lt;/enable-websockets&gt;</summary>
+			<description>When deploying application with WebSockets used in EAP 6 to EAP 7, deployment will fail due EAP7 not supporting [1] in jboss-web.xml. The &amp;lt;enable-websockets&amp;gt; element is required in EAP 6 to enable the WebSockets functionality in JBoss Web.
+This element should be also allowed in EAP 7 in order to simplify migration from EAP 6. Functionality of {{ &amp;lt;enable-websockets&amp;gt;true&amp;lt;/enable-websockets&amp;gt;}} can be ignored as in EAP 7 and in Undertow there is no need to enable WebSockets explicitly.
+[1]
+
+
+
+
+
+
+&amp;lt;jboss-web version="7.2"
+
+
+
+
+   xmlns="http://www.jboss.com/xml/ns/javaee"
+
+
+
+
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+
+
+
+   xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee schema/jboss-web_7_2.xsd"&amp;gt;
+
+
+
+
+    &amp;lt;enable-websockets&amp;gt;true&amp;lt;/enable-websockets&amp;gt;
+
+
+
+
+&amp;lt;/jboss-web&amp;gt;
+
+
+
+
+
+
+
+
+
+
+</description>
+			<version>8.1.1.Final</version>
+			<fixedVersion>10.0.0.Beta2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.jboss.metadata.parser.jbossweb.Element.java</file>
+			<file type="M">org.jboss.metadata.parser.jbossweb.JBossWebMetaDataParser.java</file>
+			<file type="M">org.jboss.metadata.web.jboss.JBossWebMetaData.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="cloned from">239</link>
+			<link type="Related" description="relates to">1563</link>
+		</links>
+	</bug>
+</bugrepository>

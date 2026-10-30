@@ -1,0 +1,3364 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="COMPRESS">
+	<bug id="64" opendate="2009-03-28 14:12:07" fixdate="2009-04-23 05:34:24" resolution="Fixed">
+		<buginformation>
+			<summary>Are the public finish() methods ArchiveOutputStream implementations necessary and safe?</summary>
+			<description>Some of the ArchiveOutputStream implementations have public finish() methods. These are currently only called from the close() methods.
+Seems to me that there is no need to allow the finish() methods to be called externally, and the user can corrupt the output if they do.
+Surely the close() method is all that is needed?</description>
+			<version>1.0</version>
+			<fixedVersion>1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.jar.JarArchiveOutputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.CpioTestCase.java</file>
+			<file type="M">org.apache.commons.compress.changes.ChangeSetPerformer.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.AbstractTestCase.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UTF8ZipFilesTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ar.ArArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.IOMethodsTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="70" opendate="2009-04-27 18:01:50" fixdate="2009-04-28 08:31:38" resolution="Fixed">
+		<buginformation>
+			<summary>Unused field: ZipArchiveInputStream.useUnicodeExtraFields</summary>
+			<description>ZipArchiveInputStream.useUnicodeExtraFields is currently unused. Decide if this field is necessary and how to use it.</description>
+			<version>1.0</version>
+			<fixedVersion>1.0</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="81" opendate="2009-06-30 07:02:54" fixdate="2009-06-30 07:26:28" resolution="Fixed">
+		<buginformation>
+			<summary>TarOutputStream can leave garbage at the end of the archive</summary>
+			<description>when the last block of the tar archive is incomplete it will contain two EOF blocks potentially followed by partial contents of the next-to-last block.  This causes problems with some "bad" untar implementations that read past the EOF blocks.
+https://issues.apache.org/bugzilla/show_bug.cgi?id=47421
+https://issues.apache.org/bugzilla/show_bug.cgi?id=40195
+</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarBuffer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="86" opendate="2009-10-08 11:33:58" fixdate="2009-10-08 12:09:53" resolution="Fixed">
+		<buginformation>
+			<summary>tar entries don&amp;apos;t set "magic" value properly for "oldgnu" longname entries</summary>
+			<description>When using the GNU longfile mode the tar classes create special archive entries containing the file name if the original name was longer than 100 characters.
+Each tar entry header holds a "magic" value indicating the format.
+For the special entries containing the file name the magic value should be "ustar  " indicating the "oldgnu" format.
+See also https://issues.apache.org/bugzilla/show_bug.cgi?id=47653 and http://sunsite.ualberta.ca/Documentation/Gnu/tar-1.13/html_chapter/tar_8.html#SEC126</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="87" opendate="2009-10-24 21:28:02" fixdate="2009-10-30 05:30:55" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream doesn&amp;apos;t report the end of a truncated archive</summary>
+			<description>If a Zip archive is truncated, (e.g. because it is the first volume in a multi-volume archive) the ZipArchiveInputStream.read() method will not detect that fact. All calls to read() will return 0 bytes read. They will not return -1 (end of stream), nor will they throw any exception (which would seem like a good idea to me because the archive is truncated).
+I have tracked this problem to ZipArchiveInputStream.java, line 239. It contains a check
+if (read == 0 &amp;amp;&amp;amp; inf.finished()) 
+{
+    return -1;
+}
+
+For truncated archives the read is always zero but the inf is never finished(). I suggest adding two lines below:
+
+if (read == 0 &amp;amp;&amp;amp; inf.finished()) {
+    return -1;
+}
+ else if (read == 0 &amp;amp;&amp;amp; lengthOfLastRead == -1) 
+{
+	throw new IOException("Truncated ZIP file");
+}
+
+This solves the problem in my tests.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">96</link>
+		</links>
+	</bug>
+	<bug id="94" opendate="2010-01-06 22:33:15" fixdate="2010-01-26 05:25:02" resolution="Fixed">
+		<buginformation>
+			<summary>Creating zip files with many entries will ocassionally produce corrupted output</summary>
+			<description>Our application produces large numbers of zip files, often with 1000&amp;amp;apos;s of similarly named files contained within the zip. 
+When we switched from the standard JDK zip classes to those in commons compress, we would ocassionally produce a zip file that had corrupted index entries and would fail to unzip successfully using 7-zip, winzip, etc.
+Debugging the zip creation showed that the the wrong offsets were being returned from the hashmap in ZipOutputStream for the entries that were being corrupted.  Further analysis revealed that this occurred when the filenames being added had a hash collision with another entry in the same output zip (which appears to happen quite frequently for us).
+The issue appears to stem from the fact that ZipArchiveEntry can store the entry name either in its superclass if passed in on the ctor or in its own member attribute if set later via setName().  Not sure whether this functionality is really required?  Regardless, the root cause of the bug is that the equals() and hashCode() methods in ZipArchiveEntry do not always use the same filename value in their comparisons.  In fact if the filename of the entry is set in the ctor it will always treat two ZipArchiveEntries as equal.  This will break the offset hashmap whenever there is a hash collision as it will overwrite the previous entry, believeing it to be equal.
+Patch to follow.
+</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntryTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="96" opendate="2010-02-11 01:52:09" fixdate="2010-02-12 10:11:50" resolution="Duplicate">
+		<buginformation>
+			<summary>Corrupt zip files can cause infinite loop</summary>
+			<description>I have a corrupt .zip file (in my Download directory) that causes ZipArchiveInputStream to enter an infinite loop on the second call to getEntry().  This was discovered while testing a Tika/Lucene based search application.  Obviously, it would be preferable to detect and throw an exception.  The short explanation is that closeEntry() calls skip(Long.MAX_VALUE).  skip() calls read() which returns 0 and inf.finished() remains false, so no progress is made and skip() spins.
+If it helps, entry.getSize() returns -1 for the first entry.  I can provide the file to repro (775800 bytes).
+UPDATE: I just hit he same error scanning a truncated commons-compress-1.0-bin.zip (437687 bytes) with this code.
+package main;
+import org.apache.commons.compress.archivers.ArchiveEntry;
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+public class Main
+{
+    public static void main(String[] args) throws IOException
+    {
+        File f = new File(args[0]);
+        FileInputStream fis = new FileInputStream(f);
+        ZipArchiveInputStream zip = new ZipArchiveInputStream(fis);
+        ArchiveEntry entry;
+        entry = zip.getNextEntry();
+        while (null != entry)
+        {
+            if (entry.isDirectory())
+                System.out.printf("%s/\n", entry.getName());
+            else
+                System.out.printf("%s %d\n", entry.getName(), entry.getSize());
+            entry = zip.getNextEntry();
+        }
+        System.out.print("DONE\n");
+    }
+}
+</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">87</link>
+		</links>
+	</bug>
+	<bug id="73" opendate="2009-06-04 10:59:07" fixdate="2010-02-16 13:59:21" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream cannot handle some valid files</summary>
+			<description>See COMPRESS-62</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipUtil.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ExtraFieldUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UnrecognizedExtraField.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ExtraFieldUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Incorporates" description="is part of">62</link>
+		</links>
+	</bug>
+	<bug id="85" opendate="2009-09-30 14:58:58" fixdate="2010-02-18 14:56:20" resolution="Fixed">
+		<buginformation>
+			<summary>cpio archive final entry corrupt</summary>
+			<description>The code below is called with an array of 4 file names. The cpio archive archive.cpio is created with no error messages, but when I then run the Unix command "cpio -ivct &amp;lt;archive.cpio" it reports the error "Can&amp;amp;apos;t read input" on the last file in the archive. If I run "cpio -ivcBmu &amp;lt;archive.cpio" the last file is incomplete, but the other files are extracted correctly. Same result in AIX and Linux.
+{{
+  private void createArchive(String[] outFiles)
+  throws FileNotFoundException, IOException, ArchiveException {
+    short format = CpioArchiveOutputStream.FORMAT_OLD_ASCII;
+    final OutputStream out = new FileOutputStream("archive.cpio");
+    ArchiveOutputStream os = new CpioArchiveOutputStream(out, format);
+    for (int j = 0; j &amp;lt; outFiles.length; j++) 
+{
+      System.out.println("Entry = " + outFiles[j]);
+      File f = new File(outFiles[j]);
+      CpioArchiveEntry entry = new CpioArchiveEntry(format);
+      entry.setName(outFiles[j]);
+      entry.setSize(f.length());
+      os.putArchiveEntry(entry);
+      IOUtils.copy(new FileInputStream(outFiles[j]), os);
+      os.closeArchiveEntry();
+    }
+    os.finish();
+    os.close();
+  }
+}}</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioConstants.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="74" opendate="2009-06-04 11:04:43" fixdate="2010-02-18 16:11:35" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream fails to update count of bytes read</summary>
+			<description>ZipArchiveInputStream fails to call count() in some cases where it reads (or puts back) data from the input stream.
+Not quite sure how to handle put-back yet, as a count of -1 is currently ignored, so how does one count a single byte that is put back?
+Easy enough to hack this in - count(1);count(-2); - but that&amp;amp;apos;s rather messy.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="101" opendate="2010-03-12 15:13:16" fixdate="2010-03-12 15:36:21" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream doesn&amp;apos;t handle data descriptors without signatures</summary>
+			<description>from http://www.pkware.com/documents/casestudies/APPNOTE.TXT :
+
+      Although not originally assigned a signature, the value 
+      0x08074b50 has commonly been adopted as a signature value 
+      for the data descriptor record.  Implementers should be 
+      aware that ZIP files may be encountered with or without this 
+      signature marking data descriptors and should account for
+      either case when reading ZIP files to ensure compatibility.
+      When writing ZIP files, it is recommended to include the
+      signature value marking the data descriptor record.  When
+      the signature is used, the fields currently defined for
+      the data descriptor record will immediately follow the
+      signature.
+The current code skips over 16 bytes while the descriptor may be using only 12 bytes.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipLong.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="100" opendate="2010-03-12 15:09:25" fixdate="2010-03-12 16:07:47" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream should throw an exception if a data descriptor is used for STORED entries</summary>
+			<description>There is no reliable way to determine the end of data when the method is STORE and in fact the current code relies on the method to be DEFLATE in that case.
+I propose to make this figure into the canReadEntryData method and to throw an exception if any attempt is made
+to read the data.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipUtil.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.GeneralPurposeBit.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UnsupportedZipFeatureException.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.EncryptedArchiveTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="105" opendate="2010-04-17 14:39:44" fixdate="2010-04-19 16:17:06" resolution="Fixed">
+		<buginformation>
+			<summary>While Archiving the empty directories are not archived to the archive.</summary>
+			<description>I am trying to create a zip archive. I am having a empty directory "test" . When i try to create it to archive . The archive created but the test folder is created as file. And also I got the below exception.
+Temp file created at C:\Users\Soundar\AppData\Local\Temp\sample5278197872513888977.zip
+Exception in thread "main" java.io.IOException: This archives contains unclosed entries.
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.finish(ZipArchiveOutputStream.java:343)
+	at org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.close(ZipArchiveOutputStream.java:550)
+	at com.tcs.tools.archive.test.ArchiveTest.createArchive(ArchiveTest.java:64)
+	at com.tcs.tools.archive.test.ArchiveTest.main(ArchiveTest.java:119)
+Code used
+-------------
+	protected File createArchive(String archivename) throws Exception {
+		ArchiveOutputStream out = null;
+		OutputStream stream = null;
+		ArchiveStreamFactory factory = new ArchiveStreamFactory();
+		try 
+{
+			File archive = File.createTempFile("sample", "." + archivename);
+			System.out.println("Temp file created at " + archive.getAbsolutePath());
+			List archiveList = new ArrayList();
+
+			stream = new FileOutputStream(archive);
+			out = factory.createArchiveOutputStream(archivename, stream);
+			final File file7 = new File("C:\\Users\\Soundar\\Desktop\\test");
+
+			addArchiveEntry(out, "test", file7);
+			System.out.println("Going to process directory");
+			System.out.println("Directory Name =" + file7.getName());
+			ArchiveEntry entry = out.createArchiveEntry(file7, "test");
+			out.putArchiveEntry(entry);
+			IOUtils.copy(new FileInputStream(file7), out);
+			out.closeArchiveEntry();
+
+			out.finish();
+			return archive;
+		}
+ finally {
+			if (out != null) 
+{
+				out.close();
+			}
+ else if (stream != null) 
+{
+				stream.close();
+			}
+		}
+	}
+Note
+------
+I tried the same archiving using the compressed zip of Windows Vista default feature. It creates the Sample.zip which contains the empty test folder as archived.
+I know there is a work around  using java.util.zip.zipEntry. But is there a  work around in our Compress itself?</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="110" opendate="2010-05-09 20:37:52" fixdate="2010-05-09 20:41:57" resolution="Fixed">
+		<buginformation>
+			<summary>Tar fails to handle ustar "prefix" field</summary>
+			<description>Tar fails to handle the ustar "prefix" field, which is used when file paths are longer than 100 (but no longer than 256) characters.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarConstants.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="107" opendate="2010-05-08 15:34:15" fixdate="2010-05-10 14:41:14" resolution="Fixed">
+		<buginformation>
+			<summary>ArchiveStreamFactory does not recognise tar files created by Ant</summary>
+			<description>ArchiveStreamFactory does not recognise tar files created by Ant.
+These appear to have magic of  "ustar\0" (i.e. same as MAGIC_POSIX) followed by "\0\0".
+Note that Compress can process the files OK.
+Patch to follow after checking what Ant writes as the signature.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="114" opendate="2010-05-17 12:05:11" fixdate="2010-05-17 15:10:06" resolution="Fixed">
+		<buginformation>
+			<summary>TarUtils.parseName does not properly handle characters outside the range 0-127</summary>
+			<description>if a tarfile contains files with special characters, the names of the tar entries are wrong.
+example:
+correct name: 0302-0601-3F06W220ZBLALALACANDC04060302MOE.model
+name resolved by TarUtils.parseName: 0302-0101-3F06W220ZBHECKMODULECEDC07060302DOERN.model
+please use: 
+result.append(new String(new byte[] 
+{ buffer[i] }
+));
+instead of: 
+result.append((char) buffer[i]);
+to solve this encoding problem.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="75" opendate="2009-06-04 11:12:41" fixdate="2010-05-31 10:07:06" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream does not show location in file where a problem occurred</summary>
+			<description>See COMPRESS-62 - if ExtraFieldUtils.parse() detects an error, it only shows the offset within the local buffer, which is fairly useless in tracking down a problem.
+Somehow the current location in the file needs to be determined and added to the Exception message.
+The count/bytesRead field would help, but that actually points to the next available byte, i.e. after the problem area.
+Also, the internal data may have been expanded.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">62</link>
+		</links>
+	</bug>
+	<bug id="113" opendate="2010-05-13 15:30:40" fixdate="2010-06-02 11:02:35" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveEntry.parseTarHeader() includes the trailing space/NUL when parsing the octal size</summary>
+			<description>TarArchiveEntry.parseTarHeader() includes the trailing space/NUL when parsing the octal size.
+Although the size field in the header is 12 bytes, the last byte is supposed to be space or NUL - i.e. only 11 octal digits are allowed for the size.</description>
+			<version>1.0</version>
+			<fixedVersion>1.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="119" opendate="2010-10-04 12:28:53" fixdate="2010-10-26 09:46:00" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveOutputStream#finish doesn&amp;apos;t flush content to underlying stream</summary>
+			<description>Originally reported against Ant https://issues.apache.org/bugzilla/show_bug.cgi?id=50014
+
+The finish() method of TarOutputStream does not flush the TarBuffer to the
+underlying output stream. A subsequent flush() on the TarOutputStream
+unexpectedly does not flush all written data to the underlying stream.
+Case: If an outputStream is tied to a Socket OutputStream, the receiving server
+can be notified that the stream has finished by calling the
+Socket.shutdownOutput() method while still allowing the server to respond to
+the client e.g. for sending a status report of the finished data transfer. This
+is in particular usefull if the size of the stream is not known in advance such
+as for a tar stream generated on the fly at the client side.
+The above case relies on all data being sent to the server before invoking
+Socket.shutdownOutput(). The TarOutputStream finish() method suggests to be
+doing just this but in practice does not send any remaining data in the
+TarBuffer. Calling the TarOutputStream close() method is not an option in this
+case since this also closes the Socket connection.
+Quick fix: insert a buffer.flushBlock() statement at the end of the
+TarOutputStream.finish() method.</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarBuffer.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="125" opendate="2011-01-20 10:08:47" fixdate="2011-03-23 11:18:17" resolution="Fixed">
+		<buginformation>
+			<summary>BZip2CompressorInputStream throws IOException if underlying stream returns available() == 0</summary>
+			<description>BZip2CompressorInputStream,init() will throw an IOException, if the passed stream returns 0 for available():
+BZip2CompressorInputStream.java
+
+    private void init() throws IOException {
+        ...
+        if (in.available() == 0) {
+            throw new IOException("Empty InputStream");
+        }
+        ...
+     }
+
+
+I think this is not correct, because the underlying stream may indeed be able to only return 0 bytes without blocking but may be able to block a little and then return some more bytes.
+Note also the change in the API documentation from: "Returns the number of bytes that can be read " (1.4.2) to "Returns an estimate of the number of bytes that can be read".</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="117" opendate="2010-08-11 00:14:34" fixdate="2011-03-23 12:50:51" resolution="Fixed">
+		<buginformation>
+			<summary>Certain tar files not recognised by ArchiveStreamFactory</summary>
+			<description>Certain tar files, like this one: http://leo.scruffohio.net/cgi-bin/uploads/lzma912.tar aren&amp;amp;apos;t being recognized by the ArchiveInputStream detector.
+I can open this tar file perfectly well with WinRAR and 7-zip. Neither of these complain. I can also open it with the command tar -xvf. However, I narrowed it down, and it turns out the TarArchiveInputStream.matches() is returning false, even though it is a valid tar file. This glitch should be fixed.</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.DetectArchiverTestCase.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">331</link>
+		</links>
+	</bug>
+	<bug id="139" opendate="2011-07-13 13:40:22" fixdate="2011-07-13 13:53:56" resolution="Fixed">
+		<buginformation>
+			<summary>ZipFile fails to clean up Inflater resources</summary>
+			<description>This bug has been reported to Ant&amp;amp;apos;s original code as https://issues.apache.org/bugzilla/show_bug.cgi?id=42696 .  It seems as if InflaterInputStream.close() didn&amp;amp;apos;t clean up the Inflater instance if one is passed in to the constructor.  I&amp;amp;apos;m currently testing the patch to Ant and will merge it over once I&amp;amp;apos;m ready.
+The code in Harmony[1] does invoke inflater.end but calling it again won&amp;amp;apos;t hurt.  OpenJDK&amp;amp;apos;s InflaterInputStream[2] in fact behaves as described in Mounir&amp;amp;apos;s comment to Ant&amp;amp;apos;s Bugzilla.
+[1] http://svn.apache.org/repos/asf/harmony/enhanced/java/trunk/classlib/modules/archive/src/main/java/java/util/zip/InflaterInputStream.java
+[2] http://hg.openjdk.java.net/jdk6/jdk6/jdk/file/506b35a2f558/src/share/classes/java/util/zip/InflaterInputStream.java</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="129" opendate="2011-05-12 13:13:56" fixdate="2011-07-26 14:14:21" resolution="Fixed">
+		<buginformation>
+			<summary>"java.io.EOFException: Truncated ZIP entry: &lt;some entry&gt;"- while extracting a zip file that contains a entry which lager than 2 GB (Integer#MAX_VALUE)</summary>
+			<description>Issue:
+"java.io.EOFException: Truncated ZIP entry: &amp;lt;some entry&amp;gt;" will be threw while extracting a zip file that contains a entry with size larger than Integer#MAX_VALUE bytes (about 2 GB). After the big entry has been read, then try to get next entry by calling ZipArchiveInputStream#getNextZipEntry(), and it throws that EOFException.
+Cause:
+before getting next zip entry, ZipArchiveInputStream tries to close the current entry and in the close- method it use the field "bytesReadFromStream" to ensure all entry bytes are read, however the field "bytesReadFromStream" is a integer, that means it is already overflowed and it leads to a false ensure result.
+Solution suggestion:
+instead integer using long for "bytesReadFromStream" and possibly for "readBytesOfEntry" too.</description>
+			<version>1.1</version>
+			<fixedVersion>1.2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipUtil.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="152" opendate="2011-08-03 13:24:32" fixdate="2011-08-03 13:42:29" resolution="Fixed">
+		<buginformation>
+			<summary>ZiparchiveInputStream and ZiparchiveOutputStream don&amp;apos;t clean up Inflater/Deflater instances</summary>
+			<description>This is similar to COMPRESS-139
+The Inflater and Deflater instances kept by the streams should be cleaned up by calling end() inside the close method so native resources get freed.</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="160" opendate="2011-10-21 13:23:08" fixdate="2011-10-23 12:13:53" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveOutputStream.getBytesWritten() returns invalid value</summary>
+			<description>It appears the TarArchiveOutputStream.getBytesWritten()returns zero or invalid value when queried.
+In the code sample below, it returns zero, even after an sizeable file was processed.
+I&amp;amp;apos;ve printed it twice, once before closing the output stream, and once after, just for the reference.
+It is also demonstrable on multiple processed files.
+Within the TarArchiveOutputStream.getBytesWritten() implementation, it appears the call for count(numToWrite) is made after the numToWrite is depleted in the process of actual byte writing. When call for count(numToWrite); is moved up, the returned values for TarArchiveOutputStream.getBytesWritten() are getting equal to the sum of the sizes of processed files. This is much closer to expected value ("Returns the current number of bytes written to this stream.") but still not correct, for that number should include the tar header sizes as well.
+At any rate, please find the proposed patch below, merely moving count(numToWrite); up a few lines. This makes TarArchiveOutputStream.getBytesWritten() closer to true value.
+Test code:
+
+
+@Test
+	public void tartest() throws Exception {
+		
+		FileOutputStream myOutputStream = new FileOutputStream("C:/temp/tartest.tar");
+		
+		ArchiveOutputStream sTarOut = new ArchiveStreamFactory().createArchiveOutputStream(ArchiveStreamFactory.TAR, myOutputStream);
+		
+		File sSource = new File("C:/share/od_l.txt");
+		TarArchiveEntry sEntry = new TarArchiveEntry(sSource);
+		sTarOut.putArchiveEntry(sEntry);
+		
+		FileInputStream sInput = new FileInputStream(sSource);
+		byte[] cpRead = new byte[8192];
+		
+		int iRead = 0;
+		while ((iRead = sInput.read(cpRead)) &amp;gt; 0) {
+			sTarOut.write(cpRead, 0, iRead);
+		}
+		
+		sLog.info("Processed: "+sTarOut.getBytesWritten()+" bytes. File Len: "+sSource.length());
+		
+		sInput.close();
+		sTarOut.closeArchiveEntry();
+		sTarOut.close();
+
+		sLog.info("Processed: "+sTarOut.getBytesWritten()+" bytes. File Len: "+sSource.length());
+
+		
+		return;
+			
+	}
+
+
+Test Output:
+
+
+Oct 21, 2011 9:09:28 AM com.cronsult.jndmpd.test.Backup tartest
+INFO: Processed: 0 bytes. File Len: 186974208
+Oct 21, 2011 9:09:28 AM com.cronsult.jndmpd.test.Backup tartest
+INFO: Processed: 0 bytes. File Len: 186974208
+
+
+Proposed Patch:
+
+
+Index: src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java
+===================================================================
+--- src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java	(revision 1187150)
++++ src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java	(working copy)
+@@ -276,6 +276,8 @@
+             // eliminate some of the buffer copying.
+             //
+         }
++        
++        count(numToWrite);
+ 
+         if (assemLen &amp;gt; 0) {
+             if ((assemLen + numToWrite) &amp;gt;= recordBuf.length) {
+@@ -325,7 +327,7 @@
+             wOffset += num;
+         }
+         
+-        count(numToWrite);
++        
+     }
+ 
+     /**
+
+
+</description>
+			<version>1.2</version>
+			<fixedVersion>1.3</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="146" opendate="2011-07-24 00:00:39" fixdate="2011-11-07 16:38:30" resolution="Fixed">
+		<buginformation>
+			<summary>BZip2CompressorInputStream always treats 0x177245385090 as EOF, but should treat this as EOS</summary>
+			<description>BZip2CompressorInputStream always treats 0x177245385090 as EOF, but should treat this as EOS
+This error occurs mostly on large size files as sudden EOF somwere in the middle of the file.
+An example of data from archived file:
+$ cat fastq.ax.bz2 | od -t x1 | grep -A 1 &amp;amp;apos;17 72 45&amp;amp;apos;
+22711660 d0 ff b6 01 20 10 ff ff 17 72 45 38 50 90 2e ff
+22711700 b2 d3 42 5a 68 39 31 41 59 26 53 59 84 3c 41 75
+
+24637020 c5 49 ff 19 80 49 20 7f ff 17 72 45 38 50 90 a4
+24637040 a8 ac bd 42 5a 68 39 31 41 59 26 53 59 0d 9a b4
+
+40302720 ff b1 24 80 10 ff ff 17 72 45 38 50 90 24 cb c5
+40302740 90 42 5a 68 39 31 41 59 26 53 59 42 05 ae 5e 05
+.....
+Suggested solution:
+    private void initBlock() throws IOException {
+        char magic0 = bsGetUByte();
+        char magic1 = bsGetUByte();
+        char magic2 = bsGetUByte();
+        char magic3 = bsGetUByte();
+        char magic4 = bsGetUByte();
+        char magic5 = bsGetUByte();
+        if( magic0 == 0x17 &amp;amp;&amp;amp; magic1 == 0x72 &amp;amp;&amp;amp; magic2 == 0x45
+            &amp;amp;&amp;amp; magic3 == 0x38 &amp;amp;&amp;amp; magic4 == 0x50 &amp;amp;&amp;amp; magic5 == 0x90 ) 
+        {
+        	if( complete() ) // end of file);
+
+{
+        		return;
+        	}
+ else
+        	{
+        		magic0 = bsGetUByte();
+                magic1 = bsGetUByte();
+                magic2 = bsGetUByte();
+                magic3 = bsGetUByte();
+                magic4 = bsGetUByte();
+                magic5 = bsGetUByte();
+        	}
+        } 
+        if (magic0 != 0x31 || // &amp;amp;apos;1&amp;amp;apos;
+                   magic1 != 0x41 || // &amp;amp;apos;A&amp;amp;apos;
+                   magic2 != 0x59 || // &amp;amp;apos;Y&amp;amp;apos;
+                   magic3 != 0x26 || // &amp;amp;apos;&amp;amp;&amp;amp;apos;
+                   magic4 != 0x53 || // &amp;amp;apos;S&amp;amp;apos;
+                   magic5 != 0x59 // &amp;amp;apos;Y&amp;amp;apos;
+                   ) 
+{
+            this.currentState = EOF;
+            throw new IOException("bad block header");
+        }
+ else {
+            this.storedBlockCRC = bsGetInt();
+            this.blockRandomised = bsR(1) == 1;
+            /**
+
+Allocate data here instead in constructor, so we do not allocate
+it if the input file is empty.
+             */
+            if (this.data == null) 
+{
+                this.data = new Data(this.blockSize100k);
+            }
+
+            // currBlockNo++;
+            getAndMoveToFrontDecode();
+            this.crc.initialiseCRC();
+            this.currentState = START_BLOCK_STATE;
+        }
+    }
+    private boolean 
+    complete() throws IOException 
+    { 
+    	boolean result = false;
+        this.storedCombinedCRC = bsGetInt();
+        try
+        {
+            if (in.available() == 0 ) 
+            {
+                throw new IOException( "EOF" );
+            }
+            checkMagicChar(&amp;amp;apos;B&amp;amp;apos;, "first");
+            checkMagicChar(&amp;amp;apos;Z&amp;amp;apos;, "second");
+            checkMagicChar(&amp;amp;apos;h&amp;amp;apos;, "third");
+            int blockSize = this.in.read();
+            if ((blockSize &amp;lt; &amp;amp;apos;1&amp;amp;apos;) || (blockSize &amp;gt; &amp;amp;apos;9&amp;amp;apos;)) 
+{
+                throw new IOException("Stream is not BZip2 formatted: illegal "
+                                      + "blocksize " + (char) blockSize);
+            }
+
+            this.blockSize100k = blockSize - &amp;amp;apos;0&amp;amp;apos;;
+            this.bsLive = 0;
+            this.bsBuff = 0;
+        } catch( IOException e )
+        {
+        	this.currentState = EOF;
+        	
+        	result = true;
+        }
+
+        this.data = null;
+        if (this.storedCombinedCRC != this.computedCombinedCRC) 
+{
+            throw new IOException("BZip2 CRC error");
+        }
+        this.computedCombinedCRC = 0;    
+        return result;
+    }</description>
+			<version>1.5</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.XZTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.GZipTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.BZip2TestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">224</link>
+			<link type="Duplicate" description="is duplicated by">162</link>
+			<link type="Duplicate" description="is duplicated by">185</link>
+		</links>
+	</bug>
+	<bug id="162" opendate="2011-11-08 05:13:48" fixdate="2011-11-09 15:53:21" resolution="Duplicate">
+		<buginformation>
+			<summary>BZip2CompressorInputStream still stops after 900,000 decompressed bytes of large compressed file</summary>
+			<description>Attempting to unzip the planet-110921.osm.bz2 file downloaded directly from planet.OpenStreetMaps.org aborts after exactly 900000 bytes are uncompressed. The uncompressed content looks like valid XML, and causes my application&amp;amp;apos;s parser to blow up with XML syntax errors due to missing closing tags. Tried using the example code to just uncompress, and got the same exact behavior.
+Uncompressing the same file planet-110921.osm.bz2 (19357793489 bytes long compressed) with the Linux bzip2 command-line utility (bzip2-1.0.6-1.fc13.i686.rpm) succeeds and produces a valid (and enormous) XML file that can be successfully parsed.
+Tried getting a subversion snapshot of the commons-compress trunk on 7 Nov 2011 and replacing the org.apache.commons.compress.compressors.bzip2 package in the commons-compress-1.3.jar with compiled code from the trunk (Subversion log reported that the fix for COMPRESS-146  was in). Still the same failure.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.XZTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.GZipTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.BZip2TestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">146</link>
+		</links>
+	</bug>
+	<bug id="164" opendate="2011-12-05 12:30:30" fixdate="2011-12-05 15:43:21" resolution="Fixed">
+		<buginformation>
+			<summary>Cannot Read Winzip Archives With Unicode Extra Fields</summary>
+			<description>I have a zip file created with WinZip containing Unicode extra fields. Upon attempting to extract it with org.apache.commons.compress.archivers.zip.ZipFile, ZipFile.getInputStream() returns null for ZipArchiveEntries previously retrieved with ZipFile.getEntry() or even ZipFile.getEntries(). See UTF8ZipFilesTest.patch in the attachments for a test case exposing the bug. The original test case stopped short of trying to read the entries, that&amp;amp;apos;s why this wasn&amp;amp;apos;t flagged up before. 
+The problem lies in the fact that inside ZipFile.java entries are stored in a HashMap. However, at one point after populating the HashMap, the unicode extra fields are read, which leads to a change of the ZipArchiveEntry name, and therefore a change of its hash code. Because of this, subsequent gets on the HashMap fail to retrieve the original values.
+ZipFile.patch contains an (admittedly simple-minded) fix for this problem by reconstructing the entries HashMap after the Unicode extra fields have been parsed. The purpose of this patch is mainly to show that the problem is indeed what I think, rather than providing a well-designed solution.
+The patches have been tested against revision 1210416.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UTF8ZipFilesTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="163" opendate="2011-12-03 16:56:26" fixdate="2011-12-07 11:36:39" resolution="Fixed">
+		<buginformation>
+			<summary>Unable to extract a file larger than 8GB from a Posix-format tar archive</summary>
+			<description>An attempt to read a posix-format tar archive containing a file in excess of 8^11 bytes in size will fail with a "Size out of range" illegal argument exception.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="169" opendate="2011-12-20 12:38:35" fixdate="2011-12-22 17:23:32" resolution="Fixed">
+		<buginformation>
+			<summary>RuntimeException on corrupted file</summary>
+			<description>We wrote a tool to simulate file corruption before parsing them with tika. This caused a few strange problems including:
+
+
+java.lang.RuntimeException: failed to skip file name in local file header
+	at org.apache.commons.compress.archivers.zip.ZipFile.resolveLocalFileHeaderData(ZipFile.java:817)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:207)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:181)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:142)
+	at org.apache.tika.parser.pkg.ZipContainerDetector.detect(ZipContainerDetector.java:69)
+	at org.apache.tika.detect.CompositeDetector.detect(CompositeDetector.java:60)
+	at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:113)
+	at org.apache.tika.Tika.parseToString(Tika.java:380)
+	at org.apache.tika.Tika.parseToString(Tika.java:414)
+	at no.finntech.tika.harderner.TikaIndexerHardenerTest.parseContent(TikaIndexerHardenerTest.java:106)
+	at no.finntech.tika.harderner.TikaIndexerHardenerTest.flipBitAndIndexContent(TikaIndexerHardenerTest.java:89)
+	at no.finntech.tika.harderner.TikaIndexerHardenerTest.originalFileIndexesProperly4(TikaIndexerHardenerTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:157)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:71)
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:202)
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:63)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:120)
+
+
+This is caused by:
+
+
+            while (lenToSkip &amp;gt; 0) {
+                int skipped = archive.skipBytes(lenToSkip);
+                if (skipped &amp;lt;= 0) {
+                    throw new RuntimeException("failed to skip file name in"
+                                               + " local file header");
+                }
+                lenToSkip -= skipped;
+            }
+
+
+Any reason this is using a RuntimeException instead of a IOException ? Changing it to a IOE would solve our problem.
+Finally, our test code is available from https://github.com/lacostej/tika-hardener
+You might want to reuse similar technique for your other decompressors. Let us know if you want help.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="173" opendate="2012-01-26 20:46:41" fixdate="2012-01-27 08:29:57" resolution="Duplicate">
+		<buginformation>
+			<summary>ArchiveStreamFactory.createArchiveInputStream(in) returns a TarArchiveInputStream object if in is a simple text file </summary>
+			<description>After COMPRESS-117 fix, ArchiveStreamFactory.createArchiveInputStream(in) returns a TarArchiveInputStream object if input is a simple text file.  In my test case, the file has two lines:
+BagIt-Version: 0.96
+Tag-File-Character-Encoding: UTF-8
+</description>
+			<version>1.3</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">171</link>
+		</links>
+	</bug>
+	<bug id="171" opendate="2012-01-20 17:54:09" fixdate="2012-01-29 20:57:38" resolution="Fixed">
+		<buginformation>
+			<summary>createArchiveInputStream detects text files less than 100 bytes as tar archives</summary>
+			<description>The fix for COMPRESS-117 which modified ArchiveStreamFactory().createArchiveInputStream(inputstream) results in short text files (empirically seems to be those &amp;lt;= 100 bytes) being detected as tar archives which obviously is not desirable if one wants to know whether or not the files are archives.
+I&amp;amp;apos;m not an expert on compressed archives but perhaps the heuristic that if a stream is interpretable as a tar file without an exception being thrown should only be applied on archives greater than 100 bytes?</description>
+			<version>1.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">173</link>
+		</links>
+	</bug>
+	<bug id="175" opendate="2012-02-09 07:26:25" fixdate="2012-02-22 23:45:43" resolution="Fixed">
+		<buginformation>
+			<summary>GNU Tar sometimes uses binary encoding for UID and GID</summary>
+			<description>Some tar files have UID and GID fields that start with the binary marker 0x80. The TarArchiveEntry is unable to cope with that since it assumes that UID and GID are always ASCII.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">177</link>
+			<link type="Incorporates" description="is part of">182</link>
+		</links>
+	</bug>
+	<bug id="177" opendate="2012-02-20 16:12:50" fixdate="2012-02-22 23:46:06" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream rejects valid TAR file</summary>
+			<description>Issue originally reported at http://java.net/jira/browse/TRUEZIP-219
+
+Download http://sourceforge.net/projects/boost/files/boost/1.48.0/boost_1_48_0.tar.gz?use_mirror=autoselect
+I invoke Files.newDirectoryStream() on a TPath pointing to the resulting .tar.gz file
+The following exception is thrown:
+
+
+
+java.lang.IllegalArgumentException: Invalid byte -1 at offset 7 in &amp;amp;apos;&amp;lt;some bytes&amp;gt;&amp;amp;apos; len=8
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctal(TarUtils.java:86)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:790)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.&amp;lt;init&amp;gt;(TarArchiveEntry.java:308)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:198)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextEntry(TarArchiveInputStream.java:380)
+	at de.schlichtherle.truezip.fs.archive.tar.TarInputShop.&amp;lt;init&amp;gt;(TarInputShop.java:91)
+	at de.schlichtherle.truezip.fs.archive.tar.TarDriver.newTarInputShop(TarDriver.java:159)
+	at de.schlichtherle.truezip.fs.archive.tar.TarGZipDriver.newTarInputShop(TarGZipDriver.java:82)
+	at de.schlichtherle.truezip.fs.archive.tar.TarDriver.newInputShop(TarDriver.java:151)
+	at de.schlichtherle.truezip.fs.archive.tar.TarDriver.newInputShop(TarDriver.java:47)
+	at de.schlichtherle.truezip.fs.archive.FsDefaultArchiveController.mount(FsDefaultArchiveController.java:170)
+	at de.schlichtherle.truezip.fs.archive.FsFileSystemArchiveController$ResetFileSystem.autoMount(FsFileSystemArchiveController.java:98)
+	at de.schlichtherle.truezip.fs.archive.FsFileSystemArchiveController.autoMount(FsFileSystemArchiveController.java:47)
+	at de.schlichtherle.truezip.fs.archive.FsArchiveController.autoMount(FsArchiveController.java:129)
+	at de.schlichtherle.truezip.fs.archive.FsArchiveController.getEntry(FsArchiveController.java:160)
+	at de.schlichtherle.truezip.fs.archive.FsContextController.getEntry(FsContextController.java:117)
+	at de.schlichtherle.truezip.fs.FsDecoratingController.getEntry(FsDecoratingController.java:76)
+	at de.schlichtherle.truezip.fs.FsDecoratingController.getEntry(FsDecoratingController.java:76)
+	at de.schlichtherle.truezip.fs.FsConcurrentController.getEntry(FsConcurrentController.java:164)
+	at de.schlichtherle.truezip.fs.FsSyncController.getEntry(FsSyncController.java:108)
+	at de.schlichtherle.truezip.fs.FsFederatingController.getEntry(FsFederatingController.java:156)
+	at de.schlichtherle.truezip.nio.file.TFileSystem.newDirectoryStream(TFileSystem.java:348)
+	at de.schlichtherle.truezip.nio.file.TPath.newDirectoryStream(TPath.java:963)
+	at de.schlichtherle.truezip.nio.file.TFileSystemProvider.newDirectoryStream(TFileSystemProvider.java:344)
+	at java.nio.file.Files.newDirectoryStream(Files.java:400)
+	at com.googlecode.boostmavenproject.GetSourcesMojo.convertToJar(GetSourcesMojo.java:248)
+	at com.googlecode.boostmavenproject.GetSourcesMojo.download(GetSourcesMojo.java:221)
+	at com.googlecode.boostmavenproject.GetSourcesMojo.execute(GetSourcesMojo.java:111)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	... 20 more
+
+
+Christian Schlichtherle (the TrueZip author) is expecting the Commons Compress to throw IOException instead of IllegalArgumentException. I am expecting no exception to be thrown because as far as I can tell the TAR file is valid (opens up in WinRar and Ubuntu&amp;amp;apos;s built-in Archiver).</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">175</link>
+			<link type="Reference" description="is related to">16</link>
+		</links>
+	</bug>
+	<bug id="178" opendate="2012-02-21 15:27:31" fixdate="2012-02-23 01:05:25" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream throws IllegalArgumentException instead of IOException</summary>
+			<description>TarArchiveInputStream is throwing  IllegalArgumentException instead of IOException on corrupt files, in direct contradiction to the Javadoc. Here is a stack-trace:
+
+
+java.lang.IllegalArgumentException: Invalid byte -1 at offset 7 in &amp;amp;apos;&amp;lt;some bytes&amp;gt;&amp;amp;apos; len=8
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctal(TarUtils.java:86)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:790)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.&amp;lt;init&amp;gt;(TarArchiveEntry.java:308)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:198)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextEntry(TarArchiveInputStream.java:380)
+	at de.schlichtherle.truezip.fs.archive.tar.TarInputShop.&amp;lt;init&amp;gt;(TarInputShop.java:91)
+	at de.schlichtherle.truezip.fs.archive.tar.TarDriver.newTarInputShop(TarDriver.java:159)
+	at de.schlichtherle.truezip.fs.archive.tar.TarGZipDriver.newTarInputShop(TarGZipDriver.java:82)
+	at de.schlichtherle.truezip.fs.archive.tar.TarDriver.newInputShop(TarDriver.java:151)
+	at de.schlichtherle.truezip.fs.archive.tar.TarDriver.newInputShop(TarDriver.java:47)
+	at de.schlichtherle.truezip.fs.archive.FsDefaultArchiveController.mount(FsDefaultArchiveController.java:170)
+	at de.schlichtherle.truezip.fs.archive.FsFileSystemArchiveController$ResetFileSystem.autoMount(FsFileSystemArchiveController.java:98)
+	at de.schlichtherle.truezip.fs.archive.FsFileSystemArchiveController.autoMount(FsFileSystemArchiveController.java:47)
+	at de.schlichtherle.truezip.fs.archive.FsArchiveController.autoMount(FsArchiveController.java:129)
+	at de.schlichtherle.truezip.fs.archive.FsArchiveController.getEntry(FsArchiveController.java:160)
+	at de.schlichtherle.truezip.fs.archive.FsContextController.getEntry(FsContextController.java:117)
+	at de.schlichtherle.truezip.fs.FsDecoratingController.getEntry(FsDecoratingController.java:76)
+	at de.schlichtherle.truezip.fs.FsDecoratingController.getEntry(FsDecoratingController.java:76)
+	at de.schlichtherle.truezip.fs.FsConcurrentController.getEntry(FsConcurrentController.java:164)
+	at de.schlichtherle.truezip.fs.FsSyncController.getEntry(FsSyncController.java:108)
+	at de.schlichtherle.truezip.fs.FsFederatingController.getEntry(FsFederatingController.java:156)
+	at de.schlichtherle.truezip.nio.file.TFileSystem.newDirectoryStream(TFileSystem.java:348)
+	at de.schlichtherle.truezip.nio.file.TPath.newDirectoryStream(TPath.java:963)
+	at de.schlichtherle.truezip.nio.file.TFileSystemProvider.newDirectoryStream(TFileSystemProvider.java:344)
+	at java.nio.file.Files.newDirectoryStream(Files.java:400)
+	at com.googlecode.boostmavenproject.GetSourcesMojo.convertToJar(GetSourcesMojo.java:248)
+	at com.googlecode.boostmavenproject.GetSourcesMojo.download(GetSourcesMojo.java:221)
+	at com.googlecode.boostmavenproject.GetSourcesMojo.execute(GetSourcesMojo.java:111)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:101)
+	... 20 more
+
+
+Expected behavior: TarArchiveInputStream should wrap the IllegalArgumentException in an IOException.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.TarTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="131" opendate="2011-06-03 16:25:45" fixdate="2012-02-23 01:31:59" resolution="Fixed">
+		<buginformation>
+			<summary>ArrayOutOfBounds while decompressing bz2</summary>
+			<description>Decompressing a bz2 file generated by bzip2 utility throws an ArrayIndexOutOfBounds at method recvDecodingTables() line 469.
+I believe it is related to encodings used to generate the original text file (the compressed file).</description>
+			<version>1.1</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.BZip2TestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="176" opendate="2012-02-17 12:05:24" fixdate="2012-02-28 14:06:30" resolution="Fixed">
+		<buginformation>
+			<summary>ArchiveInputStream#getNextEntry(): Problems with WinZip directories with Umlauts</summary>
+			<description>There is a problem when handling a WinZip-created zip with Umlauts in directories.
+I&amp;amp;apos;m accessing a zip file created with WinZip containing a directory with an umlaut ("") with ArchiveInputStream. When creating the zip file the unicode-flag of winzip had been active.
+The following problem occurs when accessing the entries of the zip:
+the ArchiveEntry for a directory containing an umlaut is not marked as a directory and the file names for the directory and all files contained in that directory contain backslashes instead of slashes (i.e. completely different to all other files in directories with no umlaut in their path).
+There is no difference when letting the ArchiveStreamFactory decide which ArchiveInputStream to create or when using the ZipArchiveInputStream constructor with the correct encoding (I&amp;amp;apos;ve tried different encodings CP437, CP850, ISO-8859-15, but still the problem persisted).
+This problem does not occur when using the very same zip file but compressed by 7zip or the built-in Windows 7 zip functionality.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="181" opendate="2012-02-27 17:48:12" fixdate="2012-03-02 20:01:49" resolution="Fixed">
+		<buginformation>
+			<summary>Tar files created by AIX native tar, and which contain symlinks, cannot be read by TarArchiveInputStream</summary>
+			<description>A simple tar file created on AIX using the native (/usr/bin/tar tar utility) and which contains a symbolic link, cannot be loaded by TarArchiveInputStream:
+
+java.io.IOException: Error detected parsing the header
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:201)
+	at Extractor.extract(Extractor.java:13)
+	at Extractor.main(Extractor.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.tools.ant.taskdefs.ExecuteJava.run(ExecuteJava.java:217)
+	at org.apache.tools.ant.taskdefs.ExecuteJava.execute(ExecuteJava.java:152)
+	at org.apache.tools.ant.taskdefs.Java.run(Java.java:771)
+	at org.apache.tools.ant.taskdefs.Java.executeJava(Java.java:221)
+	at org.apache.tools.ant.taskdefs.Java.executeJava(Java.java:135)
+	at org.apache.tools.ant.taskdefs.Java.execute(Java.java:108)
+	at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+	at org.apache.tools.ant.Task.perform(Task.java:348)
+	at org.apache.tools.ant.Target.execute(Target.java:390)
+	at org.apache.tools.ant.Target.performTasks(Target.java:411)
+	at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+	at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+	at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+	at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+	at org.apache.tools.ant.Main.runBuild(Main.java:809)
+	at org.apache.tools.ant.Main.startAnt(Main.java:217)
+	at org.apache.tools.ant.launch.Launcher.run(Launcher.java:280)
+	at org.apache.tools.ant.launch.Launcher.main(Launcher.java:109)
+Caused by: java.lang.IllegalArgumentException: Invalid byte 0 at offset 0 in &amp;amp;apos;{NUL}1722000726 &amp;amp;apos; len=12
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctal(TarUtils.java:99)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:819)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.&amp;lt;init&amp;gt;(TarArchiveEntry.java:314)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:199)
+	... 29 more
+
+
+Tested with 1.2 and the 1.4 nightly build from Feb 23 (Implementation-Build: trunk@r1292625; 2012-02-23 03:20:30+0000)</description>
+			<version>1.2</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">182</link>
+		</links>
+	</bug>
+	<bug id="184" opendate="2012-03-23 13:33:32" fixdate="2012-03-23 13:48:26" resolution="Fixed">
+		<buginformation>
+			<summary>PAX header parser fails for non-ASCII values</summary>
+			<description>The current logic parsing PAX extension headers fails if the number of bytes used to encode an entry is different from the number of characters - i.e. for any character outside of the ASCII range as the headers are UTF-8 encoded.  E.g.
+
+11 path=
+
+
+takes 11 bytes (one has to account for the trailing newline) for 10 characters and the parser fails with "Expected 3 chars, read 2"</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Blocker" description="blocks">183</link>
+		</links>
+	</bug>
+	<bug id="185" opendate="2012-03-29 10:47:51" fixdate="2012-03-29 11:52:31" resolution="Duplicate">
+		<buginformation>
+			<summary>BZip2CompressorInputStream truncates files compressed with pbzip2</summary>
+			<description>I&amp;amp;apos;m using BZip2CompressorInputStream in Compress 1.3 to decompress a file that was created with pbzip2 1.1.6 (http://compression.ca/pbzip2/).  The stream ends early after 900000 bytes, truncating the rest of the pbzip2-compressed file.  Decompressing the file with bunzip2 or compressing the original file with bzip2 both fix the issue.  I think both pbzip2 and Compress are to blame here: pbzip2 apparently does something non-standard when compressing files, and Compress should handle the non-standard format rather than pretending to be done decompressing.  Another option is that I&amp;amp;apos;m doing something wrong; in that case please let me know! 
+Here&amp;amp;apos;s how the problem can be reproduced:
+ 1. Generate a file that&amp;amp;apos;s 900000+ bytes large: dd if=/dev/zero of=1mbfile count=1 bs=1M
+ 2. Compress with pbzip2: pbzip2 1mbfile
+ 3. Decompress with Bunzip2 class below
+ 4. Notice how the resulting 1mbfile is 900000 bytes large, not 1M.
+Now compare to using bunzip2/bzip2:
+
+Do the steps above, but instead of 2, compress with bzip2: bzip2 1mbfile
+Do the steps above, but instead of 3, decompress with bunzip2: bunzip2 1mbfile.bz2
+
+import java.io.*;
+import org.apache.commons.compress.compressors.bzip2.*;
+public class Bunzip2 {
+  public static void main(String[] args) throws Exception {
+    File inFile = new File(args[0]);
+    File outFile = new File(args[0].substring(0, args[0].length() - 4));
+    FileInputStream fis = new FileInputStream(inFile);
+    BZip2CompressorInputStream bz2cis =
+        new BZip2CompressorInputStream(fis);
+    BufferedInputStream bis = new BufferedInputStream(bz2cis);
+    BufferedOutputStream bos = new BufferedOutputStream(
+        new FileOutputStream(outFile));
+    int len;
+    byte[] data = new byte[1024];
+    while ((len = bis.read(data, 0, 1024)) &amp;gt;= 0) 
+{
+      bos.write(data, 0, len);
+    }
+ 
+    bos.close();
+    bis.close();
+  }
+}</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.XZTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.GZipTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.BZip2TestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">146</link>
+		</links>
+	</bug>
+	<bug id="187" opendate="2012-05-23 14:00:58" fixdate="2012-06-03 15:31:13" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream and ZipFile don&amp;apos;t produce equals ZipArchiveEntry instances</summary>
+			<description>I&amp;amp;apos;m trying to use a ZipArchiveEntry coming from ZipArchiveInputStream that I stored somwhere for later with a ZipFile and it does not work.
+The reason is that it can&amp;amp;apos;t find the ZipArchiveEntry in the ZipFile entries map. It is exactly the same zip file but both entries are not equals so the Map#get fail.
+As far as I can see the main difference is that comment is null in ZipArchiveInputStream while it&amp;amp;apos;s en empty string in ZipFile. I looked at ZipArchiveInputStream and it looks like the comment (whatever it is) is simply not parsed while I can find some code related to the comment at the end of ZIipFile#readCentralDirectoryEntry.
+Note that java.util.zip does not have this issue. Did not checked what they do but the zip entries are equals.</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="191" opendate="2012-06-30 08:20:58" fixdate="2012-07-07 05:32:41" resolution="Fixed">
+		<buginformation>
+			<summary>Too relaxed tar detection in ArchiveStreamFactory</summary>
+			<description>The relaxed tar detection logic added in COMPRESS-117 unfortunately matches also some non-tar files like a test AIFF file that Apache Tika uses. It would be good to improve the detection heuristics to still match files like the one in COMPRESS-117 but avoid false positives like the AIFF file in Tika.</description>
+			<version>1.2</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactoryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarConstants.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">209</link>
+		</links>
+	</bug>
+	<bug id="197" opendate="2012-08-02 02:21:52" fixdate="2012-08-05 19:55:57" resolution="Fixed">
+		<buginformation>
+			<summary>Tar file for Android backup cannot be read</summary>
+			<description>Attached tar file was generated by some kind of backup tool on Android. Normal tar utilities seem to handle it fine, but Commons Compress doesn&amp;amp;apos;t.
+
+java.lang.IllegalArgumentException: Invalid byte 0 at offset 5 in &amp;amp;apos;01750{NUL}{NUL}{NUL}&amp;amp;apos; len=8
+    at org.apache.commons.compress.archivers.tar.TarUtils.parseOctal(TarUtils.java:99)
+    at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:788)
+    at org.apache.commons.compress.archivers.tar.TarArchiveEntry.&amp;lt;init&amp;gt;(TarArchiveEntry.java:308)
+
+</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="209" opendate="2012-11-01 17:37:59" fixdate="2012-11-01 18:03:10" resolution="Duplicate">
+		<buginformation>
+			<summary>DOC is incorrectly recognized as TAR</summary>
+			<description>Empty DOC is autodetected as TAR by ArchiveStreamFactory.createArchiveInputStream(InputStream).</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactoryTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">191</link>
+		</links>
+	</bug>
+	<bug id="200" opendate="2012-08-20 17:06:55" fixdate="2012-12-27 21:07:11" resolution="Fixed">
+		<buginformation>
+			<summary>Round trip conversion with more than 66 US-ASCII characters fails when using TarArchiveOutputStream.LONGFILE_GNU</summary>
+			<description>When using TarArchiveOutputStream.LONGFILE_GNU with an entry name of more than 66 US-ASCII characters, a round trip conversion (write the entry, then read it back) fails because of several bugs in TarArchiveOutputStream and TarArchiveInputStream.
+This has been reported as an issue to TrueZIP, which is why you can find a more detailed analysis here: http://java.net/jira/browse/TRUEZIP-286 .</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UTF8ZipFilesTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="203" opendate="2012-10-01 14:01:05" fixdate="2012-12-27 21:35:09" resolution="Fixed">
+		<buginformation>
+			<summary>Long directory names can not be stored in a tar archive because of error when writing PAX headers</summary>
+			<description>Trying to add a directory to the TAR Archive that has a name longer than 100 bytes generates an exception with a stack trace similar to the following:
+
+java.io.IOException: request to write &amp;amp;apos;114&amp;amp;apos; bytes exceeds size in header of &amp;amp;apos;0&amp;amp;apos; bytes for entry &amp;amp;apos;./PaxHeaders.X/layers/openstreetmap__osm.disy.net/.tiles/1.0.0/openstreetmap__osm.disy.net/default/&amp;amp;apos;
+
+            at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.write(TarArchiveOutputStream.java:385)
+
+            at java.io.OutputStream.write(Unknown Source)
+
+            at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.writePaxHeaders(TarArchiveOutputStream.java:485)
+
+            at org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.putArchiveEntry(TarArchiveOutputStream.java:312)
+
+            at net.disy.lib.io.tar.TarUtilities.addFile(TarUtilities.java:116)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:158)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.addDirectory(TarUtilities.java:162)
+
+            at net.disy.lib.io.tar.TarUtilities.tar(TarUtilities.java:77)
+
+            at net.disy.lib.io.tar.TarUtilities.tar(TarUtilities.java:42)
+
+            at net.disy.gisterm.tilecacheset.export.TileCacheSetExporter.tarTreeStructure(TileCacheSetExporter.java:262)
+
+            at net.disy.gisterm.tilecacheset.export.TileCacheSetExporter.export(TileCacheSetExporter.java:111)
+
+            at net.disy.gisterm.tilecacheset.desktop.controller.ExportController$1.run(ExportController.java:81)
+
+            ... 2 more
+
+
+Informal source code investigation points to the problem being that for directory entries the code assumes that the length is 0 in putArchiveEntry (see TarArchiveOutputStream:321 ) but when writing the data, it actually writes some data (the filename) and the length written (filename size) is larger than the length expected (0).</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="189" opendate="2012-06-26 21:30:39" fixdate="2012-12-28 06:55:18" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream may read 0 bytes when reading from a nested Zip file</summary>
+			<description>When the following code is run an error "Underlying input stream returned zero bytes" is produced. If the commented line is uncommented it can be seen that the ZipArchiveInputStream returned 0 bytes. This only happens the first time read is called, subsequent calls work as expected i.e. the following code actually works correctly with that line uncommented!
+The zip file used to produce this behavious is available at http://wwmm.ch.cam.ac.uk/~dl387/test.ZIP
+If this is not the correct way of processing a zip file of zip files please let me know. Also I believe whilst ZipFile can iterate over entries fast due to being able to look at the master table whilst ZipArchiveInputStream cannot. Is there anyway of instantiating a ZipFile from a zip file inside another zip file without first extracting the nested zip file?
+    ZipFile zipFile = new ZipFile("C:/test.ZIP");
+    for (Enumeration&amp;lt;ZipArchiveEntry&amp;gt; iterator = zipFile.getEntries(); iterator.hasMoreElements(); ) {
+      ZipArchiveEntry entry = iterator.nextElement();
+      InputStream is = new BufferedInputStream(zipFile.getInputStream(entry));
+      ZipArchiveInputStream zipInput = new ZipArchiveInputStream(is);
+      ZipArchiveEntry innerEntry;
+      while ((innerEntry = zipInput.getNextZipEntry()) != null){
+        if (innerEntry.getName().endsWith("XML"))
+{
+          //zipInput.read();
+          System.out.println(IOUtils.toString(zipInput));
+        }
+      }
+    }</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="201" opendate="2012-09-11 14:37:53" fixdate="2013-01-01 17:31:02" resolution="Fixed">
+		<buginformation>
+			<summary>No constructor to create a TarArchiveEntry link with leading slash</summary>
+			<description>I want to create a link with a leading slash and put it in a tar archive (Debian package).
+The following constructors are provided
+
+
+public TarArchiveEntry(String name, boolean preserveLeadingSlashes)
+public TarArchiveEntry(String name, byte linkFlag)
+
+
+but there is no
+
+
+public TarArchiveEntry(String name, byte linkFlag, boolean preserveLeadingSlashes)
+
+
+so I have to overwrite the name using setName(String) which is not very clean.</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="159" opendate="2011-09-27 18:19:02" fixdate="2013-01-01 18:34:06" resolution="Fixed">
+		<buginformation>
+			<summary>ChangeSetPerformer not reliable for ZipArchiveInputStreams</summary>
+			<description>ChangeSetPerformer&amp;amp;apos;s perform function takes an ArchiveInputStream as an argument and thus frequently runs into issues described under heading &amp;amp;apos;ZipArchiveInputStream vs ZipFile&amp;amp;apos; at http://commons.apache.org/compress/zip.html 
+Personally for a simple local solution I&amp;amp;apos;ve added a slightly modified performZip function taking a ZipFile argument in place of the ArchiveInputStream argument:
+diff perform performZip
+1c1
+&amp;lt;     public ChangeSetResults perform(ArchiveInputStream in, ArchiveOutputStream out)
+
+&amp;gt;     public ChangeSetResults performZip(ZipFile zf, ArchiveOutputStream out)
+17,18c17,18
+&amp;lt;         ArchiveEntry entry = null;
+&amp;lt;         while ((entry = in.getNextEntry()) != null) {
+
+&amp;gt;         ArrayList&amp;lt;ZipArchiveEntry&amp;gt; entries = Collections.list(zf.getEntriesInPhysicalOrder());
+&amp;gt;         for (ZipArchiveEntry entry : entries) {
+46c46
+&amp;lt;                 copyStream(in, out, entry);
+
+&amp;gt;                 copyStream(zf.getInputStream(entry), out, entry);
+A permanent fix may require some re-design, the perform(ArchiveInputStream in, ArchiveOutputStream out) abstraction may be overly general.</description>
+			<version>1.2</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.changes.ChangeSetPerformer.java</file>
+			<file type="M">org.apache.commons.compress.changes.ChangeSetTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="212" opendate="2013-01-03 00:26:49" fixdate="2013-01-04 16:00:40" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveEntry getName() returns wrongly encoded name even when you set encoding to TarArchiveInputStream</summary>
+			<description>I have two file systems. One is Red Hat Linux, the other is MS Windows.
+I created a *.tgz file in Red Hat Linux and tried to decompress it in MS Windows using Commons Compress.
+The default system encoding are different. UTF-8 in Red Hat Linux and CP949 in MS Windows.
+It seems that the file name encoding follows the default encoding even though when I use the following to untar it.
+FileInputStream fis = new FileInputStream(new File(*.tgz));
+TarArchiveInputStream zis = new TarArchiveInputStream(new BufferedInputStream(fis),encodingOfRedHatLinux);
+while ((entry = (TarArchiveEntry)zis.getNextEntry()) != null)
+{
+entry.getName(); // filename is not UTF-8 it is encoded in CP949 and so the filename isn&amp;amp;apos;t consistent
+}
+
+By referring to this
+    /**
+
+Constructor for TarInputStream.
+@param is the input stream to use
+@param encoding name of the encoding to use for file names
+@since Commons Compress 1.4
+     */
+    public TarArchiveInputStream(InputStream is, String encoding) 
+{
+        this(is, TarBuffer.DEFAULT_BLKSIZE, TarBuffer.DEFAULT_RCDSIZE, encoding);
+    }
+
+encoding should be used for file names.
+But actually this doesn&amp;amp;apos;t seem to work.</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="206" opendate="2012-10-24 10:09:02" fixdate="2013-01-20 19:11:58" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveOutputStream sometimes writes garbage beyond the end of the archive</summary>
+			<description>For some combinations of file lengths, the archive created by TarArchiveOutputStream writes garbage beyond the end of the TAR stream. TarArchiveInputStream can still read the stream without problems, but it does not read beyond the garbage. This is problematic for my use case because I write a checksum after the TAR content. If I then try to read the checksum back, I read garbage instead.
+Functional impact:
+
+TarArchiveInputStream is asymmetrical with respect to TarArchiveOutputStream, in the sense that TarArchiveInputStream does not read everything that was written by TarArchiveOutputStream.
+The content is unnecessarily large. The garbage is totally unnecessarily large: ~10K overhead compared to Linux command-line tar.
+
+This symptom is remarkably similar to #COMPRESS-81, which is supposedly fixed since 1.1. Except for the fact that this issue still exists... I&amp;amp;apos;ve tested this with 1.0 and 1.4.1.</description>
+			<version>1.0</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarBuffer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="205" opendate="2012-10-01 18:53:42" fixdate="2013-01-27 09:48:13" resolution="Fixed">
+		<buginformation>
+			<summary>Unit tests can fail when path to project is non-trivial (fix in description)</summary>
+			<description>return factory.createCompressorInputStream(new BufferedInputStream(new FileInputStream(new File(rsc.getFile()))));
+can fail to find the files for testing e.g. /root/.jenkins/jobs/Commons%20Compress/workspace/target/test-classes/test.txt (No such file or directory)
+This can be fixed by simply opening the stream from the URL:
+    private CompressorInputStream getStreamFor(String resource)
+            throws CompressorException, IOException 
+{
+
+        final URL rsc = classLoader.getResource(resource);
+        assertNotNull("Could not find resource "+resource,rsc);
+        return factory.createCompressorInputStream(
+                   new BufferedInputStream(rsc.openStream()));
+    }</description>
+			<version>1.5</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.Zip64SupportIT.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.X5455_ExtendedTimestampTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveEntryTest.java</file>
+			<file type="M">org.apache.commons.compress.ChainingTestCase.java</file>
+			<file type="M">org.apache.commons.compress.DetectArchiverTestCase.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.Maven221MultiVolumeTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UTF8ZipFilesTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.EncryptedArchiveTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.X7875_NewUnixTest.java</file>
+			<file type="M">org.apache.commons.compress.DetectCompressorTestCase.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.SparseFilesTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.LongPathTest.java</file>
+			<file type="M">org.apache.commons.compress.AbstractTestCase.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="218" opendate="2013-02-17 03:08:54" fixdate="2013-02-19 17:19:42" resolution="Fixed">
+		<buginformation>
+			<summary>Typo in CompressorStreamFactory Javadoc</summary>
+			<description>The Javadoc for CompressorStreamFactory contains two examples of "Compressing a file". In actuality, the second example is decompressing a file.</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="219" opendate="2013-02-18 09:39:37" fixdate="2013-02-22 05:08:11" resolution="Fixed">
+		<buginformation>
+			<summary>ZipArchiveInputStream: ArrayIndexOutOfBoundsException when extracting a STORED zip file entry from within a zip.</summary>
+			<description>When trying to read out a ZIP file, that has been stored (Method STORE, not DEFLATE!, with DEFLATE it seems OK) in another ZIP file using the ZipArchiveInputStream, I do get an ArrayIndexOutOfBoundsException when doing the arraycopy in ZipArchiveInputStream#readStored(byte[], int, int) (line 362) because the "toRead" is not decreased by the buf.offsetInBuffer.
+I will add the zip in question as attachment.</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="221" opendate="2013-03-05 18:27:11" fixdate="2013-03-07 16:17:24" resolution="Fixed">
+		<buginformation>
+			<summary>Compress cannot run without XZ included</summary>
+			<description>In previous versions of Compress, we used the Compress library in our application without requiring any other libraries.  Since the introduction of XZ, the library crashes because it does not dynamically try to find the XZ classes. Our application does not use or need XZ, and we cannot add another ~100KB file to our application.
+To reproduce:
+
+
+        try {
+// &amp;lt;properties&amp;gt;&amp;lt;mimeTypeRepository resource="/etc/tika-mimetypes.xml" magic="true"/&amp;gt;&amp;lt;/properties&amp;gt;
+            tika = new TikaConfig(getClass().getClassLoader().getResourceAsStream("etc/tika-config.xml"));
+        } catch (Throwable t) {
+            t.printStackTrace();
+            throw new MimeTypeException("Cannot load tika-config.xml", t);
+        }
+        detector = tika.getDetector();
+        MediaType contentType = MediaType.OCTET_STREAM;
+        contentType = detector.detect(tika, metadata); // error here
+
+
+Calling Detector.detect(InputStream, Metadata) causes a NoClassDefFoundError because it is trying to find the XZ files using a direct reference to the XZ classes.  Detector.detect:61 uses ZipContainerDetector.detect to use CompressorInputStream createCompressorInputStream(InputStream).
+The problem in public CompressorInputStream createCompressorInputStream(InputStream) is it directly calls static methods on the XZCompressorInputStream class which aren&amp;amp;apos;t in the classpath.
+
+
+      if (BZip2CompressorInputStream.matches(signature, signatureLength)) {
+        return new BZip2CompressorInputStream(in);
+      }
+      if (GzipCompressorInputStream.matches(signature, signatureLength)) {
+        return new GzipCompressorInputStream(in);
+      }
+      if (XZCompressorInputStream.matches(signature, signatureLength)) {
+        return new XZCompressorInputStream(in);
+      }
+      if (Pack200CompressorInputStream.matches(signature, signatureLength))
+        return new Pack200CompressorInputStream(in);
+
+
+Ass you can see, the XZCompressorInputStream.matches() method is a static method.  When the class loader loads this class, it tries to load the import statements at the top of XZCompressorInputStream:
+
+
+import org.apache.commons.compress.compressors.CompressorInputStream;
+import org.tukaani.xz.SingleXZInputStream;
+import org.tukaani.xz.XZ;
+import org.tukaani.xz.XZInputStream;
+
+
+And, since these org.tukaani.xz classes don&amp;amp;apos;t exist, a NoClassDefFoundError exception is thrown.
+
+
+java.lang.NoClassDefFoundError: org/tukaani/xz/XZInputStream
+at org.apache.commons.compress.compressors.CompressorStreamFactory.createCompressorInputStream(CompressorStreamFactory.java:120)
+at org.apache.tika.parser.pkg.ZipContainerDetector.detectCompressorFormat(ZipContainerDetector.java:95)
+at org.apache.tika.parser.pkg.ZipContainerDetector.detect(ZipContainerDetector.java:81)
+at org.apache.tika.detect.CompositeDetector.detect(CompositeDetector.java:61)
+at com.lookout.mimetype.TikaResourceMetadataFactory.createMetadata(TikaResourceMetadataFactory.java:166)
+at com.lookout.mimetype.TikaResourceMetadataFactory.createMetadata(TikaResourceMetadataFactory.java:112)
+(...)
+Caused by: java.lang.ClassNotFoundException: org.tukaani.xz.XZInputStream
+at java.net.URLClassLoader$1.run(URLClassLoader.java:202)
+at java.security.AccessController.doPrivileged(Native Method)
+at java.net.URLClassLoader.findClass(URLClassLoader.java:190)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+
+
+The appropriate approach is to see if the classes exist before trying to use them.  If they fail, then XZ is not supported and ZipContainerDetector.detect will not support XZ files.</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.compressors.xz.XZUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="223" opendate="2013-04-17 14:44:36" fixdate="2013-04-25 13:39:14" resolution="Fixed">
+		<buginformation>
+			<summary>NPE from TarBuffer.tryToConsumeSecondEOFRecord</summary>
+			<description>I get an NPE using Lister on the decompressed 
+Xerces-J-bin.2.5.0.tar.gz archive.
+Wrapping the for loop in TarBuffer.isEOFRecord with a null check would fix the issue; it would also clean up the TarArchiveInputStream.getRecord implementation a little.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarBuffer.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="224" opendate="2013-04-29 09:16:14" fixdate="2013-04-30 13:41:45" resolution="Duplicate">
+		<buginformation>
+			<summary>Cannot uncompress very large bzip2 files</summary>
+			<description>When extracting big files like http://download.geofabrik.de/europe/germany/bayern-latest.osm.bz2 apache-compress works nicely. But when trying the same for e.g. http://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/planet/planet-latest.osm.bz2 it stops without an error after exactly 900000 bits.
+I&amp;amp;apos;m using the following code:
+App.java
+
+ public static void main(String[] args) throws IOException {
+        if (args.length == 0)
+            throw new IllegalArgumentException("You need to specify the bz2 file!");
+
+        String fromFile = args[0];
+        if (!fromFile.endsWith(".bz2"))
+            throw new IllegalArgumentException("You need to specify a bz2 file! But was:" + fromFile);
+        String toFile = pruneFileEnd(fromFile);
+
+        FileInputStream in = new FileInputStream(fromFile);
+        FileOutputStream out = new FileOutputStream(toFile);
+        BZip2CompressorInputStream bzIn = new BZip2CompressorInputStream(in);
+        try {
+            final byte[] buffer = new byte[1024 * 8];
+            int n = 0;
+            while (-1 != (n = bzIn.read(buffer))) {
+                out.write(buffer, 0, n);
+            }
+        } finally {
+            out.close();
+            bzIn.close();
+        }
+    }
+
+    public static String pruneFileEnd(String file) {
+        int index = file.lastIndexOf(".");
+        if (index &amp;lt; 0)
+            return file;
+        return file.substring(0, index);
+    }
+
+</description>
+			<version>1.5</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.XZTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.GZipTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.BZip2TestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">146</link>
+		</links>
+	</bug>
+	<bug id="228" opendate="2013-05-24 23:06:30" fixdate="2013-05-26 17:37:18" resolution="Fixed">
+		<buginformation>
+			<summary>ZipException on reading valid zip64 file</summary>
+			<description>ZipFile zip = new ZipFile(new File("ordertest-64.zip")); throws ZipException "central directory zip64 extended information extra field&amp;amp;apos;s length doesn&amp;amp;apos;t match central directory data.  Expected length 16 but is 28".
+The archive was created by using DotNetZip-WinFormsTool uzing zip64 flag (forces always to make zip64 archives).
+Zip file is tested from the console: $zip -T ordertest-64.zip
+Output:
+test of ordertest-64.zip OK
+I can open the archive with FileRoller without problem on my machine, browse and extract it.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.Zip64ExtendedInformationExtraField.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="229" opendate="2013-06-01 08:23:05" fixdate="2013-06-03 09:22:35" resolution="Fixed">
+		<buginformation>
+			<summary>incorrect handling of GNU longlink entries</summary>
+			<description>Apache commons-compress handles GNU LongLink entries for long filenames. But it fails to handle LongLink entries for long linknames[1] correctly.
+[1] http://git.savannah.gnu.org/cgit/tar.git/tree/src/tar.h#n176</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.LongPathTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarConstants.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="227" opendate="2013-05-20 14:08:24" fixdate="2013-06-04 04:27:10" resolution="Fixed">
+		<buginformation>
+			<summary>duplicate entries may let ZipFile#getInputStream return null</summary>
+			<description>Found while investigating https://issues.apache.org/bugzilla/show_bug.cgi?id=54967
+If an archive contains two entries for the same file readCentralDirectory in ZipFile will only add the first entry to the entries map and only the last to the nameMap map - this is because entries is a LinkedHashMap and nameMap is a "plain" HashMap.
+Normally this wouldn&amp;amp;apos;t matter since both ZipArchiveEntry instances are equal and thus it is irrelevant which of the two is used as a key when obtaining the InputStream.
+Things get different, though, if the entry has data inside the local file header as only the first entry is dealt with in resolveLocalFileHeaderData - after this the two instances are no longer equal and nameMap.get(NAME) will return an instance that can no longer be found.
+I intend to modify readCentralDirectory to only add the first entry to nameMap as well and document the behavior.  I&amp;amp;apos;ll also start a discussion thread on the dev list on whether we need to provide an additional API with multiple entries per name.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="236" opendate="2013-08-02 10:31:14" fixdate="2013-08-08 16:19:20" resolution="Fixed">
+		<buginformation>
+			<summary>IllegalArgumentException reading CPIO generated by Redline RPM</summary>
+			<description>http://redline-rpm.org/ creates CPIO archives with a non-zero file mode on the trailer. This causes an IllegalArgumentException when reading the file. I&amp;amp;apos;ve attached a patch and test archive to fix this.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioUtil.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="237" opendate="2013-08-06 22:35:37" fixdate="2013-08-09 09:18:18" resolution="Fixed">
+		<buginformation>
+			<summary>Long link support for TarArchiveOutputStream</summary>
+			<description>TarArchiveOutputStream doesn&amp;amp;apos;t handle properly long link names, they are truncated silently in most cases.
+
+In GNU mode a @LongLink entry should be created similarly to long names but with the &amp;amp;apos;K&amp;amp;apos; type (GNU_LONGLINK) instead of &amp;amp;apos;L&amp;amp;apos; (GNU_LONGNAME)
+In POSIX mode a pax header with the linkpath keyword should be added. This is already implemented for links containing a non ASCII character.
+In the default ERROR mode no exception is thrown and the link is truncated.
+
+The logic for adding a pax header on non ASCII characters should probably be reworked, as it seems possible to have pax headers mixed with GNU @LongLink entries. I&amp;amp;apos;m not sure this is desirable.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="239" opendate="2013-10-02 22:39:40" fixdate="2013-10-04 13:26:49" resolution="Fixed">
+		<buginformation>
+			<summary>ArchiveStreamFactory cannot create an ArchiveInputStream from any input stream that is blocking</summary>
+			<description>Encountered while streaming zip data over a network:
+In the createArchiveInputStream method of ArchiveStreamFactory, when the provided input stream is read, and it blocks before 12 bytes are available for reading, due to the contract of the java.io.InputStream class, the archive signature will not be completely read, and an ArchiveException will be thrown ("No Archiver found for the stream signature").
+In ZipArchiveInputStream, you have implemented a readFully method, which should solve this issue, but since you are checking the length of the signature read against the expected length, you are never getting to do that.  When you try to read the signature, you should be using readFully.
+For reference, here is important part of the contract of java.io.InputStream.read():
+This method blocks until [ANY] input data is available, end of file is detected, or an exception is thrown.
+If len is zero, then no bytes are read and 0 is returned; otherwise, there is an attempt to read at least one byte. If no byte is available because the stream is at end of file, the value -1 is returned; otherwise, at least one byte is read and stored into b.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="240" opendate="2013-10-21 16:18:20" fixdate="2013-10-21 16:20:05" resolution="Fixed">
+		<buginformation>
+			<summary>ZipEncodingHelper.isUTF8(String) does not check all UTF-8 aliases</summary>
+			<description>ZipEncodingHelper.isUTF8(String) does not check all UTF-8 aliases.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipEncodingHelper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="241" opendate="2013-10-27 17:39:45" fixdate="2013-10-27 17:43:55" resolution="Fixed">
+		<buginformation>
+			<summary>writing 7z entries with LZMA2 fails when closing the stream</summary>
+			<description>closing archive entries that use LZMA2 compression fails on JDK8 early access build 113 due to:
+
+
+org.tukaani.xz.XZIOException: Stream finished or closed
+	at org.tukaani.xz.LZMA2OutputStream.flush(Unknown Source)
+	at java.io.FilterOutputStream.flush(FilterOutputStream.java:140)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:158)
+	at org.apache.commons.compress.archivers.sevenz.LZMA2Decoder$FinishOnCloseStream.close(LZMA2Decoder.java:67)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:159)
+	at org.apache.commons.compress.archivers.sevenz.SevenZOutputFile.closeArchiveEntry(SevenZOutputFile.java:125)
+
+
+Actually there is no need to explicitly finish the wrapped stream as XZ for Java&amp;amp;apos;s LZMA2OutputStream which is returned by LZMA2Options#getOutputStream wll internally finish the stream when close is called.</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.LZMA2Decoder.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="244" opendate="2013-11-25 12:36:51" fixdate="2013-11-27 05:36:33" resolution="Fixed">
+		<buginformation>
+			<summary>7z reading of UINT64 data type is wrong for big values</summary>
+			<description>Brief description
+large values with a first byte indicating at least 4 additional bytes shift an integer by at least 32bits thus leading to an overflow and an incorrect value - the value needs to be casted to long before the bitshift!
+(see the attached patch)
+Details from the 7z documentation
+
+
+UINT64 means real UINT64 encoded with the following scheme:
+  Size of encoding sequence depends from first byte:
+  First_Byte  Extra_Bytes        Value
+  (binary)   
+  0xxxxxxx               : ( xxxxxxx           )
+  10xxxxxx    BYTE y[1]  : (  xxxxxx &amp;lt;&amp;lt; (8 * 1)) + y
+  110xxxxx    BYTE y[2]  : (   xxxxx &amp;lt;&amp;lt; (8 * 2)) + y
+  ...
+  1111110x    BYTE y[6]  : (       x &amp;lt;&amp;lt; (8 * 6)) + y
+  11111110    BYTE y[7]  :                         y
+  11111111    BYTE y[8]  :                         y
+
+</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="245" opendate="2013-12-05 11:01:39" fixdate="2013-12-06 05:23:51" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream#getNextTarEntry returns null prematurely</summary>
+			<description>The attached archive decompressed with 1.6 only extracts part of the archive. This does not happen with version 1.5
+
+
+FileInputStream fin = new FileInputStream("exampletar.tar.gz");
+GZIPInputStream gin = new GZIPInputStream(fin);
+TarArchiveInputStream tin = new TarArchiveInputStream(gin);            TarArchiveEntry entry;
+            while ((entry = tin.getNextTarEntry()) != null) {
+
+
+The file is created with 
+
+tar cvzf
+
+ in RHEL 6.5 and the contents look like this when extracted with the same tool:
+
+topdirectory/
+topdirectory/about.html
+topdirectory/.eclipseproduct
+topdirectory/plugins/
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/about.html
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/eclipse.inf
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/ECLIPSEF.SF
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/MANIFEST.MF
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/ECLIPSEF.RSA
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/launcher.gtk.linux.x86_64.properties
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/eclipse_1206.so
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/about.html
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/fragment.properties
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/.api_description
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/META-INF/
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/META-INF/eclipse.inf
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/META-INF/ECLIPSEF.SF
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/META-INF/MANIFEST.MF
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/META-INF/ECLIPSEF.RSA
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/runtime_registry_compatibility.jar
+topdirectory/configuration/
+topdirectory/configuration/config.ini
+topdirectory/icon.xpm
+topdirectory/about_files/
+topdirectory/about_files/pixman-licenses.txt
+topdirectory/about_files/mpl-v11.txt
+topdirectory/about_files/about_cairo.html
+topdirectory/libcairo-swt.so
+
+
+with commons-compress-1.6 it looks like this:
+
+topdirectory/
+topdirectory/about.html
+topdirectory/.eclipseproduct
+topdirectory/plugins
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/about.html
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/eclipse.inf
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/ECLIPSEF.SF
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/MANIFEST.MF
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/META-INF/ECLIPSEF.RSA
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/launcher.gtk.linux.x86_64.properties
+topdirectory/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.0.200.v20090519/eclipse_1206.so
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/about.html
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/fragment.properties
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/.api_description
+topdirectory/plugins/org.eclipse.core.runtime.compatibility.registry_3.2.200.v20090429-1800/META-INF
+
+</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">249</link>
+		</links>
+	</bug>
+	<bug id="249" opendate="2013-12-10 12:37:04" fixdate="2013-12-10 12:39:01" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream does not properly read from underlying InputStream</summary>
+			<description>TarArchiveInputStream reads header with its protected function readRecord(). This code improperly assumes that is.read(buf) always fills the whole buffer. This assumption is wrong. A proper implementation needs to call read multiple times until all bytes are read:
+TarArchiveInputStream.java
+
+  protected byte[] readRecord() throws IOException {
+        byte[] record = new byte[recordSize];
+
+        // start change
+        // int readNow = is.read(buf);
+        int readNow = 0;
+        while(readNow &amp;lt; recordSize){
+          int bytesRead = is.read(record,0, recordSize - readNow);
+          if(bytesRead == -1) {
+            break;
+          }
+          readNow += bytesRead;
+        }
+        // end change
+        count(readNow);
+        if (readNow != recordSize) {
+            return null;
+        }
+
+        return record;
+    }
+
+</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">245</link>
+			<link type="Regression" description="is broken by">234</link>
+		</links>
+	</bug>
+	<bug id="252" opendate="2013-12-18 16:12:34" fixdate="2014-01-08 05:19:52" resolution="Fixed">
+		<buginformation>
+			<summary>Writing 7z empty entries produces incorrect or corrupt archive</summary>
+			<description>I couldn&amp;amp;apos;t find an exact rule that causes this incorrect behavior, but I tried to reduce it to some simple scenarios to reproduce it:
+Input: A folder with certain files -&amp;gt; tried to archive it.
+If the folder contains more than 7 files the incorrect behavior appears.
+Scenario 1: 7 empty files
+Result: The created archive contains a single folder entry with the name of the archive (no matter which was the name of the file)
+Scenario 2: 7 files, some empty, some with content
+Result: The created archive contains a folder entry with the name of the archive and a number of file entries also with the name of the archive. The number of the entries is equal to the number of non empty files.
+Scenario 3: 8 empty files
+Result: 7zip Manager cannot open archive and stops working.
+Scenario 4.1: 8 files: some empty, some with content, last file (alphabetically) with content
+Result: same behavior as described for Scenario 2.
+Scenario 4.2: 8 files, some empty, some with content, last file empy
+Result: archive is corrupt, the following message is received: "Cannot open file &amp;amp;apos;archivename.7z&amp;amp;apos; as archive" (7Zip Manager does not crash).</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZOutputFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZOutputFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="253" opendate="2014-01-07 10:09:12" fixdate="2014-01-20 13:26:44" resolution="Fixed">
+		<buginformation>
+			<summary>BZip2CompressorInputStream reads fewer bytes from truncated file than CPython&amp;apos;s bz2 implementation</summary>
+			<description>Jython includes support for decompressing bz2 files using commons compress and shares regression tests with CPython. The CPython test test_read_truncated in test_bz2.py passes under CPython but fails under Jython.
+The BZip2CompressorInputStream is able to read 769 bytes from the truncated data rather than the 770 bytes that the CPython bz2 implementation can read.</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="256" opendate="2014-01-20 17:18:17" fixdate="2014-01-22 05:16:37" resolution="Fixed">
+		<buginformation>
+			<summary>7z: 16 MB dictionary is too big</summary>
+			<description>I created an archiv with 7zip 9.20 containing the compress-1.7-src directory. Also tried it with 1.6 version and directory. I 
+downloaded the zip file and reziped it as 7z. The standard setting where used:
+Compression level: normal
+Compression method: lzma2
+Dictionary size: 16 MB
+Word size: 32
+Solid Block size: 2 GB
+I get an exception if I try to open the file with the simple line of code:
+SevenZFile input = new SevenZFile(new File(arcName));
+Maybe it is a bug in the tukaani library, but I do not know how to report it to them.
+The exception thrown:
+org.tukaani.xz.UnsupportedOptionsException: LZMA dictionary is too big for this implementation
+	at org.tukaani.xz.LZMAInputStream.initialize(Unknown Source)
+	at org.tukaani.xz.LZMAInputStream.&amp;lt;init&amp;gt;(Unknown Source)
+	at org.apache.commons.compress.archivers.sevenz.Coders$LZMADecoder.decode(Coders.java:117)
+	at org.apache.commons.compress.archivers.sevenz.Coders.addDecoder(Coders.java:48)
+	at org.apache.commons.compress.archivers.sevenz.SevenZFile.readEncodedHeader(SevenZFile.java:278)
+	at org.apache.commons.compress.archivers.sevenz.SevenZFile.readHeaders(SevenZFile.java:190)
+	at org.apache.commons.compress.archivers.sevenz.SevenZFile.&amp;lt;init&amp;gt;(SevenZFile.java:94)
+	at org.apache.commons.compress.archivers.sevenz.SevenZFile.&amp;lt;init&amp;gt;(SevenZFile.java:116)
+	at compress.SevenZipError.main(SevenZipError.java:28)</description>
+			<version>1.6</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.Coders.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFileTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="259" opendate="2014-01-24 14:29:37" fixdate="2014-01-24 14:41:38" resolution="Fixed">
+		<buginformation>
+			<summary>CompressorStreamFactory.createCompressorInputStream with explicit compression does not honour decompressConcatenated</summary>
+			<description>When using CompressorStreamFactory.createCompressorInputStream, the decompressConcatenated property is only used when auto-detecting the compressor format for an input stream. The method with explicit compressor specification ignores the decompressConcatenated property, though.
+The fix is easy: pass the decompressConcatenated property as argument to all constructors.</description>
+			<version>1.7</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="262" opendate="2014-02-10 06:32:58" fixdate="2014-02-21 05:21:15" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream fails to read entry with big user-id value</summary>
+			<description>Caused by: java.lang.IllegalArgumentException: Invalid byte 52 at offset 7 in &amp;amp;apos;62410554&amp;amp;apos; len=8
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctal(TarUtils.java:130)
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctalOrBinary(TarUtils.java:175)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:953)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:940)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.&amp;lt;init&amp;gt;(TarArchiveEntry.java:324)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:247)
+	... 5 more</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="264" opendate="2014-02-20 01:57:16" fixdate="2014-02-21 14:22:56" resolution="Fixed">
+		<buginformation>
+			<summary>ZIP reads correctly with commons-compress 1.6, gives NUL bytes in 1.7</summary>
+			<description>When running the code below, commons-compress 1.6 writes:
+ Content of test.txt:
+ data
+By comparison, commons-compress 1.7 writes
+ Content of test.txt:
+@@@@^@
+package com.example.jrn;
+import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.lang.System;
+/**
+
+Hello world!
+ *
+ */
+public class App {
+  public static void main(String[] args) {
+    byte[] zip = 
+{
+       (byte)0x50, (byte)0x4b, (byte)0x03, (byte)0x04, (byte)0x0a, (byte)0x00,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x03, (byte)0x7b,
+       (byte)0xd1, (byte)0x42, (byte)0x82, (byte)0xc5, (byte)0xc1, (byte)0xe6,
+       (byte)0x05, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x05, (byte)0x00,
+       (byte)0x00, (byte)0x00, (byte)0x08, (byte)0x00, (byte)0x1c, (byte)0x00,
+       (byte)0x74, (byte)0x65, (byte)0x73, (byte)0x74, (byte)0x2e, (byte)0x74,
+       (byte)0x78, (byte)0x74, (byte)0x55, (byte)0x54, (byte)0x09, (byte)0x00,
+       (byte)0x03, (byte)0x56, (byte)0x62, (byte)0xbf, (byte)0x51, (byte)0x2a,
+       (byte)0x63, (byte)0xbf, (byte)0x51, (byte)0x75, (byte)0x78, (byte)0x0b,
+       (byte)0x00, (byte)0x01, (byte)0x04, (byte)0x01, (byte)0xff, (byte)0x01,
+       (byte)0x00, (byte)0x04, (byte)0x88, (byte)0x13, (byte)0x00, (byte)0x00,
+       (byte)0x64, (byte)0x61, (byte)0x74, (byte)0x61, (byte)0x0a, (byte)0x50,
+       (byte)0x4b, (byte)0x01, (byte)0x02, (byte)0x1e, (byte)0x03, (byte)0x0a,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x03,
+       (byte)0x7b, (byte)0xd1, (byte)0x42, (byte)0x82, (byte)0xc5, (byte)0xc1,
+       (byte)0xe6, (byte)0x05, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x05,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x08, (byte)0x00, (byte)0x18,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x01,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0xa0, (byte)0x81, (byte)0x00,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x74, (byte)0x65, (byte)0x73,
+       (byte)0x74, (byte)0x2e, (byte)0x74, (byte)0x78, (byte)0x74, (byte)0x55,
+       (byte)0x54, (byte)0x05, (byte)0x00, (byte)0x03, (byte)0x56, (byte)0x62,
+       (byte)0xbf, (byte)0x51, (byte)0x75, (byte)0x78, (byte)0x0b, (byte)0x00,
+       (byte)0x01, (byte)0x04, (byte)0x01, (byte)0xff, (byte)0x01, (byte)0x00,
+       (byte)0x04, (byte)0x88, (byte)0x13, (byte)0x00, (byte)0x00, (byte)0x50,
+       (byte)0x4b, (byte)0x05, (byte)0x06, (byte)0x00, (byte)0x00, (byte)0x00,
+       (byte)0x00, (byte)0x01, (byte)0x00, (byte)0x01, (byte)0x00, (byte)0x4e,
+       (byte)0x00, (byte)0x00, (byte)0x00, (byte)0x47, (byte)0x00, (byte)0x00,
+       (byte)0x00, (byte)0x00, (byte)00
+    }
+;
+
+    ByteArrayInputStream bin = new ByteArrayInputStream(zip);
+    try {
+      ZipArchiveInputStream in = new ZipArchiveInputStream(bin);
+      try {
+        while (true) {
+          ZipArchiveEntry entry = in.getNextZipEntry();
+          if (entry == null) 
+{
+            break;
+          }
+          byte[] buf = new byte[(int) entry.getSize()];
+          in.read(buf);
+          System.out.println("Content of " + entry.getName() + ":");
+          System.out.write(buf);
+        }
+      } finally 
+{
+        in.close();
+      }
+    } catch (IOException e) 
+{
+      System.err.println("IOException: " + e);
+    }
+  }
+}</description>
+			<version>1.7</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">268</link>
+		</links>
+	</bug>
+	<bug id="265" opendate="2014-02-21 14:27:20" fixdate="2014-02-22 07:05:05" resolution="Fixed">
+		<buginformation>
+			<summary>PAX headers with "strange" names can not be written</summary>
+			<description>as noted by Patrik Burkhalter in COMPRESS-203 if a non-ASCII character is "7-bit-cleaned" to &amp;amp;apos;\&amp;amp;apos; this may lead to a file name for the PAX header that looks like a directory name to TarArchiveEntry - which leads to a bug very similar to COMPRESS-203.</description>
+			<version>1.7</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="267" opendate="2014-02-22 15:52:38" fixdate="2014-02-22 19:19:49" resolution="Fixed">
+		<buginformation>
+			<summary>ArchiveStreamFactory throws "No Archiver found for the stream signature" on 7z files</summary>
+			<description>Apache Tika makes use of ArchiveStreamFactory to handle a wide range of archive formats (Zip, AR, CPIO, Tar etc)
+We&amp;amp;apos;ve just upgraded to Commons Compress 1.7, and tried to make use of the new 7z support to add in 7z handling too. However, when you try to call:
+            ArchiveStreamFactory factory = new ArchiveStreamFactory();
+            ArchiveInputStream ais = factory.createArchiveInputStream(stream);
+With a 7z file it fails with:
+    new ArchiveException("No Archiver found for the stream signature");</description>
+			<version>1.7</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactoryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFileTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="268" opendate="2014-02-28 22:28:39" fixdate="2014-03-01 05:59:13" resolution="Duplicate">
+		<buginformation>
+			<summary>Buffer not read first time for entries with STORED compression method</summary>
+			<description>Trying to extract a ZIP archive that contains entries with STORED compression method, the ZipArchiveInputStream.readStored(byte[], int, int) method is called. At this point, because the buf array has not had a chance to be populated with values from the underlying input stream and because there&amp;amp;apos;s no condition to detect this, the resulting content is prefixed with the buffer&amp;amp;apos;s length (512) of 0 bytes.
+I&amp;amp;apos;ve found that chancing:
+if (buf.position() &amp;gt;= buf.limit()) {
+with
+if (buf.position() &amp;gt;= buf.limit() || current.bytesReadFromStream == 0) {
+solves the issue.</description>
+			<version>1.7</version>
+			<fixedVersion>1.8</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFileTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">264</link>
+		</links>
+	</bug>
+	<bug id="270" opendate="2014-03-27 09:49:24" fixdate="2014-03-28 16:29:53" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream fails to read PAX header from InputStream</summary>
+			<description>We have a scenario with a "slow" InputStream and are facing IOExceptions with TarArchiveEntry#getNextTarEntry().
+If the InputStream does not deliver fast enough, TarArchiveEntry#parsePaxHeaders(InputStream i) fails at this location:
+TarArchiveInputStream.java
+
+// Get rest of entry
+byte[] rest = new byte[len - read];
+int got = i.read(rest);
+if (got != len - read){
+	throw new IOException("Failed to read "
+		+ "Paxheader. Expected "
+		+ (len - read)
+		+ " bytes, read "
+		+ got);
+}
+
+
+We would suggest to change the code to something like this:
+TarArchiveInputStream.java
+
+// Get rest of entry
+byte[] rest = new byte[len - read];
+int got = 0;
+while((ch = i.read()) != -1) {
+	rest[got] = (byte) ch;
+	got++;
+	if(got == len - read) {
+		break;
+	}
+}
+if (got != len - read){
+	throw new IOException("Failed to read "
+		+ "Paxheader. Expected "
+		+ (len - read)
+		+ " bytes, read "
+		+ got);
+}
+
+
+This would make sure, that it gets all bytes of the PAX header value.</description>
+			<version>1.8</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.dump.TapeInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ar.ArArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.compressors.snappy.SnappyCompressorInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="272" opendate="2014-04-10 22:07:05" fixdate="2014-04-12 16:35:41" resolution="Fixed">
+		<buginformation>
+			<summary>CompressorStreamFactory fails to autodetect files using Unix compress (.Z files)</summary>
+			<description>I use the factory classes quite extensively to guess the correct implementation of a file that needs to be unpacked.  The current doc does list that for lzma and 7zip files, the auto detect will not work.  I have worked around this by looking at the file extension, and hope that its correct.
+For .Z files, I can only uncompress the file if I explicitly tell the factory that its using .Z compression, the auto detect never works.  I&amp;amp;apos;m using 1.7, but I dont think its fixed in 1.8 either (after looking at the bug fix list).
+Either its a bug in the doc, or in the auto detect of the compressor factory.</description>
+			<version>1.7</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.ZTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.compressors.z.ZCompressorInputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">313</link>
+		</links>
+	</bug>
+	<bug id="277" opendate="2014-04-11 11:07:56" fixdate="2014-04-12 17:06:45" resolution="Fixed">
+		<buginformation>
+			<summary>IOUtils.skip does not work as advertised</summary>
+			<description>I am trying to feed a TarInputStream from a CipherInputStream.
+It does not work, because IOUtils.skip() does not adhere to the contract it claims in javadoc:
+"     * &amp;lt;p&amp;gt;This method will only skip less than the requested number of
+
+bytes if the end of the input stream has been reached.&amp;lt;/p&amp;gt;"
+
+However it does:
+            long skipped = input.skip(numToSkip);
+            if (skipped == 0) 
+{
+                break;
+            }
+
+And the input stream javadoc says:
+"     * This may result from any of a number of conditions; reaching end of file
+
+before &amp;lt;code&amp;gt;n&amp;lt;/code&amp;gt; bytes have been skipped is only one possibility."
+
+In the case of CipherInputStream, it stops at the end of each byte buffer.
+If you check the IOUtils from colleagues at commons-io, they have considered this case in IOUtils.skip() where they use a read to skip through the stream.
+An optimized version could combine trying to skip, then read then trying to skip again.</description>
+			<version>1.8</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.utils.IOUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="276" opendate="2014-04-11 05:03:17" fixdate="2014-04-13 08:33:29" resolution="Fixed">
+		<buginformation>
+			<summary>NullPointerException in ZipArchiveOutputStream with invalid entries</summary>
+			<description>Writing raw data seems to cause problems in multiple ways, because an internal field is not set. Is this a wrong API usage?
+    java.io.ByteArrayOutputStream var0 = new java.io.ByteArrayOutputStream();
+    org.apache.commons.compress.archivers.jar.JarArchiveOutputStream var1 = new org.apache.commons.compress.archivers.jar.JarArchiveOutputStream((java.io.OutputStream)var0);
+    var1.write(25843);
+Other tests (see attachment) are very similar and cause the same problem. They can probably be ignored because the first test is the shortest one.</description>
+			<version>1.8</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZOutputFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.dump.DumpArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.arj.ArjArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="274" opendate="2014-04-11 04:53:48" fixdate="2014-04-13 09:00:23" resolution="Fixed">
+		<buginformation>
+			<summary>NullPointerException in ChangeSet.addDeletion when using bogus data</summary>
+			<description>When adding some bogus data and then trying to call deleteDir with a bogus name, a NullPointerException results. See attached test.</description>
+			<version>1.8</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.changes.ChangeSet.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="273" opendate="2014-04-11 04:13:32" fixdate="2014-04-18 14:14:16" resolution="Fixed">
+		<buginformation>
+			<summary>NullPointerException when creation fields/entries from scratch</summary>
+			<description>The API has public default constructors for many data types. However, when these 0-argument constructors are used, certain internal references are null, resulting in a NullPointerException soon after.
+This also applies to some 1-argument constructors where two references should be set before get... is used later.
+Either (1) these constructors should be non-public, (2) there should be documentation that certain fields need to be set later for an instance to be usable. In the latter case, there must be public set methods for the missing data.
+The attachment contains a number of similar test cases that show the same issue in a couple of classes.
+An example:
+    org.apache.commons.compress.archivers.zip.UnicodeCommentExtraField var0 = new org.apache.commons.compress.archivers.zip.UnicodeCommentExtraField();
+    org.apache.commons.compress.archivers.zip.ZipShort var1 = var0.getLocalFileDataLength();</description>
+			<version>1.8</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.UnrecognizedExtraField.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ExtraFieldUtils.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.AbstractUnicodeExtraField.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="278" opendate="2014-04-18 16:09:05" fixdate="2014-04-19 06:01:10" resolution="Fixed">
+		<buginformation>
+			<summary>Incorrect handling of NUL username and group Tar.gz entries</summary>
+			<description>With version 1.8 of commons-compress it&amp;amp;apos;s no longer possible to decompress  files from an archive if the archive contains entries having null (or being empty?) set as username and/or usergroup. With version 1.7 this still worked now I get this exception:
+
+
+java.io.IOException: Error detected parsing the header
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:249)
+	at TestBed.AppTest.extractNoFileOwner(AppTest.java:30)
+Caused by: java.lang.IllegalArgumentException: Invalid byte 32 at offset 7 in &amp;amp;apos;       {NUL}&amp;amp;apos; len=8
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctal(TarUtils.java:134)
+	at org.apache.commons.compress.archivers.tar.TarUtils.parseOctalOrBinary(TarUtils.java:173)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:953)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.parseTarHeader(TarArchiveEntry.java:940)
+	at org.apache.commons.compress.archivers.tar.TarArchiveEntry.&amp;lt;init&amp;gt;(TarArchiveEntry.java:324)
+	at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:247)
+	... 27 more
+
+
+
+This exception leads to my suspision that the regression was introduced with the fix for this ticket COMPRESS-262, which has a nearly identical exception provided.
+Some test code you can run to verify it:
+
+
+package TestBed;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.commons.compress.archivers.tar.TarArchiveEntry;
+import org.apache.commons.compress.archivers.tar.TarArchiveInputStream;
+import org.apache.commons.compress.compressors.gzip.GzipCompressorInputStream;
+import org.junit.Test;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest
+{
+
+    @Test
+    public void extractNoFileOwner()
+    {
+        TarArchiveInputStream tarInputStream = null;
+
+        try
+        {
+            tarInputStream =
+                new TarArchiveInputStream( new GzipCompressorInputStream( new FileInputStream( new File(
+                    "/home/pknobel/redis-dist-2.8.3_1-linux.tar.gz" ) ) ) );
+            TarArchiveEntry entry;
+            while ( ( entry = tarInputStream.getNextTarEntry() ) != null )
+            {
+                System.out.println( entry.getName() );
+                System.out.println(entry.getUserName()+"/"+entry.getGroupName());
+            }
+
+        }
+        catch ( FileNotFoundException e )
+        {
+            e.printStackTrace();
+        }
+        catch ( IOException e )
+        {
+            e.printStackTrace();
+        }
+    }
+
+}
+
+
+With 1.7 the TestCase outputed this:
+
+
+redis-dist-2.8.3_1/bin/
+/
+redis-dist-2.8.3_1/bin/redis-server
+jenkins/jenkins
+redis-dist-2.8.3_1/bin/redis-cli
+jenkins/jenkins
+
+
+With 1.8 it&amp;amp;apos;s failing once it reaches the null valued entry, which is the first. The archive is created using maven assembly plugin, and I tried the same with maven ant task. Both generating an archive with not set username and groups for at least some entries.
+You can download the archive from http://heli0s.darktech.org/redis/2.8.3_1/redis-dist-2.8.3_1-linux.tar.gz
+If you run a tar -tvzf on the file you see this report:
+
+
+drwxr-xr-x 0/0               0 2014-04-18 09:43 redis-dist-2.8.3_1-SNAPSHOT/bin/
+-rwxr-xr-x pknobel/pknobel 3824588 2014-01-02 14:58 redis-dist-2.8.3_1-SNAPSHOT/bin/redis-cli
+-rwxr-xr-x pknobel/pknobel 5217234 2014-01-02 14:58 redis-dist-2.8.3_1-SNAPSHOT/bin/redis-server
+
+
+The user 0/0 probably indicates that it&amp;amp;apos;s not set although it&amp;amp;apos;s the root user id. A correctly root user file would show up as root/root</description>
+			<version>1.8</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="279" opendate="2014-04-23 08:11:16" fixdate="2014-04-27 09:16:34" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream silently finished when unexpected EOF occured</summary>
+			<description>I just found the following test case didn&amp;amp;apos;t raise an IOException as it used to be for a tar trimmed on purpose 
+@Test
+  public void testCorruptedBzip2() throws IOException {
+    String archivePath = PathUtil.join(testdataDir, "test.tar.bz2");
+    TarArchiveInputStream input = null;
+    input = new TarArchiveInputStream(new BZip2CompressorInputStream(
+        GoogleFile.SYSTEM.newInputStream(archivePath), true));
+    ArchiveEntry nextMatchedEntry = input.getNextEntry();
+    while (nextMatchedEntry != null) 
+{
+      logger.infofmt("Extracting %s", nextMatchedEntry.getName());
+      String outputPath = PathUtil.join("/tmp/", nextMatchedEntry.getName());
+      OutputStream out = new FileOutputStream(outputPath);
+      ByteStreams.copy(input, out);
+      out.close();
+      nextMatchedEntry = input.getNextEntry();
+    }
+  }</description>
+			<version>1.7</version>
+			<fixedVersion>1.8.1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="287" opendate="2014-08-13 15:00:53" fixdate="2014-08-14 05:41:58" resolution="Fixed">
+		<buginformation>
+			<summary>Support for 7z archives using "kDummy"</summary>
+			<description>When Commons Compress 1.8.1 parse the attachment file:Archive.7z, the following error occurred.
+org.apache.tika.exception.TikaException: TIKA-198: Illegal IOException from org.apache.tika.parser.pkg.PackageParser@886b178
+EndTime:	1407899886604
+at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:248)
+at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:242)
+at org.apache.tika.parser.AutoDetectParser.parse(AutoDetectParser.java:148)
+at org.apache.tika.Tika.parseToString(Tika.java:381)
+at fileparser.fileparser_jsonstring(fileparser.java:116)
+at test.main(test.java:26)
+Caused by: java.io.IOException: kDummy is unsupported, please report
+at org.apache.commons.compress.archivers.sevenz.SevenZFile.readFilesInfo(SevenZFile.java:711)
+at org.apache.commons.compress.archivers.sevenz.SevenZFile.readHeader(SevenZFile.java:242)
+at org.apache.commons.compress.archivers.sevenz.SevenZFile.readHeaders(SevenZFile.java:198)
+at org.apache.commons.compress.archivers.sevenz.SevenZFile.&amp;lt;init&amp;gt;(SevenZFile.java:95)
+at org.apache.commons.compress.archivers.sevenz.SevenZFile.&amp;lt;init&amp;gt;(SevenZFile.java:117)
+at org.apache.tika.parser.pkg.PackageParser.parse(PackageParser.java:133)
+at org.apache.tika.parser.CompositeParser.parse(CompositeParser.java:242)
+... 5 more</description>
+			<version>1.8.1</version>
+			<fixedVersion>1.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="286" opendate="2014-08-09 02:27:22" fixdate="2014-08-21 18:40:43" resolution="Fixed">
+		<buginformation>
+			<summary>Error while expanding 7z java.io.EOFException</summary>
+			<description>
+Using 7zip (9.2) able to extract these downloaded files
+http://downloads.sourceforge.net/sourceforge/wxwindows/3.0.0/binaries/wxMSW-3.0.0_vc120_Dev.7z
+http://downloads.sourceforge.net/sourceforge/wxwindows/3.0.0/binaries/wxMSW-3.0.0_vc120_ReleaseDLL.7z
+Commons-compress 1.6 had issues with these files that seemed related to COMPRESS-257  so tried to use 1.8 as identified fixed in version. Some issues where fixed.
+Using maven + antrun
+				&amp;lt;plugin&amp;gt;
+					&amp;lt;artifactId&amp;gt;maven-antrun-plugin&amp;lt;/artifactId&amp;gt;
+					&amp;lt;version&amp;gt;1.7&amp;lt;/version&amp;gt;
+					&amp;lt;dependencies&amp;gt;
+						&amp;lt;dependency&amp;gt;
+							&amp;lt;groupId&amp;gt;ant-contrib&amp;lt;/groupId&amp;gt;
+							&amp;lt;artifactId&amp;gt;ant-contrib&amp;lt;/artifactId&amp;gt;
+							&amp;lt;version&amp;gt;1.0b3&amp;lt;/version&amp;gt;
+							&amp;lt;exclusions&amp;gt;
+								&amp;lt;exclusion&amp;gt;
+									&amp;lt;groupId&amp;gt;ant&amp;lt;/groupId&amp;gt;
+									&amp;lt;artifactId&amp;gt;ant&amp;lt;/artifactId&amp;gt;
+								&amp;lt;/exclusion&amp;gt;
+							&amp;lt;/exclusions&amp;gt;
+						&amp;lt;/dependency&amp;gt;
+						&amp;lt;dependency&amp;gt;
+							&amp;lt;groupId&amp;gt;org.apache.ant&amp;lt;/groupId&amp;gt;
+							&amp;lt;artifactId&amp;gt;ant-nodeps&amp;lt;/artifactId&amp;gt;
+							&amp;lt;version&amp;gt;1.8.1&amp;lt;/version&amp;gt;
+						&amp;lt;/dependency&amp;gt;
+						&amp;lt;dependency&amp;gt;
+							&amp;lt;groupId&amp;gt;org.apache.commons&amp;lt;/groupId&amp;gt;
+							&amp;lt;artifactId&amp;gt;commons-compress&amp;lt;/artifactId&amp;gt;
+							&amp;lt;version&amp;gt;1.8&amp;lt;/version&amp;gt;
+						&amp;lt;/dependency&amp;gt;
+						&amp;lt;dependency&amp;gt;
+							&amp;lt;groupId&amp;gt;org.apache.ant&amp;lt;/groupId&amp;gt;
+							&amp;lt;artifactId&amp;gt;ant-compress&amp;lt;/artifactId&amp;gt;
+							&amp;lt;version&amp;gt;1.4&amp;lt;/version&amp;gt;
+						&amp;lt;/dependency&amp;gt;
+					&amp;lt;/dependencies&amp;gt;
+Caused by: org.apache.maven.plugin.MojoExecutionException: An Ant BuildException has occured: Error while expanding Z:\download\wxMSW-3.0.0_vc120_Dev.7z
+java.io.EOFException
+around Ant part ...&amp;lt;un7z dest="C:\target/x86" overwrite="false" sr
+c="z:\download/wxMSW-3.0.0_vc120_Dev.7z"/&amp;gt;... @ 26:237 in C:\target\antrun\build-download.xml
+        at org.apache.maven.plugin.antrun.AntRunMojo.execute(AntRunMojo.java:355)
+        at org.apache.maven.plugin.DefaultPluginManager.executeMojo(DefaultPluginManager.java:490)
+        at org.apache.maven.lifecycle.DefaultLifecycleExecutor.executeGoals(DefaultLifecycleExecutor.java:694)
+        ... 17 more
+Caused by: c:\target\antrun\build-download.xml:26: Error while expand
+ing c:\download\wxMSW-3.0.0_vc120_Dev.7z
+java.io.EOFException
+        at org.apache.ant.compress.taskdefs.Un7z.expandFile(Un7z.java:92)
+        at org.apache.tools.ant.taskdefs.Expand.execute(Expand.java:132)
+        at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+        at org.apache.tools.ant.Task.perform(Task.java:348)
+        at org.apache.tools.ant.Target.execute(Target.java:390)
+        at org.apache.tools.ant.Target.performTasks(Target.java:411)
+        at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+        at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+        at org.apache.maven.plugin.antrun.AntRunMojo.execute(AntRunMojo.java:327)
+        ... 19 more
+Caused by: java.io.EOFException
+        at java.io.DataInputStream.readUnsignedByte(DataInputStream.java:273)
+        at org.tukaani.xz.rangecoder.RangeDecoderFromStream.normalize(Unknown Source)
+        at org.tukaani.xz.rangecoder.RangeDecoder.decodeBit(Unknown Source)
+        at org.tukaani.xz.lzma.LZMADecoder$LiteralDecoder$LiteralSubdecoder.decode(Unknown Source)
+        at org.tukaani.xz.lzma.LZMADecoder$LiteralDecoder.decode(Unknown Source)
+        at org.tukaani.xz.lzma.LZMADecoder.decode(Unknown Source)
+        at org.tukaani.xz.LZMAInputStream.read(Unknown Source)
+        at org.tukaani.xz.SimpleInputStream.read(Unknown Source)
+        at org.apache.commons.compress.utils.BoundedInputStream.read(BoundedInputStream.java:62)
+        at org.apache.commons.compress.utils.ChecksumVerifyingInputStream.read(ChecksumVerifyingInputStream.java:85)
+        at org.apache.commons.compress.archivers.sevenz.SevenZFile.read(SevenZFile.java:900)
+        at org.apache.commons.compress.archivers.sevenz.SevenZFile.read(SevenZFile.java:886)
+        at org.apache.ant.compress.taskdefs.Un7z$1.read(Un7z.java:77)
+        at org.apache.tools.ant.taskdefs.Expand.extractFile(Expand.java:343)
+        at org.apache.ant.compress.taskdefs.Un7z.expandFile(Un7z.java:71)
+        ... 32 more
+I noticed while raising this that there is a newer 1.8.1 version, which still seems to have the same issue, now in a different location.
+Caused by: org.apache.maven.plugin.MojoExecutionException: An Ant BuildException has occured: Error while expanding Z:\download\wxMSW-3.0.0_vc120_ReleaseDLL.7z
+java.io.EOFException
+around Ant part ...&amp;lt;un7z dest="C:\Data/x86" overwrite="false" sr
+c="Z:/download/wxMSW-3.0.0_vc120_ReleaseDLL.7z"/&amp;gt;... @ 27:244 in C:\target\antrun\build-download.xml
+        at org.apache.maven.plugin.antrun.AntRunMojo.execute(AntRunMojo.java:355)
+        at org.apache.maven.plugin.DefaultPluginManager.executeMojo(DefaultPluginManager.java:490)
+        at org.apache.maven.lifecycle.DefaultLifecycleExecutor.executeGoals(DefaultLifecycleExecutor.java:694)
+        ... 17 more
+Caused by: c:\target\antrun\build-download.xml:27: Error while expanding Z:\download\wxMSW-3.0.0_vc120_ReleaseDLL.7z
+java.io.EOFException
+        at org.apache.ant.compress.taskdefs.Un7z.expandFile(Un7z.java:92)
+        at org.apache.tools.ant.taskdefs.Expand.execute(Expand.java:132)
+        at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at java.lang.reflect.Method.invoke(Method.java:597)
+        at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+        at org.apache.tools.ant.Task.perform(Task.java:348)
+        at org.apache.tools.ant.Target.execute(Target.java:390)
+        at org.apache.tools.ant.Target.performTasks(Target.java:411)
+        at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+        at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+        at org.apache.maven.plugin.antrun.AntRunMojo.execute(AntRunMojo.java:327)
+        ... 19 more
+Caused by: java.io.EOFException
+        at java.io.DataInputStream.readUnsignedByte(DataInputStream.java:273)
+        at org.tukaani.xz.rangecoder.RangeDecoderFromStream.normalize(Unknown Source)
+        at org.tukaani.xz.rangecoder.RangeDecoder.decodeBit(Unknown Source)
+        at org.tukaani.xz.lzma.LZMADecoder$LiteralDecoder$LiteralSubdecoder.decode(Unknown Source)
+        at org.tukaani.xz.lzma.LZMADecoder$LiteralDecoder.decode(Unknown Source)
+        at org.tukaani.xz.lzma.LZMADecoder.decode(Unknown Source)
+        at org.tukaani.xz.LZMAInputStream.read(Unknown Source)
+        at org.tukaani.xz.SimpleInputStream.read(Unknown Source)
+        at org.apache.commons.compress.utils.BoundedInputStream.read(BoundedInputStream.java:62)
+        at org.apache.commons.compress.utils.ChecksumVerifyingInputStream.read(ChecksumVerifyingInputStream.java:85)
+        at org.apache.commons.compress.archivers.sevenz.SevenZFile.read(SevenZFile.java:906)
+        at org.apache.commons.compress.archivers.sevenz.SevenZFile.read(SevenZFile.java:889)
+        at org.apache.ant.compress.taskdefs.Un7z$1.read(Un7z.java:77)
+        at org.apache.tools.ant.taskdefs.Expand.extractFile(Expand.java:343)
+        at org.apache.ant.compress.taskdefs.Un7z.expandFile(Un7z.java:71)
+        ... 32 more
+The last file appears to be intact but has an incorrect (current) timestamp.
+If the file is already present then the exception doesn&amp;amp;apos;t get raised.</description>
+			<version>1.8</version>
+			<fixedVersion>1.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.Coders.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.CoderBase.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.DeltaDecoder.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.AES256SHA256Decoder.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.LZMA2Decoder.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.Folder.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="289" opendate="2014-09-17 19:48:19" fixdate="2014-09-19 18:10:24" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveOutputStream includes timestamp in long link headers</summary>
+			<description>When I create a Tar Archive Entry with a long name, the Long Link Entry contains a default modification date of the current Date.
+This results in two archives with the same contents having different MD5 checksums.
+</description>
+			<version>1.8.1</version>
+			<fixedVersion>1.9</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="297" opendate="2014-12-19 16:37:13" fixdate="2014-12-22 16:37:01" resolution="Fixed">
+		<buginformation>
+			<summary>Cleaning up unclosed ZipFile for archive</summary>
+			<description>If you try to create a ZipFile from a non-existent file, then it throws a FileNotFoundException, which is fine. The problem is that the constructor appears to leave behind objects that the caller cannot close. So, later on when the garbage collector runs, a message is printed to stdout that says "Cleaning up unclosed ZipFile for archive". Here is a failing unit test:
+TCommonCompressZipFileConstructor.java
+
+import org.apache.commons.compress.archivers.zip.ZipFile;
+import org.junit.Test;
+
+import java.io.File;
+import java.io.IOException;
+
+public final class TCommonCompressZipFileConstructor {
+    @Test
+    public void constructorThatThrowsExceptionLeavesBehindObjects() {
+        final File file = new File("");
+        try {
+            new ZipFile(file);
+        } catch (final IOException e) {
+            e.printStackTrace();
+            System.gc();
+        }
+    }
+}
+
+
+And here is the test output:
+
+java.io.FileNotFoundException: 
+	at java.io.RandomAccessFile.open(Native Method)
+	at java.io.RandomAccessFile.&amp;lt;init&amp;gt;(RandomAccessFile.java:241)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:213)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:192)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:153)
+	at com.mathworks.mlwidgets.explorer.unittest.TCommonCompressZipFileConstructor.constructorThatThrowsExceptionLeavesBehindObjects(TCommonCompressZipFileConstructor.java:14)
+...
+com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)
+Cleaning up unclosed ZipFile for archive L:\IntelliJ projects\foo</description>
+			<version>1.8.1</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipFile.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="303" opendate="2015-02-15 18:00:00" fixdate="2015-02-15 22:50:25" resolution="Fixed">
+		<buginformation>
+			<summary>Restore immutability/thread-safety to CompressorStreamFactory</summary>
+			<description>CompressorStreamFactory was immutable prior to 1.5; r1453945 broke immutability. It&amp;amp;apos;s also no longer thread-safe because the field decompressConcatenated is not safely published.
+It would be possible to make it thread-safe by making the field volatile.
+It could be made conditionally immutable by using the same technique as suggested in COMPRESS-302, in preparation for removing the method setDecompressConcatenated in a future API-break release.</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="302" opendate="2015-02-15 17:34:37" fixdate="2015-02-15 23:11:42" resolution="Fixed">
+		<buginformation>
+			<summary>Retore immutability/thread-safety to ArchiveStreamFactory</summary>
+			<description>COMPRESS-180 added support for encoding.
+Unfortunately this was done in a way that broke immutability.
+Also the factory is no longer thread-safe as the encoding field is not synch/volatile.
+Consider whether to restore immutability, e.g. by adding a constuctor which takes the encoding setting. The setEntryEncoding method could be deprecated intitially and eventually dropped.
+One way to support immutability now would be to add a second final encoding field which is set by a new ctor. See patch to follow.</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="306" opendate="2015-02-16 17:01:15" fixdate="2015-02-16 23:21:51" resolution="Fixed">
+		<buginformation>
+			<summary>ArchiveStreamFactory fails to pass on the encoding when creating some streams</summary>
+			<description>ArchiveStreamFactory fails to pass on the encoding when creating the following streams (in some or all cases):
+
+ArjArchiveInputStream
+CpioArchiveInputStream
+DumpArchiveInputStream
+JarArchiveInputStream
+JarArchiveOutputStream
+
+</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.dump.DumpArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.archivers.jar.JarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ArchiveStreamFactoryTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.jar.JarArchiveOutputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="309" opendate="2015-02-18 17:22:16" fixdate="2015-02-20 16:18:29" resolution="Fixed">
+		<buginformation>
+			<summary>BZip2CompressorInputStream return value wrong when told to read to a full buffer.</summary>
+			<description>BZip2CompressorInputStream.read(buffer, offset, length) returns -1 when given an offset equal to the length of the buffer.
+This indicates, not that the buffer was full, but that the stream was finished.
+It seems like a pretty stupid thing to do - but I&amp;amp;apos;m getting this when trying to use Kryo serialization (which is probably a bug on their part, too), so it does occur and has negative affects.
+Here&amp;amp;apos;s a JUnit test that shows the problem specifically:
+
+	@Test
+	public void testApacheCommonsBZipUncompression () throws Exception {
+		// Create a big random piece of data
+		byte[] rawData = new byte[1048576];
+		for (int i=0; i&amp;lt;rawData.length; ++i) {
+			rawData[i] = (byte) Math.floor(Math.random()*256);
+		}
+
+		// Compress it
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		BZip2CompressorOutputStream bzipOut = new BZip2CompressorOutputStream(baos);
+		bzipOut.write(rawData);
+		bzipOut.flush();
+		bzipOut.close();
+		baos.flush();
+		baos.close();
+
+		// Try to read it back in
+		ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+		BZip2CompressorInputStream bzipIn = new BZip2CompressorInputStream(bais);
+		byte[] buffer = new byte[1024];
+		// Works fine
+		Assert.assertEquals(1024, bzipIn.read(buffer, 0, 1024));
+		// Fails, returns -1 (indicating the stream is complete rather than that the buffer 
+		// was full)
+		Assert.assertEquals(0, bzipIn.read(buffer, 1024, 0));
+		// But if you change the above expected value to -1, the following line still works
+		Assert.assertEquals(1024, bzipIn.read(buffer, 0, 1024));
+		bzipIn.close();
+	}
+
+</description>
+			<version>1.4.1</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStream.java</file>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="312" opendate="2015-03-18 21:30:54" fixdate="2015-03-28 18:58:37" resolution="Fixed">
+		<buginformation>
+			<summary>public TarArchiveEntry(File file, String fileName) does not normalize the file name.</summary>
+			<description>Tar entry names are normalized most of the times (like replacing back slashes with forward slashes). But TarArchiveEntry(File file, String fileName) constructor does not do so.</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="315" opendate="2015-05-06 04:25:49" fixdate="2015-05-06 04:33:35" resolution="Fixed">
+		<buginformation>
+			<summary>tar can not write uid or gid &gt;= 0x80000000</summary>
+			<description>This is related to COMPRESS-314 - TarArchiveEntry doesn&amp;amp;apos;t allow gid/uid bigger than a signed 32bit int - the POSIX spec does.</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveOutputStream.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">314</link>
+		</links>
+	</bug>
+	<bug id="314" opendate="2015-05-05 22:15:21" fixdate="2015-05-08 19:12:10" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveInputStream rejects uid or gid &gt;= 0x80000000</summary>
+			<description>A POSIX-format archive that came from sysdiagnose produces NumberFormatException[1] when I try to read it with TarArchiveInputStream.
+The relevant part of the .tar file looks like this:
+   18 uid=429496729
+That&amp;amp;apos;s the uid of &amp;amp;apos;nobody&amp;amp;apos; on Mac OS (on Mac OS, uid_t is &amp;amp;apos;unsigned int&amp;amp;apos;).
+POSIX doesn&amp;amp;apos;t say anything about the width of the uid extended header[2], so I assume the tar file is okay. GNU tar doesn&amp;amp;apos;t have trouble with it.
+The relevant code, in applyPaxHeadersToCurrentEntry:
+            } else if ("gid".equals(key))
+{
+                currEntry.setGroupId(Integer.parseInt(val));
+...
+            }
+ else if ("uid".equals(key)){
+                currEntry.setUserId(Integer.parseInt(val));
+uid_t and gid_t are typically unsigned 32-bit integers, so these should presumably use Long.parseLong to handle integers with the top bit set (and TarArchiveEntry would need some modifications to handle large uid and gid, too).
+[1] java.lang.NumberFormatException: For input string: "4294967294"
+        at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+        at java.lang.Integer.parseInt(Integer.java:495)
+        at java.lang.Integer.parseInt(Integer.java:527)
+        at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.applyPaxHeadersToCurrentEntry(TarArchiveInputStream.java:488)
+        at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.paxHeaders(TarArchiveInputStream.java:415)
+        at org.apache.commons.compress.archivers.tar.TarArchiveInputStream.getNextTarEntry(TarArchiveInputStream.java:295)
+[2] http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html#tag_20_92_13_03
+uid
+The user ID of the file owner, expressed as a decimal number using digits from the ISO/IEC 646:1991 standard. This record shall override the uid field in the following header block(s). When used in write or copy mode, pax shall include a uid extended header record for each file whose owner ID is greater than 2097151 (octal 7777777).</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">315</link>
+		</links>
+	</bug>
+	<bug id="316" opendate="2015-05-23 12:03:30" fixdate="2015-05-23 15:09:09" resolution="Fixed">
+		<buginformation>
+			<summary>CompressorStreamFactory doesn&amp;apos;t handle deflate streams with a zlib header</summary>
+			<description>If you take a zlib / deflate compressed file, with the zlib header (eg the test file bla.tar.deflatez) and pass it to CompressorStreamFactory.createCompressorInputStream, it won&amp;amp;apos;t be detected and you&amp;amp;apos;ll get a CompressorException("No Compressor found for the stream signature.")
+While detecting header-less zlib files is probably too tricky to manage, those with the header ought to be possible to spot and handle</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.CompressorStreamFactory.java</file>
+			<file type="M">org.apache.commons.compress.compressors.DetectCompressorTestCase.java</file>
+			<file type="M">org.apache.commons.compress.compressors.deflate.DeflateCompressorInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="321" opendate="2015-08-20 13:09:45" fixdate="2015-08-31 12:20:19" resolution="Fixed">
+		<buginformation>
+			<summary>Exception in X7875_NewUnix.parseFromLocalFileData when parsing 0-sized "ux" local entry</summary>
+			<description>When trying to detect content type of a zip file with Tika 1.10 (which uses Commons Compress 1.9 internally) in manner like this:
+
+
+        byte[] content = ... // whole zip file.
+        String name = "TR_01.ZIP";
+        Tika tika = new Tika();
+        return tika.detect(content, name);
+
+
+it throws an exception:
+
+
+java.lang.ArrayIndexOutOfBoundsException: 13
+	at org.apache.commons.compress.archivers.zip.X7875_NewUnix.parseFromLocalFileData(X7875_NewUnix.java:199)
+	at org.apache.commons.compress.archivers.zip.X7875_NewUnix.parseFromCentralDirectoryData(X7875_NewUnix.java:220)
+	at org.apache.commons.compress.archivers.zip.ExtraFieldUtils.parse(ExtraFieldUtils.java:174)
+	at org.apache.commons.compress.archivers.zip.ZipArchiveEntry.setCentralDirectoryExtra(ZipArchiveEntry.java:476)
+	at org.apache.commons.compress.archivers.zip.ZipFile.readCentralDirectoryEntry(ZipFile.java:575)
+	at org.apache.commons.compress.archivers.zip.ZipFile.populateFromCentralDirectory(ZipFile.java:492)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:216)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:192)
+	at org.apache.commons.compress.archivers.zip.ZipFile.&amp;lt;init&amp;gt;(ZipFile.java:153)
+	at org.apache.tika.parser.pkg.ZipContainerDetector.detectZipFormat(ZipContainerDetector.java:141)
+	at org.apache.tika.parser.pkg.ZipContainerDetector.detect(ZipContainerDetector.java:88)
+	at org.apache.tika.detect.CompositeDetector.detect(CompositeDetector.java:77)
+	at org.apache.tika.Tika.detect(Tika.java:155)
+	at org.apache.tika.Tika.detect(Tika.java:183)
+	at org.apache.tika.Tika.detect(Tika.java:223)
+
+
+The zip file does contain two .jpg images and is not a "special" (JAR, Openoffice, ... ) zip file.
+Unfortunately, the contents of the zip file is confidential and so I cannot attach it to this ticket as it is, although I can provide the parameters supplied to
+org.apache.commons.compress.archivers.zip.X7875_NewUnix.parseFromLocalFileData(X7875_NewUnix.java:199) as caught by the debugger:
+
+
+data = {byte[13]@2103}
+ 0 = 85
+ 1 = 84
+ 2 = 5
+ 3 = 0
+ 4 = 7
+ 5 = -112
+ 6 = -108
+ 7 = 51
+ 8 = 85
+ 9 = 117
+ 10 = 120
+ 11 = 0
+ 12 = 0
+offset = 13
+length = 0
+
+
+This data comes from the local zip entry for the first file, it seems the method tries to read more bytes than is actually available in the buffer.
+It seems that first 9 bytes of the buffer are &amp;amp;apos;UT&amp;amp;apos; extended field with timestamp, followed by 0-sized &amp;amp;apos;ux&amp;amp;apos; field (bytes 9-12) that is supposed to contain UID/GID - according to infozip&amp;amp;apos;s doc the 0-size is common for global dictionary, but the local dictionary should contain complete data. In this case for some reason it does contain 0-sized data.
+Note that 7zip and unzip can unzip the file without even a warning, so Commons Compress should be also able to handle that file correctly without choking on that exception.</description>
+			<version>1.9</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.zip.X7875_NewUnix.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.X7875_NewUnixTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="332" opendate="2016-01-26 14:12:44" fixdate="2016-01-29 20:38:24" resolution="Fixed">
+		<buginformation>
+			<summary>FramedSnappyCompressorInputStream.read returns invalid value at end of stream.</summary>
+			<description>FramedSnappyCompressorInputStream.read() returns 0 when the end of stream has been reached rather than -1.
+It appears that this may be caused by SnappyCompressorInputStream.read(byte[], int, int) returning 0 instead of -1 at the end of stream when the exact number of bytes have been read.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.snappy.SnappyCompressorInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="331" opendate="2016-01-23 20:40:07" fixdate="2016-01-31 12:14:50" resolution="Fixed">
+		<buginformation>
+			<summary>Some non TAR files are recognized by ArchiveStreamFactory</summary>
+			<description>I ran into a case where a PNG file is being recognized as TAR because TarUtils.verifyCheckSum reports it as having a valid checksum (in this case the code thinks the stored checksum is 36936, unsigned is 31155 and signed is 19635). Because the stored checksum value is larger then the unsigned checksum it is treated as a valid TAR.
+I haven&amp;amp;apos;t spent enough time digging into the problem to see if there is a good alternative to the existing check that doesn&amp;amp;apos;t have false positives like this PNG file (which, if anyone is interested comes from an Android download).
+Also, I noticed a minor thing in the code: the comment in TarUtils.verifyCheckSum has the wrong bug number listed (it says 177 instead of 117).</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">117</link>
+		</links>
+	</bug>
+	<bug id="334" opendate="2016-02-04 20:24:22" fixdate="2016-02-05 19:44:02" resolution="Fixed">
+		<buginformation>
+			<summary>ArArchiveInputStream.getBSDLongName does increment offset</summary>
+			<description>I have an AR archive which uses the BSD long name convention and I cannot read past the first entry without failing.
+I dug into the issue and it appears the problem is with getBSDLongName which calls readFully with the underlying stream:
+
+
+int read = IOUtils.readFully(input, name);
+count(read);
+
+
+This does not increment the offset which is later used by read(byte[], int, int) to compute the value of toRead. Since offset is too small, toRead ends up too big and the first entry contents end up pulling in the first n bytes of the next entry header (n is the BSD long name length).
+I think this can be addressed by adding offset += read or changing the above code to just:
+
+
+int read = IOUtils.readFully(this, name);
+
+
+(Sorry for posting code in the ticket, I will try and get an environment set up so I can start submitting patches).</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ar.ArArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.ar.ArArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="335" opendate="2016-02-05 19:38:17" fixdate="2016-02-05 20:21:32" resolution="Fixed">
+		<buginformation>
+			<summary>TAR checksum fails when checksum is right aligned</summary>
+			<description>The linked TAR has a checksum with zero padding on the left instead of the expected NULL-SPACE terminator on the right. As a result the last two digits of the stored checksum are lost and the otherwise valid checksum is treated as invalid.
+Given that the code already checks for digits being in range before adding them to the stored sum, is it necessary to only look at the first 6 octal digits instead of the whole field?</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarUtils.java</file>
+			<file type="M">org.apache.commons.compress.DetectArchiverTestCase.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="336" opendate="2016-02-08 17:12:47" fixdate="2016-02-14 11:04:27" resolution="Fixed">
+		<buginformation>
+			<summary>Extended Standard TAR format prefix is 130 characters</summary>
+			<description>A TAR archive created with star having an artype of "xstar" apparently limits the PREFIX to 130 characters to accommodate an access time and a creation time (this much I was able to learn from the star man page). I wasn&amp;amp;apos;t able to track down any specifics about the format, but in at least the first example I found, it appears that the access and creation time are stored as two space terminated ASCII numbers at the end of what would otherwise be the prefix.
+Currently, the code will read this type of archive and assume the prefix is 131 NULs followed by the two ASCII time stamps. Needless to say, it makes a mess of the entry names.
+I&amp;amp;apos;m not 100% sure of the implementation, but perhaps something like (with XSTAR_PREFIXLEN == 130):
+
+
+default: {
+  final int prefixlen = header[offset + XSTAR_PREFIXLEN + 1] == 0 ? XSTAR_PREFIXLEN : PREFIXLEN;
+  String prefix = oldStyle
+    ? TarUtils.parseName(header, offset, prefixlen)
+    : TarUtils.parseName(header, offset, prefixlen, encoding);
+  // ...
+}
+
+
+Maybe a separate feature request would be appropriate for capturing and exposing the additional timestamps?</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarConstants.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="343" opendate="2016-03-16 16:25:56" fixdate="2016-03-17 09:35:40" resolution="Fixed">
+		<buginformation>
+			<summary>Native Memory Leak in Sevenz-DeflateDecoder</summary>
+			<description>The class ...sevenz.Coders.DeflateDecoder does not close (end()) the Deflater and Inflater. This can lead to native memory issues: see https://bugs.openjdk.java.net/browse/JDK-8074108.
+In our case we create a zip archive with &amp;gt;100000 files. The Java heap is around 300MB (with 2GB max). The native memory is increasing to 8GB and above. Because the Java heap has no pressure - no GC is triggered, therefore the Deflaters are not collected and the native memory is not freed.  
+</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.Coders.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="330" opendate="2016-01-19 18:55:44" fixdate="2016-03-20 19:44:11" resolution="Fixed">
+		<buginformation>
+			<summary>Tar UnArchive Fails when archive contains directory sizes which are non-zero.</summary>
+			<description>Tar UnArchive Fails when archive contains directory sizes which are non-zero. I recently came across a set of files which failed to extract with commons-compress but I was able to successfully extract the files with GNU tar. 
+The problem is TarArchiveInputStream.java gets the size of each entry in a tar archive to determine how many bytes to read ahead. Directories are always sized 0 bytes, however its technically possible a tar archive contains a size for a directory. This causes the Input Stream to loose it&amp;amp;apos;s place and eventually results in an exception being thrown.
+I was able to implement a proof-of-concept fix by checking if an entity is a directory and setting the directory size to 0. (A directory with Files in a Tar Archive still has a size of 0 as the directory itself does not have size in the archive.)</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="344" opendate="2016-03-22 14:03:05" fixdate="2016-03-22 17:17:04" resolution="Fixed">
+		<buginformation>
+			<summary>Handle NULL terminated GNU AR extended name</summary>
+			<description>We have an AR archive (a .lib file) whose extended name is terminated by a NULL instead of a line feed which causes an IOException ("Failed to read entry: 0"). It looks like ArArchiveInputStream.getExtendedName just needs to check namebuffer[i] for &amp;amp;apos;\012&amp;amp;apos; or 0.
+The ar tool in latest GNU binutils seems to be able to handle this.
+I don&amp;amp;apos;t know what to make of the archive itself: it seems to contain 291 different copies of a file with the same name; but it is a Windows lib file and I am not going to pretend like I understand if this is supposed to be normal or not.
+The file in question is part of the SIGAR project, the sigar-bin/lib/sigar-x86-winnt.lib archive from the 1.6.3 distribution exhibits this behavior. The NULL terminated string only appears in the first file, all subsequent files seem to use the expected line feed terminator.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.ar.ArArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="348" opendate="2016-04-08 11:27:11" fixdate="2016-05-16 04:26:21" resolution="Fixed">
+		<buginformation>
+			<summary>Calling SevenZFile.read() on empty SevenZArchiveEntry throws IllegalStateException</summary>
+			<description>I&amp;amp;apos;m pretty sure COMPRESS-340 breaks reading empty archive entries. When calling getNextEntry() and that entry has no content, the code jumps into the first block at line 830 (SevenZFile.class), clearing the deferredBlockStreams. When calling entry.read(...) afterwards an IllegalStateException ("No current 7z entry (call getNextEntry() first).") is thrown. IMHO, there should be another check for entry.getSize() == 0.
+This worked correctly up until 1.10.</description>
+			<version>1.11</version>
+			<fixedVersion>1.12</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFile.java</file>
+			<file type="M">org.apache.commons.compress.archivers.sevenz.SevenZFileTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="355" opendate="2016-05-18 20:48:08" fixdate="2016-05-20 16:22:32" resolution="Fixed">
+		<buginformation>
+			<summary>Parsing PAX headers fails with NegativeArraySizeException</summary>
+			<description>The TarArchiveInputStream.parsePaxHeaders method fails with a NegativeArraySizeException when there is an empty line at the end of the headers.
+The inner loop starts reading the length, but it gets a newline (10) and ends up subtracting &amp;amp;apos;0&amp;amp;apos; (48) from it; the result is a negative length that blows up an attempt to allocate the rest array.
+I would say that a check to see if ch is less the &amp;amp;apos;0&amp;amp;apos; and break the loop if it is.
+I used npm pack aws-sdk@2.2.16 to generate a tarball with this issue.</description>
+			<version>1.11</version>
+			<fixedVersion>1.12</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="356" opendate="2016-05-19 03:22:41" fixdate="2016-05-20 16:45:41" resolution="Fixed">
+		<buginformation>
+			<summary>PAX header entry name ending with / causes problems</summary>
+			<description>There seems to be a problem when a PAX header entry (link flag is &amp;amp;apos;x&amp;amp;apos;) has a name ending with "/". The TarArchiveEntry.isDirectory() check ends up returning true because of the trailing slash which means no content can be read from the entry. PAX header parsing effectively finds nothing and the stream is not advanced; this leaves the stream in a bad state as the next entry&amp;amp;apos;s header is actually read from the header contents.
+If the name is modified to remove the trailing slash when the link flag indicates a PAX header everything seems to work fine. That would be one potential fix in parseTarHeader. Changing isDirectory to return false if isPaxHeader is true (before the trailing "/" check) would probably also fix the issue (though I can&amp;amp;apos;t verify that in the debugger like I can with changing the name).
+So far I have only seen this when using Docker to save images that contain a yum database. For example:
+
+docker pull centos:latest &amp;amp;&amp;amp; docker save centos:latest | tar x --include "*/layer.tar"
+
+
+Will produce at least one "layer.tar" that exhibits this issue. If I come across a smaller TAR for testing I will attach it.</description>
+			<version>1.11</version>
+			<fixedVersion>1.12</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="351" opendate="2016-04-14 15:43:47" fixdate="2016-06-07 16:47:27" resolution="Fixed">
+		<buginformation>
+			<summary>Defective .zip-archive produces problematic error message</summary>
+			<description>A truncated .zip-File produces an java.io.EOFException conatining a hughe amount of byte[]-data in the error-message - leading to beeps and crippeling workload in an potential console-logger.
+</description>
+			<version>1.11</version>
+			<fixedVersion>1.12</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.cpio.CpioArchiveInputStream.java</file>
+			<file type="M">org.apache.commons.compress.ArchiveUtilsTest.java</file>
+			<file type="M">org.apache.commons.compress.utils.ArchiveUtils.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStreamTest.java</file>
+			<file type="M">org.apache.commons.compress.archivers.zip.ZipArchiveInputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="357" opendate="2016-05-25 17:50:50" fixdate="2016-06-15 04:19:37" resolution="Fixed">
+		<buginformation>
+			<summary>BZip2CompressorOutputStream can affect output stream incorrectly</summary>
+			<description>BZip2CompressorOutputStream has an unsynchronized finished() method, and an unsynchronized finalize method. Finish checks to see if the output stream is null, and if it is not it calls various methods, some of which write to the output stream. 
+Now, consider something like this sequence.
+BZip2OutputStream s = ...
+...
+s.close();
+s = null;
+After the s = null, the stream is garbage. At some point the garbage collector call finalize(), which calls finish(). But, since the GC may be on a different thread, there is no guarantee that the assignment this.out = null in finish() has actually been made visible to the GC thread, which results in bad data in the output stream.
+This is not a theoretical problem; In a part of a large project I&amp;amp;apos;m working on, this happens about 2% of the time. 
+The fixes are simple
+1) synchronize finish() or
+2) don&amp;amp;apos;t call finish from finalize().
+A workaround is to derive a class and override the finalize() method. 
+</description>
+			<version>1.9</version>
+			<fixedVersion>1.12</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.compressors.bzip2.BZip2CompressorOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="363" opendate="2016-06-29 09:19:19" fixdate="2016-07-01 19:39:14" resolution="Fixed">
+		<buginformation>
+			<summary>Overflow in BitInputStream</summary>
+			<description>in Class BitInputStream.java(\src\main\java\org\apache\commons\compress\utils),
+funcion:
+ public long readBits(final int count) throws IOException {
+        if (count &amp;lt; 0 || count &amp;gt; MAXIMUM_CACHE_SIZE) 
+{
+            throw new IllegalArgumentException("count must not be negative or greater than " + MAXIMUM_CACHE_SIZE);
+        }
+        while (bitsCachedSize &amp;lt; count) {
+            final long nextByte = in.read();
+            if (nextByte &amp;lt; 0) 
+{
+                return nextByte;
+            }
+            if (byteOrder == ByteOrder.LITTLE_ENDIAN) 
+{
+                bitsCached |= (nextByte &amp;lt;&amp;lt; bitsCachedSize);
+            }
+ else 
+{
+                bitsCached &amp;lt;&amp;lt;= 8;
+                bitsCached |= nextByte;
+            }
+            bitsCachedSize += 8;
+        }
+        final long bitsOut;
+        if (byteOrder == ByteOrder.LITTLE_ENDIAN) 
+{
+            bitsOut = (bitsCached &amp;amp; MASKS[count]);
+            bitsCached &amp;gt;&amp;gt;&amp;gt;= count;
+        }
+ else 
+{
+            bitsOut = (bitsCached &amp;gt;&amp;gt; (bitsCachedSize - count)) &amp;amp; MASKS[count];
+        }
+        bitsCachedSize -= count;
+        return bitsOut;
+    }
+I think here "bitsCached |= (nextByte &amp;lt;&amp;lt; bitsCachedSize);" will overflow in some cases. for example, below is a test case:
+public static void test() {
+        ByteArrayInputStream in = new ByteArrayInputStream(new byte[]
+{87, 45, 66, 15,
+                                                                      90, 29, 88, 61, 33, 74}
+);
+        BitInputStream bin = new BitInputStream(in, ByteOrder.LITTLE_ENDIAN);
+        try 
+{
+            long ret = bin.readBits(5);
+            ret = bin.readBits(63);
+            ret = bin.readBits(12);
+        }
+ catch (Exception e) 
+{
+            e.printStackTrace();
+        }
+}
+overflow occur in "bin.readBits(63);" , so ,result in wrong result from  "bin.readBits(12);" 
+</description>
+			<version>1.12</version>
+			<fixedVersion>1.13</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.utils.BitInputStream.java</file>
+			<file type="M">org.apache.commons.compress.utils.BitInputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="366" opendate="2016-10-04 15:52:47" fixdate="2016-10-07 15:56:32" resolution="Fixed">
+		<buginformation>
+			<summary>TarArchiveEntry: getDirectoryEntries not working</summary>
+			<description>TarArchiveEntry.getDirectoryEntries() always returns an empty array. This is because entry.getFile() returns null for a directory entry.
+Let folder.tar be a Tar Archive which contains a folder, and that folder contains a file. Consider the following snippet:
+
+import java.io.FileInputStream;
+import org.apache.commons.compress.archivers.tar.*;
+public class GetDirectoryEntriesBug {
+	public static void main(String[] args) throws Exception {
+		TarArchiveInputStream tais = new TarArchiveInputStream(new FileInputStream("folder.tar"));
+		for(TarArchiveEntry entry; (entry = tais.getNextTarEntry()) != null; ) 
+{
+			System.out.println("Name: " + entry.getName() + ", isDirectory: " + entry.isDirectory() + ", getDirectoryEntries().length: " + entry.getDirectoryEntries().length);
+		}
+		tais.close();
+	}
+}
+
+Output:
+Name: folder/file, isDirectory: false, getDirectoryEntries().length: 0
+Name: folder/, isDirectory: true, getDirectoryEntries().length: 0
+I expected that, for "folder/", getDirectoryEntries() will not return an empty array.</description>
+			<version>1.12</version>
+			<fixedVersion>1.13</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.compress.archivers.tar.TarArchiveEntry.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

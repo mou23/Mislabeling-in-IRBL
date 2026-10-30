@@ -1,0 +1,2100 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12314538",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538",
+  "key": "LUCENE-388",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310854",
+        "id": "12310854",
+        "description": "",
+        "name": "2.1",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-02-17"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13361",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "11.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+      "name": "yseeley@gmail.com",
+      "key": "yseeley@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Yonik Seeley",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27661",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+      "name": "psmith@apache.org",
+      "key": "psmith@apache.org",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Paul Smith",
+      "active": true,
+      "timeZone": "Australia/Sydney"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+      "name": "psmith@apache.org",
+      "key": "psmith@apache.org",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Paul Smith",
+      "active": true,
+      "timeZone": "Australia/Sydney"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-388/votes",
+      "votes": 2,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@71b3ab72[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@251dd75b[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6925d4e7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@22c97197[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5bbbdcee[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@562f8954[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@11eafd9a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@78c663f9[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7d9f8ca3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@5750df6d[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1190fe30[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@5a829e50[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:21:55 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-08-17T02:54:42.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-388/watchers",
+      "watchCount": 3,
+      "isWatching": false
+    },
+    "created": "2005-05-16T16:18:21.000+0000",
+    "updated": "2022-08-28T11:21:55.597+0000",
+    "timeoriginalestimate": null,
+    "description": "Note: I believe this to be the same situation with 1.4.3 as with SVN HEAD.\n\nAnalysis using hprof utility shows that during index creation with many\ndocuments highlights that the CPU spends a large portion of it's time in\nIndexWriter.maybeMergeSegments(), which seems to be a 'waste' compared with\nother valuable CPU intensive operations such as tokenization etc.\n\nUsing the following test snippet to retrieve some rows from the db and create an\nindex:\n\n        Analyzer a = new StandardAnalyzer();\n        writer = new IndexWriter(indexDir, a, true);\n        writer.setMergeFactor(1000);\n        writer.setMaxBufferedDocs(10000);\n        writer.setUseCompoundFile(false);\n        connection = DriverManager.getConnection(\n                \"jdbc:inetdae7:tower.aconex.com?database=<somedb>\", \"secret\",\n                \"squirrel\");\n        String sql = \"select userid, userfirstname, userlastname, email from userx\";\n        LOG.info(\"sql=\" + sql);\n        Statement statement = connection.createStatement();\n        statement.setFetchSize(5000);\n        LOG.info(\"Executing sql\");\n        ResultSet rs = statement.executeQuery(sql);\n        LOG.info(\"ResultSet retrieved\");\n        int row = 0;\n\n        LOG.info(\"Indexing users\");\n        long begin = System.currentTimeMillis();\n        while (rs.next()) {\n            int userid = rs.getInt(1);\n            String firstname = rs.getString(2);\n            String lastname = rs.getString(3);\n            String email = rs.getString(4);\n            String fullName = firstname + \" \" + lastname;\n            Document doc = new Document();\n            doc.add(Field.Keyword(\"userid\", userid+\"\"));\n            doc.add(Field.Keyword(\"firstname\", firstname.toLowerCase()));\n            doc.add(Field.Keyword(\"lastname\", lastname.toLowerCase()));\n            doc.add(Field.Text(\"name\", fullName.toLowerCase()));\n            doc.add(Field.Keyword(\"email\", email.toLowerCase()));\n            writer.addDocument(doc);\n            row++;\n            if((row % 100)==0){\n                LOG.info(row + \" indexed\");\n            }\n        }\n        double end = System.currentTimeMillis();\n        double diff = (end-begin)/1000;\n        double rate = row/diff;\n        LOG.info(\"rate:\" +rate);\n\nOn my 1.5GHz PowerBook with 1.5Gb RAM and a 5400 RPM drive, my CPU is maxed out,\nand I end up getting a rate of indexing between 490-515 documents/second run\nover 10 times in succession.  \n\nBy applying a simple patch to IndexWriter (see attached shortly), which defers\nthe calling of maybeMergeSegments() so that it is only called every 2000\ntimes(an arbitrary figure), I appear to get a new rate of between 945-970\ndocuments/second.  Using Luke to look inside each index created between these 2\nthere does not appear to be any difference.  Same number of Documents, same\nnumber of Terms.\n\nI'm not suggesting one should apply this patch, I'm just highlighting the\ndifference in performance that this sort of change gives you.  \n\nWe are about to use Lucene to index 4 million construction document records, and\nso speeding up the indexing process is in our best interest! :)  If one\nconsiders the amount of CPU time spent in maybeMergeSegments over the initial\nindex creation of 4 million documents, I think one could see how it would be\nideal to try to speed this area up (at least move the bottleneck to IO). \n\nI woul appreciate anyone taking a moment to comment on this.",
+    "customfield_10010": 34930.0,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312619",
+        "id": "12312619",
+        "filename": "ASF.LICENSE.NOT.GRANTED--IndexWriter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+          "name": "psmith@apache.org",
+          "key": "psmith@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Paul Smith",
+          "active": true,
+          "timeZone": "Australia/Sydney"
+        },
+        "created": "2005-05-16T16:20:26.000+0000",
+        "size": 818,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312619/ASF.LICENSE.NOT.GRANTED--IndexWriter.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312623",
+        "id": "12312623",
+        "filename": "ASF.LICENSE.NOT.GRANTED--log.optimized.deep.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+          "name": "psmith@apache.org",
+          "key": "psmith@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Paul Smith",
+          "active": true,
+          "timeZone": "Australia/Sydney"
+        },
+        "created": "2005-05-24T16:07:09.000+0000",
+        "size": 465336,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312623/ASF.LICENSE.NOT.GRANTED--log.optimized.deep.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312622",
+        "id": "12312622",
+        "filename": "ASF.LICENSE.NOT.GRANTED--log.optimized.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+          "name": "psmith@apache.org",
+          "key": "psmith@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Paul Smith",
+          "active": true,
+          "timeZone": "Australia/Sydney"
+        },
+        "created": "2005-05-24T14:43:05.000+0000",
+        "size": 187734,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312622/ASF.LICENSE.NOT.GRANTED--log.optimized.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312618",
+        "id": "12312618",
+        "filename": "ASF.LICENSE.NOT.GRANTED--log-compound.txt",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+          "name": "psmith@apache.org",
+          "key": "psmith@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Paul Smith",
+          "active": true,
+          "timeZone": "Australia/Sydney"
+        },
+        "created": "2005-05-16T16:19:32.000+0000",
+        "size": 139362,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312618/ASF.LICENSE.NOT.GRANTED--log-compound.txt"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312621",
+        "id": "12312621",
+        "filename": "ASF.LICENSE.NOT.GRANTED--lucene.34930.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+          "name": "psmith@apache.org",
+          "key": "psmith@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Paul Smith",
+          "active": true,
+          "timeZone": "Australia/Sydney"
+        },
+        "created": "2005-05-24T12:59:58.000+0000",
+        "size": 1868,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312621/ASF.LICENSE.NOT.GRANTED--lucene.34930.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312620",
+        "id": "12312620",
+        "filename": "ASF.LICENSE.NOT.GRANTED--Lucene Performance Test - with & without hack.xls",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+          "name": "psmith@apache.org",
+          "key": "psmith@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Paul Smith",
+          "active": true,
+          "timeZone": "Australia/Sydney"
+        },
+        "created": "2005-05-17T11:21:30.000+0000",
+        "size": 36352,
+        "mimeType": "application/ms-excel",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312620/ASF.LICENSE.NOT.GRANTED--Lucene+Performance+Test+-+with+%26+without+hack.xls"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12339078",
+        "id": "12339078",
+        "filename": "doron_2_IndexWriter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-08-18T10:03:14.000+0000",
+        "size": 975,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12339078/doron_2_IndexWriter.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12339116",
+        "id": "12339116",
+        "filename": "doron_2b_IndexWriter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-08-18T17:42:18.000+0000",
+        "size": 1441,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12339116/doron_2b_IndexWriter.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12338992",
+        "id": "12338992",
+        "filename": "doron_IndexWriter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+          "name": "doronc",
+          "key": "doronc",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+          },
+          "displayName": "Doron Cohen",
+          "active": true,
+          "timeZone": "Asia/Gaza"
+        },
+        "created": "2006-08-16T22:07:04.000+0000",
+        "size": 1712,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12338992/doron_IndexWriter.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12338857",
+        "id": "12338857",
+        "filename": "yonik_indexwriter.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2006-08-15T05:11:24.000+0000",
+        "size": 2581,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12338857/yonik_indexwriter.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12338820",
+        "id": "12338820",
+        "filename": "yonik_indexwriter.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2006-08-14T16:28:45.000+0000",
+        "size": 2592,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12338820/yonik_indexwriter.diff"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "[PATCH] IndexWriter.maybeMergeSegments() takes lots of CPU resources",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Operating System: Mac OS X 10.3\nPlatform: Macintosh",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322373",
+          "id": "12322373",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Created an attachment (id=15042)\nHPROF log of test run pre-patch\n\nAdded HPROF log showing high CPU usage inside IndexWriter.maybeMergeSegments()\nmethod",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-16T16:19:32.000+0000",
+          "updated": "2005-05-16T16:19:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322374",
+          "id": "12322374",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Created an attachment (id=15043)\nDemonstration Patch to defer the call to IndexWriter.maybeMergeSegments() for\nevery 2000 times.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-16T16:20:26.000+0000",
+          "updated": "2005-05-16T16:20:26.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322375",
+          "id": "12322375",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Isn't the effect the same as setting mergeFactor to 2000, i.e. indexing gets  \nfaster but more RAM is needed?  \n  ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-05-16T19:22:41.000+0000",
+          "updated": "2005-05-16T19:22:41.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322376",
+          "id": "12322376",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "(In reply to comment #3)\n> Isn't the effect the same as setting mergeFactor to 2000, i.e. indexing gets  \n> faster but more RAM is needed?  \n\nOn every add, it looks like the entire segment list is walked looking to see of\nenough docs (minMergeDocs) can be collected together to do a merge.  With a\nlarge minMergeDocs, this can get expensive.  Perhaps a count should be kept of\nthe number of docs in memory, and when it exceeds minMergeDocs, then call the\nmerge logic.\n\nOf course keeping track of the count would require modifications to many\nIndexWriter methods. It looks like the performance gains may well be worth it\nthough.\n\nBTW, I don't think a mergefactor of 1000 is typical (way too many\nfiledescriptors in use, and a big hit to searchers).  A high minMergeDocs (now\nmaxBufferedDocs) *is* typical and useful though.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2005-05-17T01:11:27.000+0000",
+          "updated": "2005-05-17T01:11:27.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322377",
+          "id": "12322377",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Your benchmark might run faster if you set maxBufferedDocs smaller.  Also, it\ndoesn't look like you're including the cost of closing the IndexWriter in your\nbenchmark statistics.  You should, as, with such a large buffer, you've delayed\nmuch of the work to that point.\n\nThe bottleneck you're hitting is that maybeMergeDocs sums the size of the\nbuffered indexes each time to decide whether to merge.  When you have thousands\nbuffered, this dominates.\n\nTo optimize this case (small docs, large maxBufferedDocs) we could keep count of\nthe number of documents buffered by adding a bufferedDocCount field. \naddDocument could increment this, mergeSegments could decrement it, and\nmaybeMergeSegments could check it with something like:\n\nif (targetMergeDocs == minMergeDocs)  {\n  mergeDocs = bufferedDocCount;\n} else {\n  while (--minSegment >= 0) {\n  ...\n  }\n}\n\nDoes that make sense?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-05-17T02:17:00.000+0000",
+          "updated": "2005-05-17T02:17:00.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322378",
+          "id": "12322378",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": ">> Your benchmark might run faster if you set maxBufferedDocs smaller.  Also, it\n>> doesn't look like you're including the cost of closing the IndexWriter in your\n>> benchmark statistics.  You should, as, with such a large buffer, you've delayed\n>> much of the work to that point.\n>> \n\nYes, by not factoring in the optmize()/close() call into the rate calculation,\nthere is still 'work to be done' at the end, but that would only be the tail end\nof the remaining docs stored in memory, right?  When indexing millions of\nrecords, this is probably not going to be a large percentage of the overall\ntime, as it would only, at most, the last maxBufferedDocs to be tidied up.  Or\nhave I confused myself?  I'm still quite new to Lucene and it's inner workings.  \n\n>> The bottleneck you're hitting is that maybeMergeDocs sums the size of the\n>> buffered indexes each time to decide whether to merge.  When you have thousands\n>> buffered, this dominates.\n\nYes, when maxBufferedDocs is relatively high (which is useful, I thought, if you\nhave the memory to throw at the application and one is trying to stay off IO as\nmuch as possible, that's what I've understood anyway) the loop ends up something\nlike this, where N is maxBufferedDocs\n\nn + (n-1)+(n-2) + ....(n-n)\n\n(I'm no math wiz, sorry)\nYou can notice this when indexing and outputing logging information, you see the\n'rate' slow down slightly as the number of docs is added to the in memory\nbuffer, then once the automatic merge is performed, the rate speeds up, then\nprogressively slows down again.\n\n>> \n>> To optimize this case (small docs, large maxBufferedDocs) we could keep count of\n>> the number of documents buffered by adding a bufferedDocCount field. \n>> addDocument could increment this, mergeSegments could decrement it, and\n>> maybeMergeSegments could check it with something like:\n>> \n>> if (targetMergeDocs == minMergeDocs)  {\n>>   mergeDocs = bufferedDocCount;\n>> } else {\n>>   while (--minSegment >= 0) {\n>>   ...\n>>   }\n>> }\n>> \n>> Does that make sense?\n\nErr, to be honest I'm not quite sure what you mean by \"small docs\" in the above\nfirst statement.  I'm also a little confused on the:\n\n>> if (targetMergeDocs == minMergeDocs)  {\n\nand how it relates to the bufferedDocCount you mention.  \n\nIn my hack/patch I'm effectively keeping track of the number of documents added\nas you suggest, so I believe we're pretty close to the same thing, but I blame\nonly having one coffee on trying to understand it.  :)  I think I like where you\ngoing though, it smells right.\n\nSomething I thought about last night is that the current code works fine for all\ncases, however the 'clean index being rebuilt' seems to get the raw end of the\nstick.  When an index is being incrementally or batch updated, IndexWriter\nprobably does need to scan the Segments to see if they need merging to obey the\nconfiguration settings.  However a fresh index is a special case, and seems like\nit could be optimized (this may be what you meant by 'small docs' ?).  \n\nIn really large scale indexes/indices(?) the number of documents being\nincrementally/batch updated is going to be totally minor compared to the cost of\nbuilding the full index for the first time.  For a true High Availability\nsolution, one will always need to factor in the cost to rebuild the index from\nscratch should it come to that.  Making the initial index as fast as possible\ngives much smaller down time.  \n\nFor crawling applications that use Lucene, this optimization will probably not\neven get noticed, because of the latency in retrieving the source material to\nmake up the document.  Only when the source material can be accessed fast will\nthis optimization be important.\n\nRemoving this CPU bottleneck has even more benefits when you consider those\nsolutions using Lucene to parallel index documents.  This optimization means\nthat you get a multiplication of benefit the more CPU's being utilized,\nparticularly if the architecture is a producer/consumer operation with a Buffer\nin between. (obviously IO starts to get in the way more).  With an optimization\nthe CPU can be better utilized performing tokenization etc.\n\ncheers,\n\nPaul",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-17T07:53:10.000+0000",
+          "updated": "2005-05-17T07:53:10.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322379",
+          "id": "12322379",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Doug, after more testing, you are correct that tweaking the maxBuffered from\n10,000 to 5000 gives slightly better performance.\n\nHowever I believe this is because with maxBufferedDocs==5000, this loop counter\nis reset more frequently, and so suffers less of the CPU drain.  \n\nI ran more tests using the hacked version using both 5000 and 10000, and the\nhacked version still runs better.  I'll attach an Excel sheet with the results,\nbut I only had time to run it over 5 samples each run, which is not exactly\nstatistically significant, but hopefully still correct.\n\nAs you can see, deferring this loop enables larger maxBuffered to gain ahead of\nsmaller maxBufferedDocs.\n\nAs always with these tests there are transient factors that affect things\n(getting DB results for one thing).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-17T11:19:56.000+0000",
+          "updated": "2005-05-17T11:19:56.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322380",
+          "id": "12322380",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Created an attachment (id=15053)\nExcel file containg results over small samples between Hacked and Non-hacked\ncode using different maxBufferedDocs settings\n\nAttached Excel file with some results",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-17T11:21:30.000+0000",
+          "updated": "2005-05-17T11:21:30.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322381",
+          "id": "12322381",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Created an attachment (id=15137)\nPatch that hopefully is what Doug means\n\nDoug,\n\nI could not resolve in my mind exactly what you meant in your example code\nsnippet, but here's a patch that I believe accomplishes the same thing.  It's\nmerely a renaming of the variable, and using the 'mergeSegement decrements'\nconcept that you mention which I think is a good idea.\n\nThis patch still doesn't speed up the actual detecting of what segments on the\nstack to merge when it does go into that loop.\tI need to re-baseline the\nperformance measurements with this patch to see where the CPU is now spending\nmost of it's time, as it it may now be somewhere else entirely.\n\nNOTE: all current unit tests still pass with this patch.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-24T12:59:58.000+0000",
+          "updated": "2005-05-24T12:59:58.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322382",
+          "id": "12322382",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Created an attachment (id=15139)\nHPROF output of the same test with the patch applied\n\nThis HPROF shows the CPU savings of the patch.\n\nIn summary, the original was this:\n\n   1 24.14% 24.14%     859 300342\norg.apache.lucene.index.IndexWriter.maybeMergeSegments\n   2  4.83% 28.97%     172 300306 java.lang.Throwable.fillInStackTrace\n   3  4.07% 33.04%     145 300336 org.apache.lucene.index.SegmentInfos.info\n   4  2.50% 35.54%\t89 300505\norg.apache.lucene.store.RAMInputStream.readInternal\n   5  2.33% 37.88%\t83 300299 java.util.Vector.addElement\n   6  2.16% 40.04%\t77 300334 org.apache.lucene.document.Field.readerValue\n   7  2.14% 42.17%\t76 300272 java.net.SocketInputStream.socketRead0\n   8  1.40% 43.58%\t50 300598 org.apache.lucene.util.PriorityQueue.downHeap\n\n   9  1.15% 44.73%\t41 300617 org.apache.lucene.util.PriorityQueue.downHeap\n\n  10  1.01% 45.74%\t36 300581 java.io.RandomAccessFile.writeBytes\n.....\n\nAnd after the patch is applied it becomes:\n\n   1  5.45%  5.45%     130 300287 java.lang.Throwable.fillInStackTrace\n   2  5.20% 10.65%     124 300277 java.net.SocketInputStream.socketRead0\n   3  3.86% 14.51%\t92 300515\norg.apache.lucene.store.RAMInputStream.readInternal\n   4  3.27% 17.79%\t78 300332 java.util.Vector.addElement\n   5  2.35% 20.13%\t56 300548 java.io.RandomAccessFile.writeBytes\n   6  2.22% 22.36%\t53 300305 org.apache.lucene.document.Field.readerValue\n   7  1.85% 24.20%\t44 300595 org.apache.lucene.util.PriorityQueue.downHeap\n\n   8  1.72% 25.92%\t41 300580 org.apache.lucene.util.PriorityQueue.downHeap\n\n   9  1.51% 27.43%\t36 300645 java.net.SocketInputStream.socketRead0\n  10  1.43% 28.86%\t34 300284\norg.apache.lucene.store.BufferedIndexOutput.<init>\n  11  1.43% 30.29%\t34 300562 java.lang.Object.clone\n  12  1.17% 31.46%\t28 300346 java.io.StringReader.read\n  13  1.01% 32.47%\t24 300363\norg.apache.lucene.index.DocumentWriter.writeNorms\n\n(Note: The Socket reading element is the JDBC driver retrieving the results).\n\ncheers,\n\nPaul\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-24T14:43:05.000+0000",
+          "updated": "2005-05-24T14:43:05.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322383",
+          "id": "12322383",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mario%40ops.co.at",
+            "name": "mario@ops.co.at",
+            "key": "mario@ops.co.at",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Mario Ivankovits",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Where do the java.lang.Throwable.fillInStackTrace come from?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mario%40ops.co.at",
+            "name": "mario@ops.co.at",
+            "key": "mario@ops.co.at",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Mario Ivankovits",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-05-24T14:54:53.000+0000",
+          "updated": "2005-05-24T14:54:53.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322384",
+          "id": "12322384",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=whoschek%40lbl.gov",
+            "name": "whoschek@lbl.gov",
+            "key": "whoschek@lbl.gov",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "hoschek",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Most likely the IOExceptions stem from FastCharStream of StandardAnalyzer, at least that's my experience. \nSee the header of your hprof file to check if that's the case.\n\nJavacc has a gotcha in that it \"likes\" IOExceptions as part of the normal control flow on stream termination.\nI have performance patches for this that make FastCharStream 2-10 times faster for small inputs (it \ndoesn't matter on large inputs), but I never bothered submitted them since they were not crucial for me, \nand seeing that most submissions to lucene-dev go into a black hole anyway without any response, \nneither negative or positive, simply ignored... Hint :-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=whoschek%40lbl.gov",
+            "name": "whoschek@lbl.gov",
+            "key": "whoschek@lbl.gov",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "hoschek",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-05-24T15:14:23.000+0000",
+          "updated": "2005-05-24T15:14:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322385",
+          "id": "12322385",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "I expanded the depth of the HPFOF test (will attach shortly) but in summary,\nthis is where it comes from:\n\nTRACE 300351:\n        java.lang.Throwable.fillInStackTrace(Throwable.java:Unknown line)\n        java.lang.Throwable.<init>(Throwable.java:196)\n        java.lang.Exception.<init>(Exception.java:41)\n        java.lang.RuntimeException.<init>(RuntimeException.java:43)\n        java.lang.ClassCastException.<init>(ClassCastException.java:39)\n        org.apache.lucene.document.Field.readerValue(Field.java:262)\n       \norg.apache.lucene.index.DocumentWriter.invertDocument(DocumentWriter.java:152)\n        org.apache.lucene.index.DocumentWriter.addDocument(DocumentWriter.java:93)\n\nVery strang I must say, I will have to look into that in more detail.  Anyone\ncare to comment?  ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-24T16:02:50.000+0000",
+          "updated": "2005-05-24T16:02:50.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322386",
+          "id": "12322386",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "Created an attachment (id=15141)\nSame HPFOF trace, patch applied, but with deeper stack trace\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-24T16:07:09.000+0000",
+          "updated": "2005-05-24T16:07:09.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322387",
+          "id": "12322387",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "See Bug 35037 for related info",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-24T16:34:07.000+0000",
+          "updated": "2005-05-24T16:34:07.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322388",
+          "id": "12322388",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "(In reply to comment #12)\n> Most likely the IOExceptions stem from FastCharStream of StandardAnalyzer, at\nleast that's my experience. \n> See the header of your hprof file to check if that's the case.\n> \n> Javacc has a gotcha in that it \"likes\" IOExceptions as part of the normal\ncontrol flow on stream termination.\n> I have performance patches for this that make FastCharStream 2-10 times faster\nfor small inputs (it \n> doesn't matter on large inputs), but I never bothered submitted them since\nthey were not crucial for me, \n> and seeing that most submissions to lucene-dev go into a black hole anyway\nwithout any response, \n> neither negative or positive, simply ignored... Hint :-)\n\nHey, could you send me the patch for this?  I'd like to test it out. I've\nverified the FastCharStream class does throw IOException when EOF, which of\ncourse occurs very frequently when indexing small Fields.  I can't see a quick\nand easy solution to indicate EOF without the exception, so I'm keen to see your\nwork and test it out with my scenarios.\n\ncheers,\n\nPaul Smith\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2005-05-25T10:22:55.000+0000",
+          "updated": "2005-05-25T10:22:55.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12322389",
+          "id": "12322389",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=whoschek%40lbl.gov",
+            "name": "whoschek@lbl.gov",
+            "key": "whoschek@lbl.gov",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "hoschek",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Yep, throwing and catching exception in the critical path is always a performance gotcha, common case \nor not. See any VM implementation performance papers such as in the IBM Systems journal some years \nago, and others. \n\nNo idea why the javacc folks didn't come up with an API that does not involve exceptions for *normal* \ncontrol flow. Well, javacc has probably been unmaintained dead code for some time now. [Even Xerces \nhas such gotchas deep inside it's low level native API - I chatted with this some time ago with a Sun \nengineer].\n\nAnyway, you can preallocate the IOException in FastCharStream in  a private static final var, and then \nthrow the same exception object again and again on EOS. That gives some factor 2x the cheap way \nbecause the stack trace does not have to be generated and filled repeatadly (Same for the QueryParser \ncopy of FastCharStream).\n\nThe other additional 5x comes from getting rid of the exception completely - catching exceptions is \nexpensive. This is done via dirty patching the javacc generated code to not require EOS exceptions at \nall. Instead you can return 0xFFFF as an EOS marker, or some other unused Unicode value. Look at the \njavacc generated code and see where it catches the EOS exception. That's where you'd need to fiddle \naround, making sure true abnormal exceptions are still handled properly. It's really an akward \nmaintainance nightmare because it interferes with generated code, so I don't really recommend this. \n\nStill, StandardAnalyzer eats CPU (and buffer memory) like there's no tomorrow. Instead, I'd recommend \ngiving PatternAnalyzer (from the \"memory\" SVN contrib area) a try. The functionality is almost the same \nas StandardAnalyzer, but it can be many times faster, especially when using it with a String rather than \na Reader, and you don't have to wait indefinitely for lucene to get fixed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=whoschek%40lbl.gov",
+            "name": "whoschek@lbl.gov",
+            "key": "whoschek@lbl.gov",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "hoschek",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-05-25T13:40:54.000+0000",
+          "updated": "2005-05-25T13:40:54.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427743",
+          "id": "12427743",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "This last patch looks good to me, and I remember looking at this issue when Paul brought it up.  If I recall correctly, I saw the same wasted time in maybeMergeSegments().\n\nAll tests pass, so I'm committing this, only 15 months after it was reported :).  Thanks Paul!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-13T08:17:54.000+0000",
+          "updated": "2006-08-13T08:17:54.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427787",
+          "id": "12427787",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Something is wrong with this patch (as it has been applied) as it increases memory usage. Indexing files with the IndexFiles demo worked before using writer.setMaxBufferedDocs(50) and a tight JVM memory setting (-Xmx2M), now it fails with an OutOfMemoryError.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-08-13T23:49:01.000+0000",
+          "updated": "2006-08-13T23:49:01.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427794",
+          "id": "12427794",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "One problem I see:\nIf you continuously add batches of documents of size less than maxBufferedDocs, maybeMergeSegments will never trigger a merge.  On a close(), it looks like there is some merging logic in flushRamSegments, but it doesn't do full multi-level merging like maybeMergeSegments does.\n\nI think I know how to fix it, but perhaps this should be reverted in the meantime?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-14T03:46:35.000+0000",
+          "updated": "2006-08-14T03:46:35.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427796",
+          "id": "12427796",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Another problem I see even for single-sessions is that bufferedDocCount is not maintained correctly... all merges are subtracted, not just those of the buffered docs.  This will lead to fewer and fewer merges than expected over time.\n\nI definitely vote to revert this.  There isn't an easy fix to this patch - a different approach is required.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-14T04:14:32.000+0000",
+          "updated": "2006-08-14T04:14:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427818",
+          "id": "12427818",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "geez, yep definitely don't put this in, my patch was only a 'suggestion' to highlight how it fixes the root cause of the problem. iIt is interesting that originally, all the test cases still pass, yet the problems Yonik highlights is real.  Might warrant some extra test cases to cover exactly those situation, even if this problem is not addressed.\n\nBe great if this could be fixed completely though, but I haven't got any headspace left to continue research on this one.. sorry :(",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2006-08-14T06:29:55.000+0000",
+          "updated": "2006-08-14T06:29:55.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427821",
+          "id": "12427821",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Ah, too bad. :(  Reverted.  I do recall seeing maybeMergeSegments being called a lot, although I don't recall how much actual time was spent in there.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis",
+            "name": "otis",
+            "key": "otis",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=otis&avatarId=15859",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=otis&avatarId=15859",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=otis&avatarId=15859",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=otis&avatarId=15859"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-14T06:58:33.000+0000",
+          "updated": "2006-08-14T06:58:33.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427932",
+          "id": "12427932",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "How does this patch look?\n\nIt's designed to exactly match the previous merging behavior, and it's conservative (an exact count is not maintained at all times).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-14T16:28:45.000+0000",
+          "updated": "2006-08-14T16:28:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427967",
+          "id": "12427967",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi Yonik, I just tested the patch: sorry, but the problem is the same as before: I get an OutOfMemoryError using settings that without the patch. That doesn't mean that the patch is wrong of course, but as we're after performance improvements it wouldn't make sense to compare it to the old version which uses less memory.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-08-14T21:15:43.000+0000",
+          "updated": "2006-08-14T21:15:43.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427969",
+          "id": "12427969",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> the problem is the same as before: I get an OutOfMemoryError using settings that without the patch\n\nThat's worrisome though... the increase in code and data is minimal, and my patch should not trigger any different merging behavior.  Unless the previous version was passing the low-mem test by a few bytes, something is still wrong.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-14T21:25:42.000+0000",
+          "updated": "2006-08-14T21:25:42.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427975",
+          "id": "12427975",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "body": "This is where some tracing logging code would be useful.  Maybe a YourKit memory snapshot to see what's going on.. ?  I can't see Yonik's patch should influence the memory profile. It's just delaying the check for merging until an appropriate time, and should not be removing opportunities to merge segments.  I can't see why checking less often uses more memory.\n\nObviously something strange is happening.  ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=psmith%40apache.org",
+            "name": "psmith@apache.org",
+            "key": "psmith@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Paul Smith",
+            "active": true,
+            "timeZone": "Australia/Sydney"
+          },
+          "created": "2006-08-14T22:08:07.000+0000",
+          "updated": "2006-08-14T22:08:07.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427976",
+          "id": "12427976",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Well, the patch changes what the hotspot is, so the hotspot compiler could be trying to compile different code...\n\nDaniel, what is the exact test you are running?  what JVM and other settings?\nPerhaps trying both versions with -Xbatch or -Xint would remove the differences?\n\nPerhaps we need a method to determine if index \"invariants\" have been met...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-14T22:19:55.000+0000",
+          "updated": "2006-08-14T22:19:55.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427981",
+          "id": "12427981",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I just see that this OOM is not exactly reproducible. I would have expected that it always happens when it has happened once when indexing the same data with the same settings (though not necessarily at the same time). But that doesn't seem to be the case. I use Java 1.4.2, -Xmx2M, writer.setMaxBufferedDocs(50) and I am indexing 2200 files with the IndexFiles class from the Lucene demo package. Also, I let the code run in Eclipse, maybe this has negative side effects.\n\nSo your code is probably okay, although I suggest you set up a similar test case just to be sure.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-08-14T23:05:37.000+0000",
+          "updated": "2006-08-14T23:05:37.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12427984",
+          "id": "12427984",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dmsmith555",
+            "name": "dmsmith555",
+            "key": "dmsmith555",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "DM Smith",
+            "active": true,
+            "timeZone": "America/Detroit"
+          },
+          "body": "In Eclipse you can set the run to use its own JVM. Otherwise it runs in Eclipse's JVM and it has negative memory side effects.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dmsmith555",
+            "name": "dmsmith555",
+            "key": "dmsmith555",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "DM Smith",
+            "active": true,
+            "timeZone": "America/Detroit"
+          },
+          "created": "2006-08-14T23:14:52.000+0000",
+          "updated": "2006-08-14T23:14:52.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428033",
+          "id": "12428033",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Something is wrong with my patch... the behavior still differs from the original.\nI wrote a testInvariants() method, and merges are not always done when they need to be.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-15T04:02:16.000+0000",
+          "updated": "2006-08-15T04:02:16.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428038",
+          "id": "12428038",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Got it!\n\nAttatching new version with a minor change... I forgot to take into account deleted documents.  After a merge, instead of setting the count to minMergeDocs, we set it to 0, forcing a recount on the next add.  The reason is that deleted docs could have been squeezed out during the merge ,leaving a smaller segment that might be used in another merge shortly.\n\nExample of original behavior (minMergeDocs=10):\n   // segment sizes = 55,8,1\n  add  doc\n   // segment sizes = 55,8,1,1\n  maybe merge\n  // segment sizes = 55,9     (not 10 because of a previously deleted doc)\n  add doc\n   // segment sizes = 55,9,1\n  maybe merge\n   // segment sizes = 55,10\n\nNow, the original behavior isn't necessarily desirable,  but we are taking baby steps... first \"do no harm\".  A separate patch can address merging behavior in the presence of deleted documents.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-15T05:11:24.000+0000",
+          "updated": "2006-08-15T05:11:24.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428522",
+          "id": "12428522",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "It seems that the excessive cpu usage is mainly for (re)scanning those single-doc segments at the top of the \"stack\". \n\nThe following simple patch (small modification to previous one) only keeps track of the number of single doc segments, and when iterating for merge candidate segments, takes all those single doc segments in one step. \n\nAll tests pass with this patch, running a bit faster (3 seconds - can be just noise). A \"tight mem setting\" (2048 cacm files with -Xmx3m and setMaxBufferedDocs(50) ) that fails with previous patch passes with this one. I checked the trace for which segments were merged - same merge decisions as before this change for these 2048 filess.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-08-16T22:07:04.000+0000",
+          "updated": "2006-08-16T22:07:04.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428527",
+          "id": "12428527",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I was literally a minute away from committing my version when Doron sumbitted his  ;-)\nActually, I think I like Doron's \"singleDocSegmentsCount\" better.... it's easier to understand at a glance.\n\nI was testing the performance for mine... not as much of a speeup as I would have liked...\n5 to 6% better with maxBufferedDocs=1000, and a trivial single field document.\nYou need to go to maxBufferedDocs=10000 to see a good speedup, and that's probably not advisable for most real indicies (and the maxBufferedDocs=1000 used much less memory and was slightly faster anyway).\n\nHere is the code I added to IndexWriter to test my version (add testInvariants() after add() call and after flushRamSegments() in close(), then do \"ant test\")\n\n  private synchronized void testInvariants() {\n    // index segments should decrease in size\n    int maxSegLevel = 0;\n    for (int i=segmentInfos.size()-1; i>=0; i--) {\n      SegmentInfo si = segmentInfos.info(i);\n      int segLevel = (si.docCount)/minMergeDocs;\n      if (segLevel < maxSegLevel) {\n\n        throw new RuntimeException(\"Segment #\" + i + \" is too small. \" + segInfo());\n      }\n      maxSegLevel = Math.max(maxSegLevel,segLevel);\n    }\n\n    // check if merges needed\n    long targetMergeDocs = minMergeDocs;\n    int minSegment = segmentInfos.size();\n\n    while (targetMergeDocs <= maxMergeDocs && minSegment>=0) {\n      int mergeDocs = 0;\n      while (--minSegment >= 0) {\n        SegmentInfo si = segmentInfos.info(minSegment);\n        if (si.docCount >= targetMergeDocs) break;\n        mergeDocs += si.docCount;\n      }\n\n      if (mergeDocs >= targetMergeDocs) {\n        throw new RuntimeException(\"Merge needed at level \"+targetMergeDocs + \" :\"+segInfo());\n      }\n\n      targetMergeDocs *= mergeFactor;\t\t  // increase target size\n    }\n  }\n\n  private String segInfo() {\n    StringBuffer sb = new StringBuffer(\"minMergeDocs=\"+minMergeDocs+\"docsLeftBeforeMerge=\"+docsLeftBeforeMerge+\" segsizes:\");\n    for (int i=0; i<segmentInfos.size(); i++) {\n      sb.append(segmentInfos.info(i).docCount);\n      sb.append(\",\");\n    }\n    return sb.toString();\n  }\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-16T22:33:04.000+0000",
+          "updated": "2006-08-16T22:33:04.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428560",
+          "id": "12428560",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I've committed Doron's version after review and further testing with my testInvariants() (also committed, but commented out).  Thanks Doron & Paul!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-17T02:54:42.000+0000",
+          "updated": "2006-08-17T02:54:42.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428953",
+          "id": "12428953",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "well....  there is a problem in the current patch after all... the counter is not decremented when a merge is triggerred by a call to optimize. It is only decremented when a merge is called from maybeMergeSegments(). Therefore the counter decrement should move to mergeSegments(int,int). I am testing this fix now and will add a new patch for this soon.\nDoron",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-08-18T09:21:28.000+0000",
+          "updated": "2006-08-18T09:21:28.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12428964",
+          "id": "12428964",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "The attached doron_2_IndexWriter.patch is fixing the updating of singleDocSegmentsCount to take place in mergeSegments(minSegment, end) so that it would apply also when optimize() is called. The update of the counter now considers the range of the merge (so the counter is not necessarily updated to 0).\n\nThe bug in previous implementation was occasionally using TestIndexModifier.testIndexWithThreads() to fail with ArrayIndexOutOfBoundsException on the segments array.\n\nI ran this test several times with this fix and now it consistently passes. \"ant test\" passes as well.\n\nI hope we're done with this bug...\n\nDoron",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-08-18T10:03:14.000+0000",
+          "updated": "2006-08-18T10:03:14.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429012",
+          "id": "12429012",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Doron, I caught that too and I was just going to set the count to 0 in mergeSegments (mergeSegments is always called with end == size() currently I think).  Your fix is better though - gives more flexibility.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-18T13:34:35.000+0000",
+          "updated": "2006-08-18T13:34:35.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429027",
+          "id": "12429027",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "We could also make the following change to flushRamSegments, right?\n\n  private final void flushRamSegments() throws IOException {\n    int minSegment = segmentInfos.size() - singleDocSegmentsCount;\n    int docCount = singleDocSegmentsCount;",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-18T14:27:33.000+0000",
+          "updated": "2006-08-18T14:27:33.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429069",
+          "id": "12429069",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Right... actually it should be like this:\n\n   int minSegment = segmentInfos.size() - singleDocSegmentsCount - 1; \n\nBut since flushRamSegments() is only called by close() and optimize(), no real performance gain is expected here. \n\nSo I'm not sure what my preference is between - \n(a) do not to change here, because \"why change a working code to be perhaps a bit more complex for no performance gain\". \n(b) change here too, also to be consistent with how this counter is used in maybeMergeSegments().\n\nAnyway I tested this change and it works - so I am attaching also this version - doron_2b_IndexWriter.patch - in case there is a favor for (b).\n\n- Doron\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-08-18T17:42:18.000+0000",
+          "updated": "2006-08-18T17:42:18.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429248",
+          "id": "12429248",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Paul, would you like to re-open this issue for (re)solving it with one of the two recent patches (2 or 2b)  - I think that once an issue is resolved it can be re-opened (or closed) by the developer who opened it. (I assume commiters can also re-open, but I'm not sure - well, at least I can't.)\nThanks, Doron",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-08-20T07:02:41.000+0000",
+          "updated": "2006-08-20T07:02:41.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429262",
+          "id": "12429262",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "No need to re-open Doron, I committed doron_2_IndexWriter.patch at the same time as my first reply (shortly after you posted it).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-20T13:47:32.000+0000",
+          "updated": "2006-08-20T13:47:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429522",
+          "id": "12429522",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "body": "Oh - sorry for the 'noise'  - got used to systems where a commit must be attached to an issue/defect - should have checked the commits list or the code itself - I'm learning all the time...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=doronc",
+            "name": "doronc",
+            "key": "doronc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=doronc&avatarId=12738",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=doronc&avatarId=12738",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=doronc&avatarId=12738",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=doronc&avatarId=12738"
+            },
+            "displayName": "Doron Cohen",
+            "active": true,
+            "timeZone": "Asia/Gaza"
+          },
+          "created": "2006-08-21T20:40:29.000+0000",
+          "updated": "2006-08-21T20:40:29.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/12429525",
+          "id": "12429525",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "No problem... I probably should have put \"LUCENE-388\" in the commit log (it allows JIRA to link up the related commits automatically)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-08-21T20:46:33.000+0000",
+          "updated": "2006-08-21T20:46:33.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314538/comment/17586580",
+          "id": "17586580",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1466|https://github.com/apache/lucene/issues/1466].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:21:55.597+0000",
+          "updated": "2022-08-28T11:21:55.597+0000"
+        }
+      ],
+      "maxResults": 45,
+      "total": 45,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i053hb:",
+    "customfield_12314139": null
+  }
+}

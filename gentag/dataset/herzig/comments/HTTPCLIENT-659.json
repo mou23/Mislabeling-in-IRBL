@@ -1,0 +1,924 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12371339",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339",
+  "key": "HTTPCLIENT-659",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312475",
+        "id": "12312475",
+        "description": "",
+        "name": "4.0 Alpha 2",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2007-11-07"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12312320": null,
+    "customfield_12310420": "133697",
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "customfield_12312339": null,
+    "issuelinks": [
+      {
+        "id": "12316529",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12316529",
+        "type": {
+          "id": "12310010",
+          "name": "Incorporates",
+          "inward": "is part of",
+          "outward": "incorporates",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/12310010"
+        },
+        "outwardIssue": {
+          "id": "12371810",
+          "key": "HTTPCORE-84",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371810",
+          "fields": {
+            "summary": "Move DateUtils to HttpClient/Cookie",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      },
+      {
+        "id": "12390429",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12390429",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12723878",
+          "key": "HTTPCLIENT-1523",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12723878",
+          "fields": {
+            "summary": "DateUtils ThreadLocal leak if referencing non-JDK classes",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+              "id": "1",
+              "description": "A problem which impairs or prevents the functions of the product.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+              "name": "Bug",
+              "subtask": false,
+              "avatarId": 21133
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12313825": null,
+    "assignee": null,
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12311010",
+        "id": "12311010",
+        "name": "HttpClient (classic)",
+        "description": "HttpClient classic (blocking) code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "48167",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+      "name": "heron",
+      "key": "heron",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Daniel M\u00fcller",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+      "name": "heron",
+      "key": "heron",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Daniel M\u00fcller",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-659/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@2f588d7[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@30c4440d[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@37167324[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@25e0bde7[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2b865759[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@6dd425b8[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@69dff475[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@49f0632c[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@50d5d9d4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@1ce0df93[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@a8afc26[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@40291758[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310360",
+      "id": "12310360",
+      "key": "HTTPCLIENT",
+      "name": "HttpComponents HttpClient",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310360&avatarId=10011",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310360&avatarId=10011",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310360&avatarId=10011",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310360&avatarId=10011"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10280",
+        "id": "10280",
+        "description": "Apache HttpComponents Project",
+        "name": "HttpComponents"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Wed Oct 24 15:03:41 UTC 2007",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-10-24T15:03:41.758+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/HTTPCLIENT-659/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2007-06-10T13:48:48.002+0000",
+    "updated": "2016-09-20T19:29:40.086+0000",
+    "timeoriginalestimate": null,
+    "description": "DateUtils create a SimpleDateFormat for each invocation of #formatDate and #parseDate. This can be optimized if SimpleDateFormat instances are cached. Since SimpleDateFormat is not threadsafe, the cache must be threadlocal.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12367957",
+        "id": "12367957",
+        "filename": "20071018-001-dateutils.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+          "name": "olegk",
+          "key": "olegk",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Oleg Kalnichevski",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2007-10-18T15:54:17.339+0000",
+        "size": 4158,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12367957/20071018-001-dateutils.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12359370",
+        "id": "12359370",
+        "filename": "org.apache.http.util.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+          "name": "heron",
+          "key": "heron",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Daniel M\u00fcller",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-06-10T13:52:10.264+0000",
+        "size": 3399,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12359370/org.apache.http.util.patch"
+      }
+    ],
+    "customfield_12312340": null,
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "DateUtils should cache SimpleDateFormat",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12503178",
+          "id": "12503178",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+            "name": "heron",
+            "key": "heron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel M\u00fcller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "the patch introduces a package locale SimpleDateFormatFactory which does cache instances of SimpleDateFormat threadlocal",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+            "name": "heron",
+            "key": "heron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel M\u00fcller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-10T13:52:10.394+0000",
+          "updated": "2007-06-10T13:52:10.394+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12503186",
+          "id": "12503186",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I personally tend to avoid usingthreadlocals in libraries but in this case it seems justified. If I hear no objections, I'll commit the patch\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-06-10T16:59:38.262+0000",
+          "updated": "2007-06-10T16:59:38.262+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12503188",
+          "id": "12503188",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "If there are many threads making few calls each to this method, we are opening a memory hole. In particular since a whole map of formats is stored. Can we please wrap the map in a SoftReference to allow garbage collection?\n\nThere is an @Override in the source code, and not inside a comment. I don't know what it's supposed to mean, but it is not valid Java 1.3 source.\n\ncheers,\n  Roland\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-10T17:14:17.073+0000",
+          "updated": "2007-06-10T17:14:17.073+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12503200",
+          "id": "12503200",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "> Can we please wrap the map in a SoftReference to allow garbage collection?\n\nSounds reasonable.\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-06-10T19:11:26.691+0000",
+          "updated": "2007-06-10T19:11:26.691+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505526",
+          "id": "12505526",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Will deal with it post-ALPHA5.\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-06-16T19:18:09.213+0000",
+          "updated": "2007-06-16T19:18:09.213+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505591",
+          "id": "12505591",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+            "name": "heron",
+            "key": "heron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel M\u00fcller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I searched for alternative approaches and digged up a FastDateFormat in commons.lang[1], which is fully threadsafe. Maybe http-core could use this one. I don't propose to introduce commons.lang as a dependency, but simply to incorporate the FastDateFormat (partial or whole) as a util into http-core. The code has no dependencies on the rest of commons.lang (only one call to Validate).\n\nJust some thoughts,\nDaniel\n\n[1] http://jakarta.apache.org/commons/lang/api/org/apache/commons/lang/time/FastDateFormat.html",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+            "name": "heron",
+            "key": "heron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel M\u00fcller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-17T12:56:45.786+0000",
+          "updated": "2007-06-17T12:56:45.786+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505592",
+          "id": "12505592",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "body": "I support the FastDateFormat approach. It solves the threadsafety problem in a much more elegant way.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=oglueck",
+            "name": "oglueck",
+            "key": "oglueck",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ortwin Glueck",
+            "active": true,
+            "timeZone": "Europe/Zurich"
+          },
+          "created": "2007-06-17T13:02:50.091+0000",
+          "updated": "2007-06-17T13:02:50.091+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505593",
+          "id": "12505593",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "You noticed that FastDateFormat is for formatting only, not for parsing?\nSince this is obviously a case where multiple implementations are available and have different advantages/drawbacks, maybe it is time to define an interface and make DateUtils - in it's current form - the default implementation. Optimizing static helper methods without a specified target environment is soooooo ugly.\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-17T13:16:07.444+0000",
+          "updated": "2007-06-17T13:16:07.444+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505594",
+          "id": "12505594",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+            "name": "heron",
+            "key": "heron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel M\u00fcller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Yes, saw it. Unfortunately after I sent of the comment. So much for prudent investigation methods. I'll have a look if I can come up with something.\n\nAnd for the specified target environment: I guess this would be parsing and formatting of the three required formats:\n- RFC 1123 (EEE, dd MMM yyyy HH:mm:ss zzz)\n- RFC1036 (EEEE, dd-MMM-yy HH:mm:ss zzz)\n- ascitime() (EEE MMM d HH:mm:ss yyyy)\n\nCheers,\nDaniel",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=heron",
+            "name": "heron",
+            "key": "heron",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel M\u00fcller",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-17T13:41:09.276+0000",
+          "updated": "2007-06-17T13:41:09.276+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505595",
+          "id": "12505595",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hello Daniel,\n\ntarget _environment_ is...\na) client HTTP application, few threads, few operations -> current implementation is fine\nb) server application, few threads, many operations -> full per-thread caching is fine\nc) server application, many threads, few operations -> current implementation not so good, full caching not so good either\nd) ....\n\nWithin HttpCore, only formatting should be required. Date parsing is for cookies. So maybe reduce DateUtils to formatting only, based on FastDateFormat. Date parsing goes to HttpCookie and gets an interface for substituting different implementations.\n\ncheers,\n  Roland\n\n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-17T14:08:50.960+0000",
+          "updated": "2007-06-17T14:08:50.960+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505596",
+          "id": "12505596",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Folks,\nIn fact the static methods of DateUtils are not being used in HttpCore AT ALL. HttpDateGenerator imports a few static variables from DateUtils, but that is it.\n\nthis.dateformat = new SimpleDateFormat(DateUtils.PATTERN_RFC1123, Locale.US);\nthis.dateformat.setTimeZone(DateUtils.GMT);\n\n(1) I suggest DateUtils gets moved to HttpClient\n(2) I am in favor of using ThreadLocals and SoftReferences to cache DateFormatters, but will not stand in your way should you decide to 'borrow' FastDateFormat from Commons Lang as long as it is not in Core\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-06-17T15:04:14.972+0000",
+          "updated": "2007-06-17T15:04:14.972+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505597",
+          "id": "12505597",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I've taken a look at FastDateFormat. It maintains several internal caches in form of static HashMaps.\nI'd hate to introduce that as a default anywhere in HttpComponents.\n\nMoving DateUtils to HttpClient/Cookie sounds good. There we can take as many stabs at it as we want to.\n\ncheers,\n  Roland\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rolandw",
+            "name": "rolandw",
+            "key": "rolandw",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Roland Weber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-06-17T15:09:07.200+0000",
+          "updated": "2007-06-17T15:09:07.200+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12505601",
+          "id": "12505601",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "This needs to be done before the code freeze for ALPHA5. Folks, if I hear no laud objections, I'll move DateUtils to HttpCookie within the next few days.\n\nOleg ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-06-17T15:56:27.627+0000",
+          "updated": "2007-06-17T15:56:27.627+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12535951",
+          "id": "12535951",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "A small variation on the Daniel's original patch. HashMaps containing date format instances are now softly referecned by the thread local to allow for their garbage-collection. Please review.\n\nIf I hear no complaints, I'll check in the patch in a few days.\n\nOleg  \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-10-18T15:54:17.508+0000",
+          "updated": "2007-10-18T15:54:17.508+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12371339/comment/12537340",
+          "id": "12537340",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Patch checked in\n\nOleg",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=olegk",
+            "name": "olegk",
+            "key": "olegk",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Oleg Kalnichevski",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2007-10-24T15:03:41.632+0000",
+          "updated": "2007-10-24T15:03:41.632+0000"
+        }
+      ],
+      "maxResults": 15,
+      "total": 15,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i08m0v:",
+    "customfield_12314139": null
+  }
+}

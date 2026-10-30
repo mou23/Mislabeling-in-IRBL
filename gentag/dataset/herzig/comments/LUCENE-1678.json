@@ -1,0 +1,792 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12427472",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472",
+  "key": "LUCENE-1678",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312682",
+        "id": "12312682",
+        "description": "Last release (barring major bugs) before migrating to 3.0 and JDK 1.5",
+        "name": "2.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-09-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12080",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "1.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26367",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1678/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@53433af1[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4ab1c3a2[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3b3dbfd2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7fd5d7c4[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4ab831c1[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@270b9954[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@719e7148[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@20a4e348[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2b19e8a4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@50a305aa[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@52353ac7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@558c2d6a[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:02:05 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2009-07-14T16:32:44.562+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1678/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2009-06-09T16:43:05.120+0000",
+    "updated": "2022-08-28T12:02:05.170+0000",
+    "timeoriginalestimate": null,
+    "description": "The addition of reusableTokenStream to the core analyzers unfortunately broke back compat of external subclasses:\n\n    http://www.nabble.com/Extending-StandardAnalyzer-considered-harmful-td23863822.html\n\nOn upgrading, such subclasses would silently not be used anymore, since Lucene's indexing invokes reusableTokenStream.\n\nI think we should should at least deprecate Analyzer.tokenStream, today, so that users see deprecation warnings if their classes override this method.  But going forward when we want to change the API of core classes that are extended, I think we have to  introduce entirely new classes, to keep back compatibility.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12413286",
+        "id": "12413286",
+        "filename": "LUCENE-1678.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-07-13T11:13:01.519+0000",
+        "size": 7812,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12413286/LUCENE-1678.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Deprecate Analyzer.tokenStream",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12717819",
+          "id": "12717819",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I frankly don't like renaming something like this.  This is, once again, a case of back compatibility biting us.  If instead of working around back compat. we had just made Analyzer.tokenStream be reusable, we wouldn't have to do this.  Now, instead, we are going to have a convoluted name for something (reusableTS).\n\nIn my mind, better to just make .tokenStream do the right thing and get rid of reusableTokenStream.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-09T21:05:41.953+0000",
+          "updated": "2009-06-09T21:05:41.953+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12717823",
+          "id": "12717823",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Second this. Though I lost any hope for sane Lucene release/compat rules.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-09T21:24:00.960+0000",
+          "updated": "2009-06-09T21:24:00.960+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12717831",
+          "id": "12717831",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": ">>Second this. Though I lost any hope for sane Lucene release/compat rules. \n\nWhy? Have you seen anyone arguing for anything else?\n\nIf there are sane/smart ways to change our back compat policy, I think you have seen that no one would object.\n\nIts a complicated topic that has come up for discussion many times, but I don't think the current policy is insane. And I have seen most people supporting whatever is best for Lucene. But - see all of the posts on the topic. Its complicated. Nobody even really torpedoed anything, its more that enough issues were raised and no one with a proper amount of authority felt comfortable stepping up to the plate. Mike was gung ho for it for a while, and even he backed off. Thats a great indication to me that the issue is not simple. Back compat currently is not insane, but I think we all agree it should be loosened somehow in the future.\n\nThe way Lucene stuff generally goes, if someone like Grant or Mike really wanted to push changes, the changes would happen. I think they both see that the effort involved in such a change is not small though. Back compat is like our constitution. Its  a pain in the butt to change in a way that everyone could get on board with. Even still, if someone really wanted to, they could probably push through that. It seems we havn't gotten to such a point with anyone yet though.\n\nGiving up is really not the answer though - thats why the discussion has come and gone in the past. The effort to get anything done grew (in terms of ideas as much as any implementation), and one by one, the participants dropped out.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-09T21:44:35.774+0000",
+          "updated": "2009-06-09T21:44:35.774+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12717862",
+          "id": "12717862",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. If there are sane/smart ways to change our back compat policy, I think you have seen that no one would object.\nIt's not a matter of finding a smart way. It is a matter of sacrifice that has to be made and readiness to take the blame for decision that can be unpopular with someone.\nYou go zealously for back-compat - you sacrifice readability/maintainability of your code but free users from any troubles when they want to 'simply upgrade'. You adopt more relaxed policy - you sacrifice users' time, but in return you gain cleaner codebase and new stuff can be written and used faster.\nThere's no way to ride two horses at once.\n\nSome people are comfortable with current policies. Few cringe when they hear things like above. Most theoretically want to relax the rules. Nobody's ready to give up something for it.\n\nOkay, there's an escape hatch I (and someone else) mentioned on the list before. Adopting a fixed release cycle with small intervals between releases (compared to what we have now). Fixed - as in, releases are made each N months instead of when everyone feels they finished and polished up all their pet projects and there's nothing else exciting to do. That way we can keep the current policy, but deletion-through-deprecation approach will work, at last!\nThis solution is halfassed, I can already see discussions like \"That was a big change, let's keep the deprecates around longer, say - for a couple of releases.\", it doesn't solve good-name-thrashing problem, as you have to go through two rounds of deprecation to change semantics on something, but keep the name.\nBut this is something better than what we have now, a-a-and this is something that needs commiter backing.\n\nbq. Thats a great indication to me that the issue is not simple.\nThe issue is simple, the choice is not. And maintaining status quo is free.\n\nbq. Giving up is really not the answer though\nIt is the answer. I have no moral right to hammer my ideals into heads that did tremendously more for the project, than I did. And maintaining a patch queue over Lucene trunk is not 'that' hard.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-09T23:17:38.085+0000",
+          "updated": "2009-06-09T23:17:38.085+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12717888",
+          "id": "12717888",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. If there are sane/smart ways to change our back compat policy, I think you have seen that no one would object.\n\nThe sane/smart way is to do it on a case by case basis.  Here is a specific case.  Generalizing it a bit, the place where it should be more easily relaxable are the cases where we know very few people make customizations, as in implementing Fieldable or FieldCache.\n\nAs for this specific case, the original change was the thing that broke back compat.  So, given it is already broken, why not fix it the right way?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T02:33:29.122+0000",
+          "updated": "2009-06-10T02:33:29.122+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12718031",
+          "id": "12718031",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. So, given it is already broken, why not fix it the right way?\n\nBecause two wrongs don't make a right?\n\n(I assume you're suggesting changing tokenStream to match reusableTokenStream, ie allowing it to return a reused TokenStream between calls, and then deprecating reusableTokenStream).\n\nApps that get multiple TokenStreams from a single Analyzer and then iterate through them, would silently break, if we up and made this 2nd non-back-compatible change.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T11:12:57.567+0000",
+          "updated": "2009-06-10T11:12:57.567+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12718032",
+          "id": "12718032",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. The sane/smart way is to do it on a case by case basis.\n\nRight, and the huge periodic discussions on back-compat do soften\n\"our\" stance on these.  For example LUCENE-1542 was just such a case,\nwhere we chose to simply fix the [rather nasty] bug at the expense of\npossible apps relying on the broken behavior.\n\nLUCENE-1679 is another (rather trivial) example, where we plan to\nchange certain fields in WildcardTermEnum to be final.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T11:16:22.798+0000",
+          "updated": "2009-06-10T11:16:22.798+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12718079",
+          "id": "12718079",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\nbq. Mike was gung ho for it for a while, and even he backed off. \n\nWell... my particular itch (most recently!) was an addition to Lucene\nthat'd let us conditionalize the default settings so that new users\nget the latest & greatest, but back-compat users can easily preserve\nold behavior.\n\nIe, it was a software change, not a policy change; I tried hard to\nsteer clear of any proposed changes to back-compat policy.\n\nBut, for better or worse, back-compat policy is one of those\n\"magnetic\" topics: whenever you get too close to it, it suddenly\nsticks to you and takes over your thread.\n\nAnd in the end we arrived at a workable solution to my particular\nitch, which is to make such settings explicit or switch to new APIs\nthat change the defaults (eg the new FSDir.open).\n\nThat said, improving our back compat policy *is* an important and\namazingly complex topic.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T13:26:19.137+0000",
+          "updated": "2009-06-10T13:26:19.137+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12718080",
+          "id": "12718080",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "\nbq. The way Lucene stuff generally goes, if someone like Grant or Mike really wanted to push changes, the changes would happen. \n\nWell, it's consensus that we all need to reach (at least enough\nconsensus to vote on it), and on complex topics it's not easy to get\nto consensus.\n\nbq. Giving up is really not the answer though - thats why the discussion has come and gone in the past.\n\nI don't think anyone has given up.  The issue still smoulders and\nflares up here and there (like, this issue).  Eventually we'll get\nenough consensus for something concrete to change.\n\n\nbq. I have no moral right to hammer my ideals into heads that did tremendously more for the project, than I did.\n\nIn fact you do & should.  This is exactly how change happens.  Here's\na great (though sexist) quote:\n\n\"The reasonable man adapts himself to the world; the unreasonable one persists to adapt the world to himself. Therefore all progress depends on the unreasonable man.\" - George Bernard Shaw\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T13:26:46.265+0000",
+          "updated": "2009-06-10T13:26:46.265+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12718081",
+          "id": "12718081",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Adopting a fixed release cycle with small intervals between releases (compared to what we have now). \n\nI think this is almost a good solution, though instead of \"fixed\" it\ncould be that we try [harder] to do major releases more frequently.\nLet's face it: Lucene is changing quite quickly now, so it seems\nreasonable that the major releases also come quickly.\n\nI say \"almost\" because.... alot of the pain in implementing our\ncurrent policy is the need to have a \"stepping stone\" between old and\nnew.  Ie, we now must always do a release that deprecates old APIs and\nintroduces new ones so that you can upgrade to that, fix deprecations,\nand you know you're set for the next major release.  So eg changes to\ninterfaces is a big problem.  If we were free to suddenly make a new\nmajor releases, with instructions on how to migrate old -> new, that'd\nbe very liberating.\n\nI think nearly everyone agrees our back-compat policy is exceptionally\ncostly.  On a given interesting change to Lucene, a very large part of\nthe effort is spent on preserving back-compat. It causes all kinds of\nspooky code, pollutes the APIs, causes us to go forward with sub-par\nnames, etc.  The freedom Marvin has to make changes to Lucy is\nfabulous, though in exchange, it's not yet released...\n\nI think most would also agree that it's far from easy even carrying\nout the policy we have without making mistakes: this change (addition\nof reusableTokenStream) violated our policy (I did it by accident and\nnobody noticed until now).  I actually believe programming languages /\nruntime envs need to provide more support for developers; we have\ninadequate tools now.  But we can't wait for that...\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T13:27:24.715+0000",
+          "updated": "2009-06-10T13:27:24.715+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12718122",
+          "id": "12718122",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "body": "We've had this thread http://www.nabble.com/Lucene%27s-default-settings---back-compatibility-td23605466.html, and in the latest post (http://www.nabble.com/Re%3A-Lucene%27s-default-settings---back-compatibility-p23792927.html) I tried to put together some wording for a revised (and relaxed) back-compat policy. I believe it was Grant who asked for some writeup to get to the users' list, and I read also that we may want to discuss each item separately, to get to a consensus.\n\nPerhaps we can continue the discussion on that thread, and try to get to a consensus on any of the items? We don't necessarily need to change all of it in one day, but getting some feedback from you on any of the items can help bring that discussion back to life, and hopefully reach a consensus.\n\nAs was said on this thread, persistence will eventually drive us to reach a consensus, so I'm being persistent :).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shaie",
+            "name": "shaie",
+            "key": "shaie",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shai Erera",
+            "active": true,
+            "timeZone": "Asia/Jerusalem"
+          },
+          "created": "2009-06-10T16:13:07.740+0000",
+          "updated": "2009-06-10T16:13:07.740+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12730290",
+          "id": "12730290",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, inspired by Uwe's persistence on LUCENE-1693, I realized one clean\nway to fix the back-compat break here is by using reflection when\ncreating the Analyzer as to whether the class overrides the\ntokenStream method.  Then, in reusableTokenStream we forcefully\nfallback to tokenStream, if it does.\n\nAttached patch, with a test case showing the issue, implements this\napproach, and it works well.  With this approach there's no reason to\ndeprecate tokenStream.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-07-13T11:13:01.568+0000",
+          "updated": "2009-07-13T11:13:01.568+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/12730303",
+          "id": "12730303",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Your solution is also cool, to fix the last problems with the core token streams in LUCENE-1693: If somebody overrides a deprecated method in one of the core tokenstreams (that are not final), the method is never called, because the indexer uses incrementToken per default. The same can be used to fix this problem in TokenStream, too.\n\nI will prepare a patch for this (I am currently preparing a new patch with some tests and the solution for the problems with number of attribute instances may not be equals number of attributes).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-07-13T12:00:35.617+0000",
+          "updated": "2009-07-13T12:00:35.617+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12427472/comment/17587873",
+          "id": "17587873",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2752|https://github.com/apache/lucene/issues/2752].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:02:05.170+0000",
+          "updated": "2022-08-28T12:02:05.170+0000"
+        }
+      ],
+      "maxResults": 14,
+      "total": 14,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04vhr:",
+    "customfield_12314139": null
+  }
+}

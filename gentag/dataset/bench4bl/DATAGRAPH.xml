@@ -1,0 +1,2405 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="DATAGRAPH">
+	<bug id="552" opendate="2015-03-16 09:08:26" fixdate="2015-03-19 04:06:51" resolution="Complete">
+		<buginformation>
+			<summary>Support direct retrieval of RelationshipEntity </summary>
+			<description>Given the classic film critic example:
+User critic...
+Movie film...
+Rating rating = critic.rate(film, ...);
+...where Rating is an @RelationshipEntity, the following code should retrieve the Rating that matches the specified relationship ID.
+Rating loadedRating = ogmSession.load(Rating.class, ratingId);
+However, the Session.load(...) code currently assumes that it&amp;amp;apos;s always going to be looking for a node entity and therefore isn&amp;amp;apos;t matching the ID correctly.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Role.java</file>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsRelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.ParameterisedStatementTest.java</file>
+			<file type="M">org.neo4j.ogm.defects.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.model.RelationshipModel.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.QueryStatements.java</file>
+			<file type="M">org.neo4j.ogm.session.Neo4jSession.java</file>
+			<file type="M">org.neo4j.ogm.integration.RelationshipEntityHydrationTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.MappingContext.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.VariableDepthQueryTest.java</file>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsRatingsTest.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthQuery.java</file>
+			<file type="M">org.neo4j.ogm.metadata.MetaData.java</file>
+			<file type="M">org.neo4j.ogm.session.response.SessionResponseHandler.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="567" opendate="2015-03-16 22:00:45" fixdate="2015-03-23 02:39:43" resolution="Complete">
+		<buginformation>
+			<summary>NullPointerException when saving relationship entity with end node field in camel case</summary>
+			<description>Given a relationship entity defined with camel case start/end node fields:
+ @StartNode private Actor firstActor;
+ @EndNode  private Actor secondActor;
+saving it results in an NPE. Field names such as first or second (all lower) work fine. This is due to the conversion of the field name to snake case to find a matching writer. 
+See details in test case org.neo4j.ogm.defects.RelationshipEntityTest. shouldSaveRelationshipEntityWithCamelCaseStartEndNodes  https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/RelationshipEntityTest.java#L206</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 M1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.template.Neo4jTemplate.java</file>
+			<file type="M">org.neo4j.ogm.defects.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.DefaultEntityAccessStrategy.java</file>
+			<file type="D">org.neo4j.ogm.integration.RelationshipEntityHydrationTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.EntityAccess.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="565" opendate="2015-03-16 09:38:21" fixdate="2015-03-28 03:17:10" resolution="Complete">
+		<buginformation>
+			<summary>Adding a new relationship entity to a node deletes the previous one</summary>
+			<description>Given a film and two critics
+User criticOne...
+User criticTwo...
+Movie film...
+Rating rating = criticOne.rate(film, ...);
+where Rating is a @RelationshipEntity, the following removes the rating from criticOne to the film and saves only the rating from criticTwo
+Rating rating = criticTwo.rate(film, ...);
+repository.save(criticTwo);
+See org.neo4j.ogm.defects.RelationshipEntityTest. shouldSaveMultipleRatingsFromDifferentUsersForSameMovie  https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/RelationshipEntityTest.java#L80</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.defects.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.CypherContext.java</file>
+			<file type="M">org.neo4j.ogm.unit.entityaccess.relationshipEntities.NonAnnotatedFieldWithAnnotatedSetterTest.java</file>
+			<file type="M">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldNonAnnotatedSetterAndNonSetter.java</file>
+			<file type="M">org.neo4j.ogm.mapper.TransientRelationship.java</file>
+			<file type="M">org.neo4j.ogm.integration.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldAndNonAnnotatedSetter.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.relationships.RelationshipWriterPlainFieldsTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.NewRelationshipBuilder.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.relationships.RelationshipWriterAnnotatedFieldsTest.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.relationships.RelationshipWriterPlainSetterTest.java</file>
+			<file type="M">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldAndNoSetterTest.java</file>
+			<file type="M">org.neo4j.ogm.session.Neo4jSession.java</file>
+			<file type="M">org.neo4j.ogm.mapper.MappingContext.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.model.cineasts.annotated.UserRequest.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Rating.java</file>
+			<file type="M">org.neo4j.ogm.unit.entityaccess.relationshipEntities.AnnotatedFieldAndSetterWithNonSetter.java</file>
+			<file type="D">org.neo4j.ogm.integration.cineasts.annotated.CineastsRatingsTest.java</file>
+			<file type="M">org.neo4j.ogm.exception.InvalidDepthException.java</file>
+			<file type="M">org.neo4j.ogm.session.response.SessionResponseHandler.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityMemo.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.relationships.RelationshipWriterAnnotatedSetterTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.ExistingRelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.integration.education.EducationIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthRelationshipQuery.java</file>
+			<file type="M">org.neo4j.ogm.session.transaction.SimpleTransaction.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Knows.java</file>
+			<file type="M">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldWithNoSetterAndNonSetter.java</file>
+			<file type="M">org.neo4j.ogm.unit.entityaccess.relationshipEntities.NonAnnotatedFieldWithAnnotatedSetterAndNonSetterTest.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Actor.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Movie.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.RelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.defects.SessionCypherQueryTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.model.cineasts.annotated.UserTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.entityaccess.relationshipEntities.AnnotatedFieldAndAnnotatedSetterTest.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.User.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">568</link>
+			<link type="Relate" description="is related to">569</link>
+		</links>
+	</bug>
+	<bug id="569" opendate="2015-03-16 22:37:45" fixdate="2015-03-28 03:17:40" resolution="Complete">
+		<buginformation>
+			<summary>Relationship entity not saved when pre existing node entity is saved</summary>
+			<description>Given pre existing node and relationship entities, for example User and Movie node entities that contain a Set&amp;lt;Rating&amp;gt; where Rating is a @RelationshipEntity, loading them and saving with a new set of ratings does not save the ratings.
+See test case org.neo4j.ogm.defects. RelationshipEntityTest.shouldCreateREWithExistingStartAndEndNodes 
+https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/RelationshipEntityTest.java#L134</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.integration.RelationshipEntityTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="relates to">565</link>
+			<link type="Relate" description="is related to">568</link>
+		</links>
+	</bug>
+	<bug id="588" opendate="2015-04-01 10:30:13" fixdate="2015-04-02 02:15:09" resolution="Complete">
+		<buginformation>
+			<summary>Relationship deletion problems</summary>
+			<description>Deleting direct relationships (i.e. not mediated via a RelationshipEntity) in 1-&amp;gt;many scenarios only works correctly if a certain path is followed during the entity graph mapping. If a different path is followed, it does not work. The path that is followed is entirely dependent on JVM internals, and cannot be controlled by code.
+Further investigation shows that even when it does work, its because it gets lucky...</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.domain.filesystem.Folder.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+			<file type="M">org.neo4j.ogm.unit.session.lifecycle.StaleObjectTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.CypherContext.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="590" opendate="2015-04-01 12:32:10" fixdate="2015-04-02 02:15:41" resolution="Complete">
+		<buginformation>
+			<summary>Metadata resolves to an abstract class for an interface</summary>
+			<description>MetadataTest.testInterfaceWithMultipleImplTaxa </description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.metadata.MetaDataTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.ClassInfo.java</file>
+			<file type="M">org.neo4j.ogm.unit.metadata.TransientObjectsTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.InterfacesInfo.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.DomainInfo.java</file>
+			<file type="M">org.neo4j.ogm.metadata.MetaData.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.InterfaceInfo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="591" opendate="2015-04-02 08:38:34" fixdate="2015-04-02 11:14:31" resolution="Complete">
+		<buginformation>
+			<summary>Ordering not preserved when loading array properties</summary>
+			<description>The ordering of array-based properties, e.g. 
+{number: [1,2,3,4]}
+ is not always preserved when loaded from Neo4j. </description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.entityaccess.EntityAccess.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="589" opendate="2015-04-01 10:46:14" fixdate="2015-04-02 11:14:45" resolution="Complete">
+		<buginformation>
+			<summary>Labels and relationship types should be backticked when constructing cypher queries</summary>
+			<description>Labels and relationship types should be backticked in the constructed cypher so as to allow relationship types such as "AN-EDGE"</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.ParameterisedStatementTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.DeleteStatementsTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.CypherCompilerTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.VariableDepthQueryTest.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.DeleteStatements.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthRelationshipQuery.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthQuery.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="586" opendate="2015-03-30 10:08:04" fixdate="2015-04-02 11:16:49" resolution="Complete">
+		<buginformation>
+			<summary>Deleting a relationship entity by id also deletes nodes with the same id</summary>
+			<description>session.delete(r) where r is a relationship entity with id i deletes the node with id i instead of the relationship with id i.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.ParameterisedStatementTest.java</file>
+			<file type="M">org.neo4j.ogm.defects.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.session.Neo4jSession.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.DeleteStatementsTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.MappingContext.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.DeleteStatements.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Actor.java</file>
+			<file type="M">org.neo4j.ogm.integration.RelationshipEntityTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="595" opendate="2015-04-07 04:35:41" fixdate="2015-04-08 06:51:46" resolution="Complete">
+		<buginformation>
+			<summary>Cannot specify load depth -1 (load all)</summary>
+			<description>Reported by: shakeelsoogun@outlook.com
+Loading with depth -1 to load all possible connected objects does not work as the VariableDepthQuery class uses a "max &amp;gt; 0" check to determine whether something should use the DepthZeroReadStrategy queries instead. However, this means that attempting to use a negative depth (or more specifically, -1 which should load all) actually loads the object with depth 0.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.VariableDepthQueryTest.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthQuery.java</file>
+			<file type="M">org.neo4j.ogm.integration.education.EducationIntegrationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="594" opendate="2015-04-07 04:33:04" fixdate="2015-04-15 12:00:44" resolution="Complete">
+		<buginformation>
+			<summary>Hydrating objects ignores relationship direction between objects of the same type.</summary>
+			<description>Reported by: shakeelsoogun@outlook.com
+Loading objects that contain objects of the same type does not seem to take into consideration the direction of the relationship when hydrating them, despite the direction being mentioned in the @Relationship annotation above the field (e.g. specifying only OUTGOING on a Person field within the Person class will also load Person&amp;lt;-[:Like]-Person). This may also happen for other types with relationships going in both directions between them, but I have not had the need to test for this.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.entityaccess.MethodReader.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.SingleStatementCypherCompiler.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.FieldInfo.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.CypherCompilerTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.RelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.MethodInfo.java</file>
+			<file type="M">org.neo4j.ogm.integration.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.CypherCompiler.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.FieldReader.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="600" opendate="2015-04-14 03:52:44" fixdate="2015-04-17 07:21:56" resolution="Complete">
+		<buginformation>
+			<summary>Mapping of numeric values to other numeric types</summary>
+			<description>If a node contains numeric data but the class field is of a different type,
+eg. long -&amp;gt; int,byte
+or double -&amp;gt; float
+It fails with a mapping exception while it should coerce the value if it fits and only fail on an overflow.
+JSON by default only knows long(ish) and double so all other numeric types will probably pose problems.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.metadata.info.MethodInfo.java</file>
+			<file type="M">org.neo4j.ogm.integration.social.SocialRelationshipsIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.FieldInfo.java</file>
+			<file type="M">org.neo4j.ogm.unit.metadata.MetaDataTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.ClassInfo.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.MethodWriter.java</file>
+			<file type="M">org.neo4j.ogm.domain.social.Individual.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.EntityGraphMapperTest.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.EntityAccess.java</file>
+			<file type="M">org.neo4j.ogm.session.Utils.java</file>
+			<file type="M">org.neo4j.ogm.metadata.ClassUtils.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.FieldWriter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="604" opendate="2015-04-15 00:33:03" fixdate="2015-04-20 05:34:55" resolution="Complete">
+		<buginformation>
+			<summary>Neo4jTemplate.execute() method swallows errors</summary>
+			<description>Tried to enter invalid statement in neo4jTemplate execute():
+"statements":[{"statement":"cre testnode:TestNode2 
+{uuid: &amp;amp;apos;test_4&amp;amp;apos;}
+ )","parameters":{},"resultDataContents":["row"]}
+In the log we see this error:
+{"commit":"http://localhost:7474/db/data/transaction/88/commit","results":[],"transaction":
+{"expires":"Fri, 10 Apr 2015 13:47:55 +0000"}
+,"errors":[{"code":"Neo.ClientError.Statement.InvalidSyntax","message":"Invalid input &amp;amp;apos; &amp;amp;apos;: expected &amp;amp;apos;a/A&amp;amp;apos; (line 1, column 4 (offset: 3))\n\"cre testnode:TestNode2 
+{uuid: &amp;amp;apos;test_4&amp;amp;apos;}
+ )\"\n    ^"}]}"
+but no exception was thrown, and execute() returns void, so we don&amp;amp;apos;t know the result (without looking at log)</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.integration.template.Neo4jTemplateTest.java</file>
+			<file type="M">org.neo4j.ogm.session.Neo4jSession.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="596" opendate="2015-04-07 04:37:56" fixdate="2015-04-20 08:35:59" resolution="Fixed">
+		<buginformation>
+			<summary>Unrequested objects being loaded</summary>
+			<description>Reported by: shakeelsoogun@outlook.com
+If a longer running session is used, then saving several nodes and attempting to load one of them using the load(id::long) method actually attempts to load all the nodes that were saved during the session (even if attempting to only get one object). Same thing happens with the loading from a collection of IDs. Using shorter sessions or sessions where no saving is done appears to be a workaround to this.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultProxy.java</file>
+			<file type="M">org.neo4j.ogm.integration.EndToEndTest.java</file>
+			<file type="M">org.neo4j.ogm.integration.InMemoryServerTest.java</file>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsIntegrationTest.java</file>
+			<file type="D">org.neo4j.ogm.defects.package-info.java</file>
+			<file type="D">org.neo4j.ogm.defects.SessionCypherQueryTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="606" opendate="2015-04-17 03:56:40" fixdate="2015-04-20 13:14:54" resolution="Complete">
+		<buginformation>
+			<summary>Support for Windows</summary>
+			<description>SDN 4.0 does not build correctly on Windows</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Defect</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.metadata.info.DomainInfo.java</file>
+			<file type="M">org.neo4j.ogm.session.request.DefaultRequest.java</file>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.session.response.JsonResponse.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="582" opendate="2015-03-30 03:40:16" fixdate="2015-04-23 09:43:49" resolution="Complete">
+		<buginformation>
+			<summary>Cannot replace an existing RelationshipEntity</summary>
+			<description>https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/RelationshipEntityTest.java
+</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="D">org.neo4j.ogm.defects.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+			<file type="M">org.neo4j.ogm.mapper.TransientRelationship.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.SingleStatementCypherCompiler.java</file>
+			<file type="M">org.neo4j.ogm.session.response.SessionResponseHandler.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.DeletedRelationshipBuilder.java</file>
+			<file type="D">org.neo4j.ogm.testutil.WrappingServerIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.ExistingRelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.CypherCompilerTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.MappedRelationship.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.direct.aabb.AABBTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.RelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.mapper.MappingContext.java</file>
+			<file type="M">org.neo4j.ogm.integration.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.CypherCompiler.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.transitive.aabb.AABBTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="611" opendate="2015-04-22 23:05:38" fixdate="2015-04-23 20:59:21" resolution="Complete">
+		<buginformation>
+			<summary>Relation is saved in the wrong direction between entities</summary>
+			<description>The following test added to org.neo4j.ogm.unit.mapper.transitive.aabb.AABBTest fails as one relationship from A to B is saved in the wrong direction
+
+
+
+
+
+
+ @Test
+
+
+
+
+    public void shouldSaveRelationsInTheCorrectDirection() {
+
+
+
+
+
+
+
+
+
+        // fully connected, will persist everything
+
+
+
+
+        session.save(a1);
+
+
+
+
+
+
+
+
+
+        session.clear();
+
+
+
+
+
+
+
+
+
+        a1 = session.load(A.class, a1.id);
+
+
+
+
+        assertSameArray(new R[] { r1, r2}, a1.r);
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.transitive.aabb.AABBTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="610" opendate="2015-04-22 10:24:15" fixdate="2015-04-24 02:46:37" resolution="Complete">
+		<buginformation>
+			<summary>Relationship with null properties causes InvalidSyntax </summary>
+			<description>Created a RelationshipEntity with StartNode, EndNode, and two properties.  org.neo4j.ogm.session.result.ResultProcessingException was thrown with InvalidSyntax.
+(line 1, column 89)
+MATCH ($47) WHERE id($47)=47 MATCH ($48) WHERE id($48)=48 MERGE ($47)[_1:`RECRUITEDFOR`}]&amp;gt;($48) RETURN id(_1) AS _1
+Here there is an extra end bracket.  
+Tracked issue to NewRelationshipBuilder lines 72-83.  Coming out of for loop, code assumes last character is a comma and deletes it but if all properties on relationship are null, the last character was the opening bracket.  </description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsRelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.NewRelationshipBuilder.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="614" opendate="2015-04-23 02:31:46" fixdate="2015-05-11 08:05:16" resolution="Complete">
+		<buginformation>
+			<summary>Character conversions on Windows</summary>
+			<description>Under Windows, if you save an Entity with an attribute value:
+"Aki Kaurismki"
+And then reload that entity, the attribute value loaded back is not the same.This appears to be an encoding issue, possibly because Windows uses UCS-2 encoding by default, and we persist values with UTF-8 encoding. 
+see the test : saveAndRetrieveUserWithDifferentCharset() 
+In CineastsIntegrationTest
+https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/integration/cineasts/annotated/CineastsIntegrationTest.java
+</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.entityaccess.DefaultEntityAccessStrategy.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldAndNoSetterTest.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldWithNoSetterAndNonSetter.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldNonAnnotatedSetterAndNonSetter.java</file>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.session.response.JsonResponse.java</file>
+			<file type="D">org.neo4j.ogm.defects.defaultEntityAccessStrategy.AnnotatedFieldAndNonAnnotatedSetter.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="616" opendate="2015-04-27 01:55:58" fixdate="2015-05-12 03:22:38" resolution="Complete">
+		<buginformation>
+			<summary>Relationship entities with the same start and end node type do not load</summary>
+			<description>A relationship entity with start node and end node of the same type do not load on a clean session.
+e.g.
+
+
+
+
+
+
+@RelationshipEntity
+
+
+
+
+public class Knows {
+
+
+
+
+
+
+
+
+
+    Long id;
+
+
+
+
+
+
+
+
+
+    @StartNode
+
+
+
+
+    private Actor firstActor;
+
+
+
+
+    @EndNode
+
+
+
+
+    private Actor secondActor;
+
+
+
+
+...
+
+
+
+
+
+
+See https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/RelationshipEntityTest.java#L73</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.defects.RelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.DefaultEntityAccessStrategy.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Knows.java</file>
+			<file type="M">org.neo4j.ogm.integration.cineasts.annotated.CineastsRelationshipEntityTest.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Actor.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.EntityAccessStrategy.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="628" opendate="2015-05-11 07:44:34" fixdate="2015-05-12 03:47:11" resolution="Complete">
+		<buginformation>
+			<summary>Dynamic queries fail to use the label when defined for a @NodeEntity</summary>
+			<description> In the previous version of SDN there was the functionality that automatically generated queries from the method name on the Repository interface - e.g. if I had FooRepository and put a method findByBar(String bar) , it would generate a match on Foo.bar property. This seems to work but only partly: I have a repository for CityNeo4j class, but the label is marked to be City on the NodeEntity annotation. This works fine when I manually use neo4jTemplate.loadByProperty, but when the magic interface method is invoked, it generates a match for CityNeo4j label (instead of just City).</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.integration.movies.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.movies.repo.CinemaRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.derived.DerivedGraphQueryMethod.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.movies.End2EndIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.movies.domain.Cinema.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="631" opendate="2015-05-12 10:32:32" fixdate="2015-05-12 10:52:29" resolution="Complete">
+		<buginformation>
+			<summary>Property names should be backticked in cypher statements</summary>
+			<description>Similar to DATAGRAPH-589, property names should be backticked in cypher queries to allow for property names such as "located-at"</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.ParameterisedStatementTest.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.VariableDepthQueryTest.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthQuery.java</file>
+			<file type="M">org.neo4j.ogm.session.request.strategy.VariableDepthRelationshipQuery.java</file>
+			<file type="M">org.neo4j.ogm.integration.music.MusicIntegrationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="630" opendate="2015-05-12 08:32:14" fixdate="2015-05-12 14:01:37" resolution="Complete">
+		<buginformation>
+			<summary>Cannot use domain models that are subgraphs</summary>
+			<description>A really stupid bug.
+given a graph
+(speaker:Speaker)[:PRESENTS]&amp;gt;(talk:Talk)
+and a domain model consisting of just one class: 
+class Speaker 
+{
+    Long id;
+ }
+
+Speaker instances cannot be created because we expect Talk objects to exist in the object domain, and we throw a MappingException when we can&amp;amp;apos;t find a Talk class to instantiate.
+There is no requirement that the graph domain be a surjection of the object domain. </description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.integration.hierarchy.ClassHierarchiesIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.unit.metadata.MetaDataTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.MetaData.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.EntityFactory.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="634" opendate="2015-05-21 02:56:39" fixdate="2015-05-21 11:26:30" resolution="Complete">
+		<buginformation>
+			<summary>AmbiguousBaseClassException when resolving a hierarchy which contains exactly one superclass and one subclass in a particular order</summary>
+			<description>For classes such as 
+
+
+
+
+
+
+@NodeEntity
+
+
+
+
+public abstract class Login {
+
+
+
+
+..
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@NodeEntity
+
+
+
+
+public class Member extends Login  {
+
+
+
+
+...
+
+
+
+
+}
+
+
+
+
+
+
+where Login has exactly one super class and Member has no subclasses, Metadata.resolve throws an AmbiguousBaseClassException when the order of taxa is "Member",Login"</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.metadata.MetaDataTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.MetaData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="637" opendate="2015-05-21 07:53:37" fixdate="2015-05-21 12:00:21" resolution="Complete">
+		<buginformation>
+			<summary>"Cannot map iterable" when a node entity contains simple relations to the same entity type but different relation types</summary>
+			<description>"Cannot map iterable of class Bar to instance of Foo. More than one potential matching field found."
+when trying to load a node entity defined like
+
+
+
+
+
+
+public class Foo {
+
+
+
+
+...
+
+
+
+
+@Relationship(type = "REL_A")
+
+
+
+
+Set&amp;lt;Bar&amp;gt; aBars;
+
+
+
+
+
+
+
+
+
+@Relationship(type = "REL_B")
+
+
+
+
+Set&amp;lt;Bar&amp;gt; bBars;
+
+
+
+
+...
+
+
+
+
+}
+
+
+
+
+
+ </description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.unit.entityaccess.DefaultEntityAccessStrategyTest.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.DefaultEntityAccessStrategy.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.DeletedRelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.CypherCompilerTest.java</file>
+			<file type="M">org.neo4j.ogm.metadata.info.ClassInfo.java</file>
+			<file type="M">org.neo4j.ogm.integration.music.MusicIntegrationTest.java</file>
+			<file type="M">org.neo4j.ogm.mapper.GraphEntityMapper.java</file>
+			<file type="M">org.neo4j.ogm.domain.music.Artist.java</file>
+			<file type="M">org.neo4j.ogm.unit.mapper.cypher.DirectRelationshipsTest.java</file>
+			<file type="M">org.neo4j.ogm.cypher.compiler.RelationshipBuilder.java</file>
+			<file type="M">org.neo4j.ogm.mapper.EntityCollector.java</file>
+			<file type="M">org.neo4j.ogm.entityaccess.EntityAccessStrategy.java</file>
+			<file type="M">org.neo4j.ogm.domain.music.Album.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="639" opendate="2015-05-23 07:47:54" fixdate="2015-05-23 11:52:41" resolution="Complete">
+		<buginformation>
+			<summary>NullPointer when saving an entity with an undirected relationship </summary>
+			<description>See org.neo4j.ogm.integration.ingredients.IngredientsIntegrationTest.shouldBeAbleToAddInterrelatedPairings</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.mapper.EntityGraphMapper.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="638" opendate="2015-05-21 14:28:56" fixdate="2015-05-23 12:40:32" resolution="Complete">
+		<buginformation>
+			<summary>No Entities/Relationships found on scan on Windows</summary>
+			<description>DomainInfo.java line 244:
+
+
+
+
+
+
+   String path = packageName.replace(".", File.separator);
+
+
+
+
+
+
+should be:
+
+
+
+
+
+
+   String path = packageName.replace(".", "/");
+
+
+
+
+
+
+because ON WINDOWS File.separator yields "" and then when compared in ClassPathScanner line 68 with the "/" that are in the ZipFileEntry, nothing ever matches and no entity or relationship classes are registered.  </description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.metadata.info.DomainInfo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="652" opendate="2015-06-03 09:34:46" fixdate="2015-06-04 06:33:21" resolution="Complete">
+		<buginformation>
+			<summary>Use of query() rather than execute()</summary>
+			<description>See https://github.com/spring-projects/spring-data-neo4j/issues/294
+</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.template.Neo4jTemplateTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.repo.WorldRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.QueryReturnTypesTest.java</file>
+			<file type="M">org.springframework.data.neo4j.web.domain.User.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.TempMovie.java</file>
+			<file type="M">org.springframework.data.neo4j.repositories.ProgrammaticRepositoryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.DerivedQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.RatingRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.extensions.domain.User.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.domain.World.java</file>
+			<file type="M">org.springframework.data.neo4j.extensions.CustomPersistenceContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.Genre.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.TempMovieRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.extensions.CustomGraphRepositoryTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.template.TestNeo4jEventListener.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.DerivedQueryTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.transactions.service.BusinessService.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.Actor.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.extensions.CustomGraphRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.WebConfiguration.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.repo.PersistenceContextInTheSamePackage.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.repo.MovieRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.service.AdultService.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.RatingRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.ReleasedMovie.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.AbstractAnnotatedEntityRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.Person.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.WebIntegrationTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.domain.Adult.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.AbstractAnnotatedEntity.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.controller.AdultController.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.QueryIntegrationTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.template.Neo4jTemplateTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.TempMovie.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.ActorRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.ProgrammaticRepositoryTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.domain.Genre.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.extensions.CustomPersistenceContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.domain.User.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.helloworld.context.HelloWorldContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.service.UserService.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.transactions.ApplicationConfig.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.helloworld.domain.World.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.context.WebPersistenceContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.Movie.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.helloworld.repo.WorldRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.AbstractEntityRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.template.ExceptionTranslationTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.queryresult.UserQueryResultInterface.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.queryresult.EntityWrappingQueryResult.java</file>
+			<file type="D">org.springframework.data.neo4j.repository.support.GraphRepositoryFactoryTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.template.context.DataManipulationEventConfiguration.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.repo.GenreRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.queryresult.Gender.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.transactions.TransactionBoundaryTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.helloworld.GalaxyServiceTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.Rating.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.repo.UserRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.JSR303Test.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.UnmanagedUserPojo.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphQueryMethod.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.AbstractEntity.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.PersistenceConfiguration.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.TransactionIntegrationTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.domain.User.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.extensions.UserRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.queryresult.RichUserQueryResult.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.Cinema.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.queryresult.UserQueryResult.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.domain.User.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.extensions.domain.User.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.service.UserServiceImpl.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.transactions.service.WrapperService.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.CinemaRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.context.PersistenceContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.End2EndIntegrationTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.service.UserServiceImpl.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.extensions.CustomGraphRepositoryImpl.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.RepoScanningTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.domain.Cinema.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.context.PersistenceContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.controller.UserController.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.repo.UserRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.jsr303.repo.AdultRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.web.context.WebAppContext.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.domain.Movie.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.template.TemplateApplicationEventTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.repositories.RepositoryDefinitionTest.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.helloworld.service.GalaxyService.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.GenreRepository.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.service.UserService.java</file>
+			<file type="D">org.springframework.data.neo4j.integration.movies.repo.UserRepository.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="690" opendate="2015-07-01 21:10:28" fixdate="2015-07-14 22:23:02" resolution="Complete">
+		<buginformation>
+			<summary>Sometimes relations get lost in SDN4</summary>
+			<description>I am testing against SDN4 4.0.0-BUILD-SNAPSHOT with neo4j-ogm version 1.1.0
+If I create an Entity with relations to two other Entities
+and save them with depth 1, everything is OK.
+Next I load the entity and then the related entities seperatly.
+If I set the related entites to the main entity and store the main entity with depth 1,
+then one of related entities gets lost.
+Here comes a (not working) sample code,
+I will try to strip down the the scenario to a test case.
+
+
+
+
+
+
+public abstract class Entity {
+
+
+
+
+  @GraphId
+
+
+
+
+  private Long nodeId;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+class EntityA extends Entity {
+
+
+
+
+  @Relationship(type = "HAS")
+
+
+
+
+  private Category category;
+
+
+
+
+
+
+
+
+
+  @Relationship(type = "HAS")
+
+
+
+
+  private Set&amp;lt;Hashtag&amp;gt; tags = new HashSet&amp;lt;Hashtag&amp;gt;();
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+public class Hashtag extends Entity {
+
+
+
+
+    private String name;
+
+
+
+
+
+
+
+
+
+    @Relationship(type = "HAS", direction = Relationship.INCOMING)
+
+
+
+
+    private Set&amp;lt;Entity&amp;gt; entities = new HashSet&amp;lt;Entity&amp;gt;();
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+public class Category extends Entity {
+
+
+
+
+    private String name;
+
+
+
+
+
+
+
+
+
+    @Relationship(type = "HAS", direction = Relationship.INCOMING)
+
+
+
+
+    private Set&amp;lt;Happening&amp;gt; happenings;
+
+
+
+
+}
+
+
+
+
+
+
+Create a new entity
+
+
+
+
+
+
+List&amp;lt;String&amp;gt; tagNames = Arrays.asList("tag1", "tag2");
+
+
+
+
+
+
+
+
+
+EntityA entity = new EntityA();
+
+
+
+
+entity.setCategory(new Category("name"));
+
+
+
+
+Set&amp;lt;Hashtag&amp;gt; tags = createHashtags(tagNames);
+
+
+
+
+entity.setTags(tags);
+
+
+
+
+entity = repository.save(entity, 1);
+
+
+
+
+
+
+Update the entity, but use the same relations
+
+
+
+
+
+
+EntityA entity = repository.find(entity.getNodeId());
+
+
+
+
+Category category = categoryRepository.findByName("name");
+
+
+
+
+Set&amp;lt;Hashtag&amp;gt; tags = hashtagService.findByNames(tagNames);
+
+
+
+
+entity.setCategory(category);
+
+
+
+
+entity.setTags(tags);
+
+
+
+
+repository.save(entity, 1);
+
+
+
+
+
+
+-&amp;gt; now all relations to the tags are gone
+I think it has to do with the mappingContext.
+If I update the entity again (now without the relations to the tags),
+then the relation to the category gets lost and the realtion to the tags are set up correct.
+If I clear the session before I save the entity everything is fine, but in this case it is not possible to remove any relations.
+Is this a known issue.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.web.domain.User.java</file>
+			<file type="M">org.springframework.data.neo4j.web.WebIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.domain.World.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.Cinema.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="Cloned to">703</link>
+		</links>
+	</bug>
+	<bug id="703" opendate="2015-07-14 21:29:51" fixdate="2015-07-21 01:32:04" resolution="Complete">
+		<buginformation>
+			<summary>@Transactional causes an NPE when saving an entity</summary>
+			<description>Consider the following entities:
+
+
+
+
+
+
+@NodeEntity
+
+
+
+
+public class Person {
+
+
+
+
+ 
+
+
+
+
+    @GraphId Long id;
+
+
+
+
+    
+
+
+
+
+    private String firstName;
+
+
+
+
+    private String lastName;
+
+
+
+
+ 
+
+
+
+
+    @Relationship(type = "IS_FRIEND")
+
+
+
+
+    private Set&amp;lt;Friendship&amp;gt; friendships = new HashSet&amp;lt;&amp;gt;();
+
+
+
+
+	
+
+
+
+
+    public Person() {}
+
+
+
+
+	
+
+
+
+
+    public Friendship addFriend(Person newFriend) {
+
+
+
+
+	Friendship friendship = new Friendship(this, newFriend);
+
+
+
+
+	this.friendships.add(friendship);
+
+
+
+
+	return friendship;
+
+
+
+
+    }
+
+
+
+
+...
+
+
+
+
+}
+
+
+
+
+ 
+
+
+
+
+@RelationshipEntity(type = "IS_FRIEND")
+
+
+
+
+public class Friendship {
+
+
+
+
+ 
+
+
+
+
+    @GraphId private Long id;
+
+
+
+
+	
+
+
+
+
+    @StartNode private Person personStartNode;
+
+
+
+
+    @EndNode private Person personEndNode;
+
+
+
+
+	
+
+
+
+
+    private long timestamp;
+
+
+
+
+	
+
+
+
+
+    public Friendship() {}
+
+
+
+
+	
+
+
+
+
+    public Friendship(Person personStartNode, Person personEndNode) {
+
+
+
+
+	this.personStartNode = personStartNode;
+
+
+
+
+	this.personEndNode = personEndNode;
+
+
+
+
+    }
+
+
+
+
+...
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+Then in the following test case, an NPE is thrown if the method is annotated with @Transactional.
+java.lang.NullPointerException at org.neo4j.ogm.mapper.TransientRelationship.convert(TransientRelationship.java:63)
+
+
+
+
+
+
+@Test
+
+
+
+
+@Transactional // This causes the NPE
+
+
+
+
+public void test() throws Exception {
+
+
+
+
+	Person john = new Person();
+
+
+
+
+	john.setFirstName("John");
+
+
+
+
+	session.save(john);
+
+
+
+
+		
+
+
+
+
+	Person bob = new Person();
+
+
+
+
+	bob.setFirstName("Bob");
+
+
+
+
+	session.save(bob);
+
+
+
+
+		
+
+
+
+
+	Person bill = new Person();
+
+
+
+
+	bob.setFirstName("Bill");
+
+
+
+
+	session.save(bill);
+
+
+
+
+		
+
+
+
+
+	john = session.load(Person.class, john.getId());
+
+
+
+
+	bob = session.load(Person.class, bob.getId());
+
+
+
+
+	Friendship friendship1 = john.addFriend(bob);
+
+
+
+
+	friendship1.setTimestamp(System.currentTimeMillis());
+
+
+
+
+	session.save(john);
+
+
+
+
+		
+
+
+
+
+	john = session.load(Person.class, john.getId());
+
+
+
+
+	bill = session.load(Person.class, bill.getId());
+
+
+
+
+	Friendship friendship2 = john.addFriend(bill);
+
+
+
+
+	friendship2.setTimestamp(System.currentTimeMillis());
+
+
+
+
+	session.save(john); // throws NPE if annotated with @Transactional
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+Works as expected without @Transactional .
+I&amp;amp;apos;m testing with SDN4 4.0.0-BUILD-SNAPSHOT with neo4j-ogm version 1.1.0, spring-boot-starter-parent version 1.3.0.M1.
+Test case: org.springframework.data.neo4j.examples.friends.savingPersonWhenTransactionalShouldWork</description>
+			<version>4.0 RC1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.examples.friends.FriendContext.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.friends.FriendTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Cloners" description="Cloned from">690</link>
+		</links>
+	</bug>
+	<bug id="698" opendate="2015-07-10 03:39:49" fixdate="2015-07-21 01:44:31" resolution="Complete">
+		<buginformation>
+			<summary>@QueryResult- int instead of long returned for ID()</summary>
+			<description>When doing something like
+@Query("MATCH (d:Document)[:REL](o:Other) "
+            + "RETURN  id(o) as docuid")
+public List&amp;lt;RandomResultDomainWithId&amp;gt; getXXXXX();
+@QueryResult
+public class RandomResultDomainWithId 
+{
+
+    @ResultColumn("docuid")
+    public int docuid;
+
+}
+I need to declare the variable docuid as int. Shouldn&amp;amp;apos;t that be long as the @GraphId is a long too?</description>
+			<version>4.0 RC1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.UserQueryResult.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="704" opendate="2015-07-14 22:22:41" fixdate="2015-07-21 02:05:57" resolution="Complete">
+		<buginformation>
+			<summary>Loading an entity: collection does not merge correctly and replaces instead</summary>
+			<description>See org.neo4j.ogm.integration.cineasts.annotated.CineastsRelationshipEntityTest.shouldRetainREsWhenAStartOrEndNodeIsLoaded
+Instead of the Ratings being merged, the rating from the loaded user replaces the ratings on the movie loaded before it.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.repo.WorldRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.QueryReturnTypesTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.domain.World.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="707" opendate="2015-07-18 03:30:40" fixdate="2015-07-21 02:18:48" resolution="Complete">
+		<buginformation>
+			<summary>GraphRepository.findOne ignores the type</summary>
+			<description>GraphRepository.findOne ignores the entity type and tries to loads a node by it&amp;amp;apos;s id even of the node type is not represented by the repository, throwing a ClassCastException if the type of the node loaded is different from that requested</description>
+			<version>4.0 RC1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.examples.movies.MoviesIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.AbstractEntity.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.User.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="705" opendate="2015-07-14 22:41:17" fixdate="2015-07-21 02:38:54" resolution="Complete">
+		<buginformation>
+			<summary>Incorrect query generated by derived finder for a relationship entity when the property name of the start and end node is the same</summary>
+			<description>I think the genrated query for the repository method
+List&amp;lt;Rating&amp;gt; findByUserNameAndMovieName(String userName, String movieName)
+should be
+{"statements":[{"statement":"MATCH (n:`User`) WHERE n.`name` = 
+{ `userName` }
+ MATCH (m:`Movie`) WHERE m.`name` = 
+{ `movieName` }
+ MATCH [r:`RATED`]&amp;gt;(m) WITH n,r MATCH p=[*0..1]() RETURN collect(distinct p), ID(r)","parameters":
+{"userName":"Michal","movieName":"Speed"}
+,"resultDataContents":["graph","row"],"includeStats":false}]}
+but the following were send to the neo4j server
+{"statements":[{"statement":"MATCH (n:`User`) WHERE n.`name` = 
+{ `name` } MATCH (m:`Movie`) WHERE m.`name` = { `name` }
+ MATCH [r:`RATED`]&amp;gt;(m) WITH n,r MATCH p=[*0..1]() RETURN collect(distinct p), ID(r)","parameters":
+{"name":"Speed"}
+,"resultDataContents":["graph","row"],"includeStats":false}]}
+The second test is not so clear.
+If Rating has a method getUserLevel() and RatingRepository a method List findByUserLevel(String userLevel) but no attribute userLevel and no setter, then I would expect, that the query is
+{"statements":[{"statement":"MATCH [r:`RATED`]&amp;gt;(m) WHERE n.`level` = 
+{ `userLevel` } WITH n,r MATCH p=[*0..1]() RETURN collect(distinct p), ID(r)","parameters":{"userLevel":"5"},"resultDataContents":["graph","row"],"includeStats":false}]}
+and not
+
+{"statements":[{"statement":"MATCH [r:`RATED`]&amp;gt;(m) WHERE r.`userLevel` = { `userLevel` }
+ WITH n,r MATCH p=[*0..1]() RETURN collect(distinct p), ID(r)","parameters":
+{"userLevel":"5"}
+,"resultDataContents":["graph","row"],"includeStats":false}]}
+but in any case should the should the upper query be send, if I add the annotaion @Transient to the method.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.template.Neo4jTemplateTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.TempMovie.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.CinemaRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.DerivedQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.Movie.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.MoviesIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.DerivedRelationshipEntityQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.RatingRepository.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="711" opendate="2015-07-22 22:00:44" fixdate="2015-08-04 14:52:58" resolution="Complete">
+		<buginformation>
+			<summary>Spring Context startup fails with NPE at Neo4jPersistentProperty:72</summary>
+			<description>Seems that owningClassInfo is null for any class outside the specified packages in the sessionfactory.</description>
+			<version>4.0 M1</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.mapping.Neo4jMappingContext.java</file>
+			<file type="M">org.springframework.data.neo4j.rest.RestIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.mapping.Neo4jPersistentProperty.java</file>
+			<file type="M">org.springframework.data.neo4j.rest.RestIntegrationTestRule.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.conversion.ConversionServiceTest.java</file>
+			<file type="M">org.springframework.data.neo4j.rest.domain.Team.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="727" opendate="2015-08-04 21:51:39" fixdate="2015-08-04 23:56:27" resolution="Complete">
+		<buginformation>
+			<summary>ClassCastException when @Query returns an Iterable&lt;Entity&gt;</summary>
+			<description>
+
+
+
+
+
+@Query("...")
+
+
+
+
+Iterable&amp;lt;Entity&amp;gt; findFooByBar();
+
+
+
+
+
+
+throws an exception java.lang.ClassCastException: java.util.HashMap cannot be cast to Entity
+Temp workaround: Return a Collection instead of an Iterable</description>
+			<version>4.0 RC1</version>
+			<fixedVersion>4.0 RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphQueryMethod.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="627" opendate="2015-05-06 06:13:16" fixdate="2015-08-31 10:10:43" resolution="Duplicate">
+		<buginformation>
+			<summary>SDN 4.0: Allow Credentials to be specified via Context</summary>
+			<description>SDN 4.0 currently only allows un/pw specified via command line parameters.  In many applications, these are stored in the context in a PropertiesFactoryBean.  These should be configurable in Neo4jConfiguration, and passed through to the CredentialsService</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 GA</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.auth.AuthenticationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.server.RemoteServer.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">745</link>
+		</links>
+	</bug>
+	<bug id="745" opendate="2015-08-31 05:15:15" fixdate="2015-08-31 12:06:19" resolution="Complete">
+		<buginformation>
+			<summary>Username and password for remote server</summary>
+			<description>
+Add support for two additional constructor parameters
+Add support for extracting both from the auth information of the URL
+
+</description>
+			<version>4.0 RC2</version>
+			<fixedVersion>4.0 GA</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.server.Neo4jServer.java</file>
+			<file type="M">org.springframework.data.neo4j.config.Neo4jConfiguration.java</file>
+			<file type="M">org.springframework.data.neo4j.server.RemoteServer.java</file>
+			<file type="M">org.springframework.data.neo4j.server.InProcessServer.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">627</link>
+		</links>
+	</bug>
+	<bug id="755" opendate="2015-09-03 10:20:02" fixdate="2015-09-03 10:31:44" resolution="Complete">
+		<buginformation>
+			<summary>Support for Neo4j 2.2.5 Cypher error response changes</summary>
+			<description></description>
+			<version>4.0 RC2</version>
+			<fixedVersion>4.0 GA</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.transactions.TransactionIntegrationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="739" opendate="2015-08-13 20:15:22" fixdate="2015-09-29 05:30:28" resolution="Duplicate">
+		<buginformation>
+			<summary>Allow mapping of entities in a @QueryResult</summary>
+			<description>@QueryResult does not support domain entities as fields and the user has to return either data either at the property level or the ID (which can subsequently be used to hydrate the entity).</description>
+			<version>4.0 GA</version>
+			<fixedVersion></fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.UserQueryResultInterface.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.service.BusinessService.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultGraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.EntityWrappingQueryResult.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">700</link>
+		</links>
+	</bug>
+	<bug id="772" opendate="2015-10-13 16:46:01" fixdate="2015-10-15 10:58:14" resolution="Complete">
+		<buginformation>
+			<summary>NullPointers with null params to @Query and null values returned to @QueryResult</summary>
+			<description></description>
+			<version>4.0 GA</version>
+			<fixedVersion>4.1 M1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="783" opendate="2015-11-02 06:06:56" fixdate="2015-11-03 13:54:26" resolution="Complete">
+		<buginformation>
+			<summary>Argument type mismatch (int to Float) with derived finders</summary>
+			<description>See https://github.com/neo4j/neo4j-ogm/issues/77</description>
+			<version>4.0 GA</version>
+			<fixedVersion>4.1 M1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.repo.WorldRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.GalaxyServiceTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.domain.World.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.galaxy.service.GalaxyService.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="700" opendate="2015-07-13 00:44:33" fixdate="2016-01-22 16:10:48" resolution="Complete">
+		<buginformation>
+			<summary>Support mapping of domain entities in @QueryResults</summary>
+			<description>There is no support currently to map a domain entity returned by a Cypher query to a field in a @QueryResult. 
+See http://stackoverflow.com/questions/31069679/sdn-4-neo4joperation-convert-deprecated</description>
+			<version>4.0 RC1</version>
+			<fixedVersion>4.1 M1 (Hopper)</fixedVersion>
+			<type>Improvement</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.UserQueryResultInterface.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.service.BusinessService.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultGraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.EntityWrappingQueryResult.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">739</link>
+		</links>
+	</bug>
+	<bug id="615" opendate="2015-04-23 23:37:37" fixdate="2016-01-29 03:42:23" resolution="Complete">
+		<buginformation>
+			<summary>Relationship entities not annotated with type do not get loaded</summary>
+			<description>A relationship entity such as 
+
+
+
+
+
+
+@RelationshipEntity
+
+
+
+
+public class Nomination {
+
+
+
+
+
+
+
+
+
+    Long id;
+
+
+
+
+    @EndNode
+
+
+
+
+    Movie movie;
+
+
+
+
+    @StartNode
+
+
+
+
+    Actor actor;
+
+
+
+
+...
+
+
+
+
+
+
+is not loaded when the start/end nodes are loaded (with a clean session).
+See https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/RelationshipEntityTest.java#L52 and https://github.com/spring-projects/spring-data-neo4j/blob/4.0/neo4j-ogm/src/test/java/org/neo4j/ogm/defects/MetaDataTest.java</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.1 M1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Nomination.java</file>
+			<file type="M">org.neo4j.ogm.domain.cineasts.annotated.Actor.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="787" opendate="2015-11-19 06:10:41" fixdate="2016-02-08 08:57:39" resolution="Complete">
+		<buginformation>
+			<summary>Derived finders use an incorrect return type and target entity when the finder is defined in a hierarchy</summary>
+			<description>If a derived finder is defined in this manner:
+
+
+
+
+
+
+public interface CrudGraphRepository&amp;lt;T extends Entity&amp;gt; extends GraphRepository&amp;lt;T&amp;gt; {
+
+
+
+
+    T findById(String id);
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+public interface UserRepository extends CrudGraphRepository&amp;lt;User&amp;gt; {
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+UserRepository.findById assumes that the return type is Entity and the label to match is also based on Entity. It should be User instead.
+Workaround: override the derived finder in UserRepository.</description>
+			<version>4.0 GA</version>
+			<fixedVersion>4.1 M1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphQueryMethod.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.DerivedQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="830" opendate="2016-02-24 13:32:18" fixdate="2016-02-26 15:19:39" resolution="Complete">
+		<buginformation>
+			<summary>Support for Play and other frameworks/containers</summary>
+			<description>Neo4jMappingContext uses the System Classloader, which doesn&amp;amp;apos;t work in frameworks like Play, which mess with the ClassLoader hierarchies. 
+Neo4jMappingContext should use: 
+
+
+
+
+
+
+MetaDataClassLoader.loadClass( classInfo.name() )
+
+
+
+
+
+</description>
+			<version>4.0 GA</version>
+			<fixedVersion>4.1 RC1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.mapping.Neo4jMappingContext.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="602" opendate="2015-04-15 00:22:13" fixdate="2016-03-11 10:29:33" resolution="Complete">
+		<buginformation>
+			<summary>Incorrect propagation of @Transactional</summary>
+			<description>The contract for @Transactional is REQUIRE. Unless otherwise specified, if a method B and a calling method A are both marked @Transactional, B should JOIN A&amp;amp;apos;s transaction, not create a new one.
+@Transactional 
+ methodA(){
+ }
+ @Transactional
+ methodB(){
+ }
+  @Transactional
+  wrapperMethod()
+{
+     methodA()
+     methodB()
+  }
+
+In this scenario if we call wrapperMethod() and methodB() throws an exception rollback occurs,  but objects created in methodA() remain written in the database.
+From the log it looks like transaction/73 is created, 
+then transaction/74 is created - which corresponds to methodA() -  commit occurs after finishing methodA. This is an error. 
+then transaction/75 is created - which corresponds to methodB() -  rollback occurs after exception
+transaction/73 is also rolled-back.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.0 RC1, 4.1 M1 (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.transaction.Neo4jTransactionManager.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.ExtendedTransactionsTest.java</file>
+			<file type="M">org.springframework.data.neo4j.web.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.transaction.Neo4jTransactionStatus.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.service.WrapperService.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.service.BusinessService.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.ApplicationConfig.java</file>
+			<file type="M">org.neo4j.ogm.session.Session.java</file>
+			<file type="M">org.neo4j.ogm.session.Neo4jSession.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="847" opendate="2016-03-31 11:40:46" fixdate="2016-03-31 15:53:02" resolution="Complete">
+		<buginformation>
+			<summary>DeleteDelegate can not find ClassInfo for my object</summary>
+			<description>There is a change between SDN 4.1.0 M1 and RC1 which breaks my tests. 
+I have a test case which relies on CrudRepository&amp;lt;X&amp;gt;.deleteAll() (my repo extends GraphRepository&amp;lt;X&amp;gt; which in eventually extends CrudRepository).
+In M1 it worked fine, in RC1 I get a warning "java.lang.Class is not an instance of a persistable class". 
+For some reason DeleteDelegate can not find ClassInfo for my object, which was working fine in M1.</description>
+			<version>4.1 RC1 (Hopper)</version>
+			<fixedVersion>4.1 GA (Hopper)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repositories.ProgrammaticRepositoryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.template.Neo4jOperations.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.GraphRepositoryImpl.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="860" opendate="2016-04-27 14:17:13" fixdate="2016-05-05 04:53:17" resolution="Complete">
+		<buginformation>
+			<summary>EntityAccess::boxPrimitiveArray throws NPE</summary>
+			<description>When a custom query returns null for a field which is a collection type in the corresponding @QueryResult object, org.neo4j.ogm.annotations.EntityAccess::boxPrimitiveArray throws an NPE (as it tries to box a null).
+</description>
+			<version>4.1.1 (Hopper SR1)</version>
+			<fixedVersion>4.1.2 (Hopper SR2), 4.2 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.EntityWrappingQueryResult.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="861" opendate="2016-04-28 13:00:11" fixdate="2016-05-05 08:28:28" resolution="Complete">
+		<buginformation>
+			<summary>@QueryResult is not working for field "id"</summary>
+			<description>I have a class annotated with @QueryResult and a field id of type Long:
+
+
+
+
+
+
+@QueryResult
+
+
+
+
+public class MappingTest {
+
+
+
+
+
+
+
+
+
+    private Long id;
+
+
+
+
+
+
+
+
+
+    public Long getId() {
+
+
+
+
+        return this.id;
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+    public void setId( final Long id ) {
+
+
+
+
+        this.id = id;
+
+
+
+
+    }
+
+
+
+
+}
+
+
+
+
+
+
+In my domain objects the id-property is annotated with @GraphId
+In a GraphRepository i have a annotated query method:
+
+
+
+
+
+
+    @Query("MATCH (a:Attribute) RETURN id(a) as id")
+
+
+
+
+    Iterable&amp;lt;MappingTest&amp;gt; testMe();
+
+
+
+
+
+
+When this method is executed i get an list with objects and the id property of each object is null. When i rename the property everything is ok.
+In the code i found that in org.neo4j.ogm.metadata.ClassInfo.propertySetters() there is the following check
+
+
+
+
+
+
+!methodInfo.getName().equals(identitySetter.getName())
+
+
+
+
+
+
+Due to this check the propertySetters() method returns an empty Collection and later on no property-writer is created and the property is not set.</description>
+			<version>4.1.1 (Hopper SR1)</version>
+			<fixedVersion>4.1.2 (Hopper SR2), 4.2 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.queryresult.UserQueryResult.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="659" opendate="2015-06-07 02:03:39" fixdate="2016-05-13 02:12:57" resolution="Complete">
+		<buginformation>
+			<summary>Persisting Enum lists annotated with @Property doesn&amp;apos;t always work</summary>
+			<description>When storing List of enums that is annotated with @Property I got an exception:
+org.neo4j.ogm.metadata.MappingException: Null key for a Map not allowed in JSON (use a converting NullKeySerializer?)
+	at org.neo4j.ogm.session.request.SessionRequestHandler.execute(SessionRequestHandler.java:98)
+	at org.neo4j.ogm.session.delegates.SaveDelegate.save(SaveDelegate.java:66)
+	at org.neo4j.ogm.session.delegates.SaveDelegate.save(SaveDelegate.java:41)
+	at org.neo4j.ogm.session.Neo4jSession.save(Neo4jSession.java:370)
+	at org.neo4j.ogm.integration.convertible.ConvertibleIntegrationTest.shouldSaveAndRetrieveEnums(ConvertibleIntegrationTest.java:66)
+After further investigation I couldn&amp;amp;apos;t reproduce it by simply adding a property to one of existing enums in this class, i.e.     @Property(name = "blahBlahBlah")
+    private List&amp;lt;Education&amp;gt; completedEducation;
+seems to be working fine.
+However, adding a JDK enum in the list, e.g. java.time.DayOfWeek (java 1.8) doesn&amp;amp;apos;t and crashes. 
+@Property(name = "worksOn")
+    private List&amp;lt;DayOfWeek&amp;gt; weekdays;
+    public List&amp;lt;DayOfWeek&amp;gt; getWeekdays() 
+{
+        return weekdays;
+    }</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.1.2 (Hopper SR2), 4.2 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.integration.conversion.domain.SiteMember.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.conversion.ConversionServiceTest.java</file>
+			<file type="M">org.springframework.data.neo4j.conversion.MetaDataDrivenConversionService.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="876" opendate="2016-06-09 04:16:23" fixdate="2016-06-09 07:58:53" resolution="Fixed">
+		<buginformation>
+			<summary>Derived finder filter values are not thread safe</summary>
+			<description>CypherFinderQuery filter values are shared across different threads making query execution unpredictable.
+See https://github.com/spring-projects/spring-data-neo4j/issues/341 and https://github.com/spring-projects/spring-data-neo4j/issues/344</description>
+			<version>4.0 GA</version>
+			<fixedVersion>4.1.2 (Hopper SR2), 4.2 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.query.derived.DerivedQueryDefinition.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.DerivedQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.derived.DerivedGraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.derived.CypherFinderQuery.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="680" opendate="2015-06-24 14:37:06" fixdate="2016-07-05 12:21:44" resolution="Complete">
+		<buginformation>
+			<summary>Page queries report incorrect total pages and total elements</summary>
+			<description>GraphRepositoryImpl.updatePage takes a guess at how many total elements there are based upon the page offset and page item count.  This only reports how many there are UP TO the current page, not total.  PageImpl then divides total by page size to derive the page count.  Because total is incorrect, total pages then is reported incorrectly.  This makes client programming to report page totals and ask for more pages when there are more very unreliable.  See comment on DATAGRAPH-556.
+Suggest Neo4j OGM paging support be updated to return a count when paging is used, so SDN4 can use this to build proper pages.</description>
+			<version>4.0 M1</version>
+			<fixedVersion>4.2 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.PagedQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.User.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.GraphRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.Cinema.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphQueryMethod.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.CinemaRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.annotation.Query.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.DerivedQueryTest.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.UserRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.derived.DerivedGraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultGraphRepositoryQuery.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="833" opendate="2016-02-29 09:04:46" fixdate="2016-07-21 11:39:37" resolution="Complete">
+		<buginformation>
+			<summary>@TransactionalEventListener not working</summary>
+			<description>I tried to use an transactional event listener with SDN 4 and it is not working.
+https://spring.io/blog/2015/02/11/better-application-events-in-spring-framework-4-2
+I looked into the code and when i publish an event there is a check in TransactionSynchronizationManager that checks if there is an active transaction. This check does not find the current transaction.
+My next step was to look into Neo4jTransactionManager and AbstractPlatformTransactionManager. In the abstract class I found some code that uses TransactionSynchronizationManager but there is no such code in Neo4jTransactionManager.
+Maybe the Neo4jTransactionManager should extend the AbstractPlatformTransactionManager and/or must initialize TransactionSynchronizationManager.</description>
+			<version>4.0 GA</version>
+			<fixedVersion>4.2 M1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.transaction.Neo4jTransactionManager.java</file>
+			<file type="D">org.springframework.data.neo4j.web.context.WebPersistenceContext.java</file>
+			<file type="M">org.springframework.data.neo4j.web.WebIntegrationTest.java</file>
+			<file type="M">org.springframework.data.neo4j.web.context.WebAppContext.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.support.GraphRepositoryFactoryBean.java</file>
+			<file type="D">org.springframework.data.neo4j.transaction.Neo4jTransactionStatus.java</file>
+			<file type="M">org.springframework.data.neo4j.config.Neo4jConfiguration.java</file>
+			<file type="M">org.springframework.data.neo4j.transactions.ApplicationConfig.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.conversion.ConversionServiceTest.java</file>
+			<file type="M">org.springframework.data.neo4j.integration.conversion.SpringMonetaryAmountToIntegerConverter.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Relate" description="is related to">872</link>
+		</links>
+	</bug>
+	<bug id="893" opendate="2016-08-03 04:22:11" fixdate="2016-08-03 06:46:33" resolution="Complete">
+		<buginformation>
+			<summary>Repository methods that return an @QueryResult don&amp;apos;t support paging</summary>
+			<description>Repository methods that return an @QueryResult don&amp;amp;apos;t support paging. </description>
+			<version>4.2 M1 (Ingalls)</version>
+			<fixedVersion>4.2 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.queries.PagedQueryIT.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.domain.Cinema.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.CinemaRepository.java</file>
+			<file type="M">org.springframework.data.neo4j.web.domain.Cinema.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultGraphRepositoryQuery.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="895" opendate="2016-08-05 04:28:57" fixdate="2016-08-06 06:44:07" resolution="Complete">
+		<buginformation>
+			<summary>Auto-paging does not work when @Query ends with &amp;apos;;&amp;apos; </summary>
+			<description>Auto-paging was added in 4.1.2, however an error occurs when the specified @Query ends with &amp;amp;apos;;&amp;amp;apos; 
+Arguably this should not be the case. </description>
+			<version>4.2 M1 (Ingalls)</version>
+			<fixedVersion>4.2 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultGraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.movies.repo.CinemaRepository.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="865" opendate="2016-05-06 14:31:25" fixdate="2016-08-11 00:57:08" resolution="Complete">
+		<buginformation>
+			<summary>Spurious warnings related to enum classes</summary>
+			<description>Neo4jPersistentProperty logs spurious WARN messages when parsing properties that are enums, for example:
+
+
+
+
+
+
+2016-05-06 15:25:32,532  WARN ta.neo4j.mapping.Neo4jPersistentProperty:  88 - No identity field found for class of type: java.lang.Enum when creating persistent property for field: private final java.lang.String java.lang.Enum.name
+
+
+
+
+2016-05-06 15:25:32,535  WARN ta.neo4j.mapping.Neo4jPersistentProperty:  88 - No identity field found for class of type: java.lang.Enum when creating persistent property for field: private final int java.lang.Enum.ordinal
+
+
+
+
+2016-05-06 15:25:32,536  WARN ta.neo4j.mapping.Neo4jPersistentProperty:  88 - No identity field found for class of type: java.lang.Enum when creating persistent property for field: null
+
+
+
+
+2016-05-06 15:25:32,539  WARN ta.neo4j.mapping.Neo4jPersistentProperty:  88 - No identity field found for class of type: org.springframework.data.neo4j.examples.movies.domain.queryresult.Gender when creating persistent property for field: private final java.lang.String java.lang.Enum.name
+
+
+
+
+2016-05-06 15:25:32,540  WARN ta.neo4j.mapping.Neo4jPersistentProperty:  88 - No identity field found for class of type: org.springframework.data.neo4j.examples.movies.domain.queryresult.Gender when creating persistent property for field: private final int java.lang.Enum.ordinal
+
+
+
+
+2016-05-06 15:25:32,540  WARN ta.neo4j.mapping.Neo4jPersistentProperty:  88 - No identity field found for class of type: org.springframework.data.neo4j.examples.movies.domain.queryresult.Gender when creating persistent property for field: null
+
+
+
+
+
+
+Enums are not persistable as nodes or edges, only as properties. They don&amp;amp;apos;t require an id.</description>
+			<version>4.1.1 (Hopper SR1)</version>
+			<fixedVersion>4.1.3 (Hopper SR3), 4.2 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.mapping.Neo4jPersistentProperty.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="896" opendate="2016-08-09 10:45:53" fixdate="2016-08-11 04:53:53" resolution="Complete">
+		<buginformation>
+			<summary>Neo4jRepositoryFactoryBean should declare mappingContext as auto-wired</summary>
+			<description>Neo4jRepositoryFactoryBean should declare mappingContext as auto-wired. Without doing this tests in spring-data-rest will fail. 
+It is not possible to explicitly wire this component in the down-stream project unless the package level access restriction is removed (an alternative. </description>
+			<version>4.2 M1 (Ingalls)</version>
+			<fixedVersion>4.2 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.support.Neo4jRepositoryFactoryBean.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.QueryResultGraphRepositoryQuery.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.PagedQueryIT.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.query.GraphRepositoryQuery.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="920" opendate="2016-10-27 07:06:49" fixdate="2016-11-02 02:31:59" resolution="Complete">
+		<buginformation>
+			<summary>Allow SDN to work at the same time with other Spring Data projects.</summary>
+			<description>SDN does not work with other Spring Data projects due to issues with MappingContext.
+This is a regression done from another piece of work.</description>
+			<version>4.2 M1 (Ingalls)</version>
+			<fixedVersion>4.2 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.repository.support.Neo4jRepositoryFactoryBean.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.config.Neo4jRepositoryConfigurationExtension.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="922" opendate="2016-11-02 02:35:51" fixdate="2016-12-13 00:41:25" resolution="Complete">
+		<buginformation>
+			<summary>Ensure all OGM exceptions are translated to SD Exceptions</summary>
+			<description>Go through each OGM Exception and make sure it is translated to an appropriate Spring Data exception.</description>
+			<version>4.2 M1 (Ingalls)</version>
+			<fixedVersion>4.2 RC1 (Ingalls)</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.data.neo4j.transaction.SessionFactoryUtils.java</file>
+			<file type="M">org.springframework.data.neo4j.repository.support.SessionBeanDefinitionRegistrarPostProcessorTest.java</file>
+			<file type="M">org.springframework.data.neo4j.queries.QueryIntegrationIT.java</file>
+			<file type="M">org.springframework.data.neo4j.transaction.SessionFactoryUtilsTests.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.jsr303.JSR303IT.java</file>
+			<file type="M">org.springframework.data.neo4j.examples.jsr303.domain.Adult.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

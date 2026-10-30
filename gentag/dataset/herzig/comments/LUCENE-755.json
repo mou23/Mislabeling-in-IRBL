@@ -1,0 +1,863 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12359147",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147",
+  "key": "LUCENE-755",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312328",
+        "id": "12312328",
+        "description": "",
+        "name": "2.2",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2007-06-19"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12997",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "5.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12315460",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12315460",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12365166",
+          "key": "LUCENE-834",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12365166",
+          "fields": {
+            "summary": "Payload Queries",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+              "id": "2",
+              "description": "A new feature of the product, which has yet to be developed.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+              "name": "New Feature",
+              "subtask": false,
+              "avatarId": 21141
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27293",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+      "name": "michaelbusch",
+      "key": "michaelbusch",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael Busch",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-755/votes",
+      "votes": 3,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@b54c000[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4f77bf43[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1f3ae60a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@6d45df09[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7897c045[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@5159dca1[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@191b7a36[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@5ae5438b[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1cb6257a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@3154e99[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@419d4e07[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@3194a4a4[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:33:17 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2007-03-15T05:18:41.699+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-755/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2006-12-20T19:08:30.000+0000",
+    "updated": "2022-08-28T11:33:17.741+0000",
+    "timeoriginalestimate": null,
+    "description": "This patch adds the possibility to store arbitrary metadata (payloads) together with each position of a term in its posting lists. A while ago this was discussed on the dev mailing list, where I proposed an initial design. This patch has a much improved design with modifications, that make this new feature easier to use and more efficient.\n\nA payload is an array of bytes that can be stored inline in the ProxFile (.prx). Therefore this patch provides low-level APIs to simply store and retrieve byte arrays in the posting lists in an efficient way. \n\nAPI and Usage\n------------------------------   \nThe new class index.Payload is basically just a wrapper around a byte[] array together with int variables for offset and length. So a user does not have to create a byte array for every payload, but can rather allocate one array for all payloads of a document and provide offset and length information. This reduces object allocations on the application side.\n\nIn order to store payloads in the posting lists one has to provide a TokenStream or TokenFilter that produces Tokens with payloads. I added the following two methods to the Token class:\n  /** Sets this Token's payload. */\n  public void setPayload(Payload payload);\n  \n  /** Returns this Token's payload. */\n  public Payload getPayload();\n\nIn order to retrieve the data from the index the interface TermPositions now offers two new methods:\n  /** Returns the payload length of the current term position.\n   *  This is invalid until {@link #nextPosition()} is called for\n   *  the first time.\n   * \n   * @return length of the current payload in number of bytes\n   */\n  int getPayloadLength();\n  \n  /** Returns the payload data of the current term position.\n   * This is invalid until {@link #nextPosition()} is called for\n   * the first time.\n   * This method must not be called more than once after each call\n   * of {@link #nextPosition()}. However, payloads are loaded lazily,\n   * so if the payload data for the current position is not needed,\n   * this method may not be called at all for performance reasons.\n   * \n   * @param data the array into which the data of this payload is to be\n   *             stored, if it is big enough; otherwise, a new byte[] array\n   *             is allocated for this purpose. \n   * @param offset the offset in the array into which the data of this payload\n   *               is to be stored.\n   * @return a byte[] array containing the data of this payload\n   * @throws IOException\n   */\n  byte[] getPayload(byte[] data, int offset) throws IOException;\n\nFurthermore, this patch indroduces the new method IndexOutput.writeBytes(byte[] b, int offset, int length). So far there was only a writeBytes()-method without an offset argument. \n\nImplementation details\n------------------------------\n- One field bit in FieldInfos is used to indicate if payloads are enabled for a field. The user does not have to enable payloads for a field, this is done automatically:\n   * The DocumentWriter enables payloads for a field, if one ore more Tokens carry payloads.\n   * The SegmentMerger enables payloads for a field during a merge, if payloads are enabled for that field in one or more segments.\n- Backwards compatible: If payloads are not used, then the formats of the ProxFile and FreqFile don't change\n- Payloads are stored inline in the posting list of a term in the ProxFile. A payload of a term occurrence is stored right after its PositionDelta.\n- Same-length compression: If payloads are enabled for a field, then the PositionDelta is shifted one bit. The lowest bit is used to indicate whether the length of the following payload is stored explicitly. If not, i. e. the bit is false, then the payload has the same length as the payload of the previous term occurrence.\n- In order to support skipping on the ProxFile the length of the payload at every skip point has to be known. Therefore the payload length is also stored in the skip list located in the FreqFile. Here the same-length compression is also used: The lowest bit of DocSkip is used to indicate if the payload length is stored for a SkipDatum or if the length is the same as in the last SkipDatum.\n- Payloads are loaded lazily. When a user calls TermPositions.nextPosition() then only the position and the payload length is loaded from the ProxFile. If the user calls getPayload() then the payload is actually loaded. If getPayload() is not called before nextPosition() is called again, then the payload data is just skipped.\n  \nChanges of file formats\n------------------------------\n- FieldInfos (.fnm)\nThe format of the .fnm file does not change. The only change is the use of the sixth lowest-order bit (0x20) of the FieldBits. If this bit is set, then payloads are enabled for the corresponding field. \n\n- ProxFile (.prx)\nProxFile (.prx) -->  <TermPositions>^TermCount\nTermPositions   --> <Positions>^DocFreq\nPositions       --> <PositionDelta, Payload?>^Freq\nPayload         --> <PayloadLength?, PayloadData>\nPositionDelta   --> VInt\nPayloadLength   --> VInt \nPayloadData     --> byte^PayloadLength\n\nFor payloads disabled (unchanged):\nPositionDelta is the difference between the position of the current occurrence in the document and the previous occurrence (or zero, if this is the first   occurrence in this document).\n  \nFor Payloads enabled:\nPositionDelta/2 is the difference between the position of the current occurrence in the document and the previous occurrence. If PositionDelta is odd, then PayloadLength is stored. If PositionDelta is even, then the length of the current payload equals the length of the previous payload and thus PayloadLength is omitted.\n\n- FreqFile (.frq)\n\nSkipDatum     --> DocSkip, PayloadLength?, FreqSkip, ProxSkip\nPayloadLength --> VInt\n\nFor payloads disabled (unchanged):\nDocSkip records the document number before every SkipInterval th document in TermFreqs. Document numbers are represented as differences from the previous value in the sequence.\n\nFor payloads enabled:\nDocSkip/2 records the document number before every SkipInterval th  document in TermFreqs. If DocSkip is odd, then PayloadLength follows. If DocSkip is even, then the length of the payload at the current skip point equals the length of the payload at the last skip point and thus PayloadLength is omitted.\n\n\nThis encoding is space efficient for different use cases:\n   * If only some fields of an index have payloads, then there's no space overhead for the fields with payloads disabled.\n   * If the payloads of consecutive term positions have the same length, then the length only has to be stored once for every term. This should be a common case, because users probably use the same format for all payloads.\n   * If only a few terms of a field have payloads, then we don't waste much space because we benefit again from the same-length-compression since we only have to store the length zero for the empty payloads once per term.\n\nAll unit tests pass.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12348592",
+        "id": "12348592",
+        "filename": "payload.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+          "name": "hibou",
+          "key": "hibou",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+          },
+          "displayName": "Nicolas Lalev\u00e9e",
+          "active": true,
+          "timeZone": "Europe/Paris"
+        },
+        "created": "2007-01-09T21:45:06.926+0000",
+        "size": 94932,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12348592/payload.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12353316",
+        "id": "12353316",
+        "filename": "payloads.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-03-14T20:28:38.493+0000",
+        "size": 79747,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12353316/payloads.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12353231",
+        "id": "12353231",
+        "filename": "payloads.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-03-13T21:32:11.439+0000",
+        "size": 79727,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12353231/payloads.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12353080",
+        "id": "12353080",
+        "filename": "payloads.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2007-03-12T00:34:50.671+0000",
+        "size": 79777,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12353080/payloads.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12347603",
+        "id": "12347603",
+        "filename": "payloads.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+          "name": "michaelbusch",
+          "key": "michaelbusch",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael Busch",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2006-12-20T19:28:05.000+0000",
+        "size": 78251,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12347603/payloads.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Payloads",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12460496",
+          "id": "12460496",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Great patch, Michael, and something that will come in handy for a lot of people.  I can vouch it applies cleanly and all the tests pass.  \n\nNow I am not sure I am totally understanding everything just yet so the following is thinking aloud, but bear with me.\n\nOne of the big unanswered questions (besides how this fits into the whole flexible indexing scheme as discussed on the Payloads and Flexible indexing threads on java-dev) at this point for me is: how do we expose/integrate this into the scoring side of the equation?  It seems we would need some interfaces that hook into the scoring mechanism so that people can define what all these payloads are actually used for, or am I missing something?  Yet the TermScorer takes in the TermDocs, so it doesn't yet have access to the payloads (although this is easily remedied since we have access to the TermPositions when we construct TermScorer.)  Span Queries could easily be extended to include payload information since they use the TermPositions, which would be useful for post-processing algorithms.\n\nI can imagine an interface that you would have to be set on the Query/Scorer (and inherited unless otherwise set???).  The default implementation would be to ignore any payload, I suppose.  We could also add a callback in the Similarity mechanism, something like:\n\nfloat calculatePayloadFactor(byte[] payload);\nor \nfloat calculatePayloadFactor(Term term, byte[] payload);\n\nThen this factor could be added/multiplied into the term score or whatever other scorers use it?????? \n\nIs this making any sense?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-12-22T14:29:33.000+0000",
+          "updated": "2006-12-22T14:29:33.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12460647",
+          "id": "12460647",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> Great patch, Michael, and something that will come in handy for a lot of people. I can vouch it applies cleanly and all the tests pass.\n\nCool, thanks for trying it out, Grant! :-)\n\n> Now I am not sure I am totally understanding everything just yet so the following is thinking aloud, but bear with me.\n\n> One of the big unanswered questions (besides how this fits into the whole flexible indexing scheme as discussed on the Payloads and \n> Flexible indexing threads on java-dev) at this point for me is: how do we expose/integrate this into the scoring side of the equation? It seems \n> we would need some interfaces that hook into the scoring mechanism so that people can define what all these payloads are actually used \n> for, or am I missing something? Yet the TermScorer takes in the TermDocs, so it doesn't yet have access to the payloads (although this is \n> easily remedied since we have access to the TermPositions when we construct TermScorer.) Span Queries could easily be extended to \n> include payload information since they use the TermPositions, which would be useful for post-processing algorithms.\n\nI would say it really depends on the use case of the payloads. For example XML search: here payloads can be used to store depths information of terms. An extended Span class could then take the depth information into account for query evaluation. As you pointed out the span classes already have easy access to the payloads since they use TermPositions, so to implement such a subclass should be fairly simple.\n\n> I can imagine an interface that you would have to be set on the Query/Scorer (and inherited unless otherwise set???). The default \n> implementation would be to ignore any payload, I suppose. We could also add a callback in the Similarity mechanism, something like:\n>\n> float calculatePayloadFactor(byte[] payload);\n> or\n> float calculatePayloadFactor(Term term, byte[] payload);\n>\n> Then this factor could be added/multiplied into the term score or whatever other scorers use it??????\n> \n> Is this making any sense?\n\nI believe the case you're describing here is per-term norms/boosts? Yah I think this would work and you are right, the Scorers have to have access to TermPositions, TermDocs is not sufficient. So yes, it would be nice if TermScorer would use TermPositions instead of TermDocs. I just opened LUCENE-761, which changes SegmentTermPositions to clone the proxStream lazily at the first time nextPosition() is called. Then the costs for creating TermDocs and TermPositions are the same and together with lazy prox skipping (LUCENE-687) there's no reason anymore to not use TermPositions.\n\nHowever, as currently discussed on java-dev, per-term boosts could also be part of a new posting format in the flexible index scheme and thus not stored in the payloads.\n\nSo in general this patch doesn't add yet a new search feature to Lucene, it rather opens the door for new features in the future. The way to add such a new feature is then:\n1) Write an analyzer that provides data neccessary for the new feature and produces Tokens with payloads containing these data.\n2) Write/extend a Scorer that has access to TermPositions and makes use of the data in the payloads for matching or scoring or both.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-12-23T15:06:39.000+0000",
+          "updated": "2006-12-23T15:06:39.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12463414",
+          "id": "12463414",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+            "name": "hibou",
+            "key": "hibou",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+            },
+            "displayName": "Nicolas Lalev\u00e9e",
+            "active": true,
+            "timeZone": "Europe/Paris"
+          },
+          "body": "The patch I have just upload (payload.patch) is Michael's one (payloads.patch) with the customization of how payload are written and read, exactly like I did for Lucene-662. An IndexFormat is in fact a factory of PayloadWriter and PayloadReader, this index format being stored in the Directory instance.\n\nNote that I haven't changed the javadoc neither the comments included in Michael's patch, it needs some cleanup if somebody is interested in commiting it.\nAnd sorry for the name of the patch I have uploaded, it is a little bit confusing now, and I can't change it's name. I will be more carefull next time when naming my patch files.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+            "name": "hibou",
+            "key": "hibou",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+            },
+            "displayName": "Nicolas Lalev\u00e9e",
+            "active": true,
+            "timeZone": "Europe/Paris"
+          },
+          "created": "2007-01-09T21:56:04.443+0000",
+          "updated": "2007-01-09T21:56:04.443+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12479781",
+          "id": "12479781",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Nicolas,\n\nAre you implying your patch fits in with 662 (and needs to be applied after) or it is just in the style of 662 but isn't dependent on?\n\nThanks,\nGrant",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-03-10T00:38:20.732+0000",
+          "updated": "2007-03-10T00:38:20.732+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12479841",
+          "id": "12479841",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+            "name": "hibou",
+            "key": "hibou",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+            },
+            "displayName": "Nicolas Lalev\u00e9e",
+            "active": true,
+            "timeZone": "Europe/Paris"
+          },
+          "body": "Grant>\nThe patch I have propsed here has no dependency on LUCENE-662, I just \"imported\" some ideas from it and put them there. Since the LUCENE-662 have involved, the patches will probably make conflicts. The best to use here is Michael's one. I think it won't conflit with LUCENE-662. And if both are intended to be commited, then the best is to commit the both seperately and redo the work I have done with the provided patch (I remember that it was quite easy).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hibou",
+            "name": "hibou",
+            "key": "hibou",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hibou&avatarId=15047",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hibou&avatarId=15047",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hibou&avatarId=15047",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hibou&avatarId=15047"
+            },
+            "displayName": "Nicolas Lalev\u00e9e",
+            "active": true,
+            "timeZone": "Europe/Paris"
+          },
+          "created": "2007-03-10T14:28:42.240+0000",
+          "updated": "2007-03-10T14:28:42.240+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12479961",
+          "id": "12479961",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'm attaching the new patch with the following changes:\n- applies cleanly on the current trunk\n- fixed a bug in FSDirectory which affected payloads with length greater than 1024 bytes and extended testcase TestPayloads to test this fix\n- added the following warning comments to the new APIs:\n\n  *  Warning: The status of the Payloads feature is experimental. The APIs\n  *  introduced here might change in the future and will not be supported anymore\n  *  in such a case. If you want to use this feature in a production environment\n  *  you should wait for an official release.\n\n\nAnother comment about an API change: In BufferedIndexOutput I changed the method \n  protected abstract void flushBuffer(byte[] b, int len) throws IOException;\nto\n  protected abstract void flushBuffer(byte[] b, int offset, int len) throws IOException;\n\nwhich means that subclasses of BufferedIndexOutput won't compile anymore. I made this change for performance reasons: If a payload is longer than 1024 bytes (standard buffer size of BufferedIndexOutput) then it can be flushed efficiently to disk without having to perform array copies. \n\nIs this API change acceptable? Users who have custom subclasses of BufferedIndexOutput would have to change their classes in order to work.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-12T00:34:50.737+0000",
+          "updated": "2007-03-12T00:34:50.737+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12480552",
+          "id": "12480552",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Attaching a new patch. The previous one didn't apply cleanly anymore after LUCENE-710 was committed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-13T21:32:11.533+0000",
+          "updated": "2007-03-13T21:32:11.533+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12480910",
+          "id": "12480910",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Another one! (previous version didn't apply cleanly anymore after committing LUCENE-818, Mike is keeping me busy ;-) ).\n\nGrant, did you get a chance to review the patch? I would like to go ahead and commit it soon with the API warnings if nobody objects...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-14T20:28:38.633+0000",
+          "updated": "2007-03-14T20:28:38.633+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12481003",
+          "id": "12481003",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I've applied the patch.  All tests pass for me.  I think it looks  \ngood.  Have you run any benchmarks on it?  I ran the standard one on  \nthe patched version and on trunk, in a totally unscientific test.  In  \ntheory, the case with no payloads should perform very closely to the  \nexisting code, and this seems to be born out by me running the micro- \nstandard (ant run-task in contrib/benchmark).   Once we have this  \ncommitted someone can take a crack at adding support to the  \nbenchmarker for payloads.\n\nPayload should probably be serializable.\n\nAll in all, I think we could commit this, then adding the search/ \nscoring capabilities like we've talked about.  I like the  \ndocumentation/comments you have added, very useful.  (One of these  \ndays I will take on documenting the index package like I intend to,  \nso what you've added will be quite helpful!)   We will/may want to  \nadd in, for example, a PayloadQuery and derivatives and a QueryParser  \noperator that supported searching in the payload, or possibly  \nboosting if a certain term has a certain type of payload (not that I  \nwant anything to do with the QueryParser).  Even beyond that,  \nSpanPayloadQuery, etc.  I will possibly have some cycles to actually  \nwrite some code for these next week.\n\nJust throwing this out there, I'm not sure I really mean it or  \nnot :-), but:\ndo you think it would be useful to consider restricting the size of  \nthe payload?  I know, I know, as soon as we put a limit on it,  \nsomeone will want to expand it, but I was thinking if we knew the  \nsize had a limit we could better control the performance and caching,  \netc. on the scoring/search side.    I guess it is buyer beware, maybe  \nwe put some javadocs on this.\n\nAlso, I started http://wiki.apache.org/lucene-java/Payloads as I  \nthink we will want to have some docs explaining why Payloads are  \nuseful in non-javadoc format.\n\nOn a side note, have a look at http://wiki.apache.org/lucene-java/ \nPatchCheckList to see if there is anything you feel you can add.\n\n\n\n--------------------------\nGrant Ingersoll\nCenter for Natural Language Processing\nhttp://www.cnlp.org\n\nRead the Lucene Java FAQ at http://wiki.apache.org/jakarta-lucene/ \nLuceneFAQ\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2007-03-15T02:50:10.707+0000",
+          "updated": "2007-03-15T02:50:10.707+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12481014",
+          "id": "12481014",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Grant Ingersoll commented on LUCENE-755:\n----------------------------------------\n\n> OK, I've applied the patch.  All tests pass for me.  I think it looks  \n> good.  Have you run any benchmarks on it?  I ran the standard one on  \n> the patched version and on trunk, in a totally unscientific test.  In  \n> theory, the case with no payloads should perform very closely to the  \n> existing code, and this seems to be born out by me running the micro- \n> standard (ant run-task in contrib/benchmark).   Once we have this  \n\nGrant, thank you for running the benchmarks!\nIn case no payloads are used there is indeed no performance decrease to \nexpect, because the file format does not change at all in that case.\n\n> committed someone can take a crack at adding support to the  \n> benchmarker for payloads.\n\nGood point! This will help us finding possible optimizations.\n\n> Payload should probably be serializable.\n\nAgreed. Will do ...\n\n> All in all, I think we could commit this, then adding the search/ \n> scoring capabilities like we've talked about.  I like the  \n> documentation/comments you have added, very useful.  (One of these  \n> days I will take on documenting the index package like I intend to,  \n> so what you've added will be quite helpful!)   We will/may want to  \n\nThat's what I was planning to do as well... haven't had time yet. But \ngood that there's another volunteer, so we can split the work ;-)\n\n> add in, for example, a PayloadQuery and derivatives and a QueryParser  \n> operator that supported searching in the payload, or possibly  \n> boosting if a certain term has a certain type of payload (not that I  \n> want anything to do with the QueryParser).  Even beyond that,  \n> SpanPayloadQuery, etc.  I will possibly have some cycles to actually  \n> write some code for these next week.\n\nYes there are lots of things we could do. I was also thinking about\nproviding a demo that uses payloads. Let's commit this first, then\nwe can start working on these items...\n\n> Just throwing this out there, I'm not sure I really mean it or  \n> not  :-) , but:\n> do you think it would be useful to consider restricting the size of  \n> the payload?  I know, I know, as soon as we put a limit on it,  \n> someone will want to expand it, but I was thinking if we knew the  \n> size had a limit we could better control the performance and caching,  \n> etc. on the scoring/search side.    I guess it is buyer beware, maybe  \n> we put some javadocs on this.\n\nHmm, I'm not sure if we should limit the size... since there are\nso many different use cases I wouldn't even know how to pick such \na limit. However, if we discover later that a limit would be helpful\nto optimize things on the search side we could think about a limit\nparameter on field level, which would be easy to add if we introduce\na schema and global field semantics with FI.\n\n> Also, I started http://wiki.apache.org/lucene-java/Payloads as I  \n> think we will want to have some docs explaining why Payloads are  \n> useful in non-javadoc format.\n\nCool, that will be helpful!\n\n> On a side note, have a look at http://wiki.apache.org/lucene-java/ \n> PatchCheckList to see if there is anything you feel you can add.\n\nThanks for reviewing this so thoroughly, Grant! I will commit it soon!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-15T04:16:12.059+0000",
+          "updated": "2007-03-15T04:16:12.059+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/12481034",
+          "id": "12481034",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I just committed this. Payload is serializable now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michaelbusch",
+            "name": "michaelbusch",
+            "key": "michaelbusch",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael Busch",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2007-03-15T05:18:41.686+0000",
+          "updated": "2007-03-15T05:18:41.686+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12359147/comment/17586944",
+          "id": "17586944",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1830|https://github.com/apache/lucene/issues/1830].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:33:17.741+0000",
+          "updated": "2022-08-28T11:33:17.741+0000"
+        }
+      ],
+      "maxResults": 12,
+      "total": 12,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0517j:",
+    "customfield_12314139": null
+  }
+}

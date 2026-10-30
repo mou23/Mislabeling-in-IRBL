@@ -1,0 +1,1111 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="CODEC">
+	<bug id="61" opendate="2008-02-03 07:39:51" fixdate="2008-03-08 07:28:55" resolution="Fixed">
+		<buginformation>
+			<summary>Base64.encodeBase64() throws NegativeArraySizeException on large files</summary>
+			<description>The NegativeArraySizeException exception is thrown by Base64.EncodeBase64() for arrays larger than 268435455 bytes (2^31/8-1).
+public static byte[] encodeBase64(byte[] binaryData, boolean isChunked)  starts with the following three lines:
+        int lengthDataBits = binaryData.length * EIGHTBIT;
+        int fewerThan24bits = lengthDataBits % TWENTYFOURBITGROUP;
+        int numberTriplets = lengthDataBits / TWENTYFOURBITGROUP;
+The first of the lines will cause an integer overflow in lengthDataBits for lengths larger than 2^31/8-1, making it a negative number. The fix is trivial (but not tested on the running code, I just ran through a few numbers to validate that it computes the same results as the original code):
+        int lengthData = binaryData.length;
+        int fewerThan24bits = lengthData % (TWENTYFOURBITGROUP / EIGHTBIT) * EIGHTBIT;
+        int numberTriplets = lengthData / (TWENTYFOURBITGROUP / EIGHTBIT);
+This way the encoder will be able to process files of up to 2^31-1 bytes in length, which is much better than ~250MB.
+The issue was found in commons 1.3; the source code above was taken from SVN trunk so I assume it&amp;amp;apos;s still present in 1.4: http://svn.apache.org/repos/asf/commons/proper/codec/trunk/src/java/org/apache/commons/codec/binary/Base64.java</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">69</link>
+		</links>
+	</bug>
+	<bug id="65" opendate="2008-04-25 11:18:24" fixdate="2008-04-27 00:33:11" resolution="Fixed">
+		<buginformation>
+			<summary>Fix case-insensitive string handling</summary>
+			<description>The language codecs are platform-depedent, please see Common Bug #3 for details.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphone.java</file>
+			<file type="M">org.apache.commons.codec.language.SoundexUtils.java</file>
+			<file type="M">org.apache.commons.codec.StringEncoderAbstractTest.java</file>
+			<file type="M">org.apache.commons.codec.language.Caverphone.java</file>
+			<file type="M">org.apache.commons.codec.language.Metaphone.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="68" opendate="2008-04-30 09:01:56" fixdate="2008-05-04 01:09:19" resolution="Duplicate">
+		<buginformation>
+			<summary>isBase64 throws ArrayIndexOutOfBoundsException on some non-BASE64 bytes</summary>
+			<description>the following code throws an ArrayIndexOutOfBoundsException although it is perfectly valid (the byte 0x9c should be ignored according to the standard):
+
+byte[x] = new byte[] { &amp;amp;apos;n&amp;amp;apos;, &amp;amp;apos;A&amp;amp;apos;, &amp;amp;apos;=&amp;amp;apos;, &amp;amp;apos;=&amp;amp;apos;, 0x9c };
+Base64.decodeBase64(x);
+
+
+The problem is the following method:
+
+    private static boolean isBase64(byte octect) {
+        if (octect == PAD) {
+            return true;
+        } else if (base64Alphabet[octect] == -1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
+in Java octect is a signed value, so it is not correct to use it as an offset for an array [0..254] which base64Alphabet is. 0x9c is -100!
+FIX:
+use base64Alphabet[ 0xff &amp;amp; octect ] in the "else if" block to convert the octet prior using it as an offset for the lookup table</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64Test.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="58" opendate="2007-11-16 12:28:39" fixdate="2009-07-18 01:21:19" resolution="Fixed">
+		<buginformation>
+			<summary>Character set used by Base64 not documented</summary>
+			<description>The Javadoc for the Base64 class does not document which character set is returned by encode() and expected by decode(). The RFC specifies "characters", not "bytes" as the result of the encoding, and yet Base64 returns bytes. It should provide complete information as to how to convert these bytes to and from Strings. I assume the character set used is ASCII, but that should be made explicit in the Javadoc.</description>
+			<version>1.1</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64OutputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="80" opendate="2009-07-23 05:50:06" fixdate="2009-07-24 00:43:18" resolution="Fixed">
+		<buginformation>
+			<summary>Regression:  Base64.encode(chunk=true) has bug when input length is multiple of 76</summary>
+			<description>Regression:  Base64.encode(chunk=true) has bug when input length is multiple of 76
+The resulting array is correct except there are two extra 0 bytes appended to the end.</description>
+			<version>1.4</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64OutputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64TestData.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64Test.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="84" opendate="2009-08-02 00:09:31" fixdate="2009-08-03 00:38:21" resolution="Fixed">
+		<buginformation>
+			<summary>Double Metaphone bugs in alternative encoding</summary>
+			<description>The new test case (CODEC-83) has highlighted a number of issues with the "alternative" encoding in the Double Metaphone implementation
+1) Bug in the handleG method when "G" is followed by "IER" 
+
+The alternative encoding of "Angier" results in "ANKR" rather than "ANJR"
+The alternative encoding of "rogier" results in "RKR" rather than "RJR"
+
+The problem is in the handleG() method and is caused by the wrong length (4 instead of 3) being used in the contains() method:
+
+
+ } else if (contains(value, index + 1, 4, "IER")) {
+
+
+...this should be
+
+
+ } else if (contains(value, index + 1, 3, "IER")) {
+
+
+2)  Bug in the handleL method
+
+The alternative encoding of "cabrillo" results in "KPRL " rather than "KPR"
+
+The problem is that the first thing this method does is append an "L" to both primary &amp;amp; alternative encoding. When the conditionL0() method returns true then the "L" should not be appended for the alternative encoding
+
+
+result.append(&amp;amp;apos;L&amp;amp;apos;);
+if (charAt(value, index + 1) == &amp;amp;apos;L&amp;amp;apos;) {
+    if (conditionL0(value, index)) {
+        result.appendAlternate(&amp;amp;apos; &amp;amp;apos;);
+    }
+    index += 2;
+} else {
+    index++;
+}
+return index;
+
+
+Suggest refeactoring this to
+
+
+if (charAt(value, index + 1) == &amp;amp;apos;L&amp;amp;apos;) {
+    if (conditionL0(value, index)) {
+        result.appendPrimary(&amp;amp;apos;L&amp;amp;apos;);
+    } else {
+        result.append(&amp;amp;apos;L&amp;amp;apos;);
+    }
+    index += 2;
+} else {
+    result.append(&amp;amp;apos;L&amp;amp;apos;);
+    index++;
+}
+return index;
+
+
+3) Bug in the conditionL0() method for words ending in "AS" and "OS"
+
+The alternative encoding of "gallegos" results in "KLKS" rather than "KKS"
+
+The problem is caused by the wrong start position being used in the contains() method, which means its not checking the last two characters of the word but checks the previous &amp;amp; current position instead:
+
+
+        } else if ((contains(value, index - 1, 2, "AS", "OS") || 
+
+
+...this should be
+
+
+        } else if ((contains(value, value.length() - 2, 2, "AS", "OS") || 
+
+
+I&amp;amp;apos;ll attach a patch for review</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphone2Test.java</file>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphone.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="73" opendate="2008-07-14 08:52:49" fixdate="2009-08-06 18:25:37" resolution="Fixed">
+		<buginformation>
+			<summary>Make string2byte conversions indepedent of platform default encoding</summary>
+			<description>Both the library itself and many of its tests are utterly dependent on the JVM&amp;amp;apos;s default charset. For example, DigestUtils calls String.getBytes() to convert an input string to a byte array, happily delivering different digests for the same input string if run on different platforms.
+If you want to try out the havor yourself, just run the unit tests in a JVM with UTF-16, e.g. by adding the line
+
+&amp;lt;argLine&amp;gt;-Dfile.encoding=UTF-16&amp;lt;/argLine&amp;gt;
+
+
+to the configuration of the Surefire Plugin in the POM.</description>
+			<version>1.3</version>
+			<fixedVersion>1.4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.HexTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64Test.java</file>
+			<file type="M">org.apache.commons.codec.binary.StringUtils.java</file>
+			<file type="M">org.apache.commons.codec.binary.Hex.java</file>
+			<file type="M">org.apache.commons.codec.digest.DigestUtils.java</file>
+			<file type="M">org.apache.commons.codec.binary.StringUtilsTest.java</file>
+			<file type="M">org.apache.commons.codec.digest.DigestUtilsTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Incorporates" description="incorporates">85</link>
+		</links>
+	</bug>
+	<bug id="89" opendate="2009-10-28 06:15:12" fixdate="2010-03-27 00:05:31" resolution="Fixed">
+		<buginformation>
+			<summary>new Base64().encode() appends a CRLF, and chunks results into 76 character lines</summary>
+			<description>The instance encode() method (e.g. new Base64().encode()) appends a CRLF.  Actually it&amp;amp;apos;s fully chunking the output into 76 character lines.  Commons-Codec-1.3 did not do this.  The static Base64.encodeBase64() method behaves the same in both 1.3 and 1.4, so this problem only affects the instance encode() method.
+
+
+import org.apache.commons.codec.binary.*;
+
+public class B64 {
+
+  public static void main(String[] args) throws Exception {
+    Base64 b64 = new Base64();
+
+    String s1 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    String s2 = "aaaaaaaaaa";
+    String s3 = "a";
+    
+    byte[] b1 = s1.getBytes("UTF-8");
+    byte[] b2 = s2.getBytes("UTF-8");
+    byte[] b3 = s3.getBytes("UTF-8");
+
+    byte[] result;
+    result = Base64.encodeBase64(b1);
+    System.out.println("[" + new String(result, "UTF-8") + "]");
+    result = b64.encode(b1);
+    System.out.println("[" + new String(result, "UTF-8") + "]");
+
+    result = Base64.encodeBase64(b2);
+    System.out.println("[" + new String(result, "UTF-8") + "]");
+    result = b64.encode(b2);
+    System.out.println("[" + new String(result, "UTF-8") + "]");
+
+    result = Base64.encodeBase64(b3);
+    System.out.println("[" + new String(result, "UTF-8") + "]");
+    result = b64.encode(b3);
+    System.out.println("[" + new String(result, "UTF-8") + "]");
+
+  }
+}
+
+
+Here&amp;amp;apos;s my output:
+
+$ java -cp commons-codec-1.3.jar:. B64
+[YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQ==]
+[YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQ==]
+[YWFhYWFhYWFhYQ==]
+[YWFhYWFhYWFhYQ==]
+[YQ==]
+[YQ==]
+
+
+$ java -cp commons-codec-1.4.jar:. B64
+[YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQ==]
+[YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFh
+YWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYQ==
+]
+[YWFhYWFhYWFhYQ==]
+[YWFhYWFhYWFhYQ==
+]
+[YQ==]
+[YQ==
+]
+
+</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64OutputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">97</link>
+		</links>
+	</bug>
+	<bug id="97" opendate="2010-02-26 05:15:35" fixdate="2010-03-27 00:15:49" resolution="Fixed">
+		<buginformation>
+			<summary>Base64 default constructor behaviour changed to enable chunking in 1.4</summary>
+			<description>The following test passes in commons-codec 1.3 but fails in 1.4:
+
+
+public void testObjectEncode() throws Exception {
+    Base64 b64 = new Base64();
+    assertEquals("SGVsbG8gV29ybGQ=", new String(b64.encode("Hello World".getBytes())));
+}
+
+
+Commons-codec 1.3 returns "SGVsbG8gV29ybGQ=".
+Commons-codec 1.4 returns "SGVsbG8gV29ybGQ=\r\n".
+I&amp;amp;apos;d understand if you want to close this as "Won&amp;amp;apos;t Fix", since the behaviour wasn&amp;amp;apos;t documented before (the constructor wasn&amp;amp;apos;t even present!) and now it is. 
+However, there is still no test for this behaviour on trunk as far as I can tell, so it would be good to add one so it doesn&amp;amp;apos;t change again in the future. I&amp;amp;apos;ll attach a patch for Base64Test which you can apply on trunk which will do so.</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64Test.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64Codec13Test.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">89</link>
+			<link type="Reference" description="is related to">96</link>
+		</links>
+	</bug>
+	<bug id="98" opendate="2010-03-25 15:32:37" fixdate="2010-06-02 22:08:22" resolution="Fixed">
+		<buginformation>
+			<summary>Base64InputStream causes NullPointerException on some input</summary>
+			<description>Certain (malformed?) input to Base64InputStream causes a NullPointerException in Base64.decode.
+The exception occurs when Base64.decode is entered with the following conditions:
+
+buffer is null
+modulus is 3 from a previous entry.
+inAvail is -1 because Base64InputStream.read reached EOF on line 150.
+
+Under these conditions, Base64.decode reaches line 581 with buffer still null and throws a NullPointerException.
+Here is some input data that will trigger it:
+
+H4sIAAAAAAAAAFvzloG1uIhBKiuxLFGvODW5tCizpFIvODM9LzXFPykrNbmE8//eDC2bq/+ZGJij
+GdiT8/NKUvNKShiYop2iGTiLgQoTS0qLUgsZ6hgYfRh4SjJSE3PS84GmZOSWMAj5gMzVz0nMS9cP
+LinKzEu3rigoLQJpXvNZ/AcbR8gDJgaGigIGBqbLayAuMUxNKdVLTyxJTc7QS07WSyzKLC7JL8lJ
+1StJLErMKynNSdTLyUxOzStO1fOB0AwQwMjEwOrJwJMbn+mSWFkclpiTmeID4joml2SWpYZk5qaW
+MEj45Bel62flpyTqlwAF9F2A9oBkrMEqnYtSoXyob1hy4z1dShgEIL4oLcnM0Q8N9XQBqubKjYfa
+DjTV1AfoZn2Im/WTk/XhbtaHu1kf6mZ9T5g2YED8BwKgj8WAbtIDuUkP5CY9mJt22FSkZEXf/QkK
+oCIGeVRFSYlA/zsBCZjq//9/PvSP1VvMxMDkxcCe6ZuZk5NZ7MPAnemcUZSfl5+Tn15ZwiCF5n2E
+nDUoDhjVfhrpNABdpI5qWTJYmZ5nsD9Cg0pwSWnSyhOCaYXmAerMoDgsxnAkzG1R+XmpYPXL9Bln
+1RhJPQarL+dgYNM1MLUyMKioKAYFOCvIBb8vl8qCOFxA4/jAiRIU7HqgYN8zk/n7jNxWfbAXeXJS
+E4tLgOnUKbOk2IuBOzcfzqso6M1QmrzKkedPzcYO3QZu129As4xITlZI6QqYFNhz44v9EkFpCGua
+LmEQdkktS83JL8gF5g4FqBGlIJ+wAI1gKJtZEvTws/j3FluPu4lcr7ra9OfHKXIZNTa4FPd8n33J
+QXPFLte9AZe5uBaJvGrKVl+rbrTaXDZO6NwU7gnHOVgzzsmnGX2Y5GDqrst8wcTear0Ab1yj6PrD
+F977vL/5iUMg773My5qLLK8OVAu6Tz7Xcyjy9Uym02Z/+xY7m85nYo/t4E93FXFKOf9/a3X78neS
+jE5Tu066K3Mdf17m66mbpXN9y34ZZ3ErRobfn+RfzVBIWj0vc82vY7YPvM5eLHHOulV77M6CoB4h
+xb/FjHWHRR+ldb6QmSP1ROGwGs+nx2quwitN7+mIpsRFhU37JPRoZe2ZjiX/70j7CS1tz51YP/3W
+/xfnV2i/4rAoYeAN9nA0NTQqBxYMQcGOAG5
+
+
+Say this is read from file with a byte[] of size 1024 using Base64InputStream.read(byte[]).  In the first iteration, all 1190 bytes get read into buf, then it enters Base64.setInitialBuffer and assigns the byte[1024] to buffer and does a round of decoding.  When it then enters Base64.readResults on line 162 in Base64InputStream, it sets buffer to null, modulus has the left-over value 3, and the NPE occurs the next iteration.
+Base64InputStream could avoid this by returning right away on EOF (-1), but I think the real fix needs to happen in Base64 since it this same situation could be created by direct use.  My guess is either more needs to happen in the body of the if on line 542 (set modulus to 0?) or the condition on line 573 is flawed and needs adjusting.</description>
+			<version>1.4</version>
+			<fixedVersion>Nightly Builds</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64OutputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64TestData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="101" opendate="2010-05-30 04:07:04" fixdate="2011-01-21 19:43:38" resolution="Fixed">
+		<buginformation>
+			<summary>Base64InputStream#read(byte[]) incorrectly returns 0 at end of any stream which is multiple of 3 bytes long</summary>
+			<description>Using new InputStreamReader(new Base64InputStream(in, true)) sometimes fails with "java.io.IOException: Underlying input stream returned zero bytes".
+This is been tracked down that Base64InputStream#read(byte[]) incorrectly returns 0 at end of any stream which is multiple of 3 bytes long.</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64TestData.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="99" opendate="2010-03-27 04:29:15" fixdate="2011-01-23 05:56:06" resolution="Fixed">
+		<buginformation>
+			<summary>Base64.encodeBase64String() shouldn&amp;apos;t chunk</summary>
+			<description>Base64.encodeBase64String() shouldn&amp;amp;apos;t chunk.
+Change this:
+
+
+public static String encodeBase64String(byte[] binaryData) {
+    return StringUtils.newStringUtf8(encodeBase64(binaryData, true));
+}
+
+
+To this:
+
+
+public static String encodeBase64String(byte[] binaryData) {
+    return StringUtils.newStringUtf8(encodeBase64(binaryData, false));
+}
+
+
+This will fix the following tests ggregory added a few minutes ago:
+        //assertEquals("Zg==", Base64.encodeBase64String(StringUtils.getBytesUtf8("f")));
+        //assertEquals("Zm8=", Base64.encodeBase64String(StringUtils.getBytesUtf8("fo")));
+        //assertEquals("Zm9v", Base64.encodeBase64String(StringUtils.getBytesUtf8("foo")));
+        //assertEquals("Zm9vYg==", Base64.encodeBase64String(StringUtils.getBytesUtf8("foob")));
+        //assertEquals("Zm9vYmE=", Base64.encodeBase64String(StringUtils.getBytesUtf8("fooba")));
+        //assertEquals("Zm9vYmFy", Base64.encodeBase64String(StringUtils.getBytesUtf8("foobar")));
+</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64Test.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="105" opendate="2010-08-13 16:45:05" fixdate="2011-01-24 00:46:45" resolution="Fixed">
+		<buginformation>
+			<summary>ArrayIndexOutOfBoundsException when doing multiple reads() on encoding Base64InputStream</summary>
+			<description>When encoding a sizable stream byte by byte (so, just calling Base64InputStream.read()), after 10920 successful read()s, this happens: 
+java.lang.ArrayIndexOutOfBoundsException: 2
+        at org.apache.commons.codec.binary.Base64.encode(Base64.java:502)
+        at org.apache.commons.codec.binary.Base64InputStream.read(Base64InputStream.java:157)
+        at org.apache.commons.codec.binary.Base64InputStream.read(Base64InputStream.java:109)
+Based on this, the necessary conditions seem to be that buffer = null and modulus = 2. Then, if a read() is done, a single-byte buffer is used, whose length is doubled by resizeBuffer(), but that still doesn&amp;amp;apos;t make it big enough to hold the 4 bytes written to it because modulus was just incremented to 0. 
+Here&amp;amp;apos;s some sample code:
+import org.apache.commons.codec.binary.Base64InputStream;
+public class TestReads {
+    public static void main(String[] args) {
+        Base64InputStream b64stream = new Base64InputStream(System.in, true, 0, null);
+        int n = 0;
+        try 
+{
+            while (b64stream.read() != -1) n++;
+        }
+ catch (Exception x) 
+{
+            System.out.println(n);
+            x.printStackTrace();
+        }
+    }
+}</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="111" opendate="2011-01-24 01:02:39" fixdate="2011-01-24 01:14:03" resolution="Fixed">
+		<buginformation>
+			<summary>org.apache.commons.codec.net.URLCodec.ESCAPE_CHAR isn&amp;apos;t final but should be</summary>
+			<description>org.apache.commons.codec.net.URLCodec.ESCAPE_CHAR isn&amp;amp;apos;t final but should be</description>
+			<version>1.2</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.net.URLCodec.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">70</link>
+		</links>
+	</bug>
+	<bug id="112" opendate="2011-01-26 23:38:05" fixdate="2011-01-27 00:40:57" resolution="Fixed">
+		<buginformation>
+			<summary>Base64.encodeBase64(byte[] binaryData, boolean isChunked, boolean urlSafe, int maxResultSize) throws IAE for valid maxResultSize if isChunked is false</summary>
+			<description>If isChunked is false, Base64.encodeBase64(byte[] binaryData, boolean isChunked, boolean urlSafe, int maxResultSize) throws IAE for valid maxResultSize.
+Test case and fix will be applied shortly.</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64Test.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="113" opendate="2011-01-27 21:10:25" fixdate="2011-01-27 21:12:18" resolution="Fixed">
+		<buginformation>
+			<summary>org.apache.commons.codec.language.RefinedSoundex.US_ENGLISH_MAPPING should be package protected MALICIOUS_CODE</summary>
+			<description>Findbugs says:
+org.apache.commons.codec.language.RefinedSoundex.US_ENGLISH_MAPPING should be package protected	MALICIOUS_CODE	http://findbugs.sourceforge.net/bugDescriptions.html#MS_PKGPROTECT</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.RefinedSoundex.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="114" opendate="2011-01-27 21:14:00" fixdate="2011-01-27 21:14:56" resolution="Fixed">
+		<buginformation>
+			<summary>org.apache.commons.codec.language.Soundex.US_ENGLISH_MAPPING should be package protected MALICIOUS_CODE</summary>
+			<description>Findbugs says:
+org.apache.commons.codec.language.Soundex.US_ENGLISH_MAPPING should be package protected MALICIOUS_CODE http://findbugs.sourceforge.net/bugDescriptions.html#MS_PKGPROTECT</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.Soundex.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="115" opendate="2011-01-28 03:31:03" fixdate="2011-01-28 05:24:18" resolution="Fixed">
+		<buginformation>
+			<summary>DoubleMetaphone.maxCodeLen should probably be private</summary>
+			<description>DoubleMetaphone.maxCodeLen should probably be private - it has public getter and setter anyway.</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphone.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="117" opendate="2011-03-01 17:55:18" fixdate="2011-03-30 02:46:59" resolution="Fixed">
+		<buginformation>
+			<summary>Caverphone encodes names starting and ending with "mb" incorrectly.</summary>
+			<description>Caverphone encode names starting and ending with "mb" incorrectly.
+According to the spec:
+"If the name ends with mb make it m2".
+This has been coded as:
+"If the name starts with mb make it m2".</description>
+			<version>1.4</version>
+			<fixedVersion>1.5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.CaverphoneTest.java</file>
+			<file type="M">org.apache.commons.codec.language.Caverphone.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="123" opendate="2011-05-18 12:35:58" fixdate="2011-05-18 12:56:42" resolution="Fixed">
+		<buginformation>
+			<summary>ColognePhonetic Javadoc should use HTML entities for special characters.</summary>
+			<description>The ColognePhonetic class contains Javadoc with umlauts and other characters that do not always play well in editors. Change these characters to HTML entities. This means we should also be able to remove the UTF-8 settings in the POM for Javadoc.</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.ColognePhonetic.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="127" opendate="2011-08-13 11:45:01" fixdate="2011-08-17 16:32:00" resolution="Fixed">
+		<buginformation>
+			<summary>Non-ascii characters in source files</summary>
+			<description>Some of the test cases include characters in a native encoding (possibly UTF-8), rather than using Unicode escapes.
+This can cause a problem for IDEs if they don&amp;amp;apos;t know the encoding (e.g. cause compilation errors, which is how I found the issue), and possibly some transformations may corrupt the contents, e.g. fixing EOL.
+I think we should have a rule of using Unicode escapes for all such non-ascii characters.
+It&amp;amp;apos;s particularly important for non-ISO-8859-1 characters.
+Some example classes with non-ascii characters:
+
+
+binary\Base64Test.java:96         byte[] decode = b64.decode("SGVsbG{}8gV29ybGQ=");
+language\ColognePhoneticTest.java:110             {"mnchengladbach", "664645214"},
+language\ColognePhoneticTest.java:130         String[][] data = {{"bergisch-gladbach", "174845214"}, {"Mller-Ldenscheidt", "65752682"}};
+language\ColognePhoneticTest.java:137             {"Meyer", "Mller"},
+language\ColognePhoneticTest.java:143             {"ganz", "Gnse"},
+language\DoubleMetaphoneTest.java:1222         this.getDoubleMetaphone().isDoubleMetaphoneEqual("", "S");
+language\DoubleMetaphoneTest.java:1227         this.getDoubleMetaphone().isDoubleMetaphoneEqual("", "N");
+language\SoundexTest.java:367         if (Character.isLetter(&amp;amp;apos;&amp;amp;apos;)) {
+language\SoundexTest.java:369                 Assert.assertEquals("000", this.getSoundexEncoder().encode(""));
+language\SoundexTest.java:375             Assert.assertEquals("", this.getSoundexEncoder().encode(""));
+language\SoundexTest.java:387         if (Character.isLetter(&amp;amp;apos;&amp;amp;apos;)) {
+language\SoundexTest.java:389                 Assert.assertEquals("000", this.getSoundexEncoder().encode(""));
+language\SoundexTest.java:395             Assert.assertEquals("", this.getSoundexEncoder().encode(""));
+
+
+The characters are probably not correct above, because I used a crude perl script to find them:
+
+
+perl -ne "$.=1 if $s ne $ARGV;print qq($ARGV:$. $_) if m/\P{ASCII}/;$s=$ARGV;" xxxx.java
+
+
+language\SoundexTest.java:367 in particular is incorrect, because it&amp;amp;apos;s supposed to be a single character.
+Now one might think that native2ascii -encoding UTF-8 would fix that, but it gives:
+if (Character.isLetter(&amp;amp;apos;\ufffd&amp;amp;apos;))
+which is an "unknown" character.
+Similarly for binary\Base64Test.java:96.
+It&amp;amp;apos;s not all that clear what the Unicode escapes should be in these cases, but probably not the unknown character.
+[Possibly the characters got mangled at some point, or maybe they have always been wrong]
+The ColognePhoneticTest.java cases are less serious, as the characters are valid ISO-8859-1 (accented German), but given that the rest of the file uses unicode escaps, I think they should be changed too (but add comments to say what they are, e.g. o-umlaut, u-umlaut)</description>
+			<version>1.5</version>
+			<fixedVersion>1.6</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.bm.LanguageGuessingTest.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.BeiderMorseEncoderTest.java</file>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphoneTest.java</file>
+			<file type="M">org.apache.commons.codec.language.ColognePhoneticTest.java</file>
+			<file type="M">org.apache.commons.codec.language.SoundexTest.java</file>
+			<file type="M">org.apache.commons.codec.language.ColognePhonetic.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="132" opendate="2012-01-26 17:28:44" fixdate="2012-03-07 21:04:11" resolution="Fixed">
+		<buginformation>
+			<summary>BeiderMorseEncoder OOM issues</summary>
+			<description>In Lucene/Solr, we integrated this encoder into the latest release.
+Our tests use a variety of random strings, and we have recent jenkins failures
+from some input streams (of length &amp;lt;= 10), using huge amounts of memory (e.g. &amp;gt; 64MB),
+resulting in OOM.
+I&amp;amp;apos;ve created a test case (length is 30 here) that will OOM with -Xmx256M. 
+I haven&amp;amp;apos;t dug into this much as to what&amp;amp;apos;s causing it, but I suspect there might be a bug
+revolving around certain punctuation characters: we didn&amp;amp;apos;t see this happening until
+we beefed up our random string generation to start producing "html-like" strings.</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.bm.PhoneticEngine.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.BeiderMorseEncoder.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.PhoneticEngineTest.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.BeiderMorseEncoderTest.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="is related to">3720</link>
+		</links>
+	</bug>
+	<bug id="130" opendate="2011-09-26 11:59:12" fixdate="2012-03-19 21:00:11" resolution="Fixed">
+		<buginformation>
+			<summary>Base64InputStream.skip skips underlying stream, not output</summary>
+			<description>Base64InputStream.skip() skips within underlying stream, leading to unexpected behaviour.
+The following code will reproduce the issue:
+@Test
+public void testSkip() throws Throwable {
+    InputStream ins =
+            new ByteArrayInputStream("AAAA////".getBytes("ISO-8859-1"));//should decode to 
+{0, 0, 0, 255, 255, 255}
+    Base64InputStream instance = new Base64InputStream(ins);
+    assertEquals(3L, instance.skip(3L)); //should skip 3 decoded characters, or 4 encoded characters
+    assertEquals(255, instance.read()); //Currently returns 3, as it is decoding "A/", not "//" 
+}
+The following code, if added to Base64InputStream, or (BaseNCodecInputStream in the dev build) would resolve the issue:
+@Override
+public long skip(long n) throws IOException {
+    //delegate to read()
+    long bytesRead = 0;
+    while ((bytesRead &amp;lt; n) &amp;amp;&amp;amp; (read() != -1)) 
+{
+        bytesRead++;
+    }
+    return bytesRead;
+}
+More efficient code may be possible.</description>
+			<version>1.5</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.BaseNCodecInputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base32InputStreamTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64InputStreamTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="96" opendate="2010-02-26 04:59:01" fixdate="2012-04-03 17:25:22" resolution="Fixed">
+		<buginformation>
+			<summary>Base64 encode() method is no longer thread-safe, breaking clients using it as a shared BinaryEncoder</summary>
+			<description>Streaming support was added to Base64 in commons-codec 1.4 with CODEC-69. This introduced instance variables to Base64 which means the class can no longer be used as a shared BinaryEncoder instance.
+For example, BinaryEncoder has an interface which could be (and was) used like this with Base64:
+
+
+class Example {
+    private BinaryEncoder encoder = new Base64();
+
+    byte[] someMethod(byte[] data) {
+        try {
+            return encoder.encode(data);
+        }
+        catch (EncoderException e) {
+            throw new RuntimeException(e);
+        }
+    } 
+}
+
+
+Base64 is no longer thread-safe in commons-codec 1.4, so code like the above which is accessed by multiple threads can throw NullPointerException:
+
+java.lang.NullPointerException
+	at org.apache.commons.codec.binary.Base64.encode(Base64.java:469)
+	at org.apache.commons.codec.binary.Base64.encode(Base64.java:937)
+	at ... (application code)
+
+
+Looking at the implementation of Base64, I think making it thread-safe for this kind of usage would be quite tricky. I haven&amp;amp;apos;t attempted to prepare a patch.
+I would be happy if it was indicated in the Javadoc that Base64 is not thread-safe and should not be shared. However, some other users of commons-codec might be more worried about this regression.</description>
+			<version>1.4</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.BaseNCodecOutputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.BaseNCodecInputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.BaseNCodecTest.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base32.java</file>
+			<file type="M">org.apache.commons.codec.binary.BaseNCodec.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base32Test.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">97</link>
+			<link type="Reference" description="relates to">69</link>
+		</links>
+	</bug>
+	<bug id="152" opendate="2012-09-01 16:26:11" fixdate="2012-09-01 16:31:18" resolution="Fixed">
+		<buginformation>
+			<summary>DigestUtils.getDigest(String) looses the orginal exception</summary>
+			<description>DigestUtils.getDigest(String) looses the orginal exception. It should pass the checked exception it catches into the constructor of the new unchecked exception.</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.digest.DigestUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="155" opendate="2012-09-02 17:37:32" fixdate="2012-09-02 17:38:23" resolution="Fixed">
+		<buginformation>
+			<summary>DigestUtils.getDigest(String) should throw IllegalArgumentException instead of RuntimeException</summary>
+			<description>DigestUtils.getDigest(String) should throw IllegalArgumentException instead of RuntimeException</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.digest.DigestUtilsTest.java</file>
+			<file type="M">org.apache.commons.codec.digest.DigestUtils.java</file>
+			<file type="M">org.apache.commons.codec.digest.Sha2Crypt.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="156" opendate="2012-09-02 18:07:27" fixdate="2012-09-02 18:23:32" resolution="Fixed">
+		<buginformation>
+			<summary>DigestUtils: add APIs named after standard alg name SHA-1</summary>
+			<description>DigestUtils already has SHA APIs but they use the "SHA" algorithm name which is not on the standard name list here: http://docs.oracle.com/javase/6/docs/technotes/guides/security/StandardNames.html. 
+SHA-1 is on the list though, so use that for SHA-1 APIs.</description>
+			<version>1.6</version>
+			<fixedVersion>1.7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.digest.DigestUtilsTest.java</file>
+			<file type="M">org.apache.commons.codec.digest.DigestUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="170" opendate="2013-04-30 12:28:45" fixdate="2013-04-30 12:39:00" resolution="Fixed">
+		<buginformation>
+			<summary>Link broken in Metaphone Javadoc </summary>
+			<description>
+---------- Forwarded message ----------
+From: Henri Yandell &amp;lt;flamefew@gmail.com&amp;gt;
+Date: Tue, Apr 30, 2013 at 3:33 AM
+Subject: Re: Bad link in the javadocs
+To: Commons Developers List &amp;lt;dev@commons.apache.org&amp;gt;
+I&amp;amp;apos;m not sure if metacpan is fine, but it has a working link for the package:
+https://metacpan.org/source/MSCHWERN/Text-Metaphone-1.96/
+Hen
+On Mon, Apr 29, 2013 at 3:42 AM, Gary Gregory &amp;lt;garydgregory@gmail.com&amp;gt;wrote:
+&amp;gt; Hi Ron,
+&amp;gt;
+&amp;gt; Thank you for the report. Can you create a JIRA for this please? Do
+&amp;gt; you have a fix perchance?
+&amp;gt;
+&amp;gt; Gary
+&amp;gt;
+&amp;gt; On Apr 29, 2013, at 1:53, Ron Wheeler &amp;lt;rwheeler@artifact-software.com&amp;gt;
+&amp;gt; wrote:
+&amp;gt;
+&amp;gt; &amp;gt;
+&amp;gt; http://commons.apache.org/proper/commons-codec/apidocs/org/apache/commons/codec/language/Metaphone.html
+&amp;gt; &amp;gt;
+&amp;gt; &amp;gt; "Note, that this does not match the algorithm that ships with PHP, or
+&amp;gt; the algorithm found in the Perl Text:Metaphone-1.96 &amp;lt;
+&amp;gt; http://search.cpan.org/%7Emschwern/Text-Metaphone-1.96/Metaphone.pm&amp;gt;. "
+&amp;gt; &amp;gt; references a missing page -
+&amp;gt; http://search.cpan.org/~mschwern/Text-Metaphone-1.96/Metaphone.pm
+&amp;gt; &amp;gt;
+&amp;gt; &amp;gt; Ron
+&amp;gt; &amp;gt;
+&amp;gt; &amp;gt; 
+&amp;gt; &amp;gt; Ron Wheeler
+&amp;gt; &amp;gt; President
+&amp;gt; &amp;gt; Artifact Software Inc
+&amp;gt; &amp;gt; email: rwheeler@artifact-software.com
+&amp;gt; &amp;gt; skype: ronaldmwheeler
+&amp;gt; &amp;gt; phone: 866-970-2435, ext 102
+&amp;gt; &amp;gt;
+&amp;gt;
+&amp;gt; ---------------------------------------------------------------------
+&amp;gt; To unsubscribe, e-mail: dev-unsubscribe@commons.apache.org
+&amp;gt; For additional commands, e-mail: dev-help@commons.apache.org
+&amp;gt;
+&amp;gt;
+ 
+E-Mail: garydgregory@gmail.com | ggregory@apache.org
+Java Persistence with Hibernate, Second Edition
+JUnit in Action, Second Edition
+Spring Batch in Action
+Blog: http://garygregory.wordpress.com
+Home: http://garygregory.com/
+Tweet! http://twitter.com/GaryGregory</description>
+			<version>1.8</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base32.java</file>
+			<file type="M">org.apache.commons.codec.language.Metaphone.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="184" opendate="2014-04-10 06:15:00" fixdate="2014-04-10 13:52:01" resolution="Fixed">
+		<buginformation>
+			<summary>NullPointerException in DoubleMetaPhone.isDoubleMetaphoneEqual when using empty strings</summary>
+			<description>isDoubleMetaphoneEqual does not work with empty strings: The following test throws a NullPointerException:
+
+
+  public void test1() throws Throwable {
+    org.apache.commons.codec.language.DoubleMetaphone var0 = new org.apache.commons.codec.language.DoubleMetaphone();
+    boolean var3 = var0.isDoubleMetaphoneEqual("", "", false);
+  }
+
+</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphoneTest.java</file>
+			<file type="M">org.apache.commons.codec.language.DoubleMetaphone.java</file>
+			<file type="M">org.apache.commons.codec.binary.StringUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="187" opendate="2014-06-10 22:49:23" fixdate="2014-11-01 13:57:27" resolution="Fixed">
+		<buginformation>
+			<summary>Beider Morse Phonetic Matching producing incorrect tokens</summary>
+			<description>I believe the Beider Morse Phonetic Matching algorithm was added in Commons Codec 1.6
+The BMPM algorithm is an EVOLVING algorithm that is currently on version 3.02 though it had been static since version 3.01 dated 19 Dec 2011 (it was first available as opensource as version 1.00 on 6 May 2009).
+I can see nothing in the Commons Codec Docs to say which version of BMPM was implemented so I am not sure if the problem with the algorithm as coded in the Codec is simply an old version or whether there are more basic problems with the implementation.
+How do I determine the version of the algorithm that was implemented in the Commons Codec?
+How do we ensure that the algorithm is updated if/when the BMPM algorithm changes?
+How do we ensure that the algorithm as coded in the Commons Codec is accurate and working as expected?</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.bm.BeiderMorseEncoder.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.PhoneticEngineTest.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.Languages.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.PhoneticEngineRegressionTest.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.Rule.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.Lang.java</file>
+			<file type="M">org.apache.commons.codec.language.bm.PhoneticEngine.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">6058</link>
+		</links>
+	</bug>
+	<bug id="191" opendate="2014-10-28 18:48:41" fixdate="2014-11-01 14:19:29" resolution="Fixed">
+		<buginformation>
+			<summary>Encoding data using Base64OutputStream omits part of the input in some cases</summary>
+			<description>In case Base64OutputStream is used for encoding byte array produced from some strings, an incomplete result (that is inconsistent with both other Base64 implementations and Base64InputStream implementation) is produced. It appears that "s" character is getting omitted if it&amp;amp;apos;s in the end of the string to be encoded; there may be other cases as well.
+Here is the test that allows to reproduce the problem: http://kiberion.net/kibertoad/temp/codec-base64-error.zip</description>
+			<version>1.9</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base32OutputStream.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base64OutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="185" opendate="2014-05-09 18:26:42" fixdate="2014-11-01 16:28:52" resolution="Fixed">
+		<buginformation>
+			<summary>Base64 user-facing docs should say that decode can handle URL Safe encoding</summary>
+			<description>Base64 has static methods specific to doing URLSafe encoding, but has no corresponding URLSafe decoding method.
+This is be cause the decoding table transparently handles both URLSafe and standard alphabets. Unfortunately this is only documented as a javadoc on a private member.
+There should be a mention of it
+
+In the class javadocs
+on the static decode methods
+on the static URLSafe encode methods
+
+</description>
+			<version>1.4</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base64.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="121" opendate="2011-04-21 22:56:38" fixdate="2014-11-05 23:44:39" resolution="Fixed">
+		<buginformation>
+			<summary>QuotedPrintableCodec does not support soft line break per the &amp;apos;quoted-printable&amp;apos; example on Wikipedia</summary>
+			<description>Writing a unit test I discovered that the example Wikipedia uses for quoted-printable data does not decode but instead throws an exception.  
+Their example is here:  http://en.wikipedia.org/wiki/Quoted-printable#Example
+test:
+  String qpdata   = "If you believe that truth=3Dbeauty, then surely=20=\r\n" +
+		    "mathematics is the most beautiful branch of philosophy.";
+  String expected = "If you believe that truth=beauty, then surely " +
+		    "mathematics is the most beautiful branch of philosophy.";
+  assertEquals( expected,  new QuotedPrintableCodec().decode(qpdata) );
+I suppose I could fix if you like but currently I&amp;amp;apos;m not a registered developer.  
+</description>
+			<version>1.5</version>
+			<fixedVersion>1.10</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.net.QuotedPrintableCodecTest.java</file>
+			<file type="M">org.apache.commons.codec.net.QuotedPrintableCodec.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="183" opendate="2014-03-19 12:57:21" fixdate="2014-11-16 16:42:06" resolution="Fixed">
+		<buginformation>
+			<summary>BaseNCodecOutputStream only supports writing EOF on close()</summary>
+			<description>The only way to add the EOF marker when encoding or decoding with the BaseNCodecOutputStream is via the close() function.  The flush() function does not perform this logic, and it is questionable whether or not it should.
+The problem is that I want to write to a Base64OutputStream in the middle of writing to another stream.  That is, I will write some content to a stream, then wrap that stream with a Base64OutputStream to write some more (encoded) content, and then finish writing directly to the original stream (and so not encoded).  Calling flush() on the Base64OutputStream will not write the EOF marker, which means bytes can be lost.  I do not want to call close() on the Base64OutputStream as that will propagate to my original stream, which I need to leave open.
+Ideas for resolving this include the following:
+
+Adding a separate function for writing the final (EOF) bytes without an explicit close (hacky solution).
+Changing the visibility of various functions and members so that I can write my own descendant that provides the functionality I want.  Note that the encode() and decode() functions on BaseNCodec used in the close() routine are package-private, and so I cannot call them within a descendant.
+
+</description>
+			<version>1.6</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.BaseNCodecOutputStream.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="199" opendate="2015-03-19 11:55:40" fixdate="2015-03-26 07:27:12" resolution="Fixed">
+		<buginformation>
+			<summary>Bug in HW rule in Soundex</summary>
+			<description>The Soundex algorithm says that if two characters that map to the same code are separated by H or W, the second one is not encoded.
+However, in the implementation (in Soundex.getMappingCode() line 191), a character that is preceded by two characters that are either H or W, is not encoded, regardless of what the last consonant was.
+Source: http://en.wikipedia.org/wiki/Soundex#American_Soundex</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.Soundex.java</file>
+			<file type="M">org.apache.commons.codec.language.SoundexTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="201" opendate="2015-05-28 12:47:00" fixdate="2015-05-28 13:06:57" resolution="Duplicate">
+		<buginformation>
+			<summary>Base32.HEX_DECODE_TABLE contains the wrong value 32</summary>
+			<description>At line 99:
+            25, 26, 27, 28, 29, 30, 31, 32,                                 // 50-57 O-V
+the value 32 should not be included. That disallows to use &amp;amp;apos;W&amp;amp;apos; as padding with hex table.</description>
+			<version>1.10</version>
+			<fixedVersion></fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base32.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base32Test.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="duplicates">200</link>
+		</links>
+	</bug>
+	<bug id="200" opendate="2015-05-28 12:42:45" fixdate="2015-06-04 14:34:32" resolution="Fixed">
+		<buginformation>
+			<summary>Base32.HEX_DECODE_TABLE contains the wrong value 32</summary>
+			<description>At line 99:
+            25, 26, 27, 28, 29, 30, 31, 32,                                 // 50-57 O-V
+the value 32 should not be included. That disallows to use &amp;amp;apos;W&amp;amp;apos; as padding with hex table.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.binary.Base32.java</file>
+			<file type="M">org.apache.commons.codec.binary.Base32Test.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Duplicate" description="is duplicated by">201</link>
+		</links>
+	</bug>
+	<bug id="207" opendate="2016-05-13 20:38:42" fixdate="2016-05-13 20:42:12" resolution="Fixed">
+		<buginformation>
+			<summary>Charsets Javadoc breaks build when using Java 8</summary>
+			<description>Some Javadocs in Charsets use a period instead of a hash to separate class and field in @link references.
+Specifically:
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 40.598 s
+[INFO] Finished at: 2016-05-13T13:33:29-07:00
+[INFO] Final Memory: 67M/658M
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-site-plugin:3.4:site (default-site) on project commons-codec: Error generating maven-javadoc-plugin:2.10.3:javadoc:
+[ERROR] Exit code: 1 - E:\vcs\svn\apache\commons\trunks-proper\codec\src\main\java\org\apache\commons\codec\Charsets.java:96: error: reference not found
+[ERROR] * @deprecated Use Java 7&amp;amp;apos;s {@link java.nio.charset.StandardCharsets.ISO_8859_1} instead
+[ERROR] ^
+[ERROR] E:\vcs\svn\apache\commons\trunks-proper\codec\src\main\java\org\apache\commons\codec\Charsets.java:107: error: reference not found
+[ERROR] * @deprecated Use Java 7&amp;amp;apos;s {@link java.nio.charset.StandardCharsets.US_ASCII} instead
+[ERROR] ^
+[ERROR] E:\vcs\svn\apache\commons\trunks-proper\codec\src\main\java\org\apache\commons\codec\Charsets.java:119: error: reference not found
+[ERROR] * @deprecated Use Java 7&amp;amp;apos;s {@link java.nio.charset.StandardCharsets.UTF_16} instead
+[ERROR] ^
+[ERROR] E:\vcs\svn\apache\commons\trunks-proper\codec\src\main\java\org\apache\commons\codec\Charsets.java:130: error: reference not found
+[ERROR] * @deprecated Use Java 7&amp;amp;apos;s {@link java.nio.charset.StandardCharsets.UTF_16BE} instead
+[ERROR] ^
+[ERROR] E:\vcs\svn\apache\commons\trunks-proper\codec\src\main\java\org\apache\commons\codec\Charsets.java:141: error: reference not found
+[ERROR] * @deprecated Use Java 7&amp;amp;apos;s {@link java.nio.charset.StandardCharsets.UTF_16LE} instead
+[ERROR] ^
+[ERROR] E:\vcs\svn\apache\commons\trunks-proper\codec\src\main\java\org\apache\commons\codec\Charsets.java:152: error: reference not found
+[ERROR] * @deprecated Use Java 7&amp;amp;apos;s {@link java.nio.charset.StandardCharsets.UTF_8}
+[ERROR] ^
+[ERROR]
+[ERROR] Command line was: "C:\Program Files\Java\jdk1.8.0_91\jre\..\bin\javadoc.exe" @options @packages
+[ERROR]
+[ERROR] Refer to the generated Javadoc files in &amp;amp;apos;E:\vcs\svn\apache\commons\trunks-proper\codec\target\site\apidocs&amp;amp;apos; dir.
+[ERROR] -&amp;gt; [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+
+</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.Charsets.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="209" opendate="2016-05-14 00:20:54" fixdate="2016-05-14 00:22:20" resolution="Fixed">
+		<buginformation>
+			<summary>Javadoc for SHA-224 DigestUtils methods should mention Java 1.8.0 restriction instead of 1.4.0</summary>
+			<description>Javadoc for SHA-224 DigestUtils should mention Java 1.8.0 restriction instead of 1.4.0.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.digest.DigestUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="219" opendate="2016-05-16 21:43:53" fixdate="2016-05-16 22:03:40" resolution="Fixed">
+		<buginformation>
+			<summary>Don&amp;apos;t deprecate Charsets Charset constants in favor of Java 7&amp;apos;s java.nio.charset.StandardCharsets</summary>
+			<description>Don&amp;amp;apos;t deprecate Charsets Charset constants in favor of Java 7&amp;amp;apos;s java.nio.charset.StandardCharsets. 
+Since we still require Java 6, we should not deprecate.
+Offer better comments.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.Charsets.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Reference" description="relates to">178</link>
+		</links>
+	</bug>
+	<bug id="221" opendate="2016-05-17 23:27:49" fixdate="2016-05-19 15:34:56" resolution="Fixed">
+		<buginformation>
+			<summary>HmacUtils.updateHmac calls reset() unnecessarily</summary>
+			<description>The HmacUtils.updateHmac() methods call reset().
+This means that it&amp;amp;apos;s not possible to build up a digest using multiple such calls.
+The only useful operation that can be performed afterwards is to call one of the Mac.doFinal() methods.
+Unfortunately it&amp;amp;apos;s probably too late to change this.
+However it should at least be documented.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.digest.HmacUtils.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="225" opendate="2016-09-13 10:24:38" fixdate="2016-09-14 12:15:31" resolution="Fixed">
+		<buginformation>
+			<summary>InputStream not closed</summary>
+			<description>After running static code analysis on common codecs we discovered that it leaks file descriptors. The relevant locations are:
+
+DaitchMokotoffSoundex -&amp;gt; the static initializer on line 229
+Rule -&amp;gt; the static initializer on line 212 and the parseRules() method on line 438.
+
+patch provided via github pull request.
+This issue is relevant for web app deployments on OSes (like windows) that lock the files if ther eare open streams to them, and will prevent application undeployment.</description>
+			<version>1.10</version>
+			<fixedVersion>1.11</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.apache.commons.codec.language.bm.Rule.java</file>
+			<file type="M">org.apache.commons.codec.language.DaitchMokotoffSoundex.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

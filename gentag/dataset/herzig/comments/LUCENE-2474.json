@@ -1,0 +1,1424 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12465068",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068",
+  "key": "LUCENE-2474",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314822",
+        "id": "12314822",
+        "description": "Major release after 3.x",
+        "name": "3.1",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2011-03-31"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "11346",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "5.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+      "name": "mikemccand",
+      "key": "mikemccand",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Michael McCandless",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25536",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+      "name": "kimchy",
+      "key": "kimchy",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shay Banon",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+      "name": "kimchy",
+      "key": "kimchy",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Shay Banon",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2474/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@4bbaaa9e[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2895d85f[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@27b2924f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@21e3f1c6[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@51021ba5[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@79e5778f[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4af6a216[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@7425174f[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@353bf55d[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@67b0b57a[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@18294d88[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@44eabead[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:27:02 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-01-25T23:10:33.707+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2474/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "created": "2010-05-20T21:28:46.928+0000",
+    "updated": "2022-08-28T12:27:02.015+0000",
+    "timeoriginalestimate": null,
+    "description": "Allow to plug in a Cache Eviction Listener to IndexReader to eagerly clean custom caches that use the IndexReader (getFieldCacheKey).\n\nA spin of: https://issues.apache.org/jira/browse/LUCENE-2468. Basically, its make a lot of sense to cache things based on IndexReader#getFieldCacheKey, even Lucene itself uses it, for example, with the CachingWrapperFilter. FieldCache enjoys being called explicitly to purge its cache when possible (which is tricky to know from the \"outside\", especially when using NRT - reader attack of the clones).\n\nThe provided patch allows to plug a CacheEvictionListener which will be called when the cache should be purged for an IndexReader.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12469097",
+        "id": "12469097",
+        "filename": "LUCENE-2474.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-01-23T18:45:35.116+0000",
+        "size": 20949,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12469097/LUCENE-2474.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12467938",
+        "id": "12467938",
+        "filename": "LUCENE-2474.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-01-10T23:45:25.221+0000",
+        "size": 10623,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12467938/LUCENE-2474.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12445103",
+        "id": "12445103",
+        "filename": "LUCENE-2474.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+          "name": "kimchy",
+          "key": "kimchy",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shay Banon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2010-05-20T21:29:48.467+0000",
+        "size": 5943,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12445103/LUCENE-2474.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12468769",
+        "id": "12468769",
+        "filename": "LUCENE-2574.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+          "name": "mikemccand",
+          "key": "mikemccand",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Michael McCandless",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2011-01-19T16:58:33.443+0000",
+        "size": 43861,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12468769/LUCENE-2574.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12469417",
+        "id": "12469417",
+        "filename": "MapBackedSet.java",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+          "name": "kimchy",
+          "key": "kimchy",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Shay Banon",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-01-26T12:36:25.876+0000",
+        "size": 1074,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12469417/MapBackedSet.java"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Allow to plug in a Cache Eviction Listener to IndexReader to eagerly clean custom caches that use the IndexReader (getFieldCacheKey)",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12869778",
+          "id": "12869778",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "First revision of the patch, tell me what you think... .",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2010-05-20T21:29:48.533+0000",
+          "updated": "2010-05-20T21:29:48.533+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12870559",
+          "id": "12870559",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Should we rename this to \"CloseEventListener\"?  Ie, when an IR is closed it'll notify those subscribers who asked to find out?\n\nAlso, shouldn't the FieldCache's listener be created/installed from FieldCache, not from IR?  Ie, when FieldCache creates an entry it should at that point ask the reader to notify it when that reader is closed?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-05-24T10:29:53.637+0000",
+          "updated": "2010-05-24T10:29:53.637+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978371",
+          "id": "12978371",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "There's a lot of little issues here I think:\n  - \"close event\" doesn't really describe the behavior since an event is not generated on every close of every reader as one might expect.\n  - This implementation is problematic since higher level readers don't propagate the event listeners to subreaders... i.e. I need to walk the tree myself and add add a listener to every reader, and on a reopen() I would need to walk the tree again and add listeners only to the new readers that have a new coreKey.\n\nWe've talked before about putting caches directly on the readers - that still seems like the most straightforward approach?\nWe really need one cache that doesn't care about deletions, and one cache that does.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-06T15:42:05.616+0000",
+          "updated": "2011-01-06T15:42:05.616+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978391",
+          "id": "12978391",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. \"close event\" doesn't really describe the behavior since an event is not generated on every close of every reader as one might expect.\n\nRight, it's really more like a \"segment is unloaded\" event.  Ie a single segment can have many cloned/reopened SegmentReaders, all sharing the same \"core\" (= same cache entry eg in FieldCache)... when this event occurs in means all SegmentReaders for a given segment have been closed.  But, then we also need to generate this for toplevel readers, since [horribly] such readers are still allowed into eg the FieldCache.\n\nbq. This implementation is problematic since higher level readers don't propagate the event listeners to subreaders... i.e. I need to walk the tree myself and add add a listener to every reader, and on a reopen() I would need to walk the tree again and add listeners only to the new readers that have a new coreKey.\n\nI think we should just fix that, ie so your listener is propagated to the subs and to reopened readers (and their subs and their reopens, etc.).\n\n{quote}\nWe've talked before about putting caches directly on the readers - that still seems like the most straightforward approach?\n{quote}\n\nThis would be great, but I'm not sure I'd call it straightforward :)  I think a separate baby step (ie this proposed approach) is fine for today?\n\nbq. We really need one cache that doesn't care about deletions, and one cache that does.\n\nAnd maybe norms, since they too can change in cloned SegmentReaders that otherwise share the same core.  Or, maybe we make the \"core\" a first class object, and you interact with it to cache things that don't care about changes to deletions/norms.  Or, the core could just the first SegmentReader to be opened on this segment.  Or something.\n\nI think Earwin has also worked out some sort of caching model w/ IndexReaders... Earwin, how do you handle timely eviction?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-06T16:18:27.054+0000",
+          "updated": "2011-01-06T16:18:27.054+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978480",
+          "id": "12978480",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Right, I was thinking that its a low level API that you can just add it to the low level readers, but I agree, it will be nicer to have it on the high level as well. Regarding the close method name, I guess we can name it similar to the FieldCache one, maybe purge?\n\n> We've talked before about putting caches directly on the readers - that still seems like the most straightforward approach?\n\nnot sure I understand that. Do you mean getting FieldCache into the readers? And then what about cached filters? And other custom caching constructs that rely on the same mechanism as the CachingWrapperFilter? \n\nI think that if one implements such caching, its an advance enough feature where you should know how to handle deletes and other tidbits (if you need to).\n\n> We really need one cache that doesn't care about deletions, and one cache that does.\n\nIsn't that up to the cache to decide? That cache can be anything (internally implemented in Lucene or externally) that follows the mechanism of caching based on (segment) readers. As long as there are constructs to get the deleted docs to handle deletes (for example), then the implementation can use it.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-06T19:58:50.318+0000",
+          "updated": "2011-01-06T19:58:50.318+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978493",
+          "id": "12978493",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> > We've talked before about putting caches directly on the readers - that still seems like the most straightforward approach?\n> not sure I understand that. Do you mean getting FieldCache into the readers? And then what about cached filters?\n\nIt would be a cache of anything... one element of that cache would be the FieldCache, there could be one for filters, or one entry per-filter.\nedit: Maybe a better way to think about it is like a ServletContext or something - it's just a way to attach anything arbitrary to a reader.\n\n> > We really need one cache that doesn't care about deletions, and one cache that does.\n> Isn't that up to the cache to decide?\n\nNot with this current patch, as there is no mechanism to get a callback when you do care about deletes.  If I want to cache something that depends on deletions, I want to purge that cache when the actual reader is closed (as opposed to the reader's core cache key that is shared amongst all readers that just have different deletions).  So if we go a \"close event\" route, we really want two different events... one for the close of a reader (i.e. deleted matter), and one for the close of the segment (deletes don't matter).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-06T20:27:10.014+0000",
+          "updated": "2011-01-06T20:29:53.755+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978719",
+          "id": "12978719",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> It would be a cache of anything... one element of that cache would be the FieldCache, there could be one for filters, or one entry per-filter.\n> edit: Maybe a better way to think about it is like a ServletContext or something - it's just a way to attach anything arbitrary to a reader.\n\nGot you. My personal taste is to try and keep those readers as lightweight as possible, and have the proper constructs in place to allow to externally use them for caching, without having them manage it as well.\n\n> Not with this current patch, as there is no mechanism to get a callback when you do care about deletes. If I want to cache something that depends on deletions, I want to purge that cache when the actual reader is closed (as opposed to the reader's core cache key that is shared amongst all readers that just have different deletions). So if we go a \"close event\" route, we really want two different events... one for the close of a reader (i.e. deleted matter), and one for the close of the segment (deletes don't matter).\n\nI think that a cache that is affected by deletes is a problematic cache to begin with, so was thinking that maybe it should be discouraged by not allowing for it. Especially with NRT. My idea was to simply expand the purge capability that the FC gets for free to other external custom components.\n\nAlso, if we did have a type safe separation between segment readers and compound readers, I would not have added the ability to register a listener on the compound readers, just the segment readers, as this will encourage people to write caches that only work on segment readers (since the registration for the \"purge event\" will happen within the cache, and it should work only with segment readers). That was why my patch does not take compound readers into account.\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-07T10:19:40.801+0000",
+          "updated": "2011-01-07T10:19:40.801+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978889",
+          "id": "12978889",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. My idea was to simply expand the purge capability that the FC gets for free to other external custom components.\n\nI think that's a good baby step, for this issue, today, just for segment readers.\n\nSeparately, eventually, we can tackle the bigger challenge of allowing caching on any reader.\n\n{quote}\nAlso, if we did have a type safe separation between segment readers and compound readers, I would not have added the ability to register a listener on the compound readers, just the segment readers, as this will encourage people to write caches that only work on segment readers (since the registration for the \"purge event\" will happen within the cache, and it should work only with segment readers). That was why my patch does not take compound readers into account.\n{quote}\n\nI very much want to get type safe IndexReaders done before 4.0...\n\nBut: I think we'd want to have composite reader just forward the registration down to the atomic readers?  (And, forward on reopen).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-07T18:00:30.564+0000",
+          "updated": "2011-01-07T18:00:30.564+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978975",
+          "id": "12978975",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. But: I think we'd want to have composite reader just forward the registration down to the atomic readers? (And, forward on reopen).\n\nI am not sure that you would want to do it. Any caching layer or an external component that is properly written would work on the low level segment readers, it will not even compile against compound readers. This will help direct people to write proper code and dealing only with segment readers.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-07T21:33:30.914+0000",
+          "updated": "2011-01-07T21:33:30.914+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12978982",
+          "id": "12978982",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": ">  > But: I think we'd want to have composite reader just forward the registration down to the atomic readers? (And, forward on reopen).\n\n+1\n\n> >I am not sure that you would want to do it.\n\nSo a user doesn't have to walk the tree and re-register it's listeners with every new segment on a reopen.\n\n> Any caching layer or an external component that is properly written would work on the low level segment readers\n\nIt's completely proper to cache stuff wrt the top level reader - Solr does so (and will continue to provide that option) .  Some people update their index infrequently, and the performance gains of having cached information on a unified view of the index is a win for them.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-07T21:56:03.845+0000",
+          "updated": "2011-01-07T21:56:03.845+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12979700",
+          "id": "12979700",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I started to implement the \"forwards to all subs and to all reopened readers\" and... it's kinda hairy.  I mean there are TONS of places where we make new readers (Earwin's working on improving this, I think, under LUCENE-2355).\n\nSo then I wondered: what if we just make this a static method, eg on IndexReader, add/removeReaderFinishedListener?  (Or we could put it on FieldCache).  That'd be a tiny change...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-10T19:24:36.705+0000",
+          "updated": "2011-01-10T19:24:36.705+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12979720",
+          "id": "12979720",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jasonrutherglen",
+            "name": "jasonrutherglen",
+            "key": "jasonrutherglen",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jason Rutherglen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "{quote}make this a static method, eg on IndexReader, add/removeReaderFinishedListener? (Or we could put it on FieldCache). That'd be a tiny change...{quote}\n\nThis makes the most sense however it feels temporary as should should probably move to a unified IWC/IRC config where all parameters are set and shared for writers and readers?  This way we can eventually coordinate things like IO scheduling, eg, LUCENE-2793's IOContext.  Also shouldn't there simply be a reader event listener and perhaps even a writer event listener?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=jasonrutherglen",
+            "name": "jasonrutherglen",
+            "key": "jasonrutherglen",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Jason Rutherglen",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-10T19:58:54.347+0000",
+          "updated": "2011-01-10T19:58:54.347+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12979733",
+          "id": "12979733",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think we can generalize this to any event and to writer in the future... for today, just letting something external be notified when a reader is \"gone\", just as FieldCache is privately notified today, is a good baby step.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-10T20:16:55.542+0000",
+          "updated": "2011-01-10T20:16:55.542+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12979855",
+          "id": "12979855",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, here's a patch exposing the readerFinishedListeners as static methods on IndexReader.\n\nIt was also nice to consolidate all the various places we were previously purging the FieldCache.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-10T23:45:25.270+0000",
+          "updated": "2011-01-10T23:45:25.270+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12979888",
+          "id": "12979888",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Earwin's working on improving this, I think, under LUCENE-2355\nI stalled, and then there were just so many changes under trunk, so I have to restart now :) Thanks for another kick.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-11T01:00:07.862+0000",
+          "updated": "2011-01-11T01:00:07.862+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12982509",
+          "id": "12982509",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. OK, here's a patch exposing the readerFinishedListeners as static methods on IndexReader.\n\nI think we should use a CopyOneWriteArrayList so calling the listeners will not happen under a global synchronize block. If maintaining set behavior is required, then I can patch with a ConcurrentHashSet implementation or we can simply replace it with a CHM with PRESENT, or any other solution that does not require calling the listeners under a global sync block.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-17T07:23:35.089+0000",
+          "updated": "2011-01-17T07:23:35.089+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12982604",
+          "id": "12982604",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Ahh, I get it -- invoking the listeners (on cache evict) is dangerous to do under a global lock since they could conceivably be costly.\n\nI had switched to Set to try to prevent silliness in the event that an app adds same listener over & over (w/o removing it), and also to not have O(N^2) cost when removing listeners.  I mean, it is an expert API, but I still think we should attempt to be defensive against silliness?\n\nHow about CHM?  (There is not builtin CHS, right?  And HS just wraps an HM anyway....).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-17T11:44:48.812+0000",
+          "updated": "2011-01-17T11:44:48.812+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12982695",
+          "id": "12982695",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Yea, I got the reasoning for Set, we can use that, CHM with PRESENT. If you want, I can attach a simple MapBackedSet that makes any Map a Set.\n\nStill, I think that using CopyOnWriteArrayList is best here. I don't think that adding and removing listeners is something that will be done often in an app. But I might be mistaken. In this case, traversal over listeners is much better on CopyOnWriteArrayList compared to CHM.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-17T16:25:14.679+0000",
+          "updated": "2011-01-17T16:25:14.679+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12982761",
+          "id": "12982761",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Still, I think that using CopyOnWriteArrayList is best here.\n\nAgree - I think we should optimize for good/correct behavior.\n\nI'd like even more for there to be just a single CopyOnWriteArrayList per \"top-level\" reader that is then propagated to all sub/segment readers, including new ones on a reopen.  But I guess Mike indicated that was currently too hard/hairy.\n\nThe static is really non-optimal though - among other problems, it requires systems with multiple readers (and wants to do different things with different readers, such as maintain separate caches) to figure out what top-level reader a segment reader is associated with.  And given that we are dealing with IndexReader instances in the callbacks, and not ReaderContext objects, this seems impossible?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-17T17:45:05.777+0000",
+          "updated": "2011-01-17T17:45:05.777+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12983159",
+          "id": "12983159",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Still, I think that using CopyOnWriteArrayList is best here.\n\nOK I'll switch back to COWAL... it makes me nervous though.  I like\nbeing defensive and the added cost of CHM iteration really should be\nnegligible here.\n\n{quote}\nI'd like even more for there to be just a single CopyOnWriteArrayList per \"top-level\" reader that is then propagated to all sub/segment readers, including new ones on a reopen. But I guess Mike indicated that was currently too hard/hairy.\n{quote}\n\nThis did get hairy... eg if you make a MultiReader (or ParallelReader)\nw/ subs... what should happen to their listeners?  Ie what if the subs\nalready have listeners enrolled?\n\nIt also spooked me that apps may think they have to re-register after\nre-open (if we stick w/ ArrayList) since then the list'd just grow...\nit's trappy.\n\nAnd, if you pull an NRT reader from IW (which is what reopen does\nunder the hood for an NRT reader), how to share its listeners?  Ie,\nwe'd have to add a setter to IW as well, so it's also \"single source\"\n(propagates on reopen).\n\nThis is why I fell back to a simple static as the baby step for now.\n\n{quote}\nThe static is really non-optimal though - among other problems, it requires systems with multiple readers (and wants to do different things with different readers, such as maintain separate caches) to figure out what top-level reader a segment reader is associated with. And given that we are dealing with IndexReader instances in the callbacks, and not ReaderContext objects, this seems impossible?\n{quote}\n\nReaderContext doesn't really make sense here?\n\nIe, the listener is invoked when any/all composite readers sharing a\ngiven segment have now closed (ie when the RC for that segment's core\ndrops to 0), or when a composite reader is closed.\n\nAlso, in practice, is it really so hard for the app to figure out\nwhich SR goes to which of their caches?  Isn't this \"typically\" a\ncontainsKey against the app level caches...?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-18T11:40:26.346+0000",
+          "updated": "2011-01-18T11:40:26.346+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12983793",
+          "id": "12983793",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "New patch -- cut back to COWAL.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-19T16:58:33.508+0000",
+          "updated": "2011-01-19T16:58:33.508+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12983818",
+          "id": "12983818",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq.  eg if you make a MultiReader (or ParallelReader) w/ subs... what should happen to their listeners?\n\nThis doesn't have to be a super-flexible public API - it's clearly expert level and we can impose limitations that make sense.\nA MultiReader is just a wrapper - you don't reopen it, so it could just start off with an empty listener list, the subs could all retain their listener lists and an addListener() could just delegate to the contained readers.\n\nbq. ReaderContext doesn't really make sense here?\n\nRight, it doesn't (which circles around to the fact that the callbacks should be set on the top-reader)\n\nbq. Isn't this \"typically\" a containsKey against the app level caches...?\n\nIn a (solr) multi-core environment, you don't know *which* caches to check, or even how to get to those caches.\nYou would either need to add *all* of them and check all of them on a purge (which has other problems, including performance\nproblems for highly multi-tenanted uses where people have thousands of cores), or have one big static cache (which has other problems such as not being configurable per-core).\n\nI'm not against this patch, I'm just pointing out that the \"staticness\" of it (which I hope we can continue to move away from over time) severely limits it's usefulness, and it doesn't represent incremental progress if we do want to get rid of statics.\n\nActually, I am against the last patch you posted, as it clearly has nothing to do with this issue ;-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-19T18:06:25.063+0000",
+          "updated": "2011-01-19T18:06:25.063+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12984280",
+          "id": "12984280",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Actually, I am against the last patch you posted, as it clearly has nothing to do with this issue \n\nWoops!  Heh.\n\nbq. A MultiReader is just a wrapper - you don't reopen it, so it could just start off with an empty listener list, the subs could all retain their listener lists and an addListener() could just delegate to the contained readers.\n\nWell, it does have a reopen (reopens the subs & wraps in a new MR), but I guess delegation would work for MR.  And, same for ParallelReader.\n\nAnd I think the NRT case should work fine, since we don't expose IW.getReader anymore (hmm -- this was never backported to 3.x?) -- if you new IndexReader(IW), it creates a single collection holding all listeners, and then shares it w/ all SRs.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-20T16:56:39.987+0000",
+          "updated": "2011-01-20T16:56:39.987+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12985392",
+          "id": "12985392",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Patch (for trunk), with non-static solution.\n\nI cut back to sync(HashSet) because it's easy, now, for dups to be added.  EG the collection is shared to all sub-readers, and FC registers its listener to all subs... and, each of FC's typed caches will register the listener.\n\nDirReader shares the collection to all subs and to all reopens.\n\nMultiReader, ParReader delegate (but also track/invoke their own listeners).\n\nI added a private reader listeners collection to IW, which is only used to make sure all NRT readers opened from the writer share the same collection (ie, this is not a public API in IW).\n\nSubclasses of IR are now responsible for initializing the reader listeners collection (if the add/removeReaderFinishedListener could be invoked).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-23T18:45:35.154+0000",
+          "updated": "2011-01-23T18:45:35.154+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12986983",
+          "id": "12986983",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "A MapBackedSet implementation, that can wrap a CHM to have a concurrent set implementation. We can consider using that instead of sync set and copy on read when notifying listeners.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=kimchy",
+            "name": "kimchy",
+            "key": "kimchy",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Shay Banon",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-01-26T12:36:25.924+0000",
+          "updated": "2011-01-26T12:36:25.924+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12987261",
+          "id": "12987261",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "OK, I cutover to MBS(CHM)!  Thanks Shay.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-01-26T22:24:45.464+0000",
+          "updated": "2011-01-26T22:24:45.464+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/12987267",
+          "id": "12987267",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I would make the map wrapper final, else no comments for now, but I want to look into the code, if for perf reasons more AbstractSet methods should be overridden. Is this map backed set some impl from e.g. Commons Collect or Google Collect?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2011-01-26T22:36:38.074+0000",
+          "updated": "2011-01-26T22:36:38.074+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/13013365",
+          "id": "13013365",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Bulk close for 3.1",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=gsingers",
+            "name": "gsingers",
+            "key": "gsingers",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Grant Ingersoll",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-03-30T15:50:06.026+0000",
+          "updated": "2011-03-30T15:50:06.026+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12465068/comment/17588673",
+          "id": "17588673",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#3548|https://github.com/apache/lucene/issues/3548].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:27:02.015+0000",
+          "updated": "2022-08-28T12:27:02.015+0000"
+        }
+      ],
+      "maxResults": 29,
+      "total": 29,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04qd3:",
+    "customfield_12314139": null
+  }
+}

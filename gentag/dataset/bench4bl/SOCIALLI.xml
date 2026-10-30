@@ -1,0 +1,62 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="SOCIALLI">
+	<bug id="14" opendate="2011-12-22 08:01:39" fixdate="2012-01-03 11:34:21" resolution="Fixed">
+		<buginformation>
+			<summary>People search URI malformed causes LinkedIn to response with 400 Bad Request Error</summary>
+			<description>URI for HTTP GET request for people search on LinkedIn REST API is badly formed.
+It adds a &amp;amp; sign before keywords field and adds one extra &amp;amp; sign after the values that causes the 400 Bad Request Error response from LinkedIn </description>
+			<version>1.0.0.M4</version>
+			<fixedVersion>1.0.0.M5</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.linkedin.api.impl.AbstractTemplate.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.ProfileTemplate.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.NetworkUpdateTemplateTest.java</file>
+			<file type="M">org.springframework.social.linkedin.api.SearchParameters.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.NetworkUpdateTemplate.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.ProfileTemplateTest.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.JobTemplateTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="21" opendate="2012-12-03 04:59:39" fixdate="2013-04-26 08:00:24" resolution="Complete">
+		<buginformation>
+			<summary>NetworkUpdateOperations.createNetworkUpdate uses wrong HTTP request method</summary>
+			<description>NetworkUpdateTemplate.createNetworkUpdate uses PUT while LinkedIn requires a POST request for this kind of operation causing error "405 Method Not Allowed". (see post-network-update)
+</description>
+			<version>1.0.0.RC1</version>
+			<fixedVersion>1.0.0.RC2</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.linkedin.api.impl.NetworkUpdateTemplateTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="31" opendate="2013-08-26 12:37:23" fixdate="2014-04-21 09:48:32" resolution="Complete">
+		<buginformation>
+			<summary>Error in JSON mapping when call to network updates</summary>
+			<description>In network updates the field likable is mapped with LinkedInNetworkUpdateMixin, but the property has an typing error. 
+The correct way is "likable" but the property is typed "likeable".</description>
+			<version>1.0.0.RC2</version>
+			<fixedVersion>1.0.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.linkedin.api.impl.json.LinkedInNetworkUpdateMixin.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.AbstractLinkedInApiTest.java</file>
+			<file type="M">org.springframework.social.linkedin.api.impl.NetworkUpdateTemplateTest.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="33" opendate="2013-09-24 12:42:06" fixdate="2014-04-21 15:40:22" resolution="Complete">
+		<buginformation>
+			<summary>Error while performing commentOnNetworkUpdate</summary>
+			<description>Getting an HTTP 405 when called commentOnNetworkUpdate.</description>
+			<version>1.0.0.RC3</version>
+			<fixedVersion>1.0.0.RELEASE</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.springframework.social.linkedin.api.impl.NetworkUpdateTemplate.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

@@ -1,0 +1,410 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<bugrepository name="WFMP">
+	<bug id="14" opendate="2015-09-09 13:20:25" fixdate="2015-09-21 17:04:21" resolution="Done">
+		<buginformation>
+			<summary>Cannot communicate with the server if port offset property is set</summary>
+			<description>In Hawkular Metrics, we use the Wildfly Maven Plugin to deploy our app and test its REST interface.
+It is configured as follows:
+
+
+
+
+
+
+&amp;lt;properties&amp;gt;
+
+
+
+
+  &amp;lt;wildfly-maven-plugin.skip&amp;gt;false&amp;lt;/wildfly-maven-plugin.skip&amp;gt;
+
+
+
+
+  &amp;lt;!-- IMPORTANT: The port must be the port offset + 8080. --&amp;gt;
+
+
+
+
+  &amp;lt;base-uri&amp;gt;127.0.0.1:55977/hawkular/metrics&amp;lt;/base-uri&amp;gt;
+
+
+
+
+  &amp;lt;wildfly.port.offset&amp;gt;47897&amp;lt;/wildfly.port.offset&amp;gt;
+
+
+
+
+  &amp;lt;!-- IMPORTANT: The management port must be the port offset + 9990. --&amp;gt;
+
+
+
+
+  &amp;lt;wildfly.management.port&amp;gt;57887&amp;lt;/wildfly.management.port&amp;gt;
+
+
+
+
+  &amp;lt;wildfly.logging.console.level&amp;gt;ERROR&amp;lt;/wildfly.logging.console.level&amp;gt;
+
+
+
+
+  &amp;lt;wildfly.logging.file.level&amp;gt;ERROR&amp;lt;/wildfly.logging.file.level&amp;gt;
+
+
+
+
+  &amp;lt;terminal-event.timeout&amp;gt;10&amp;lt;/terminal-event.timeout&amp;gt;
+
+
+
+
+&amp;lt;/properties&amp;gt;
+
+
+
+
+
+
+and
+
+
+
+
+
+
+&amp;lt;plugin&amp;gt;
+
+
+
+
+  &amp;lt;groupId&amp;gt;org.wildfly.plugins&amp;lt;/groupId&amp;gt;
+
+
+
+
+  &amp;lt;artifactId&amp;gt;wildfly-maven-plugin&amp;lt;/artifactId&amp;gt;
+
+
+
+
+  &amp;lt;configuration&amp;gt;
+
+
+
+
+    &amp;lt;skip&amp;gt;${wildfly-maven-plugin.skip}&amp;lt;/skip&amp;gt;
+
+
+
+
+    &amp;lt;port&amp;gt;${wildfly.management.port}&amp;lt;/port&amp;gt;
+
+
+
+
+  &amp;lt;/configuration&amp;gt;
+
+
+
+
+  &amp;lt;executions&amp;gt;
+
+
+
+
+    &amp;lt;execution&amp;gt;
+
+
+
+
+      &amp;lt;id&amp;gt;start-wildfly&amp;lt;/id&amp;gt;
+
+
+
+
+      &amp;lt;phase&amp;gt;pre-integration-test&amp;lt;/phase&amp;gt;
+
+
+
+
+      &amp;lt;goals&amp;gt;
+
+
+
+
+        &amp;lt;goal&amp;gt;start&amp;lt;/goal&amp;gt;
+
+
+
+
+      &amp;lt;/goals&amp;gt;
+
+
+
+
+      &amp;lt;configuration&amp;gt;
+
+
+
+
+        &amp;lt;serverConfig&amp;gt;standalone-test.xml&amp;lt;/serverConfig&amp;gt;
+
+
+
+
+        &amp;lt;javaOpts&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Xms64m&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Xmx512m&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Xss256k&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Djava.net.preferIPv4Stack=true&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dsun.rmi.dgc.client.gcInterval=3600000&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dsun.rmi.dgc.server.gcInterval=3600000&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Djboss.socket.binding.port-offset=${wildfly.port.offset}&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Djboss.server.config.dir=${project.build.directory}/wildfly-configuration&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dcassandra.keyspace=${cassandra.keyspace}&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dcassandra.resetdb&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dhawkular.metrics.waitForService&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dhawkular.metrics.use-virtual-clock=true&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dhawkular.terminal-event.timeout=${terminal-event.timeout}&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Dhawkular.metrics.allowed-cors-origins=http://test.hawkular.org,https://secure.hawkular.io&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Xdebug&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+          &amp;lt;javaOpt&amp;gt;-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8787&amp;lt;/javaOpt&amp;gt;
+
+
+
+
+        &amp;lt;/javaOpts&amp;gt;
+
+
+
+
+      &amp;lt;/configuration&amp;gt;
+
+
+
+
+    &amp;lt;/execution&amp;gt;
+
+
+
+
+    &amp;lt;execution&amp;gt;
+
+
+
+
+      &amp;lt;id&amp;gt;deploy-webapp&amp;lt;/id&amp;gt;
+
+
+
+
+      &amp;lt;phase&amp;gt;pre-integration-test&amp;lt;/phase&amp;gt;
+
+
+
+
+      &amp;lt;goals&amp;gt;
+
+
+
+
+        &amp;lt;goal&amp;gt;deploy-artifact&amp;lt;/goal&amp;gt;
+
+
+
+
+      &amp;lt;/goals&amp;gt;
+
+
+
+
+      &amp;lt;configuration&amp;gt;
+
+
+
+
+        &amp;lt;groupId&amp;gt;${project.groupId}&amp;lt;/groupId&amp;gt;
+
+
+
+
+        &amp;lt;artifactId&amp;gt;hawkular-metrics-api-jaxrs&amp;lt;/artifactId&amp;gt;
+
+
+
+
+        &amp;lt;name&amp;gt;hawkular-metric-rest.war&amp;lt;/name&amp;gt;
+
+
+
+
+      &amp;lt;/configuration&amp;gt;
+
+
+
+
+    &amp;lt;/execution&amp;gt;
+
+
+
+
+    &amp;lt;execution&amp;gt;
+
+
+
+
+      &amp;lt;id&amp;gt;stop-wildfly&amp;lt;/id&amp;gt;
+
+
+
+
+      &amp;lt;phase&amp;gt;post-integration-test&amp;lt;/phase&amp;gt;
+
+
+
+
+      &amp;lt;goals&amp;gt;
+
+
+
+
+        &amp;lt;goal&amp;gt;shutdown&amp;lt;/goal&amp;gt;
+
+
+
+
+      &amp;lt;/goals&amp;gt;
+
+
+
+
+    &amp;lt;/execution&amp;gt;
+
+
+
+
+  &amp;lt;/executions&amp;gt;
+
+
+
+
+&amp;lt;/plugin&amp;gt;
+
+
+
+
+
+
+It worked well until we tried to upgrade to 1.1.0.Alpha3. It seems that the changes for WFMP-12 prevent us from setting a port offset.
+In the best case (offset is small), the management client can&amp;amp;apos;t communicate with the server. In the worst case (offset is large), the server does not even start because the calculated management port is out of range.</description>
+			<version>1.1.0.Alpha3</version>
+			<fixedVersion>1.1.0.Alpha4</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.plugin.server.RunMojo.java</file>
+			<file type="M">org.wildfly.plugin.server.StartMojo.java</file>
+		</fixedFiles>
+	</bug>
+	<bug id="26" opendate="2016-02-22 20:28:27" fixdate="2016-02-24 19:47:46" resolution="Done">
+		<buginformation>
+			<summary>Commands#failOnError defaults to false unless set explicitly</summary>
+			<description>I&amp;amp;apos;ve been working on a PR to support failOnError for script execution, per the discussion on GitHub PR #47.
+Leaving aside the fact that the note in the comment on this @Parameter states that "this setting is not used for scripts" and "Scripts must handle errors on their own," and that the impetus for the "not failing on error" was that CLI module handling (add/remove) is broken in both commands and scripts for "if-end-if" and "try-catch"; the setting isn&amp;amp;apos;t behaving as expected.
+During debugging, unless the configuration is set explicitly, the default value is always false, even though defaultValue = "true" is set in the annotation.
+I don&amp;amp;apos;t know enough about Mojo DI to know if this is an artifact of a @Parameter of a @Parameter or something else, but explicitly setting private boolean failOnError = true; in Commands produces the expected results.
+I have a PR with tests of you&amp;amp;apos;re interested, but it means exposing the Commands field via ExecuteCommandsMojo#getCommands() for inspection during testing.</description>
+			<version>1.1.0.Alpha5</version>
+			<fixedVersion>1.1.0.Alpha7</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.plugin.cli.Commands.java</file>
+		</fixedFiles>
+		<links>
+			<link type="Related" description="relates to">28</link>
+		</links>
+	</bug>
+	<bug id="58" opendate="2016-08-25 14:07:55" fixdate="2016-08-29 17:40:10" resolution="Done">
+		<buginformation>
+			<summary>The WildFly plugin&amp;apos;s shutdown(reload=true) goal doesn&amp;apos;t wait for the server to come back up</summary>
+			<description>If you call the shutdown(reload=true) goal, followed by the deploy-artifact goal, it goes boom. The reload operation runs asynchronously, and temporarily takes down the management interface that the deploy-artifact goal needs to succeed, creating a race condition that has ended badly 100% of the time for me.
+Why might a project need to reload then deploy? For instance, it might start the server, use execute-commands to set system properties required by an application, then reload and use deploy-artifact to deploy that application. Similarly, you might want to reconfigure SSL and then reload, as that change also requires it.
+It&amp;amp;apos;s worth noting that this likely has a simple fix: just copy the "wait for server to be ready" code used in the start goal over to the shutdown goal&amp;amp;apos;s reload handling.</description>
+			<version>1.1.0.Alpha11</version>
+			<fixedVersion>1.1.0.Beta1</fixedVersion>
+			<type>Bug</type>
+		</buginformation>
+		<fixedFiles>
+			<file type="M">org.wildfly.plugin.common.AbstractServerConnection.java</file>
+			<file type="M">org.wildfly.plugin.server.ShutdownMojo.java</file>
+		</fixedFiles>
+	</bug>
+</bugrepository>

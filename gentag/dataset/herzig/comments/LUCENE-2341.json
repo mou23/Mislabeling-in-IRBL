@@ -1,0 +1,1620 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12459896",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896",
+  "key": "LUCENE-2341",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12314025",
+        "id": "12314025",
+        "description": "Alpha release of the 4.x series",
+        "name": "4.0-ALPHA",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2012-07-03"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "11455",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "9.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12330900",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12330900",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12458327",
+          "key": "LUCENE-2298",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12458327",
+          "fields": {
+            "summary": "Polish Analyzer",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+              "id": "2",
+              "description": "A new feature of the product, which has yet to be developed.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+              "name": "New Feature",
+              "subtask": false,
+              "avatarId": 21141
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+      "name": "dweiss",
+      "key": "dweiss",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Dawid Weiss",
+      "active": true,
+      "timeZone": "Europe/Warsaw"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "25667",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+      "name": "rcmuir",
+      "key": "rcmuir",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+      },
+      "displayName": "Robert Muir",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+      "name": "rcmuir",
+      "key": "rcmuir",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+      },
+      "displayName": "Robert Muir",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2341/votes",
+      "votes": 3,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/2",
+      "id": "2",
+      "description": "A new feature of the product, which has yet to be developed.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21141&avatarType=issuetype",
+      "name": "New Feature",
+      "subtask": false,
+      "avatarId": 21141
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@50087710[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6fee9f6d[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@69fa9992[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@72747637[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2c87445e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@18633051[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@25e81cc6[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@747c1382[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@624f0ce7[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@632f4947[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@64467c8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@12308481[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 12:22:52 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2011-06-30T19:16:46.523+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-2341/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "created": "2010-03-22T18:32:54.361+0000",
+    "updated": "2022-08-28T12:22:52.685+0000",
+    "timeoriginalestimate": null,
+    "description": "Dawid Weiss mentioned on LUCENE-2298 that there is another Polish stemmer available:\nhttp://sourceforge.net/projects/morfologik/\n\nThis works differently than LUCENE-2298, and ideally would be another option for users.\n",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484564",
+        "id": "12484564",
+        "filename": "LUCENE-2341.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-28T21:30:29.827+0000",
+        "size": 43153,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484564/LUCENE-2341.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484000",
+        "id": "12484000",
+        "filename": "LUCENE-2341.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-27T20:18:51.260+0000",
+        "size": 35599,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484000/LUCENE-2341.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12483348",
+        "id": "12483348",
+        "filename": "LUCENE-2341.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-21T21:16:09.131+0000",
+        "size": 27715,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12483348/LUCENE-2341.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12483213",
+        "id": "12483213",
+        "filename": "LUCENE-2341.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-20T21:48:38.323+0000",
+        "size": 23027,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12483213/LUCENE-2341.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484617",
+        "id": "12484617",
+        "filename": "LUCENE-2341.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+          "name": "dweiss",
+          "key": "dweiss",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Dawid Weiss",
+          "active": true,
+          "timeZone": "Europe/Warsaw"
+        },
+        "created": "2011-06-29T10:02:44.698+0000",
+        "size": 44568,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484617/LUCENE-2341.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484418",
+        "id": "12484418",
+        "filename": "LUCENE-2341.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+          "name": "dweiss",
+          "key": "dweiss",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Dawid Weiss",
+          "active": true,
+          "timeZone": "Europe/Warsaw"
+        },
+        "created": "2011-06-28T10:45:23.301+0000",
+        "size": 36226,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484418/LUCENE-2341.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484001",
+        "id": "12484001",
+        "filename": "morfologik-fsa-1.5.2.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-27T20:18:51.267+0000",
+        "size": 54058,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484001/morfologik-fsa-1.5.2.jar"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484003",
+        "id": "12484003",
+        "filename": "morfologik-polish-1.5.2.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-27T20:18:51.285+0000",
+        "size": 3583303,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484003/morfologik-polish-1.5.2.jar"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12484002",
+        "id": "12484002",
+        "filename": "morfologik-stemming-1.5.2.jar",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+          "name": "michcio",
+          "key": "michcio",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Micha\u0142 Dybizba\u0144ski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2011-06-27T20:18:51.276+0000",
+        "size": 17044,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12484002/morfologik-stemming-1.5.2.jar"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "explore morfologik integration",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12848649",
+          "id": "12848649",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Robert, should I wait for Stempel patch first and then model this one after you? I'm thinking we can reuse most of the code; these stemmers have nearly identical APIs anyway.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2010-03-23T10:44:50.301+0000",
+          "updated": "2010-03-23T10:44:50.301+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12848672",
+          "id": "12848672",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Dawid, sounds good. I had a few questions, admittedly not having time to look at the code much:\n* Does it support generation as well?\n* Does it expose any morph attributes (e.g. POS) ?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-23T12:26:22.628+0000",
+          "updated": "2010-03-23T12:26:22.628+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12848674",
+          "id": "12848674",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "oh yeah, and also, what about cases with multiple solutions? does it emit multiple stems?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-23T12:29:37.501+0000",
+          "updated": "2010-03-23T12:29:37.501+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12849114",
+          "id": "12849114",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Oh, I forgot about this -- yes, you're right, it can emit multiple lemmas (including their morphology). An example from the test case:\n\n{noformat}\n\t\tfinal IStemmer s = new PolishStemmer();\n\n\t\tfinal String word = \"liga\";\n\t\tfinal List<WordData> response = s.lookup(word);\n\n\t\tfinal HashSet<String> stems = new HashSet<String>();\n\t\tfinal HashSet<String> tags = new HashSet<String>();\n\n\t\tfor (WordData wd : response) {\n\t\t\tstems.add(wd.getStem().toString());\n\t\t\ttags.add(wd.getTag().toString());\n\t\t\tassertSame(word, wd.getWord());\n\t\t}\n\n\t\tassertTrue(stems.contains(\"liga\u0107\"));\n\t\tassertTrue(stems.contains(\"liga\"));\n\t\tassertTrue(tags.contains(\"subst:sg:nom:f\"));\n\t\tassertTrue(tags.contains(\"verb:fin:sg:ter:imperf\"));\n{noformat}\n\nThis raises the question how we want to handle multiple stems... should they be indexed on overlapping positions?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2010-03-24T09:15:46.111+0000",
+          "updated": "2010-03-24T09:15:46.111+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12849198",
+          "id": "12849198",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think overlapping positions makes sense. \nBut this can cause funky scoring for homographs,\nEven if the analysis is legitimately different, tf is wrong.\n\nMaybe solr's removeduplicatesfilter should be recommended\ndown the chain...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-24T14:23:11.930+0000",
+          "updated": "2010-03-24T14:23:11.930+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12849203",
+          "id": "12849203",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ab",
+            "name": "ab",
+            "key": "ab",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=ab&avatarId=36393",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=ab&avatarId=36393",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=ab&avatarId=36393",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=ab&avatarId=36393"
+            },
+            "displayName": "Andrzej Bialecki",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "When indexing multiple stems/lemmas (or synonyms in general) at the same positions, in most cases users should also set the Similarity.discoutOverlaps to avoid skewing the lengthNorm-s. I think that it should be mentioned somewhere in the javadocs.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ab",
+            "name": "ab",
+            "key": "ab",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=ab&avatarId=36393",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=ab&avatarId=36393",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=ab&avatarId=36393",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=ab&avatarId=36393"
+            },
+            "displayName": "Andrzej Bialecki",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2010-03-24T14:33:32.863+0000",
+          "updated": "2010-03-24T14:33:32.863+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/12849208",
+          "id": "12849208",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Andrzej,\nBy the way, this is now on by default on trunk.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2010-03-24T14:47:26.662+0000",
+          "updated": "2010-03-24T14:47:26.662+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052239",
+          "id": "13052239",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hi\n\nThis patch introduces stemming filter and analyzer, that use [Morfologik library|http://morfologik.blogspot.com], developed by Dawid Weiss and Marcin Mi\u0142kowski.\nTokens are stemmed by Morfologik with a dictionary, and current distribution provides a dictionary for polish language.\n\nThe MorfologikFilter yields one or more terms for each token. Each of those terms is given the same position in the index.\n\nI'm attaching a binary distribution of the library (morfologik-stemming-1.5.0.jar), that needs to be placed in modules/analysis/morfologik/lib/ subdirectory.\nIt is also available as a [Maven artifact|http://mvnrepository.com/artifact/org.carrot2/morfologik-stemming/1.5.0].\n\nThe library is BSD-licensed and a dictionary uses data from [Polish dictionary for aspell/ispell/myspell (SJP.PL)|http://www.sjp.pl/slownik/en/], which is licensed under GPL, LGPL, MPL and CC SA licenses.\n\nThis is my first contribution to the Lucene project, so please be forgiving :)\nThanks to Dawid for help.\n\nRegards,\n  Micha\u0142\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-20T21:48:38.395+0000",
+          "updated": "2011-06-20T21:48:38.395+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052246",
+          "id": "13052246",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hi Micha\u0142,\n\nThis patch looks great!\n\nI took a quick glance, here are a couple suggestions:\n* In the MorfologikFilter, I think we should implement reset(), first calling the superclass reset(), then clearing the stemsAcc list. This ensures that all of the filter's state is cleared before it is reused. Under normal operations, this should not be necessary, but some consumers in Lucene (e.g. LimitTokenCountFilter, and some similar code in the Highlighter), will only partially consume up to some point, then suddenly stop. By clearing this list in reset() we ensure that there is no chance any leftover stems will appear in the next stream.\n* because the data is licensed under MPL, I think we should explicitly list a hyperlink if possible to the source code used in the NOTICE.txt. I saw you included some wordage in LICENSE.txt but I think this should only say 'XYZ data is under this license, with the actual MPL license text. In the NOTICE.txt we should link to the source code I think... there is some more information on this under the section Category B: Reciprocal Licenses at http://www.apache.org/legal/3party.html\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-20T22:15:11.782+0000",
+          "updated": "2011-06-20T22:15:11.782+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052251",
+          "id": "13052251",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Sorry, about my second comment i was confusing this with the stuff you have for the morfologik jar itself, which is correct :)\n\nWhat i should have said was, I think we should include this information in the top-level modules/analysis/LICENSE.txt and modules/analysis/NOTICE.txt\n\n\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-20T22:31:07.689+0000",
+          "updated": "2011-06-20T22:31:07.689+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052376",
+          "id": "13052376",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Thanks for the contribution, Micha\u0142. \n\nRobert: the dictionary is licensed under MPL or CC-SA (to be selected by the user depending on one's needs). Do you know which one is preferable over another?\n\nMicha\u0142: there is also another (much larger) dictionary that has been released recently and comes from the Morfeusz project. http://sgjp.pl/morfeusz/dopobrania.html This dictionary is actually licensed under BSD license, so no legal worries at all. Both dictionaries are nearly identical (they differ slightly in their convention of morphosyntactic annotations) and Morfeusz's dictionary could be compiled into an automaton for use with Morfologik.\n\nWhich way should we go? What do you think?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-21T06:49:38.816+0000",
+          "updated": "2011-06-21T06:49:38.816+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052380",
+          "id": "13052380",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "I'll take a look at the differences between Morfologik and Morfeusz right now, actually. I'll post the results once I have something.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-21T06:55:21.745+0000",
+          "updated": "2011-06-21T06:55:21.745+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052421",
+          "id": "13052421",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "I did some analyses on both dictionaries.\n{noformat}\nNumber of lines (distict surface forms):\n\n  3.662.366 morfologik.utf8\n  5.086.141 sgjp.utf8\n\nDistinct words (not in both):\n\n  2.729.334 unique.utf8\n\n  - upper/lower case (morfologik has upper case forms, morfeusz only lower case surface forms)\n    \n    acerze\n    Acerze\n\n  - very rare or jargon;\n\n    abszminka\n    abszytowa\u0142em\n    acetobakteria\n    acetarsolowi\n    niebombiasto\n    hakatystce\n    hakatystyczno\u015bciach\n    warz\u017ce\n\n  - differences in spelling;\n\n    abelard\n    ab\u00e9lard\n\n  - acronyms and super-short stuff\n\n    aap\n    aar\n\nDictinct normalized (lowercase):\n\n  2.564.366 lowered.utf8\n\n  Most of these are very infrequent words or inflection forms. There are minor differences or\n  missing surface forms in both dictionaries, as in here (mz - morfeusz, mk - morfologik):\n\nmz> hakersko\nmz> hakersko\u015b\u0107\nmz> hakersko\u015bci\nmz> hakersko\u015bci\u0105\nmz> hakersko\u015bciach\nmz> hakersko\u015bciami\nmz> hakersko\u015bciom\nmk> hakerstw\nmk> hakerstwa\n...\nmk> hakowa\u0142y\u015bmy\nmk> hakowa\u0144\nmk> hakowaniach\nmk> hakowaniami\nmk> hakowaniom\nmz> hakowato\u015b\u0107\nmz> hakowato\u015bci\nmz> hakowato\u015bci\u0105\nmz> hakowato\u015bciach\nmz> hakowato\u015bciami\nmz> hakowato\u015bciom\n{noformat}\n\nSo... the conclusion is pretty consistent with Zipf's law: both dictionaries have a fairly different coverage, even if they're quite large. We don't have a frequency dictionary for Polish, but I assume most of these surface forms are purely theoretical and occur super-rarely in practice. This said, I think we should use BOTH dictionaries -- after all there's no harm done if we overdo the lemmatization process a little bit, is there?\n\nSo... my proposal would be this: I'll integrate Morfeusz's dictionary in Morfologik (as an alternative dictionary one can load and use). \n\nEventually it would be probably sensible to limit the automaton for use in Lucene to store surface forms and lemmas only (no POS tags) and merge both dictionaries into a single automaton... but this can  be a future improvement.\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-21T08:21:12.722+0000",
+          "updated": "2011-06-21T08:21:12.722+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052423",
+          "id": "13052423",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "One note wrt patch: I would use an explicit pointer over a list of returned WordData entries instead of adding them to a local list:\n\nprivate List<WordData> stemsAcc = new ArrayList<WordData>();\n\nRight now you're shifting the internal array on each call unnecessarily (just increase an int ptr instead):\n\n+      termAtt.setEmpty().append(stemsAcc.remove(0).getStem().toString());\n\ngetStem() should also be enough since it's a CharSequence, right? No need for an intermediate String.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-21T08:30:26.136+0000",
+          "updated": "2011-06-21T08:30:26.136+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052451",
+          "id": "13052451",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nEventually it would be probably sensible to limit the automaton for use in Lucene to store surface forms and lemmas only (no POS tags) and merge both dictionaries into a single automaton... but this can be a future improvement.\n{quote}\n\nor alternatively, you can expose the POS tags for each stem to lucene right, easiest way would be to put it into TypeAttribute (a string), but you could make your own strongly-typed one if thats a better fit.\n \nthis could be useful for downstream processing.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-21T10:00:09.037+0000",
+          "updated": "2011-06-21T10:00:09.037+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052483",
+          "id": "13052483",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "I've just published morfologik 1.5.2, Micha\u0142. This comes with two dictionaries (morfologik and morfeusz) that can be used as one (fallback for missing words) or separately, but I would stick to using morfologik as the default dictionary (possibly with an option of using morfeusz?). POS tags have a different notation in these two resources, so mixing both is probably not a good idea.\n\nWill you update the patch? Thanks.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-21T11:16:43.369+0000",
+          "updated": "2011-06-21T11:16:43.369+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13052841",
+          "id": "13052841",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thank you guys for suggestions :)\n\nI've changed the diff to include them:\n\n1. Implemented MorfologikFilter.reset that resets the stemsAcc, and added a test case that would fail in the absence of that implementation, which exhibits the behaviour mentioned by Robert.\n\n2. Updated modules/analysis/NOTICE.txt and modules/analysis/LICENSE.txt - Robert, is that what you meant, or do they need to include more information ?\n\n3. MorfologikFilter now uses an explicit pointer to not modify the stemsAcc on each pass - Dawid, do you think it's reasonable to optimize further and use directly a list returned by IStemmer.lookup (instead of copying with addAll) ? My concern is that (at least in current DictionaryLookup implementation) that list seems to be shared by distinct invocations of the lookup method, which would make the use of a specific IStemmer not applicable in thread-safe code.\n\n4. Removed explicit call to getStem().toString().\n\n\nAs for the new Morfologik version, I've been thinking it would be better to alter the constructors of MorfologikAnalyzer and MorfologikFilter to accept concrete IStemmer implementations, instead of a languageCode String as they do now. This way, org.apache.lucene.analysis.morfologik package wouldn't depend on current implementations of IStemmer (only on the interface), and also allowed future ones to be used without changing the package. What do you think ?\n\nThat could also solve the case of a custom attribute for POS tags (MorfologikPOSAttribute ?) : since a client would instantiate their IStemmer explicitly, they would know the meaning of the attribute's value. That doesn't take into account the DICTIONARY.COMBINED stemmer, but the same seems to apply to the Morfologik library itself (I mean, for a specific WordData from IStemmer.lookup there is no information on which of the internal concrete DictionaryLookup it comes from). Dawid - what do you think of that issue ?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-21T21:16:09.154+0000",
+          "updated": "2011-06-21T21:16:09.154+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13053079",
+          "id": "13053079",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "bq. Dawid, do you think it's reasonable to optimize further and use directly a list returned by IStemmer.lookup (instead of copying with addAll) ? My concern is that (at least in current DictionaryLookup implementation) that list seems to be shared by distinct invocations of the lookup method, which would make the use of a specific IStemmer not applicable in thread-safe code.\n\nIStemmer implementations are not thread safe anyway, so there is no problem in reusing that list. In fact, the returned WordData objects are reused internally as well, so you can't store them either (this is done to avoid GC overhead). \n\nSo yes: I missed that, but you'll need to ensure IStemmer instances are not shared. This can be done in various ways (thread local, etc), but I think the simplest way to do it would be to instantiate PolishStemmer at the MorfologikFilter level. This is cheap (the dictionary is loaded once anyway). \n\nYou can then create two constructors in the analyzer -- one with PolishStemmer.DICTIONARY and one with the default (I'd suggest MORFOLOGIK). Exposing IStemmer constructor will do more harm than good -- thinking ahead is good, but in this case I don't think there'll be this many people interested in subclassing IStemmer (if anything, they'll plug into Lucene's infrastructure directly).\n\nA simple test case spawning 5 or 10 threads in a parallel executor and crunching stems on the same analyzer would also be nice to ensure we have everything correct wrt multithreading, but it's not that crucial if you don't have the time to write it.\n\nThanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-22T06:56:38.028+0000",
+          "updated": "2011-06-22T06:56:38.028+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13055729",
+          "id": "13055729",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Dawid, as you suggested, I've changed the interface to MorfologikAnalyzer and MorfologikFilter to account for the changes in Morfologik 1.5.2, namely the multiple dictionaries.\nBoth those classes' constructors now accept a PolishStemmer.DICTIONARY (instead of languageCode String as in previous patch). A PolishStemmer object is instantiated by MorfologikFilter, so each invocation of MorfologikAnalyzer.createComponents (which instantiates MorfologikFilter) is coupled with an individual instance of PolishStemmer.\nThis way, sharing a MorfologikAnalyzer by separate threads is safe (even though MorfologikFilter itself isn't thread-safe) provided each thread obtains its own TokenStreamComponents through ReusableAnalyzerBase.createComponents (is this always the case ? looking at other filters, thay don't look thread-safe neither ..)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-27T20:18:51.330+0000",
+          "updated": "2011-06-27T20:19:31.493+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13056261",
+          "id": "13056261",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nprovided each thread obtains its own TokenStreamComponents through ReusableAnalyzerBase.createComponents (is this always the case ? looking at other filters, thay don't look thread-safe neither ..)\n{quote}\n\nyes, its the case that Analyzer/ReusableAnalyzerBase take care of this with a threadlocal, as long as each thread only needs to use one tokenstream at a time (which is true for all lucene consumers), see:\nhttp://svn.apache.org/repos/asf/lucene/dev/trunk/lucene/src/java/org/apache/lucene/analysis/Analyzer.java\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2011-06-28T02:49:37.340+0000",
+          "updated": "2011-06-28T02:49:37.340+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13056430",
+          "id": "13056430",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Working on the integration, will provide a final patch before committing. Thanks Micha\u0142.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-28T10:16:05.216+0000",
+          "updated": "2011-06-28T10:16:05.216+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13056441",
+          "id": "13056441",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Updated patch. A few minor corrections and performance considerations (no intermediate strings). Updated eclipse classpath template.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-28T10:45:23.336+0000",
+          "updated": "2011-06-28T10:45:23.336+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13056442",
+          "id": "13056442",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "I've cleaned up the patch, but I'd still address the two TODOs that I left in the code:\n\n- lowercasing should be done not at the external filter level, but inside the filter as a fallback IF AND ONLY IF the original sequence is not found in the dictionary. Morfeusz and Morfologik do have uppercase surface forms and do treat them differently (returning uppercase lemmas, for example). A test for this would be nice as well. An example of an uppercase/mixed surface form: AGD, Aaron, Poznania.\n\n- I'd expose another attribute with morphosyntactic annotations -- this is something that is there anyway, so why not expose it.\n\nI attached a git diff, but it should apply with patch -p1 < ... too. Micha\u0142, will you have the time to polish this off?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-28T10:50:09.004+0000",
+          "updated": "2011-06-28T10:50:09.004+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13056801",
+          "id": "13056801",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Dawid, I'm attaching a patch with the suggested changes:\n\n1. MorfologikAnalyzer now doesn't use a LowerCaseFilter. When IStemmer.lookup returns an empty list for an originally cased token, another lookup is made for lowercased one. I hope the test case reflects your intentions.\n\n2. I've added MorfologikPOSAttributeImpl class that provides information about morphosyntactic annotations for each lemma, obtained with WordData.getTag(). A test provides a short insight for potential users. Two notes here:\n  a) Since MorfologikPOSAttribute might be unused, I've implemented it in terms of CharSequence (and not String), to not convert prematurely each POS tag to String.\n  b) Currently a default POS (for a nonlemmatized token) is an empty String, however null value might be more distinctive if empty POS tags for lemma were allowed.\n\nBTW, the patch deletes one line from dev-tools/eclipse/dot.classpath (<classpathentry kind=\"src\" path=\"modules/queries/src/test\"/>) - was that intentional ?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-06-28T21:30:29.887+0000",
+          "updated": "2011-06-28T21:30:29.887+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13057034",
+          "id": "13057034",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Thanks Micha\u0142. I'll review it later today and commit in if there are no objections. As for the deleted line -- yes, it was intentional; we'll piggyback in this patch unless somebody fixes it earlier, no problem.\n\nDawid",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-29T06:47:04.283+0000",
+          "updated": "2011-06-29T06:47:04.283+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13057119",
+          "id": "13057119",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "You do like those pesky .toString() calls, don't you? :) I replaced the code slightly to keep char. sequences only; no need to create new objects. I also changed the impl. a bit to go from the start of the returned list -> theoretically, lemmas should be ordered by probability (in practice it's not the case, but may be in the future).\n\nAll looks good, committed in. Thanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-29T09:25:13.432+0000",
+          "updated": "2011-06-29T09:25:13.432+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13057132",
+          "id": "13057132",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Needs to wait for official support for 1.6 on the trunk.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-29T09:58:58.095+0000",
+          "updated": "2011-06-29T09:58:58.095+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13057134",
+          "id": "13057134",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "Final patch for this issue. Needs to wait for 1.6 support.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-29T10:02:44.724+0000",
+          "updated": "2011-06-29T10:02:44.724+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13058007",
+          "id": "13058007",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "body": "In trunk. Long live 1.6 support.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=dweiss",
+            "name": "dweiss",
+            "key": "dweiss",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Dawid Weiss",
+            "active": true,
+            "timeZone": "Europe/Warsaw"
+          },
+          "created": "2011-06-30T19:16:46.532+0000",
+          "updated": "2011-06-30T19:16:46.532+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/13059139",
+          "id": "13059139",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks :)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=michcio",
+            "name": "michcio",
+            "key": "michcio",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Micha\u0142 Dybizba\u0144ski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2011-07-02T22:37:16.275+0000",
+          "updated": "2011-07-02T22:37:16.275+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12459896/comment/17588542",
+          "id": "17588542",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#3417|https://github.com/apache/lucene/issues/3417].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T12:22:52.685+0000",
+          "updated": "2022-08-28T12:22:52.685+0000"
+        }
+      ],
+      "maxResults": 31,
+      "total": 31,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04r67:",
+    "customfield_12314139": null
+  }
+}

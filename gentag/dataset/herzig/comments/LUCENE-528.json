@@ -1,0 +1,630 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12330526",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526",
+  "key": "LUCENE-528",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13222",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "2.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+      "name": "yseeley@gmail.com",
+      "key": "yseeley@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Yonik Seeley",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/5",
+      "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/resolved.png",
+      "name": "Resolved",
+      "id": "5",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310232",
+        "id": "12310232",
+        "name": "core/index",
+        "description": "issues with indexing code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27517",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=tamm",
+      "name": "tamm",
+      "key": "tamm",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Tamm",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=tamm",
+      "name": "tamm",
+      "key": "tamm",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Steven Tamm",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-528/votes",
+      "votes": 2,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@2285d45c[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2d555b6d[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3d24f144[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@3a2d5bbe[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@66552e83[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@28b49158[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3280fbdb[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@6220a69e[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2d4ebd6f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@217cd7cf[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1417ae18[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@7364ee52[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:26:15 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-10-26T22:56:26.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-528/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2006-03-22T06:14:24.000+0000",
+    "updated": "2022-08-28T11:26:15.730+0000",
+    "timeoriginalestimate": null,
+    "description": "One big performance problem with IndexWriter.addIndexes() is that it has to optimize the index both before and after adding the segments.  When you have a very large index, to which you are adding batches of small updates, these calls to optimize make using addIndexes() impossible.  It makes parallel updates very frustrating.\n\nHere is an optimized function that helps out by calling mergeSegments only on the newly added documents.  It will try to avoid calling mergeSegments until the end, unless you're adding a lot of documents at once.\n\nI also have an extensive unit test that verifies that this function works correctly if people are interested.  I gave it a different name because it has very different performance characteristics which can make querying take longer.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12324426",
+        "id": "12324426",
+        "filename": "AddIndexes.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=tamm",
+          "name": "tamm",
+          "key": "tamm",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Steven Tamm",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2006-03-22T06:16:01.000+0000",
+        "size": 9196,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12324426/AddIndexes.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12343586",
+        "id": "12343586",
+        "filename": "AddIndexesNoOptimize.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+          "name": "ninglili",
+          "key": "ninglili",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Ning Li",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2006-10-24T22:26:48.000+0000",
+        "size": 20302,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12343586/AddIndexesNoOptimize.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "Optimization for IndexWriter.addIndexes()",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12428478",
+          "id": "12428478",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "In an email thread titled \"LUCENE-528 and 565\", I described a weakness of the proposed solution:\n\n\"I'm totally for a version of addIndexes() where optimize() is not always called. However, with the one proposed in the patch, we could end up with an index where: segment 0 has 1000 docs, 1 has 2000, 2 has 4000, 3 has 8000, etc. while Lucene desires the reverse. Or we could have a sandwich index where: segment 0 has 4000 docs, 1 has 100, 2 has 100, 3 has 4000. While neither of these will occur if you use addIndexesNoOpt() carefully, there should be a more robust merge policy.\"\n\nHere is an alternative solution which merges segements so that the docCount of segment i is at least twice as big as the docCount of segment i+1. If we are willing to make it a bit more complicated, we can take merge factor into consideration.\n\n\n  public synchronized void addIndexesNoOpt(Directory[] dirs) throws IOException {\n    for (int i = 0; i < dirs.length; i++) {\n      SegmentInfos sis = new SegmentInfos(); // read infos from dir\n      sis.read(dirs[i]);\n      for (int j = 0; j < sis.size(); j++) {\n        segmentInfos.addElement(sis.info(j)); // add each info\n      }\n    }\n\n    int start = 0;\n    int docCountFromStart = docCount();\n\n    while (start < segmentInfos.size()) {\n      int end;\n      int docCountToMerge = 0;\n\n      if (docCountFromStart <= minMergeDocs) {\n        // if the total docCount of the remaining segments\n        // is lte minMergeDocs, merge all of them\n        end = segmentInfos.size() - 1;\n        docCountToMerge = docCountFromStart;\n      }\n      else {\n        // otherwise, merge some segments so that the docCount\n        // of these segments is at least half of the remaining\n        for (end = start; end < segmentInfos.size(); end++) {\n          docCountToMerge += segmentInfos.info(end).docCount;\n          if (docCountToMerge >= docCountFromStart / 2) {\n            break;\n          }\n        }\n      }\n      \n      mergeSegments(start, end + 1);\n      start++;\n      docCountFromStart -= docCountToMerge;\n    }\n  }\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-08-16T19:27:23.000+0000",
+          "updated": "2006-08-16T19:27:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12443723",
+          "id": "12443723",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "We want a robust algorithm for the version of addIndexes() which\ndoes not call optimize().\n\nThe robustness can be expressed as the two invariants guaranteed\nby the merge policy for adding documents (if mergeFactor M does not\nchange and segment doc count is not reaching maxMergeDocs):\n      B for maxBufferedDocs, f(n) defined as ceil(log_M(ceil(n/B)))\n      1: If i (left*) and i+1 (right*) are two consecutive segments of doc\n          counts x and y, then f(x) >= f(y).\n      2: The number of committed segments on the same level (f(n)) <= M.\n\nReferences are at http://www.gossamer-threads.com/lists/lucene/java-dev/35147,\nLUCENE-565 and LUCENE-672.\n\nAddIndexes() can be viewed as adding a sequence of segments S to\na sequence of segments T. Segments in T follow the invariants but\nsegments in S may not since they could come from multiple indexes.\nHere is the merge algorithm for addIndexes():\n\n1. Flush ram segments.\n\n2. Consider a combined sequence with segments from T followed\n    by segments from S (same as current addIndexes()).\n\n3. Assume the highest level for segments in S is h. Call maybeMergeSegments(),\n    but instead of starting w/ lowerBound = -1 and upperBound = maxBufferedDocs,\n    start w/ lowerBound = -1 and upperBound = upperBound of level h.\n    After this, the invariants are guaranteed except for the last < M segments\n    whose levels <= h.\n\n4. If the invariants hold for the last < M segments whose levels <= h, done.\n    Otherwise, simply merge those segments. If the merge results in\n    a segment of level <= h, done. Otherwise, it's of level h+1 and call\n    maybeMergeSegments() starting w/ upperBound = upperBound of level h+1.\n\nSuggestions?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-10-20T07:00:25.000+0000",
+          "updated": "2006-10-20T07:00:25.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12443841",
+          "id": "12443841",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think you need to ensure that no segments from the source index \"S\" remain after the call, right?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-10-20T13:34:05.000+0000",
+          "updated": "2006-10-20T13:34:05.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12443911",
+          "id": "12443911",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "> I think you need to ensure that no segments from the source index \"S\" remain after the call, right?\n\nCorrect. And thanks!\n\nSo in step 4, in the case where the invariants hold for the last < M segments whose levels <= h,\nif some of those < M segments are from S (not merged in step 3), properly copy them over.\n\nAlgorithm looks good?\n\nThis makes me notice a bug in current addIndexes(Directory[]). In current addIndexes(Directory[]),\nsegment infos in S are added to T's \"segmentInfos\" upfront. Then segments in S are merged to T\nseveral at a time. Every merge is committed with T's \"segmentInfos\". So if a reader is opened on T\nwhile addIndexes() is going on, it could see an inconsistent index.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-10-20T17:47:09.000+0000",
+          "updated": "2006-10-20T17:47:09.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12443940",
+          "id": "12443940",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "> Algorithm looks good? \n\nYep, looks good.\n\nA possible optimization *far* down the road for segments that need copying could be to \"steal\" the segments if rename/mv is supported (if they are both of the same Directory type, on the same partition for FSDirectories, etc), and if the caller indicated it was OK.  Rather than try to detect when it's safe, there could be an attachSegments(Directory[]) call.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-10-20T21:05:59.000+0000",
+          "updated": "2006-10-20T21:05:59.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12443978",
+          "id": "12443978",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I'll submit a patch next week.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-10-21T00:00:32.000+0000",
+          "updated": "2006-10-21T00:00:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12444541",
+          "id": "12444541",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This patch implements addIndexesNoOptimize() following the algorithm described earlier.\n  - The patch is based on the latest version from trunk.\n  - AddIndexesNoOptimize() is implemented. The algorithm description is included as comment and the code is commented.\n  - The patch includes a test called TestAddIndexesNoOptimize which covers all the code in addIndexesNoOptimize().\n  - maybeMergeSegments() was conservative and checked for more merges only when \"upperBound * mergeFactor <= maxMergeDocs\". Change it to check for more merges when \"upperBound < maxMergeDocs\".\n  - Minor changes in TestIndexWriterMergePolicy to better verify merge invariants.\n  - The patch passes all unit tests.\n\nOne more comment on the implementation:\n  - When we copy un-merged segments from S in step 4, ideally, we want to simply copy\n    those segments. However, directory does not support copy yet. In addition, source may\n    use compound file or not and target may use compound file or not. So we use\n    mergeSegments() to copy each segment, which may cause doc count to change\n    because deleted docs are garbage collected. That case is handled properly.  ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=ninglili",
+            "name": "ninglili",
+            "key": "ninglili",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Ning Li",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2006-10-24T22:26:49.000+0000",
+          "updated": "2006-10-24T22:26:49.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/12445041",
+          "id": "12445041",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Ning, I just committed this.\nWish I had had it some time ago :-)\nhttp://www.mail-archive.com/lucene-user@jakarta.apache.org/msg10758.html",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2006-10-26T22:56:26.000+0000",
+          "updated": "2006-10-26T22:56:26.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12330526/comment/17586720",
+          "id": "17586720",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1606|https://github.com/apache/lucene/issues/1606].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:26:15.730+0000",
+          "updated": "2022-08-28T11:26:15.730+0000"
+        }
+      ],
+      "maxResults": 9,
+      "total": 9,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i052lb:",
+    "customfield_12314139": null
+  }
+}

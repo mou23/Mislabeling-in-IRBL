@@ -1,0 +1,2529 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12423227",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227",
+  "key": "LUCENE-1607",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312682",
+        "id": "12312682",
+        "description": "Last release (barring major bugs) before migrating to 3.0 and JDK 1.5",
+        "name": "2.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-09-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12148",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "13.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12324335",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12324335",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12422715",
+          "key": "LUCENE-1600",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12422715",
+          "fields": {
+            "summary": "Reduce usage of String.intern(), performance is terrible",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      },
+      {
+        "id": "12324333",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12324333",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "inwardIssue": {
+          "id": "12398451",
+          "key": "LUCENE-1308",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12398451",
+          "fields": {
+            "summary": "Remove String.intern() from Field.java to increase performance and lower contention",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+              "name": "Major",
+              "id": "3"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+      "name": "yseeley@gmail.com",
+      "key": "yseeley@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Yonik Seeley",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26439",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+      "name": "earwin",
+      "key": "earwin",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Earwin Burrfoot",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+      "name": "earwin",
+      "key": "earwin",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Earwin Burrfoot",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1607/votes",
+      "votes": 1,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@717d056a[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7f77bd3b[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3cffbd5e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7e23519f[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@36f904fd[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@16bf6667[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@57eb2ca3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@33a03068[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4d80040d[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@2061cf84[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2e61611f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1c7037cb[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:59:52 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2009-08-05T18:05:17.783+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1607/watchers",
+      "watchCount": 2,
+      "isWatching": false
+    },
+    "created": "2009-04-19T15:22:06.603+0000",
+    "updated": "2022-08-28T11:59:52.065+0000",
+    "timeoriginalestimate": null,
+    "description": "By using our own interned string pool on top of default, String.intern() can be greatly optimized.\n\nOn my setup (java 6) this alternative runs ~15.8x faster for already interned strings, and ~2.2x faster for 'new String(interned)'\nFor java 5 and 4 speedup is lower, but still considerable.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12405877",
+        "id": "12405877",
+        "filename": "intern.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+          "name": "earwin",
+          "key": "earwin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Earwin Burrfoot",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2009-04-19T15:22:51.988+0000",
+        "size": 30860,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12405877/intern.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12417468",
+        "id": "12417468",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=noble.paul",
+          "name": "noble.paul",
+          "key": "noble.paul",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=noble.paul&avatarId=18547",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=noble.paul&avatarId=18547",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=noble.paul&avatarId=18547",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=noble.paul&avatarId=18547"
+          },
+          "displayName": "Noble Paul",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-08-24T11:05:11.546+0000",
+        "size": 1693,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12417468/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12410425",
+        "id": "12410425",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-06-11T19:29:53.031+0000",
+        "size": 9859,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12410425/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12410339",
+        "id": "12410339",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-06-10T20:33:31.269+0000",
+        "size": 6213,
+        "mimeType": "text/x-diff",
+        "content": "https://issues.apache.org/jira/secure/attachment/12410339/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12408085",
+        "id": "12408085",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-05-14T00:52:54.325+0000",
+        "size": 5403,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12408085/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12406926",
+        "id": "12406926",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-04-30T13:49:41.098+0000",
+        "size": 5403,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12406926/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12406869",
+        "id": "12406869",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-04-30T02:41:11.381+0000",
+        "size": 5412,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12406869/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12406820",
+        "id": "12406820",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+          "name": "earwin",
+          "key": "earwin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Earwin Burrfoot",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2009-04-29T19:30:55.782+0000",
+        "size": 37147,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12406820/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12405957",
+        "id": "12405957",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+          "name": "earwin",
+          "key": "earwin",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Earwin Burrfoot",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2009-04-20T20:40:54.467+0000",
+        "size": 31818,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12405957/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12405956",
+        "id": "12405956",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-04-20T20:36:29.463+0000",
+        "size": 6553,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12405956/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12405955",
+        "id": "12405955",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-04-20T20:30:41.102+0000",
+        "size": 6551,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12405955/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12405879",
+        "id": "12405879",
+        "filename": "LUCENE-1607.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+          "name": "yseeley@gmail.com",
+          "key": "yseeley@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Yonik Seeley",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2009-04-19T18:17:52.476+0000",
+        "size": 4669,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12405879/LUCENE-1607.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12415704",
+        "id": "12415704",
+        "filename": "LUCENE-1607-contrib.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+          "name": "uschindler",
+          "key": "thetaphi",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+          },
+          "displayName": "Uwe Schindler",
+          "active": true,
+          "timeZone": "Europe/Berlin"
+        },
+        "created": "2009-08-06T06:46:55.296+0000",
+        "size": 2693,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12415704/LUCENE-1607-contrib.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "String.intern() faster alternative",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": null,
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700593",
+          "id": "12700593",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "What was the field count? Is it still a considerable speedup with hundreds of fields without slowing anything else down ?(I would assume so, but would be nice to know considering a new hashmap is made per add - it is a one time hit though and the number of fields is not likely to exceed hundreds at the extreme)?\n\nAlso would be great to get the speedup numbers for Java 4 and 5.\n\nI'll relate this to the 3 or 4 other field intern issues out there in a bit.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-19T16:52:02.534+0000",
+          "updated": "2009-04-19T16:52:02.534+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700598",
+          "id": "12700598",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's a completely lockless and memory barrier free intern() cache.\nThis default would be more back compatible since programs may rely on String instances being interned via String.intern().\n\nIt does not yet include corresponding Lucene code changes to use the StringInterner.\n\nThoughts?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-19T18:17:52.550+0000",
+          "updated": "2009-04-19T18:17:52.550+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700599",
+          "id": "12700599",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Earwin, I took a quick look at your implementation just now, but it doesn't look thread-safe.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-19T18:22:54.653+0000",
+          "updated": "2009-04-19T18:22:54.653+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700600",
+          "id": "12700600",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Earwin, I took a quick look at your implementation just now, but it doesn't look thread-safe. \n\nThat was my first impression too, but I couldnt pin down the issue. The access will either be against the old pool, or it will be against the new pool, and the instance switch should be atomic? I figured it was a clever trick of some kind (though I did wonder about the cost of making the new hashmap every add). The HashMaps are read only right (once they can be accessed by multiple threads)? And they are popped in with an atomic variable assignment?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-19T18:55:24.270+0000",
+          "updated": "2009-04-19T18:55:24.270+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700601",
+          "id": "12700601",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. This default would be more back compatible since programs may rely on String instances being interned via String.intern(). \nMy version is also String.intern()-compatible\n\nbq. Earwin, I took a quick look at your implementation just now, but it doesn't look thread-safe.\nunlock for one thread happens-before lock on the same monitor for the other thread, inside each thread each action happens-before the next one\nSince I get pool reference for the second time after the lock, and write pool reference before unlocking, everything's fine. As for the other threads, if they find what they need in the pool, it doesn't matter if they're seeing a stale pool, or not. If they don't find what they need, they hit the lock, re-retrieve pool reference, getting the latest one and either find what they need there, or write.\nCorrect me if I'm wrong?\n\nbq. though I did wonder about the cost of making the new hashmap every add\nIt's COSTLY :) But you're going to pay all of it at startup.\n\nI think we can introduce the class (without any interfaces, why should we need one here?), and then try to make it faster by switching storage. I tried GNU Trove THashMap, but on Java 6 it was slower than stock HashMap.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-19T19:11:32.131+0000",
+          "updated": "2009-04-19T19:11:32.131+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700604",
+          "id": "12700604",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. What was the field count? Is it still a considerable speedup with hundreds of fields without slowing anything else down ?\nThe field count was 1 :) I rewrote the benchmark, with extra code Java6 speedup on single already interned field became 12.5x.\nResults for three java varieties, and different sets of keys follow:\n\nJava 6 (64, server):\n\n  1 key\ninterned 12.47x\nuninterned 3.76x\n\n  10 keys\ninterned 8.03x\nuninterned 3.08x\n\n  100 keys\ninterned 6.58x\nuninterned 2.55x\n\n  1000 keys\ninterned 5.39x\nuninterned 2.69x\n\nJava 5 (64, server):\n\n  1 key\ninterned 9.84x\nuninterned 5.03x\n\n  10 keys\ninterned 7.00x\nuninterned 4.61x\n\n  100 keys\ninterned 6.61x\nuninterned 2.28x\n\n  1000 keys\ninterned 4.73x\nuninterned 2.73x\n\nJava 4 (32, client):\n\n  1 key\ninterned 4.90x\nuninterned 2.88x\n\n  10 keys\ninterned 4.08x\nuninterned 2.67x\n\n  100 keys\ninterned 3.88x\nuninterned 2.52x\n\n  1000 keys\ninterned 3.44x\nuninterned 2.31x\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-19T19:39:39.516+0000",
+          "updated": "2009-04-19T19:39:39.516+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700618",
+          "id": "12700618",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "The thread safety problem has to do with safe object publication (making an object visible to a different thread).  Mutable objects generally can't be safely published w/o synchronization.... it has to do with CPU caches in multi-CPU systems.\n\nIIRC, current x86 architectures will see fewer problems since read barriers are no-ops.. caches are guaranteed to be coherent.  But even on x86, you aren't guaranteed that instructions and writes won't be reordered...  so the assignment to pool could be visible *before* all the memory changes that newPool.put() could cause.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T00:33:04.769+0000",
+          "updated": "2009-04-20T00:33:04.769+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700629",
+          "id": "12700629",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=css145hs",
+            "name": "css145hs",
+            "key": "css145hs",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Derek DeMarco",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Good point Yonik.  Making pool volatile should take care of it, but only on JVMs 1.5+, as before that volatile didn't prevent reordering of non-volatile reads/writes around it.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=css145hs",
+            "name": "css145hs",
+            "key": "css145hs",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Derek DeMarco",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-20T01:36:02.666+0000",
+          "updated": "2009-04-20T01:36:02.666+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700696",
+          "id": "12700696",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Okay, you're probably right. It's not that hashmap can be corrupted on subsequent write, it's that reader threads can possibly see not-yet-built hashmap.\nAnd volatile works, while simple sync doesn't, because volatile also orders reads. \nHm. Hm. Hm.\nThan, as you suggested, all we need is our own hash implementation that remains usable even being partially updated. I skipped through your patch and something looks suspicious to me. Like lack of collision resolve and that line:\nint slot = h & (cache.length-1);\nIt'll break on non-power-of-two sizes.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-20T08:28:48.487+0000",
+          "updated": "2009-04-20T08:28:48.487+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700784",
+          "id": "12700784",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. The thread safety problem has to do with safe object publication\n\nOh, great, you mean basic concurrency competency :( Well thats an embarrassing erosion of knowledge. Back to the books. Thread a has no happens before relationship with thread b unless they share the lock. I trained myself to just synchronize or use volatile long ago (and then let the knowledge begin seeping I guess), but even still, every time I see one of these double lock check type tricks I go, eh, this one must work or something.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T12:19:18.757+0000",
+          "updated": "2009-04-20T12:19:18.757+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700827",
+          "id": "12700827",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. lack of collision resolve\n\nMy version was the most basic... a simple cache that is not guaranteed to always hit.  I also wanted to keep the overhead very low in case of misses (hence no re-probing).  In the best case, I don't think one can get much faster... and in the worst case it won't be much slower than simple String.intern().  There could be other implementations that do resizing of course.\n\nbq. It'll break on non-power-of-two sizes. \n\nThe size is guaranteed to be a power of two by the constructor.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T15:49:55.728+0000",
+          "updated": "2009-04-20T15:55:19.066+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700921",
+          "id": "12700921",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's another version that uses closed hashing and table resizes to cache all interned strings requested.  It remains lock free and memory barrier free on the read side.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T20:30:41.159+0000",
+          "updated": "2009-04-20T20:30:41.159+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700924",
+          "id": "12700924",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "corrected load factor check (the previous code actually calculated 80%, not 75%).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T20:36:29.495+0000",
+          "updated": "2009-04-20T20:36:29.495+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700926",
+          "id": "12700926",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Okay, I thought more about that. Yonik is amazing.\n\nThe fastest hash we can get, should have no collisions. This is achievable by resizing on each new collision. Then we should introduce an upper bound for this process, for it not to blow up. Finally, we can use our upper bound for hash size from the start.\n\nI benchmarked a bit, it works better than HashTable.\nSomewhat better for already interned strings, much better for noninterned strings.\n\"s1==s2 || s1.compareTo(s2) == 0\" combo amazingly works faster than s1.equals(s2).\nAdditional hashcode check makes sparse hash access a bit slower and doesn't really help with crowded hash.\nHaving a crowded hash degrades performance a lot. \n\nI updated my patch with Yonik's algorithm. Kept everything in statics (faster), allowed to change cache size through system property for adventurous types, default is 16k (works well for 100 values)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-20T20:40:54.473+0000",
+          "updated": "2009-04-20T20:40:54.473+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700928",
+          "id": "12700928",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Hehe, ten minute difference. Take over this issue, since you're obviously better at it than I?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-20T21:00:07.712+0000",
+          "updated": "2009-04-20T21:00:07.712+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700931",
+          "id": "12700931",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. The fastest hash we can get, should have no collisions. This is achievable by resizing on each new collision.\n\n*edit*: agree, for the first version that was only a cache where collisions invalidate the entry and cause another String.intern() to be called... my comments below are with respect to the second version of my code where interned strings are never dropped from the table.\n\nHmmm, in my quick'n'dirty tests of about 256 unique strings, a smaller hash table was actually quicker (initialized with 32 and let it resize vs starting at 1024).  I imagine that this would be due to a larger part of the table fitting in smaller and faster processor caches.  YMMV.  Collisions should also be very quick to skip by comparing the hash code (which is cached for Strings).\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T21:02:28.731+0000",
+          "updated": "2009-04-20T21:27:26.589+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700935",
+          "id": "12700935",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. Collisions should also be very quick to skip by comparing the hash code (which is cached for Strings).\nIn no-collision resolution scheme, if you detect a collision early with hashcode, you still call String.intern(). That kills any benefit gained from hashcode check vs compareTo. And if no collision is detected, introducing this check slows things down a little. Yes, that surprised me too.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-20T21:10:52.378+0000",
+          "updated": "2009-04-20T21:10:52.378+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12700942",
+          "id": "12700942",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. In no-collision resolution scheme, if you detect a collision early with hashcode, you still call String.intern(). \n\nIn the old code, yes... that's why I left it commented out there.  In the latest code, we re-probe on a collision w/o calling compareTo (assuming hashCodes are unequal) and only call intern() if it's really a String we haven't seen before.  The new code is a real hash table that will store all the Strings requested through it, unlike the first variant that was a simple cache.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-20T21:22:14.227+0000",
+          "updated": "2009-04-20T21:22:14.227+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12701626",
+          "id": "12701626",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I tried it out. Works a little bit better than simple cache (no stray interns must've paid off), doesn't degrade at all.\nI'd like to change starter value to something 256-1024, it works way better for 10-20 fields.\n\nWhy h >> 7? I understand that you're sacking collision-guilty bits, but why not exact amount that was used (have to store it?), or a whole byte or two?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-22T18:39:31.703+0000",
+          "updated": "2009-04-22T18:39:31.703+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704225",
+          "id": "12704225",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Mmm.. what's the status of this one?\nShould I add a patch with Yonik's last hash impl and all calls to String.intern() replaced to get it moving?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-29T18:01:35.128+0000",
+          "updated": "2009-04-29T18:01:35.128+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704246",
+          "id": "12704246",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=peger%40automotive.com",
+            "name": "peger@automotive.com",
+            "key": "peger@automotive.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Patrick Eger",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "As a quick comment on the implementation, i notice that it is possible (with reasonable probability) for hash collisions to result in re-interning a pair of strings multiple times. For example, a codepath that traverses across 32 unique string datapoints (say, in an inner loop somewhere), would have a minimum 3% probability of colliding and re-interning 2 strings every time through the loop. Because of the birthday paradox, it becomes likely to have such a situation (50% probability with ~150 unique values).\n\nThese are the probabilities of collision, assuming random distribution and perfect hashing. In real life the distribution will not be so random (string.hashCode() & MASK) so these will be \"best case\".\n2 datapoints: collision prob = 0.006104%\n4 datapoints: collision prob = 0.036617%\n8 datapoints: collision prob = 0.170779%\n16 datapoints: collision prob = 0.729976%\n32 datapoints: collision prob = 2.983863%\n64 datapoints: collision prob = 11.591861%\n128 datapoints: collision prob = 39.188158%\n256 datapoints: collision prob = 86.501947%\n\n\nPractically this may or may not matter. My thought is that some sort of fast LRU structure would be better, but of course creating something like this without locking may be tricky. Another idea might be to support some form of limited hash-chaining or probing in the table, which would mitigate the damage of a collision significantly.\n\n\nfor reference, python code for calculating birthday/hash collisions, shamelessly stolen:\n--------------------\ndef bp(n, d):\n\tv = 1.0\n\tfor i in range(n):\n\t\tv = v * (1 - float(i)/d)\n\treturn 1 - v\n\nfor n in [2, 4, 8, 16, 32, 64, 128, 256]:\n\tprint \"%i datapoints: collision prob = %f%%\" % (n, bp(n, 16*1024)*100)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=peger%40automotive.com",
+            "name": "peger@automotive.com",
+            "key": "peger@automotive.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Patrick Eger",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-29T18:40:05.083+0000",
+          "updated": "2009-04-29T18:40:05.083+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704247",
+          "id": "12704247",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. why h >> 7?\n\nWas copied from Solr's hashing of doc ids... we didn't want to throw away too many lower bits since they were likely to be the most random.  In string hashes, the rightmost bits also have the most entropy.\n\nbq. Should I add a patch with Yonik's last hash impl and all calls to String.intern() replaced to get it moving? \n\nThat would be helpful, thanks!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-29T18:42:17.615+0000",
+          "updated": "2009-04-29T18:42:17.615+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704252",
+          "id": "12704252",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. As a quick comment on the implementation, i notice that it is possible (with reasonable probability) for hash collisions to result in re-interning a pair of strings multiple times.\n\nFor the first implementation, yes.  The latest implementation is guaranteed to only intern a string once ( the hashtable does probing and resizing.)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-29T18:56:49.855+0000",
+          "updated": "2009-04-29T18:56:49.855+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704261",
+          "id": "12704261",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=peger%40automotive.com",
+            "name": "peger@automotive.com",
+            "key": "peger@automotive.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Patrick Eger",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Ah I see thanks. Was looking at the most recent patch (by  date).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=peger%40automotive.com",
+            "name": "peger@automotive.com",
+            "key": "peger@automotive.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Patrick Eger",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-29T19:09:08.902+0000",
+          "updated": "2009-04-29T19:09:08.902+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704278",
+          "id": "12704278",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This should do.\nI replaced a pair of intern()s that appeared on trunk after last patch, initial cache size is 1024 and won't probably go up for most people.\nAlso renamed some variables while trying to understand the code, can revert them back if it's important for anyone.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-29T19:30:55.786+0000",
+          "updated": "2009-04-29T19:30:55.786+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704306",
+          "id": "12704306",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "The last patch removed the ability to plug a different implementation, but I guess we don't need that until we have another implementation (and it's not clear if the benefits of dumping String.intern() compatability in the future outweigh the disadvantages of breaking back compatibility).\n\nRethinking what possible problems this could have... I'm not sure it should be committed in it's current form.  One problem is potentially unlimited growth where there was not before.  This could happen in a long running search system where users enter a variety of field names that don't even exist.\n\nA WeakReference based approach would work (as String.intern() uses), but that's more heavyweight and could need synchronization since we are dealing with more complex objects.\nAnother option is to go back to a simple cache based approach which could still pin otherwise unreferenced Strings in memory, but would have a bounded size.  Perhaps this argues for reinstating the pluggability of the intern implementation.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-29T20:06:55.914+0000",
+          "updated": "2009-04-29T20:23:00.050+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704313",
+          "id": "12704313",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Is there 'any' benefit of dumping String.intern() compatibility? All those interns happen at startup anyway.\nIf future brings us something better (which I doubt in this case), we'll just swap the impl, which is all-private.\n\nAll in all I consider a practice of system-property-driven pluggable implementations a sickening one. Take MMapDirectory that was impossible to use until now without twiddling with startup keys, take SegmentReader/ReadonlySegmentReader - resulting code is ugly and nobody's going to override defaults anyway, all important dependencies are package-private.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-29T20:24:13.850+0000",
+          "updated": "2009-04-29T20:24:13.850+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704315",
+          "id": "12704315",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "A top bound on cache size will do? If you're fed too much unique strings it'll end up with characteristics of simple cache.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-04-29T20:29:58.826+0000",
+          "updated": "2009-04-29T20:29:58.826+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704448",
+          "id": "12704448",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here is another alternative that is limited in size to prevent unbounded growth, and should still handle collisions acceptably.  It's completely lockless (even for updates) and uses open hashing.  Each bucket is an insertion-order cache (inserts at the head) and is limited to a certain length.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-30T02:41:11.384+0000",
+          "updated": "2009-04-30T02:41:11.384+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704484",
+          "id": "12704484",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shalin",
+            "name": "shalin",
+            "key": "shalinmangar",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=shalinmangar&avatarId=19501",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=shalinmangar&avatarId=19501",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=shalinmangar&avatarId=19501",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=shalinmangar&avatarId=19501"
+            },
+            "displayName": "Shalin Shekhar Mangar",
+            "active": true,
+            "timeZone": "America/Denver"
+          },
+          "body": "Yonik, the string is being interned twice in your latest patch\n{code}\n+      if (e==null) {\n+        s = s.intern();\n+        arr[slot] = new Entry(s.intern(), h, first);\n{code}",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=shalin",
+            "name": "shalin",
+            "key": "shalinmangar",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=shalinmangar&avatarId=19501",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=shalinmangar&avatarId=19501",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=shalinmangar&avatarId=19501",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=shalinmangar&avatarId=19501"
+            },
+            "displayName": "Shalin Shekhar Mangar",
+            "active": true,
+            "timeZone": "America/Denver"
+          },
+          "created": "2009-04-30T05:44:51.635+0000",
+          "updated": "2009-04-30T05:44:51.635+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12704638",
+          "id": "12704638",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Yonik, the string is being interned twice in your latest patch \n\nThanks - I had actually fixed that... but it didn't make it into the patch apparently :-)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-04-30T13:49:41.121+0000",
+          "updated": "2009-04-30T13:49:41.121+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12706129",
+          "id": "12706129",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Bug in previous algo (unbounded hash):\n\n      // check cached hashCode first, and use compareTo to avoid\n      // dynamic type checking in equals().\n      if (h == other.hashCode() && s.compareTo(other)==0) {\n        return s;          <--- here we should return 'other'\n      }\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-05-05T18:03:35.896+0000",
+          "updated": "2009-05-05T18:03:35.896+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12709234",
+          "id": "12709234",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Here's a slightly updated patch (javadoc and StringHelper.intern() convenience method).\n\nThe method of plugging a different StringInterner implementation would be to simply assign to the static in StringHelper.\n\n{code}\n  /**\n   * Expert:\n   * The StringInterner implementation used by Lucene.\n   * This should never be changed after other Lucene APIs have been used.\n   */\n  public static StringInterner interner = new SimpleStringInterner(1024,8);\n{code}\n\nAre people comfortable with this approach?  How about the defaults?  This should speed up anyone with under thousands of field, and only slightly slow down someone with over thousands of fields (until they plugged in a new interner with a bigger table size).\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-05-14T00:52:54.349+0000",
+          "updated": "2009-05-14T00:52:54.349+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12718181",
+          "id": "12718181",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Yonik is this ready to go in...?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T20:13:20.935+0000",
+          "updated": "2009-06-10T20:13:20.935+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12718188",
+          "id": "12718188",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think so... but I was waiting for some kind of feedback if people in general thought it was the right approach.  It introduces another static, and people tend to not like that.  I accidentally didn't upload the latest version with the javadoc + helper method.  I'll do that now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T20:29:17.364+0000",
+          "updated": "2009-06-10T20:29:17.364+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12718189",
+          "id": "12718189",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "latest patch - could use a multi-threaded testcase to ensure no exceptions are thrown and that intern() always returns the same instance.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-10T20:33:31.273+0000",
+          "updated": "2009-06-10T20:33:31.273+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12718198",
+          "id": "12718198",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "bq. but I was waiting for some kind of feedback if people in general thought it was the right approach. It introduces another static, and people tend to not like that.\nJust forgot somehow about this issue.\nYou're right about static, it's not clear how and when to initialize it, plus you introduce some public classes we'll be unable to change/remove later.\nI still have a feeling we should expose a single static method - intern() and hide implementation away, possibly tuning it to be advantageous for <thousands of fields, and degrading to raw String.intern() level if there are more fields.\n\nI'm going to be away from AC power for three days starting now, so I won't be able to reply until then.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-10T21:02:15.837+0000",
+          "updated": "2009-06-10T21:02:15.837+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12718598",
+          "id": "12718598",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Latest patch attached with multi-threaded test.\n\nSome quick performance tests:\n10240 unique strings, 100 threads:  29% faster  (larger than the cache capacity - will lead to evictions)\n100 unique strings, 100 threads: 147% faster\n100 unique strings, 2 threads: 152% faster\n\nTimes were simply the time it took the junit test to run - includes other overhead like random number generation and error checking.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-11T19:29:53.057+0000",
+          "updated": "2009-06-11T19:29:53.057+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12718650",
+          "id": "12718650",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. I still have a feeling we should expose a single static method - intern() and hide implementation away\n\nWhile the default should be beneficial for most users, I'd hate to lock away a users ability to either expand or remove the cache. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-11T21:52:05.695+0000",
+          "updated": "2009-06-11T21:52:05.695+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12720266",
+          "id": "12720266",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I assume we can assign this one to you Yonik?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-16T17:57:23.095+0000",
+          "updated": "2009-06-16T17:57:23.095+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12720274",
+          "id": "12720274",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I've held off because of a lack of consensus, but I suppose I can do the old \"i'll commit in a few days\" thing.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-16T18:09:37.504+0000",
+          "updated": "2009-06-16T18:09:37.504+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12720275",
+          "id": "12720275",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Or push to 3.1. I have no preference if it goes in as is, just looking for it to be managed one way or another for 2.9 release.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-16T18:15:19.004+0000",
+          "updated": "2009-06-16T18:15:19.004+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12720291",
+          "id": "12720291",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. I've held off because of a lack of consensus\n\nSilence = consensus!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=mikemccand",
+            "name": "mikemccand",
+            "key": "mikemccand",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Michael McCandless",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-06-16T18:45:38.673+0000",
+          "updated": "2009-06-16T18:45:38.673+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12723352",
+          "id": "12723352",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Okay, let's have an extra class and ability to switch impls. I liked that static method could get inlined (at least its short-path), but that's not necessary.\n\nExcept I'd like the javadoc demand each impl to be String.intern()-compatible. There's nothing bad in it, as in any decent impl an unique string will be String.intern()'ed one time at most. And the case when you get an infinite flow of unique strings is degenerate anyway, you have to fix something, not deal with it. On the other hand, we can remove \"This should never be changed after other Lucene APIs have been used\" clause.\n\nrewrite 'for' as 'for (Entry e = first;e != null;e = e.next)' for clarity?\n'Entry[] arr = cache;' - this can be skipped? 'cache' is already final and optimizer loves finals. Plus further down the method you use both cache[slot] and arr[slot]. Or am I missing some voodoo?\nIf check around 'nextToLast = e' can also be removed?\n'public String intern(char[] arr, int offset, int len)' - is this needed?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=earwin",
+            "name": "earwin",
+            "key": "earwin",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Earwin Burrfoot",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2009-06-23T23:13:47.157+0000",
+          "updated": "2009-06-23T23:13:47.157+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12731185",
+          "id": "12731185",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "looks like this is so close ...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-07-14T22:55:36.876+0000",
+          "updated": "2009-07-14T22:55:36.876+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12739628",
+          "id": "12739628",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Except I'd like the javadoc demand each impl to be String.intern()-compatible.\n\nIf *everything* went through the same intern, it wouldn't matter. \n\nbq. rewrite 'for' as 'for (Entry e = first;e != null;e = e.next)' for clarity?\n\ndone.\n\nbq. If check around 'nextToLast = e' can also be removed?\n\nI don't see how...",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-05T17:20:04.806+0000",
+          "updated": "2009-08-05T17:20:04.806+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12739649",
+          "id": "12739649",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "committed.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-05T18:05:17.758+0000",
+          "updated": "2009-08-05T18:05:17.758+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12739920",
+          "id": "12739920",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "I found one real occurrence of intern() in crontrib and a now obsolete discussion in one comment.\n\nAttached is a simple patch.\n\nWhat I currently do not like is that there are still a lot of intern()s in the Javadocs/comments elsewhere, maybe this should also be changed (code refactoring is not able to do that, but a simple grep).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-08-06T06:46:55.529+0000",
+          "updated": "2009-08-06T06:46:55.529+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12740638",
+          "id": "12740638",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "Committed rev 802095.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=uschindler",
+            "name": "uschindler",
+            "key": "thetaphi",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=thetaphi&avatarId=18956",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=thetaphi&avatarId=18956",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=thetaphi&avatarId=18956",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=thetaphi&avatarId=18956"
+            },
+            "displayName": "Uwe Schindler",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2009-08-07T17:20:37.620+0000",
+          "updated": "2009-08-07T17:20:37.620+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12746773",
+          "id": "12746773",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=noble.paul",
+            "name": "noble.paul",
+            "key": "noble.paul",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=noble.paul&avatarId=18547",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=noble.paul&avatarId=18547",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=noble.paul&avatarId=18547",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=noble.paul&avatarId=18547"
+            },
+            "displayName": "Noble Paul",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "isn't it possible to make the call to \n{code}\npublic String intern(char[] arr, int offset, int len) {\n}\n{code}\nnot create a String? \ncurrently , if I have a char[] it ends up creating a String (which makes a copy of the char[]) before it does the intern() operation.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=noble.paul",
+            "name": "noble.paul",
+            "key": "noble.paul",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=noble.paul&avatarId=18547",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=noble.paul&avatarId=18547",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=noble.paul&avatarId=18547",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=noble.paul&avatarId=18547"
+            },
+            "displayName": "Noble Paul",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-24T08:46:16.627+0000",
+          "updated": "2009-08-24T08:46:16.627+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12746813",
+          "id": "12746813",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=noble.paul",
+            "name": "noble.paul",
+            "key": "noble.paul",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=noble.paul&avatarId=18547",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=noble.paul&avatarId=18547",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=noble.paul&avatarId=18547",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=noble.paul&avatarId=18547"
+            },
+            "displayName": "Noble Paul",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I haven't quite tested it. But it is an idea as a patch. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=noble.paul",
+            "name": "noble.paul",
+            "key": "noble.paul",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=noble.paul&avatarId=18547",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=noble.paul&avatarId=18547",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=noble.paul&avatarId=18547",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=noble.paul&avatarId=18547"
+            },
+            "displayName": "Noble Paul",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-24T11:05:11.579+0000",
+          "updated": "2009-08-24T11:05:11.579+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/12746845",
+          "id": "12746845",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "{quote}\nisn't it possible to make the call to\npublic String intern(char[] arr, int offset, int len) {}\nnot create a String?\n{quote}\n\nYep - that's why I added that method (just didn't get around to implementing it that way).",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=yseeley%40gmail.com",
+            "name": "yseeley@gmail.com",
+            "key": "yseeley@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Yonik Seeley",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2009-08-24T12:41:19.852+0000",
+          "updated": "2009-08-24T12:41:19.852+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12423227/comment/17587802",
+          "id": "17587802",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2681|https://github.com/apache/lucene/issues/2681].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:59:52.065+0000",
+          "updated": "2022-08-28T11:59:52.065+0000"
+        }
+      ],
+      "maxResults": 53,
+      "total": 53,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04vxr:",
+    "customfield_12314139": null
+  }
+}

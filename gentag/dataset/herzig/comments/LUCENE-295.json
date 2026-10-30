@@ -1,0 +1,1936 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12314445",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445",
+  "key": "LUCENE-295",
+  "fields": {
+    "fixVersions": [],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "13454",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/3",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/major.svg",
+      "name": "Major",
+      "id": "3"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "13.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12310286",
+        "id": "12310286",
+        "description": "",
+        "name": "1.4",
+        "archived": true,
+        "released": true,
+        "releaseDate": "2004-07-01"
+      }
+    ],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=java-dev%40lucene.apache.org",
+      "name": "java-dev@lucene.apache.org",
+      "key": "java-dev@lucene.apache.org",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Lucene Developers",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310235",
+        "id": "12310235",
+        "name": "core/search",
+        "description": "issues with search code"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": null,
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "27754",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+      "name": "chuck@manawiz.com",
+      "key": "chuck@manawiz.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chuck Williams",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+      "name": "chuck@manawiz.com",
+      "key": "chuck@manawiz.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Chuck Williams",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-295/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/1",
+      "id": "1",
+      "description": "A problem which impairs or prevents the functions of the product.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21133&avatarType=issuetype",
+      "name": "Bug",
+      "subtask": false,
+      "avatarId": 21133
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@40e2fd1f[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@60192ff4[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@33d3b3f4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@1a1c4cf5[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7122f091[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@60beab12[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4edce8e2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@365f6e28[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@501fb60a[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@45ec7120[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6c5e0a87[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@21bd170a[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:19:00 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2006-05-27T01:38:39.000+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-295/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "created": "2004-10-22T08:11:33.000+0000",
+    "updated": "2022-08-28T11:19:00.680+0000",
+    "timeoriginalestimate": null,
+    "description": "When MultiSearcher invokes its subsearchers, it is the subsearchers' docFreq()\nthat is accessed by Similarity.docFreq().  This causes idf's to be computed\nlocal to each index rather than globally, which causes ranking across multiple\nindices to not be equivalent to ranking across the entire global collection.\n\nThe attached files (if I can figure out how to attach them) provide a potential\npartial solution for this.  They properly fix a simple test case, RankingTest,\nthat was provided by Daniel Naber.\n\nThe changes are:\n  1.  Searcher:  Add topmostSearcher() field with getter and setter to record\nthe outermost Searcher.  Default to this.\n  2.  MultiSearcher:  Pass down the topmostSearcher when creating the subsearchers.\n  3.  IndexSearcher:  Call Query.weight() everywhere with the topmostSearcher\ninstead of this.\n  4.  Query:  Provide a default implementation of Query.combine() so that\nMultiSearcher works with all queries.\n\nProblems or possible problems I see:\n  1.  This does not address the same issue with RemoteSearchable. \nRemoteSearchable is not a Searcher, nor can it be due to lack of multiple\ninheritance in Java, but Query.weight() requires a Searcher.  Perhaps\nQuery.weight() should be changed to take a Searchable, but this requires\nchanging many places and I suspect would break apps.\n  2.  There may be other places that topmostSearcher should be used instead of this.\n  3.  The default implementation for Query.combine() is a guess on my part - it\nworks for TermQuery.  It's fragile in that the default implementation will hide\nbugs caused by queries that inadvertently omit a more precise Query.combine()\nmethod.\n  4.  The prior comment on Query.combine() indicates that whoever wrote it was\nfully aware of this problem and so probably had another usage in mind, so the\nwhole issue may just be Daniel's usage in the test case.  It's not apparent to\nme, so I probably don't understand something.",
+    "customfield_10010": 31841.0,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312429",
+        "id": "12312429",
+        "filename": "ASF.LICENSE.NOT.GRANTED--combine-fix.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+          "name": "chuck@manawiz.com",
+          "key": "chuck@manawiz.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chuck Williams",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-04-27T05:51:02.000+0000",
+        "size": 5043,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312429/ASF.LICENSE.NOT.GRANTED--combine-fix.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312430",
+        "id": "12312430",
+        "filename": "ASF.LICENSE.NOT.GRANTED--combine-fix2.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-04-27T19:03:13.000+0000",
+        "size": 13645,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312430/ASF.LICENSE.NOT.GRANTED--combine-fix2.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312431",
+        "id": "12312431",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-06-21T16:44:30.000+0000",
+        "size": 14139,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312431/ASF.LICENSE.NOT.GRANTED--multisearcher.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312423",
+        "id": "12312423",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-02-10T19:33:34.000+0000",
+        "size": 20988,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312423/ASF.LICENSE.NOT.GRANTED--multisearcher.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312421",
+        "id": "12312421",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-11-12T17:39:11.000+0000",
+        "size": 1882,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312421/ASF.LICENSE.NOT.GRANTED--multisearcher.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312422",
+        "id": "12312422",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher2.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-11-15T21:24:32.000+0000",
+        "size": 13060,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312422/ASF.LICENSE.NOT.GRANTED--multisearcher2.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312424",
+        "id": "12312424",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher-2005-02-18b.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-02-18T20:33:09.000+0000",
+        "size": 47715,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312424/ASF.LICENSE.NOT.GRANTED--multisearcher-2005-02-18b.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312425",
+        "id": "12312425",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher-2005-02-22c.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-02-23T00:33:00.000+0000",
+        "size": 49186,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312425/ASF.LICENSE.NOT.GRANTED--multisearcher-2005-02-22c.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312426",
+        "id": "12312426",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher-2005-04-19.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+          "name": "otis@apache.org",
+          "key": "otis@apache.org",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Otis Gospodnetic",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-04-20T12:13:46.000+0000",
+        "size": 44491,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312426/ASF.LICENSE.NOT.GRANTED--multisearcher-2005-04-19.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312428",
+        "id": "12312428",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher-deprecation.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-04-26T16:34:50.000+0000",
+        "size": 19714,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312428/ASF.LICENSE.NOT.GRANTED--multisearcher-deprecation.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312427",
+        "id": "12312427",
+        "filename": "ASF.LICENSE.NOT.GRANTED--multisearcher-deprecation.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+          "name": "siberski@learninglab.de",
+          "key": "siberski@learninglab.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Wolf Siberski",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2005-04-22T17:08:05.000+0000",
+        "size": 20212,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312427/ASF.LICENSE.NOT.GRANTED--multisearcher-deprecation.diff"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312419",
+        "id": "12312419",
+        "filename": "ASF.LICENSE.NOT.GRANTED--MultiSearcherPatch.zip",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+          "name": "chuck@manawiz.com",
+          "key": "chuck@manawiz.com",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Chuck Williams",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-10-22T08:15:01.000+0000",
+        "size": 7193,
+        "mimeType": "application/octet-stream",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312419/ASF.LICENSE.NOT.GRANTED--MultiSearcherPatch.zip"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12312420",
+        "id": "12312420",
+        "filename": "ASF.LICENSE.NOT.GRANTED--patch.diff",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+          "name": "daniel.naber@t-online.de",
+          "key": "daniel.naber@t-online.de",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Daniel Naber",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2004-10-23T01:58:40.000+0000",
+        "size": 3647,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12312420/ASF.LICENSE.NOT.GRANTED--patch.diff"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "[PATCH] MultiSearcher problems with Similarity.docFreq()",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "Operating System: other\nPlatform: All",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321963",
+          "id": "12321963",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=13175)\nModified files for MultiSearcher / Similarity incompatibility\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-10-22T08:15:01.000+0000",
+          "updated": "2004-10-22T08:15:01.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321964",
+          "id": "12321964",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=13194)\nChuck's changes as a diff\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-10-23T01:58:40.000+0000",
+          "updated": "2004-10-23T01:58:40.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321965",
+          "id": "12321965",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Chuck, thanks for the files. I cannot judge if that's the correct/best way to \nfix the problem. I've attached a diff built from your new files so that \nsomeone will hopefully review your changes. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-10-23T02:00:22.000+0000",
+          "updated": "2004-10-23T02:00:22.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321966",
+          "id": "12321966",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=13413)\nPatch to MultiSearcher.java to correct idf calculation\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-11-12T17:39:11.000+0000",
+          "updated": "2004-11-12T17:39:11.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321967",
+          "id": "12321967",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here is another patch to correct the idf calculation. This patch currently is\nkind of proof of concept (fixes Daniel Nabers test case), but not ready for\ncommitment, as it breaks ParallelMultiSearcher.java and several test cases. \n\nInstead of Chucks Williams patch, this one relies on a specialized Similarity\nobject which is passed to the searchers. This causes less changes (only\nMultiSearcher is affected), and IMHO fits better into Lucene's design, because\nSimilarity is responsible for idf calculation anyway, but the Searchers aren't.\n\nProblems:\n- The Similarity object can't be passed to RemoteSearchables, so the patch works\nonly for Searchers.\n- MultiSearcher.search() methods aren't thread-safe anymore. The only way to\nprovide the Searches with the new Similarity object is to use setSimilarity().\nThis causes *all* searches to use it, not only the search which is currently\nrunning.\n\nA better solution would be to add the Similarity object to the Query. While ther\ne is already a similarity attribute in the Query, there is no Method to set it,\nand also interaction with subqueries is unclear. Such a change would therefore\nrequire a major redesign of similarity handling. If we make Similarity\nserializable, then we could pass the object to RemoteSearchers too, as part of\nthe query. If I find time, I'll submit a complete patch in the future.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-11-12T17:55:04.000+0000",
+          "updated": "2004-11-12T17:55:04.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321968",
+          "id": "12321968",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=13464)\nComplete patch to allow specification the Similarity on a query-by-query case\n\nThis is a followup on my patch/comment from 2004-11-12. The patch attached now\nis complete, i.e. everything compiles and no test case is broken by it.\nThe main idea is that a setSimilarity() method and a similarity attributed is\nadded to Query. If the similarity is not set, the query uses the Searcher's\nsimilarity as before. However, if one sets the Similarity on the query, this\none takes precedence.\nTo solve the MultiSearcher issue, I have provided two different Similarities:\n- MultiSimilarity delegates the docFreq() and maxDoc() calls to the\nMultiSearcher, thus retrieving the sum over all registered searchers.\nThis Similarity always 'gets it right', but obviously doesn't work with\nRemoteSearchables.\n- DfMapSimilarity analyses a query and caches all necessary docFreq values.\nThis Similarity is Serializable and therefore works with RemoteSearchables,\ntoo. However, it is not able to handle queries where the term set is not known\nbeforehand, e.g. wildcard queries.\n\nBoth problems mentioned in my previous comment (thread-safety and remote\nsearcher compatibility) are solved by this patch. All test cases work\nunchanged with the exception of one test case which had been tweaked\npreviously due to the incorrect MultiSearcher and now works as expected\n(TestSort.testNormalizedScores()).\n\nProblems:\n- DfMapSimilarity.collectDfs() contains a lot of ugly casts to Query\nsubclasses.\n  This could be avoided by adding another abstract method to Query, but it is\n  unclear if this is really the better solution.\n- In this patch the choice for DfMapSimilarity is hard-coded into\nMultiSearcher. This should be made configurable.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2004-11-15T21:24:32.000+0000",
+          "updated": "2004-11-15T21:24:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321969",
+          "id": "12321969",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "*** Bug 32053 has been marked as a duplicate of this bug. ***",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=daniel.naber%40t-online.de",
+            "name": "daniel.naber@t-online.de",
+            "key": "daniel.naber@t-online.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-01-05T07:49:23.000+0000",
+          "updated": "2005-01-05T07:49:23.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321970",
+          "id": "12321970",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14242)\nNew patch based on the discussion on lucene-dev (intermediate version)\n\nAccording to my understanding of our dev-lucene discussion Multisearcher should\nevaluate queries in the following way:\n1. rewrite queries using the Multisearch Similarity\n2. extract necessary terms\n3. collect idfs for these terms from the Searchables\n4. adjust query boosts according to collected idfs\n5. distribute re-written and re-boosted query to Searchables\n6. merge results\n\nThis patch implements all steps except 4, where it uses a modified Similarity\nclass instead. Thus it is fully functional, but not yet ready for commit.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-10T19:33:34.000+0000",
+          "updated": "2005-02-10T19:33:34.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321971",
+          "id": "12321971",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14312)\nNew patch based on the discussion on lucene-dev (complete)\n\nThis is a complete version, from my point of view ready for prime time.\n\nNow a query can be 'frozen'. A frozen query always returns the most\nrecently created Weight when calling Query.weight().\n\nMultiSearcher query processing is now done in the following steps:\n   1. rewrite query\n   2. extract necessary terms\n   3. collect dfs for these terms from the Searchables\n   4. create query weights using aggregate dfs and *freeze query*.\n   5. distribute weighted and frozen query to Searchables\n   6. merge results\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-18T20:33:09.000+0000",
+          "updated": "2005-02-18T20:33:09.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321972",
+          "id": "12321972",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This looks good.  Thanks!\n\nA few comments:\n\nOrignally there was no Weight in Lucene, only Query and Scorer.  Weight was\nadded in order to make it so that searching did not modify a Query, so that a\nQuery instance could be reused.  Searcher-dependent state of the query is meant\nto reside in the Weight.  IndexReader dependent state resides in the Scorer. \nYour \"freezing\" a query violates this.  Can't we create the weight once in\nSearcher.search?\n\nCachedDfSource does not need to be public does it?\n\nWe need to think about back-compatibliity.  Folks have implementations of Query,\nWeight, Similarity and Scorer.  So, when a public API changes we need to\ndeprecate, not remove, old methods, and try hard to make the old version still\nwork.  So, for example, we need to figure out how to handle the case where folks\nhave implemented the old Similarity.idf() methods.\n\nYou no longer call Query.getSimilarity(Searcher).  That method permits queries\nto override the Searcher's Similarity implementation.  Is there a reason you do\nthis?  We should be computing DFs once for the whole query tree, but it should\nstill be possible to compute, e.g., IDFs independently per node, no?\n\nI also wonder if, instead of adding DocFreqSource we could instead still use the\nSearcher.  MultiSearcher could keep an LRU cache of total doc freqs, implemented\nwith LinkedHashMap, for the last few thousand search terms.  That would be a far\nless invasive change, and hence less likely to break folks.  Or am I missing\nsomething?\n\nSorry if I seem picky, but this is core stuff in Lucene and affects a lot of people.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-22T02:49:14.000+0000",
+          "updated": "2005-02-22T02:49:14.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321973",
+          "id": "12321973",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14344)\nNext version - sends weights instead of queries\n\nThanks for the valuable feedback which has resulted in this new version. Now\nthe query freezing approach is avoided by sending weights to the searchables\ninstead of queries. Thus queries are still resusable, but the Searchable\ninterface had to be extended. Also, previous API and behavior modifications\nhave been reverted as far as possible.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-23T00:33:00.000+0000",
+          "updated": "2005-02-23T00:33:00.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321974",
+          "id": "12321974",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This looks great to me!\n\n+1\n\nThanks again for patiently working through this rather extensive change.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-02-23T03:17:20.000+0000",
+          "updated": "2005-02-23T03:17:20.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321975",
+          "id": "12321975",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I applied this patch (2005-02-22 version) locally, but it doesn't compile as is.\n It looks like I need to add \"throws IOException\" to\nBooleanQuery.BooleanWeight2.createWeight(Searcher) methods, and also to\nMultiPhraseQuery.createWeight(Searcher) method.\n\nIt looks like I also need to modify TermQuery.TermWeight and add a searcher\ndeclaration (private Searcher searcher;), plus the searcher assignment to the\nconstructor (this.searcher = searcher).\n\nAfter these 2-3 changes Lucene compile.  Are my changes OK?\n\nUnfortunately, unit tests fail in a few places, and it looks like all failures\nhave to do with RemoteSearchable.  Re-reading the comments in this bug entry, it\nlooks like this was a known issue at one point, but Wolf noted the following on\n2004-11-15:\n\n\"Both problems mentioned in my previous comment (thread-safety and remote\nsearcher compatibility) are solved by this patch. All test cases work\nunchanged with the exception of one test case which had been tweaked\npreviously due to the incorrect MultiSearcher and now works as expected\n(TestSort.testNormalizedScores()).\"\n\nThis sounds like tests involving RemoteSearchable should pass now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-05T11:31:57.000+0000",
+          "updated": "2005-04-05T11:31:57.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321976",
+          "id": "12321976",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Changing MultiSearcher to implement Serializable makes all unit tests pass again.\n\nI'll wait a bit more before committing this in order to give people time to comment.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-05T11:50:20.000+0000",
+          "updated": "2005-04-05T11:50:20.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321977",
+          "id": "12321977",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "(In reply to comment #13) \n> I applied this patch (2005-02-22 version) locally, but it doesn't compile as \nis. \n>  It looks like I need to add \"throws IOException\" to \n> BooleanQuery.BooleanWeight2.createWeight(Searcher) methods, and also to \n> MultiPhraseQuery.createWeight(Searcher) method. \n \nThat should be no problem for BooleanWeight2.createWeight(Searcher). \n \n> It looks like I also need to modify TermQuery.TermWeight and add a searcher \n> declaration (private Searcher searcher;), plus the searcher assignment to the \n> constructor (this.searcher = searcher). \n>  \n> After these 2-3 changes Lucene compile.  Are my changes OK? \n \nI think so. \n \nRegards, \nPaul Elschot \n \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-04-06T01:03:34.000+0000",
+          "updated": "2005-04-06T01:03:34.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321978",
+          "id": "12321978",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I made these comments last night, but somehow they aren't here.  Sorry if a\nduplicate pops up in the wrong place somewhere...\n\nI don't think all of the changes are correct and feel we need Wolf to comment on\nthis as his message states that he ran the unit tests successfully on his code\nas submitted.  Specifically, it looks to me like:\n  1.  The additions of throws IOException to Weights are correct, and due to new\nWeights added in parallel to Wolf's work.\n  2.  I do not believe adding the searcher field back to TermWeight is correct.\n Wolf explicitly pulled this field out and replaced all references to it with\nreferences to similarity or idf.  What caused the field to be added back?\n  3.  Making MultiSearcher implement Serializable seems strange -- I don't\nunderstand why in the protocol this would be requried.  It does not seem right.\n\nChuck",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-06T01:16:45.000+0000",
+          "updated": "2005-04-06T01:16:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321979",
+          "id": "12321979",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Here is what I think happened and, if so, the correct fix:\n  1.  MultiPhraseQuery and the new BooleanQuery were both added in parallel to\nWolf's work.  We now have a merge conflict.\n  2.  The addition of the throws IOException to these two classes is now\nrequired for Weights, and so the change is correct.\n  3.  The new protocol for Weight's is to NOT have a searcher field.  Instead,\nthey should keep a Similarity field.  Just like the other Weight's that Wolf's\npatch addresses, these two classes only use the searcher field to access the\nSimilarity and/or the idf.  MultiPhraseQuery, which needs the idf, already has\nan idf field.  So, identical to Wolf's other changes it is straightforward to\nmodify these two classes to eliminate the searcher field.\n  4.  Eliminating the searcher field will elimninate the need for MultiSearcher\nto be Serializable, therefore retracting that change.\n\nI think that's right, and that the best fix is too conform the new Weights to\nthe new protocol for MultiSearcher compatibility.  I've also sent a message\ndirectly to Wolf asking him to review this.\n\nChuck\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-06T03:34:13.000+0000",
+          "updated": "2005-04-06T03:34:13.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321980",
+          "id": "12321980",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "One more note on this.  I think conforming to the new Weight protocol, i.e.\neliminating the searcher field from BooleanWeight, BooleanWeight2, and\nMultiPhraseWeight, is quite important.  This is because the Weight is now sent\nto RemoteSearchables instead of the Query.  If Weights have a searcher field,\nthen this could be quite expensive.\n\nChuck\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-06T04:09:02.000+0000",
+          "updated": "2005-04-06T04:09:02.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321981",
+          "id": "12321981",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "body": "(In reply to comment #17) \n> Here is what I think happened and, if so, the correct fix: \n>   1.  MultiPhraseQuery and the new BooleanQuery were both added in parallel \nto \n> Wolf's work.  We now have a merge conflict. \n>   2.  The addition of the throws IOException to these two classes is now \n> required for Weights, and so the change is correct. \n \nIt could well be that there is a conflict with the new BooleanQuery and \nBooleanScorer. Given the backward compatibility goal of this new code, I'd be \nhappy to resolve that possible conflict. \n \nOver the last months, I have kept all the changes to BooleanQuery/BooleanScorer \nin a local working copy, and I had only one or two conflicts. These were \nvery easy to resolve. Bugzilla works well in this respect: all changes have \nsome comments associated with them, and, from what I have read so far, \nthere are no conflicting intentions for the functionality of this code. \nSo, please go ahead as you see fit for the MultiSearcher. I think you  \ncan safely ignore evt. conflicts with new code for BooleanQuery/BooleanScorer. \n \nRegards, \nPaul Elschot ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=paul.elschot%40xs4all.nl",
+            "name": "paul.elschot@xs4all.nl",
+            "key": "paul.elschot@xs4all.nl",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=paul.elschot%40xs4all.nl&avatarId=23180",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=paul.elschot%40xs4all.nl&avatarId=23180"
+            },
+            "displayName": "Paul Elschot",
+            "active": true,
+            "timeZone": "Europe/Berlin"
+          },
+          "created": "2005-04-06T06:49:00.000+0000",
+          "updated": "2005-04-06T06:49:00.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321982",
+          "id": "12321982",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Sorry for the late reply; I'm currently traveling and had no Internet access.\nChucks analysis is completely correct. Serializing a (Multi-)Searcher doesn't\nmake sense, instead the Similarity has to be passed with the weight.\n\nWhat I don't understand is why the patch failed. I checked the diff file again,\nand the necessary changes appear to be in it. For example, line 89 of the diff\ncontains the addition of 'throws IOException' to BooleanWeight2.createWeight(),\nand the corresponding change for MultiPhraseQueryWeight is on line 346. The\nchanges required for TermWeight are at starting at line 1187. Could you please\ncheck if everything went ok when applying the patch, by comparing manually to\nthe diff file when errors occur somewhere?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-07T01:41:26.000+0000",
+          "updated": "2005-04-07T01:41:26.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321983",
+          "id": "12321983",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14767)\nlocal diffs that I'll apply\n\nThis is what the final diff is like.  I'll apply it shortly.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-20T12:13:46.000+0000",
+          "updated": "2005-04-20T12:13:46.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321984",
+          "id": "12321984",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Committed, unit tests pass.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=otis%40apache.org",
+            "name": "otis@apache.org",
+            "key": "otis@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Otis Gospodnetic",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-20T13:01:45.000+0000",
+          "updated": "2005-04-20T13:01:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321985",
+          "id": "12321985",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14784)\nAdditional patch for deprecation issue\n\nThis patch removes all references to deprecated methods in Searchable,\nand fixes some other minor issues.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-22T17:08:05.000+0000",
+          "updated": "2005-04-22T17:08:05.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321986",
+          "id": "12321986",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I am now confused by the changes in Searcher.java.  Why is sometimes\nquery.weight(Searcher) called and other times query.createWeight()?  The latter\nis meant only to only construct a Weight, and the former to construct and\ninitialize it.  Shouldn't it always be initialized?\n\nAlso, it was difficult to apply your patch.  It uses CRLF instead of LF, which\nconfuses patch on Linux.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-26T05:06:47.000+0000",
+          "updated": "2005-04-26T05:06:47.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321987",
+          "id": "12321987",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14841)\nAdditional patch for deprecation issue - corrected\n\nThis was just an oversight. I've replaced the remaining calls to query.weight()\nin Searcher with Searcher.createWeight() and corrected that method so that it\ncalls query.weight() now.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-26T16:34:50.000+0000",
+          "updated": "2005-04-26T16:34:50.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321988",
+          "id": "12321988",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I have applied the deprecation patch.\n\nThe solution to my patch difficulties was to use 'patch -l -F 4'.  This gets\naround the end-of-line issues.\n\nThanks again, Wolf!\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cutting%40apache.org",
+            "name": "cutting@apache.org",
+            "key": "cutting@apache.org",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10453",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10453",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10453",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10453"
+            },
+            "displayName": "cutting@apache.org",
+            "active": false,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-27T04:30:32.000+0000",
+          "updated": "2005-04-27T04:30:32.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321989",
+          "id": "12321989",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14846)\n[PATCH] Fix to Query.combine() method and all specializations\n\nThis fixes the bugs in Query.combine() that were uncovered by the failing test\nin the Highlighter.  Only Query.combine() remains -- all overrides in\nBooleanQuery, RangeQuery, MultiTermQuery and PrefixQuery are deleted.  I\nbelieve this fix is correct, robust realtive to possible user Query\nimplementations, and generates optimal queries for at least the cases that are\nbuilt-in to Lucene (query rewriting of MultTermQuery's and RangeQuery's).  This\nis more robust relative to possible user Query implementations and covers more\noptimizations cases than the version I sent via email last night.  With this\npatch, all Lucene and Highlighter tests pass (with the exception of the buggy\nTestSort.testNormalizedScores() which should be fixed by Wolf's patch).\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-27T05:51:02.000+0000",
+          "updated": "2005-04-27T05:51:02.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321990",
+          "id": "12321990",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=14854)\nSlightly extended Fix to Query.combine()\n\nThis is an extension/modification of Chucks patch.\nBesides his changes, it contains more test cases (in TestMultiSearcherRanking)\nand minor additional modifications to make these tests work:\n- if the resulting query consists of only one clause, return that clause\n  directly instead of wrapping it into a BooleanQuery.\n- BooleanQuery.equals doesn't take clause order into account anymore \nI also have rewritten the loop logic of Query.combine to use a flag instead \nof a labeled break, but this is more a matter of taste.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-27T19:03:13.000+0000",
+          "updated": "2005-04-27T19:03:13.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321991",
+          "id": "12321991",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Wolf's revisions to my changes to Query.combine() look fine.  The single-query\noptimization is good -- my oversight to have not included it originally.  I\ndon't believe either of the other two changes is necessary, but they are correct:\n  1.  Using a flag instead of the labelled loop is a matter of style as Wolf\nsays, and it's a little less efficent (the biggest effect could be remedied by\none more if (splittable) to avoid unnecessarily copying the clauses of a\nBooleanQuery where coord is not disabled).\n  2.  Changing BooleanQuery equality to be independent of clause order is\nsemantically correct, although again it is a little less efficient.  It's only\npurpose is to stop a false-negative in the new tests.\n\nRegarding additional test cases, it would be helpful to add the cases I was\nconcerned about, which are situations where a query can rewrite into different\nkinds of fundamental queries depending on the reader.  I believe the only case\nwhere this occurs with the built-in queries is with MultiTermQuery's and\nRangeQuery's (where the rewrite depends on how many query clauses are generated\nby each reader), and we have covered those cases.  The coord testing in\nQuery.combine() is designed to handle the case where some query rewrites into a\ndifferent kind of BooleanQuery (e.g., an AND), in some readers and not others. \nNothing tests this at present.  A single-term BooleanQuery OR could rewrite into\na BooleanQuery AND, but this would be independent of reader.\n\nMany additional optimizations could be added.  It seems redundant to have\noptimizations here and in the rewrite mechanism.  Since we are down to just\nQuery.combine(), only called from one place, I think a better fix is to change\nMultiSearcher to pass the reader as well.  Then Query.combine() could construct\nthe straightforward BooleanQuery and rewrite it.  All the optimizations would\nthen go into a single place, the rewrite methods.  Wolf, what do you think of\nthat approach?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=chuck%40manawiz.com",
+            "name": "chuck@manawiz.com",
+            "key": "chuck@manawiz.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chuck Williams",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-04-28T00:15:53.000+0000",
+          "updated": "2005-04-28T00:15:53.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321992",
+          "id": "12321992",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Created an attachment (id=15481)\nUpdated fix to Query.combine()\n\nThis is a slightly updated version of my previous patch, taking Chucks comments\ninto account and based on the current HEAD.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-21T16:44:30.000+0000",
+          "updated": "2005-06-21T16:44:30.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321993",
+          "id": "12321993",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "*** Bug 35241 has been marked as a duplicate of this bug. ***",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-21T16:46:12.000+0000",
+          "updated": "2005-06-21T16:46:12.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321994",
+          "id": "12321994",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "There might be one corner case that your change in equals doesn't get right \n(not tested): a query \"a b a\" (i.e. one clause occuring twice -- doesn't make \nmuch sense, but has an influence on the result order) would equal \"a b b\", \nwouldn't it? Is that a problem? \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-22T06:08:33.000+0000",
+          "updated": "2005-06-22T06:08:33.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321995",
+          "id": "12321995",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "I've started a separate thread on BooleanQuery semantics on the dev mailing\nlist. You could still apply the patch and omit the change to\nBooleanQuery.equals(). This just leads to warning outputs in\nTestMultiSearcherRanking.checkQuery(), and if you want to avoid these, simply\ndelete the last 10 lines of TestMultiSearcherRanking.checkQuery(). They contain\nan additional, not really necessary test.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-22T18:12:00.000+0000",
+          "updated": "2005-06-22T18:12:00.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321996",
+          "id": "12321996",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks, I've committed your patch, leaving out the change to equals() and not \nremoving mergeBooleanQueries() as that is a public method which someone might \nbe using. Also, could you please check if the test case is correct now? I \ncouldn't apply that part of your patch cleanly and something might have been \nbroken. \n ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-24T05:57:02.000+0000",
+          "updated": "2005-06-24T05:57:02.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321997",
+          "id": "12321997",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks for applying the patch. Everything is fine from my point of view, except\none minor issue: You are right that Query.mergeBooleanQueries() can't just be\nremoved, as it is public. However, I doubt if it is still useful. Could we mark\nit as deprecated, and suggest a call to super.combine() as replacement?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-24T16:37:45.000+0000",
+          "updated": "2005-06-24T16:37:45.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321998",
+          "id": "12321998",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Should combine() maybe be static? Then deprecating mergeBooleanQueries() seems \nto be the obvious way to go. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-06-25T07:23:34.000+0000",
+          "updated": "2005-06-25T07:23:34.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12321999",
+          "id": "12321999",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Okay, I see that there are errors in the test cases if one makes \nQuery.combine() static. But does it have to be public? ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=lucenebugs%40danielnaber.de",
+            "name": "lucenebugs@danielnaber.de",
+            "key": "lucenebugs@danielnaber.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Daniel Naber",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-07-05T03:10:49.000+0000",
+          "updated": "2005-07-05T03:10:49.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/12322000",
+          "id": "12322000",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Currently, Query.combine() is only called by MultiSearcher and a Highlighter\ntest case. If I understand it correctly, the intent of this method was to give\nQuery subclasses a hook to modify the combination algorithm. This hook is not\nused by Query subclasses which are part of the Lucene distribution, and I would\nbe very astonished if someone used it outside of Lucene. Such an implementation\nwould break now anyway, because BooleanQueries are only handled correctly in the\nnew Query.combine[] method, but not in mergeBooleanQueries() (which\nreimplementations are supposed to call as helper method).\n\nIMHO the cleanest solution would be to remove combine() and\nmergeBooleanQueries() from Query and move the query combination logic to\nMultiSearcher. Of course, that would be an incompatible API change, and we can't\nbe 100% sure that no one needs the combine() hook. On the other hand, we now\nhave useless code in mergeBooleanQueries() and code which is only used by\nMultiSearcher in combine(), and that also isn't a desirable situation.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=siberski%40learninglab.de",
+            "name": "siberski@learninglab.de",
+            "key": "siberski@learninglab.de",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Wolf Siberski",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2005-07-05T18:19:43.000+0000",
+          "updated": "2005-07-05T18:19:43.000+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12314445/comment/17586487",
+          "id": "17586487",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#1373|https://github.com/apache/lucene/issues/1373].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:19:00.680+0000",
+          "updated": "2022-08-28T11:19:00.680+0000"
+        }
+      ],
+      "maxResults": 39,
+      "total": 39,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i0541z:",
+    "customfield_12314139": null
+  }
+}

@@ -1,0 +1,1873 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "12404567",
+  "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567",
+  "key": "LUCENE-1390",
+  "fields": {
+    "fixVersions": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/version/12312682",
+        "id": "12312682",
+        "description": "Last release (barring major bugs) before migrating to 3.0 and JDK 1.5",
+        "name": "2.9",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2009-09-25"
+      }
+    ],
+    "resolution": {
+      "self": "https://issues.apache.org/jira/rest/api/2/resolution/1",
+      "id": "1",
+      "description": "A fix for this issue is checked into the tree and tested.",
+      "name": "Fixed"
+    },
+    "customfield_12312322": null,
+    "customfield_12312323": null,
+    "customfield_12310420": "12361",
+    "customfield_12312320": null,
+    "customfield_12312321": null,
+    "customfield_12312328": null,
+    "customfield_12312329": null,
+    "customfield_12312326": null,
+    "customfield_12310300": null,
+    "customfield_12312327": null,
+    "customfield_12312324": null,
+    "customfield_12312720": null,
+    "customfield_12312325": null,
+    "lastViewed": null,
+    "priority": {
+      "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+      "name": "Minor",
+      "id": "4"
+    },
+    "labels": [],
+    "customfield_12312333": null,
+    "customfield_12312334": null,
+    "customfield_12313422": "false",
+    "customfield_12310310": "3.0",
+    "customfield_12312331": null,
+    "customfield_12312332": null,
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "customfield_12312330": null,
+    "versions": [],
+    "customfield_12311120": null,
+    "customfield_12313826": null,
+    "issuelinks": [
+      {
+        "id": "12321732",
+        "self": "https://issues.apache.org/jira/rest/api/2/issueLink/12321732",
+        "type": {
+          "id": "10030",
+          "name": "Reference",
+          "inward": "is related to",
+          "outward": "relates to",
+          "self": "https://issues.apache.org/jira/rest/api/2/issueLinkType/10030"
+        },
+        "outwardIssue": {
+          "id": "12400768",
+          "key": "LUCENE-1343",
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12400768",
+          "fields": {
+            "summary": "A replacement for AsciiFoldingFilter that does a more thorough job of removing diacritical marks or non-spacing modifiers.",
+            "status": {
+              "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+              "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+              "name": "Closed",
+              "id": "6",
+              "statusCategory": {
+                "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+                "id": 3,
+                "key": "done",
+                "colorName": "green",
+                "name": "Done"
+              }
+            },
+            "priority": {
+              "self": "https://issues.apache.org/jira/rest/api/2/priority/4",
+              "iconUrl": "https://issues.apache.org/jira/images/icons/priorities/minor.svg",
+              "name": "Minor",
+              "id": "4"
+            },
+            "issuetype": {
+              "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+              "id": "4",
+              "description": "An improvement or enhancement to an existing feature or task.",
+              "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+              "name": "Improvement",
+              "subtask": false,
+              "avatarId": 21140
+            }
+          }
+        }
+      }
+    ],
+    "customfield_12312339": null,
+    "customfield_12313825": null,
+    "assignee": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+      "name": "markrmiller@gmail.com",
+      "key": "markrmiller@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+      },
+      "displayName": "Mark Miller",
+      "active": true,
+      "timeZone": "America/New_York"
+    },
+    "customfield_12312337": null,
+    "customfield_12313823": null,
+    "customfield_12312338": null,
+    "customfield_12311920": null,
+    "customfield_12313822": null,
+    "customfield_12312335": null,
+    "customfield_12313821": null,
+    "customfield_12312336": null,
+    "customfield_12313820": null,
+    "status": {
+      "self": "https://issues.apache.org/jira/rest/api/2/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are not closed can be reopened.",
+      "iconUrl": "https://issues.apache.org/jira/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/component/12310230",
+        "id": "12310230",
+        "name": "modules/analysis",
+        "description": "issues related to analysis module"
+      }
+    ],
+    "archiveddate": null,
+    "customfield_12310120": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10121",
+        "value": "New",
+        "id": "10121",
+        "disabled": false
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/customFieldOption/10120",
+        "value": "Patch Available",
+        "id": "10120",
+        "disabled": false
+      }
+    ],
+    "customfield_12312026": null,
+    "customfield_12312023": null,
+    "customfield_12312024": null,
+    "aggregatetimeestimate": null,
+    "customfield_12312022": null,
+    "customfield_12310921": null,
+    "customfield_12310920": "26659",
+    "customfield_12312823": null,
+    "creator": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+      "name": "vajda",
+      "key": "vajda",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Andi Vajda",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+      "name": "vajda",
+      "key": "vajda",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+        "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+        "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+        "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+      },
+      "displayName": "Andi Vajda",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313520": null,
+    "customfield_12310250": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "customfield_12313924": null,
+    "votes": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1390/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "archivedby": null,
+    "customfield_12313920": null,
+    "issuetype": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issuetype/4",
+      "id": "4",
+      "description": "An improvement or enhancement to an existing feature or task.",
+      "iconUrl": "https://issues.apache.org/jira/secure/viewavatar?size=xsmall&avatarId=21140&avatarType=issuetype",
+      "name": "Improvement",
+      "subtask": false,
+      "avatarId": 21140
+    },
+    "timespent": null,
+    "customfield_12314020": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@2868348f[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@318484cc[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@12c42f23[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7f36b53[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@712b4338[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@738f851[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@34b662a2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@28032e94[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@39a8a2f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@4320007d[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4484d9c9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@75422843[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "customfield_12314141": null,
+    "customfield_12314140": null,
+    "project": {
+      "self": "https://issues.apache.org/jira/rest/api/2/project/12310110",
+      "id": "12310110",
+      "key": "LUCENE",
+      "name": "Lucene - Core",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "https://issues.apache.org/jira/secure/projectavatar?pid=12310110&avatarId=46085",
+        "24x24": "https://issues.apache.org/jira/secure/projectavatar?size=small&pid=12310110&avatarId=46085",
+        "16x16": "https://issues.apache.org/jira/secure/projectavatar?size=xsmall&pid=12310110&avatarId=46085",
+        "32x32": "https://issues.apache.org/jira/secure/projectavatar?size=medium&pid=12310110&avatarId=46085"
+      },
+      "projectCategory": {
+        "self": "https://issues.apache.org/jira/rest/api/2/projectCategory/10150",
+        "id": "10150",
+        "description": "Lucene-related projects",
+        "name": "Lucene"
+      }
+    },
+    "aggregatetimespent": null,
+    "customfield_12312520": null,
+    "customfield_12312521": "Sun Aug 28 11:53:04 UTC 2022",
+    "customfield_12314422": null,
+    "customfield_12314421": null,
+    "customfield_12314146": null,
+    "customfield_12314420": null,
+    "customfield_12314145": null,
+    "customfield_12314144": null,
+    "customfield_12314143": null,
+    "resolutiondate": "2008-12-06T23:28:21.173+0000",
+    "workratio": -1,
+    "customfield_12312923": null,
+    "customfield_12312920": null,
+    "customfield_12312921": null,
+    "watches": {
+      "self": "https://issues.apache.org/jira/rest/api/2/issue/LUCENE-1390/watchers",
+      "watchCount": 1,
+      "isWatching": false
+    },
+    "created": "2008-09-17T19:39:34.514+0000",
+    "updated": "2022-08-28T11:53:04.265+0000",
+    "timeoriginalestimate": null,
+    "description": "The ISOLatin1AccentFilter is removing accents from accented characters in the ISO Latin 1 character set.\nIt does what it does and there is no bug with it.\n\nIt would be nicer, though, if there was a more comprehensive version of this code that included not just ISO-Latin-1 (ISO-8859-1) but the entire Latin 1 and Latin Extended A unicode blocks.\nSee: http://en.wikipedia.org/wiki/Latin-1_Supplement_unicode_block\nSee: http://en.wikipedia.org/wiki/Latin_Extended-A_unicode_block\n\nThat way, all languages using roman characters are covered.\nA new class, ISOLatinAccentFilter is attached. It is intended to supercede ISOLatin1AccentFilter which should get deprecated.",
+    "customfield_10010": null,
+    "timetracking": {},
+    "customfield_12314523": null,
+    "customfield_12314127": null,
+    "customfield_12314522": null,
+    "customfield_12314126": null,
+    "customfield_12314521": null,
+    "customfield_12314125": null,
+    "customfield_12314520": null,
+    "customfield_12314124": null,
+    "customfield_12312340": null,
+    "attachment": [
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12395244",
+        "id": "12395244",
+        "filename": "ASCIIFoldingFilter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+          "name": "vajda",
+          "key": "vajda",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+          },
+          "displayName": "Andi Vajda",
+          "active": true,
+          "timeZone": "Etc/UTC"
+        },
+        "created": "2008-12-04T01:53:33.655+0000",
+        "size": 208995,
+        "mimeType": "text/plain",
+        "content": "https://issues.apache.org/jira/secure/attachment/12395244/ASCIIFoldingFilter.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12391651",
+        "id": "12391651",
+        "filename": "ASCIIFoldingFilter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+          "name": "sarowe",
+          "key": "steve_rowe",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+          },
+          "displayName": "Steven Rowe",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-10-07T17:51:49.952+0000",
+        "size": 212381,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12391651/ASCIIFoldingFilter.patch"
+      },
+      {
+        "self": "https://issues.apache.org/jira/rest/api/2/attachment/12391177",
+        "id": "12391177",
+        "filename": "ASCIIFoldingFilter.patch",
+        "author": {
+          "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+          "name": "sarowe",
+          "key": "steve_rowe",
+          "avatarUrls": {
+            "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+            "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+            "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+            "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+          },
+          "displayName": "Steven Rowe",
+          "active": true,
+          "timeZone": "America/New_York"
+        },
+        "created": "2008-09-29T23:53:37.489+0000",
+        "size": 212402,
+        "mimeType": "text/x-patch",
+        "content": "https://issues.apache.org/jira/secure/attachment/12391177/ASCIIFoldingFilter.patch"
+      }
+    ],
+    "customfield_12314123": null,
+    "customfield_12312341": null,
+    "customfield_12312220": null,
+    "customfield_12314122": null,
+    "customfield_12314121": null,
+    "customfield_12314120": null,
+    "customfield_12314129": null,
+    "customfield_12314524": null,
+    "customfield_12314128": null,
+    "summary": "add ASCIIFoldingFilter and deprecate ISOLatin1AccentFilter",
+    "customfield_12314130": null,
+    "customfield_12310291": null,
+    "customfield_12310290": null,
+    "customfield_12311024": null,
+    "customfield_12314138": null,
+    "customfield_12314137": null,
+    "environment": "any",
+    "customfield_12314136": null,
+    "customfield_12314135": null,
+    "customfield_12311020": null,
+    "customfield_12313320": "<div style='font-weight:bold;color:red;text-align:center'>This project has a <a href=\"https://lucene.apache.org/core/discussion.html\">user mailing list and an IRC channel</a> for support. If you are looking for support, or if you are not sure whether the behavior that you are observing is expected or not, please discuss it there first.</div>",
+    "customfield_12314134": null,
+    "duedate": null,
+    "customfield_12314132": null,
+    "customfield_12314131": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12631898",
+          "id": "12631898",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "The new ISOLatinAccentFilter class, superceding ISOLatin1AccentFilter.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-09-17T19:41:03.755+0000",
+          "updated": "2008-09-17T19:41:03.755+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12631931",
+          "id": "12631931",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I think that at a minimum, the Latin Extended Additional block [U+1E00-U+1EFF] should be added, since it is included in Unicode v3.0 (the version of Unicode that Java 1.4.2 is conformant with), and it consists mainly of characters which have exact diacritic-stripped ASCII versions.  Wikipedia doesn't seem to have a page for this block, and I can't find a code chart PDF for Unicode v3.0 on unicode.org, so here's the PDF for Unicode v5.1 (the latest version):\n\nhttp://www.unicode.org/charts/PDF/U1E00.pdf\n\nProbably should check against the [Unicode 3.0 data file|http://www.unicode.org/Public/3.0-Update1/UnicodeData-3.0.1.txt] to make sure there haven't been any changes to this block between v3.0 and v5.1.0 - i.e., to make sure that the above-linked PDF is accurate for Unicode v3.0.\n\nThere is one more Latin block listed in the [Unicode 3.0 blocks data file|http://www.unicode.org/Public/3.0-Update/Blocks-3.txt]: [Latin Extended-B|http://en.wikipedia.org/wiki/Latin_Extended-B_unicode_block].  Since many of the characters in this block don't have exact diacritic-stripped ASCII versions, maybe it could be argued that they shouldn't be included in this filter.  A fair proportion of them (maybe 40%), however, do.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-09-17T20:32:38.274+0000",
+          "updated": "2008-09-17T20:32:38.274+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12631946",
+          "id": "12631946",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "\nMakes sense.\n\n\nI did look at that block and it looked much more remote from the purpose of \nthis class. But you're right, many of these could be handled as well.\n\nAnd I agree that they should be handled to be able to claim to be doing a \ncomplete job.\n\nSo far, I've claimed that this class handles Latin 1 and Latin Extended A \nwhich should cover most, if not all, european/turkish languages using latin \nscript and thus goes much farther than the ISOLatin1AccentFilter in that \nrespect.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=cml",
+            "name": "cml",
+            "key": "cml",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Chris Lambertus",
+            "active": true,
+            "timeZone": "America/Los_Angeles"
+          },
+          "created": "2008-09-17T20:57:45.241+0000",
+          "updated": "2021-04-23T03:47:57.583+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12632332",
+          "id": "12632332",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "ISOLatinAccentFilter.java again, now with Unicode Latin Extended B as well.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-09-18T18:36:08.808+0000",
+          "updated": "2008-09-18T18:36:08.808+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12632339",
+          "id": "12632339",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Andi,\n\nWhat do you think of the idea of remaking this into a filter that folds all Unicode characters to their ASCII equivalents?  This would be (I think) a superset of what you've done, but would also include things like fullwidth Latin characters, smaller variants of some ASCII symbols, fancy quotation marks, etc.  Maybe non-Arabic decimal numeric characters could be converted to their Arabic versions.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-09-18T18:58:53.695+0000",
+          "updated": "2008-09-18T18:58:53.695+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12632458",
+          "id": "12632458",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "\n\nI think that would be a whole lot of typing :)\nNot a bad idea, still.\nI'm in the process of entering the 1E00 - 1EFF range.\nThe Extended-C and D blocks also have relevant things to include but I'm \nhoping to stop at the Extended Additional block currently in progress.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-09-18T23:53:45.084+0000",
+          "updated": "2008-09-18T23:53:45.084+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12632480",
+          "id": "12632480",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": " Now with the u1e00 - u1eff range.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-09-19T01:20:57.420+0000",
+          "updated": "2008-09-19T01:20:57.420+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12632706",
+          "id": "12632706",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. The Extended-C and D blocks also have relevant things to include\n\nThese two blocks were not included in Unicode 3.0, the version supported by Java 1.4.2, which is the Java version that Lucene 2.X supports.\n\nNevertheless, the ranges these two blocks occupy in Unicode 5.1 are non-characters in Unicode 3.0, so I don't think it would be a problem to add them.\n\nI'll take a look at adding more stuff this weekend.\n\nI also will add the Unicode character descriptions to the comments for each character (e.g. \"LATIN CAPITAL LETTER A WITH MACRON\").",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-09-19T14:51:01.230+0000",
+          "updated": "2008-09-19T14:51:01.230+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12633135",
+          "id": "12633135",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "body": "It would be good to clarify how the goals of this issue differ from LUCENE-1343 ... as an outside observer they seem to be the same thing",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=hossman",
+            "name": "hossman",
+            "key": "hossman",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=hossman&avatarId=21247",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=hossman&avatarId=21247",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=hossman&avatarId=21247",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=hossman&avatarId=21247"
+            },
+            "displayName": "Chris M. Hostetter",
+            "active": true,
+            "timeZone": "America/Phoenix"
+          },
+          "created": "2008-09-22T04:08:43.035+0000",
+          "updated": "2008-09-22T04:08:43.035+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12635594",
+          "id": "12635594",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. It would be good to clarify how the goals of this issue differ from LUCENE-1343 ... as an outside observer they seem to be the same thing\n\nLUCENE-1343 depends on either Java 6 or an ICU jar.  Java 5 support (much less Java 6 support) is still a ways off, and core Lucene can't have external dependencies.  IMO, this issue intends to provide *core* Lucene support for folding a wider set of accented characters to ASCII.\n\nIn a moment I'll attach a patch that, in addition to the larger set of accented characters to be folded that Andi has provided, folds all Unicode characters I could find to their ASCII equivalents.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-09-29T23:37:43.947+0000",
+          "updated": "2008-09-29T23:37:43.947+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12635607",
+          "id": "12635607",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Changes from Andi's version:\n\n# Changed the name of the class to ASCIIFoldingFilter\n# Added the Unicode chracter descriptions to comments on each character\n# Added a test class\n# Added several other Unicode blocks from which characters are converted to their ASCII equivalents.  Added characters include digits and punctuation.\n\nI did not provide mappings for characters from the Math block - flattening circled plus, for example, didn't seem appropriate.\n\nI *did* provide mappings for IPA and two other phonetic character blocks, and I'm not sure whether this is appropriate.  I was following what seemed to me to be the logic of Andi's mappings, and those provided by Latin1AccentFilter: convert characters to those that *look like* them in ASCII.  As a result, e.g., the character described as \"LATIN SMALL LETTER TURNED M\" (U+0270) from the IPA block is mapped to \"m\", regardless of its actual phonetic value.\n\nThere are lots of mappings in there now.  I generated the mappings by Perl scripting over the contents of the Unicode 5.1 version of UnicodeData.txt from Unicode.org, after grep'ing e.g. for \"LATIN\" and \"LETTER\" or \"DIGRAPH\", etc., and then moved things around to the appropriate places by hand.  I guess this is one weakness of this patch: it's large enough that manual verification is tough.  It's my hope that adding the Unicode character descriptions will allow for at least improved verifiability.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-09-29T23:53:37.522+0000",
+          "updated": "2008-09-29T23:53:37.522+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12635620",
+          "id": "12635620",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Forgot to mention three additional change in ASCIIFoldingFilter.patch:\n\n# Some of the added character mappings produce 3 or 4 characters - e.g. the character \"\u247e \" -- described as \"PARENTHESIZED NUMBER ELEVEN\" -- is mapped to '(' + '1' + '1' +')'. \n# As a result of the increased maximum length of each mapping, the output buffer length is set to 4 times the length of the input token.\n# ArrayUtils.getNextSize() is used to resize the output buffer when it needs to grow.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-09-30T00:23:09.704+0000",
+          "updated": "2008-09-30T00:24:31.559+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12637565",
+          "id": "12637565",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Minor adjustment to previous version: this version fixes a couple of character mappings that were out of order in the mapped-to-capital-\"B\" section.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-10-07T17:51:49.975+0000",
+          "updated": "2008-10-07T17:51:49.975+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12643152",
+          "id": "12643152",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Wow, Steve, I'm impressed. This is quite an improvement over my earlier patches and even more of an improvement over ISOLatin1AccentFilter. Thank you for doing this !\nWhat's next ? Does any Lucene committer watching this bug have objections in checking this in ?\nOne (minor) missing piece to the patch is the deprecation of ISOLatin1AccentFilter itself.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-10-28T06:23:45.340+0000",
+          "updated": "2008-10-28T06:23:45.340+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12643215",
+          "id": "12643215",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Some of the new mappings, e.g. the character representing parenthesized 10 mapped to the 4 character sequence \"(10)\", might better be handled before tokenization, very much like SOLR-822 - I thought about doing something like that but decided that it was too much work :).  However, maybe it would be possible to write a reader adapter that takes in a *token* filter (like this one) and then passes the entire contents of the reader through the filter.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-10-28T14:07:47.954+0000",
+          "updated": "2008-10-28T14:07:47.954+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652691",
+          "id": "12652691",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "I am using this patch and its working well.\n\nNitpick... wonder if you could change the mapping of \u018f and \u0259 to from E to A... This character is only used in Azeri and not too long ago (<20 years) it was written as A with umlaut, so there is some precedence.\n\nThanks,\nRobert",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T05:42:24.331+0000",
+          "updated": "2008-12-03T05:42:24.331+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652694",
+          "id": "12652694",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Could you please attach a patch for the change you requested, I'm not sure \nit's displaying correctly here. You seem to asking about a change for the \nmapping of AE and E+acute which is unexpected. Thanks !\n\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-03T06:20:46.598+0000",
+          "updated": "2008-12-03T06:20:46.598+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652808",
+          "id": "12652808",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "From my brief reading, it seems that \"ae\" would be the best transliteration for the schwa character.  \"Some people write '\u00e6' instead if the schwa is not available. \"\n\nhttp://www.omniglot.com/writing/azeri.htm",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=timmsc",
+            "name": "timmsc",
+            "key": "timmsc",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Sean Timm",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T14:34:42.164+0000",
+          "updated": "2008-12-03T14:34:42.164+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652831",
+          "id": "12652831",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "sean... from your link: On 16th May 1992 the Latin alphabet for Azerbaijani was slightly revised - the letter \u00e4 was replaced with \u0259 and the order of letters was changed as well. \n\ni've never seen 'ae' used in its place, certainly not in the Azeri text that I am indexing.\n\nandi... im referring to the schwa character in azeri: U+018F (uppercase) and U+0259 (lowercase)",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T15:27:49.453+0000",
+          "updated": "2008-12-03T15:27:49.453+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652834",
+          "id": "12652834",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "with regards to transliteration the bgn/pcgn standard states: \n\nThe special letter \u018f, \u0259 known as schwa, should be reproduced in that form whenever encountered.\nUse \u04d8 (U+04D8) and \u04d9 (U+04D9) for schwa when writing in the Cyrillic script, but use \u018f (U+018F) and \u0259 (U+0259) for schwa when writing in the Roman alphabet.\n\nIn those instances when it cannot be reproduced, however, the letter \u00c4 \u00e4 may be substituted for it.\n\nhttp://earth-info.nga.mil/gns/html/Romanization/Romanization_Azerbaijani.pdf\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T15:35:15.976+0000",
+          "updated": "2008-12-03T15:35:15.976+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652875",
+          "id": "12652875",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "\nAh, I see now what you're asking for. Sorry about the misunderstanding.\nI believe I had picked 'e' for schwa because it looks closest to that \nletter. I have no objections to switching to using 'a' instead if that's \nmore \"correct\".\nThis Wikipedia seems to agree: http://en.wikipedia.org/wiki/Schwa_(Cyrillic)\nThis other Wikipedia http://en.wikipedia.org/wiki/Schwa is less clear about \nthis, but it seems that using 'a' instead of 'e' doesn't contradict it.\n\nSteven, I can amend the patch but you said you had more changes coming. If \nthat's the case, could you please add this change as well. If that's not the \ncase, is it ok for me to add this change and call for this bug to be \ncommitted to trunk and closed ?\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-03T18:04:45.773+0000",
+          "updated": "2008-12-03T18:04:45.773+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652898",
+          "id": "12652898",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. Steven, I can amend the patch but you said you had more changes coming. If that's the case, could you please add this change as well. If that's not the case, is it ok for me to add this change and call for this bug to be committed to trunk and closed ?\n\nAndi, I don't think I said I had more changes coming.  If you are referring to [this comment about pre-tokenization filtering|https://issues.apache.org/jira/browse/LUCENE-1390?focusedCommentId=12643215#action_12643215], I meant that as an idea that could be pursued separately from this issue.\n\nAt any rate, please feel free to add Robert's suggested change yourself.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T18:57:39.241+0000",
+          "updated": "2008-12-03T18:57:39.241+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12652911",
+          "id": "12652911",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Great, I'll include Robert's change and try to convince a committer to \nfinalize it.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-03T19:24:45.702+0000",
+          "updated": "2008-12-03T19:24:45.702+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653010",
+          "id": "12653010",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "thanks guys, just as a comment to whoever is listining I think this is very useful functionality.\n\nI am indexing a lot of docs and doing it with ICU works well, but that method (unicode decomposition etc) is very expensive and still doesnt handle many common cases. In profiling, it was slowing down entire indexing process.\n\nThe existing ISO filter doesn't handle many cases that are actually in use in my text, but this filter works well and appears to have coverage for most of the common cases such as full width forms, at the same time it is fast.\n\nThanks,\nRobert\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T22:33:12.679+0000",
+          "updated": "2008-12-03T22:33:12.679+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653016",
+          "id": "12653016",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Hey guys, not sure how soon I can bring some time to bear on this, but I'd be happy to help get this committed. ",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T22:39:27.041+0000",
+          "updated": "2008-12-03T22:39:27.041+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653031",
+          "id": "12653031",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "In regards to deprecating ISOLatin1AccentFilter: what are the back compatibility issues? What is the likelyhood that a forced upgrade to this class would lose words in an older index without a reindex?\n\nIf its a real concern, we could keep the deprecated class until 3.0, but that still wouldn't help anyone that wanted to move to 2 from 3 without a reindex (if thats something we will maintain on 3).\n\nSo I'm just exploring for comments, but maybe we leave both classes?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T23:00:01.629+0000",
+          "updated": "2008-12-03T23:00:57.636+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653045",
+          "id": "12653045",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "\n\nThis class includes all of ISOLatin1AccentFilter.\n\nStill, a difference in behaviour could be seen when using the new \nfilter with characters getting converted now that didn't before.\n\nIf that sort of lack of backwards compatibility is something we don't want \nto impose on the 3.0 release then the ISOLatin1AccentFilter class needs to \nbe preserved.\n\nThanks for volunteering to finalize this bug !\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-03T23:24:45.209+0000",
+          "updated": "2008-12-03T23:24:45.209+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653049",
+          "id": "12653049",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. What is the likelyhood that a forced upgrade to this class would lose words in an older index without a reindex? \n\nThe problem would be words that contain characters that were not folded by ISOLatin1AccentFilter, but are folded by ASCIIFoldingFilter, and that are used in documents *and* in queries.  Individual implementors would have to make that determination, but it's not outside the realm of possibility.\n\nIf ISOLatin1AccentFilter were deprecated for 2.9, and advertised as targeted for removal in 3.0, assuming there will be a significant gap in time between the 2.9 and 3.0 releases, that would give users time to complain about its pending demise, and the plan to remove it could be revisited based on that feedback.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=sarowe",
+            "name": "sarowe",
+            "key": "steve_rowe",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=steve_rowe&avatarId=37258",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=steve_rowe&avatarId=37258",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=steve_rowe&avatarId=37258",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=steve_rowe&avatarId=37258"
+            },
+            "displayName": "Steven Rowe",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T23:29:25.639+0000",
+          "updated": "2008-12-03T23:29:25.639+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653061",
+          "id": "12653061",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Everything looks pretty good to me. If you can work up one last patch, I'll put it through its paces. I'd like to hear another committers opinion on deprecating ISOLatin1AccentFilter as well, but I guess we will see if we are able to draw the attention.\n\nI think we have a lot of latitude with the 3.0 move, but I don't know what the consensus is on the limits of that latitude...\n\n- Mark",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T23:48:50.934+0000",
+          "updated": "2008-12-03T23:48:50.934+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653064",
+          "id": "12653064",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "does ISOLatin1AccentFilter really need to be deprecated? I don't think its misleading, could just reiterate it only covers Latin 1 and ref this one in the docs?\n\njust as this one documents what blocks it covers and i don't expect it to normalize U+338E to 'mg'\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-03T23:54:51.423+0000",
+          "updated": "2008-12-03T23:54:51.423+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653099",
+          "id": "12653099",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "bq. does ISOLatin1AccentFilter really need to be deprecated? I don't think its misleading, could just reiterate it only covers Latin 1 and ref this one in the docs? \n\nThats the leaning of my thinking at the moment as well.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-04T01:08:57.595+0000",
+          "updated": "2008-12-04T01:08:57.595+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653122",
+          "id": "12653122",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "This latest version supercedes the previous one and moves all schwa characters to the 'A' or 'a' depending on their case. 0259, lowercase schwa, was missing and thus added.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-04T01:53:33.705+0000",
+          "updated": "2008-12-04T01:53:33.705+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653123",
+          "id": "12653123",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Mark, I attached a new version of the patch with Robert's change.\n\nAs for the deprecation of ISOLatin1AccentFilter.java, I don't have a definite opinion on this.\nIt's pretty much redundant with what this new class does. If the maintenance overhead is not too bad then keeping the duplication around may be worth the effort to preserve some backwards compat.\n\nThanks for taking this from here !\nAndi..",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-04T01:56:51.449+0000",
+          "updated": "2008-12-04T01:56:51.449+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653132",
+          "id": "12653132",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Not to be wishy washy, but deprecating is looking better to me. If there is a large outcry, it can always be revisited before its fully removed. The odds that you will be affected legitimately, appear pretty low. We can call it out in 3.0 changes, and those that really need it (which is looking like it would be a weird situation to need it) could maintain their own copy. Seem reasonable?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-04T02:15:18.348+0000",
+          "updated": "2008-12-04T02:15:18.348+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653139",
+          "id": "12653139",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "\n\n\nYep, I'm leaning that way too.\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-04T02:52:46.421+0000",
+          "updated": "2008-12-04T02:52:46.421+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653272",
+          "id": "12653272",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "So my final thought on this is performance...is handling more much slower? Could that be a reason to keep the Latin1 filter as well?",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-04T12:12:00.203+0000",
+          "updated": "2008-12-04T12:12:00.203+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653500",
+          "id": "12653500",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "its a bit slower, but the difference is minor. i just ran some tests with some cpu-bound (these filters are right at the top of hprof.txt) indexes that i build\n\ni ran em a couple times and it looks like this... not very scientific but it gives an idea.\n\nASCII Folding filter index time (ms): 143365\nISOLatin1Accent filter (ms): 134649\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-04T21:41:24.440+0000",
+          "updated": "2008-12-04T21:41:24.440+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653520",
+          "id": "12653520",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "sorry, that wasn't a fair test case. a good chunk of those docs contain accents outside of latin1, so asciifoldingfilter was doing more work\n\ni reran on some heavily accented (but only latin1) data and the difference was negligible, 1% or so \n\nappears asciifoldingfilter only slows you down versus isolatin1accentfilter in the case where it probably should be! (you have accents outside of latin1 but are using latin1accentfilter)\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=rcmuir",
+            "name": "rcmuir",
+            "key": "rcmuir",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=rcmuir&avatarId=10150",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=rcmuir&avatarId=10150",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=rcmuir&avatarId=10150",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=rcmuir&avatarId=10150"
+            },
+            "displayName": "Robert Muir",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-04T22:29:14.610+0000",
+          "updated": "2008-12-04T22:29:14.610+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12653539",
+          "id": "12653539",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Thanks Robert. I plan to commit this in a few days with the deprecation of the latin1 filter for removal in 3.0.",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-04T23:05:50.526+0000",
+          "updated": "2008-12-04T23:05:50.526+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12654159",
+          "id": "12654159",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "body": "Committed, thanks a lot guys!",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=markrmiller%40gmail.com",
+            "name": "markrmiller@gmail.com",
+            "key": "markrmiller@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&ownerId=markrmiller%40gmail.com&avatarId=17267",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&ownerId=markrmiller%40gmail.com&avatarId=17267"
+            },
+            "displayName": "Mark Miller",
+            "active": true,
+            "timeZone": "America/New_York"
+          },
+          "created": "2008-12-06T23:28:21.132+0000",
+          "updated": "2008-12-06T23:28:21.132+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/12654160",
+          "id": "12654160",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "body": "Thanks Mark !\n",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=vajda",
+            "name": "vajda",
+            "key": "vajda",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Andi Vajda",
+            "active": true,
+            "timeZone": "Etc/UTC"
+          },
+          "created": "2008-12-06T23:40:45.791+0000",
+          "updated": "2008-12-06T23:40:45.791+0000"
+        },
+        {
+          "self": "https://issues.apache.org/jira/rest/api/2/issue/12404567/comment/17587582",
+          "id": "17587582",
+          "author": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "body": "This issue was moved to GitHub issue: [#2464|https://github.com/apache/lucene/issues/2464].",
+          "updateAuthor": {
+            "self": "https://issues.apache.org/jira/rest/api/2/user?username=tomoko",
+            "name": "tomoko",
+            "key": "tomoko uchida",
+            "avatarUrls": {
+              "48x48": "https://issues.apache.org/jira/secure/useravatar?avatarId=10452",
+              "24x24": "https://issues.apache.org/jira/secure/useravatar?size=small&avatarId=10452",
+              "16x16": "https://issues.apache.org/jira/secure/useravatar?size=xsmall&avatarId=10452",
+              "32x32": "https://issues.apache.org/jira/secure/useravatar?size=medium&avatarId=10452"
+            },
+            "displayName": "Tomoko Uchida",
+            "active": true,
+            "timeZone": "Etc/GMT-9"
+          },
+          "created": "2022-08-28T11:53:04.265+0000",
+          "updated": "2022-08-28T11:53:04.265+0000"
+        }
+      ],
+      "maxResults": 42,
+      "total": 42,
+      "startAt": 0
+    },
+    "customfield_12311820": "0|i04xan:",
+    "customfield_12314139": null
+  }
+}
