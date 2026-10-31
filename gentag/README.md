@@ -35,7 +35,7 @@ Each output row is `project, id, ground_truth_label, predicted_label, explanatio
 - `outputs/` – classifier runs (`<dataset>-1/2/3.csv`) and majority votes (`<dataset>-majority.csv`)
 - `majority_vote*.py` – combine the three runs into a majority vote
 - `result_process*.py` – compute metrics against ground truth
-- `colavito/` – experiments with the Colavito et al. classifier
+- `colavito/` – experiments with _GPT-like model_
 - `result on Herzig Dataset.txt` – the results of all three GenTag trials, together with the agreement analysis across trials.
 - `result on IRBL Benchmarks.txt ` – dataset-specific precision, recall and F1-scores of the manually labeled issues
 
