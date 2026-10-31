@@ -1,0 +1,95 @@
+***************** Beetlebox *****************
+Class-wise Metrics:
+Class           Precision  Recall     F1-Score   Support   
+BUG             0.9615     0.9036     0.9317     83        
+NOT BUG         0.8491     0.9375     0.8911     48        
+
+Weighted Metrics:
+Weighted Precision: 0.9203
+Weighted Recall: 0.9160
+Weighted F1 Score: 0.9168
+Accuracy: 0.9160
+
+Confusion Matrix:
+TP: 75
+FN: 8
+FP: 3
+TN: 45
+
+***************** Bench4BL *****************
+Class-wise Metrics:
+Class           Precision  Recall     F1-Score   Support   
+BUG             0.9615     0.9804     0.9709     51        
+NOT BUG         0.9375     0.8824     0.9091     17        
+
+Weighted Metrics:
+Weighted Precision: 0.9555
+Weighted Recall: 0.9559
+Weighted F1 Score: 0.9554
+Accuracy: 0.9559
+
+Confusion Matrix:
+TP: 50
+FN: 1
+FP: 2
+TN: 15
+
+
+***************** GHRB *****************
+Class-wise Metrics:
+Class           Precision  Recall     F1-Score   Support   
+BUG             1.0000     0.6667     0.8000     3         
+NOT BUG         0.5000     1.0000     0.6667     1         
+
+Weighted Metrics:
+Weighted Precision: 0.8750
+Weighted Recall: 0.7500
+Weighted F1 Score: 0.7667
+Accuracy: 0.7500
+
+Confusion Matrix:
+TP: 2
+FN: 1
+FP: 0
+TN: 1
+
+
+***************** Ye et al. *****************
+Class-wise Metrics:
+Class           Precision  Recall     F1-Score   Support   
+BUG             0.9604     0.9238     0.9417     105       
+NOT BUG         0.8545     0.9216     0.8868     51        
+
+Weighted Metrics:
+Weighted Precision: 0.9258
+Weighted Recall: 0.9231
+Weighted F1 Score: 0.9238
+Accuracy: 0.9231
+
+Confusion Matrix:
+TP: 97
+FN: 8
+FP: 4
+TN: 47
+
+
+***************** Zhou et al. *****************
+Class-wise Metrics:
+Class           Precision  Recall     F1-Score   Support   
+BUG             1.0000     0.9500     0.9744     20        
+NOT BUG         0.7500     1.0000     0.8571     3         
+
+Weighted Metrics:
+Weighted Precision: 0.9674
+Weighted Recall: 0.9565
+Weighted F1 Score: 0.9591
+Accuracy: 0.9565
+
+Confusion Matrix:
+TP: 19
+FN: 1
+FP: 0
+TN: 3
+
+
+Note: The GHRB dataset contains only 4 issue reports (3 BUG and 1 NOT BUG). Due to this extremely small sample size, the performance metrics should be interpreted with caution. In particular, the NOT BUG precision (0.50) appears low because a single prediction substantially impacts the metric. Consequently, the reported class-wise metrics for GHRB are less representative than those of the larger datasets.
